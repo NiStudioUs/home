@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
+import 'image_helper.dart';
 
 class AppTile extends StatelessWidget {
   final AppModel app;
@@ -23,14 +24,7 @@ class AppTile extends StatelessWidget {
               child: Container(
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: app.iconUrl.isNotEmpty
-                    ? Image.network(
-                        app.iconUrl,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) =>
-                            const Center(
-                              child: Icon(Icons.broken_image, size: 48),
-                            ),
-                      )
+                    ? buildImage(app.iconUrl, fit: BoxFit.cover)
                     : const Center(child: Icon(Icons.apps, size: 48)),
               ),
             ),

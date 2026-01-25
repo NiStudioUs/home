@@ -9,7 +9,8 @@
             "args": [
                 "-d",
                 "chrome"
-            ]
+            ],
+            "preLaunchTask": "Run Data Migration"
         },
         {
             "name": "nistudious_website (Edge)",
@@ -19,7 +20,8 @@
             "args": [
                 "-d",
                 "edge"
-            ]
+            ],
+            "preLaunchTask": "Run Data Migration"
         },
         {
             "name": "nistudious_website (Server)",
@@ -33,7 +35,8 @@
                 "localhost",
                 "--web-port",
                 "5000"
-            ]
+            ],
+            "preLaunchTask": "Run Data Migration"
         }
     ]
 }

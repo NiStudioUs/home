@@ -1,16 +1,83 @@
-# nistudious_website
+# Portfolio App Configuration
 
-A new Flutter project.
+This app loads its content dynamically from `assets/data.json`.
 
-## Getting Started
+## JSON Schema
 
-This project is a starting point for a Flutter application.
+The `data.json` file must follow this structure. You can use this schema to generate new app entries.
 
-A few resources to get you started if this is your first Flutter project:
+```json
+{
+  "developer": {
+    "name": "Your Name",
+    "bio": "Your Bio",
+    "role": "Your Role",
+    "avatarUrl": "URL or assets/images/...",
+    "email": "you@example.com",
+    "socialLinks": [
+      {
+        "platform": "GitHub",
+        "url": "...",
+        "icon": "github"
+      }
+    ]
+  },
+  "apps": [
+    {
+      "id": "unique_app_id",
+      "name": "App Name",
+      "shortDescription": "One line summary",
+      "fullDescription": "Detailed markdown-supported description",
+      "iconUrl": "assets/images/icon.png",
+      "descriptionImages": [
+          { "url": "assets/images/desc1.png", "caption": "Optional Caption" }
+      ],
+      "links": [
+        { "type": "Play Store", "url": "..." },
+        { "type": "Website", "url": "..." }
+      ],
+      "privacyPolicy": {
+        "url": "https://example.com/privacy",
+        "sections": []
+      },
+      "termsAndConditions": {
+        "url": "https://example.com/terms",
+        "sections": []
+      }
+    }
+  ]
+}
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## AI Generation Prompt
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To generate a new app entry, copy and paste the following prompt into an AI chat (like ChatGPT or Gemini), replacing the placeholders with your app's info:
+
+> I need to generate a JSON entry for my portfolio website. Here is the info about my app:
+>
+> **App Name**: [Name]
+> **Description**: [Description]
+> **Key Features**: [List features]
+> **Tech Stack**: [List technologies used]
+>
+> Please generate a JSON object matching the following schema. ensuring `features`, `technicalDetails`, `privacyPolicy`, and `termsAndConditions` follow the structured format (with sections).
+> *   All text fields support **Markdown** formatting.
+> *   You can specify `"imageRenderer": "list"`, `"grid"`, or `"default"` (carousel) for each section.
+>
+> **Schema Reference**:
+> ```json
+> {
+>   "id": "app_slug",
+>   "name": "Name",
+>   "shortDescription": "...",
+>   "fullDescription": "...",
+>   "iconUrl": "...",
+>   "descriptionImages": [],
+>   "features": [ { "title": "...", "subtitle": "...", "sections": [ { "title": "...", "content": "...", "imageRenderer": "default", "images": [] } ] } ],
+>   "technicalDetails": [ { "title": "...", "subtitle": "...", "sections": [ { "title": "...", "content": "...", "imageRenderer": "default", "images": [] } ] } ],
+>   "screenshots": [],
+>   "links": [],
+>   "privacyPolicy": { "url": "...", "sections": [] },
+>   "termsAndConditions": { "url": "...", "sections": [] }
+> }
+> ```

@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Data Migration",
+            "type": "shell",
+            "command": "./scripts/migrate.sh",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
+        }
+    ]
+}

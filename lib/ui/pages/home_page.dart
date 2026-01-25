@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../widgets/app_tile.dart';
+import '../widgets/image_helper.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,13 +23,17 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
             color: Theme.of(
               context,
-            ).colorScheme.primaryContainer.withOpacity(0.3),
+            ).colorScheme.primaryContainer.withValues(alpha: 0.3),
             child: Column(
               children: [
                 CircleAvatar(
                   radius: 60,
-                  backgroundImage: NetworkImage(developer.avatarUrl),
-                  onBackgroundImageError: (_, __) {},
+                  backgroundImage: developer.avatarUrl.isNotEmpty
+                      ? getImageProvider(developer.avatarUrl)
+                      : null,
+                  onBackgroundImageError: developer.avatarUrl.isNotEmpty
+                      ? (_, _) {}
+                      : null,
                   child: developer.avatarUrl.isEmpty
                       ? Text(
                           developer.name[0],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'nav_bar.dart';
+import 'app_drawer.dart';
 
 class MainLayout extends StatelessWidget {
   final Widget child;
@@ -9,6 +10,7 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const AppDrawer(),
       body: Column(
         children: [
           const NavBar(),

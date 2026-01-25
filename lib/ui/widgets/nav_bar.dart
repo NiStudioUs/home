@@ -10,6 +10,23 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 700) {
+          return const _DesktopNavBar();
+        } else {
+          return const _MobileNavBar();
+        }
+      },
+    );
+  }
+}
+
+class _DesktopNavBar extends StatelessWidget {
+  const _DesktopNavBar();
+
+  @override
+  Widget build(BuildContext context) {
     final dataModel = Provider.of<DataModel>(context);
     final themeService = Provider.of<ThemeService>(context);
 
@@ -19,7 +36,7 @@ class NavBar extends StatelessWidget {
         color: Theme.of(context).cardColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -38,9 +55,6 @@ class NavBar extends StatelessWidget {
             ),
           ),
           const Spacer(),
-
-          // Desktop Navigation (For now assuming desktop-first as it is a website)
-          // We can add responsive check later.
 
           // Apps Dropdown
           _AppsDropdown(apps: dataModel.apps),
@@ -68,6 +82,44 @@ class NavBar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _MobileNavBar extends StatelessWidget {
+  const _MobileNavBar();
+
+  @override
+  Widget build(BuildContext context) {
+    final dataModel = Provider.of<DataModel>(context);
+    final themeService = Provider.of<ThemeService>(context);
+
+    return AppBar(
+      title: InkWell(
+        onTap: () => context.go('/'),
+        child: Text(
+          dataModel.developer.name,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(
+            themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+          ),
+          onPressed: () {
+            themeService.toggleTheme();
+          },
+        ),
+        Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openEndDrawer();
+            },
+          ),
+        ),
+      ],
     );
   }
 }
@@ -128,11 +180,11 @@ class _LegalDropdown extends StatelessWidget {
         return SubmenuButton(
           menuChildren: [
             MenuItemButton(
-              onPressed: () => _launchAdUrl(app.privacyPolicyUrl),
+              onPressed: () => _launchAdUrl(app.privacyPolicy.url),
               child: const Text('Privacy Policy'),
             ),
             MenuItemButton(
-              onPressed: () => _launchAdUrl(app.termsUrl),
+              onPressed: () => _launchAdUrl(app.termsAndConditions.url),
               child: const Text('Terms & Conditions'),
             ),
           ],
