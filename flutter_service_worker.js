@@ -68,7 +68,7 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "assets/assets/developers/nsu_logo.png": "fb174ff44b53fafeac1aea0fbbd5737b",
 "assets/assets/developers/dev-avatar.png": "a9a7bfb9f453cb09d390bbc26f29e4b9",
 "assets/assets/developers/play_store_banner.png": "4d93faa165cb0a7a54e5c933784fcf8c",
-"assets/fonts/MaterialIcons-Regular.otf": "a97d167a35caff16e0629377c443ab14",
+"assets/fonts/MaterialIcons-Regular.otf": "53a134128217ca49120184d438019442",
 "assets/NOTICES": "ead7d59f08e8dadf06667c4ccb45e1d6",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf": "338f6df29f4260055704bf4eb5ba01f7",
@@ -89,9 +89,9 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "canvaskit/canvaskit.js.symbols": "a3c9f77715b642d0437d9c275caba91e",
 "canvaskit/skwasm.js.symbols": "3a4aadf4e8141f284bd524976b1d6bdc",
 "favicon.png": "61f9d0907b15041c58f595405c2fc9e0",
-"flutter_bootstrap.js": "7404950908a0ffaf80928d8e4eafd1d1",
+"flutter_bootstrap.js": "bb177da8a9e7d4db53ce9d65150a5630",
 "version.json": "17c152eb51951229de6b0dc863d285a0",
-"main.dart.js": "d7d7e9e8b4b8f4efc6242319610663db"};
+"main.dart.js": "e6d2e4d21e07cf328cc8e287166995ea"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
