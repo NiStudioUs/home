@@ -184,7 +184,7 @@ class _LegalPageState extends State<LegalPage> {
             child: PageView(
               controller: _pageController,
               scrollDirection: Axis.vertical,
-              physics: const NeverScrollableScrollPhysics(),
+              physics: const PageScrollPhysics(),
               children: pages,
             ),
           ),

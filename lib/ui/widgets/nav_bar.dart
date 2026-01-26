@@ -71,11 +71,6 @@ class _DesktopNavBar extends StatelessWidget {
             ),
           ),
 
-          if (dataModel.developer.badge.url.isNotEmpty) ...[
-            const SizedBox(width: 12),
-            _DeveloperBadge(developer: dataModel.developer),
-          ],
-
           // Breadcrumb
           if (currentApp != null) ...[
             const SizedBox(width: 8),
@@ -188,55 +183,6 @@ class _DesktopNavBar extends StatelessWidget {
   }
 }
 
-class _DeveloperBadge extends StatefulWidget {
-  final Developer developer;
-  const _DeveloperBadge({required this.developer});
-
-  @override
-  State<_DeveloperBadge> createState() => _DeveloperBadgeState();
-}
-
-class _DeveloperBadgeState extends State<_DeveloperBadge> {
-  bool _isHovering = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _isHovering = true),
-      onExit: (_) => setState(() => _isHovering = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        decoration: BoxDecoration(
-          color: _isHovering
-              ? Theme.of(context).colorScheme.secondaryContainer
-              : Colors.transparent,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircleAvatar(
-              radius: 12,
-              backgroundImage: getImageProvider(widget.developer.badge.url),
-            ),
-            if (_isHovering && widget.developer.shortName.isNotEmpty) ...[
-              const SizedBox(width: 8),
-              Text(
-                widget.developer.shortName,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSecondaryContainer,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class _MobileNavBar extends StatelessWidget {
   const _MobileNavBar();
 
@@ -254,15 +200,6 @@ class _MobileNavBar extends StatelessWidget {
               dataModel.developer.name,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            if (dataModel.developer.badge.url.isNotEmpty) ...[
-              const SizedBox(width: 8),
-              CircleAvatar(
-                radius: 12,
-                backgroundImage: getImageProvider(
-                  dataModel.developer.badge.url,
-                ),
-              ),
-            ],
           ],
         ),
       ),

@@ -65,24 +65,18 @@ void main() async {
 
   // 5. Create Final JSON
   final finalData = {
-    "socialLinks": [
-      // {
-      //   "platform": "GitHub",
-      //   "url": "https://github.com/",
-      //   "icon": "github",
-      // },
-    ],
+    "socialLinks": [],
     "developer": {
       "name": "Ni Studio Us",
       "shortName": "Karthik",
-      "bio":
-          "Mobile App Developer specialized in Flutter. Privacy-focused solutions.",
+      "bio": "",
       "role": "Flutter Developer",
-      "avatarUrl": "",
-      "email": "karthik@example.com",
+      "avatarUrl": "assets/developers/dev-avatar.png",
+      "email": "ni.studio.us@outlook.com",
+      "bannerUrl": "assets/developers/play_store_banner.png",
       "badge": {
-        "url": "assets/developers/karthik.png",
-        "caption": "Lead Developer",
+        "url": "assets/developers/dev-avatar.png",
+        "caption": "Brand Creator",
       },
     },
     "apps": processedApps,

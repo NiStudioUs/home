@@ -29,6 +29,7 @@ class Developer {
   final String role;
   final String avatarUrl;
   final String email;
+  final String bannerUrl;
   final FeatureImage badge;
 
   Developer({
@@ -38,6 +39,7 @@ class Developer {
     required this.role,
     required this.avatarUrl,
     required this.email,
+    required this.bannerUrl,
     required this.badge,
   });
 
@@ -49,6 +51,7 @@ class Developer {
       role: json['role'] as String,
       avatarUrl: json['avatarUrl'] as String,
       email: json['email'] as String,
+      bannerUrl: json['bannerUrl'] as String? ?? '',
       badge: json['badge'] != null
           ? FeatureImage.fromJson(json['badge'])
           : FeatureImage(url: '', caption: ''),

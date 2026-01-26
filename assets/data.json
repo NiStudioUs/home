@@ -3,13 +3,14 @@
   "developer": {
     "name": "Ni Studio Us",
     "shortName": "Karthik",
-    "bio": "Mobile App Developer specialized in Flutter. Privacy-focused solutions.",
+    "bio": "",
     "role": "Flutter Developer",
-    "avatarUrl": "",
-    "email": "karthik@example.com",
+    "avatarUrl": "assets/developers/dev-avatar.png",
+    "email": "ni.studio.us@outlook.com",
+    "bannerUrl": "assets/developers/play_store_banner.png",
     "badge": {
-      "url": "assets/developers/karthik.png",
-      "caption": "Lead Developer"
+      "url": "assets/developers/dev-avatar.png",
+      "caption": "Brand Creator"
     }
   },
   "apps": [
@@ -471,9 +472,9 @@
     },
     {
       "id": "sms_stack_manager",
-      "name": "SMS Stack Manager",
+      "name": "SMS Stack",
       "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
-      "fullDescription": "SMS Stack Manager is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
+      "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
       "iconUrl": "assets/images/app2/icon.png",
       "descriptionImages": [
         {
@@ -492,7 +493,7 @@
           "sections": [
             {
               "title": "Introduction",
-              "content": "The SMS Parser Engine is the core component that gives SMS Stack Manager its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
+              "content": "The SMS Parser Engine is the core component that gives SMS Stack its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
               "imageRenderer": "default",
               "images": []
             },
@@ -575,7 +576,7 @@
           "sections": [
             {
               "title": "Introduction",
-              "content": "Your inbox is full of \"Due Date\" reminders, but they get lost in the noise. SMS Stack Manager automatically detects these messages and separates them into a dedicated view, effectively turning your SMS inbox into a Bill Calendar.",
+              "content": "Your inbox is full of \"Due Date\" reminders, but they get lost in the noise. SMS Stack automatically detects these messages and separates them into a dedicated view, effectively turning your SMS inbox into a Bill Calendar.",
               "imageRenderer": "default",
               "images": []
             },
@@ -598,7 +599,7 @@
           "sections": [
             {
               "title": "Introduction",
-              "content": "SMS Stack Manager includes a proactive Spam Defense system designed to keep your Personal and Transaction tabs clean without deleting important messages.",
+              "content": "SMS Stack includes a proactive Spam Defense system designed to keep your Personal and Transaction tabs clean without deleting important messages.",
               "imageRenderer": "default",
               "images": []
             },
@@ -689,7 +690,7 @@
             },
             {
               "title": "Managing Your Data",
-              "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack Manager**.\n4.  Click **Options** -> **Delete hidden app data**.",
+              "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack**.\n4.  Click **Options** -> **Delete hidden app data**.",
               "imageRenderer": "default",
               "images": []
             }
@@ -774,7 +775,7 @@
           "sections": [
             {
               "title": "High-Level Overview",
-              "content": "SMS Stack Manager follows **Clean Architecture** principles, separating the codebase into three main layers:\n\n1.  **Presentation Layer (`lib/features/`)**:\n    *   **UI**: Widgets/Screens.\n    *   **State Management**: `Bloc` (Business Logic Components).\n2.  **Domain/Service Layer (`lib/core/services/`)**:\n    *   **Services**: `SmsService`, `NotificationService`, `PermissionService`.\n    *   **Logic**: `SmsParserEngine` (Regex Logic).\n3.  **Data Layer (`lib/core/database/`)**:\n    *   **Database**: Drift (SQLite) with FTS5.\n    *   **DTOs**: `SmsMessage` (from system) -> `Message` (db entity).",
+              "content": "SMS Stack follows **Clean Architecture** principles, separating the codebase into three main layers:\n\n1.  **Presentation Layer (`lib/features/`)**:\n    *   **UI**: Widgets/Screens.\n    *   **State Management**: `Bloc` (Business Logic Components).\n2.  **Domain/Service Layer (`lib/core/services/`)**:\n    *   **Services**: `SmsService`, `NotificationService`, `PermissionService`.\n    *   **Logic**: `SmsParserEngine` (Regex Logic).\n3.  **Data Layer (`lib/core/database/`)**:\n    *   **Database**: Drift (SQLite) with FTS5.\n    *   **DTOs**: `SmsMessage` (from system) -> `Message` (db entity).",
               "imageRenderer": "default",
               "images": []
             },
@@ -937,7 +938,7 @@
             "sections": [
               {
                 "title": "Google Drive Sync",
-                "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack Manager** -> **Options** -> **Delete hidden app data**.",
+                "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack** -> **Options** -> **Delete hidden app data**.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -997,7 +998,7 @@
             "sections": [
               {
                 "title": "Acceptance",
-                "content": "By downloading and using SMS Stack Manager, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
+                "content": "By downloading and using SMS Stack, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
                 "imageRenderer": "default",
                 "images": []
               },

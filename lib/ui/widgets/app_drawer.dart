@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -12,7 +11,8 @@ class AppDrawer extends StatelessWidget {
     final dataModel = Provider.of<DataModel>(context);
 
     return Drawer(
-      child: Column(
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Theme.of(context).primaryColor),
@@ -65,12 +65,18 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   ListTile(
                     title: Text('${app.name} Privacy'),
-                    onTap: () => _launchUrl(app.privacyPolicy.url),
+                    onTap: () {
+                      context.go('/app/${app.id}/privacy');
+                      Navigator.pop(context);
+                    },
                     contentPadding: const EdgeInsets.only(left: 32.0),
                   ),
                   ListTile(
                     title: Text('${app.name} Terms'),
-                    onTap: () => _launchUrl(app.termsAndConditions.url),
+                    onTap: () {
+                      context.go('/app/${app.id}/terms');
+                      Navigator.pop(context);
+                    },
                     contentPadding: const EdgeInsets.only(left: 32.0),
                   ),
                 ],
@@ -80,12 +86,5 @@ class AppDrawer extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      throw Exception('Could not launch $url');
-    }
   }
 }

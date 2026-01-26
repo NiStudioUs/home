@@ -6,7 +6,7 @@ This guide covers how to verify your website ownership for Google Search Console
 
 To prove you own `https://your-site.com`, you usually need to add a meta tag to your website's `<head>`.
 
-### Steps:
+### Steps (Meta Tag Method):
 
 1.  Go to [Google Search Console](https://search.google.com/search-console).
 2.  Add your property (your website URL).
@@ -20,7 +20,17 @@ To prove you own `https://your-site.com`, you usually need to add a meta tag to 
 7.  **Re-deploy** your website.
 8.  Click **Verify** in Search Console.
 
----
+### Steps (HTML File Method):
+
+1.  Go to [Google Search Console](https://search.google.com/search-console).
+2.  Choose **HTML File** as the verification method.
+3.  Download the file (e.g., `google188a82e5af12d6fb.html`).
+4.  Place this file in the **`web/`** directory of your project.
+5.  **Re-deploy** your website.
+6.  Google will look for the file at `https://your-site.com/google188a82e5af12d6fb.html`.
+7.  Click **Verify** in Search Console.
+
+---https://nistudious.github.io/home/
 
 ## 2. Google Drive App Verification (OAuth)
 
