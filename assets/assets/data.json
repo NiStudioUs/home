@@ -1,0 +1,1070 @@
+{
+  "socialLinks": [],
+  "developer": {
+    "name": "Ni Studio Us",
+    "shortName": "Karthik",
+    "bio": "Mobile App Developer specialized in Flutter. Privacy-focused solutions.",
+    "role": "Flutter Developer",
+    "avatarUrl": "",
+    "email": "karthik@example.com",
+    "badge": {
+      "url": "assets/developers/karthik.png",
+      "caption": "Lead Developer"
+    }
+  },
+  "apps": [
+    {
+      "id": "scribble_notes",
+      "name": "Scribble Notes",
+      "shortDescription": "Secure, organized note-taking with scribble support.",
+      "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
+      "iconUrl": "assets/images/app1/icon.png",
+      "descriptionImages": [],
+      "features": [
+        {
+          "title": "Home / Notes List",
+          "subtitle": "Streamlined Dashboard",
+          "sections": [
+            {
+              "title": "Fast, clean list view",
+              "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-home-notes-list-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Powerful Search",
+          "subtitle": "Instant Access",
+          "sections": [
+            {
+              "title": "Find notes in seconds",
+              "content": "Instantly locate any note, checklist, or folder. The intelligent search bar filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-home-search-notes-dark.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Secure Access & Privacy",
+          "subtitle": "Total Control",
+          "sections": [
+            {
+              "title": "Quick & secure access",
+              "content": "Keep your private thoughts truly private. Set up a secure passcode to lock the app or protect specific sensitive notes. Your data stays local and secure, ensuring only you have access to your personal information.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-login.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Nested Folder Organization",
+          "subtitle": "Infinite Structure",
+          "sections": [
+            {
+              "title": "Organize your life without limits",
+              "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-2-folders.png",
+                "assets/images/app1/playstore_screen-2-folders-create-subfolder-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Customization & Theming",
+          "subtitle": "Personalized Experience",
+          "sections": [
+            {
+              "title": "Match your device colors",
+              "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
+                "assets/images/app1/playstore_screen-3-settings.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Block-Based Rich Text Editor",
+          "subtitle": "Flexible Formatting",
+          "sections": [
+            {
+              "title": "Structure and Flexibility",
+              "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-dark.png",
+                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Advanced Scribble Pad",
+          "subtitle": "Creative Canvas",
+          "sections": [
+            {
+              "title": "Frame-by-frame animation sketching",
+              "content": "A digital canvas for your creativity. More than just a drawing tool, it supports frame-by-frame animation sketching and \"playback\" to review your thought process. Create multi-page sketches, correct mistakes with non-destructive erasing, and bring your visual ideas to life.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-reorder-dark.png",
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-dark.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Trusted & Transparent Permissions",
+          "subtitle": "Privacy First",
+          "sections": [
+            {
+              "title": "Make the app yours",
+              "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-3-settings.png"
+              ]
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Built with Flutter",
+          "subtitle": "Modern Tech Stack",
+          "sections": [
+            {
+              "title": "Core Technology",
+              "content": "Scribble Notes is built using **Flutter**, Google's UI toolkit for building natively compiled applications. It ensures high performance and smooth (60fps) animations on Android.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Robust Architecture",
+          "subtitle": "Scalable & Maintainable",
+          "sections": [
+            {
+              "title": "Design Patterns",
+              "content": "The app follows **Clean Architecture** principles, with a clear separation of concerns. State management is handled by **Bloc** (Business Logic Component), ensuring predictable state changes and easy testing.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/app1/playstore_screen-1-home-notes-list-light.png",
+          "caption": "Home Screen"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-1-home-search-notes-dark.png",
+          "caption": "Search"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-1-login.png",
+          "caption": "Secure Login"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-2-folders.png",
+          "caption": "Folders"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
+          "caption": "Themes"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-4-edit-menu-format.png",
+          "caption": "Rich Editor"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-light.png",
+          "caption": "Scribble Pad"
+        }
+      ],
+      "links": [
+        {
+          "type": "Play Store",
+          "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the Policy",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of this Privacy Policy:\n*   **Account** means a unique account created for You to access our Service or parts of our Service.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Country** refers to: India\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Personal Data** is any information that relates to an identified or identifiable individual.\n*   **Service** refers to the Application.\n*   **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.\n*   **Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Collecting and Using Your Personal Data",
+            "subtitle": "Data Usage & Rights",
+            "sections": [
+              {
+                "title": "Types of Data Collected",
+                "content": "### Personal Data\nWhile using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:\n*   Email address\n*   First name and last name\n*   Usage Data\n*   Wifi State or Internet State\n*   Camera or Gallery Access\n\n### Usage Data\nUsage Data is collected automatically when using the Service.\n\nUsage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.\n\nWhen You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.\n\nWe may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Information Collected while Using the Application",
+                "content": "While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:\n*   Pictures and other information from your Device's camera and photo library\n\nWe use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.\n\nYou can enable or disable access to this information at any time, through Your Device settings.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Use of Your Personal Data",
+                "content": "The Company may use Personal Data for the following purposes:\n*   **To provide and maintain our Service**, including to monitor the usage of our Service.\n*   **To manage Your Account:** to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.\n*   **For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.\n*   **To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.\n*   **To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.\n*   **To manage Your requests:** To attend and manage Your requests to Us.\n*   **For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.\n*   **For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Sharing of Data",
+                "content": "We never share Your personal information to anyone at any situations:\n*   With Service Providers\n*   For business transfers\n*   With Affiliates\n*   With business partners\n*   With other users\n*   With Your consent",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Retention of Your Personal Data",
+                "content": "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.\n\nThe Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Transfer of Your Personal Data",
+                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Disclosure of Your Personal Data",
+                "content": "### Business Transactions\nIf the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.\n\n### Law enforcement\nUnder certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).\n\n### Other legal requirements\nThe Company may disclose Your Personal Data in the good faith belief that such action is necessary to:\n*   Comply with a legal obligation\n*   Protect and defend the rights or property of the Company\n*   Prevent or investigate possible wrongdoing in connection with the Service\n*   Protect the personal safety of Users of the Service or the public\n*   Protect against legal liability",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Security of Your Personal Data",
+                "content": "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Trusted & Transparent Permissions",
+            "subtitle": "Why We Need Access",
+            "sections": [
+              {
+                "title": "Overview",
+                "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+                "imageRenderer": "default",
+                "images": [
+                  "assets/images/app1/playstore_screen-3-settings.png"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Other Provisions",
+            "subtitle": "Additional Information",
+            "sections": [
+              {
+                "title": "Children's Privacy",
+                "content": "Our Service does not address anyone under the age of 10. We do not knowingly collect personally identifiable information from anyone under the age of 10. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 10 without verification of parental consent, We take steps to remove that information from Our servers.\n\nIf We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Links to Other Websites",
+                "content": "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.\n\nWe have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "You're in Control",
+                "content": "Any time you can revoke our app access from your account by visiting to your Google Drive settings page. From settings page navigate to Manage Apps from the left pane and scroll down to see Scribble Notes & Organizer app's entry. [Follow the steps to](../features/scribble_notes_manage_access.html) delete data or disconnect from Google Drive.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Privacy Policy Compliance",
+                "content": "We comply with:\n*   GDPR (mandatory since May 25, 2018)\n*   CCPA (mandatory since Jan 1, 2020)\n*   CalOPPA (mandatory since Jan 1, 2014)\n*   COPPA (mandatory for children using the app under 13)",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Changes to this Privacy Policy",
+                "content": "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.\n\nWe will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the \"Last updated\" date at the top of this Privacy Policy.\n\nYou are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Get in Touch",
+            "sections": [
+              {
+                "title": "Contact Information",
+                "content": "If you have any questions about this Privacy Policy, You can contact us:\n*   By email: **ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the Terms",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of these Terms and Conditions:\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Country** refers to: Tamil Nadu, India\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Service** refers to the Application.\n*   **Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.\n*   **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Legal Agreement",
+            "subtitle": "Terms of Use",
+            "sections": [
+              {
+                "title": "Acknowledgment",
+                "content": "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.\n\nYour access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.\n\nBy accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.\n\nYou represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.\n\nYour access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Links to Other Websites",
+                "content": "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.\n\nThe Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.\n\nWe strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Termination",
+                "content": "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.\n\nUpon termination, Your right to use the Service will cease immediately.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Disclaimers & Liability",
+            "subtitle": "Important Notices",
+            "sections": [
+              {
+                "title": "Limitation of Liability",
+                "content": "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.\n\nTo the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.\n\nSome states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "\"AS IS\" and \"AS AVAILABLE\" Disclaimer",
+                "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.\n\nWithout limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.\n\nSome jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "General Provisions",
+            "subtitle": "Legal Details",
+            "sections": [
+              {
+                "title": "Governing Law",
+                "content": "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Disputes Resolution",
+                "content": "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "For European Union (EU) Users",
+                "content": "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "United States Legal Compliance",
+                "content": "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Severability and Waiver",
+                "content": "### Severability\nIf any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.\n\n### Waiver\nExcept as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Translation Interpretation",
+                "content": "These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Changes to These Terms and Conditions",
+                "content": "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.\n\nBy continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Get in Touch",
+            "sections": [
+              {
+                "title": "Contact Information",
+                "content": "If you have any questions about these Terms and Conditions, You can contact us:\n*   By email: **ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sms_stack_manager",
+      "name": "SMS Stack Manager",
+      "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
+      "fullDescription": "SMS Stack Manager is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
+      "iconUrl": "assets/images/app2/icon.png",
+      "descriptionImages": [
+        {
+          "url": "assets/images/app2/playstore_screen-1-app-launch-1.png",
+          "caption": "App Launch"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-1-app-launch-3.png",
+          "caption": "App Launch"
+        }
+      ],
+      "features": [
+        {
+          "title": "SMS Parser Engine",
+          "subtitle": "The Brain Behind the App",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "The SMS Parser Engine is the core component that gives SMS Stack Manager its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "How It Works",
+              "content": "The engine uses a \"Waterfall\" approach to parsing:\n1.  **Normalization**: First, sender IDs are cleaned (e.g., `+91-HDFCBK` becomes `HDFCBK`).\n2.  **Global Matching**: It checks against universal patterns like OTPs (`\\d{4-8}`) or Account Numbers.\n3.  **Regional Rules**: It applies country-specific logic (currently optimized for `IN` - India) to interpret currency symbols (`₹`, `INR`), date formats, and transaction keywords (`credited`, `debited`).\n4.  **Extraction**: If a match is found, it extracts:\n    *   **Amount**: The transaction value.\n    *   **Type**: Credit (Income), Debit (Expense), or Bill.\n    *   **Entity**: The Bank or Merchant name (resolved via alias lists).",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "User Benefits",
+              "content": "*   **100% Privacy**: No data leaves your phone. Unlike other apps that upload SMS to a server, our regex engine runs locally.\n*   **Offline Capable**: Works perfectly without an internet connection.\n*   **Instant**: Parsing happens in milliseconds as soon as an SMS arrives.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse.png",
+                  "caption": "Parser Setup"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Finance Dashboard",
+          "subtitle": "Your Money, Visualized",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "The Finance Dashboard turns your chaotic SMS inbox into a clear financial summary. By aggregating transaction alerts from banks and wallets, it provides a real-time view of your liquidity and spending without needing to log into multiple banking apps.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Key Capabilities",
+              "content": "*   **Smart Balance**: Shows the latest \"Available Balance\" extracted from your most recent bank SMS.\n*   **Income vs Expense**: Monthly breakdown of how much came in vs how much went out.\n*   **Spend Analysis**: Visual charts showing daily spending trends.\n*   **Bill Tracking**: Identifies \"Payment Due\" messages and lists them separately so you never miss a deadline.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-3-finance-analytics.png",
+                  "caption": "Finance Analytics"
+                },
+                {
+                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse-anayse-finance.png",
+                  "caption": "Parsing Finance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Smart Inbox",
+          "subtitle": "Declutter Your Life",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "The Smart Inbox is your primary interface for viewing messages. Unlike a standard SMS app, it doesn't just list everything chronologically—it organizes them.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Features",
+              "content": "*   **Tabbed View**:\n    *   **Personal**: Conversations with people (non-commercial).\n    *   **Transactions**: Bank alerts, OTPs, and bills.\n    *   **Promos**: Marketing spam and offers.\n*   **Sender Mapping**:\n    *   Automatically converts cryptic IDs like `VM-HDFCBK` to \"HDFC Bank\".\n    *   Allows you to set your own Custom Names for senders.\n*   **Powerful Search**:\n    *   Search by text content (\"Amazon\").\n    *   Search by amount (\"5000\").\n    *   Search by time/date.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by.png",
+                  "caption": "Smart Inbox Search"
+                },
+                {
+                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by-date.png",
+                  "caption": "Smart Inbox Search by Date"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Upcoming Bills",
+          "subtitle": "Never Miss a Payment",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "Your inbox is full of \"Due Date\" reminders, but they get lost in the noise. SMS Stack Manager automatically detects these messages and separates them into a dedicated view, effectively turning your SMS inbox into a Bill Calendar.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "What it Does",
+              "content": "*   **Auto-Detection**: Scans messages for keywords like \"Due on\", \"Pay by\", and \"Bill amount\".\n*   **Calendar Sorting**: Organizes bills by their due date, showing the most urgent ones effectively.\n*   **Reminders**: Can optionally schedule a local notification 1-3 days before the due date (Beta).",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-4-upcoming.png",
+                  "caption": "Bill Reminders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Spam Control",
+          "subtitle": "Clean Up Your Inbox",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "SMS Stack Manager includes a proactive Spam Defense system designed to keep your Personal and Transaction tabs clean without deleting important messages.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Features",
+              "content": "*   **Spam Suggestions**: The app analyzes frequency and content models to identify likely spammers (e.g., \"AD-123456\"). It smartly excludes senders who also send OTPs or Finance alerts (like Banks) to prevent false positives.\n*   **Block List**: You can block specific senders. Their messages will be hidden from the main inbox and they won't trigger notifications.\n*   **Dismissal**: If the app suggests a sender incorrectly, you can \"Dismiss\" the suggestion, and it won't bother you again.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.png",
+                  "caption": "Spam Manager"
+                }
+              ]
+            },
+            {
+              "title": "Navigation",
+              "content": "1.  Go to **Settings** -> **Spam Manager**.\n2.  **Suggestions Tab**: Review potential spam. Tap \"Block\" to banish them or \"Dismiss\" to keep them.\n3.  **Blocked Tab**: See who you've blocked. You can unblock them anytime.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Sender Mapping",
+          "subtitle": "Humanize Your Updates",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "Sender IDs like `VM-SBIINB` or `BZ-AMZPAY` are cryptic and not user friendly. Sender Mapping allows you to convert these into readable names like \"SBI Bank\" or \"Amazon Pay\".",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "How it Works",
+              "content": "*   **Auto-Resolution**: The app comes with a built-in dictionary for hundreds of popular Indian banks and services (HDFC, ICICI, Fliplart, Zomato, etc.).\n*   **User Overrides**: You can define your own names. If you get messages from a local gym or school with a weird ID, you can rename it permanently.\n*   **Sync**: Your custom mappings are synced to your Cloud Backup, so you don't lose them when you switch phones.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.png",
+                  "caption": "Sender Mapping List"
+                },
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-dialog.png",
+                  "caption": "Updating Senders Mapping Dialog"
+                }
+              ]
+            },
+            {
+              "title": "How to Use",
+              "content": "1.  Go to **Settings** -> **Operations** -> **Sender Mapping**.\n2.  Tap **\"Add New\"** (+).\n3.  Select the Sender ID from the dropdown (grouped by prefix).\n4.  Enter the Display Name.\n5.  Save. All past and future messages will now show the new name.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Cloud Backup",
+          "subtitle": "Secure, Encrypted, Private.",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "Protect your financial history and organization rules by backing them up to your personal Google Drive.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Security First",
+              "content": "*   **End-to-End Encryption**: Your backup file is encrypted on your device using **AES-256-GCM** before it is uploaded.\n*   **Key Security**: The encryption key is derived from a password you set. We (the developers) never see your password or your data.\n*   **Private Storage**: The file is stored in a hidden \"App Data\" folder in your Google Drive. It is not visible to other apps or even to you directly, preventing accidental deletion.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.png",
+                  "caption": "Cloud Backup Settings"
+                }
+              ]
+            },
+            {
+              "title": "Features",
+              "content": "*   **What is Backed Up?**\n    *   Sms Stack categorization (Personal/Finance/Promo).\n    *   Sender Mappings (Your custom names).\n    *   App Settings & Preferences.\n*   **Frequency**: Set it to run Daily or Weekly in the background.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "How to Setup",
+              "content": "1.  Go to **Settings** -> **Data Control**.\n2.  Tap **\"Backup & Restore\"**.\n3.  Sign in with Google.\n4.  Set an Encryption Password.\n5.  Tap **\"Sync Now\"**.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Managing Your Data",
+              "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack Manager**.\n4.  Click **Options** -> **Delete hidden app data**.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Customization",
+          "subtitle": "Make it Yours",
+          "sections": [
+            {
+              "title": "Introduction",
+              "content": "Customize the look and feel of the app to match your preference.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Theme Engine",
+              "content": "*   **System Default**: Matches your Android system theme (Light/Dark).\n*   **Dark Mode**: A generic easeful dark theme for low-light usage (High Contrast).\n*   **Light Mode**: A clean, crisp interface for daytime usage.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings-theme.png",
+                  "caption": "Theme Settings"
+                }
+              ]
+            },
+            {
+              "title": "Operations",
+              "content": "Go to **Settings** -> **Operations** to manage data:\n*   **Storage Optimization**: Auto-delete old OTPs (Older than 24h, 3 days, etc.) to save space.\n*   **Full Resync**: If you feel the parser missed something, you can trigger a \"Factory Reset\" of the local database to re-read all SMS from scratch (without losing personal data).",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Beta Features",
+          "subtitle": "Experimental & Advanced",
+          "sections": [
+            {
+              "title": "Available Features",
+              "content": "1.  **Biometric Lock**: Secure the app with your Fingerprint or Face ID. Requires authentication every time you open the app.\n2.  **Smart Bill Reminders**: Receive a phone notification 2 days before a bill is due. (Requires 'Alarm' permission).\n3.  **Visual Analytics (Alpha)**: A deeper dive into your spending with Pie Charts and Bar Graphs (sender-wise breakdown).",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_screen-5-settings.png",
+                  "caption": "App Settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Permissions & Safety",
+          "subtitle": "Transparency First",
+          "sections": [
+            {
+              "title": "SMS & Contacts",
+              "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "System Integrations",
+              "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Network Usage",
+              "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Architecture & Design",
+          "subtitle": "Clean Architecture & BLoC",
+          "sections": [
+            {
+              "title": "High-Level Overview",
+              "content": "SMS Stack Manager follows **Clean Architecture** principles, separating the codebase into three main layers:\n\n1.  **Presentation Layer (`lib/features/`)**:\n    *   **UI**: Widgets/Screens.\n    *   **State Management**: `Bloc` (Business Logic Components).\n2.  **Domain/Service Layer (`lib/core/services/`)**:\n    *   **Services**: `SmsService`, `NotificationService`, `PermissionService`.\n    *   **Logic**: `SmsParserEngine` (Regex Logic).\n3.  **Data Layer (`lib/core/database/`)**:\n    *   **Database**: Drift (SQLite) with FTS5.\n    *   **DTOs**: `SmsMessage` (from system) -> `Message` (db entity).",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Core Patterns",
+              "content": "*   **BLoC Pattern**: Used for Predictable State Management. Uses `hydrated_bloc` to persist UI state.\n*   **Dependency Injection**: Uses `get_it` and `injectable` for managing singletons.\n*   **Repository Pattern**: `SmsService` abstracts the data source.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "SMS Rules Schema",
+          "subtitle": "JSON-based Parsing Logic",
+          "sections": [
+            {
+              "title": "Schema Structure",
+              "content": "The parsing logic is defined in `assets/rules/sms_rules.json`. It follows a hierarchical \"Waterfall\" structure:\n*   **Global Rules**: Universal patterns like OTPs or Account Numbers.\n*   **Regional Rules (IN)**: Country-specific logic for currency (`₹`), date formats, and keywords.\n*   **Extraction Strategy**: Priority order: Bill > Debit/Credit > Balance > OTP.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Backup Security",
+          "subtitle": "AES-256 Encryption",
+          "sections": [
+            {
+              "title": "Encryption Standards",
+              "content": "*   **Algorithm**: AES-256-GCM.\n*   **Key Derivation**: PBKDF2 with 10,000 iterations.\n*   **Salt**: Random 16-byte salt per file.",
+              "imageRenderer": "default",
+              "images": []
+            },
+            {
+              "title": "Process",
+              "content": "1. Serialize SQLite tables to JSON.\n2. GZIP Compress.\n3. Encrypt with User Password.\n4. Upload to Google Drive `appDataFolder` (Hidden).",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Spam Logic",
+          "subtitle": "Heuristic Filtering",
+          "sections": [
+            {
+              "title": "Algorithm",
+              "content": "Identifies spammers based on:\n1.  **Category**: Classified as `Promo/Spam`.\n2.  **No Critical History**: No Finance/Bill/OTP messages.\n3.  **Frequency**: High volume.\n4.  **Exclusion**: Not in Contacts.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Notification System",
+          "subtitle": "Kotlin Native Bridge",
+          "sections": [
+            {
+              "title": "Integration",
+              "content": "Uses a `BroadcastReceiver` (Kotlin) to intercept SMS, parse them, and post notifications using `MessagingStyle`. \n*   **Flutter Bridge**: Syncs read state and notifications via `MethodChannel`.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/app2/playstore_screen-2-app-setup-parse.png",
+          "caption": "Parser Setup"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-3-finance-analytics.png",
+          "caption": "Finance Dashboard"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-2-inbox-search-by.png",
+          "caption": "Smart Inbox"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-4-upcoming.png",
+          "caption": "Upcoming Bills"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.png",
+          "caption": "Spam Manager"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.png",
+          "caption": "Sender Mapping"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.png",
+          "caption": "Cloud Backup"
+        },
+        {
+          "url": "assets/images/app2/playstore_screen-5-settings-theme.png",
+          "caption": "Theme Settings"
+        }
+      ],
+      "links": [
+        {
+          "type": "Play Store",
+          "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2026-01-25T09:00:00Z",
+        "features": [
+          {
+            "title": "Data Safety & Permissions",
+            "subtitle": "Google Play Compliance",
+            "sections": [
+              {
+                "title": "SMS & Contacts",
+                "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "System Integrations",
+                "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Network Usage",
+                "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data Processing",
+            "subtitle": "Local-First Architecture",
+            "sections": [
+              {
+                "title": "Parsing (Regex Engine)",
+                "content": "When an SMS is received, it is processed by the on-device `SmsParserEngine`. This engine uses a set of Regular Expression rules to identify patterns (like \"INR 500 debited\"). This processing happens **entirely in your phone's secure memory**.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Storage (SQLite)",
+                "content": "All extracted data (Accounts, Transactions, Bills, Logs) is stored in a private `SQLite` database located in the app's secure sandbox. Other apps cannot access this data.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Cloud Services",
+            "subtitle": "Optional & User Controlled",
+            "sections": [
+              {
+                "title": "Google Drive Sync",
+                "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack Manager** -> **Options** -> **Delete hidden app data**.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Firebase Config",
+                "content": "We use Firebase Remote Config to push updates to the SMS parsing rules. This service may collect basic metadata (Instance ID, IP Address) for service delivery, but it **does not** access your SMS content.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Your Rights",
+            "subtitle": "GDPR & DPDP Act 2023",
+            "sections": [
+              {
+                "title": "User Control",
+                "content": "*   **Access**: You have full access to view all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data. You can delete cloud backups via your Google Drive settings.\n*   **Breach Notification**: In the unlikely event of a local data breach (e.g., OS compromise), we will notify you via app notification if technically feasible.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Children's Privacy",
+                "content": "Our service is not directed to anyone under the age of 18. We do not knowingly collect personal information from children. If you are a parent and become aware that your child has provided us with Personal Data, please contact us.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Changes to This Policy",
+                "content": "We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Grievance Redressal",
+            "sections": [
+              {
+                "title": "Grievance Officer",
+                "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studio Us\n*   **Email**: [ni.studio.us@outlook.com]\n*   **Address**: [Chennimalai, Erode, Tamil Nadu, India]",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2026-01-25T10:30:00Z",
+        "features": [
+          {
+            "title": "Usage Terms",
+            "subtitle": "License & Agreement",
+            "sections": [
+              {
+                "title": "Acceptance",
+                "content": "By downloading and using SMS Stack Manager, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "License",
+                "content": "We grant you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with these Terms for personal, non-commercial purposes.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Termination",
+                "content": "We reserve the right to terminate your license immediately without notice if you breach these terms (e.g., attempting to reverse engineer the app).",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Disclaimers",
+            "subtitle": "Critical Information",
+            "sections": [
+              {
+                "title": "Not Financial Advice",
+                "content": "**The app is an automated tool.** The financial insights, balance estimates, and bill status are derived from parsing text messages and may contain errors. **Do not rely on this app for tax reporting, legal proof of payment, or critical banking decisions.** Always verify with your official Bank statement.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "No Warranty",
+                "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Developers expressly disclaim all warranties, whether express, implied, or statutory.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Liability",
+            "subtitle": "Limitation of Damages",
+            "sections": [
+              {
+                "title": "Exclusion of Liability",
+                "content": "To the maximum extent permitted by applicable law, the developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, missed bill payments, late fees, or financial losses resulting from the use of this app.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "General",
+            "subtitle": "Legal Framework",
+            "sections": [
+              {
+                "title": "Changes to Terms",
+                "content": "We may modify these terms at any time. Continued use of the app constitutes acceptance of the updated terms.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Governing Law",
+                "content": "These Terms shall be governed by and defined following the laws of India. You agree that the courts of India shall have exclusive jurisdiction to resolve any dispute.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
