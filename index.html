@@ -34,8 +34,75 @@
 
   <title>nistudious_website</title>
   <link rel="manifest" href="manifest.json">
+  
+  <style>
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+    }
+    .static-footer a {
+      color: #1976d2;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(30, 30, 30, 0.95);
+        border-top: 1px solid #424242;
+      }
+      .static-footer a {
+        color: #64b5f6;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Static privacy policy links for crawlers -->
+  <div id="static-footer" class="static-footer">
+    <a href="#/app/sms_stack_manager/privacy">SMS Stack Manager Privacy Policy</a> | 
+    <a href="#/app/sms_stack_manager/terms">SMS Stack Manager Terms</a> | 
+    <a href="#/app/scribble_notes/privacy">Scribble Notes Privacy Policy</a> | 
+    <a href="#/app/scribble_notes/terms">Scribble Notes Terms</a>
+  </div>
+  
+  <script>
+    // Hide static footer when Flutter renders
+    function hideStaticFooter() {
+      var footer = document.getElementById('static-footer');
+      if (footer) {
+        footer.style.display = 'none';
+      }
+    }
+    
+    // Check for Flutter's canvas element
+    var checkInterval = setInterval(function() {
+      if (document.querySelector('flt-glass-pane') || 
+          document.querySelector('flutter-view') ||
+          document.querySelector('canvas')) {
+        hideStaticFooter();
+        clearInterval(checkInterval);
+      }
+    }, 100);
+    
+    // Fallback: hide after 3 seconds regardless
+    setTimeout(function() {
+      hideStaticFooter();
+      clearInterval(checkInterval);
+    }, 3000);
+  </script>
+  
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
