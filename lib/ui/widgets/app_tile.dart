@@ -24,7 +24,14 @@ class AppTile extends StatelessWidget {
               child: Container(
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: app.iconUrl.isNotEmpty
-                    ? buildImage(app.iconUrl, fit: BoxFit.cover)
+                    ? Image(
+                        image: getImageProvider(app.iconUrl),
+                        fit: BoxFit.cover,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.surfaceContainerHighest,
+                        colorBlendMode: BlendMode.softLight,
+                      )
                     : const Center(child: Icon(Icons.apps, size: 48)),
               ),
             ),

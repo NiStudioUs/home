@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../../services/current_app_service.dart';
@@ -306,16 +307,20 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     offset: const Offset(0, 15),
                   ),
                 ],
-                image: app.iconUrl.isNotEmpty
-                    ? DecorationImage(
+              ),
+              child: app.iconUrl.isNotEmpty
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(28),
+                      child: Image(
                         image: getImageProvider(app.iconUrl),
                         fit: BoxFit.cover,
-                      )
-                    : null,
-              ),
-              child: app.iconUrl.isEmpty
-                  ? const Icon(Icons.apps, size: 70)
-                  : null,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.surfaceContainerHighest,
+                        colorBlendMode: BlendMode.softLight,
+                      ),
+                    )
+                  : const Icon(Icons.apps, size: 70),
             ),
             Text(
               app.name,
@@ -341,16 +346,24 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
               runSpacing: 16,
               alignment: WrapAlignment.center,
               children: app.links.map((link) {
+                final isPlayStore = link.type.toLowerCase() == 'play store';
+                final icon = isPlayStore
+                    ? const FaIcon(FontAwesomeIcons.googlePlay)
+                    : const Icon(Icons.download);
+                final label = isPlayStore ? 'Get on Google Play' : link.type;
+
                 return FilledButton.icon(
                   onPressed: () => _launchUrl(link.url),
-                  icon: const Icon(Icons.download),
-                  label: Text(link.type),
+                  icon: icon,
+                  label: Text(label),
                   style: FilledButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 32,
                       vertical: 20,
                     ),
                     textStyle: const TextStyle(fontSize: 18),
+                    backgroundColor: isPlayStore ? Colors.black : null,
+                    foregroundColor: isPlayStore ? Colors.white : null,
                   ),
                 );
               }).toList(),

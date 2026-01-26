@@ -62,22 +62,40 @@ To generate a new app entry, copy and paste the following prompt into an AI chat
 >
 > Please generate a JSON object matching the following schema. ensuring `features`, `technicalDetails`, `privacyPolicy`, and `termsAndConditions` follow the structured format (with sections).
 > *   All text fields support **Markdown** formatting.
-> *   You can specify `"imageRenderer": "list"`, `"grid"`, or `"default"` (carousel) for each section.
+> *   You can specify `"imageRenderer": "list"` (vertical stack), `"grid"` (2-column grid), or `"default"` (same as list) for each section.
 >
 > **Schema Reference**:
 > ```json
 > {
 >   "id": "app_slug",
 >   "name": "Name",
->   "shortDescription": "...",
->   "fullDescription": "...",
->   "iconUrl": "...",
+>   "shortDescription": "REQUIRED: One-line summary",
+>   "fullDescription": "REQUIRED: Detailed description",
+>   "iconUrl": "assets/images/app_slug/icon.png",
 >   "descriptionImages": [],
->   "features": [ { "title": "...", "subtitle": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "2024-01-01", "sections": [ { "title": "...", "content": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "imageRenderer": "default", "images": [] } ] } ],
-  "technicalDetails": [ { "title": "...", "subtitle": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "sections": [ { "title": "...", "content": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "imageRenderer": "default", "images": [] } ] } ],
->   "screenshots": [],
->   "links": [],
-  "privacyPolicy": { "url": "...", "features": [] },
-  "termsAndConditions": { "url": "...", "features": [] }
+>   "features": [ 
+>     { 
+>       "title": "Feature Title", 
+>       "subtitle": "Subtitle", 
+>       "sections": [ 
+>         { 
+>           "title": "Section Title", 
+>           "content": "Section Content", 
+>           "imageRenderer": "default", 
+>           "images": [] 
+>         } 
+>       ] 
+>     } 
+>   ],
+>   "technicalDetails": [],
+>   "screenshots": [ { "url": "...", "caption": "..." } ],
+>   "links": [ { "type": "Website", "url": "..." } ],
+>   "privacyPolicy": { "url": "", "features": [] },
+>   "termsAndConditions": { "url": "", "features": [] }
 > }
 > ```
+
+## Documentation
+
+*   [**Google Verifications**](docs/google_verification.md): Guide for verifying Site Ownership (Search Console) and App Access (Google Drive OAuth).
+*   [**Hosting on GitHub**](docs/github_hosting.md): Instructions for deploying this Flutter Web app to GitHub Pages.

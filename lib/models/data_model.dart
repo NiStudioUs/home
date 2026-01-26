@@ -1,12 +1,22 @@
 class DataModel {
   final Developer developer;
   final List<AppModel> apps;
+  final List<SocialLink> socialLinks;
 
-  DataModel({required this.developer, required this.apps});
+  DataModel({
+    required this.developer,
+    required this.apps,
+    required this.socialLinks,
+  });
 
   factory DataModel.fromJson(Map<String, dynamic> json) {
     return DataModel(
       developer: Developer.fromJson(json['developer']),
+      socialLinks:
+          (json['socialLinks'] as List<dynamic>?)
+              ?.map((e) => SocialLink.fromJson(e))
+              .toList() ??
+          [],
       apps: (json['apps'] as List).map((e) => AppModel.fromJson(e)).toList(),
     );
   }
@@ -14,31 +24,34 @@ class DataModel {
 
 class Developer {
   final String name;
+  final String shortName;
   final String bio;
   final String role;
   final String avatarUrl;
   final String email;
-  final List<SocialLink> socialLinks;
+  final FeatureImage badge;
 
   Developer({
     required this.name,
+    required this.shortName,
     required this.bio,
     required this.role,
     required this.avatarUrl,
     required this.email,
-    required this.socialLinks,
+    required this.badge,
   });
 
   factory Developer.fromJson(Map<String, dynamic> json) {
     return Developer(
       name: json['name'] as String,
+      shortName: json['shortName'] as String? ?? '',
       bio: json['bio'] as String,
       role: json['role'] as String,
       avatarUrl: json['avatarUrl'] as String,
       email: json['email'] as String,
-      socialLinks: (json['socialLinks'] as List)
-          .map((e) => SocialLink.fromJson(e))
-          .toList(),
+      badge: json['badge'] != null
+          ? FeatureImage.fromJson(json['badge'])
+          : FeatureImage(url: '', caption: ''),
     );
   }
 }

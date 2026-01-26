@@ -1,24 +1,474 @@
 {
+  "socialLinks": [],
   "developer": {
-    "name": "Karthik Subramanian",
+    "name": "Ni Studio Us",
+    "shortName": "Karthik",
     "bio": "Mobile App Developer specialized in Flutter. Privacy-focused solutions.",
     "role": "Flutter Developer",
     "avatarUrl": "",
     "email": "karthik@example.com",
-    "socialLinks": [
-      {
-        "platform": "GitHub",
-        "url": "https://github.com/karthiksubramanian",
-        "icon": "github"
-      },
-      {
-        "platform": "LinkedIn",
-        "url": "https://linkedin.com",
-        "icon": "linkedin"
-      }
-    ]
+    "badge": {
+      "url": "assets/developers/karthik.png",
+      "caption": "Lead Developer"
+    }
   },
   "apps": [
+    {
+      "id": "scribble_notes",
+      "name": "Scribble Notes",
+      "shortDescription": "Secure, organized note-taking with scribble support.",
+      "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
+      "iconUrl": "assets/images/app1/icon.png",
+      "descriptionImages": [],
+      "features": [
+        {
+          "title": "Home / Notes List",
+          "subtitle": "Streamlined Dashboard",
+          "sections": [
+            {
+              "title": "Fast, clean list view",
+              "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-home-notes-list-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Powerful Search",
+          "subtitle": "Instant Access",
+          "sections": [
+            {
+              "title": "Find notes in seconds",
+              "content": "Instantly locate any note, checklist, or folder. The intelligent search bar filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-home-search-notes-dark.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Secure Access & Privacy",
+          "subtitle": "Total Control",
+          "sections": [
+            {
+              "title": "Quick & secure access",
+              "content": "Keep your private thoughts truly private. Set up a secure passcode to lock the app or protect specific sensitive notes. Your data stays local and secure, ensuring only you have access to your personal information.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-1-login.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Nested Folder Organization",
+          "subtitle": "Infinite Structure",
+          "sections": [
+            {
+              "title": "Organize your life without limits",
+              "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-2-folders.png",
+                "assets/images/app1/playstore_screen-2-folders-create-subfolder-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Customization & Theming",
+          "subtitle": "Personalized Experience",
+          "sections": [
+            {
+              "title": "Match your device colors",
+              "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
+                "assets/images/app1/playstore_screen-3-settings.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Block-Based Rich Text Editor",
+          "subtitle": "Flexible Formatting",
+          "sections": [
+            {
+              "title": "Structure and Flexibility",
+              "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-dark.png",
+                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-light.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Advanced Scribble Pad",
+          "subtitle": "Creative Canvas",
+          "sections": [
+            {
+              "title": "Frame-by-frame animation sketching",
+              "content": "A digital canvas for your creativity. More than just a drawing tool, it supports frame-by-frame animation sketching and \"playback\" to review your thought process. Create multi-page sketches, correct mistakes with non-destructive erasing, and bring your visual ideas to life.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-reorder-dark.png",
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-dark.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Trusted & Transparent Permissions",
+          "subtitle": "Privacy First",
+          "sections": [
+            {
+              "title": "Make the app yours",
+              "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-3-settings.png"
+              ]
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Built with Flutter",
+          "subtitle": "Modern Tech Stack",
+          "sections": [
+            {
+              "title": "Core Technology",
+              "content": "Scribble Notes is built using **Flutter**, Google's UI toolkit for building natively compiled applications. It ensures high performance and smooth (60fps) animations on Android.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Robust Architecture",
+          "subtitle": "Scalable & Maintainable",
+          "sections": [
+            {
+              "title": "Design Patterns",
+              "content": "The app follows **Clean Architecture** principles, with a clear separation of concerns. State management is handled by **Bloc** (Business Logic Component), ensuring predictable state changes and easy testing.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/app1/playstore_screen-1-home-notes-list-light.png",
+          "caption": "Home Screen"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-1-home-search-notes-dark.png",
+          "caption": "Search"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-1-login.png",
+          "caption": "Secure Login"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-2-folders.png",
+          "caption": "Folders"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
+          "caption": "Themes"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-4-edit-menu-format.png",
+          "caption": "Rich Editor"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-light.png",
+          "caption": "Scribble Pad"
+        }
+      ],
+      "links": [
+        {
+          "type": "Play Store",
+          "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the Policy",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of this Privacy Policy:\n*   **Account** means a unique account created for You to access our Service or parts of our Service.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Country** refers to: India\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Personal Data** is any information that relates to an identified or identifiable individual.\n*   **Service** refers to the Application.\n*   **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.\n*   **Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Collecting and Using Your Personal Data",
+            "subtitle": "Data Usage & Rights",
+            "sections": [
+              {
+                "title": "Types of Data Collected",
+                "content": "### Personal Data\nWhile using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:\n*   Email address\n*   First name and last name\n*   Usage Data\n*   Wifi State or Internet State\n*   Camera or Gallery Access\n\n### Usage Data\nUsage Data is collected automatically when using the Service.\n\nUsage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.\n\nWhen You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.\n\nWe may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Information Collected while Using the Application",
+                "content": "While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:\n*   Pictures and other information from your Device's camera and photo library\n\nWe use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.\n\nYou can enable or disable access to this information at any time, through Your Device settings.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Use of Your Personal Data",
+                "content": "The Company may use Personal Data for the following purposes:\n*   **To provide and maintain our Service**, including to monitor the usage of our Service.\n*   **To manage Your Account:** to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.\n*   **For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.\n*   **To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.\n*   **To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.\n*   **To manage Your requests:** To attend and manage Your requests to Us.\n*   **For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.\n*   **For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Sharing of Data",
+                "content": "We never share Your personal information to anyone at any situations:\n*   With Service Providers\n*   For business transfers\n*   With Affiliates\n*   With business partners\n*   With other users\n*   With Your consent",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Retention of Your Personal Data",
+                "content": "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.\n\nThe Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Transfer of Your Personal Data",
+                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Disclosure of Your Personal Data",
+                "content": "### Business Transactions\nIf the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.\n\n### Law enforcement\nUnder certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).\n\n### Other legal requirements\nThe Company may disclose Your Personal Data in the good faith belief that such action is necessary to:\n*   Comply with a legal obligation\n*   Protect and defend the rights or property of the Company\n*   Prevent or investigate possible wrongdoing in connection with the Service\n*   Protect the personal safety of Users of the Service or the public\n*   Protect against legal liability",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Security of Your Personal Data",
+                "content": "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Trusted & Transparent Permissions",
+            "subtitle": "Why We Need Access",
+            "sections": [
+              {
+                "title": "Overview",
+                "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+                "imageRenderer": "default",
+                "images": [
+                  "assets/images/app1/playstore_screen-3-settings.png"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Other Provisions",
+            "subtitle": "Additional Information",
+            "sections": [
+              {
+                "title": "Children's Privacy",
+                "content": "Our Service does not address anyone under the age of 10. We do not knowingly collect personally identifiable information from anyone under the age of 10. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 10 without verification of parental consent, We take steps to remove that information from Our servers.\n\nIf We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Links to Other Websites",
+                "content": "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.\n\nWe have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "You're in Control",
+                "content": "Any time you can revoke our app access from your account by visiting to your Google Drive settings page. From settings page navigate to Manage Apps from the left pane and scroll down to see Scribble Notes & Organizer app's entry. [Follow the steps to](../features/scribble_notes_manage_access.html) delete data or disconnect from Google Drive.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Privacy Policy Compliance",
+                "content": "We comply with:\n*   GDPR (mandatory since May 25, 2018)\n*   CCPA (mandatory since Jan 1, 2020)\n*   CalOPPA (mandatory since Jan 1, 2014)\n*   COPPA (mandatory for children using the app under 13)",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Changes to this Privacy Policy",
+                "content": "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.\n\nWe will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the \"Last updated\" date at the top of this Privacy Policy.\n\nYou are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Get in Touch",
+            "sections": [
+              {
+                "title": "Contact Information",
+                "content": "If you have any questions about this Privacy Policy, You can contact us:\n*   By email: **ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the Terms",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of these Terms and Conditions:\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Country** refers to: Tamil Nadu, India\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Service** refers to the Application.\n*   **Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.\n*   **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Legal Agreement",
+            "subtitle": "Terms of Use",
+            "sections": [
+              {
+                "title": "Acknowledgment",
+                "content": "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.\n\nYour access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.\n\nBy accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.\n\nYou represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.\n\nYour access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Links to Other Websites",
+                "content": "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.\n\nThe Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.\n\nWe strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Termination",
+                "content": "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.\n\nUpon termination, Your right to use the Service will cease immediately.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Disclaimers & Liability",
+            "subtitle": "Important Notices",
+            "sections": [
+              {
+                "title": "Limitation of Liability",
+                "content": "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.\n\nTo the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.\n\nSome states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "\"AS IS\" and \"AS AVAILABLE\" Disclaimer",
+                "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.\n\nWithout limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.\n\nSome jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "General Provisions",
+            "subtitle": "Legal Details",
+            "sections": [
+              {
+                "title": "Governing Law",
+                "content": "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Disputes Resolution",
+                "content": "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "For European Union (EU) Users",
+                "content": "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "United States Legal Compliance",
+                "content": "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Severability and Waiver",
+                "content": "### Severability\nIf any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.\n\n### Waiver\nExcept as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Translation Interpretation",
+                "content": "These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Changes to These Terms and Conditions",
+                "content": "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.\n\nBy continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Get in Touch",
+            "sections": [
+              {
+                "title": "Contact Information",
+                "content": "If you have any questions about these Terms and Conditions, You can contact us:\n*   By email: **ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "id": "sms_stack_manager",
       "name": "SMS Stack Manager",
@@ -431,8 +881,8 @@
       ],
       "links": [
         {
-          "title": "Website",
-          "url": "https://karthiksubramanian.github.io/sms_stack_manager"
+          "type": "Play Store",
+          "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
         }
       ],
       "privacyPolicy": {

@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: developer.socialLinks.map((link) {
+                  children: dataModel.socialLinks.map((link) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: IconButton(
