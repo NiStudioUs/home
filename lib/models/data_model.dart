@@ -116,15 +116,17 @@ class AppModel {
 
 class AppPolicy {
   final String url;
-  final List<FeatureSection> sections;
+  final String? lastUpdatedUtc;
+  final List<AppFeature> features;
 
-  AppPolicy({required this.url, required this.sections});
+  AppPolicy({required this.url, required this.features, this.lastUpdatedUtc});
 
   factory AppPolicy.fromJson(Map<String, dynamic> json) {
     return AppPolicy(
       url: json['url'] as String? ?? '',
-      sections: (json['sections'] as List? ?? [])
-          .map((e) => FeatureSection.fromJson(e))
+      lastUpdatedUtc: json['lastUpdatedUtc'] as String?,
+      features: (json['features'] as List? ?? [])
+          .map((e) => AppFeature.fromJson(e))
           .toList(),
     );
   }
@@ -133,18 +135,27 @@ class AppPolicy {
 class AppFeature {
   final String title;
   final String subtitle;
+  final String? websiteUrl;
+  final bool? hide;
+  final String? lastUpdatedUtc;
   final List<FeatureSection> sections;
 
   AppFeature({
     required this.title,
     required this.subtitle,
     required this.sections,
+    this.websiteUrl,
+    this.hide,
+    this.lastUpdatedUtc,
   });
 
   factory AppFeature.fromJson(Map<String, dynamic> json) {
     return AppFeature(
       title: json['title'] as String,
       subtitle: json['subtitle'] ?? '',
+      websiteUrl: json['websiteUrl'] as String?,
+      hide: json['hide'] as bool?,
+      lastUpdatedUtc: json['last_updated_utc'] as String?,
       sections: (json['sections'] as List)
           .map((e) => FeatureSection.fromJson(e))
           .toList(),
@@ -155,6 +166,9 @@ class AppFeature {
 class FeatureSection {
   final String title;
   final String content;
+  final String? websiteUrl;
+  final bool? hide;
+  final String? lastUpdatedUtc;
   final List<FeatureImage> images;
   final String imageRenderer; // 'default', 'carousel', 'list', 'grid'
 
@@ -162,6 +176,9 @@ class FeatureSection {
     required this.title,
     required this.content,
     required this.images,
+    this.websiteUrl,
+    this.hide,
+    this.lastUpdatedUtc,
     this.imageRenderer = 'default',
   });
 
@@ -169,6 +186,9 @@ class FeatureSection {
     return FeatureSection(
       title: json['title'] as String,
       content: json['content'] as String,
+      websiteUrl: json['websiteUrl'] as String?,
+      hide: json['hide'] as bool?,
+      lastUpdatedUtc: json['last_updated_utc'] as String?,
       images: (json['images'] as List? ?? [])
           .map((e) => FeatureImage.fromJson(e))
           .toList(),

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'router.dart';
 import 'services/theme_service.dart';
 import 'services/data_service.dart';
+import 'services/current_app_service.dart';
 import 'models/data_model.dart';
 
 void main() async {
@@ -17,6 +18,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeService()),
+        ChangeNotifierProvider(create: (_) => CurrentAppService()),
         Provider<DataModel>.value(value: data),
       ],
       child: const MyApp(),

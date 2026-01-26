@@ -6,8 +6,23 @@ import '../../models/data_model.dart';
 import '../widgets/app_tile.dart';
 import '../widgets/image_helper.dart';
 
-class HomePage extends StatelessWidget {
+import '../../services/current_app_service.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<CurrentAppService>(context, listen: false).clearApp();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

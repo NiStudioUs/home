@@ -215,6 +215,12 @@
           "content": "1.  Go to **Settings** -> **Data Control**.\n2.  Tap **\"Backup & Restore\"**.\n3.  Sign in with Google.\n4.  Set an Encryption Password.\n5.  Tap **\"Sync Now\"**.",
           "imageRenderer": "default",
           "images": []
+        },
+        {
+          "title": "Managing Your Data",
+          "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack Manager**.\n4.  Click **Options** -> **Delete hidden app data**.",
+          "imageRenderer": "default",
+          "images": []
         }
       ]
     },
@@ -263,10 +269,35 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Permissions & Safety",
+      "subtitle": "Transparency First",
+      "sections": [
+        {
+          "title": "SMS & Contacts",
+          "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+          "imageRenderer": "default",
+          "images": []
+        },
+        {
+          "title": "System Integrations",
+          "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+          "imageRenderer": "default",
+          "images": []
+        },
+        {
+          "title": "Network Usage",
+          "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+          "imageRenderer": "default",
+          "images": []
+        }
+      ]
     }
   ],
   "technicalDetails": [
     {
+      "hide": true,
       "title": "Architecture & Design",
       "subtitle": "Clean Architecture & BLoC",
       "sections": [
@@ -285,6 +316,7 @@
       ]
     },
     {
+      "hide": true,
       "title": "SMS Rules Schema",
       "subtitle": "JSON-based Parsing Logic",
       "sections": [
@@ -297,6 +329,7 @@
       ]
     },
     {
+      "hide": true,
       "title": "Backup Security",
       "subtitle": "AES-256 Encryption",
       "sections": [
@@ -315,6 +348,7 @@
       ]
     },
     {
+      "hide": true,
       "title": "Spam Logic",
       "subtitle": "Heuristic Filtering",
       "sections": [
@@ -327,6 +361,7 @@
       ]
     },
     {
+      "hide": true,
       "title": "Notification System",
       "subtitle": "Kotlin Native Bridge",
       "sections": [
@@ -380,20 +415,182 @@
     }
   ],
   "privacyPolicy": {
-    "url": "#",
-    "sections": [
+    "url": "",
+    "lastUpdatedUtc": "2026-01-25T09:00:00Z",
+    "features": [
       {
-        "title": "Privacy by Design",
-        "content": "The architecture ensures NO data is ever transmitted.\n*   **Network Access**: The app does **not** request `internet` permissions (except for Cloud Backup). \n*   **Local Processing**: All parsing happens in the `SmsService` on the device's main isolate or a background isolate.\n*   **Zero Knowledge**: We do not collect, store, or sell your financial data. Everything lives in your phone's SQLite database."
+        "title": "Data Safety & Permissions",
+        "subtitle": "Google Play Compliance",
+        "sections": [
+          {
+            "title": "SMS & Contacts",
+            "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "System Integrations",
+            "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Network Usage",
+            "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Data Processing",
+        "subtitle": "Local-First Architecture",
+        "sections": [
+          {
+            "title": "Parsing (Regex Engine)",
+            "content": "When an SMS is received, it is processed by the on-device `SmsParserEngine`. This engine uses a set of Regular Expression rules to identify patterns (like \"INR 500 debited\"). This processing happens **entirely in your phone's secure memory**.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Storage (SQLite)",
+            "content": "All extracted data (Accounts, Transactions, Bills, Logs) is stored in a private `SQLite` database located in the app's secure sandbox. Other apps cannot access this data.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Cloud Services",
+        "subtitle": "Optional & User Controlled",
+        "sections": [
+          {
+            "title": "Google Drive Sync",
+            "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack Manager** -> **Options** -> **Delete hidden app data**.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Firebase Config",
+            "content": "We use Firebase Remote Config to push updates to the SMS parsing rules. This service may collect basic metadata (Instance ID, IP Address) for service delivery, but it **does not** access your SMS content.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Your Rights",
+        "subtitle": "GDPR & DPDP Act 2023",
+        "sections": [
+          {
+            "title": "User Control",
+            "content": "*   **Access**: You have full access to view all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data. You can delete cloud backups via your Google Drive settings.\n*   **Breach Notification**: In the unlikely event of a local data breach (e.g., OS compromise), we will notify you via app notification if technically feasible.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Children's Privacy",
+            "content": "Our service is not directed to anyone under the age of 18. We do not knowingly collect personal information from children. If you are a parent and become aware that your child has provided us with Personal Data, please contact us.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Changes to This Policy",
+            "content": "We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Contact Us",
+        "subtitle": "Grievance Redressal",
+        "sections": [
+          {
+            "title": "Grievance Officer",
+            "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studio Us\n*   **Email**: [ni.studio.us@outlook.com]\n*   **Address**: [Chennimalai, Erode, Tamil Nadu, India]",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
       }
     ]
   },
   "termsAndConditions": {
-    "url": "#",
-    "sections": [
+    "url": "",
+    "lastUpdatedUtc": "2026-01-25T10:30:00Z",
+    "features": [
       {
-        "title": "Disclaimer",
-        "content": "This application is provided \"as is\", without warranty of any kind. Use it at your own risk. The developers are not responsible for any financial losses or missed bill payments resulting from reliance on this app."
+        "title": "Usage Terms",
+        "subtitle": "License & Agreement",
+        "sections": [
+          {
+            "title": "Acceptance",
+            "content": "By downloading and using SMS Stack Manager, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "License",
+            "content": "We grant you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with these Terms for personal, non-commercial purposes.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Termination",
+            "content": "We reserve the right to terminate your license immediately without notice if you breach these terms (e.g., attempting to reverse engineer the app).",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Disclaimers",
+        "subtitle": "Critical Information",
+        "sections": [
+          {
+            "title": "Not Financial Advice",
+            "content": "**The app is an automated tool.** The financial insights, balance estimates, and bill status are derived from parsing text messages and may contain errors. **Do not rely on this app for tax reporting, legal proof of payment, or critical banking decisions.** Always verify with your official Bank statement.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "No Warranty",
+            "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Developers expressly disclaim all warranties, whether express, implied, or statutory.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "Liability",
+        "subtitle": "Limitation of Damages",
+        "sections": [
+          {
+            "title": "Exclusion of Liability",
+            "content": "To the maximum extent permitted by applicable law, the developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, missed bill payments, late fees, or financial losses resulting from the use of this app.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
+      },
+      {
+        "title": "General",
+        "subtitle": "Legal Framework",
+        "sections": [
+          {
+            "title": "Changes to Terms",
+            "content": "We may modify these terms at any time. Continued use of the app constitutes acceptance of the updated terms.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Governing Law",
+            "content": "These Terms shall be governed by and defined following the laws of India. You agree that the courts of India shall have exclusive jurisdiction to resolve any dispute.",
+            "imageRenderer": "default",
+            "images": []
+          }
+        ]
       }
     ]
   }

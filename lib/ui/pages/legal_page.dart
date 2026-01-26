@@ -1,22 +1,33 @@
 import 'dart:async';
+import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../../services/current_app_service.dart';
+import '../../utils/date_formatter.dart'; // Import DateFormatter
 import '../widgets/image_helper.dart';
 
-class AppDetailsPage extends StatefulWidget {
-  final String appId;
-  const AppDetailsPage({super.key, required this.appId});
+class LegalPage extends StatefulWidget {
+  final AppModel app;
+  final PageType pageType;
+  final String title;
+  final List<AppFeature> features;
+
+  const LegalPage({
+    super.key,
+    required this.app,
+    required this.pageType,
+    required this.title,
+    required this.features,
+  });
 
   @override
-  State<AppDetailsPage> createState() => _AppDetailsPageState();
+  State<LegalPage> createState() => _LegalPageState();
 }
 
-class _AppDetailsPageState extends State<AppDetailsPage> {
+class _LegalPageState extends State<LegalPage> {
   final PageController _pageController = PageController();
   bool _isAnimating = false;
   DateTime _lastScrollTime = DateTime.now();
@@ -27,7 +38,11 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _updateCurrentApp();
+      Provider.of<CurrentAppService>(
+        context,
+        listen: false,
+      ).setApp(widget.app, type: widget.pageType);
+
       _navSubscription = Provider.of<CurrentAppService>(context, listen: false)
           .navigationEvents
           .listen((featureTitle) {
@@ -41,39 +56,6 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
   }
 
   @override
-  void didUpdateWidget(AppDetailsPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.appId != oldWidget.appId) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _updateCurrentApp();
-      });
-    }
-  }
-
-  void _updateCurrentApp() {
-    final dataModel = Provider.of<DataModel>(context, listen: false);
-    final app = dataModel.apps.firstWhere(
-      (element) => element.id == widget.appId,
-      orElse: () => AppModel(
-        id: 'error',
-        name: 'App Not Found',
-        shortDescription: '',
-        fullDescription: '',
-        iconUrl: '',
-        features: [],
-        technicalDetails: [],
-        screenshots: [],
-        links: [],
-        privacyPolicy: AppPolicy(url: '', features: []),
-        termsAndConditions: AppPolicy(url: '', features: []),
-      ),
-    );
-    if (app.id != 'error') {
-      Provider.of<CurrentAppService>(context, listen: false).setApp(app);
-    }
-  }
-
-  @override
   void dispose() {
     _navSubscription?.cancel();
     _pageController.dispose();
@@ -82,16 +64,12 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
 
   void _handleScroll(PointerSignalEvent event) {
     if (event is PointerScrollEvent) {
-      if (_isAnimating) return; // Ignore if already animating
-
-      // Debounce: prevent rapid fires if the animation flag somehow missed or for extra safety
+      if (_isAnimating) return;
       if (DateTime.now().difference(_lastScrollTime).inMilliseconds < 500) {
         return;
       }
 
       final double delta = event.scrollDelta.dy;
-
-      // Threshold to ignore tiny accidental scrolls (e.g. trackpads)
       if (delta.abs() < 20) return;
 
       int nextPage = _pageController.page!.round();
@@ -106,12 +84,6 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
   }
 
   Future<void> _scrollToPage(int page) async {
-    // Basic bounds check, though animateToPage handles it partially, better to be safe
-    // We assume we can't know the max pages easily without tracking it,
-    // but animateToPage won't crash if out of bounds, just won't go there.
-    // However, knowing the max page is useful.
-    // We will just try to animate.
-
     setState(() {
       _isAnimating = true;
       _lastScrollTime = DateTime.now();
@@ -124,7 +96,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
         curve: Curves.easeInOutCubic,
       );
     } catch (e) {
-      // Ignore errors (e.g. out of bounds)
+      // Ignore
     } finally {
       if (mounted) {
         setState(() {
@@ -136,52 +108,15 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    _featureMap.clear(); // Reset map
-    final dataModel = Provider.of<DataModel>(context);
-    final app = dataModel.apps.firstWhere(
-      (element) => element.id == widget.appId,
-      orElse: () => AppModel(
-        id: 'error',
-        name: 'App Not Found',
-        shortDescription: '',
-        fullDescription: '',
-        iconUrl: '',
-        features: [],
-        technicalDetails: [],
-        screenshots: [],
-        links: [],
-        privacyPolicy: AppPolicy(url: '', features: []),
-        termsAndConditions: AppPolicy(url: '', features: []),
-        descriptionImages: [],
-      ),
-    );
-
-    if (app.id == 'error') {
-      return const Scaffold(body: Center(child: Text('App Not Found')));
-    }
-
+    _featureMap.clear();
     // 1. Flatten Data into Pages
     final List<Widget> pages = [];
 
     // -- Header Page --
-    pages.add(_buildHeaderPage(context, app));
+    pages.add(_buildHeaderPage(context));
 
-    // -- About Page (Full Description) --
-    // We treat this as a Section Page so it can handle images (descriptionImages) and layout consistently
-    pages.add(
-      _buildSectionPage(
-        context,
-        FeatureSection(
-          title: 'About',
-          content: app.fullDescription,
-          images: app.descriptionImages,
-          imageRenderer: 'default', // or whatever default you prefer
-        ),
-      ),
-    );
-
-    // -- Features --
-    for (var feature in app.features) {
+    // -- Policy Chapters (Features) --
+    for (var feature in widget.features) {
       if (feature.hide == true) continue; // Skip hidden features
 
       // Record start of feature
@@ -189,55 +124,44 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
         _featureMap[feature.title] = pages.length;
       }
 
-      if (feature.subtitle.isNotEmpty) {
-        pages.add(
-          _buildContentPage(
-            context,
-            feature.title,
-            feature.subtitle,
-            websiteUrl: feature.websiteUrl,
-          ),
-        );
-      }
-
-      for (var section in feature.sections) {
-        if (section.hide == true) continue; // Skip hidden sections
-        pages.add(_buildSectionPage(context, section));
-      }
-    }
-
-    // -- Technical Details --
-    if (app.technicalDetails.isNotEmpty) {
+      // Create a divider page for the Chapter Title
       pages.add(
         _buildContentPage(
           context,
-          'Technical Details',
-          'A deep dive into the technology powering this app.',
+          feature.title,
+          feature.subtitle,
+          websiteUrl: feature.websiteUrl,
+          lastUpdatedUtc: feature.lastUpdatedUtc,
         ),
       );
-      for (var feature in app.technicalDetails) {
-        if (feature.hide == true) continue;
-        if (feature.subtitle.isNotEmpty) {
-          pages.add(
-            _buildContentPage(context, feature.title, feature.subtitle),
-          );
-        }
-        for (var section in feature.sections) {
-          if (section.hide == true) continue;
-          pages.add(_buildSectionPage(context, section));
-        }
+
+      for (var section in feature.sections) {
+        if (section.hide == true) continue; // Skip hidden sections
+        pages.add(
+          _buildSectionPage(
+            context,
+            section,
+            featureLastUpdatedUtc: feature.lastUpdatedUtc,
+          ),
+        );
       }
     }
 
-    // -- Screenshots --
-    if (app.screenshots.isNotEmpty) {
-      pages.add(_buildScreenshotsPage(context, app));
+    // Empty state
+    if (pages.length == 1 && widget.features.isEmpty) {
+      pages.add(
+        _buildContentPage(
+          context,
+          'Coming Soon',
+          'This policy is yet to be drafted.',
+        ),
+      );
     }
 
     return Scaffold(
       body: Stack(
         children: [
-          // Fixed Background (Subtle Gradient)
+          // Fixed Background
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
@@ -254,15 +178,26 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             ),
           ),
 
-          // Snap Scrolling Content with Custom Listener
+          // Content
           Listener(
             onPointerSignal: _handleScroll,
             child: PageView(
               controller: _pageController,
               scrollDirection: Axis.vertical,
-              physics:
-                  const NeverScrollableScrollPhysics(), // Disable default scroll
+              physics: const NeverScrollableScrollPhysics(),
               children: pages,
+            ),
+          ),
+
+          // Back Button
+          Positioned(
+            top: 20,
+            left: 20,
+            child: SafeArea(
+              child: FloatingActionButton.small(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Icon(Icons.arrow_back),
+              ),
             ),
           ),
         ],
@@ -270,91 +205,54 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
     );
   }
 
-  // --- Page Builders ---
-
   Widget _buildPageContainer(BuildContext context, Widget child) {
     return Center(
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-        constraints: const BoxConstraints(
-          maxWidth: 1200,
-        ), // Widen for immersive feel
-        child: child, // Center vertically in viewport
+        constraints: const BoxConstraints(maxWidth: 1200),
+        child: child,
       ),
     );
   }
 
-  Widget _buildHeaderPage(BuildContext context, AppModel app) {
+  Widget _buildHeaderPage(BuildContext context) {
+    String? policyLastUpdated;
+    if (widget.pageType == PageType.privacy) {
+      policyLastUpdated = widget.app.privacyPolicy.lastUpdatedUtc;
+    } else if (widget.pageType == PageType.terms) {
+      policyLastUpdated = widget.app.termsAndConditions.lastUpdatedUtc;
+    }
+
     return _buildPageContainer(
       context,
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 140, // Larger Icon
-              height: 140,
-              margin: const EdgeInsets.only(bottom: 32),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(28),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 30,
-                    offset: const Offset(0, 15),
-                  ),
-                ],
-                image: app.iconUrl.isNotEmpty
-                    ? DecorationImage(
-                        image: getImageProvider(app.iconUrl),
-                        fit: BoxFit.cover,
-                      )
-                    : null,
-              ),
-              child: app.iconUrl.isEmpty
-                  ? const Icon(Icons.apps, size: 70)
-                  : null,
+            Icon(
+              Icons.gavel_rounded,
+              size: 80,
+              color: Theme.of(context).colorScheme.primary,
             ),
+            const SizedBox(height: 32),
             Text(
-              app.name,
-              style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                // Larger Title
-                fontWeight: FontWeight.bold,
-                height: 1.1,
-              ),
+              widget.title,
+              style: Theme.of(
+                context,
+              ).textTheme.displayLarge?.copyWith(fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
-            Text(
-              app.shortDescription,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.w400,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 48),
-            Wrap(
-              spacing: 16,
-              runSpacing: 16,
-              alignment: WrapAlignment.center,
-              children: app.links.map((link) {
-                return FilledButton.icon(
-                  onPressed: () => _launchUrl(link.url),
-                  icon: const Icon(Icons.download),
-                  label: Text(link.type),
-                  style: FilledButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 20,
-                    ),
-                    textStyle: const TextStyle(fontSize: 18),
+            if (policyLastUpdated != null && policyLastUpdated.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: Text(
+                  'Last Updated: ${DateFormatter.format(policyLastUpdated)}',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
-                );
-              }).toList(),
-            ),
+                ),
+              ),
             const SizedBox(height: 60),
             Icon(
               Icons.keyboard_arrow_down,
@@ -374,6 +272,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
     String title,
     String content, {
     String? websiteUrl,
+    String? lastUpdatedUtc,
   }) {
     return _buildPageContainer(
       context,
@@ -388,6 +287,16 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.start,
           ),
+          if (lastUpdatedUtc != null && lastUpdatedUtc.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                'Last Updated: ${DateFormatter.format(lastUpdatedUtc)}',
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+              ),
+            ),
           const SizedBox(height: 40),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
@@ -415,14 +324,16 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
     );
   }
 
-  Widget _buildSectionPage(BuildContext context, FeatureSection section) {
+  Widget _buildSectionPage(
+    BuildContext context,
+    FeatureSection section, {
+    String? featureLastUpdatedUtc,
+  }) {
     Widget imageWidget = const SizedBox.shrink();
 
-    // Build Image Widget (Same logic for both, but refined)
     if (section.images.isNotEmpty) {
       if (section.imageRenderer == 'list' ||
           section.imageRenderer == 'default') {
-        // Treat default as list of images
         imageWidget = Column(
           children: section.images.map((img) {
             return Padding(
@@ -460,10 +371,8 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
           bool isDesktop = constraints.maxWidth > 900;
 
           if (isDesktop && section.images.isNotEmpty) {
-            // Side-by-Side (Desktop) - Centered Vertically
             return Row(
-              crossAxisAlignment:
-                  CrossAxisAlignment.center, // Center vertically
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   flex: 1,
@@ -471,24 +380,35 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (section.title.isNotEmpty &&
-                          section.title != 'Introduction')
+                      if (section.title.isNotEmpty)
                         Text(
                           section.title,
                           style: Theme.of(context).textTheme.displaySmall
                               ?.copyWith(fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
                         ),
+                      if ((section.lastUpdatedUtc != null &&
+                              section.lastUpdatedUtc!.isNotEmpty) ||
+                          (featureLastUpdatedUtc != null &&
+                              featureLastUpdatedUtc.isNotEmpty))
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8, bottom: 0),
+                          child: Text(
+                            'Last Updated: ${DateFormatter.format(section.lastUpdatedUtc ?? featureLastUpdatedUtc)}',
+                            style: Theme.of(context).textTheme.labelMedium
+                                ?.copyWith(
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.secondary,
+                                ),
+                          ),
+                        ),
                       const SizedBox(height: 24),
                       MarkdownBody(
                         data: section.content,
                         styleSheet: MarkdownStyleSheet(
                           p: Theme.of(context).textTheme.headlineSmall
-                              ?.copyWith(
-                                // Larger font
-                                fontSize: 22, // specific bump
-                                height: 1.6,
-                              ),
+                              ?.copyWith(fontSize: 22, height: 1.6),
                         ),
                       ),
                       if (section.websiteUrl != null &&
@@ -503,27 +423,22 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     ],
                   ),
                 ),
-                const SizedBox(width: 80), // More space
+                const SizedBox(width: 80),
                 Expanded(
                   flex: 1,
                   child: Center(
-                    child: SingleChildScrollView(
-                      // Allow scrolling just the image column if it's very tall
-                      child: imageWidget,
-                    ),
+                    child: SingleChildScrollView(child: imageWidget),
                   ),
                 ),
               ],
             );
           } else {
-            // Mobile / Stacked
             return SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (section.title.isNotEmpty &&
-                      section.title != 'Introduction')
+                  if (section.title.isNotEmpty)
                     Text(
                       section.title,
                       style: Theme.of(context).textTheme.headlineMedium
@@ -540,6 +455,8 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 40),
+                  imageWidget,
                   if (section.websiteUrl != null &&
                       section.websiteUrl!.isNotEmpty) ...[
                     const SizedBox(height: 32),
@@ -550,50 +467,11 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     ),
                   ],
                   const SizedBox(height: 40),
-                  imageWidget,
-                  const SizedBox(height: 40), // Bottom padding
                 ],
               ),
             );
           }
         },
-      ),
-    );
-  }
-
-  Widget _buildScreenshotsPage(BuildContext context, AppModel app) {
-    return _buildPageContainer(
-      context,
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Screenshots',
-            style: Theme.of(
-              context,
-            ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 60),
-          SizedBox(
-            height: 600, // Taller area for screenshots
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: app.screenshots.length,
-              itemBuilder: (context, i) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24),
-                    child: buildImage(
-                      app.screenshots[i].url,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart'; // Import provider
-import 'package:url_launcher/url_launcher.dart'; // Import url_launcher
 import '../../models/data_model.dart';
 import '../../services/theme_service.dart'; // Import ThemeService
+import '../../services/current_app_service.dart';
+import '../widgets/image_helper.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -29,6 +30,21 @@ class _DesktopNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final dataModel = Provider.of<DataModel>(context);
     final themeService = Provider.of<ThemeService>(context);
+    final currentAppService = Provider.of<CurrentAppService>(
+      context,
+    ); // Listen to current app
+    final currentApp = currentAppService.currentApp;
+
+    List<AppFeature> featuresToShow = [];
+    if (currentApp != null) {
+      if (currentAppService.pageType == PageType.app) {
+        featuresToShow = currentApp.features;
+      } else if (currentAppService.pageType == PageType.privacy) {
+        featuresToShow = currentApp.privacyPolicy.features;
+      } else if (currentAppService.pageType == PageType.terms) {
+        featuresToShow = currentApp.termsAndConditions.features;
+      }
+    }
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -54,11 +70,92 @@ class _DesktopNavBar extends StatelessWidget {
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
+
+          // Breadcrumb
+          if (currentApp != null) ...[
+            const SizedBox(width: 8),
+            Icon(
+              Icons.chevron_right,
+              size: 20,
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.5),
+            ),
+            const SizedBox(width: 8),
+            InkWell(
+              onTap: () {
+                currentAppService.scrollToTop();
+              },
+              child: Row(
+                children: [
+                  if (currentApp.iconUrl.isNotEmpty) ...[
+                    // Tiny icon
+                    Container(
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: DecorationImage(
+                          image: getImageProvider(currentApp.iconUrl),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                  ],
+                  Text(
+                    currentApp.name,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              ),
+            ),
+          ],
+
           const Spacer(),
 
+          // Features/Links Dropdown (Dynamic)
+          if (featuresToShow.isNotEmpty) ...[
+            MenuAnchor(
+              builder: (context, controller, child) {
+                return TextButton(
+                  onPressed: () {
+                    if (controller.isOpen) {
+                      controller.close();
+                    } else {
+                      controller.open();
+                    }
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        currentAppService.pageType == PageType.app
+                            ? 'Features'
+                            : 'On this page',
+                      ),
+                      const Icon(Icons.arrow_drop_down),
+                    ],
+                  ),
+                );
+              },
+              menuChildren: featuresToShow.where((f) => f.hide != true).map((
+                feature,
+              ) {
+                return MenuItemButton(
+                  onPressed: () =>
+                      currentAppService.navigateToFeature(feature.title),
+                  child: Text(feature.title),
+                );
+              }).toList(),
+            ),
+            const SizedBox(width: 20),
+          ],
+
           // Apps Dropdown
-          _AppsDropdown(apps: dataModel.apps),
-          const SizedBox(width: 20),
+          if (currentApp == null) ...[
+            _AppsDropdown(apps: dataModel.apps),
+            const SizedBox(width: 20),
+          ],
 
           // How To
           TextButton(
@@ -180,11 +277,11 @@ class _LegalDropdown extends StatelessWidget {
         return SubmenuButton(
           menuChildren: [
             MenuItemButton(
-              onPressed: () => _launchAdUrl(app.privacyPolicy.url),
+              onPressed: () => context.go('/app/${app.id}/privacy'),
               child: const Text('Privacy Policy'),
             ),
             MenuItemButton(
-              onPressed: () => _launchAdUrl(app.termsAndConditions.url),
+              onPressed: () => context.go('/app/${app.id}/terms'),
               child: const Text('Terms & Conditions'),
             ),
           ],
@@ -192,12 +289,5 @@ class _LegalDropdown extends StatelessWidget {
         );
       }).toList(),
     );
-  }
-
-  Future<void> _launchAdUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      throw Exception('Could not launch $url');
-    }
   }
 }

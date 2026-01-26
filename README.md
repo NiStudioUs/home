@@ -38,11 +38,11 @@ The `data.json` file must follow this structure. You can use this schema to gene
       ],
       "privacyPolicy": {
         "url": "https://example.com/privacy",
-        "sections": []
+        "features": [] 
       },
       "termsAndConditions": {
         "url": "https://example.com/terms",
-        "sections": []
+        "features": []
       }
     }
   ]
@@ -73,11 +73,11 @@ To generate a new app entry, copy and paste the following prompt into an AI chat
 >   "fullDescription": "...",
 >   "iconUrl": "...",
 >   "descriptionImages": [],
->   "features": [ { "title": "...", "subtitle": "...", "sections": [ { "title": "...", "content": "...", "imageRenderer": "default", "images": [] } ] } ],
->   "technicalDetails": [ { "title": "...", "subtitle": "...", "sections": [ { "title": "...", "content": "...", "imageRenderer": "default", "images": [] } ] } ],
+>   "features": [ { "title": "...", "subtitle": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "2024-01-01", "sections": [ { "title": "...", "content": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "imageRenderer": "default", "images": [] } ] } ],
+  "technicalDetails": [ { "title": "...", "subtitle": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "sections": [ { "title": "...", "content": "...", "websiteUrl": "...", "hide": false, "last_updated_utc": "...", "imageRenderer": "default", "images": [] } ] } ],
 >   "screenshots": [],
 >   "links": [],
->   "privacyPolicy": { "url": "...", "sections": [] },
->   "termsAndConditions": { "url": "...", "sections": [] }
+  "privacyPolicy": { "url": "...", "features": [] },
+  "termsAndConditions": { "url": "...", "features": [] }
 > }
 > ```
