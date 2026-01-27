@@ -446,6 +446,11 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     fontWeight: FontWeight.normal,
                   ),
                 ),
+                onTapLink: (text, href, title) {
+                  if (href != null) {
+                    _launchUrl(href);
+                  }
+                },
               ),
             ),
             if (websiteUrl != null && websiteUrl.isNotEmpty) ...[
@@ -602,6 +607,11 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                             height: 1.6,
                           ),
                         ),
+                        onTapLink: (text, href, title) {
+                          if (href != null) {
+                            _launchUrl(href);
+                          }
+                        },
                       ),
                       if (section.websiteUrl != null &&
                           section.websiteUrl!.isNotEmpty) ...[
@@ -642,6 +652,11 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                         height: 1.5,
                       ),
                     ),
+                    onTapLink: (text, href, title) {
+                      if (href != null) {
+                        _launchUrl(href);
+                      }
+                    },
                   ),
                   if (section.websiteUrl != null &&
                       section.websiteUrl!.isNotEmpty) ...[

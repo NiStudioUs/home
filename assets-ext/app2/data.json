@@ -416,7 +416,7 @@
   ],
   "privacyPolicy": {
     "url": "",
-    "lastUpdatedUtc": "2026-01-25T09:00:00Z",
+    "lastUpdatedUtc": "2026-01-27T00:00:00Z",
     "features": [
       {
         "title": "Data Safety & Permissions",
@@ -424,7 +424,13 @@
         "sections": [
           {
             "title": "SMS & Contacts",
-            "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+            "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+            "imageRenderer": "default",
+            "images": []
+          },
+          {
+            "title": "Financial Data Privacy",
+            "content": "**Strict Local Processing Policy**: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.\n\n### Not a Loan App\n**We do not provide, facilitate, or promote personal loans or credit products.** This app is strictly a personal finance manager and expense tracker.",
             "imageRenderer": "default",
             "images": []
           },
@@ -518,7 +524,7 @@
   },
   "termsAndConditions": {
     "url": "",
-    "lastUpdatedUtc": "2026-01-25T10:30:00Z",
+    "lastUpdatedUtc": "2026-01-27T00:00:00Z",
     "features": [
       {
         "title": "Usage Terms",

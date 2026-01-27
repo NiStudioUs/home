@@ -205,7 +205,7 @@
       ],
       "privacyPolicy": {
         "url": "",
-        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
         "features": [
           {
             "title": "Interpretation and Definitions",
@@ -229,6 +229,18 @@
             "title": "Collecting and Using Your Personal Data",
             "subtitle": "Data Usage & Rights",
             "sections": [
+              {
+                "title": "Last Updated",
+                "content": "Last updated: January 27, 2026",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Data Deletion & Retention",
+                "content": "### Usage Data\nWe retain collected Usage Data for a limited period for internal analysis to improve Service functionality.\n\n### Your Right to Delete\nSince Scribble Notes is an offline-first application, most data resides solely on your device. You can delete all your data by:\n1.  **Uninstalling the Application**: This immediately and permanently deletes all local database files.\n2.  **Deleting Backups**: If you enabled Cloud Sync, you can delete your backup data by navigating to your Google Drive Settings -> Manage Apps -> Scribble Notes -> Options -> \"Delete hidden app data\".\n\nIf you have shared any personal data with us directly (e.g., via email support), you may request its deletion by contacting us at **ni.studio.us@outlook.com**.",
+                "imageRenderer": "default",
+                "images": []
+              },
               {
                 "title": "Types of Data Collected",
                 "content": "### Personal Data\nWhile using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:\n*   Email address\n*   First name and last name\n*   Usage Data\n*   Wifi State or Internet State\n*   Camera or Gallery Access\n\n### Usage Data\nUsage Data is collected automatically when using the Service.\n\nUsage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.\n\nWhen You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.\n\nWe may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.",
@@ -345,7 +357,7 @@
       },
       "termsAndConditions": {
         "url": "",
-        "lastUpdatedUtc": "2022-05-01T00:00:00Z",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
         "features": [
           {
             "title": "Interpretation and Definitions",
@@ -888,7 +900,7 @@
       ],
       "privacyPolicy": {
         "url": "",
-        "lastUpdatedUtc": "2026-01-25T09:00:00Z",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
         "features": [
           {
             "title": "Data Safety & Permissions",
@@ -896,7 +908,13 @@
             "sections": [
               {
                 "title": "SMS & Contacts",
-                "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Financial Data Privacy",
+                "content": "**Strict Local Processing Policy**: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.\n\n### Not a Loan App\n**We do not provide, facilitate, or promote personal loans or credit products.** This app is strictly a personal finance manager and expense tracker.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -990,7 +1008,7 @@
       },
       "termsAndConditions": {
         "url": "",
-        "lastUpdatedUtc": "2026-01-25T10:30:00Z",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
         "features": [
           {
             "title": "Usage Terms",

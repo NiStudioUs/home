@@ -309,6 +309,11 @@ class _LegalPageState extends State<LegalPage> {
                 ),
                 // textAlign: WrapAlignment.center, // Removed to default left
               ),
+              onTapLink: (text, href, title) {
+                if (href != null) {
+                  _launchUrl(href);
+                }
+              },
             ),
           ),
           if (websiteUrl != null && websiteUrl.isNotEmpty) ...[
@@ -410,6 +415,11 @@ class _LegalPageState extends State<LegalPage> {
                           p: Theme.of(context).textTheme.headlineSmall
                               ?.copyWith(fontSize: 22, height: 1.6),
                         ),
+                        onTapLink: (text, href, title) {
+                          if (href != null) {
+                            _launchUrl(href);
+                          }
+                        },
                       ),
                       if (section.websiteUrl != null &&
                           section.websiteUrl!.isNotEmpty) ...[
@@ -454,6 +464,11 @@ class _LegalPageState extends State<LegalPage> {
                         height: 1.6,
                       ),
                     ),
+                    onTapLink: (text, href, title) {
+                      if (href != null) {
+                        _launchUrl(href);
+                      }
+                    },
                   ),
                   const SizedBox(height: 40),
                   imageWidget,
