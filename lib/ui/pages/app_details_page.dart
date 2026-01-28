@@ -586,43 +586,46 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (section.title.isNotEmpty &&
-                          section.title != 'Introduction')
-                        Text(
-                          section.title,
-                          style: Theme.of(context).textTheme.displaySmall
-                              ?.copyWith(fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.start,
-                        ),
-                      const SizedBox(height: 24),
-                      MarkdownBody(
-                        data: section.content,
-                        styleSheet: MarkdownStyleSheet(
-                          p: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontSize: isWideScreen ? 22 : 18,
-                            height: 1.6,
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (section.title.isNotEmpty &&
+                            section.title != 'Introduction')
+                          Text(
+                            section.title,
+                            style: Theme.of(context).textTheme.displaySmall
+                                ?.copyWith(fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.start,
                           ),
+                        const SizedBox(height: 24),
+                        MarkdownBody(
+                          data: section.content,
+                          styleSheet: MarkdownStyleSheet(
+                            p: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              fontSize: isWideScreen ? 22 : 18,
+                              height: 1.6,
+                            ),
+                          ),
+                          onTapLink: (text, href, title) {
+                            if (href != null) {
+                              _launchUrl(href);
+                            }
+                          },
                         ),
-                        onTapLink: (text, href, title) {
-                          if (href != null) {
-                            _launchUrl(href);
-                          }
-                        },
-                      ),
-                      if (section.websiteUrl != null &&
-                          section.websiteUrl!.isNotEmpty) ...[
-                        const SizedBox(height: 32),
-                        FilledButton.icon(
-                          onPressed: () => _launchUrl(section.websiteUrl!),
-                          icon: const Icon(Icons.open_in_new),
-                          label: const Text('Visit Website'),
-                        ),
+                        if (section.websiteUrl != null &&
+                            section.websiteUrl!.isNotEmpty) ...[
+                          const SizedBox(height: 32),
+                          FilledButton.icon(
+                            onPressed: () => _launchUrl(section.websiteUrl!),
+                            icon: const Icon(Icons.open_in_new),
+                            label: const Text('Visit Website'),
+                          ),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
                 ),
                 const SizedBox(width: 80), // More space

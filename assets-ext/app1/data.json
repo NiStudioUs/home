@@ -276,6 +276,30 @@
                 ]
             },
             {
+                "title": "Google User Data & Limited Use",
+                "subtitle": "Specific Compliance",
+                "sections": [
+                    {
+                        "title": "Data Accessed",
+                        "content": "Our application accesses Google User Data solely for the purpose of providing backup and restore functionality. Specifically, we access:\n*   **Google Drive (drive.file scope)**: To create, view, and manage only the specific backup files created by this app. We do not access any other files in your Google Drive.\n*   **User Profile (userinfo.profile)**: To display your name and profile picture solely for the purpose of confirming the account currently signed in for backups.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Data Usage",
+                        "content": "The Google User Data we access is used exclusively for:\n1.  **Backup**: Uploading an encrypted copy of your local notes database to your personal Google Drive.\n2.  **Restore**: Downloading and decrypting your notes database from your Personal Google Drive to your device.\n\nWe do not share, transfer, or disclose this Google User Data to any third parties, including advertising platforms, data brokers, or information resellers. The data remains strictly between your device and your personal Google Drive storage.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Limited Use Policy",
+                        "content": "Scribble Notes' use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
                 "title": "Trusted & Transparent Permissions",
                 "subtitle": "Why We Need Access",
                 "sections": [
