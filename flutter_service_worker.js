@@ -15,7 +15,7 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "assets/shaders/stretch_effect.frag": "40d68efbbf360632f614c731219e95f0",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/AssetManifest.bin.json": "4399d9ccf5bb30c658536942b491196a",
-"assets/assets/data.json": "8d5df7a52f0d959bf90851a98734768e",
+"assets/assets/data.json": "2f024c40231c73598eacdbd20945a440",
 "assets/assets/images/app1/playstore_screen-2-folders-create-subfolder-light.png": "ca4aca29d2eac15736c2b3a77383c084",
 "assets/assets/images/app1/playstore_screen-4-edit-menu-attach-media-files.png": "1176975423aa7754b82c7826ba692c11",
 "assets/assets/images/app1/playstore_screen-1-home-notes-list-light.png": "c24e40138ced838c3e13543955bc179f",
@@ -89,9 +89,9 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "canvaskit/canvaskit.js.symbols": "a3c9f77715b642d0437d9c275caba91e",
 "canvaskit/skwasm.js.symbols": "3a4aadf4e8141f284bd524976b1d6bdc",
 "favicon.png": "61f9d0907b15041c58f595405c2fc9e0",
-"flutter_bootstrap.js": "b4cd209494d176d9d89e2106a0bcb907",
+"flutter_bootstrap.js": "6f1692607ef453cb0832b499f5b85a47",
 "version.json": "17c152eb51951229de6b0dc863d285a0",
-"main.dart.js": "1ce1590b7553fca47f39b84cc868e4ed"};
+"main.dart.js": "ccd1720b745eb41ac8465cb0a132465f"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",

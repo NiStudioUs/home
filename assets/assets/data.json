@@ -292,6 +292,30 @@
             ]
           },
           {
+            "title": "Google User Data & Limited Use",
+            "subtitle": "Specific Compliance",
+            "sections": [
+              {
+                "title": "Data Accessed",
+                "content": "Our application accesses Google User Data solely for the purpose of providing backup and restore functionality. Specifically, we access:\n*   **Google Drive (drive.file scope)**: To create, view, and manage only the specific backup files created by this app. We do not access any other files in your Google Drive.\n*   **User Profile (userinfo.profile)**: To display your name and profile picture solely for the purpose of confirming the account currently signed in for backups.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Data Usage",
+                "content": "The Google User Data we access is used exclusively for:\n1.  **Backup**: Uploading an encrypted copy of your local notes database to your personal Google Drive.\n2.  **Restore**: Downloading and decrypting your notes database from your Personal Google Drive to your device.\n\nWe do not share, transfer, or disclose this Google User Data to any third parties, including advertising platforms, data brokers, or information resellers. The data remains strictly between your device and your personal Google Drive storage.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Limited Use Policy",
+                "content": "Scribble Notes' use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
             "title": "Trusted & Transparent Permissions",
             "subtitle": "Why We Need Access",
             "sections": [
@@ -901,7 +925,74 @@
       "privacyPolicy": {
         "url": "",
         "lastUpdatedUtc": "2026-01-27T00:00:00Z",
+        "limitUseDisclosure": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to <a href=\"https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes\" target=\"_blank\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
         "features": [
+          {
+            "title": "Limited Use Policy",
+            "subtitle": "Google Restricted Scopes",
+            "sections": [
+              {
+                "title": "Compliance Disclosure",
+                "content": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes), including the Limited Use requirements.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data Accessed",
+            "subtitle": "Google User Data Types",
+            "sections": [
+              {
+                "title": "SMS Messages (READ_SMS)",
+                "content": "Our application accesses your SMS messages to provide its core functionality. It reads the sender ID, message body, and timestamp of incoming and existing messages.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Contact List (READ_CONTACTS)",
+                "content": "Our application accesses your contact list (names and photos) strictly to **humanize sender IDs**. For example, identifying if a message is from a saved contact versus a business sender. This data is processed in-memory and is never uploaded.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Google Account Profile (Name & Email)",
+                "content": "When you voluntarily sign in for **Cloud Backup**, we access your basic profile information (Name and Email address) provided by Google.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data Usage",
+            "subtitle": "How We Handle Your Data",
+            "sections": [
+              {
+                "title": "Local Categorization & Parsing",
+                "content": "The SMS data accessed is processed **locally on your device** using a regex engine. We use this data to:\n1.  **Categorize** messages into Personal, Finance, and Promo tabs.\n2.  **Extract** financial transaction details (amount, merchant, date) to build your finance dashboard.\n3.  **Identify** bill reminders to populate the 'Upcoming Bills' section.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Display Purposes",
+                "content": "Contact names and photos are used strictly to display recognized avatars next to message threads, making your inbox easier to navigate.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Limited Sharing (User-Initiated Backups Only)",
+                "content": "We **do not** transfer your data to any third-party server for processing. The only time data leaves your device is when YOU explicitly enable **Google Drive Backup**. In this case, your data is encrypted with AES-256 and uploaded to your personal Google Drive account for safe keeping.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Cloud Backup Authentication",
+                "content": "If you sign in for Cloud Backup, we use your **Name and Email Address** solely to display the currently connected account within the app's settings. This helps you verify which Google Drive account is being used for backups. We do not share this identity with any other third parties.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
           {
             "title": "Data Safety & Permissions",
             "subtitle": "Google Play Compliance",
