@@ -24,7 +24,7 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "assets/assets/images/app1/playstore_screen-2-folders-create-subfolder-dark.png": "94f342104a37195ada815a35310849c3",
 "assets/assets/images/app1/playstore_screen-2-folders-create-parent-folder.png": "210711e68bb26324cd7d4e2e9a2e0b39",
 "assets/assets/images/app1/playstore_screen-3-settings-user-details.png": "4ec76d53a96c7a156c3ae945ecc8f564",
-"assets/assets/images/app1/icon.png": "2212709c677b360a44fa3c19e9395add",
+"assets/assets/images/app1/icon.png": "756839fd5e69a6e361406968badb1fbe",
 "assets/assets/images/app1/playstore_screen-3-settings-history.png": "4e52e085b7b60ed6d30defb00080717d",
 "assets/assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-light.png": "df4d3a9d56834b348dc6126d90c36cdb",
 "assets/assets/images/app1/playstore_screen-4-edit-scribble-pad-light-theme-dark.png": "a960e480e407ba088599c5e377290d1c",
@@ -89,9 +89,9 @@ const RESOURCES = {"flutter.js": "24bc71911b75b5f8135c949e27a2984e",
 "canvaskit/canvaskit.js.symbols": "a3c9f77715b642d0437d9c275caba91e",
 "canvaskit/skwasm.js.symbols": "3a4aadf4e8141f284bd524976b1d6bdc",
 "favicon.png": "61f9d0907b15041c58f595405c2fc9e0",
-"flutter_bootstrap.js": "6f1692607ef453cb0832b499f5b85a47",
+"flutter_bootstrap.js": "b00715ccf3be9cb08fef52505b45bafd",
 "version.json": "17c152eb51951229de6b0dc863d285a0",
-"main.dart.js": "ccd1720b745eb41ac8465cb0a132465f"};
+"main.dart.js": "fee82eecc04acbf79fb135f01c9dba5d"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
