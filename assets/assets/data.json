@@ -16,7 +16,7 @@
   "apps": [
     {
       "id": "scribble_notes",
-      "name": "Scribble Notes",
+      "name": "Scribble: Notes, Diary & Tasks",
       "shortDescription": "Secure, organized note-taking with scribble support.",
       "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
       "iconUrl": "assets/images/app1/icon.png",
