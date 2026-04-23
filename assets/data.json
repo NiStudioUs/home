@@ -16,22 +16,52 @@
   "apps": [
     {
       "id": "scribble_notes",
-      "name": "Scribble Notes",
+      "name": "Scribble: Notes, Diary & Tasks",
       "shortDescription": "Secure, organized note-taking with scribble support.",
       "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
       "iconUrl": "assets/images/app1/icon.png",
       "descriptionImages": [],
       "features": [
         {
+          "title": "Digital Diaries",
+          "subtitle": "Journaling Made Beautiful",
+          "sections": [
+            {
+              "title": "Capture your moments",
+              "content": "A dedicated space for your daily journals. Experience a clean list view, an immersive book-like page reader, and a timeline view to naturally scroll through your life's events.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-5-diaries-list.png",
+                "assets/images/app1/playstore_screen-5-diaries-pageview.png",
+                "assets/images/app1/playstore_screen-5-diaries-timeline.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Habit Tracker",
+          "subtitle": "Build Positive Routines",
+          "sections": [
+            {
+              "title": "Maintain your streaks",
+              "content": "Log your daily activities with a visual calendar view to track consistency, monitor progress, and build unbreakable long-term habits securely.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-6-habit-tracker.png"
+              ]
+            }
+          ]
+        },
+        {
           "title": "Home / Notes List",
           "subtitle": "Streamlined Dashboard",
           "sections": [
             {
               "title": "Fast, clean list view",
-              "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach.",
+              "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach. Quickly capture ideas using the new Speed Dial for rapid creation of notes, habits, or diary entries directly from the home screen.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-1-home-notes-list-light.png"
+                "assets/images/app1/playstore_screen-1-home-speed-dial.png"
               ]
             }
           ]
@@ -42,10 +72,56 @@
           "sections": [
             {
               "title": "Find notes in seconds",
-              "content": "Instantly locate any note, checklist, or folder. The intelligent search bar filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
+              "content": "Instantly locate any note, checklist, or folder. The brilliant new Search UI filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-1-home-search-notes-dark.png"
+                "assets/images/app1/playstore_screen-1-home-search-ui.png",
+                "assets/images/app1/playstore_screen-1-home-search-results.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Nested Folder Organization",
+          "subtitle": "Folders & Tags",
+          "sections": [
+            {
+              "title": "Organize your life without limits",
+              "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need. Combine nested folders with an all-new seamless Tag Management system to categorize your content effortlessly.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-2-folders-new.png",
+                "assets/images/app1/playstore_screen-3-settings-manage-tags.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Customization & Theming",
+          "subtitle": "Personalized Experience",
+          "sections": [
+            {
+              "title": "Match your device colors",
+              "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment. Experience the completely redesigned Settings UI and tailor your reading experience with custom font styles.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-3-settings-new-ui.png",
+                "assets/images/app1/playstore_screen-3-settings-font.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Block-Based Rich Text Editor",
+          "subtitle": "Flexible Formatting",
+          "sections": [
+            {
+              "title": "Structure and Flexibility",
+              "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets, and rich Markdown tables. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/app1/playstore_screen-4-edit-markdown-tables.png",
+                "assets/images/app1/playstore_screen-4-edit-menu-format.png"
               ]
             }
           ]
@@ -60,51 +136,6 @@
               "imageRenderer": "default",
               "images": [
                 "assets/images/app1/playstore_screen-1-login.png"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Nested Folder Organization",
-          "subtitle": "Infinite Structure",
-          "sections": [
-            {
-              "title": "Organize your life without limits",
-              "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need.",
-              "imageRenderer": "default",
-              "images": [
-                "assets/images/app1/playstore_screen-2-folders.png",
-                "assets/images/app1/playstore_screen-2-folders-create-subfolder-light.png"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Customization & Theming",
-          "subtitle": "Personalized Experience",
-          "sections": [
-            {
-              "title": "Match your device colors",
-              "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment.",
-              "imageRenderer": "default",
-              "images": [
-                "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
-                "assets/images/app1/playstore_screen-3-settings.png"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Block-Based Rich Text Editor",
-          "subtitle": "Flexible Formatting",
-          "sections": [
-            {
-              "title": "Structure and Flexibility",
-              "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
-              "imageRenderer": "default",
-              "images": [
-                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-dark.png",
-                "assets/images/app1/playstore_screen-4-edit-menu-insert-list-headings-scribble-pad-light.png"
               ]
             }
           ]
@@ -130,7 +161,7 @@
           "sections": [
             {
               "title": "Make the app yours",
-              "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+              "content": "We believe in total transparency. We request access only when necessary: **Camera** & **Audio** for media notes, **Storage** & **Full File Access (Manage External Storage)** for backups, **Network** for cloud syncing, and **Exact Alarms** & **Notifications** for reliable reminders. You stay in control of your data.",
               "imageRenderer": "default",
               "images": [
                 "assets/images/app1/playstore_screen-3-settings.png"
@@ -169,32 +200,32 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/app1/playstore_screen-1-home-notes-list-light.png",
-          "caption": "Home Screen"
+          "url": "assets/images/app1/playstore_screen-5-diaries-pageview.png",
+          "caption": "Digital Diaries"
         },
         {
-          "url": "assets/images/app1/playstore_screen-1-home-search-notes-dark.png",
-          "caption": "Search"
+          "url": "assets/images/app1/playstore_screen-6-habit-tracker.png",
+          "caption": "Habit Tracker"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-1-home-speed-dial.png",
+          "caption": "Dashboard & Speed Dial"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-2-folders-new.png",
+          "caption": "Nested Folders"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-4-edit-markdown-tables.png",
+          "caption": "Rich Editor & Tables"
+        },
+        {
+          "url": "assets/images/app1/playstore_screen-3-settings-new-ui.png",
+          "caption": "Customization & Fonts"
         },
         {
           "url": "assets/images/app1/playstore_screen-1-login.png",
           "caption": "Secure Login"
-        },
-        {
-          "url": "assets/images/app1/playstore_screen-2-folders.png",
-          "caption": "Folders"
-        },
-        {
-          "url": "assets/images/app1/playstore_screen-3-settings-theme-material-you.png",
-          "caption": "Themes"
-        },
-        {
-          "url": "assets/images/app1/playstore_screen-4-edit-menu-format.png",
-          "caption": "Rich Editor"
-        },
-        {
-          "url": "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-light.png",
-          "caption": "Scribble Pad"
         }
       ],
       "links": [
@@ -243,13 +274,13 @@
               },
               {
                 "title": "Types of Data Collected",
-                "content": "### Personal Data\nWhile using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:\n*   Email address\n*   First name and last name\n*   Usage Data\n*   Wifi State or Internet State\n*   Camera or Gallery Access\n\n### Usage Data\nUsage Data is collected automatically when using the Service.\n\nUsage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.\n\nWhen You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.\n\nWe may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.",
+                "content": "### Personal Data\nWhile using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:\n*   Email address\n*   First name and last name\n*   Usage Data\n*   Wifi State or Internet State\n*   Camera, Microphone, or Gallery Access\n*   Full Storage Access (MANAGE_EXTERNAL_STORAGE) for backups\n\n### Usage Data\nUsage Data is collected automatically when using the Service.\n\nUsage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.\n\nWhen You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.\n\nWe may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.",
                 "imageRenderer": "default",
                 "images": []
               },
               {
                 "title": "Information Collected while Using the Application",
-                "content": "While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:\n*   Pictures and other information from your Device's camera and photo library\n\nWe use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.\n\nYou can enable or disable access to this information at any time, through Your Device settings.",
+                "content": "While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:\n*   Pictures and other information from your Device's camera and photo library\n*   Audio recordings from your device's microphone\n*   Files and documents from your device's storage (via Manage External Storage permission to support import/export capabilities)\n\nWe use this information exclusively to provide the core features of Our Application (such as attaching media to notes or exporting backups). The information is stored locally on Your device and is only uploaded to Your personal Google Drive if you explicitly enable Cloud Sync. We do not upload your data to our servers.\n\nYou can enable or disable access to this information at any time, through Your Device settings.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -321,7 +352,7 @@
             "sections": [
               {
                 "title": "Overview",
-                "content": "We believe in total transparency. We request access only when necessary: **Camera** for taking photos, **Storage** for saving your backups and media, **Network** for cloud syncing, and **Notifications** for your timely reminders. You stay in control of your data.",
+                "content": "We believe in total transparency. We request access only when necessary to provide core functionalities of the app. Below is a detailed list of permissions we request and why:\n\n*   **Camera & Audio (RECORD_AUDIO, CAMERA):** To take photos and record voice notes directly within your notes.\n*   **Storage (READ/WRITE_EXTERNAL_STORAGE, READ_MEDIA_*):** For saving backups, accessing media, and general file management.\n*   **Full File-System Access (MANAGE_EXTERNAL_STORAGE):** Required on Android 11+ to import/export your data and backups from arbitrary directories like your Downloads or Documents folder.\n*   **Alarms & Notifications (POST_NOTIFICATIONS, USE_EXACT_ALARM, SCHEDULE_EXACT_ALARM):** To ensure timely and exact delivery of your scheduled reminders and habit tracking alerts.\n*   **Network (INTERNET, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE):** To securely connect to your personal Google Drive for cloud syncing.\n*   **Background Processing (WAKE_LOCK, RECEIVE_BOOT_COMPLETED):** To resume cloud syncing and set up reminders after your device restarts.",
                 "imageRenderer": "default",
                 "images": [
                   "assets/images/app1/playstore_screen-3-settings.png"

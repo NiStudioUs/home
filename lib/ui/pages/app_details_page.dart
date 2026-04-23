@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,38 +23,62 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
   final PageController _screenshotController = PageController();
   final Map<String, int> _featureMap = {};
   StreamSubscription<String>? _navSubscription;
-  int _currentScreenshot = 0;
+
+  bool _isAnimatingPage = false;
+
+  void _goToPreviousPage() {
+    if (_isAnimatingPage) return;
+    _isAnimatingPage = true;
+    _pageController
+        .previousPage(
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.fastOutSlowIn,
+        )
+        .then((_) {
+          Future.delayed(const Duration(milliseconds: 250), () {
+            if (mounted) _isAnimatingPage = false;
+          });
+        });
+  }
+
+  void _goToNextPage() {
+    if (_isAnimatingPage) return;
+    _isAnimatingPage = true;
+    _pageController
+        .nextPage(
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.fastOutSlowIn,
+        )
+        .then((_) {
+          Future.delayed(const Duration(milliseconds: 250), () {
+            if (mounted) _isAnimatingPage = false;
+          });
+        });
+  }
 
   // Helper to detect scroll boundary and change page
   bool _handleScrollNotification(ScrollNotification notification) {
-    if (notification is ScrollUpdateNotification) {
-      final metrics = notification.metrics;
+    if (_isAnimatingPage) return true;
 
-      // Check if we're at the top and trying to scroll up
+    if (notification is ScrollUpdateNotification &&
+        notification.scrollDelta != null) {
+      final metrics = notification.metrics;
       if (metrics.pixels <= metrics.minScrollExtent &&
           notification.scrollDelta! < 0) {
-        // At top, scrolling up -> go to previous page
-        final currentPage = _pageController.page?.round() ?? 0;
-        if (currentPage > 0) {
-          _pageController.animateToPage(
-            currentPage - 1,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
-        }
+        _goToPreviousPage();
         return true;
       }
-
-      // Check if we're at the bottom and trying to scroll down
       if (metrics.pixels >= metrics.maxScrollExtent &&
           notification.scrollDelta! > 0) {
-        // At bottom, scrolling down -> go to next page
-        final currentPage = _pageController.page?.round() ?? 0;
-        _pageController.animateToPage(
-          currentPage + 1,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-        );
+        _goToNextPage();
+        return true;
+      }
+    } else if (notification is OverscrollNotification) {
+      if (notification.overscroll < 0) {
+        _goToPreviousPage();
+        return true;
+      } else if (notification.overscroll > 0) {
+        _goToNextPage();
         return true;
       }
     }
@@ -65,17 +90,23 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _updateCurrentApp();
-      // TODO: Navigation to specific sections needs to be reimplemented with ScrollController
-      // if this feature is needed
-      /* _navSubscription = Provider.of<CurrentAppService>(context, listen: false)
+      _navSubscription = Provider.of<CurrentAppService>(context, listen: false)
           .navigationEvents
           .listen((featureTitle) {
             if (featureTitle == 'TOP') {
-              // Scroll to top
+              _pageController.animateToPage(
+                0,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+              );
             } else if (_featureMap.containsKey(featureTitle)) {
-              // Scroll to specific section
+              _pageController.animateToPage(
+                _featureMap[featureTitle]!,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+              );
             }
-          }); */
+          });
     });
   }
 
@@ -244,11 +275,28 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             ),
 
             // Snap scrolling layout for all devices
-            PageView(
-              controller: _pageController,
-              scrollDirection: Axis.vertical,
-              physics: const PageScrollPhysics(),
-              children: pages,
+            Focus(
+              autofocus: true,
+              onKeyEvent: (FocusNode node, KeyEvent event) {
+                if (event is KeyDownEvent) {
+                  if (event.logicalKey == LogicalKeyboardKey.arrowDown ||
+                      event.logicalKey == LogicalKeyboardKey.pageDown) {
+                    _goToNextPage();
+                    return KeyEventResult.handled;
+                  } else if (event.logicalKey == LogicalKeyboardKey.arrowUp ||
+                      event.logicalKey == LogicalKeyboardKey.pageUp) {
+                    _goToPreviousPage();
+                    return KeyEventResult.handled;
+                  }
+                }
+                return KeyEventResult.ignored;
+              },
+              child: PageView(
+                controller: _pageController,
+                scrollDirection: Axis.vertical,
+                physics: const PageScrollPhysics(),
+                children: pages,
+              ),
             ),
           ],
         ),
@@ -500,82 +548,10 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
               );
             }
 
-            // For list/default: use PageView with indicators if multiple images
-            if (section.images.length == 1) {
-              return Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: constraints.maxHeight * 0.8,
-                    minHeight: 200,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: buildImage(
-                      section.images[0].url,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-              );
-            }
-
-            // Multiple images: use PageView with indicators
-            final pageController = PageController();
-            return StatefulBuilder(
-              builder: (context, setState) {
-                int currentPage = 0;
-
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(
-                      height: constraints.maxWidth > 900 ? 500 : 400,
-                      child: PageView.builder(
-                        controller: pageController,
-                        physics: const ClampingScrollPhysics(),
-                        itemCount: section.images.length,
-                        onPageChanged: (index) {
-                          setState(() {
-                            currentPage = index;
-                          });
-                        },
-                        itemBuilder: (context, i) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: buildImage(
-                                section.images[i].url,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    // Page indicators
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        section.images.length,
-                        (index) => Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 4),
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: currentPage == index
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.onSurface
-                                      .withValues(alpha: 0.3),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                );
-              },
+            // For list/default: use our new interactive gallery viewer
+            return ImageGalleryViewer(
+              images: section.images.map((img) => img.url).toList(),
+              height: constraints.maxWidth > 900 ? 500 : 400,
             );
           }
 
@@ -702,55 +678,13 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             const SizedBox(height: 40),
             LayoutBuilder(
               builder: (context, constraints) {
-                return SizedBox(
+                return ImageGalleryViewer(
+                  images: app.screenshots.map((s) => s.url).toList(),
                   height: constraints.maxWidth > 900 ? 600 : 500,
-                  child: PageView.builder(
-                    controller: _screenshotController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: app.screenshots.length,
-                    onPageChanged: (index) {
-                      setState(() {
-                        _currentScreenshot = index;
-                      });
-                    },
-                    itemBuilder: (context, i) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(24),
-                          child: buildImage(
-                            app.screenshots[i].url,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                  viewportFraction: 0.8,
                 );
               },
             ),
-            const SizedBox(height: 24),
-            // Page indicators
-            if (app.screenshots.length > 1)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  app.screenshots.length,
-                  (index) => Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _currentScreenshot == index
-                          ? Theme.of(context).colorScheme.primary
-                          : Theme.of(
-                              context,
-                            ).colorScheme.onSurface.withValues(alpha: 0.3),
-                    ),
-                  ),
-                ),
-              ),
           ],
         ),
       ),
@@ -762,5 +696,385 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $url');
     }
+  }
+}
+
+class ImageGalleryViewer extends StatefulWidget {
+  final List<String> images;
+  final double height;
+  final double viewportFraction;
+
+  const ImageGalleryViewer({
+    super.key,
+    required this.images,
+    required this.height,
+    this.viewportFraction = 1.0,
+  });
+
+  @override
+  State<ImageGalleryViewer> createState() => _ImageGalleryViewerState();
+}
+
+class _ImageGalleryViewerState extends State<ImageGalleryViewer> {
+  late PageController _pageController;
+  int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(viewportFraction: widget.viewportFraction);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _openFullScreenDialog(int initialIndex) {
+    showDialog(
+      context: context,
+      useSafeArea: false,
+      builder: (context) => FullScreenGalleryDialog(
+        images: widget.images,
+        initialIndex: initialIndex,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.images.isEmpty) return const SizedBox.shrink();
+
+    final hasMultiple = widget.images.length > 1;
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          height: widget.height,
+          child: Stack(
+            children: [
+              PageView.builder(
+                controller: _pageController,
+                physics: const ClampingScrollPhysics(),
+                itemCount: widget.images.length,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: widget.viewportFraction < 1.0
+                        ? const EdgeInsets.symmetric(horizontal: 16)
+                        : const EdgeInsets.symmetric(horizontal: 8),
+                    child: Center(
+                      child: _InteractiveImage(
+                        imageUrl: widget.images[index],
+                        onTap: () => _openFullScreenDialog(index),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              // Prev Button Overlay
+              if (hasMultiple)
+                Positioned(
+                  left: 16,
+                  top: 0,
+                  bottom: 0,
+                  child: Center(
+                    child: IconButton.filled(
+                      onPressed: () {
+                        if (_currentPage > 0) {
+                          _pageController.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
+                      icon: const Icon(Icons.chevron_left),
+                      style: IconButton.styleFrom(
+                        backgroundColor: Colors.black54,
+                        foregroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              // Next Button Overlay
+              if (hasMultiple)
+                Positioned(
+                  right: 16,
+                  top: 0,
+                  bottom: 0,
+                  child: Center(
+                    child: IconButton.filled(
+                      onPressed: () {
+                        if (_currentPage < widget.images.length - 1) {
+                          _pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
+                      icon: const Icon(Icons.chevron_right),
+                      style: IconButton.styleFrom(
+                        backgroundColor: Colors.black54,
+                        foregroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+        if (hasMultiple) ...[
+          const SizedBox(height: 16),
+          // Clickable Page indicators
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              widget.images.length,
+              (index) => GestureDetector(
+                onTap: () {
+                  _pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 8,
+                  ),
+                  width: _currentPage == index ? 24 : 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: _currentPage == index
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(
+                            context,
+                          ).colorScheme.onSurface.withValues(alpha: 0.3),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _InteractiveImage extends StatefulWidget {
+  final String imageUrl;
+  final VoidCallback onTap;
+
+  const _InteractiveImage({required this.imageUrl, required this.onTap});
+
+  @override
+  State<_InteractiveImage> createState() => _InteractiveImageState();
+}
+
+class _InteractiveImageState extends State<_InteractiveImage> {
+  bool _isHovering = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _isHovering = true),
+      onExit: (_) => setState(() => _isHovering = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedScale(
+          scale: _isHovering ? 1.03 : 1.0,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOutCubic,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: _isHovering
+                  ? [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.2),
+                        blurRadius: 20,
+                        offset: const Offset(0, 10),
+                      ),
+                    ]
+                  : [],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: buildImage(widget.imageUrl, fit: BoxFit.contain),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class FullScreenGalleryDialog extends StatefulWidget {
+  final List<String> images;
+  final int initialIndex;
+
+  const FullScreenGalleryDialog({
+    super.key,
+    required this.images,
+    required this.initialIndex,
+  });
+
+  @override
+  State<FullScreenGalleryDialog> createState() =>
+      _FullScreenGalleryDialogState();
+}
+
+class _FullScreenGalleryDialogState extends State<FullScreenGalleryDialog> {
+  late PageController _pageController;
+  late int _currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPage = widget.initialIndex;
+    _pageController = PageController(initialPage: _currentPage);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog.fullscreen(
+      backgroundColor: Colors.black.withValues(alpha: 0.95),
+      child: Stack(
+        children: [
+          // Main PageView
+          PageView.builder(
+            controller: _pageController,
+            itemCount: widget.images.length,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPage = index;
+              });
+            },
+            itemBuilder: (context, index) {
+              return InteractiveViewer(
+                // Enables pinch to zoom!
+                minScale: 1.0,
+                maxScale: 4.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: buildImage(widget.images[index], fit: BoxFit.contain),
+                ),
+              );
+            },
+          ),
+
+          // Close button
+          Positioned(
+            top: 16,
+            right: 16,
+            child: IconButton(
+              onPressed: () => Navigator.of(context).pop(),
+              icon: const Icon(Icons.close, color: Colors.white, size: 32),
+            ),
+          ),
+
+          // Prev Button
+          if (widget.images.length > 1)
+            Positioned(
+              left: 16,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: IconButton.filled(
+                  onPressed: () {
+                    if (_currentPage > 0) {
+                      _pageController.previousPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  icon: const Icon(Icons.chevron_left, size: 40),
+                  style: IconButton.styleFrom(
+                    backgroundColor: Colors.white24,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.all(16),
+                  ),
+                ),
+              ),
+            ),
+
+          // Next Button
+          if (widget.images.length > 1)
+            Positioned(
+              right: 16,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: IconButton.filled(
+                  onPressed: () {
+                    if (_currentPage < widget.images.length - 1) {
+                      _pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  icon: const Icon(Icons.chevron_right, size: 40),
+                  style: IconButton.styleFrom(
+                    backgroundColor: Colors.white24,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.all(16),
+                  ),
+                ),
+              ),
+            ),
+
+          // Bottom Indicators
+          if (widget.images.length > 1)
+            Positioned(
+              bottom: 30,
+              left: 0,
+              right: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  widget.images.length,
+                  (index) => GestureDetector(
+                    onTap: () {
+                      _pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      width: _currentPage == index ? 24 : 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: _currentPage == index
+                            ? Colors.white
+                            : Colors.white38,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
   }
 }

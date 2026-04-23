@@ -17,6 +17,7 @@ migrate_working_dir/
 *.iws
 .idea/
 
+scripts/playstore_screenshots/node_modules/
 # Assets
 
 

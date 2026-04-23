@@ -97,5 +97,6 @@ To generate a new app entry, copy and paste the following prompt into an AI chat
 
 ## Documentation
 
+*   [**Important Commands**](docs/commands.md): Reference guide detailing how to migrate data and generate new snapshot assets.
 *   [**Google Verifications**](docs/google_verification.md): Guide for verifying Site Ownership (Search Console) and App Access (Google Drive OAuth).
 *   [**Hosting on GitHub**](docs/github_hosting.md): Instructions for deploying this Flutter Web app to GitHub Pages.
