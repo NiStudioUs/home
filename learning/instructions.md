@@ -1,0 +1,8 @@
+# System Instructions
+
+1. **Commit & Push Policy**: NEVER automatically run `git commit` or `git push` without first obtaining explicit approval from the USER. Always ask before changing the remote state.
+2. **Compilation Verification**: Always run the compilation script (`npm run build`) after development changes to proactively detect and fix TypeScript errors or unused variables without requiring user attention.
+3. **Amending Minor Fixes**: If a change involves fixing something broken in an earlier commit (like lint issues, small version bumps, or path changes), use an **amend commit** (`git commit --amend`) and do a **force push with lease** (`git push --force-with-lease`) *after* obtaining the user's explicit permission.
+4. **Skill Awareness**: Before starting any development work, read the relevant skills in `.agent/skills/`. At minimum, always review the **Web Development** and **UI Design System** skills.
+5. **Design System Compliance**: Every chapter-n app MUST have a rich, modern UI following the UI Design System skill. Apps that look simple or basic are NOT acceptable. Use the hybrid-theme approach (blend Glassmorphism, Neumorphism, Liquid Glass, Minimalism, Brutalism, and Flat 2.0 where each fits best).
+6. **Auto-Upskill**: After completing a chapter or significant development task, run the Auto-Upskill flow to evaluate whether new patterns were learned and should be captured in the skill library.

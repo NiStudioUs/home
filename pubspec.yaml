@@ -69,6 +69,7 @@ flutter:
     - assets/images/
     - assets/images/app1/
     - assets/images/app2/
+    - assets/images/learning/
     - assets/developers/
 
   # An image asset can refer to one or more resolution-specific "variants", see

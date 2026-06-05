@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../widgets/app_tile.dart';
+import '../widgets/learning_project_card.dart';
 import '../widgets/image_helper.dart';
 
 import '../../services/current_app_service.dart';
@@ -184,6 +185,61 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 60),
 
+            // Learning Hub Section
+            if (dataModel.learningProjects.isNotEmpty) ...[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Learning Hub',
+                      style: Theme.of(context).textTheme.headlineMedium
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'A centralized portfolio of my development projects, experiments, and learning milestones.',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Divider(),
+                    const SizedBox(height: 20),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        int crossAxisCount = 1;
+                        if (constraints.maxWidth > 1200) {
+                          crossAxisCount = 3;
+                        } else if (constraints.maxWidth > 800) {
+                          crossAxisCount = 2;
+                        }
+
+                        return GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: crossAxisCount,
+                                childAspectRatio: 0.8,
+                                crossAxisSpacing: 24,
+                                mainAxisSpacing: 24,
+                              ),
+                          itemCount: dataModel.learningProjects.length,
+                          itemBuilder: (context, index) {
+                            return LearningProjectCard(
+                              project: dataModel.learningProjects[index],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 60),
+            ],
             // Modern Footer
             Container(
               width: double.infinity,

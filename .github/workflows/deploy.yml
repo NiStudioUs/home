@@ -1,32 +1,89 @@
-name: Deploy to GitHub Pages
+name: Deploy Unified Portfolio
 
 on:
   push:
     branches: [ main ]
-
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
-      - run: flutter pub get
+      - name: Sync Learning Data to Portfolio
+        run: node scripts/sync_data.js
 
-      # IMPORTANT: If your repository name is NOT 'home', update the base-href below.
-      # Example: for repo 'my-app', use "/my-app/"
-      - run: flutter build web --base-href "/home/" --release
+      - name: Build Flutter Portfolio
+        run: |
+          flutter pub get
+          flutter build web --base-href "/home/" --release
+          
+      - name: Prepare Unified Dist Directory
+        run: |
+          mkdir -p dist
+          # Copy Flutter build to root of dist
+          cp -R build/web/* dist/
 
-      - name: Deploy
+      - name: Build Learning Hub
+        run: |
+          cd learning
+          npm ci
+          npm run build
+          # Vite build goes to learning/dist by default
+          cd ..
+          mkdir -p dist/learning
+          cp -R learning/dist/* dist/learning/
+
+      - name: Process Learning Apps
+        run: |
+          mkdir -p dist/learning/apps
+          cd learning
+          for app in apps/*; do
+            if [ -d "$app" ]; then
+              app_name=$(basename "$app")
+              echo "Processing $app_name..."
+              
+              if [ -f "$app/package.json" ]; then
+                echo "=> Found package.json. Installing dependencies and building..."
+                pushd "$app"
+                npm ci
+                npm run build --if-present
+                popd
+                
+                if [ -d "$app/dist" ]; then
+                  echo "=> Copying build output from dist/"
+                  cp -r "$app/dist" "../dist/learning/apps/$app_name"
+                elif [ -d "$app/build" ]; then
+                  echo "=> Copying build output from build/"
+                  cp -r "$app/build" "../dist/learning/apps/$app_name"
+                else
+                  echo "=> WARNING: Could not find 'dist' or 'build' folder after building $app_name. Copying source."
+                  cp -r "$app" "../dist/learning/apps/$app_name"
+                fi
+              else
+                echo "=> No package.json found. Treating as static site and copying..."
+                cp -r "$app" "../dist/learning/apps/$app_name"
+              fi
+            fi
+          done
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
+          publish_dir: ./dist

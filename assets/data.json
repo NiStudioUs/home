@@ -1207,5 +1207,59 @@
         ]
       }
     }
+  ],
+  "learningProjects": [
+    {
+      "id": "chapter-1",
+      "title": "Chapter 1: KS Foodie",
+      "description": "A premium, responsive front-end food ordering web application with a rich 'Zomato-Red' aesthetic, smooth glassmorphism effects, and infinite scroll.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "Responsive",
+        "Glassmorphism"
+      ],
+      "path": "learning/apps/chapter-1/index.html",
+      "imageUrl": "assets/images/learning/chapter_1.png"
+    },
+    {
+      "id": "chapter-2",
+      "title": "Chapter 2: HR Portal",
+      "description": "A minimalist, responsive HR management portal built with React, Vite, and TypeScript. Features role-based access control and streamlined local state persistence workflows.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Material 3",
+        "RBAC"
+      ],
+      "path": "learning/apps/chapter-2/index.html",
+      "imageUrl": "assets/images/learning/chapter_2.png"
+    },
+    {
+      "id": "chapter-3",
+      "title": "Chapter 3: Book_A_Taxi",
+      "description": "A premium Uber-like taxi booking application featuring interactive map integration with Leaflet, real-time form validation, and modern glassmorphism UI.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Leaflet",
+        "Glassmorphism"
+      ],
+      "path": "learning/apps/chapter-3/index.html",
+      "imageUrl": "assets/images/learning/chapter_3.png"
+    },
+    {
+      "id": "chapter-4",
+      "title": "Chapter 4: Inventory Management",
+      "description": "An enterprise-grade inventory management system (StockOS) featuring robust offline-first architecture, multi-role RBAC, transaction pipelines, and a modern \"Stealth Dark\" glass UI.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "State Management",
+        "Glassmorphism"
+      ],
+      "path": "learning/apps/chapter-4/index.html",
+      "imageUrl": "assets/images/learning/chapter_4.png"
+    }
   ]
 }

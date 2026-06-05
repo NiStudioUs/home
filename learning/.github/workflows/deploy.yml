@@ -1,0 +1,85 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build_and_deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies for Hub
+        run: npm ci
+
+      - name: Build Hub Application
+        run: npm run build
+
+      - name: Process Apps Directory
+        # This step smart-copies or builds applications inside the `apps` directory
+        run: |
+          mkdir -p dist/apps
+          for app in apps/*; do
+            if [ -d "$app" ]; then
+              app_name=$(basename "$app")
+              echo "Processing $app_name..."
+              
+              # If package.json exists, assume it's an app that needs building (e.g. React)
+              if [ -f "$app/package.json" ]; then
+                echo "=> Found package.json. Installing dependencies and building..."
+                pushd "$app"
+                npm ci
+                npm run build --if-present
+                popd
+                
+                # Check for standard build output folders (dist or build)
+                if [ -d "$app/dist" ]; then
+                  echo "=> Copying build output from dist/"
+                  cp -r "$app/dist" "dist/apps/$app_name"
+                elif [ -d "$app/build" ]; then
+                  echo "=> Copying build output from build/"
+                  cp -r "$app/build" "dist/apps/$app_name"
+                else
+                  echo "=> WARNING: Could not find 'dist' or 'build' folder after building $app_name. Copying source."
+                  cp -r "$app" "dist/apps/$app_name"
+                fi
+              else
+                # If no package.json, assume it is a static site (HTML/CSS/JS)
+                echo "=> No package.json found. Treating as static site and copying..."
+                cp -r "$app" "dist/apps/$app_name"
+              fi
+            fi
+          done
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: custom-github-pages
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: custom-github-pages

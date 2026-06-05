@@ -1,11 +1,13 @@
 class DataModel {
   final Developer developer;
   final List<AppModel> apps;
+  final List<LearningProjectModel> learningProjects;
   final List<SocialLink> socialLinks;
 
   DataModel({
     required this.developer,
     required this.apps,
+    required this.learningProjects,
     required this.socialLinks,
   });
 
@@ -18,6 +20,36 @@ class DataModel {
               .toList() ??
           [],
       apps: (json['apps'] as List).map((e) => AppModel.fromJson(e)).toList(),
+      learningProjects: (json['learningProjects'] as List? ?? []).map((e) => LearningProjectModel.fromJson(e)).toList(),
+    );
+  }
+}
+
+class LearningProjectModel {
+  final String id;
+  final String title;
+  final String description;
+  final List<String> tags;
+  final String path;
+  final String? imageUrl;
+
+  LearningProjectModel({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.tags,
+    required this.path,
+    this.imageUrl,
+  });
+
+  factory LearningProjectModel.fromJson(Map<String, dynamic> json) {
+    return LearningProjectModel(
+      id: json['id'] as String? ?? '',
+      title: json['title'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      tags: (json['tags'] as List? ?? []).map((e) => e.toString()).toList(),
+      path: json['path'] as String? ?? '',
+      imageUrl: json['imageUrl'] as String?,
     );
   }
 }

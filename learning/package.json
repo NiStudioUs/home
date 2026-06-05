@@ -1,0 +1,24 @@
+{
+  "name": "learning-hub",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && mkdir -p dist/apps && cp -r apps/chapter-1 dist/apps/ && npm --prefix apps/chapter-2 install && npm --prefix apps/chapter-2 run build && mkdir -p dist/apps/chapter-2 && cp -r apps/chapter-2/dist/* dist/apps/chapter-2/ && npm --prefix apps/chapter-3 install && npm --prefix apps/chapter-3 run build && mkdir -p dist/apps/chapter-3 && cp -r apps/chapter-3/dist/* dist/apps/chapter-3/ && npm --prefix apps/chapter-4 install && npm --prefix apps/chapter-4 run build && mkdir -p dist/apps/chapter-4 && cp -r apps/chapter-4/dist/* dist/apps/chapter-4/ || true",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/material": "^5.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.0"
+  }
+}
