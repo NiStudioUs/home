@@ -1,155 +1,83 @@
 {
-    "id": "scribble_notes",
-    "name": "Scribble: Notes, Diary & Tasks",
-    "shortDescription": "Secure, organized note-taking with scribble support.",
-    "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
-    "iconUrl": "assets/images/app1/icon.png",
+    "id": "iky_family_tree",
+    "name": "IKY — Family Tree & Genealogy",
+    "shortDescription": "A private family tree app with kinship engine and real-time genealogy.",
+    "fullDescription": "IKY (I Know You) is a full-stack family relationship management platform built for privacy and depth. It allows families to collaboratively build, manage and explore their genealogy through a rich interactive graph — complete with a Kongu Tamil kinship engine that computes culturally-aware relationship labels up to 6 generations. Explore the live demo with pre-populated, obfuscated sample families.",
+    "iconUrl": "images/icon.png",
+    "status": "IN DEV",
+    "statusColor": "amber",
     "descriptionImages": [],
+    "demoUrl": "home/iky/",
     "features": [
         {
-            "title": "Digital Diaries",
-            "subtitle": "Journaling Made Beautiful",
+            "title": "Interactive Family Tree",
+            "subtitle": "Visualize your family graph",
             "sections": [
                 {
-                    "title": "Capture your moments",
-                    "content": "A dedicated space for your daily journals. Experience a clean list view, an immersive book-like page reader, and a timeline view to naturally scroll through your life's events.",
+                    "title": "Explore relationships visually",
+                    "content": "A fully interactive canvas that renders your family as a real-time graph. Pan, zoom, and center on any member. Switch between Default Tree, Family Groups, and Genealogy views to explore the same data from different perspectives.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-5-diaries-list.png",
-                        "../images/playstore_screen-5-diaries-pageview.png",
-                        "../images/playstore_screen-5-diaries-timeline.png"
-                    ]
+                    "images": []
                 }
             ]
         },
         {
-            "title": "Habit Tracker",
-            "subtitle": "Build Positive Routines",
+            "title": "Kinship Engine",
+            "subtitle": "Culturally-aware relationship labels",
             "sections": [
                 {
-                    "title": "Maintain your streaks",
-                    "content": "Log your daily activities with a visual calendar view to track consistency, monitor progress, and build unbreakable long-term habits securely.",
+                    "title": "Know exactly who everyone is",
+                    "content": "A custom Kongu Tamil kinship resolution engine traverses the graph up to 6 generations and computes the precise cultural relationship label for any pair of people — Mama, Akka, Appuchi, and beyond. Works bidirectionally for any selected member.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-6-habit-tracker.png"
-                    ]
+                    "images": []
                 }
             ]
         },
         {
-            "title": "Home / Notes List",
-            "subtitle": "Streamlined Dashboard",
+            "title": "Genealogy View",
+            "subtitle": "Multi-generational ancestry",
             "sections": [
                 {
-                    "title": "Fast, clean list view",
-                    "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach. Quickly capture ideas using the new Speed Dial for rapid creation of notes, habits, or diary entries directly from the home screen.",
+                    "title": "Trace lineage across generations",
+                    "content": "The Genealogy canvas renders an ancestor-descendant hierarchy tree, displaying parent-child connections across multiple generations. Placeholders are used for known-but-unregistered ancestors, maintaining structural integrity of the tree.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-1-home-speed-dial.png"
-                    ]
+                    "images": []
                 }
             ]
         },
         {
-            "title": "Powerful Search",
-            "subtitle": "Instant Access",
+            "title": "Family Groups",
+            "subtitle": "Organize by household",
             "sections": [
                 {
-                    "title": "Find notes in seconds",
-                    "content": "Instantly locate any note, checklist, or folder. The brilliant new Search UI filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
+                    "title": "Groups within your family",
+                    "content": "Family members are automatically organized into household groups by nuclear family unit. Each group is color-coded and can be independently collapsed or expanded on the canvas for clarity in large families.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-1-home-search-ui.png",
-                        "../images/playstore_screen-1-home-search-results.png"
-                    ]
+                    "images": []
                 }
             ]
         },
         {
-            "title": "Nested Folder Organization",
-            "subtitle": "Folders & Tags",
+            "title": "Pending Alerts & Approvals",
+            "subtitle": "Collaborative relationship management",
             "sections": [
                 {
-                    "title": "Organize your life without limits",
-                    "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need. Combine nested folders with an all-new seamless Tag Management system to categorize your content effortlessly.",
+                    "title": "Review inferred relationships",
+                    "content": "When the kinship engine infers new relationships from existing data, family admins receive pending alerts to review and approve or reject them. This ensures the family graph stays accurate and consensual.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-2-folders-new.png",
-                        "../images/playstore_screen-3-settings-manage-tags.png"
-                    ]
+                    "images": []
                 }
             ]
         },
         {
-            "title": "Customization & Theming",
-            "subtitle": "Personalized Experience",
+            "title": "Privacy-First Demo Mode",
+            "subtitle": "Explore safely with mock data",
             "sections": [
                 {
-                    "title": "Match your device colors",
-                    "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment. Experience the completely redesigned Settings UI and tailor your reading experience with custom font styles.",
+                    "title": "No data. No account. Just explore.",
+                    "content": "The public demo is powered by a fully offline in-memory mock backend. All names and dates have been obfuscated with fictional Tamil personas. Your actions during the demo session are ephemeral — nothing is sent to any server.",
                     "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-3-settings-new-ui.png",
-                        "../images/playstore_screen-3-settings-font.png"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Block-Based Rich Text Editor",
-            "subtitle": "Flexible Formatting",
-            "sections": [
-                {
-                    "title": "Structure and Flexibility",
-                    "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets, and rich Markdown tables. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
-                    "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-4-edit-markdown-tables.png",
-                        "../images/playstore_screen-4-edit-menu-format.png"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Secure Access & Privacy",
-            "subtitle": "Total Control",
-            "sections": [
-                {
-                    "title": "Quick & secure access",
-                    "content": "Keep your private thoughts truly private. Set up a secure passcode to lock the app or protect specific sensitive notes. Your data stays local and secure, ensuring only you have access to your personal information.",
-                    "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-1-login.png"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Advanced Scribble Pad",
-            "subtitle": "Creative Canvas",
-            "sections": [
-                {
-                    "title": "Frame-by-frame animation sketching",
-                    "content": "A digital canvas for your creativity. More than just a drawing tool, it supports frame-by-frame animation sketching and \"playback\" to review your thought process. Create multi-page sketches, correct mistakes with non-destructive erasing, and bring your visual ideas to life.",
-                    "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-4-edit-scribble-pad-frames-reorder-dark.png",
-                        "../images/playstore_screen-4-edit-scribble-pad-frames-playback-dark.png"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Trusted & Transparent Permissions",
-            "subtitle": "Privacy First",
-            "sections": [
-                {
-                    "title": "Make the app yours",
-                    "content": "We believe in total transparency. We request access only when necessary: **Camera** & **Audio** for media notes, **Storage** for backups, **Network** for cloud syncing, and **Exact Alarms** & **Notifications** for reliable reminders. You stay in control of your data.",
-                    "imageRenderer": "default",
-                    "images": [
-                        "../images/playstore_screen-3-settings.png"
-                    ]
+                    "images": []
                 }
             ]
         }
@@ -157,12 +85,12 @@
     "technicalDetails": [
         {
             "hide": true,
-            "title": "Built with Flutter",
+            "title": "Full-Stack Flutter + Dart API",
             "subtitle": "Modern Tech Stack",
             "sections": [
                 {
-                    "title": "Core Technology",
-                    "content": "Scribble Notes is built using **Flutter**, Google's UI toolkit for building natively compiled applications. It ensures high performance and smooth (60fps) animations on Android.",
+                    "title": "Technology",
+                    "content": "Built with **Flutter** (mobile + web) and a **Dart Shelf** REST API backend. State management via **Riverpod**. Routing via **GoRouter**. Network layer via **Dio** with a custom interceptor architecture for demo mode.",
                     "imageRenderer": "default",
                     "images": []
                 }
@@ -170,52 +98,23 @@
         },
         {
             "hide": true,
-            "title": "Robust Architecture",
-            "subtitle": "Scalable & Maintainable",
+            "title": "Graph Engine",
+            "subtitle": "Custom kinship traversal",
             "sections": [
                 {
-                    "title": "Design Patterns",
-                    "content": "The app follows **Clean Architecture** principles, with a clear separation of concerns. State management is handled by **Bloc** (Business Logic Component), ensuring predictable state changes and easy testing.",
+                    "title": "Kinship Computation",
+                    "content": "The kinship engine is implemented in **TypeScript** as an XML-rule-driven attribute extractor. It traverses the family graph using BFS up to depth 6, resolving culturally specific relationship labels for the Kongu Tamil dialect.",
                     "imageRenderer": "default",
                     "images": []
                 }
             ]
         }
     ],
-    "screenshots": [
-        {
-            "url": "../images/playstore_screen-5-diaries-pageview.png",
-            "caption": "Digital Diaries"
-        },
-        {
-            "url": "../images/playstore_screen-6-habit-tracker.png",
-            "caption": "Habit Tracker"
-        },
-        {
-            "url": "../images/playstore_screen-1-home-speed-dial.png",
-            "caption": "Dashboard & Speed Dial"
-        },
-        {
-            "url": "../images/playstore_screen-2-folders-new.png",
-            "caption": "Nested Folders"
-        },
-        {
-            "url": "../images/playstore_screen-4-edit-markdown-tables.png",
-            "caption": "Rich Editor & Tables"
-        },
-        {
-            "url": "../images/playstore_screen-3-settings-new-ui.png",
-            "caption": "Customization & Fonts"
-        },
-        {
-            "url": "../images/playstore_screen-1-login.png",
-            "caption": "Secure Login"
-        }
-    ],
+    "screenshots": [],
     "links": [
         {
-            "type": "Play Store",
-            "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+            "type": "Live Demo",
+            "url": "home/iky/"
         }
     ],
     "privacyPolicy": {
@@ -234,7 +133,7 @@
                     },
                     {
                         "title": "Definitions",
-                        "content": "For the purposes of this Privacy Policy:\n*   **Account** means a unique account created for You to access our Service or parts of our Service.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Country** refers to: India\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Personal Data** is any information that relates to an identified or identifiable individual.\n*   **Service** refers to the Application.\n*   **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.\n*   **Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                        "content": "For the purposes of this Privacy Policy:\n*   **Account** means a unique account created for You to access our Service or parts of our Service.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named IKY People App\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to IKY People App.\n*   **Country** refers to: India\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Personal Data** is any information that relates to an identified or identifiable individual.\n*   **Service** refers to the Application.\n*   **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.\n*   **Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
                         "imageRenderer": "default",
                         "images": []
                     }
@@ -252,7 +151,7 @@
                     },
                     {
                         "title": "Data Deletion & Retention",
-                        "content": "### Usage Data\nWe retain collected Usage Data for a limited period for internal analysis to improve Service functionality.\n\n### Your Right to Delete\nSince Scribble Notes is an offline-first application, most data resides solely on your device. You can delete all your data by:\n1.  **Uninstalling the Application**: This immediately and permanently deletes all local database files.\n2.  **Deleting Backups**: If you enabled Cloud Sync, you can delete your backup data by navigating to your Google Drive Settings -> Manage Apps -> Scribble Notes -> Options -> \"Delete hidden app data\".\n\nIf you have shared any personal data with us directly (e.g., via email support), you may request its deletion by contacting us at **ni.studio.us@outlook.com**.",
+                        "content": "### Usage Data\nWe retain collected Usage Data for a limited period for internal analysis to improve Service functionality.\n\n### Your Right to Delete\nSince IKY People App allows connecting to a self-hosted API, most data resides on your server. You can delete all your local cached data by:\n1.  **Logging Out**: This clears all secure session tokens and local database caches.\n2.  **Uninstalling the Application**: This immediately and permanently deletes all local application files.",
                         "imageRenderer": "default",
                         "images": []
                     },
@@ -307,40 +206,14 @@
                 ]
             },
             {
-                "title": "Google User Data & Limited Use",
-                "subtitle": "Specific Compliance",
-                "sections": [
-                    {
-                        "title": "Data Accessed",
-                        "content": "Our application accesses Google User Data solely for the purpose of providing backup and restore functionality. Specifically, we access:\n*   **Google Drive (drive.file scope)**: To create, view, and manage only the specific backup files created by this app. We do not access any other files in your Google Drive.\n*   **User Profile (userinfo.profile)**: To display your name and profile picture solely for the purpose of confirming the account currently signed in for backups.",
-                        "imageRenderer": "default",
-                        "images": []
-                    },
-                    {
-                        "title": "Data Usage",
-                        "content": "The Google User Data we access is used exclusively for:\n1.  **Backup**: Uploading an encrypted copy of your local notes database to your personal Google Drive.\n2.  **Restore**: Downloading and decrypting your notes database from your Personal Google Drive to your device.\n\nWe do not share, transfer, or disclose this Google User Data to any third parties, including advertising platforms, data brokers, or information resellers. The data remains strictly between your device and your personal Google Drive storage.",
-                        "imageRenderer": "default",
-                        "images": []
-                    },
-                    {
-                        "title": "Limited Use Policy",
-                        "content": "Scribble Notes' use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.",
-                        "imageRenderer": "default",
-                        "images": []
-                    }
-                ]
-            },
-            {
                 "title": "Trusted & Transparent Permissions",
                 "subtitle": "Why We Need Access",
                 "sections": [
                     {
                         "title": "Overview",
-                        "content": "We believe in total transparency. We request access only when necessary to provide core functionalities of the app. Below is a detailed list of permissions we request and why:\n\n*   **Camera & Audio (RECORD_AUDIO, CAMERA):** To take photos and record voice notes directly within your notes.\n*   **Storage (READ/WRITE_EXTERNAL_STORAGE, READ_MEDIA_*):** For saving backups, accessing media, and general file management.\n*   **Alarms & Notifications (POST_NOTIFICATIONS, USE_EXACT_ALARM, SCHEDULE_EXACT_ALARM):** To ensure timely and exact delivery of your scheduled reminders and habit tracking alerts.\n*   **Network (INTERNET, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE):** To securely connect to your personal Google Drive for cloud syncing.\n*   **Background Processing (WAKE_LOCK, RECEIVE_BOOT_COMPLETED):** To resume cloud syncing and set up reminders after your device restarts.",
+                        "content": "We believe in total transparency. We request access only when necessary to provide core functionalities of the app. Below is a detailed list of permissions we request and why:\n\n*   **Network (INTERNET):** To securely connect to the IKY API backend to sync family tree data.\n*   **Storage (READ/WRITE_EXTERNAL_STORAGE):** For picking profile pictures and exporting genealogy reports.",
                         "imageRenderer": "default",
-                        "images": [
-                            "../images/playstore_screen-3-settings.png"
-                        ]
+                        "images": []
                     }
                 ]
             },
@@ -362,7 +235,7 @@
                     },
                     {
                         "title": "You're in Control",
-                        "content": "Any time you can revoke our app access from your account by visiting to your Google Drive settings page. From settings page navigate to Manage Apps from the left pane and scroll down to see Scribble Notes & Organizer app's entry. [Follow the steps to](../features/scribble_notes_manage_access.html) delete data or disconnect from Google Drive.",
+                        "content": "Any time you can revoke our app access from your account by visiting to your Google Drive settings page. From settings page navigate to Manage Apps from the left pane and scroll down to see IKY People App & Organizer app's entry. [Follow the steps to](../features/scribble_notes_manage_access.html) delete data or disconnect from Google Drive.",
                         "imageRenderer": "default",
                         "images": []
                     },
@@ -410,7 +283,7 @@
                     },
                     {
                         "title": "Definitions",
-                        "content": "For the purposes of these Terms and Conditions:\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named Scribble Notes\n*   **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Country** refers to: Tamil Nadu, India\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to Scribble Notes.\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Service** refers to the Application.\n*   **Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.\n*   **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
+                        "content": "For the purposes of these Terms and Conditions:\n*   **Application** means the software program provided by the Company downloaded by You on any electronic device, named IKY People App\n*   **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.\n*   **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.\n*   **Country** refers to: Tamil Nadu, India\n*   **Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to IKY People App.\n*   **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.\n*   **Service** refers to the Application.\n*   **Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.\n*   **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.\n*   **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.",
                         "imageRenderer": "default",
                         "images": []
                     }
@@ -522,9 +395,8 @@
     },
     "tags": [
         "Flutter",
-        "Dart",
-        "Clean Architecture",
-        "Bloc",
-        "Hive"
+        "Family",
+        "Genealogy",
+        "Riverpod"
     ]
 }

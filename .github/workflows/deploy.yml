@@ -32,7 +32,11 @@ jobs:
         run: |
           cd apps/portfolio
           flutter pub get
-          flutter build web --base-href "/home/" --release
+          flutter build web \
+            --release \
+            --no-source-maps \
+            --dart2js-optimization O4 \
+            --base-href "/home/"
           
       - name: Prepare Unified Dist Directory
         run: |
@@ -97,3 +101,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          keep_files: true
+          commit_message: "deploy(portfolio): build @ ${{ github.sha }} [skip ci]"

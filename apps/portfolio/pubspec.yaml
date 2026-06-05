@@ -70,6 +70,7 @@ flutter:
     - assets/images/
     - assets/images/app1/
     - assets/images/app2/
+    - assets/images/app3/
     - assets/images/learning/
     - assets/developers/
 

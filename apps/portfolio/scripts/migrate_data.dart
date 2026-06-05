@@ -6,7 +6,14 @@ import 'dart:io';
 void main() async {
   print('Starting Migration...');
 
-  final appIds = ['app1', 'app2'];
+  final extDir = Directory('assets-ext');
+  final appIds = extDir.existsSync()
+      ? extDir
+          .listSync()
+          .whereType<Directory>()
+          .map((d) => d.uri.pathSegments[d.uri.pathSegments.length - 2])
+          .toList()
+      : <String>[];
   final List<Map<String, dynamic>> processedApps = [];
 
   for (final appId in appIds) {
@@ -64,27 +71,22 @@ void main() async {
   }
 
   // 5. Create Final JSON
-  final finalData = {
-    "socialLinks": [],
-    "developer": {
-      "name": "Ni Studio Us",
-      "shortName": "Karthik",
-      "bio": "",
-      "role": "Flutter Developer",
-      "avatarUrl": "assets/developers/dev-avatar.png",
-      "email": "ni.studio.us@outlook.com",
-      "bannerUrl": "assets/developers/play_store_banner.png",
-      "badge": {
-        "url": "assets/developers/dev-avatar.png",
-        "caption": "Brand Creator",
-      },
-    },
-    "apps": processedApps,
-  };
-
   final targetFile = File('assets/data.json');
+  Map<String, dynamic> existingData = {};
+  
+  if (targetFile.existsSync()) {
+    try {
+      existingData = jsonDecode(targetFile.readAsStringSync());
+    } catch (e) {
+      print('Warning: Could not parse existing data.json, creating new.');
+    }
+  }
+
+  // Update only the apps list, preserving everything else (like learningProjects, flutterApps, developer, etc)
+  existingData['apps'] = processedApps;
+
   targetFile.writeAsStringSync(
-    const JsonEncoder.withIndent('  ').convert(finalData),
+    const JsonEncoder.withIndent('  ').convert(existingData),
   );
 
   print('\nMigration Complete! Data written to assets/data.json');

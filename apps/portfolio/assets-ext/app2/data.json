@@ -1,670 +1,677 @@
 {
-  "id": "sms_stack_manager",
-  "name": "SMS Stack",
-  "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
-  "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
-  "iconUrl": "images/icon.png",
-  "descriptionImages": [
-    {
-      "url": "../images/playstore_screen-1-app-launch-1.png",
-      "caption": "App Launch"
-    },
-    {
-      "url": "../images/playstore_screen-1-app-launch-3.png",
-      "caption": "App Launch"
-    }
-  ],
-  "features": [
-    {
-      "title": "SMS Parser Engine",
-      "subtitle": "The Brain Behind the App",
-      "sections": [
+    "id": "sms_stack_manager",
+    "name": "SMS Stack",
+    "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
+    "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
+    "iconUrl": "images/icon.png",
+    "descriptionImages": [
         {
-          "title": "Introduction",
-          "content": "The SMS Parser Engine is the core component that gives SMS Stack its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
-          "imageRenderer": "default",
-          "images": []
+            "url": "../images/playstore_screen-1-app-launch-1.png",
+            "caption": "App Launch"
         },
         {
-          "title": "How It Works",
-          "content": "The engine uses a \"Waterfall\" approach to parsing:\n1.  **Normalization**: First, sender IDs are cleaned (e.g., `+91-HDFCBK` becomes `HDFCBK`).\n2.  **Global Matching**: It checks against universal patterns like OTPs (`\\d{4-8}`) or Account Numbers.\n3.  **Regional Rules**: It applies country-specific logic (currently optimized for `IN` - India) to interpret currency symbols (`₹`, `INR`), date formats, and transaction keywords (`credited`, `debited`).\n4.  **Extraction**: If a match is found, it extracts:\n    *   **Amount**: The transaction value.\n    *   **Type**: Credit (Income), Debit (Expense), or Bill.\n    *   **Entity**: The Bank or Merchant name (resolved via alias lists).",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "User Benefits",
-          "content": "*   **100% Privacy**: No data leaves your phone. Unlike other apps that upload SMS to a server, our regex engine runs locally.\n*   **Offline Capable**: Works perfectly without an internet connection.\n*   **Instant**: Parsing happens in milliseconds as soon as an SMS arrives.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-2-app-setup-parse.png",
-              "caption": "Parser Setup"
-            }
-          ]
+            "url": "../images/playstore_screen-1-app-launch-3.png",
+            "caption": "App Launch"
         }
-      ]
-    },
-    {
-      "title": "Finance Dashboard",
-      "subtitle": "Your Money, Visualized",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "The Finance Dashboard turns your chaotic SMS inbox into a clear financial summary. By aggregating transaction alerts from banks and wallets, it provides a real-time view of your liquidity and spending without needing to log into multiple banking apps.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Key Capabilities",
-          "content": "*   **Smart Balance**: Shows the latest \"Available Balance\" extracted from your most recent bank SMS.\n*   **Income vs Expense**: Monthly breakdown of how much came in vs how much went out.\n*   **Spend Analysis**: Visual charts showing daily spending trends.\n*   **Bill Tracking**: Identifies \"Payment Due\" messages and lists them separately so you never miss a deadline.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-3-finance-analytics.png",
-              "caption": "Finance Analytics"
-            },
-            {
-              "url": "../images/playstore_screen-2-app-setup-parse-anayse-finance.png",
-              "caption": "Parsing Finance"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Smart Inbox",
-      "subtitle": "Declutter Your Life",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "The Smart Inbox is your primary interface for viewing messages. Unlike a standard SMS app, it doesn't just list everything chronologically—it organizes them.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Features",
-          "content": "*   **Tabbed View**:\n    *   **Personal**: Conversations with people (non-commercial).\n    *   **Transactions**: Bank alerts, OTPs, and bills.\n    *   **Promos**: Marketing spam and offers.\n*   **Sender Mapping**:\n    *   Automatically converts cryptic IDs like `VM-HDFCBK` to \"HDFC Bank\".\n    *   Allows you to set your own Custom Names for senders.\n*   **Powerful Search**:\n    *   Search by text content (\"Amazon\").\n    *   Search by amount (\"5000\").\n    *   Search by time/date.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-2-inbox-search-by.png",
-              "caption": "Smart Inbox Search"
-            },
-            {
-              "url": "../images/playstore_screen-2-inbox-search-by-date.png",
-              "caption": "Smart Inbox Search by Date"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Upcoming Bills",
-      "subtitle": "Never Miss a Payment",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "Your inbox is full of \"Due Date\" reminders, but they get lost in the noise. SMS Stack automatically detects these messages and separates them into a dedicated view, effectively turning your SMS inbox into a Bill Calendar.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "What it Does",
-          "content": "*   **Auto-Detection**: Scans messages for keywords like \"Due on\", \"Pay by\", and \"Bill amount\".\n*   **Calendar Sorting**: Organizes bills by their due date, showing the most urgent ones effectively.\n*   **Reminders**: Can optionally schedule a local notification 1-3 days before the due date (Beta).",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-4-upcoming.png",
-              "caption": "Bill Reminders"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Spam Control",
-      "subtitle": "Clean Up Your Inbox",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "SMS Stack includes a proactive Spam Defense system designed to keep your Personal and Transaction tabs clean without deleting important messages.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Features",
-          "content": "*   **Spam Suggestions**: The app analyzes frequency and content models to identify likely spammers (e.g., \"AD-123456\"). It smartly excludes senders who also send OTPs or Finance alerts (like Banks) to prevent false positives.\n*   **Block List**: You can block specific senders. Their messages will be hidden from the main inbox and they won't trigger notifications.\n*   **Dismissal**: If the app suggests a sender incorrectly, you can \"Dismiss\" the suggestion, and it won't bother you again.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-5-settings-spam-manage.png",
-              "caption": "Spam Manager"
-            }
-          ]
-        },
-        {
-          "title": "Navigation",
-          "content": "1.  Go to **Settings** -> **Spam Manager**.\n2.  **Suggestions Tab**: Review potential spam. Tap \"Block\" to banish them or \"Dismiss\" to keep them.\n3.  **Blocked Tab**: See who you've blocked. You can unblock them anytime.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "title": "Sender Mapping",
-      "subtitle": "Humanize Your Updates",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "Sender IDs like `VM-SBIINB` or `BZ-AMZPAY` are cryptic and not user friendly. Sender Mapping allows you to convert these into readable names like \"SBI Bank\" or \"Amazon Pay\".",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "How it Works",
-          "content": "*   **Auto-Resolution**: The app comes with a built-in dictionary for hundreds of popular Indian banks and services (HDFC, ICICI, Fliplart, Zomato, etc.).\n*   **User Overrides**: You can define your own names. If you get messages from a local gym or school with a weird ID, you can rename it permanently.\n*   **Sync**: Your custom mappings are synced to your Cloud Backup, so you don't lose them when you switch phones.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-5-settings-sender-mapping-list.png",
-              "caption": "Sender Mapping List"
-            },
-            {
-              "url": "..images/playstore_screen-5-settings-sender-mapping-dialog.png",
-              "caption": "Updating Senders Mapping Dialog"
-            }
-          ]
-        },
-        {
-          "title": "How to Use",
-          "content": "1.  Go to **Settings** -> **Operations** -> **Sender Mapping**.\n2.  Tap **\"Add New\"** (+).\n3.  Select the Sender ID from the dropdown (grouped by prefix).\n4.  Enter the Display Name.\n5.  Save. All past and future messages will now show the new name.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "title": "Cloud Backup",
-      "subtitle": "Secure, Encrypted, Private.",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "Protect your financial history and organization rules by backing them up to your personal Google Drive.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Security First",
-          "content": "*   **End-to-End Encryption**: Your backup file is encrypted on your device using **AES-256-GCM** before it is uploaded.\n*   **Key Security**: The encryption key is derived from a password you set. We (the developers) never see your password or your data.\n*   **Private Storage**: The file is stored in a hidden \"App Data\" folder in your Google Drive. It is not visible to other apps or even to you directly, preventing accidental deletion.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-5-settings-cloud-backup.png",
-              "caption": "Cloud Backup Settings"
-            }
-          ]
-        },
-        {
-          "title": "Features",
-          "content": "*   **What is Backed Up?**\n    *   Sms Stack categorization (Personal/Finance/Promo).\n    *   Sender Mappings (Your custom names).\n    *   App Settings & Preferences.\n*   **Frequency**: Set it to run Daily or Weekly in the background.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "How to Setup",
-          "content": "1.  Go to **Settings** -> **Data Control**.\n2.  Tap **\"Backup & Restore\"**.\n3.  Sign in with Google.\n4.  Set an Encryption Password.\n5.  Tap **\"Sync Now\"**.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Managing Your Data",
-          "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack**.\n4.  Click **Options** -> **Delete hidden app data**.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "title": "Customization",
-      "subtitle": "Make it Yours",
-      "sections": [
-        {
-          "title": "Introduction",
-          "content": "Customize the look and feel of the app to match your preference.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Theme Engine",
-          "content": "*   **System Default**: Matches your Android system theme (Light/Dark).\n*   **Dark Mode**: A generic easeful dark theme for low-light usage (High Contrast).\n*   **Light Mode**: A clean, crisp interface for daytime usage.",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-5-settings-theme.png",
-              "caption": "Theme Settings"
-            }
-          ]
-        },
-        {
-          "title": "Operations",
-          "content": "Go to **Settings** -> **Operations** to manage data:\n*   **Storage Optimization**: Auto-delete old OTPs (Older than 24h, 3 days, etc.) to save space.\n*   **Full Resync**: If you feel the parser missed something, you can trigger a \"Factory Reset\" of the local database to re-read all SMS from scratch (without losing personal data).",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "title": "Beta Features",
-      "subtitle": "Experimental & Advanced",
-      "sections": [
-        {
-          "title": "Available Features",
-          "content": "1.  **Biometric Lock**: Secure the app with your Fingerprint or Face ID. Requires authentication every time you open the app.\n2.  **Smart Bill Reminders**: Receive a phone notification 2 days before a bill is due. (Requires 'Alarm' permission).\n3.  **Visual Analytics (Alpha)**: A deeper dive into your spending with Pie Charts and Bar Graphs (sender-wise breakdown).",
-          "imageRenderer": "default",
-          "images": [
-            {
-              "url": "../images/playstore_screen-5-settings.png",
-              "caption": "App Settings"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Permissions & Safety",
-      "subtitle": "Transparency First",
-      "sections": [
-        {
-          "title": "SMS & Contacts",
-          "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "System Integrations",
-          "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Network Usage",
-          "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    }
-  ],
-  "technicalDetails": [
-    {
-      "hide": true,
-      "title": "Architecture & Design",
-      "subtitle": "Clean Architecture & BLoC",
-      "sections": [
-        {
-          "title": "High-Level Overview",
-          "content": "SMS Stack follows **Clean Architecture** principles, separating the codebase into three main layers:\n\n1.  **Presentation Layer (`lib/features/`)**:\n    *   **UI**: Widgets/Screens.\n    *   **State Management**: `Bloc` (Business Logic Components).\n2.  **Domain/Service Layer (`lib/core/services/`)**:\n    *   **Services**: `SmsService`, `NotificationService`, `PermissionService`.\n    *   **Logic**: `SmsParserEngine` (Regex Logic).\n3.  **Data Layer (`lib/core/database/`)**:\n    *   **Database**: Drift (SQLite) with FTS5.\n    *   **DTOs**: `SmsMessage` (from system) -> `Message` (db entity).",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Core Patterns",
-          "content": "*   **BLoC Pattern**: Used for Predictable State Management. Uses `hydrated_bloc` to persist UI state.\n*   **Dependency Injection**: Uses `get_it` and `injectable` for managing singletons.\n*   **Repository Pattern**: `SmsService` abstracts the data source.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "hide": true,
-      "title": "SMS Rules Schema",
-      "subtitle": "JSON-based Parsing Logic",
-      "sections": [
-        {
-          "title": "Schema Structure",
-          "content": "The parsing logic is defined in `assets/rules/sms_rules.json`. It follows a hierarchical \"Waterfall\" structure:\n*   **Global Rules**: Universal patterns like OTPs or Account Numbers.\n*   **Regional Rules (IN)**: Country-specific logic for currency (`₹`), date formats, and keywords.\n*   **Extraction Strategy**: Priority order: Bill > Debit/Credit > Balance > OTP.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "hide": true,
-      "title": "Backup Security",
-      "subtitle": "AES-256 Encryption",
-      "sections": [
-        {
-          "title": "Encryption Standards",
-          "content": "*   **Algorithm**: AES-256-GCM.\n*   **Key Derivation**: PBKDF2 with 10,000 iterations.\n*   **Salt**: Random 16-byte salt per file.",
-          "imageRenderer": "default",
-          "images": []
-        },
-        {
-          "title": "Process",
-          "content": "1. Serialize SQLite tables to JSON.\n2. GZIP Compress.\n3. Encrypt with User Password.\n4. Upload to Google Drive `appDataFolder` (Hidden).",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "hide": true,
-      "title": "Spam Logic",
-      "subtitle": "Heuristic Filtering",
-      "sections": [
-        {
-          "title": "Algorithm",
-          "content": "Identifies spammers based on:\n1.  **Category**: Classified as `Promo/Spam`.\n2.  **No Critical History**: No Finance/Bill/OTP messages.\n3.  **Frequency**: High volume.\n4.  **Exclusion**: Not in Contacts.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    },
-    {
-      "hide": true,
-      "title": "Notification System",
-      "subtitle": "Kotlin Native Bridge",
-      "sections": [
-        {
-          "title": "Integration",
-          "content": "Uses a `BroadcastReceiver` (Kotlin) to intercept SMS, parse them, and post notifications using `MessagingStyle`. \n*   **Flutter Bridge**: Syncs read state and notifications via `MethodChannel`.",
-          "imageRenderer": "default",
-          "images": []
-        }
-      ]
-    }
-  ],
-  "screenshots": [
-    {
-      "url": "../images/playstore_screen-2-app-setup-parse.png",
-      "caption": "Parser Setup"
-    },
-    {
-      "url": "../images/playstore_screen-3-finance-analytics.png",
-      "caption": "Finance Dashboard"
-    },
-    {
-      "url": "../images/playstore_screen-2-inbox-search-by.png",
-      "caption": "Smart Inbox"
-    },
-    {
-      "url": "../images/playstore_screen-4-upcoming.png",
-      "caption": "Upcoming Bills"
-    },
-    {
-      "url": "../images/playstore_screen-5-settings-spam-manage.png",
-      "caption": "Spam Manager"
-    },
-    {
-      "url": "../images/playstore_screen-5-settings-sender-mapping-list.png",
-      "caption": "Sender Mapping"
-    },
-    {
-      "url": "../images/playstore_screen-5-settings-cloud-backup.png",
-      "caption": "Cloud Backup"
-    },
-    {
-      "url": "../images/playstore_screen-5-settings-theme.png",
-      "caption": "Theme Settings"
-    }
-  ],
-  "links": [
-    {
-      "type": "Play Store",
-      "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
-    }
-  ],
-  "privacyPolicy": {
-    "url": "",
-    "lastUpdatedUtc": "2026-01-27T00:00:00Z",
-    "limitUseDisclosure": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to <a href=\"https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes\" target=\"_blank\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
+    ],
     "features": [
-      {
-        "title": "Limited Use Policy",
-        "subtitle": "Google Restricted Scopes",
-        "sections": [
-          {
-            "title": "Compliance Disclosure",
-            "content": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes), including the Limited Use requirements.",
-            "imageRenderer": "default",
-            "images": []
-          }
+        {
+            "title": "SMS Parser Engine",
+            "subtitle": "The Brain Behind the App",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "The SMS Parser Engine is the core component that gives SMS Stack its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "How It Works",
+                    "content": "The engine uses a \"Waterfall\" approach to parsing:\n1.  **Normalization**: First, sender IDs are cleaned (e.g., `+91-HDFCBK` becomes `HDFCBK`).\n2.  **Global Matching**: It checks against universal patterns like OTPs (`\\d{4-8}`) or Account Numbers.\n3.  **Regional Rules**: It applies country-specific logic (currently optimized for `IN` - India) to interpret currency symbols (`₹`, `INR`), date formats, and transaction keywords (`credited`, `debited`).\n4.  **Extraction**: If a match is found, it extracts:\n    *   **Amount**: The transaction value.\n    *   **Type**: Credit (Income), Debit (Expense), or Bill.\n    *   **Entity**: The Bank or Merchant name (resolved via alias lists).",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "User Benefits",
+                    "content": "*   **100% Privacy**: No data leaves your phone. Unlike other apps that upload SMS to a server, our regex engine runs locally.\n*   **Offline Capable**: Works perfectly without an internet connection.\n*   **Instant**: Parsing happens in milliseconds as soon as an SMS arrives.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-2-app-setup-parse.png",
+                            "caption": "Parser Setup"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Finance Dashboard",
+            "subtitle": "Your Money, Visualized",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "The Finance Dashboard turns your chaotic SMS inbox into a clear financial summary. By aggregating transaction alerts from banks and wallets, it provides a real-time view of your liquidity and spending without needing to log into multiple banking apps.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Key Capabilities",
+                    "content": "*   **Smart Balance**: Shows the latest \"Available Balance\" extracted from your most recent bank SMS.\n*   **Income vs Expense**: Monthly breakdown of how much came in vs how much went out.\n*   **Spend Analysis**: Visual charts showing daily spending trends.\n*   **Bill Tracking**: Identifies \"Payment Due\" messages and lists them separately so you never miss a deadline.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-3-finance-analytics.png",
+                            "caption": "Finance Analytics"
+                        },
+                        {
+                            "url": "../images/playstore_screen-2-app-setup-parse-anayse-finance.png",
+                            "caption": "Parsing Finance"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Smart Inbox",
+            "subtitle": "Declutter Your Life",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "The Smart Inbox is your primary interface for viewing messages. Unlike a standard SMS app, it doesn't just list everything chronologically—it organizes them.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Features",
+                    "content": "*   **Tabbed View**:\n    *   **Personal**: Conversations with people (non-commercial).\n    *   **Transactions**: Bank alerts, OTPs, and bills.\n    *   **Promos**: Marketing spam and offers.\n*   **Sender Mapping**:\n    *   Automatically converts cryptic IDs like `VM-HDFCBK` to \"HDFC Bank\".\n    *   Allows you to set your own Custom Names for senders.\n*   **Powerful Search**:\n    *   Search by text content (\"Amazon\").\n    *   Search by amount (\"5000\").\n    *   Search by time/date.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-2-inbox-search-by.png",
+                            "caption": "Smart Inbox Search"
+                        },
+                        {
+                            "url": "../images/playstore_screen-2-inbox-search-by-date.png",
+                            "caption": "Smart Inbox Search by Date"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Upcoming Bills",
+            "subtitle": "Never Miss a Payment",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "Your inbox is full of \"Due Date\" reminders, but they get lost in the noise. SMS Stack automatically detects these messages and separates them into a dedicated view, effectively turning your SMS inbox into a Bill Calendar.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "What it Does",
+                    "content": "*   **Auto-Detection**: Scans messages for keywords like \"Due on\", \"Pay by\", and \"Bill amount\".\n*   **Calendar Sorting**: Organizes bills by their due date, showing the most urgent ones effectively.\n*   **Reminders**: Can optionally schedule a local notification 1-3 days before the due date (Beta).",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-4-upcoming.png",
+                            "caption": "Bill Reminders"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Spam Control",
+            "subtitle": "Clean Up Your Inbox",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "SMS Stack includes a proactive Spam Defense system designed to keep your Personal and Transaction tabs clean without deleting important messages.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Features",
+                    "content": "*   **Spam Suggestions**: The app analyzes frequency and content models to identify likely spammers (e.g., \"AD-123456\"). It smartly excludes senders who also send OTPs or Finance alerts (like Banks) to prevent false positives.\n*   **Block List**: You can block specific senders. Their messages will be hidden from the main inbox and they won't trigger notifications.\n*   **Dismissal**: If the app suggests a sender incorrectly, you can \"Dismiss\" the suggestion, and it won't bother you again.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-5-settings-spam-manage.png",
+                            "caption": "Spam Manager"
+                        }
+                    ]
+                },
+                {
+                    "title": "Navigation",
+                    "content": "1.  Go to **Settings** -> **Spam Manager**.\n2.  **Suggestions Tab**: Review potential spam. Tap \"Block\" to banish them or \"Dismiss\" to keep them.\n3.  **Blocked Tab**: See who you've blocked. You can unblock them anytime.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "title": "Sender Mapping",
+            "subtitle": "Humanize Your Updates",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "Sender IDs like `VM-SBIINB` or `BZ-AMZPAY` are cryptic and not user friendly. Sender Mapping allows you to convert these into readable names like \"SBI Bank\" or \"Amazon Pay\".",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "How it Works",
+                    "content": "*   **Auto-Resolution**: The app comes with a built-in dictionary for hundreds of popular Indian banks and services (HDFC, ICICI, Fliplart, Zomato, etc.).\n*   **User Overrides**: You can define your own names. If you get messages from a local gym or school with a weird ID, you can rename it permanently.\n*   **Sync**: Your custom mappings are synced to your Cloud Backup, so you don't lose them when you switch phones.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-5-settings-sender-mapping-list.png",
+                            "caption": "Sender Mapping List"
+                        },
+                        {
+                            "url": "..images/playstore_screen-5-settings-sender-mapping-dialog.png",
+                            "caption": "Updating Senders Mapping Dialog"
+                        }
+                    ]
+                },
+                {
+                    "title": "How to Use",
+                    "content": "1.  Go to **Settings** -> **Operations** -> **Sender Mapping**.\n2.  Tap **\"Add New\"** (+).\n3.  Select the Sender ID from the dropdown (grouped by prefix).\n4.  Enter the Display Name.\n5.  Save. All past and future messages will now show the new name.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "title": "Cloud Backup",
+            "subtitle": "Secure, Encrypted, Private.",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "Protect your financial history and organization rules by backing them up to your personal Google Drive.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Security First",
+                    "content": "*   **End-to-End Encryption**: Your backup file is encrypted on your device using **AES-256-GCM** before it is uploaded.\n*   **Key Security**: The encryption key is derived from a password you set. We (the developers) never see your password or your data.\n*   **Private Storage**: The file is stored in a hidden \"App Data\" folder in your Google Drive. It is not visible to other apps or even to you directly, preventing accidental deletion.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-5-settings-cloud-backup.png",
+                            "caption": "Cloud Backup Settings"
+                        }
+                    ]
+                },
+                {
+                    "title": "Features",
+                    "content": "*   **What is Backed Up?**\n    *   Sms Stack categorization (Personal/Finance/Promo).\n    *   Sender Mappings (Your custom names).\n    *   App Settings & Preferences.\n*   **Frequency**: Set it to run Daily or Weekly in the background.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "How to Setup",
+                    "content": "1.  Go to **Settings** -> **Data Control**.\n2.  Tap **\"Backup & Restore\"**.\n3.  Sign in with Google.\n4.  Set an Encryption Password.\n5.  Tap **\"Sync Now\"**.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Managing Your Data",
+                    "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack**.\n4.  Click **Options** -> **Delete hidden app data**.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "title": "Customization",
+            "subtitle": "Make it Yours",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": "Customize the look and feel of the app to match your preference.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Theme Engine",
+                    "content": "*   **System Default**: Matches your Android system theme (Light/Dark).\n*   **Dark Mode**: A generic easeful dark theme for low-light usage (High Contrast).\n*   **Light Mode**: A clean, crisp interface for daytime usage.",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-5-settings-theme.png",
+                            "caption": "Theme Settings"
+                        }
+                    ]
+                },
+                {
+                    "title": "Operations",
+                    "content": "Go to **Settings** -> **Operations** to manage data:\n*   **Storage Optimization**: Auto-delete old OTPs (Older than 24h, 3 days, etc.) to save space.\n*   **Full Resync**: If you feel the parser missed something, you can trigger a \"Factory Reset\" of the local database to re-read all SMS from scratch (without losing personal data).",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "title": "Beta Features",
+            "subtitle": "Experimental & Advanced",
+            "sections": [
+                {
+                    "title": "Available Features",
+                    "content": "1.  **Biometric Lock**: Secure the app with your Fingerprint or Face ID. Requires authentication every time you open the app.\n2.  **Smart Bill Reminders**: Receive a phone notification 2 days before a bill is due. (Requires 'Alarm' permission).\n3.  **Visual Analytics (Alpha)**: A deeper dive into your spending with Pie Charts and Bar Graphs (sender-wise breakdown).",
+                    "imageRenderer": "default",
+                    "images": [
+                        {
+                            "url": "../images/playstore_screen-5-settings.png",
+                            "caption": "App Settings"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Permissions & Safety",
+            "subtitle": "Transparency First",
+            "sections": [
+                {
+                    "title": "SMS & Contacts",
+                    "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "System Integrations",
+                    "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Network Usage",
+                    "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        }
+    ],
+    "technicalDetails": [
+        {
+            "hide": true,
+            "title": "Architecture & Design",
+            "subtitle": "Clean Architecture & BLoC",
+            "sections": [
+                {
+                    "title": "High-Level Overview",
+                    "content": "SMS Stack follows **Clean Architecture** principles, separating the codebase into three main layers:\n\n1.  **Presentation Layer (`lib/features/`)**:\n    *   **UI**: Widgets/Screens.\n    *   **State Management**: `Bloc` (Business Logic Components).\n2.  **Domain/Service Layer (`lib/core/services/`)**:\n    *   **Services**: `SmsService`, `NotificationService`, `PermissionService`.\n    *   **Logic**: `SmsParserEngine` (Regex Logic).\n3.  **Data Layer (`lib/core/database/`)**:\n    *   **Database**: Drift (SQLite) with FTS5.\n    *   **DTOs**: `SmsMessage` (from system) -> `Message` (db entity).",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Core Patterns",
+                    "content": "*   **BLoC Pattern**: Used for Predictable State Management. Uses `hydrated_bloc` to persist UI state.\n*   **Dependency Injection**: Uses `get_it` and `injectable` for managing singletons.\n*   **Repository Pattern**: `SmsService` abstracts the data source.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "hide": true,
+            "title": "SMS Rules Schema",
+            "subtitle": "JSON-based Parsing Logic",
+            "sections": [
+                {
+                    "title": "Schema Structure",
+                    "content": "The parsing logic is defined in `assets/rules/sms_rules.json`. It follows a hierarchical \"Waterfall\" structure:\n*   **Global Rules**: Universal patterns like OTPs or Account Numbers.\n*   **Regional Rules (IN)**: Country-specific logic for currency (`₹`), date formats, and keywords.\n*   **Extraction Strategy**: Priority order: Bill > Debit/Credit > Balance > OTP.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "hide": true,
+            "title": "Backup Security",
+            "subtitle": "AES-256 Encryption",
+            "sections": [
+                {
+                    "title": "Encryption Standards",
+                    "content": "*   **Algorithm**: AES-256-GCM.\n*   **Key Derivation**: PBKDF2 with 10,000 iterations.\n*   **Salt**: Random 16-byte salt per file.",
+                    "imageRenderer": "default",
+                    "images": []
+                },
+                {
+                    "title": "Process",
+                    "content": "1. Serialize SQLite tables to JSON.\n2. GZIP Compress.\n3. Encrypt with User Password.\n4. Upload to Google Drive `appDataFolder` (Hidden).",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "hide": true,
+            "title": "Spam Logic",
+            "subtitle": "Heuristic Filtering",
+            "sections": [
+                {
+                    "title": "Algorithm",
+                    "content": "Identifies spammers based on:\n1.  **Category**: Classified as `Promo/Spam`.\n2.  **No Critical History**: No Finance/Bill/OTP messages.\n3.  **Frequency**: High volume.\n4.  **Exclusion**: Not in Contacts.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        },
+        {
+            "hide": true,
+            "title": "Notification System",
+            "subtitle": "Kotlin Native Bridge",
+            "sections": [
+                {
+                    "title": "Integration",
+                    "content": "Uses a `BroadcastReceiver` (Kotlin) to intercept SMS, parse them, and post notifications using `MessagingStyle`. \n*   **Flutter Bridge**: Syncs read state and notifications via `MethodChannel`.",
+                    "imageRenderer": "default",
+                    "images": []
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "url": "../images/playstore_screen-2-app-setup-parse.png",
+            "caption": "Parser Setup"
+        },
+        {
+            "url": "../images/playstore_screen-3-finance-analytics.png",
+            "caption": "Finance Dashboard"
+        },
+        {
+            "url": "../images/playstore_screen-2-inbox-search-by.png",
+            "caption": "Smart Inbox"
+        },
+        {
+            "url": "../images/playstore_screen-4-upcoming.png",
+            "caption": "Upcoming Bills"
+        },
+        {
+            "url": "../images/playstore_screen-5-settings-spam-manage.png",
+            "caption": "Spam Manager"
+        },
+        {
+            "url": "../images/playstore_screen-5-settings-sender-mapping-list.png",
+            "caption": "Sender Mapping"
+        },
+        {
+            "url": "../images/playstore_screen-5-settings-cloud-backup.png",
+            "caption": "Cloud Backup"
+        },
+        {
+            "url": "../images/playstore_screen-5-settings-theme.png",
+            "caption": "Theme Settings"
+        }
+    ],
+    "links": [
+        {
+            "type": "Play Store",
+            "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+        }
+    ],
+    "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
+        "limitUseDisclosure": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to <a href=\"https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes\" target=\"_blank\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
+        "features": [
+            {
+                "title": "Limited Use Policy",
+                "subtitle": "Google Restricted Scopes",
+                "sections": [
+                    {
+                        "title": "Compliance Disclosure",
+                        "content": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes), including the Limited Use requirements.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Data Accessed",
+                "subtitle": "Google User Data Types",
+                "sections": [
+                    {
+                        "title": "SMS Messages (READ_SMS)",
+                        "content": "Our application accesses your SMS messages to provide its core functionality. It reads the sender ID, message body, and timestamp of incoming and existing messages.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Contact List (READ_CONTACTS)",
+                        "content": "Our application accesses your contact list (names and photos) strictly to **humanize sender IDs**. For example, identifying if a message is from a saved contact versus a business sender. This data is processed in-memory and is never uploaded.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Google Account Profile (Name & Email)",
+                        "content": "When you voluntarily sign in for **Cloud Backup**, we access your basic profile information (Name and Email address) provided by Google.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Data Usage",
+                "subtitle": "How We Handle Your Data",
+                "sections": [
+                    {
+                        "title": "Local Categorization & Parsing",
+                        "content": "The SMS data accessed is processed **locally on your device** using a regex engine. We use this data to:\n1.  **Categorize** messages into Personal, Finance, and Promo tabs.\n2.  **Extract** financial transaction details (amount, merchant, date) to build your finance dashboard.\n3.  **Identify** bill reminders to populate the 'Upcoming Bills' section.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Display Purposes",
+                        "content": "Contact names and photos are used strictly to display recognized avatars next to message threads, making your inbox easier to navigate.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Limited Sharing (User-Initiated Backups Only)",
+                        "content": "We **do not** transfer your data to any third-party server for processing. The only time data leaves your device is when YOU explicitly enable **Google Drive Backup**. In this case, your data is encrypted with AES-256 and uploaded to your personal Google Drive account for safe keeping.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Cloud Backup Authentication",
+                        "content": "If you sign in for Cloud Backup, we use your **Name and Email Address** solely to display the currently connected account within the app's settings. This helps you verify which Google Drive account is being used for backups. We do not share this identity with any other third parties.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Data Safety & Permissions",
+                "subtitle": "Google Play Compliance",
+                "sections": [
+                    {
+                        "title": "SMS & Contacts",
+                        "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Financial Data Privacy",
+                        "content": "**Strict Local Processing Policy**: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.\n\n### Not a Loan App\n**We do not provide, facilitate, or promote personal loans or credit products.** This app is strictly a personal finance manager and expense tracker.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "System Integrations",
+                        "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Network Usage",
+                        "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Data Processing",
+                "subtitle": "Local-First Architecture",
+                "sections": [
+                    {
+                        "title": "Parsing (Regex Engine)",
+                        "content": "When an SMS is received, it is processed by the on-device `SmsParserEngine`. This engine uses a set of Regular Expression rules to identify patterns (like \"INR 500 debited\"). This processing happens **entirely in your phone's secure memory**.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Storage (SQLite)",
+                        "content": "All extracted data (Accounts, Transactions, Bills, Logs) is stored in a private `SQLite` database located in the app's secure sandbox. Other apps cannot access this data.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Cloud Services",
+                "subtitle": "Optional & User Controlled",
+                "sections": [
+                    {
+                        "title": "Google Drive Sync",
+                        "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack** -> **Options** -> **Delete hidden app data**.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Firebase Config",
+                        "content": "We use Firebase Remote Config to push updates to the SMS parsing rules. This service may collect basic metadata (Instance ID, IP Address) for service delivery, but it **does not** access your SMS content.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Your Rights",
+                "subtitle": "GDPR & DPDP Act 2023",
+                "sections": [
+                    {
+                        "title": "User Control",
+                        "content": "*   **Access**: You have full access to view all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data. You can delete cloud backups via your Google Drive settings.\n*   **Breach Notification**: In the unlikely event of a local data breach (e.g., OS compromise), we will notify you via app notification if technically feasible.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Children's Privacy",
+                        "content": "Our service is not directed to anyone under the age of 18. We do not knowingly collect personal information from children. If you are a parent and become aware that your child has provided us with Personal Data, please contact us.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Changes to This Policy",
+                        "content": "We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Contact Us",
+                "subtitle": "Grievance Redressal",
+                "sections": [
+                    {
+                        "title": "Grievance Officer",
+                        "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studio Us\n*   **Email**: [ni.studio.us@outlook.com]\n*   **Address**: [Chennimalai, Erode, Tamil Nadu, India]",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Data Accessed",
-        "subtitle": "Google User Data Types",
-        "sections": [
-          {
-            "title": "SMS Messages (READ_SMS)",
-            "content": "Our application accesses your SMS messages to provide its core functionality. It reads the sender ID, message body, and timestamp of incoming and existing messages.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Contact List (READ_CONTACTS)",
-            "content": "Our application accesses your contact list (names and photos) strictly to **humanize sender IDs**. For example, identifying if a message is from a saved contact versus a business sender. This data is processed in-memory and is never uploaded.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Google Account Profile (Name & Email)",
-            "content": "When you voluntarily sign in for **Cloud Backup**, we access your basic profile information (Name and Email address) provided by Google.",
-            "imageRenderer": "default",
-            "images": []
-          }
+    },
+    "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
+        "features": [
+            {
+                "title": "Usage Terms",
+                "subtitle": "License & Agreement",
+                "sections": [
+                    {
+                        "title": "Acceptance",
+                        "content": "By downloading and using SMS Stack, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "License",
+                        "content": "We grant you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with these Terms for personal, non-commercial purposes.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Termination",
+                        "content": "We reserve the right to terminate your license immediately without notice if you breach these terms (e.g., attempting to reverse engineer the app).",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Disclaimers",
+                "subtitle": "Critical Information",
+                "sections": [
+                    {
+                        "title": "Not Financial Advice",
+                        "content": "**The app is an automated tool.** The financial insights, balance estimates, and bill status are derived from parsing text messages and may contain errors. **Do not rely on this app for tax reporting, legal proof of payment, or critical banking decisions.** Always verify with your official Bank statement.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "No Warranty",
+                        "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Developers expressly disclaim all warranties, whether express, implied, or statutory.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "Liability",
+                "subtitle": "Limitation of Damages",
+                "sections": [
+                    {
+                        "title": "Exclusion of Liability",
+                        "content": "To the maximum extent permitted by applicable law, the developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, missed bill payments, late fees, or financial losses resulting from the use of this app.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            },
+            {
+                "title": "General",
+                "subtitle": "Legal Framework",
+                "sections": [
+                    {
+                        "title": "Changes to Terms",
+                        "content": "We may modify these terms at any time. Continued use of the app constitutes acceptance of the updated terms.",
+                        "imageRenderer": "default",
+                        "images": []
+                    },
+                    {
+                        "title": "Governing Law",
+                        "content": "These Terms shall be governed by and defined following the laws of India. You agree that the courts of India shall have exclusive jurisdiction to resolve any dispute.",
+                        "imageRenderer": "default",
+                        "images": []
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Data Usage",
-        "subtitle": "How We Handle Your Data",
-        "sections": [
-          {
-            "title": "Local Categorization & Parsing",
-            "content": "The SMS data accessed is processed **locally on your device** using a regex engine. We use this data to:\n1.  **Categorize** messages into Personal, Finance, and Promo tabs.\n2.  **Extract** financial transaction details (amount, merchant, date) to build your finance dashboard.\n3.  **Identify** bill reminders to populate the 'Upcoming Bills' section.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Display Purposes",
-            "content": "Contact names and photos are used strictly to display recognized avatars next to message threads, making your inbox easier to navigate.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Limited Sharing (User-Initiated Backups Only)",
-            "content": "We **do not** transfer your data to any third-party server for processing. The only time data leaves your device is when YOU explicitly enable **Google Drive Backup**. In this case, your data is encrypted with AES-256 and uploaded to your personal Google Drive account for safe keeping.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Cloud Backup Authentication",
-            "content": "If you sign in for Cloud Backup, we use your **Name and Email Address** solely to display the currently connected account within the app's settings. This helps you verify which Google Drive account is being used for backups. We do not share this identity with any other third parties.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Data Safety & Permissions",
-        "subtitle": "Google Play Compliance",
-        "sections": [
-          {
-            "title": "SMS & Contacts",
-            "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Financial Data Privacy",
-            "content": "**Strict Local Processing Policy**: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.\n\n### Not a Loan App\n**We do not provide, facilitate, or promote personal loans or credit products.** This app is strictly a personal finance manager and expense tracker.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "System Integrations",
-            "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Network Usage",
-            "content": "*   **Internet (`INTERNET`)**: The app uses internet access **strictly** for:\n    1.  Fetching parser rule updates (Firebase Remote Config).\n    2.  Performing encrypted backups (Google Drive API).\n    3.  **No SMS data is ever sent to our servers.**",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Data Processing",
-        "subtitle": "Local-First Architecture",
-        "sections": [
-          {
-            "title": "Parsing (Regex Engine)",
-            "content": "When an SMS is received, it is processed by the on-device `SmsParserEngine`. This engine uses a set of Regular Expression rules to identify patterns (like \"INR 500 debited\"). This processing happens **entirely in your phone's secure memory**.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Storage (SQLite)",
-            "content": "All extracted data (Accounts, Transactions, Bills, Logs) is stored in a private `SQLite` database located in the app's secure sandbox. Other apps cannot access this data.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Cloud Services",
-        "subtitle": "Optional & User Controlled",
-        "sections": [
-          {
-            "title": "Google Drive Sync",
-            "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack** -> **Options** -> **Delete hidden app data**.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Firebase Config",
-            "content": "We use Firebase Remote Config to push updates to the SMS parsing rules. This service may collect basic metadata (Instance ID, IP Address) for service delivery, but it **does not** access your SMS content.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Your Rights",
-        "subtitle": "GDPR & DPDP Act 2023",
-        "sections": [
-          {
-            "title": "User Control",
-            "content": "*   **Access**: You have full access to view all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data. You can delete cloud backups via your Google Drive settings.\n*   **Breach Notification**: In the unlikely event of a local data breach (e.g., OS compromise), we will notify you via app notification if technically feasible.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Children's Privacy",
-            "content": "Our service is not directed to anyone under the age of 18. We do not knowingly collect personal information from children. If you are a parent and become aware that your child has provided us with Personal Data, please contact us.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Changes to This Policy",
-            "content": "We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Contact Us",
-        "subtitle": "Grievance Redressal",
-        "sections": [
-          {
-            "title": "Grievance Officer",
-            "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studio Us\n*   **Email**: [ni.studio.us@outlook.com]\n*   **Address**: [Chennimalai, Erode, Tamil Nadu, India]",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      }
+    },
+    "tags": [
+        "Flutter",
+        "Dart",
+        "Regex",
+        "Local Data",
+        "Riverpod"
     ]
-  },
-  "termsAndConditions": {
-    "url": "",
-    "lastUpdatedUtc": "2026-01-27T00:00:00Z",
-    "features": [
-      {
-        "title": "Usage Terms",
-        "subtitle": "License & Agreement",
-        "sections": [
-          {
-            "title": "Acceptance",
-            "content": "By downloading and using SMS Stack, you (the User) agree to be bound by these Terms. If you do not agree, do not use the application.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "License",
-            "content": "We grant you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the Application strictly in accordance with these Terms for personal, non-commercial purposes.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Termination",
-            "content": "We reserve the right to terminate your license immediately without notice if you breach these terms (e.g., attempting to reverse engineer the app).",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Disclaimers",
-        "subtitle": "Critical Information",
-        "sections": [
-          {
-            "title": "Not Financial Advice",
-            "content": "**The app is an automated tool.** The financial insights, balance estimates, and bill status are derived from parsing text messages and may contain errors. **Do not rely on this app for tax reporting, legal proof of payment, or critical banking decisions.** Always verify with your official Bank statement.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "No Warranty",
-            "content": "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Developers expressly disclaim all warranties, whether express, implied, or statutory.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "Liability",
-        "subtitle": "Limitation of Damages",
-        "sections": [
-          {
-            "title": "Exclusion of Liability",
-            "content": "To the maximum extent permitted by applicable law, the developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, missed bill payments, late fees, or financial losses resulting from the use of this app.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      },
-      {
-        "title": "General",
-        "subtitle": "Legal Framework",
-        "sections": [
-          {
-            "title": "Changes to Terms",
-            "content": "We may modify these terms at any time. Continued use of the app constitutes acceptance of the updated terms.",
-            "imageRenderer": "default",
-            "images": []
-          },
-          {
-            "title": "Governing Law",
-            "content": "These Terms shall be governed by and defined following the laws of India. You agree that the courts of India shall have exclusive jurisdiction to resolve any dispute.",
-            "imageRenderer": "default",
-            "images": []
-          }
-        ]
-      }
-    ]
-  }
 }

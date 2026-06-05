@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../widgets/app_tile.dart';
 import '../widgets/learning_project_card.dart';
+import '../widgets/flutter_app_card.dart';
 import '../widgets/image_helper.dart';
 
 import '../../services/current_app_service.dart';
@@ -189,6 +190,65 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 60),
+
+            // Live Apps Section
+            if (dataModel.flutterApps.isNotEmpty) ...[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Live Apps',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Fully functional web apps built with Flutter.',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Divider(),
+                    const SizedBox(height: 20),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        int crossAxisCount = 1;
+                        if (constraints.maxWidth > 1200) {
+                          crossAxisCount = 4;
+                        } else if (constraints.maxWidth > 800) {
+                          crossAxisCount = 3;
+                        } else if (constraints.maxWidth > 600) {
+                          crossAxisCount = 2;
+                        }
+
+                        return GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: crossAxisCount,
+                            childAspectRatio: 0.8,
+                            crossAxisSpacing: 24,
+                            mainAxisSpacing: 24,
+                          ),
+                          itemCount: dataModel.flutterApps.length,
+                          itemBuilder: (context, index) {
+                            return FlutterAppCard(
+                              app: dataModel.flutterApps[index],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 60),
+            ],
 
             // Learning Hub Section
             if (dataModel.learningProjects.isNotEmpty) ...[

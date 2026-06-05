@@ -3,12 +3,14 @@ class DataModel {
   final List<AppModel> apps;
   final List<LearningProjectModel> learningProjects;
   final List<SocialLink> socialLinks;
+  final List<FlutterAppModel> flutterApps;
 
   DataModel({
     required this.developer,
     required this.apps,
     required this.learningProjects,
     required this.socialLinks,
+    this.flutterApps = const [],
   });
 
   factory DataModel.fromJson(Map<String, dynamic> json) {
@@ -21,6 +23,45 @@ class DataModel {
           [],
       apps: (json['apps'] as List).map((e) => AppModel.fromJson(e)).toList(),
       learningProjects: (json['learningProjects'] as List? ?? []).map((e) => LearningProjectModel.fromJson(e)).toList(),
+      flutterApps: (json['flutterApps'] as List? ?? []).map((e) => FlutterAppModel.fromJson(e)).toList(),
+    );
+  }
+}
+
+class FlutterAppModel {
+  final String id;
+  final String name;
+  final String description;
+  final String path;
+  final String iconUrl;
+  final List<String> tags;
+  final String status; // 'live' | 'coming-soon'
+  final String version;
+  final String repoUrl;
+
+  FlutterAppModel({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.path,
+    required this.iconUrl,
+    required this.tags,
+    this.status = 'live',
+    this.version = '',
+    this.repoUrl = '',
+  });
+
+  factory FlutterAppModel.fromJson(Map<String, dynamic> json) {
+    return FlutterAppModel(
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      path: json['path'] as String? ?? '',
+      iconUrl: json['iconUrl'] as String? ?? '',
+      tags: (json['tags'] as List? ?? []).map((e) => e.toString()).toList(),
+      status: json['status'] as String? ?? 'live',
+      version: json['version'] as String? ?? '',
+      repoUrl: json['repoUrl'] as String? ?? '',
     );
   }
 }
@@ -121,6 +162,8 @@ class AppModel {
   final AppPolicy privacyPolicy;
   final AppPolicy termsAndConditions;
   final List<FeatureImage> descriptionImages;
+  final String status;
+  final String statusColor;
 
   AppModel({
     required this.id,
@@ -136,6 +179,8 @@ class AppModel {
     required this.privacyPolicy,
     required this.termsAndConditions,
     this.descriptionImages = const [],
+    this.status = '',
+    this.statusColor = '',
   });
 
   factory AppModel.fromJson(Map<String, dynamic> json) {
@@ -161,6 +206,8 @@ class AppModel {
       descriptionImages: (json['descriptionImages'] as List? ?? [])
           .map((e) => FeatureImage.fromJson(e))
           .toList(),
+      status: json['status'] as String? ?? '',
+      statusColor: json['statusColor'] as String? ?? '',
     );
   }
 }

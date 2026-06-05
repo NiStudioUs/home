@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
+import '../../utils/url_helper.dart';
 import 'image_helper.dart';
 
-class AppTile extends StatelessWidget {
-  final AppModel app;
+class FlutterAppCard extends StatelessWidget {
+  final FlutterAppModel app;
 
-  const AppTile({super.key, required this.app});
+  const FlutterAppCard({super.key, required this.app});
+
+  Future<void> _launchUrl() async {
+    final url = Uri.parse(UrlHelper.resolve(app.path));
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch ${app.path}');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +23,11 @@ class AppTile extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
-        onTap: () => context.go('/app/${app.id}'),
+        onTap: _launchUrl,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // App Icon / Image Placeholder
+            // App Icon Placeholder with Badge
             Expanded(
               child: Container(
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
@@ -30,12 +38,16 @@ class AppTile extends StatelessWidget {
                         ? Image(
                             image: getImageProvider(app.iconUrl),
                             fit: BoxFit.cover,
-                            color: Theme.of(context)
-                                .colorScheme
-                                .surfaceContainerHighest,
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.surfaceContainerHighest,
                             colorBlendMode: BlendMode.softLight,
                           )
-                        : const Center(child: Icon(Icons.apps, size: 48)),
+                        : const Center(
+                            child: Icon(Icons.rocket_launch, size: 48),
+                          ),
+
+                    // Status Badge
                     if (app.status.isNotEmpty)
                       Positioned(
                         top: 12,
@@ -46,7 +58,7 @@ class AppTile extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: _getStatusColor(context, app.statusColor),
+                            color: _getStatusColor(context, app.status),
                             borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
@@ -58,9 +70,7 @@ class AppTile extends StatelessWidget {
                           ),
                           child: Text(
                             app.status.toUpperCase(),
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelSmall
+                            style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -84,23 +94,32 @@ class AppTile extends StatelessWidget {
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: app.tags.length,
-                        separatorBuilder: (context, index) => const SizedBox(width: 4),
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(width: 4),
                         itemBuilder: (context, index) {
                           return Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
                             decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.5),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer
+                                  .withValues(alpha: 0.5),
                               borderRadius: BorderRadius.circular(4),
                               border: Border.all(
-                                color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.outline.withValues(alpha: 0.2),
                               ),
                             ),
                             child: Center(
                               child: Text(
                                 app.tags[index],
-                                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                  fontSize: 10,
-                                ),
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.labelSmall?.copyWith(fontSize: 10),
                               ),
                             ),
                           );
@@ -119,10 +138,38 @@ class AppTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    app.shortDescription,
+                    app.description,
                     style: Theme.of(context).textTheme.bodySmall,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: _launchUrl,
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        side: BorderSide(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Open App'),
+                          const SizedBox(width: 8),
+                          Icon(
+                            Icons.arrow_forward,
+                            size: 16,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -133,24 +180,15 @@ class AppTile extends StatelessWidget {
     );
   }
 
-  Color _getStatusColor(BuildContext context, String colorName) {
-    switch (colorName.toLowerCase()) {
-      case 'amber':
-      case 'warning':
-        return Colors.amber.shade700;
-      case 'red':
-      case 'error':
-        return Colors.red.shade600;
-      case 'green':
-      case 'success':
-        return Colors.green.shade600;
-      case 'blue':
-      case 'info':
-        return Colors.blue.shade600;
-      case 'purple':
-        return Colors.purple.shade500;
-      default:
-        return Theme.of(context).colorScheme.primary;
+  Color _getStatusColor(BuildContext context, String status) {
+    final lowerStatus = status.toLowerCase();
+    if (lowerStatus.contains('dev') || lowerStatus.contains('beta')) {
+      return Colors.purple.shade600;
+    } else if (lowerStatus.contains('soon')) {
+      return Colors.blue.shade600;
+    } else if (lowerStatus.contains('live') || lowerStatus.contains('stable')) {
+      return Colors.green.shade600;
     }
+    return Theme.of(context).colorScheme.primary;
   }
 }
