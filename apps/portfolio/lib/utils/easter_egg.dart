@@ -20,26 +20,32 @@ class EasterEgg {
     if (type == 'name') {
       if (_nameClicks < 5) {
         _nameClicks++;
+      } else if (_nameClicks >= 5 && _themeClicks == 0) {
+        // Allow extra taps on name to be forgiving
+        _nameClicks = 5;
       } else if (_nameClicks >= 5 && _themeClicks >= 4) {
-        // If they did Name(5) -> Theme(3) -> Name(3) as the last step
-        _bannerClicks++; // Reusing bannerClicks variable for the 3rd step if it's Name again
+        // If they did Name(>=5) -> Theme(>=4) -> Name(3) as the last step
+        _bannerClicks++; 
         if (_bannerClicks >= 3) {
           _reset();
           return true;
         }
       } else {
-        // Reset if they click name when they shouldn't
+        // Reset if they click name when they shouldn't (e.g. while in the middle of theme taps)
         _reset();
         _nameClicks = 1;
       }
     } else if (type == 'theme') {
-      if (_nameClicks >= 5 && _themeClicks < 4) {
-        _themeClicks++;
+      if (_nameClicks >= 5) {
+        if (_themeClicks < 4) {
+          _themeClicks++;
+        }
+        // If >= 4, we just let them keep tapping theme, it won't reset.
       } else {
         _reset();
       }
     } else if (type == 'banner') {
-      if (_nameClicks >= 5 && _themeClicks >= 4 && _bannerClicks < 3) {
+      if (_nameClicks >= 5 && _themeClicks >= 4) {
         _bannerClicks++;
         if (_bannerClicks >= 3) {
           _reset();
