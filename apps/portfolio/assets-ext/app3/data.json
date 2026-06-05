@@ -7,7 +7,7 @@
     "status": "IN DEV",
     "statusColor": "amber",
     "descriptionImages": [],
-    "demoUrl": "home/iky/",
+    "demoUrl": "/home/iky/",
     "features": [
         {
             "title": "Interactive Family Tree",
@@ -114,7 +114,7 @@
     "links": [
         {
             "type": "Live Demo",
-            "url": "home/iky/"
+            "url": "/home/iky/"
         }
     ],
     "privacyPolicy": {
