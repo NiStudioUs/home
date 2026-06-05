@@ -1,0 +1,58 @@
+[
+  {
+    "year": "2017",
+    "company": "First Steps",
+    "project": "Retail Banking",
+    "description": "Began my professional career, stepping into software development and early QA practices. Learning the ropes of enterprise delivery and core banking workflows.",
+    "tags": ["Retail Banking", "Automation Web & API"]
+  },
+  {
+    "year": "2018 - 2020",
+    "company": "Maveric Systems (Metro Bank UK)",
+    "project": "Digital Channels Automation",
+    "description": "Delivered automation across web, mobile, desktop, and API channels. Mastered Selenium, Appium, and REST Assured for retail and commercial banking workflows.",
+    "tags": ["Mobile Automation", "API Testing", "Commercial Banking"]
+  },
+  {
+    "year": "2021",
+    "company": "Allica Bank UK",
+    "project": "SME Banking Ecosystem",
+    "description": "Led automation engineering for lending and deposits. Implemented Docker Test Containers and microservice-oriented testing to streamline quality processes.",
+    "tags": ["Lending", "Deposits", "Docker"]
+  },
+  {
+    "year": "2022",
+    "company": "Indie Hacker",
+    "project": "Flutter Notes App",
+    "description": "Built a privacy-focused Flutter notes application. Over the years introduced Biometric unlock, Voice notes, Habit Tracker, and extended Markdown support.",
+    "tags": ["Flutter", "Dart", "Offline-first"]
+  },
+  {
+    "year": "2023 - Present",
+    "company": "Allica Bank UK",
+    "project": "Advanced SDET & Platform Quality",
+    "description": "Taking full ownership of automation quality across banking platforms. Driving large-scale Cypress E2E automation for Customer Onboarding, CDD, CRA, and Risk Assessment.",
+    "tags": ["TypeScript", "Cypress", "Risk Assessment"]
+  },
+  {
+    "year": "June 2025",
+    "company": "Architecture Design",
+    "project": "People App IKY v2",
+    "description": "Designed a multi-platform product architecture. Structured an environment-aware deployment with Node.js, Traefik, Docker Compose, PostgreSQL, and MongoDB.",
+    "tags": ["Docker Compose", "Node.js", "System Architecture"]
+  },
+  {
+    "year": "January 2026",
+    "company": "Experimentation",
+    "project": "Gen AI Projects",
+    "description": "Started an experimental platform exploring AI-assisted frontend development and modern React Native patterns.",
+    "tags": ["React Native", "Generative AI"]
+  },
+  {
+    "year": "2026",
+    "company": "Mobile Product",
+    "project": "SMS Stack",
+    "description": "Built a privacy-focused utility for SMS categorization and financial insight extraction. Leveraged BLoC architecture, Drift for SQLite, and offline local processing.",
+    "tags": ["BLoC", "Drift", "Local Processing"]
+  }
+]

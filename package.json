@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-monorepo",
+  "version": "1.0.0",
+  "description": "Root monorepo scripts for running the portfolio, learning hub, and developer profile.",
+  "scripts": {
+    "dev:portfolio": "cd apps/portfolio && flutter run -d chrome",
+    "dev:learning": "cd apps/learning && npm run dev",
+    "dev:profile": "cd apps/profile && npm run dev",
+    "build:learning": "cd apps/learning && npm run build",
+    "build:profile": "cd apps/profile && npm run build",
+    "sync-data": "node scripts/sync_data.js",
+    "dev:all": "npm run build:learning && npm run build:profile && mkdir -p apps/portfolio/web/learning apps/portfolio/web/profile && cp -R apps/learning/dist/* apps/portfolio/web/learning/ && cp -R apps/profile/dist/* apps/portfolio/web/profile/ && npm run dev:portfolio",
+    "dev:servers": "node scripts/dev_servers.js"
+  }
+}

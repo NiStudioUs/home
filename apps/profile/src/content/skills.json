@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "name": "Domain Expertise",
+      "skills": [
+        "Retail Banking", "SME Banking", "Lending", "Deposits", "Customer Onboarding", "Retail Operations", "Digital Mobile Channels", "CDD / CRA / Risk Assessment", "Document workflow and role-based access validation"
+      ]
+    },
+    {
+      "name": "Applications & Systems Supported",
+      "skills": [
+        "Temenos T24 (Payments & Cards)", "Metro Bank Mobile App (Android/iOS)", "Allica Deposits & Lending", "Customer Onboarding (Internal/External)", "Bridge (Business Rewards, Working Capital, Pension Profiles, Address-Manager) / CashFlow / BackOffice", "CMS (Asset Finance Application)", "FMS (Deposit & Lending CRM)", "Saascada", "Hubspot", "Full Circle", "GoDiligent", "World Check1", "Companies House UK"
+      ]
+    },
+    {
+      "name": "SDET / QE / Automation",
+      "skills": [
+        "Web Automation (Selenium, Cypress)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium)", "Test Frameworks (BDD Cucumber, TestNG, JUnit, Mocha)", "TypeScript", "Test Data Management & Mocking (MSW)"
+      ]
+    },
+    {
+      "name": "Mobile Development",
+      "skills": [
+        "Flutter Development (Mobile, Web)", "Dart", "Android Development (Kotlin)", "Cross-platform Application Development", "Offline-first App Design", "BLoC Architecture"
+      ]
+    },
+    {
+      "name": "Android Release Management",
+      "skills": [
+        "Google Play Store Publishing", "App Bundling (APK/AAB)", "Android App Flavors", "ADB Validation & Testing"
+      ]
+    },
+    {
+      "name": "CI/CD / DevOps / Tooling",
+      "skills": [
+        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
+      ]
+    },
+    {
+      "name": "Data / Backend / Platform",
+      "skills": [
+        "SQLite", "Drift", "Room", "Coroutines", "MSSQL Test Containers", "Liquibase", "Microservices test support"
+      ]
+    }
+  ]
+}

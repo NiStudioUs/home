@@ -1,0 +1,288 @@
+.narrative-page {
+  padding-bottom: 6rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.narrative-header {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.narrative-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.story-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2rem;
+}
+
+/* Background center line */
+.story-line-bg {
+  position: absolute;
+  width: 4px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  left: 50%;
+  margin-left: -2px;
+  z-index: 1;
+}
+
+/* Filled progress line */
+.story-line-progress {
+  position: absolute;
+  width: 4px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  left: 50%;
+  margin-left: -2px;
+  z-index: 2;
+  transition: height 0.1s ease-out;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.story-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.story-row:last-child {
+  margin-bottom: 2rem;
+}
+
+/* Pulse Dot */
+.story-dot {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--card-bg);
+  border: 4px solid var(--border-color);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: all 0.3s ease;
+  animation: pulse-white 2s infinite;
+}
+
+@keyframes pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Reached state (filled dot) */
+.story-row.is-reached .story-dot {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  animation: none; /* Stop white pulse */
+}
+
+/* Pulse animation when active (currently at line) */
+.story-row.is-active .story-dot {
+  animation: pulse-blue 1.5s infinite;
+}
+
+@keyframes pulse-blue {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.story-card.bento-card {
+  width: calc(50% - 3rem);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.story-row.is-reached .story-card.bento-card {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+[data-theme='dark'] .story-row.is-reached .story-card.bento-card {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
+}
+
+/* Connectors to center line */
+.row-left .story-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -3rem;
+  width: 3rem;
+  height: 4px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.row-right .story-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -3rem;
+  width: 3rem;
+  height: 4px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.story-row.is-reached .story-card::after {
+  background-color: var(--accent-color);
+}
+
+/* Story Content Styling */
+.story-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.story-year {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.story-company {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.story-project {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.story-desc {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.story-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.story-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .story-line-bg, .story-line-progress {
+    left: 50%;
+    right: auto;
+    margin-left: -2px;
+    margin-right: 0;
+    z-index: -1; /* place behind cards */
+  }
+  
+  .story-row {
+    position: relative;
+    padding-bottom: 2rem; /* space for the dot connector */
+    margin-bottom: 2rem;
+  }
+  
+  .story-dot {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 0.5rem; /* dot sits at the bottom of the card block */
+    transform: translateX(-50%);
+  }
+  
+  .story-row.is-active .story-dot {
+    /* override transform since we changed the default transform */
+    animation: pulse-blue-mobile 1.5s infinite;
+  }
+  
+  .story-card.bento-card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .row-left, .row-right {
+    justify-content: center;
+  }
+  
+  /* Remove horizontal connectors */
+  .row-left .story-card::after,
+  .row-right .story-card::after {
+    display: none;
+  }
+}
+
+@keyframes pulse-blue-mobile {
+  0% {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
+  70% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+  100% {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}

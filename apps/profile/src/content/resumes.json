@@ -1,0 +1,136 @@
+[
+  {
+    "id": "2page-ats",
+    "name": "ATS 2-Page Resume",
+    "description": "Standard 2-page ATS optimized resume covering comprehensive SDET and mobile experience.",
+    "file": "/resumes/karthik_subramanian_resume_2page_ats.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "highlights",
+      "education"
+    ],
+    "summary": "Senior SDET with **9+ years of experience** in banking and financial services across **test automation, quality engineering, Flutter application development, and Android release management**. Strong hands-on experience in **TypeScript, Cypress, API automation, CI/CD, Flutter, Dart, Android delivery workflows, and hosted web experiences**. Proven track record in customer onboarding, lending, deposits, CRM, and risk-assessment systems, with a hybrid engineering profile that combines mobile product development with scalable QE/SDET ownership.",
+    "skillTypes": [
+      "Mobile Development",
+      "Android Release Management",
+      "SDET / QE / Automation",
+      "CI/CD / DevOps / Tooling",
+      "Data / Backend / Platform",
+      "Applications & Systems Supported",
+      "Domain Expertise"
+    ],
+    "profileTitle": "Senior SDET | Flutter Developer | Android Release Management | Automation Engineer",
+    "headers": {
+      "highlights": "Professional Highlights"
+    }
+  },
+  {
+    "id": "1page",
+    "name": "1-Page Executive Summary",
+    "description": "A brief 1-page summary focusing on high-level achievements and recent roles.",
+    "file": "/resumes/karthik_subramanian_resume_1page.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "education"
+    ],
+    "summary": "Senior SDET with **9+ years of experience** in banking and financial services across **Cypress/TypeScript automation, API testing, CI/CD, Flutter application development, and Android release management**. Strong hybrid engineering profile combining **quality automation ownership** with **hands-on mobile product development** using Flutter, Dart, and Android delivery workflows.",
+    "skillTypes": [
+      "SDET / QE / Automation",
+      "Mobile Development",
+      "Android Release Management",
+      "CI/CD / DevOps / Tooling",
+      "Data / Backend / Platform",
+      "Applications & Systems Supported"
+    ],
+    "profileTitle": "Senior SDET | Flutter Developer | Android Release Management | Automation Engineer",
+    "headers": {
+      "summary": "Summary",
+      "skills": "Key Skills",
+      "experience": "Experience",
+      "projects": "Mobile & Web Development Projects"
+    }
+  },
+  {
+    "id": "flutter",
+    "name": "Flutter Developer",
+    "description": "Tailored towards mobile application development roles.",
+    "file": "/resumes/karthik_subramanian_resume_flutter.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "highlights",
+      "education"
+    ],
+    "summary": "Mobile Developer with **9+ years of experience** in software engineering and release workflows, specializing in **Flutter application development and Android release management**. Strong hands-on experience in **Flutter, Dart, offline-first application design, Android delivery workflows, and hosted web experiences**. Proven track record of developing privacy-focused and cross-platform applications, supported by a strong foundation in test automation and quality engineering.",
+    "skillTypes": [
+      "Mobile Development",
+      "Android Release Management",
+      "Data / Backend / Platform",
+      "CI/CD / DevOps / Tooling",
+      "SDET / QE / Automation",
+      "Applications & Systems Supported"
+    ],
+    "profileTitle": "Flutter Developer | Android Release Management | Mobile Application Engineer"
+  },
+  {
+    "id": "sdet-qe",
+    "name": "Senior SDET / QE",
+    "description": "Tailored towards test automation and quality engineering roles.",
+    "file": "/resumes/karthik_subramanian_resume_sdet_qe.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "highlights",
+      "education"
+    ],
+    "summary": "Senior SDET with **9+ years of experience** in banking and financial services across **test automation, quality engineering, CI/CD, and framework development**. Strong expertise in **TypeScript, Cypress, API automation, Selenium, Appium, Azure DevOps, secure test configuration, and test framework design**. Proven experience delivering automation across customer onboarding, deposits, mobile, CRM, and risk-assessment journeys, with strong domain knowledge in banking and digital channels.",
+    "skillTypes": [
+      "SDET / QE / Automation",
+      "CI/CD / DevOps / Tooling",
+      "Applications & Systems Supported",
+      "Domain Expertise"
+    ],
+    "profileTitle": "Senior SDET | QE Automation Engineer | Banking Domain Specialist",
+    "headers": {
+      "experience": "Experience"
+    }
+  },
+  {
+    "id": "hybrid",
+    "name": "Hybrid Engineer (SDET + Mobile)",
+    "description": "Focuses evenly on both mobile development and SDET capabilities.",
+    "file": "/resumes/karthik_subramanian_resume_hybrid.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "highlights",
+      "education"
+    ],
+    "summary": "Hybrid engineer with **9+ years of experience** across **Flutter mobile development, Android release workflows, QE automation, and banking domain systems**. Strong in **Flutter, Dart, TypeScript, Cypress, API automation, CI/CD, and release delivery**, combining hands-on product development with scalable test automation ownership.",
+    "skillTypes": [
+      "Mobile Development",
+      "Android Release Management",
+      "SDET / QE / Automation",
+      "CI/CD / DevOps / Tooling",
+      "Data / Backend / Platform",
+      "Applications & Systems Supported",
+      "Domain Expertise"
+    ],
+    "profileTitle": "Senior SDET | Flutter Developer | Android Release Management | Automation Engineer",
+    "headers": {
+      "skills": "Skills",
+      "experience": "Experience",
+      "projects": "Mobile & Web Development Projects"
+    }
+  }
+]

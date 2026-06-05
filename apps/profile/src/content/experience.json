@@ -1,0 +1,224 @@
+[
+  {
+    "id": "allica-bank-h2-2025",
+    "company": "Allica Bank, UK",
+    "title": "Senior SDET",
+    "startDate": "July 2025",
+    "endDate": "December 2025",
+    "bullets": [
+      "Engineered the @allica/shared-e2e library for secure Azure Key Vault integration and developed a local MSAL mock server.",
+      "Optimized CI pipelines through smart Cypress spec filtering, eliminating unnecessary file scanning.",
+      "Set technical standards with modular REST Assured test structures (JsonMaskingValidator and JsonUtils).",
+      "Transitioned widespread API suites from Postman to Bruno for superior Git integration.",
+      "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Blacklisting, and On-Behalf-Of functionality.",
+      "Led GenAI (GitHub Copilot) adoption initiatives across the Quality Engineering team for accelerated documentation and test standards."
+    ],
+    "resumeBullets": [
+      {
+        "text": "Engineered the `@allica/shared-e2e` library for secure **Azure Key Vault** integration and developed a local **MSAL mock server** with role-based JWT generation.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Optimized CI pipelines through smart **Cypress spec filtering** and parallel local execution POCs, eliminating unnecessary file scanning.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "allica-bank-h1-2025",
+    "company": "Allica Bank, UK",
+    "title": "Senior SDET",
+    "startDate": "January 2025",
+    "endDate": "June 2025",
+    "bullets": [
+      "Contributed to major releases including Heap tagging, HubSpot integration, BRA journeys, Companies House API, and Design System Upgrade.",
+      "Implemented LaunchDarkly feature flags and ensured testing kept pace with product goals.",
+      "Built stable, reusable test frameworks including local MSAL mock and secure Key Vault integration.",
+      "Reduced Cypress technical debt by reorganising test structures and improving fixtures to minimise flaky tests."
+    ]
+  },
+  {
+    "id": "allica-bank-h2-2024",
+    "company": "Allica Bank, UK",
+    "title": "SDET",
+    "startDate": "July 2024",
+    "endDate": "December 2024",
+    "bullets": [
+      "Ensured successful release of features and integrations for Bridge and COB-internal systems such as Hubspot integration, address-manager, new business rewards journey and Link duplicate profiles.",
+      "Assisted the Working Capital team in their first production release with test planning and execution.",
+      "Played a critical role in the major release of Safeguarding and Pension profiles, executing end-to-end testing including product creation workflows.",
+      "Started work on an API platform to standardize and increase test coverage across repositories."
+    ],
+    "resumeBullets": [
+      {
+        "text": "Migrated legacy automation from Cypress-Cucumber to **Mocha/cypress-grep**, and transitioned widespread API suites from Postman to **Bruno** for superior Git integration.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Integrated **Visual Regression testing**, Plop E2E templates, and led **GenAI (GitHub Copilot)** adoption initiatives across the Quality Engineering team.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "allica-bank-h1-2024",
+    "company": "Allica Bank, UK",
+    "title": "SDET",
+    "startDate": "January 2024",
+    "endDate": "June 2024",
+    "bullets": [
+      "Developed a framework for COB-external and scripts for complex data setups in multi-structured business environments.",
+      "Completed Cypress Data Management POC with State Events for sharing data between spec files.",
+      "Enhanced Cypress to mock APIs dynamically without using fixture files, improving response simulation.",
+      "Contributed to the migration squad that decoupled Allica from the Mulesoft anchor, integrating with Spring Boot APIs.",
+      "Developed parallel execution POC for local machines."
+    ]
+  },
+  {
+    "id": "allica-bank-h2-2023",
+    "company": "Allica Bank, UK",
+    "title": "SDET",
+    "startDate": "May 2023",
+    "endDate": "December 2023",
+    "bullets": [
+      "Migrated automation scripts from Cypress-Cucumber preprocessor to Mocha framework (cypress-grep) for increased flexibility and retry-ability.",
+      "Documented standards and guidelines, creating E2E template files for test cases and scripts using Plop.",
+      "Successfully enhanced visual regression and integrated it into Onboarding E2E automation scripts.",
+      "Completed Proof of Concepts for Report Portal (unified dashboard) and SCV database testing."
+    ]
+  },
+  {
+    "id": "maveric-allica",
+    "company": "Maveric Systems",
+    "client": "Allica Bank Ltd, UK",
+    "title": "Principal Software Engineer",
+    "startDate": "January 2021",
+    "endDate": "May 2023",
+    "bullets": [
+      "Led and contributed to automation engineering for lending and deposits within Allica Bank’s SME banking ecosystem.",
+      "Created a framework with Selenium Page-Factory, Cucumber BDD and modular class methods to invoke Page-Objects from feature files, minimizing maintenance.",
+      "Wrote numerous Automation test scripts for Lending and Deposits.",
+      "POC and implemented Docker-Test Containers framework to test microservices with Cucumber, Docker MSSQL Test-Container, and Liquibase for DB Management.",
+      "Technical Lead for Automation Test Development framework for Asset Finance project, including COB Automation and Multi-Asset Automation with Desktop Application.",
+      "Test Requirement analysis for Automation Tests, run plans for Automation Execution, and imparted solutions for Automation issues by creating common methods."
+    ],
+    "resumeBullets": [
+      {
+        "text": "Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maveric-metro",
+    "company": "Maveric Systems",
+    "client": "Metro Bank Ltd, UK",
+    "title": "Senior Test Engineer",
+    "startDate": "September 2018",
+    "endDate": "December 2020",
+    "bullets": [
+      "Worked on Digital Mobile Application (Android & iOS), T24 Banking Services, Cards, Transfers, Payments (SWIFT, SEPA, Faster Payment), and Retail Operations (Customer & Account Creation).",
+      "Delivered projects including P&C Automation (Web), T24 UI Upgrade Automation (Web), Mobile BAU Automation (Web, Mobile & API), and Mobile SCA Automation (API).",
+      "Created a framework for Data Creation to hasten release testing and was responsible for Framework Enhancement and common interfaces creation.",
+      "Understood requirements to cover end-to-end journeys with minimal test cases, ensuring code stability, maintenance, and knowledge sharing.",
+      "Responsible for Compatibility testing with Sauce Labs, release Regression testing, and interacting with teams for reviewing prepared test cases.",
+      "Test Requirement analysis and run plan for Automation Execution."
+    ],
+    "resumeBullets": [
+      {
+        "text": "Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Created Data Creation frameworks to hasten release testing, and managed Sauce Labs compatibility and regression testing.",
+        "resumeTypes": [
+          "sdet-qe",
+          "1page",
+          "2page-ats"
+        ]
+      }
+    ]
+  }
+]

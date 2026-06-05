@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const learningDataPath = path.join(__dirname, '../learning/src/data.json');
-const homeDataPath = path.join(__dirname, '../assets/data.json');
+const learningDataPath = path.join(__dirname, '../apps/learning/src/data.json');
+const homeDataPath = path.join(__dirname, '../apps/portfolio/assets/data.json');
 
 try {
   const learningData = JSON.parse(fs.readFileSync(learningDataPath, 'utf8'));

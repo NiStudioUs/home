@@ -1,0 +1,2183 @@
+[
+  {
+    "id": "scribble",
+    "name": "Scribble: Notes, Diary & Tasks",
+    "path": "/home/karthik/Development/projects/app/Flutter_notesApp",
+    "status": "Live",
+    "tags": [
+      "Flutter",
+      "Mobile App",
+      "Published"
+    ],
+    "description": "A new Flutter Notes taking project implemented with local database, shared prefs and bloc",
+    "resumeBullets": [
+      {
+        "text": "Developed a complete local-first notes application demonstrating hands-on Dart and mobile UI engineering.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Designed with **BLoC** state management and robust local storage patterns for seamless offline usage.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ],
+    "version": "2.2026.7+25",
+    "packages": [
+      {
+        "type": "pub",
+        "name": "authentication_repository",
+        "description": "A repository that handles Google sign-in and Google Drive related requests.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "equatable",
+          "google_sign_in",
+          "googleapis",
+          "googleapis_auth",
+          "coverage",
+          "mocktail",
+          "test",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/authentication_repository/pubspec.yaml",
+        "relativePath": "packages/authentication_repository/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "cloud_storage_api",
+        "description": "A repository that handles cloud storage related requests.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "authentication_repository",
+          "crypto",
+          "equatable",
+          "flutter_secure_storage",
+          "google_sign_in",
+          "googleapis",
+          "googleapis_auth",
+          "path_provider",
+          "sqflite",
+          "coverage",
+          "mocktail",
+          "test",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/cloud_storage_api/pubspec.yaml",
+        "relativePath": "packages/cloud_storage_api/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "local_storage_api",
+        "description": "A local DB to store data",
+        "version": "1.0.0+2",
+        "dependencies": [
+          "flutter",
+          "intl",
+          "meta",
+          "notes_api",
+          "path_provider",
+          "rxdart",
+          "shared_preferences",
+          "sqflite",
+          "user_repository",
+          "flutter_test",
+          "mocktail",
+          "sqflite_common_ffi",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/local_storage_api/pubspec.yaml",
+        "relativePath": "packages/local_storage_api/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "notes_api",
+        "description": "The interface and models for an API providing access to notes",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "equatable",
+          "flutter",
+          "json_annotation",
+          "meta",
+          "uuid",
+          "build_runner",
+          "json_serializable",
+          "test",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/notes_api/pubspec.yaml",
+        "relativePath": "packages/notes_api/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "notes_repository",
+        "description": "A repository that handles DB or network requests",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "notes_api",
+          "mocktail",
+          "test",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/notes_repository/pubspec.yaml",
+        "relativePath": "packages/notes_repository/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "settings_storage_api",
+        "description": "A repository that stores user settings with shared preferences.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "google_fonts",
+          "rxdart",
+          "shared_preferences",
+          "coverage",
+          "mocktail",
+          "path_provider",
+          "test",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/settings_storage_api/pubspec.yaml",
+        "relativePath": "packages/settings_storage_api/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "user_repository",
+        "description": "A repository that handles user related requests.",
+        "version": "1.0.0+2",
+        "dependencies": [
+          "equatable",
+          "flutter",
+          "intl",
+          "json_annotation",
+          "meta",
+          "path_provider",
+          "rxdart",
+          "shared_preferences",
+          "sqflite",
+          "uuid",
+          "build_runner",
+          "flutter_test",
+          "json_serializable",
+          "mocktail",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/user_repository/pubspec.yaml",
+        "relativePath": "packages/user_repository/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "scribble_notes",
+        "description": "A new Flutter Notes taking project implemented with local database, shared prefs and bloc",
+        "version": "2.2026.7+25",
+        "dependencies": [
+          "animations",
+          "bloc",
+          "archive",
+          "crypto",
+          "dynamic_color",
+          "extended_image",
+          "flutter",
+          "flutter_bloc",
+          "flutter_localizations",
+          "image",
+          "image_picker",
+          "intl",
+          "path_provider",
+          "sqflite",
+          "local_storage_api",
+          "notes_api",
+          "notes_repository",
+          "user_repository",
+          "authentication_repository",
+          "cloud_storage_api",
+          "settings_storage_api",
+          "permission_handler",
+          "uuid",
+          "googleapis",
+          "googleapis_auth",
+          "google_sign_in",
+          "connectivity_plus",
+          "file_picker",
+          "share_plus",
+          "flutter_sharing_intent",
+          "url_launcher",
+          "google_fonts",
+          "workmanager",
+          "flutter_local_notifications",
+          "local_auth",
+          "flutter_svg",
+          "stream_transform",
+          "table_calendar",
+          "record",
+          "audioplayers",
+          "ffmpeg_kit_flutter_new_audio",
+          "timezone",
+          "flutter_timezone",
+          "flutter_launcher_icons",
+          "bloc_test",
+          "flutter_test",
+          "mockingjay",
+          "mocktail",
+          "sqflite_common_ffi",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/pubspec.yaml",
+        "relativePath": "pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "audioplayers_windows",
+        "description": "Windows implementation of audioplayers, a Flutter plugin to play multiple audio files simultaneously",
+        "version": "4.3.0",
+        "dependencies": [
+          "audioplayers_platform_interface",
+          "flutter",
+          "flame_lint",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/audioplayers_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/audioplayers_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "connectivity_plus_example",
+        "description": "Demonstrates how to use the connectivity_plus plugin.",
+        "dependencies": [
+          "flutter",
+          "connectivity_plus",
+          "flutter_driver",
+          "flutter_test",
+          "integration_test",
+          "test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "connectivity_plus",
+        "description": "Flutter plugin for discovering the state of the network (WiFi & mobile/cellular) connectivity on Android and iOS.",
+        "version": "7.0.0",
+        "dependencies": [
+          "flutter",
+          "flutter_web_plugins",
+          "connectivity_plus_platform_interface",
+          "web",
+          "meta",
+          "nm",
+          "collection",
+          "flutter_test",
+          "build_runner",
+          "dbus",
+          "flutter_lints",
+          "mockito",
+          "plugin_platform_interface",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "dynamic_color_example",
+        "description": "Demonstrates how to use the dynamic_color package.",
+        "dependencies": [
+          "flutter",
+          "dynamic_color",
+          "cupertino_icons",
+          "material_color_utilities",
+          "flutter_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "dynamic_color",
+        "description": "A Flutter package to create Material color schemes based on a platform's implementation of dynamic color.",
+        "version": "1.8.1",
+        "dependencies": [
+          "flutter",
+          "flutter_test",
+          "material_color_utilities",
+          "cider",
+          "flutter_lints",
+          "meta"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "file_picker_example",
+        "description": "An example of how to use the file_picker plugin.",
+        "dependencies": [
+          "flutter",
+          "file_picker",
+          "file",
+          "flutter_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_picker/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_picker/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "file_picker",
+        "description": "A package that allows you to use a native file explorer to pick single or multiple absolute file paths, with extension filtering support.",
+        "version": "10.3.10",
+        "dependencies": [
+          "flutter",
+          "flutter_web_plugins",
+          "flutter_plugin_android_lifecycle",
+          "plugin_platform_interface",
+          "ffi",
+          "path",
+          "win32",
+          "cross_file",
+          "web",
+          "dbus",
+          "flutter_lints",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_picker/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_picker/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "example",
+        "description": "Example for file_selector_windows implementation.",
+        "version": "1.0.0",
+        "dependencies": [
+          "file_selector_platform_interface",
+          "file_selector_windows",
+          "flutter",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "file_selector_windows",
+        "description": "Windows implementation of the file_selector plugin.",
+        "version": "0.9.3+5",
+        "dependencies": [
+          "cross_file",
+          "file_selector_platform_interface",
+          "flutter",
+          "flutter_test",
+          "pigeon"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_local_notifications_windows",
+        "description": "Windows implementation of the flutter_local_notifications plugin",
+        "version": "3.0.0",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "flutter_local_notifications_platform_interface",
+          "meta",
+          "timezone",
+          "xml",
+          "ffigen",
+          "flutter_lints",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_windows_example",
+        "description": "Demonstrates how to use the flutter_secure_storage_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "flutter_secure_storage_platform_interface",
+          "flutter_secure_storage_windows",
+          "path",
+          "path_provider",
+          "flutter_lints",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_windows",
+        "description": "Windows implementation of flutter_secure_storage. Please use flutter_secure_storage instead of this package.",
+        "version": "3.1.2",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "flutter_secure_storage_platform_interface",
+          "path",
+          "path_provider",
+          "win32",
+          "flutter_test",
+          "lint"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_timezone",
+        "description": "A flutter plugin for getting the local timezone of the device.",
+        "version": "3.0.1",
+        "dependencies": [
+          "flutter",
+          "flutter_web_plugins",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_timezone/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_timezone/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "example",
+        "description": "Example for image_picker_windows implementation.",
+        "version": "1.0.0",
+        "dependencies": [
+          "flutter",
+          "image_picker_platform_interface",
+          "image_picker_windows",
+          "mime",
+          "video_player",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "image_picker_windows",
+        "description": "Windows platform implementation of image_picker",
+        "version": "0.2.2",
+        "dependencies": [
+          "file_selector_platform_interface",
+          "file_selector_windows",
+          "flutter",
+          "image_picker_platform_interface",
+          "build_runner",
+          "flutter_test",
+          "mockito"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "local_auth_windows_example",
+        "description": "Demonstrates how to use the local_auth_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "local_auth_platform_interface",
+          "local_auth_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "local_auth_windows",
+        "description": "Windows implementation of the local_auth plugin.",
+        "version": "2.0.1",
+        "dependencies": [
+          "flutter",
+          "local_auth_platform_interface",
+          "flutter_test",
+          "pigeon"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_example",
+        "description": "Demonstrates how to use the path_provider plugin.",
+        "dependencies": [
+          "flutter",
+          "path_provider_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_windows",
+        "description": "Windows implementation of the path_provider plugin",
+        "version": "2.3.0",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "permission_handler_windows_example",
+        "description": "Demonstrates how to use the permission_handler_windows plugin.",
+        "dependencies": [
+          "baseflow_plugin_template",
+          "flutter",
+          "flutter_test",
+          "permission_handler_windows",
+          "url_launcher"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "permission_handler_windows",
+        "description": "Permission plugin for Flutter. This plugin provides the Windows API to request and check permissions.",
+        "version": "0.2.1",
+        "dependencies": [
+          "flutter",
+          "permission_handler_platform_interface",
+          "flutter_test",
+          "plugin_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "record_windows",
+        "description": "Windows specific implementation for record package called by record_platform_interface.",
+        "version": "1.0.7",
+        "dependencies": [
+          "flutter",
+          "record_platform_interface",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/record_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/record_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "share_plus_example",
+        "description": "Demonstrates how to use the share_plus plugin.",
+        "dependencies": [
+          "flutter",
+          "share_plus",
+          "image_picker",
+          "file_selector",
+          "flutter_driver",
+          "flutter_test",
+          "integration_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/share_plus/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/share_plus/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "share_plus",
+        "description": "Flutter plugin for sharing content via the platform share UI, using the ACTION_SEND intent on Android and UIActivityViewController on iOS.",
+        "version": "12.0.1",
+        "dependencies": [
+          "cross_file",
+          "meta",
+          "mime",
+          "flutter",
+          "flutter_web_plugins",
+          "share_plus_platform_interface",
+          "file",
+          "url_launcher_web",
+          "url_launcher_windows",
+          "url_launcher_linux",
+          "url_launcher_platform_interface",
+          "ffi",
+          "web",
+          "win32",
+          "flutter_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/share_plus/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/share_plus/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows_example",
+        "description": "Demonstrates how to use the shared_preferences_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "shared_preferences_platform_interface",
+          "shared_preferences_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows",
+        "description": "Windows implementation of shared_preferences",
+        "version": "2.4.1",
+        "dependencies": [
+          "file",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "path_provider_windows",
+          "shared_preferences_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_example",
+        "description": "Demonstrates the Windows implementation of the url_launcher plugin.",
+        "dependencies": [
+          "flutter",
+          "url_launcher_platform_interface",
+          "url_launcher_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_windows",
+        "description": "Windows implementation of the url_launcher plugin.",
+        "version": "3.1.5",
+        "dependencies": [
+          "flutter",
+          "url_launcher_platform_interface",
+          "flutter_test",
+          "pigeon",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml"
+      }
+    ],
+    "techStack": [
+      "equatable",
+      "google_sign_in",
+      "googleapis",
+      "googleapis_auth",
+      "coverage",
+      "mocktail",
+      "test",
+      "very_good_analysis",
+      "authentication_repository",
+      "crypto",
+      "flutter_secure_storage",
+      "path_provider",
+      "sqflite",
+      "flutter",
+      "intl",
+      "meta",
+      "notes_api",
+      "rxdart",
+      "shared_preferences",
+      "user_repository",
+      "flutter_test",
+      "sqflite_common_ffi",
+      "json_annotation",
+      "uuid",
+      "build_runner",
+      "json_serializable",
+      "google_fonts",
+      "animations",
+      "bloc",
+      "archive",
+      "dynamic_color",
+      "extended_image",
+      "flutter_bloc",
+      "flutter_localizations",
+      "image",
+      "image_picker",
+      "local_storage_api",
+      "notes_repository",
+      "cloud_storage_api",
+      "settings_storage_api",
+      "permission_handler",
+      "connectivity_plus",
+      "file_picker",
+      "share_plus",
+      "flutter_sharing_intent",
+      "url_launcher",
+      "workmanager",
+      "flutter_local_notifications",
+      "local_auth",
+      "flutter_svg",
+      "stream_transform",
+      "table_calendar",
+      "record",
+      "audioplayers",
+      "ffmpeg_kit_flutter_new_audio",
+      "timezone",
+      "flutter_timezone",
+      "flutter_launcher_icons",
+      "bloc_test",
+      "mockingjay",
+      "audioplayers_platform_interface",
+      "flame_lint",
+      "flutter_driver",
+      "integration_test",
+      "flutter_lints",
+      "flutter_web_plugins",
+      "connectivity_plus_platform_interface",
+      "web",
+      "nm",
+      "collection",
+      "dbus",
+      "mockito",
+      "plugin_platform_interface",
+      "cupertino_icons",
+      "material_color_utilities",
+      "cider",
+      "file",
+      "flutter_plugin_android_lifecycle",
+      "ffi",
+      "path",
+      "win32",
+      "cross_file",
+      "file_selector_platform_interface",
+      "file_selector_windows",
+      "pigeon",
+      "flutter_local_notifications_platform_interface",
+      "xml",
+      "ffigen",
+      "flutter_secure_storage_platform_interface",
+      "flutter_secure_storage_windows",
+      "lint",
+      "image_picker_platform_interface",
+      "image_picker_windows",
+      "mime",
+      "video_player",
+      "local_auth_platform_interface",
+      "local_auth_windows",
+      "path_provider_windows",
+      "path_provider_platform_interface",
+      "baseflow_plugin_template",
+      "permission_handler_windows",
+      "permission_handler_platform_interface",
+      "record_platform_interface",
+      "file_selector",
+      "share_plus_platform_interface",
+      "url_launcher_web",
+      "url_launcher_windows",
+      "url_launcher_linux",
+      "url_launcher_platform_interface",
+      "shared_preferences_platform_interface",
+      "shared_preferences_windows"
+    ],
+    "resumeName": "Flutter Notes App"
+  },
+  {
+    "id": "sms-stack",
+    "name": "SMS Stack",
+    "path": "/home/karthik/Development/projects/app/sms_stack_manager",
+    "status": "Internal Beta",
+    "tags": [
+      "Flutter",
+      "Utility",
+      "Beta"
+    ],
+    "description": "A privacy-focused utility for SMS categorization and financial insight extraction.",
+    "resumeBullets": [
+      {
+        "text": "Built a privacy-focused Flutter application for SMS categorization, financial insight extraction, and reminders.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      },
+      {
+        "text": "Implemented **Drift/SQLite** for local processing and managed Android **dev/prod flavors** and **APK/AAB** release workflows.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ],
+    "version": "1.2026.1-pre.7+9",
+    "packages": [
+      {
+        "type": "pub",
+        "name": "app_links_linux",
+        "description": "Linux platform implementation of app_links plugin.",
+        "version": "1.0.3",
+        "dependencies": [
+          "flutter",
+          "app_links_platform_interface",
+          "gtk",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/app_links_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/app_links_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_local_notifications_linux",
+        "description": "Linux implementation of the flutter_local_notifications plugin",
+        "version": "8.0.0",
+        "dependencies": [
+          "dbus",
+          "ffi",
+          "flutter",
+          "flutter_local_notifications_platform_interface",
+          "path",
+          "xdg_directories",
+          "build_runner",
+          "flutter_test",
+          "flutter_lints",
+          "mockito"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_linux",
+        "description": "Linux implementation of flutter_secure_storage",
+        "version": "3.0.1",
+        "dependencies": [
+          "flutter",
+          "flutter_secure_storage_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "gtk_example",
+        "description": "",
+        "dependencies": [
+          "flutter",
+          "gtk",
+          "provider",
+          "yaru",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/gtk/example/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/gtk/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "gtk",
+        "description": "GTK+ utilities for Flutter Linux applications.",
+        "version": "2.2.0",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "meta",
+          "ffigen",
+          "flutter_lints",
+          "flutter_test",
+          "mockito"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/gtk/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/gtk/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni_example",
+        "description": "Demonstrates how to use the jni plugin.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "jni",
+          "jni_flutter",
+          "cupertino_icons",
+          "test",
+          "flutter_test",
+          "integration_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni",
+        "description": "A library to access JNI from Dart and Flutter that acts as a support library for package:jnigen.",
+        "version": "1.0.0",
+        "dependencies": [
+          "args",
+          "collection",
+          "ffi",
+          "meta",
+          "package_config",
+          "path",
+          "plugin_platform_interface",
+          "dart_flutter_team_lints",
+          "dart_style",
+          "ffigen",
+          "jnigen",
+          "logging",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "pathproviderexample",
+        "description": "Demonstrates how to use the path_provider_linux plugin.",
+        "dependencies": [
+          "flutter",
+          "path_provider_linux",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_linux",
+        "description": "Linux implementation of the path_provider plugin",
+        "version": "2.2.1",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "xdg_directories",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_linux_example",
+        "description": "Demonstrates how to use the shared_preferences_linux plugin.",
+        "dependencies": [
+          "flutter",
+          "shared_preferences_linux",
+          "shared_preferences_platform_interface",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_linux",
+        "description": "Linux implementation of the shared_preferences plugin",
+        "version": "2.4.1",
+        "dependencies": [
+          "file",
+          "flutter",
+          "path",
+          "path_provider_linux",
+          "path_provider_platform_interface",
+          "shared_preferences_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_example",
+        "description": "Demonstrates how to use the url_launcher plugin.",
+        "dependencies": [
+          "flutter",
+          "url_launcher_linux",
+          "url_launcher_platform_interface",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_linux",
+        "description": "Linux implementation of the url_launcher plugin.",
+        "version": "3.2.2",
+        "dependencies": [
+          "flutter",
+          "url_launcher_platform_interface",
+          "flutter_test",
+          "pigeon",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/pubspec.yaml",
+        "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "sms_stack_manager",
+        "description": "A new Flutter project.",
+        "version": "1.2026.1-pre.7+9",
+        "dependencies": [
+          "flutter",
+          "cupertino_icons",
+          "flutter_bloc",
+          "bloc_concurrency",
+          "equatable",
+          "get_it",
+          "injectable",
+          "drift",
+          "sqlite3_flutter_libs",
+          "sqlite3",
+          "path_provider",
+          "path",
+          "google_fonts",
+          "flutter_animate",
+          "animations",
+          "flutter_sms_inbox",
+          "permission_handler",
+          "freezed_annotation",
+          "intl",
+          "shared_preferences",
+          "rxdart",
+          "collection",
+          "synchronized",
+          "url_launcher",
+          "scroll_to_index",
+          "scrollable_positioned_list",
+          "local_auth",
+          "http",
+          "google_sign_in",
+          "googleapis",
+          "encrypt",
+          "crypto",
+          "workmanager",
+          "flutter_local_notifications",
+          "flutter_secure_storage",
+          "firebase_core",
+          "firebase_remote_config",
+          "app_links",
+          "gemini_nano_android",
+          "flutter_test",
+          "flutter_lints",
+          "build_runner",
+          "drift_dev",
+          "injectable_generator",
+          "freezed",
+          "flutter_launcher_icons",
+          "change_app_package_name",
+          "mockito"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/pubspec.yaml",
+        "relativePath": "pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "app_links_example",
+        "description": "Demonstrates how to use the app_links plugin.",
+        "version": "1.0.0",
+        "dependencies": [
+          "flutter",
+          "app_links",
+          "ffi",
+          "win32",
+          "msix",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/app_links/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/app_links/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "app_links",
+        "description": "Android App Links, Deep Links, iOs Universal Links and Custom URL schemes handler for Flutter (desktop included).",
+        "version": "7.0.0",
+        "dependencies": [
+          "flutter",
+          "app_links_linux",
+          "app_links_platform_interface",
+          "app_links_web",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/app_links/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/app_links/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "firebase_core_example",
+        "description": "Demonstrates how to use the firebase_core plugin.",
+        "dependencies": [
+          "firebase_core",
+          "flutter"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_core/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "firebase_core",
+        "description": "Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.",
+        "version": "4.9.0",
+        "dependencies": [
+          "firebase_core_platform_interface",
+          "firebase_core_web",
+          "flutter",
+          "meta",
+          "flutter_test",
+          "mockito",
+          "plugin_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_core/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "firebase_remote_config_example",
+        "description": "Demonstrates how to use the firebase_remote_config plugin.",
+        "dependencies": [
+          "firebase_core",
+          "firebase_remote_config",
+          "flutter"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "firebase_remote_config",
+        "description": "Flutter plugin for Firebase Remote Config. Update your application look and feel and behavior without re-releasing.",
+        "version": "6.5.1",
+        "dependencies": [
+          "firebase_core",
+          "firebase_core_platform_interface",
+          "firebase_remote_config_platform_interface",
+          "firebase_remote_config_web",
+          "flutter",
+          "flutter_test",
+          "mockito",
+          "plugin_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_local_notifications_windows",
+        "description": "Windows implementation of the flutter_local_notifications plugin",
+        "version": "3.0.0",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "flutter_local_notifications_platform_interface",
+          "meta",
+          "timezone",
+          "xml",
+          "ffigen",
+          "flutter_lints",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_windows",
+        "description": "Windows implementation of flutter_secure_storage. Please use flutter_secure_storage instead of this package.",
+        "version": "4.2.2",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "flutter_secure_storage_platform_interface",
+          "path",
+          "path_provider",
+          "path_provider_platform_interface",
+          "win32",
+          "flutter_test",
+          "path_provider_windows",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni_example",
+        "description": "Demonstrates how to use the jni plugin.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "jni",
+          "jni_flutter",
+          "cupertino_icons",
+          "test",
+          "flutter_test",
+          "integration_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni",
+        "description": "A library to access JNI from Dart and Flutter that acts as a support library for package:jnigen.",
+        "version": "1.0.0",
+        "dependencies": [
+          "args",
+          "collection",
+          "ffi",
+          "meta",
+          "package_config",
+          "path",
+          "plugin_platform_interface",
+          "dart_flutter_team_lints",
+          "dart_style",
+          "ffigen",
+          "jnigen",
+          "logging",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "local_auth_windows_example",
+        "description": "Demonstrates how to use the local_auth_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "local_auth_platform_interface",
+          "local_auth_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "local_auth_windows",
+        "description": "Windows implementation of the local_auth plugin.",
+        "version": "2.0.1",
+        "dependencies": [
+          "flutter",
+          "local_auth_platform_interface",
+          "flutter_test",
+          "pigeon"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_example",
+        "description": "Demonstrates how to use the path_provider plugin.",
+        "dependencies": [
+          "flutter",
+          "path_provider_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_windows",
+        "description": "Windows implementation of the path_provider plugin",
+        "version": "2.3.0",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "permission_handler_windows_example",
+        "description": "Demonstrates how to use the permission_handler_windows plugin.",
+        "dependencies": [
+          "baseflow_plugin_template",
+          "flutter",
+          "flutter_test",
+          "permission_handler_windows",
+          "url_launcher"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "permission_handler_windows",
+        "description": "Permission plugin for Flutter. This plugin provides the Windows API to request and check permissions.",
+        "version": "0.2.1",
+        "dependencies": [
+          "flutter",
+          "permission_handler_platform_interface",
+          "flutter_test",
+          "plugin_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows_example",
+        "description": "Demonstrates how to use the shared_preferences_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "shared_preferences_platform_interface",
+          "shared_preferences_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows",
+        "description": "Windows implementation of shared_preferences",
+        "version": "2.4.1",
+        "dependencies": [
+          "file",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "path_provider_windows",
+          "shared_preferences_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_example",
+        "description": "Demonstrates the Windows implementation of the url_launcher plugin.",
+        "dependencies": [
+          "flutter",
+          "url_launcher_platform_interface",
+          "url_launcher_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "url_launcher_windows",
+        "description": "Windows implementation of the url_launcher plugin.",
+        "version": "3.1.5",
+        "dependencies": [
+          "flutter",
+          "url_launcher_platform_interface",
+          "flutter_test",
+          "pigeon",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml",
+        "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml"
+      }
+    ],
+    "techStack": [
+      "flutter",
+      "app_links_platform_interface",
+      "gtk",
+      "flutter_lints",
+      "dbus",
+      "ffi",
+      "flutter_local_notifications_platform_interface",
+      "path",
+      "xdg_directories",
+      "build_runner",
+      "flutter_test",
+      "mockito",
+      "flutter_secure_storage_platform_interface",
+      "provider",
+      "yaru",
+      "meta",
+      "ffigen",
+      "jni",
+      "jni_flutter",
+      "cupertino_icons",
+      "test",
+      "integration_test",
+      "args",
+      "collection",
+      "package_config",
+      "plugin_platform_interface",
+      "dart_flutter_team_lints",
+      "dart_style",
+      "jnigen",
+      "logging",
+      "path_provider_linux",
+      "path_provider_platform_interface",
+      "shared_preferences_linux",
+      "shared_preferences_platform_interface",
+      "file",
+      "url_launcher_linux",
+      "url_launcher_platform_interface",
+      "pigeon",
+      "flutter_bloc",
+      "bloc_concurrency",
+      "equatable",
+      "get_it",
+      "injectable",
+      "drift",
+      "sqlite3_flutter_libs",
+      "sqlite3",
+      "path_provider",
+      "google_fonts",
+      "flutter_animate",
+      "animations",
+      "flutter_sms_inbox",
+      "permission_handler",
+      "freezed_annotation",
+      "intl",
+      "shared_preferences",
+      "rxdart",
+      "synchronized",
+      "url_launcher",
+      "scroll_to_index",
+      "scrollable_positioned_list",
+      "local_auth",
+      "http",
+      "google_sign_in",
+      "googleapis",
+      "encrypt",
+      "crypto",
+      "workmanager",
+      "flutter_local_notifications",
+      "flutter_secure_storage",
+      "firebase_core",
+      "firebase_remote_config",
+      "app_links",
+      "gemini_nano_android",
+      "drift_dev",
+      "injectable_generator",
+      "freezed",
+      "flutter_launcher_icons",
+      "change_app_package_name",
+      "win32",
+      "msix",
+      "app_links_linux",
+      "app_links_web",
+      "firebase_core_platform_interface",
+      "firebase_core_web",
+      "firebase_remote_config_platform_interface",
+      "firebase_remote_config_web",
+      "timezone",
+      "xml",
+      "path_provider_windows",
+      "very_good_analysis",
+      "local_auth_platform_interface",
+      "local_auth_windows",
+      "baseflow_plugin_template",
+      "permission_handler_windows",
+      "permission_handler_platform_interface",
+      "shared_preferences_windows",
+      "url_launcher_windows"
+    ],
+    "resumeName": "SMS Stack Manager"
+  },
+  {
+    "id": "iky",
+    "name": "IKY",
+    "path": "/home/karthik/Development/projects/app/people-app-iky-v2",
+    "status": "Active Development",
+    "tags": [
+      "Flutter",
+      "Node.js",
+      "Client-Server",
+      "Fullstack"
+    ],
+    "description": "",
+    "version": "1.0.0",
+    "packages": [
+      {
+        "type": "npm",
+        "name": "iky-people-api",
+        "description": "IKY People App - NestJS API Server with REST and GraphQL",
+        "version": "1.0.0",
+        "dependencies": [
+          "@apollo/server",
+          "@as-integrations/express5",
+          "@nestjs/apollo",
+          "@nestjs/common",
+          "@nestjs/core",
+          "@nestjs/graphql",
+          "@nestjs/jwt",
+          "@nestjs/passport",
+          "@nestjs/platform-express",
+          "@nestjs/swagger",
+          "@types/pg",
+          "bcrypt",
+          "class-transformer",
+          "class-validator",
+          "graphql",
+          "minio",
+          "mongodb",
+          "multer",
+          "passport",
+          "passport-jwt",
+          "pg",
+          "redis",
+          "reflect-metadata",
+          "rxjs",
+          "uuid",
+          "@nestjs/cli",
+          "@nestjs/testing",
+          "@types/bcrypt",
+          "@types/express",
+          "@types/jest",
+          "@types/multer",
+          "@types/node",
+          "@types/passport-jwt",
+          "@types/supertest",
+          "@typescript-eslint/eslint-plugin",
+          "@typescript-eslint/parser",
+          "eslint",
+          "eslint-config-prettier",
+          "eslint-plugin-prettier",
+          "jest",
+          "prettier",
+          "source-map-support",
+          "supertest",
+          "ts-jest",
+          "ts-loader",
+          "ts-node",
+          "tsconfig-paths",
+          "typescript"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/api/package.json",
+        "relativePath": "src/api/package.json"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_linux",
+        "description": "Linux implementation of flutter_secure_storage",
+        "version": "3.0.1",
+        "dependencies": [
+          "flutter",
+          "flutter_secure_storage_platform_interface"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni_example",
+        "description": "Demonstrates how to use the jni plugin.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "jni",
+          "jni_flutter",
+          "cupertino_icons",
+          "test",
+          "flutter_test",
+          "integration_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni",
+        "description": "A library to access JNI from Dart and Flutter that acts as a support library for package:jnigen.",
+        "version": "1.0.0",
+        "dependencies": [
+          "args",
+          "collection",
+          "ffi",
+          "meta",
+          "package_config",
+          "path",
+          "plugin_platform_interface",
+          "dart_flutter_team_lints",
+          "dart_style",
+          "ffigen",
+          "jnigen",
+          "logging",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "pathproviderexample",
+        "description": "Demonstrates how to use the path_provider_linux plugin.",
+        "dependencies": [
+          "flutter",
+          "path_provider_linux",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_linux",
+        "description": "Linux implementation of the path_provider plugin",
+        "version": "2.2.1",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "xdg_directories",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_linux_example",
+        "description": "Demonstrates how to use the shared_preferences_linux plugin.",
+        "dependencies": [
+          "flutter",
+          "shared_preferences_linux",
+          "shared_preferences_platform_interface",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_linux",
+        "description": "Linux implementation of the shared_preferences plugin",
+        "version": "2.4.1",
+        "dependencies": [
+          "file",
+          "flutter",
+          "path",
+          "path_provider_linux",
+          "path_provider_platform_interface",
+          "shared_preferences_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml",
+        "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "iky",
+        "description": "A new Flutter project.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "cupertino_icons",
+          "flutter_riverpod",
+          "riverpod_annotation",
+          "dio",
+          "go_router",
+          "shared_preferences",
+          "flex_color_scheme",
+          "freezed_annotation",
+          "json_annotation",
+          "shimmer",
+          "path_provider",
+          "intl",
+          "flutter_secure_storage",
+          "flutter_test",
+          "flutter_lints",
+          "build_runner",
+          "freezed",
+          "json_serializable",
+          "riverpod_generator",
+          "flutter_launcher_icons"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/pubspec.yaml",
+        "relativePath": "src/app/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "flutter_secure_storage_windows",
+        "description": "Windows implementation of flutter_secure_storage. Please use flutter_secure_storage instead of this package.",
+        "version": "4.2.2",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "flutter_secure_storage_platform_interface",
+          "path",
+          "path_provider",
+          "path_provider_platform_interface",
+          "win32",
+          "flutter_test",
+          "path_provider_windows",
+          "very_good_analysis"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni_example",
+        "description": "Demonstrates how to use the jni plugin.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "ffi",
+          "jni",
+          "jni_flutter",
+          "cupertino_icons",
+          "test",
+          "flutter_test",
+          "integration_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "jni",
+        "description": "A library to access JNI from Dart and Flutter that acts as a support library for package:jnigen.",
+        "version": "1.0.0",
+        "dependencies": [
+          "args",
+          "collection",
+          "ffi",
+          "meta",
+          "package_config",
+          "path",
+          "plugin_platform_interface",
+          "dart_flutter_team_lints",
+          "dart_style",
+          "ffigen",
+          "jnigen",
+          "logging",
+          "test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_example",
+        "description": "Demonstrates how to use the path_provider plugin.",
+        "dependencies": [
+          "flutter",
+          "path_provider_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "path_provider_windows",
+        "description": "Windows implementation of the path_provider plugin",
+        "version": "2.3.0",
+        "dependencies": [
+          "ffi",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows_example",
+        "description": "Demonstrates how to use the shared_preferences_windows plugin.",
+        "dependencies": [
+          "flutter",
+          "shared_preferences_platform_interface",
+          "shared_preferences_windows",
+          "flutter_test",
+          "integration_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
+      },
+      {
+        "type": "pub",
+        "name": "shared_preferences_windows",
+        "description": "Windows implementation of shared_preferences",
+        "version": "2.4.1",
+        "dependencies": [
+          "file",
+          "flutter",
+          "path",
+          "path_provider_platform_interface",
+          "path_provider_windows",
+          "shared_preferences_platform_interface",
+          "flutter_test"
+        ],
+        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
+        "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
+      }
+    ],
+    "techStack": [
+      "@apollo/server",
+      "@as-integrations/express5",
+      "@nestjs/apollo",
+      "@nestjs/common",
+      "@nestjs/core",
+      "@nestjs/graphql",
+      "@nestjs/jwt",
+      "@nestjs/passport",
+      "@nestjs/platform-express",
+      "@nestjs/swagger",
+      "@types/pg",
+      "bcrypt",
+      "class-transformer",
+      "class-validator",
+      "graphql",
+      "minio",
+      "mongodb",
+      "multer",
+      "passport",
+      "passport-jwt",
+      "pg",
+      "redis",
+      "reflect-metadata",
+      "rxjs",
+      "uuid",
+      "@nestjs/cli",
+      "@nestjs/testing",
+      "@types/bcrypt",
+      "@types/express",
+      "@types/jest",
+      "@types/multer",
+      "@types/node",
+      "@types/passport-jwt",
+      "@types/supertest",
+      "@typescript-eslint/eslint-plugin",
+      "@typescript-eslint/parser",
+      "eslint",
+      "eslint-config-prettier",
+      "eslint-plugin-prettier",
+      "jest",
+      "prettier",
+      "source-map-support",
+      "supertest",
+      "ts-jest",
+      "ts-loader",
+      "ts-node",
+      "tsconfig-paths",
+      "typescript",
+      "flutter",
+      "flutter_secure_storage_platform_interface",
+      "ffi",
+      "jni",
+      "jni_flutter",
+      "cupertino_icons",
+      "test",
+      "flutter_test",
+      "integration_test",
+      "flutter_lints",
+      "args",
+      "collection",
+      "meta",
+      "package_config",
+      "path",
+      "plugin_platform_interface",
+      "dart_flutter_team_lints",
+      "dart_style",
+      "ffigen",
+      "jnigen",
+      "logging",
+      "path_provider_linux",
+      "path_provider_platform_interface",
+      "xdg_directories",
+      "shared_preferences_linux",
+      "shared_preferences_platform_interface",
+      "file",
+      "flutter_riverpod",
+      "riverpod_annotation",
+      "dio",
+      "go_router",
+      "shared_preferences",
+      "flex_color_scheme",
+      "freezed_annotation",
+      "json_annotation",
+      "shimmer",
+      "path_provider",
+      "intl",
+      "flutter_secure_storage",
+      "build_runner",
+      "freezed",
+      "json_serializable",
+      "riverpod_generator",
+      "flutter_launcher_icons",
+      "win32",
+      "path_provider_windows",
+      "very_good_analysis",
+      "shared_preferences_windows"
+    ],
+    "resumeName": "People App IKY v2",
+    "resumeBullets": [
+      {
+        "text": "Designed a multi-platform architecture (Mobile, Web, Edge) utilizing Docker Compose and CI/CD-oriented deployment.",
+        "resumeTypes": [
+          "flutter",
+          "hybrid",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Established environment-aware deployment planning specifically targeted for Windows and Raspberry Pi hardware.",
+        "resumeTypes": [
+          "flutter",
+          "hybrid",
+          "2page-ats"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dev-home",
+    "name": "Developer Home",
+    "path": "/home/karthik/Development/projects/website/home",
+    "status": "Internal Beta",
+    "tags": [
+      "Flutter Web",
+      "Portfolio"
+    ],
+    "description": "A new Flutter project.",
+    "version": "1.0.0+1",
+    "packages": [
+      {
+        "type": "pub",
+        "name": "nistudious_website",
+        "description": "A new Flutter project.",
+        "version": "1.0.0+1",
+        "dependencies": [
+          "flutter",
+          "cupertino_icons",
+          "google_fonts",
+          "url_launcher",
+          "go_router",
+          "provider",
+          "font_awesome_flutter",
+          "flutter_markdown",
+          "flutter_test",
+          "flutter_lints"
+        ],
+        "file": "/home/karthik/Development/projects/website/home/pubspec.yaml",
+        "relativePath": "pubspec.yaml"
+      },
+      {
+        "type": "npm",
+        "name": "playstore_screenshots",
+        "description": "",
+        "version": "1.0.0",
+        "dependencies": [
+          "puppeteer"
+        ],
+        "file": "/home/karthik/Development/projects/website/home/scripts/playstore_screenshots/package.json",
+        "relativePath": "scripts/playstore_screenshots/package.json"
+      }
+    ],
+    "techStack": [
+      "flutter",
+      "cupertino_icons",
+      "google_fonts",
+      "url_launcher",
+      "go_router",
+      "provider",
+      "font_awesome_flutter",
+      "flutter_markdown",
+      "flutter_test",
+      "flutter_lints",
+      "puppeteer"
+    ],
+    "resumeName": "NiStudioUs Website",
+    "resumeBullets": [
+      {
+        "text": "Created and hosted a responsive Flutter web portfolio to showcase product development capabilities and host applications.",
+        "resumeTypes": [
+          "flutter",
+          "hybrid",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Managed web asset bundling, static hosting configuration, and UI/UX design.",
+        "resumeTypes": [
+          "flutter",
+          "hybrid",
+          "2page-ats"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "learning-gen-ai",
+    "name": "Learning gen-AI",
+    "path": "/home/karthik/Development/projects/website/learning",
+    "status": "Live",
+    "tags": [
+      "React Native",
+      "Gen-AI"
+    ],
+    "description": "",
+    "version": "0.0.0",
+    "packages": [
+      {
+        "type": "npm",
+        "name": "chapter-2",
+        "description": "",
+        "version": "0.0.0",
+        "dependencies": [
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/icons-material",
+          "@mui/material",
+          "react",
+          "react-dom",
+          "react-router-dom",
+          "@types/react",
+          "@types/react-dom",
+          "@vitejs/plugin-react",
+          "typescript",
+          "vite"
+        ],
+        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-2/package.json",
+        "relativePath": "apps/chapter-2/package.json"
+      },
+      {
+        "type": "npm",
+        "name": "chapter-3",
+        "description": "",
+        "version": "0.0.0",
+        "dependencies": [
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/icons-material",
+          "@mui/material",
+          "framer-motion",
+          "leaflet",
+          "react",
+          "react-dom",
+          "react-leaflet",
+          "react-router-dom",
+          "@types/leaflet",
+          "@types/react",
+          "@types/react-dom",
+          "@vitejs/plugin-react",
+          "typescript",
+          "vite"
+        ],
+        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-3/package.json",
+        "relativePath": "apps/chapter-3/package.json"
+      },
+      {
+        "type": "npm",
+        "name": "chapter-4",
+        "description": "",
+        "version": "0.0.0",
+        "dependencies": [
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/icons-material",
+          "@mui/material",
+          "@types/uuid",
+          "framer-motion",
+          "react",
+          "react-dom",
+          "react-router-dom",
+          "recharts",
+          "uuid",
+          "@types/react",
+          "@types/react-dom",
+          "@vitejs/plugin-react",
+          "typescript",
+          "vite"
+        ],
+        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-4/package.json",
+        "relativePath": "apps/chapter-4/package.json"
+      },
+      {
+        "type": "npm",
+        "name": "learning-hub",
+        "description": "",
+        "version": "0.0.0",
+        "dependencies": [
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/icons-material",
+          "@mui/material",
+          "react",
+          "react-dom",
+          "react-router-dom",
+          "@vitejs/plugin-react",
+          "vite"
+        ],
+        "file": "/home/karthik/Development/projects/website/learning/package.json",
+        "relativePath": "package.json"
+      }
+    ],
+    "techStack": [
+      "@emotion/react",
+      "@emotion/styled",
+      "@mui/icons-material",
+      "@mui/material",
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "typescript",
+      "vite",
+      "framer-motion",
+      "leaflet",
+      "react-leaflet",
+      "@types/leaflet",
+      "@types/uuid",
+      "recharts",
+      "uuid"
+    ]
+  }
+]

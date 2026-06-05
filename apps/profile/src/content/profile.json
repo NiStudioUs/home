@@ -1,0 +1,33 @@
+{
+  "name": "Karthik Subramanian",
+  "title": "Senior SDET | Flutter Developer | Android Release Management | QE Automation Engineer",
+  "location": "Erode, Tamil Nadu, India",
+  "email": "[Your Email Address]",
+  "phone": "[Your Phone Number]",
+  "socials": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/karthik-s-b3552995",
+      "display": "linkedin.com/in/karthik-s-b3552995"
+    },
+    {
+      "platform": "Play Store",
+      "url": "https://play.google.com/store/apps/developer?id=Ni+Studios",
+      "display": "Ni Studios"
+    },
+    {
+      "platform": "Portfolio",
+      "url": "https://nistudious.github.io/home/",
+      "display": "nistudious.github.io/home/"
+    }
+  ],
+  "summary": "Senior SDET with 9+ years of experience in banking and financial services across test automation, quality engineering, Flutter application development, and Android release management. Strong hands-on experience in TypeScript, Cypress, API automation, CI/CD, Flutter, Dart, Android delivery workflows, and hosted web experiences. Proven track record in customer onboarding, lending, deposits, CRM, and risk-assessment systems, with a hybrid engineering profile that combines mobile product development with scalable QE/SDET ownership.",
+  "highlights": [
+    "9+ years of experience since August 2017",
+    "Strong hybrid profile across mobile development + SDET/QE automation",
+    "Built and published Flutter-based Android applications through Google Play Store",
+    "Strong banking domain exposure across customer onboarding, lending, deposits, mobile channels, and risk workflows",
+    "Azure CI/CD pipeline automation and deployment strategies",
+    "Firebase integration for parsing and cloud synchronization in SMS Stack"
+  ]
+}

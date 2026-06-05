@@ -30,6 +30,7 @@ jobs:
 
       - name: Build Flutter Portfolio
         run: |
+          cd apps/portfolio
           flutter pub get
           flutter build web --base-href "/home/" --release
           
@@ -37,22 +38,22 @@ jobs:
         run: |
           mkdir -p dist
           # Copy Flutter build to root of dist
-          cp -R build/web/* dist/
+          cp -R apps/portfolio/build/web/* dist/
 
       - name: Build Learning Hub
         run: |
-          cd learning
+          cd apps/learning
           npm ci
           npm run build
-          # Vite build goes to learning/dist by default
-          cd ..
+          # Vite build goes to dist by default
+          cd ../..
           mkdir -p dist/learning
-          cp -R learning/dist/* dist/learning/
+          cp -R apps/learning/dist/* dist/learning/
 
       - name: Process Learning Apps
         run: |
           mkdir -p dist/learning/apps
-          cd learning
+          cd apps/learning
           for app in apps/*; do
             if [ -d "$app" ]; then
               app_name=$(basename "$app")
@@ -81,6 +82,15 @@ jobs:
               fi
             fi
           done
+
+      - name: Build Developer Profile
+        run: |
+          cd apps/profile
+          npm ci
+          npm run build
+          cd ../..
+          mkdir -p dist/profile
+          cp -R apps/profile/dist/* dist/profile/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
