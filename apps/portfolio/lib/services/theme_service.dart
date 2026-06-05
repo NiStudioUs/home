@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 class ThemeService extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
 
   ThemeService() {
     try {
-      final savedTheme = html.window.localStorage['ni_studio_theme'];
+      final savedTheme = web.window.localStorage.getItem('ni_studio_theme');
       if (savedTheme == 'dark') {
         _themeMode = ThemeMode.dark;
       } else {
@@ -36,12 +35,12 @@ class ThemeService extends ChangeNotifier {
     if (_themeMode == ThemeMode.light) {
       _themeMode = ThemeMode.dark;
       try {
-        html.window.localStorage['ni_studio_theme'] = 'dark';
+        web.window.localStorage.setItem('ni_studio_theme', 'dark');
       } catch (_) {}
     } else {
       _themeMode = ThemeMode.light;
       try {
-        html.window.localStorage['ni_studio_theme'] = 'light';
+        web.window.localStorage.setItem('ni_studio_theme', 'light');
       } catch (_) {}
     }
     notifyListeners();

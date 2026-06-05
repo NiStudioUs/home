@@ -1,0 +1,134 @@
+.dev-settings-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.generator-card {
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.generator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.generator-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.linkedin-textarea {
+  width: 100%;
+  height: 600px;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.linkedin-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.dev-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.dev-tab {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.dev-tab:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dev-tab.active {
+  background-color: var(--accent-color);
+  color: #ffffff; /* Explicitly white so it works in both themes */
+}
+
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.suggestion-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.suggestion-box h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.suggestion-box ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.suggestion-box ul li {
+  margin-bottom: 0.5rem;
+}
+
+.generate-btn {
+  background-color: var(--text-secondary);
+  margin-right: 0.5rem;
+  color: #ffffff;
+}
+
+.role-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.role-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.role-filter-label input {
+  cursor: pointer;
+}

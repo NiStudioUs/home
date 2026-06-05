@@ -23,7 +23,7 @@ export default function Navbar() {
           <NavLink to="/story" className="navbar-item" onClick={closeMenu}><BookOpen size={18} /> Story</NavLink>
           <NavLink to="/projects" className="navbar-item" onClick={closeMenu}><Code size={18} /> Projects</NavLink>
           <NavLink to="/stack" className="navbar-item" onClick={closeMenu}><Layers size={18} /> Tech Stack</NavLink>
-          <NavLink to="/resume" className="navbar-item" onClick={closeMenu}><FileText size={18} /> Resume</NavLink>
+
           
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {isDark ? <Sun size={20} /> : <Moon size={20} />}

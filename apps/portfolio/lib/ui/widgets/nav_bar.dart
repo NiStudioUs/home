@@ -3,9 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 import '../../utils/url_helper.dart';
-import '../../utils/url_helper.dart'; // Import provider
+
 import '../../models/data_model.dart';
-import '../../services/theme_service.dart'; // Import ThemeService
+import '../../services/theme_service.dart';
+import '../../utils/easter_egg.dart';
 import '../../services/current_app_service.dart';
 import '../widgets/image_helper.dart';
 
@@ -65,7 +66,13 @@ class _DesktopNavBar extends StatelessWidget {
         children: [
           // Brand / Logo
           TextButton.icon(
-            onPressed: () => context.go('/'),
+            onPressed: () {
+              if (EasterEgg.handle('name')) {
+                launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+              } else {
+                context.go('/');
+              }
+            },
             icon: const Icon(Icons.home),
             label: Text(
               dataModel.developer.name,
@@ -184,7 +191,11 @@ class _DesktopNavBar extends StatelessWidget {
               themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
             ),
             onPressed: () {
-              themeService.toggleTheme();
+              if (EasterEgg.handle('theme')) {
+                launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+              } else {
+                themeService.toggleTheme();
+              }
             },
           ),
           const SizedBox(width: 20),
@@ -211,7 +222,13 @@ class _MobileNavBar extends StatelessWidget {
 
     return AppBar(
       title: TextButton.icon(
-        onPressed: () => context.go('/'),
+        onPressed: () {
+          if (EasterEgg.handle('name')) {
+            launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+          } else {
+            context.go('/');
+          }
+        },
         icon: const Icon(Icons.home),
         label: Text(
           dataModel.developer.name,
@@ -232,7 +249,11 @@ class _MobileNavBar extends StatelessWidget {
             themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
           ),
           onPressed: () {
-            themeService.toggleTheme();
+            if (EasterEgg.handle('theme')) {
+              launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+            } else {
+              themeService.toggleTheme();
+            }
           },
         ),
         Builder(

@@ -1,5 +1,4 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 class UrlHelper {
   static const _useDevPorts = bool.fromEnvironment('USE_DEV_PORTS', defaultValue: false);
@@ -8,7 +7,7 @@ class UrlHelper {
 
   static String _getThemeQuery() {
     try {
-      final theme = html.window.localStorage['ni_studio_theme'];
+      final theme = web.window.localStorage.getItem('ni_studio_theme');
       if (theme != null) {
         return '?theme=$theme';
       }
@@ -23,7 +22,9 @@ class UrlHelper {
 
     if (path.contains('profile/')) {
       final themeQuery = _getThemeQuery();
-      return 'http://localhost:$_profilePort/$themeQuery#/';
+      final hashIndex = path.indexOf('#');
+      final hashPath = hashIndex != -1 ? path.substring(hashIndex) : '#/';
+      return 'http://localhost:$_profilePort/$themeQuery$hashPath';
     }
     
     if (path.contains('learning/')) {
