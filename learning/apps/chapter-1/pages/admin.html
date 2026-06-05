@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | KS Foodie</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <span class="nav-logo">KS Foodie <span style="font-size: 0.8rem; color: #888;">Admin Panel</span></span>
+            <div class="nav-user">
+                <button id="adminLogoutBtn" class="btn-primary btn-sm"
+                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--primary-color); box-shadow: none;">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main id="adminContent" class="container" style="padding-top: 2rem;">
+
+        <!-- Order Management Section -->
+        <div class="mb-2">
+            <h2 class="mb-2">Order Management</h2>
+            <div class="glass-panel" style="padding: 1.5rem;">
+                <div class="admin-table-container">
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>User</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminOrdersTable">
+                                <!-- Orders injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="noOrdersMsg" class="text-center mt-2" style="color: #888; display: none;">No orders found.
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
+
+        <!-- Product Management Section -->
+        <div class="grid-layout" style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+
+            <!-- Add Item Form -->
+            <div class="glass-panel" style="padding: 1.5rem; height: fit-content;">
+                <h3 class="mb-2">Add New Item</h3>
+                <form id="addItemForm">
+                    <div class="form-group">
+                        <label class="form-label" for="itemName">Item Name</label>
+                        <input type="text" id="itemName" class="form-input" required placeholder="e.g. Special Burger">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="itemPrice">Price (₹)</label>
+                        <input type="number" id="itemPrice" class="form-input" required placeholder="e.g. 150">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="itemCategory">Category</label>
+                        <select id="itemCategory" class="form-input">
+                            <option value="Indian">Indian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="American">American</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="itemImage">Image URL</label>
+                        <input type="url" id="itemImage" class="form-input" required placeholder="https://...">
+                        <small style="display: block; margin-top: 5px; color: #666;">
+                            Tip: Use Unsplash or MealDB URLs. <br>
+                            Ex: <code>https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg</code>
+                        </small>
+                    </div>
+                    <button type="submit" class="btn-primary btn-width-full mt-2">Add to Menu</button>
+                </form>
+            </div>
+
+            <!-- Current Custom Items -->
+            <div>
+                <h3 class="mb-2">Custom Menu Items</h3>
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customItemsTable">
+                            <!-- Items injected by JS -->
+                        </tbody>
+                    </table>
+                    <div id="noItemsMsg" class="text-center mt-2" style="color: #888;">No custom items added yet.</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

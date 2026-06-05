@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | KS Foodie</title>
+
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <!-- Left Side: Login Form -->
+        <div class="login-form-side">
+            <div class="login-wrapper">
+                <div class="brand-logo">KS Foodie.</div>
+                <p class="brand-tagline">Order delicious food from the best restaurants.</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="e.g. demo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="e.g. demo" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-width-full">Log In</button>
+
+                    <div class="form-footer">
+                        <p>Demo: <strong>demo / demo</strong></p>
+                        <p style="margin-top: 4px;">Admin: <strong>admin / admin</strong></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Developer Footer -->
+        <div class="login-footer">
+            <p>Developed by <a href="#" style="color: inherit; text-decoration: none; font-weight: 500;">KS</a>
+            </p>
+        </div>
+
+        <!-- Right Side: Background Image -->
+        <div class="login-image-side">
+            <!-- Using a high-quality Unsplash image of food -->
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Delicious Food" class="login-bg-image" loading="lazy">
+
+            <div class="overlay-text">
+                <h2>Hungry?<br>We got you.</h2>
+                <p>Explore thousands of dishes from top-rated restaurants near you.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

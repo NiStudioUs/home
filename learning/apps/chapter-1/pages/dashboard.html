@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | KS Foodie</title>
+
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Icons (Optional: FontAwesome or similar, using simple text for now or SVG later) -->
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="dashboard.html" class="nav-logo">KS Foodie.</a>
+            <div class="nav-user">
+                <!-- User Info -->
+                <span id="welcomeMsg" style="font-weight: 500;">Hello, User</span>
+                <a href="profile.html" style="text-decoration: none;">
+                    <div class="user-avatar" id="userAvatar"></div>
+                </a>
+                <button id="logoutBtn" class="btn-primary btn-sm"
+                    style="background: var(--secondary-color);">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Hero / Welcome -->
+        <section class="hero-section">
+            <h1 class="hero-title">What are you craving?</h1>
+            <p class="hero-subtitle">Discover the best food from over 1,000 top restaurants.</p>
+
+            <!-- Search Bar -->
+            <div class="search-container mt-2">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search for food (e.g. Chicken, Pasta)...">
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container" id="categoryFilters">
+                <button class="filter-chip active" data-category="all">All</button>
+                <button class="filter-chip" data-category="Indian">Indian</button>
+                <button class="filter-chip" data-category="Chinese">Chinese</button>
+                <button class="filter-chip" data-category="Italian">Italian</button>
+                <button class="filter-chip" data-category="American">American</button>
+            </div>
+        </section>
+
+        <!-- Food Feed -->
+        <div id="foodGrid" class="food-grid">
+            <!-- Cards will be injected here by JS -->
+        </div>
+
+        <!-- Loader -->
+        <div id="loader" class="loader-container">
+            <div class="spinner"></div>
+        </div>
+
+    </main>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart-btn" id="cartBtn">
+        🛒
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- auth.js is needed to check session -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

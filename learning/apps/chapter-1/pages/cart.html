@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | KS Foodie</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="dashboard.html" class="nav-logo">KS Foodie.</a>
+            <div class="nav-user">
+                <a href="dashboard.html" class="btn-primary btn-sm"
+                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--primary-color); box-shadow: none;">Back
+                    to Menu</a>
+                <div class="user-avatar" id="userAvatar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 2rem;">
+
+        <h1 class="mb-2">Your Cart</h1>
+
+        <div class="cart-layout" id="cartLayout">
+            <!-- Cart Items -->
+            <div class="cart-items-container" id="cartItemsContainer">
+                <!-- Items injected by JS -->
+            </div>
+
+            <!-- Summary -->
+            <div class="cart-summary">
+                <h3 class="mb-2">Bill Details</h3>
+
+                <div class="summary-row">
+                    <span>Item Total</span>
+                    <span id="subTotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (5%)</span>
+                    <span id="taxAmount">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span id="deliveryFee">₹40</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>To Pay</span>
+                    <span id="grandTotal">₹0</span>
+                </div>
+
+                <div class="mt-2">
+                    <button id="checkoutBtn" class="btn-primary btn-width-full">PAY & ORDER</button>
+                    <p class="text-center mt-1" style="font-size: 0.8rem; color: #888;">Secure Checkout</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State (Hidden by default) -->
+        <div id="emptyCartState" class="empty-cart" style="display: none;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🍽️</div>
+            <h3>Your cart is empty</h3>
+            <p class="mb-2">Looks like you haven't added anything yet.</p>
+            <a href="dashboard.html" class="btn-primary">Browse Food</a>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>
