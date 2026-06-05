@@ -510,7 +510,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  IconData _getSocialIcon(String iconName) {
+  dynamic _getSocialIcon(String iconName) {
     switch (iconName.toLowerCase()) {
       case 'github':
         return FontAwesomeIcons.github;
