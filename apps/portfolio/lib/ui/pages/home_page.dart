@@ -11,6 +11,7 @@ import '../widgets/image_helper.dart';
 
 import '../../services/current_app_service.dart';
 import '../../utils/url_helper.dart';
+import '../../utils/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final dataModel = Provider.of<DataModel>(context);
     final developer = dataModel.developer;
+    final demoApps = dataModel.apps.where((a) => a.demoUrl.isNotEmpty).toList();
 
     return Title(
       title: "Ni Studio Us",
@@ -65,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     children: [
                       InkWell(
-                        onTap: () => launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
+                        onTap: () => launchUrl(
+                          Uri.parse(UrlHelper.resolve('./profile/index.html')),
+                        ),
                         borderRadius: BorderRadius.circular(60),
                         child: CircleAvatar(
                           radius: 60,
@@ -191,6 +195,62 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 60),
 
+            // Demo Apps Section
+            if (demoApps.isNotEmpty) ...[
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Just Explore the Demo Apps',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Try out the live web versions of our apps directly in your browser.',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Divider(),
+                    const SizedBox(height: 20),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        int crossAxisCount = 1;
+                        if (constraints.maxWidth > 1200)
+                          crossAxisCount = 4;
+                        else if (constraints.maxWidth > 800)
+                          crossAxisCount = 3;
+                        else if (constraints.maxWidth > 600)
+                          crossAxisCount = 2;
+
+                        return GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: crossAxisCount,
+                                childAspectRatio: 0.8,
+                                crossAxisSpacing: 24,
+                                mainAxisSpacing: 24,
+                              ),
+                          itemCount: demoApps.length,
+                          itemBuilder: (context, index) {
+                            return _DemoAppCard(app: demoApps[index]);
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 60),
+            ],
+
             // Live Apps Section
             if (dataModel.flutterApps.isNotEmpty) ...[
               Padding(
@@ -230,11 +290,11 @@ class _HomePageState extends State<HomePage> {
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: crossAxisCount,
-                            childAspectRatio: 0.8,
-                            crossAxisSpacing: 24,
-                            mainAxisSpacing: 24,
-                          ),
+                                crossAxisCount: crossAxisCount,
+                                childAspectRatio: 0.8,
+                                crossAxisSpacing: 24,
+                                mainAxisSpacing: 24,
+                              ),
                           itemCount: dataModel.flutterApps.length,
                           itemBuilder: (context, index) {
                             return FlutterAppCard(
@@ -259,8 +319,9 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       'Learning Hub',
-                      style: Theme.of(context).textTheme.titleLarge
-                          ?.copyWith(fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -552,37 +613,38 @@ class _DeveloperBadgeState extends State<_DeveloperBadge> {
       onEnter: (_) => setState(() => _isHovering = true),
       onExit: (_) => setState(() => _isHovering = false),
       child: InkWell(
-        onTap: () => launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
+        onTap: () =>
+            launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
         borderRadius: BorderRadius.circular(20),
         child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        decoration: BoxDecoration(
-          color: _isHovering
-              ? Theme.of(context).colorScheme.secondaryContainer
-              : Colors.transparent,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircleAvatar(
-              radius: 12,
-              backgroundImage: getImageProvider(widget.developer.badge.url),
-            ),
-            if (_isHovering && widget.developer.shortName.isNotEmpty) ...[
-              const SizedBox(width: 8),
-              Text(
-                widget.developer.shortName,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSecondaryContainer,
-                ),
+          duration: const Duration(milliseconds: 200),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: BoxDecoration(
+            color: _isHovering
+                ? Theme.of(context).colorScheme.secondaryContainer
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircleAvatar(
+                radius: 12,
+                backgroundImage: getImageProvider(widget.developer.badge.url),
               ),
+              if (_isHovering && widget.developer.shortName.isNotEmpty) ...[
+                const SizedBox(width: 8),
+                Text(
+                  widget.developer.shortName,
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                  ),
+                ),
+              ],
             ],
-          ],
+          ),
         ),
-      ),
       ),
     );
   }
@@ -667,4 +729,92 @@ class _FooterLink {
   final VoidCallback onTap;
 
   const _FooterLink({required this.label, required this.onTap});
+}
+
+class _DemoAppCard extends StatelessWidget {
+  final AppModel app;
+  const _DemoAppCard({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 2,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: InkWell(
+        onTap: () async {
+          final url = Uri.parse(UrlHelper.resolve(app.demoUrl));
+          if (!await launchUrl(url)) {
+            throw Exception('Could not launch ${app.demoUrl}');
+          }
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Container(
+                color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    if (app.iconUrl.isNotEmpty)
+                      Transform.scale(
+                        scale: UIConstants.cardImageScale,
+                        child: Image(
+                          image: getImageProvider(app.iconUrl),
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    else
+                      const Center(
+                        child: Icon(Icons.play_circle_fill, size: 48),
+                      ),
+                    Positioned(
+                      top: 12,
+                      right: 12,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          'LIVE DEMO',
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context).colorScheme.onPrimary,
+                              ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              color: Theme.of(context).colorScheme.surface,
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    app.name,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

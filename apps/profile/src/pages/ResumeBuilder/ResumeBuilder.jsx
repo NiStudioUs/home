@@ -17,6 +17,7 @@ export default function ResumeBuilder() {
   const [lineSpacing, setLineSpacing] = useState(1.5);
   const [userEmail, setUserEmail] = useState('');
   const [userPhone, setUserPhone] = useState('');
+  const [printHeaders, setPrintHeaders] = useState(false);
   
   const printRef = useRef();
 
@@ -69,6 +70,10 @@ export default function ResumeBuilder() {
     let content = resumeContent;
     if (userEmail) content = content.replace(/\[Your Email Address\]/g, userEmail);
     if (userPhone) content = content.replace(/\[Your Phone Number\]/g, userPhone);
+    
+    // Preserve empty new lines by injecting non-breaking spaces
+    content = content.replace(/\n{3,}/g, (match) => '\n\n' + '&nbsp;\n\n'.repeat(match.length - 2));
+    
     return content;
   };
 
@@ -106,11 +111,34 @@ export default function ResumeBuilder() {
                 <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.3rem' }}>Phone Override</label>
                 <input type="text" value={userPhone} onChange={e => setUserPhone(e.target.value)} placeholder="Injects into [Your Phone Number]" style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--bg-default)', color: 'var(--text-primary)' }} />
               </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+                <input 
+                  type="checkbox" 
+                  id="printHeaders" 
+                  checked={printHeaders} 
+                  onChange={e => setPrintHeaders(e.target.checked)} 
+                />
+                <label htmlFor="printHeaders" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                  Print Browser Headers & Footers
+                </label>
+              </div>
             </div>
           </div>
         </aside>
 
         <main className="resume-content-area card">
+          <style>
+            {`
+              @media print {
+                @page {
+                  margin: ${printHeaders ? '1cm' : '0'};
+                }
+                body {
+                  margin: ${printHeaders ? '0' : '1cm'} !important;
+                }
+              }
+            `}
+          </style>
           <div className="resume-actions">
             <button className="btn btn-primary" onClick={handlePrint}>
               <Printer size={16} /> Print / PDF

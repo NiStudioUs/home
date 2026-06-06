@@ -1,6 +1,6 @@
-# Implementation Plan: Chapter 3 - Book_A_Taxi
+# Implementation Plan: Chapter 3 - URide
 
-This project involves creating a frontend starter code for a taxi ride booking application called **Book_A_Taxi**. The application will feature a premium, Uber-like UI leveraging our modern hybrid design system (Glassmorphism, Aurora backgrounds, etc.) and will be fully integrated into the Learning Hub.
+This project involves creating a frontend starter code for a taxi ride booking application called **URide**. The application will feature a premium, Uber-like UI leveraging our modern hybrid design system (Glassmorphism, Aurora backgrounds, etc.) and will be fully integrated into the Learning Hub.
 
 ## User Review Required
 

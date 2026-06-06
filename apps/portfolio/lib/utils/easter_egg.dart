@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 
 class EasterEgg {
   static int _nameClicks = 0;

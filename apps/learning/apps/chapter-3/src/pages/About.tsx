@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
-      <Box 
+      <Box
         component={motion.div}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export default function About() {
               Reimagining Urban Mobility
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              Book_A_Taxi started with a simple idea: making transportation reliable, affordable, and accessible to everyone. Today, we're building the future of movement in our cities.
+              URide started with a simple idea: making transportation reliable, affordable, and accessible to everyone. Today, we're building the future of movement in our cities.
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
               Whether you're heading to work, the airport, or a night out, we connect you with professional drivers in minutes. Our platform ensures every ride is safe, comfortable, and seamlessly managed through our application.

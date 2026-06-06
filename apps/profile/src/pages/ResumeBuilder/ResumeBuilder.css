@@ -156,10 +156,6 @@
 
 /* Print Styles */
 @media print {
-  @page {
-    margin: 1cm;
-  }
-
   body {
     background-color: white !important;
     color: black !important;

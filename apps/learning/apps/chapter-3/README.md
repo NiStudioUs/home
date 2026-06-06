@@ -1,7 +1,7 @@
-# Chapter 3: Book_A_Taxi
+# Chapter 3: URide
 
 ## Overview
-A frontend starter code for a taxi ride booking application called "Book_A_Taxi". Built following an Uber-like premium aesthetic, this project provides a multi-page setup and fully functional visual booking flow with interactive maps.
+A frontend starter code for a taxi ride booking application called "URide". Built following an Uber-like premium aesthetic, this project provides a multi-page setup and fully functional visual booking flow with interactive maps.
 
 **GitHub Page**: [Live Demo](https://nistudious.github.io/learning/apps/chapter-3/index.html)
 

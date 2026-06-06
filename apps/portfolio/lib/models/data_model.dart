@@ -164,6 +164,7 @@ class AppModel {
   final List<FeatureImage> descriptionImages;
   final String status;
   final String statusColor;
+  final String demoUrl;
 
   AppModel({
     required this.id,
@@ -181,6 +182,7 @@ class AppModel {
     this.descriptionImages = const [],
     this.status = '',
     this.statusColor = '',
+    this.demoUrl = '',
   });
 
   factory AppModel.fromJson(Map<String, dynamic> json) {
@@ -208,6 +210,7 @@ class AppModel {
           .toList(),
       status: json['status'] as String? ?? '',
       statusColor: json['statusColor'] as String? ?? '',
+      demoUrl: json['demoUrl'] as String? ?? '',
     );
   }
 }

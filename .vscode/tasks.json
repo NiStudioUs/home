@@ -4,7 +4,7 @@
         {
             "label": "Run Data Migration",
             "type": "shell",
-            "command": "./scripts/migrate.sh",
+            "command": "node ./scripts/sync_data.js",
             "group": "build",
             "presentation": {
                 "reveal": "silent"

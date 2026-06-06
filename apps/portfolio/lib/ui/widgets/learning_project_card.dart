@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../../utils/url_helper.dart';
+import '../../utils/constants.dart';
 
 class LearningProjectCard extends StatelessWidget {
   final LearningProjectModel project;
@@ -29,16 +30,20 @@ class LearningProjectCard extends StatelessWidget {
             // Project Image Placeholder
             Expanded(
               child: Container(
-                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
                 child: project.imageUrl != null
-                    ? Image.asset(
-                        project.imageUrl!,
-                        fit: BoxFit.cover,
+                    ? Transform.scale(
+                        scale: UIConstants.cardImageScale,
+                        child: Image.asset(
+                          project.imageUrl!,
+                          fit: BoxFit.cover,
+                        ),
                       )
                     : const Center(child: Icon(Icons.code, size: 48)),
               ),
             ),
-            Padding(
+            Container(
+              color: Theme.of(context).colorScheme.surface,
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

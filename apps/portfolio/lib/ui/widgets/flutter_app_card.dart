@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../../utils/url_helper.dart';
+import '../../utils/constants.dart';
 import 'image_helper.dart';
 
 class FlutterAppCard extends StatelessWidget {
@@ -30,13 +31,13 @@ class FlutterAppCard extends StatelessWidget {
             // App Icon Placeholder with Badge
             Expanded(
               child: Container(
-                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
                     app.iconUrl.isNotEmpty
                         ? Transform.scale(
-                            scale: 1.3, // Scale up to push transparent corners out of view
+                            scale: UIConstants.cardImageScale,
                             child: Image(
                               image: getImageProvider(app.iconUrl),
                               fit: BoxFit.cover,
@@ -82,7 +83,8 @@ class FlutterAppCard extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            Container(
+              color: Theme.of(context).colorScheme.surface,
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

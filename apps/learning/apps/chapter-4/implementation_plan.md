@@ -11,7 +11,7 @@ Build **Chapter 4: RecipeVerse**, a Recipe discovery app built with React, TypeS
 | Chapter | Theme | Palette |
 |---|---|---|
 | Ch.2 (HR Portal) | Minimalism + Flat 2.0 | Purple/Rose on deep navy |
-| Ch.3 (Book_A_Taxi) | Glassmorphism + Aurora | Yellow/Dark, animated blobs |
+| Ch.3 (URide) | Glassmorphism + Aurora | Yellow/Dark, animated blobs |
 | **Ch.4 (RecipeVerse)** | **Neo-Brutalism + Flat 2.0** | **Warm amber/cream/terracotta on off-white + dark mode** |
 
 ### Theme Details

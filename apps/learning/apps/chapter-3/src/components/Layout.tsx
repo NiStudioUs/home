@@ -23,9 +23,9 @@ export default function Layout() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
-      <AppBar 
-        position="sticky" 
-        sx={{ 
+      <AppBar
+        position="sticky"
+        sx={{
           background: 'rgba(15, 23, 42, 0.7)',
           backdropFilter: 'blur(20px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
@@ -37,7 +37,7 @@ export default function Layout() {
             <Box sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }} component={Link} to="/">
               <LocalTaxiIcon sx={{ mr: 1, color: 'primary.main', fontSize: 32 }} />
               <Typography variant="h5" noWrap sx={{ fontWeight: 800, letterSpacing: '-0.05em' }}>
-                Book_A_Taxi
+                URide
               </Typography>
             </Box>
 
@@ -45,13 +45,13 @@ export default function Layout() {
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
                 return (
-                  <Button 
-                    key={item.label} 
-                    component={Link} 
+                  <Button
+                    key={item.label}
+                    component={Link}
                     to={item.path}
                     variant={item.path === '/booking' ? 'contained' : 'text'}
                     color={item.path === '/booking' ? 'primary' : 'inherit'}
-                    sx={{ 
+                    sx={{
                       opacity: isActive && item.path !== '/booking' ? 1 : 0.8,
                       fontWeight: isActive ? 700 : 500,
                       '&:hover': { opacity: 1 }
@@ -107,7 +107,7 @@ export default function Layout() {
       <Box component="footer" sx={{ py: 6, px: 2, mt: 'auto', background: 'rgba(15, 23, 42, 0.9)', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
         <Container maxWidth="xl">
           <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} Book_A_Taxi. All rights reserved.
+            © {new Date().getFullYear()} URide. All rights reserved.
           </Typography>
         </Container>
       </Box>
