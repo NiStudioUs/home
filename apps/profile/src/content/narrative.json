@@ -38,7 +38,7 @@
     "year": "June 2025",
     "company": "Architecture Design",
     "project": "People App IKY v2",
-    "description": "Designed a multi-platform product architecture. Structured an environment-aware deployment with Node.js, Traefik, Docker Compose, PostgreSQL, and MongoDB.",
+    "description": "Architected a multi-platform genealogy ecosystem. Engineered containerized backend services using Docker Compose and established automated, environment-aware CI/CD pipelines.",
     "tags": ["Docker Compose", "Node.js", "System Architecture"]
   },
   {
@@ -52,7 +52,7 @@
     "year": "2026",
     "company": "Mobile Product",
     "project": "SMS Stack",
-    "description": "Built a privacy-focused utility for SMS categorization and financial insight extraction. Leveraged BLoC architecture, Drift for SQLite, and offline local processing.",
+    "description": "Engineered a production-ready, privacy-first Flutter application utilizing Drift/SQLite for local-first data processing and financial insight extraction.",
     "tags": ["BLoC", "Drift", "Local Processing"]
   }
 ]

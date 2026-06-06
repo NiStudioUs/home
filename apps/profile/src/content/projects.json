@@ -814,17 +814,7 @@
     "description": "A privacy-focused utility for SMS categorization and financial insight extraction.",
     "resumeBullets": [
       {
-        "text": "Built a privacy-focused Flutter application for SMS categorization, financial insight extraction, and reminders.",
-        "resumeTypes": [
-          "sdet-qe",
-          "hybrid",
-          "1page",
-          "2page-ats",
-          "flutter"
-        ]
-      },
-      {
-        "text": "Implemented **Drift/SQLite** for local processing and managed Android **dev/prod flavors** and **APK/AAB** release workflows.",
+        "text": "**Engineered a production-ready, privacy-first Flutter application** utilizing Drift/SQLite for local-first data processing and financial insight extraction; managed complex Android build variants (flavors) and automated Google Play Store AAB release workflows.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -1958,19 +1948,12 @@
     "resumeName": "People App IKY v2",
     "resumeBullets": [
       {
-        "text": "Designed a multi-platform architecture (Mobile, Web, Edge) utilizing Docker Compose and CI/CD-oriented deployment.",
+        "text": "**Architected a multi-platform genealogy ecosystem** (Mobile, Web, Edge) deployed across Linux, Windows, and Raspberry Pi environments; engineered containerized backend services using Docker Compose and established automated, environment-aware CI/CD pipelines.",
         "resumeTypes": [
           "flutter",
           "hybrid",
-          "2page-ats"
-        ]
-      },
-      {
-        "text": "Established environment-aware deployment planning specifically targeted for Windows and Raspberry Pi hardware.",
-        "resumeTypes": [
-          "flutter",
-          "hybrid",
-          "2page-ats"
+          "2page-ats",
+          "1page"
         ]
       }
     ]

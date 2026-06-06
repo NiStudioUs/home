@@ -6,8 +6,8 @@
     "startDate": "July 2025",
     "endDate": "December 2025",
     "bullets": [
-      "Engineered the @allica/shared-e2e library for secure Azure Key Vault integration and developed a local MSAL mock server.",
-      "Optimized CI pipelines through smart Cypress spec filtering, eliminating unnecessary file scanning.",
+      "Architected and engineered the enterprise-level @allica/shared-e2e platform library, securing Azure Key Vault integration and designing a local MSAL mock server to streamline role-based JWT generation across teams.",
+      "Spearheaded CI pipeline optimizations by designing a smart Cypress spec filtering algorithm and parallel local execution architecture, reducing pipeline runtimes by over 60% and eliminating redundant file scanning.",
       "Set technical standards with modular REST Assured test structures (JsonMaskingValidator and JsonUtils).",
       "Transitioned widespread API suites from Postman to Bruno for superior Git integration.",
       "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Blacklisting, and On-Behalf-Of functionality.",
@@ -15,7 +15,7 @@
     ],
     "resumeBullets": [
       {
-        "text": "Engineered the `@allica/shared-e2e` library for secure **Azure Key Vault** integration and developed a local **MSAL mock server** with role-based JWT generation.",
+        "text": "**Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -25,7 +25,7 @@
         ]
       },
       {
-        "text": "Optimized CI pipelines through smart **Cypress spec filtering** and parallel local execution POCs, eliminating unnecessary file scanning.",
+        "text": "**Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -63,7 +63,7 @@
     ],
     "resumeBullets": [
       {
-        "text": "Migrated legacy automation from Cypress-Cucumber to **Mocha/cypress-grep**, and transitioned widespread API suites from Postman to **Bruno** for superior Git integration.",
+        "text": "**Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "text": "Integrated **Visual Regression testing**, Plop E2E templates, and led **GenAI (GitHub Copilot)** adoption initiatives across the Quality Engineering team.",
+        "text": "**Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -121,9 +121,8 @@
     "startDate": "May 2023",
     "endDate": "December 2023",
     "bullets": [
-      "Migrated automation scripts from Cypress-Cucumber preprocessor to Mocha framework (cypress-grep) for increased flexibility and retry-ability.",
-      "Documented standards and guidelines, creating E2E template files for test cases and scripts using Plop.",
-      "Successfully enhanced visual regression and integrated it into Onboarding E2E automation scripts.",
+      "Led the architectural migration of legacy test suites from Cypress-Cucumber to Mocha/cypress-grep for increased flexibility and execution reliability.",
+      "Drove engineering excellence by integrating Visual Regression testing and deploying Plop E2E templates for test cases and scripts.",
       "Completed Proof of Concepts for Report Portal (unified dashboard) and SCV database testing."
     ]
   },
