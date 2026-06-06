@@ -24,26 +24,17 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Test Frameworks (BDD Cucumber, TestNG, JUnit)
 - TypeScript
 - Jenkins
-- Git / GitHub
+- Git / GitHub Actions / Workflows
+- CODEOWNERS
 - Docker
 - Test Data Management & Mocking (MSW)
 - Regression Suite Maintenance
 - Liquibase
 
 ### Applications & Systems Supported
-- Temenos T24 (Payments & Cards)
-- Metro Bank Mobile App (Android/iOS)
-- Allica Deposits & Lending
-- Customer Onboarding (Internal/External)
-- Bridge / CashFlow / BackOffice
-- CMS (Asset Finance Application)
-- FMS (Deposit & Lending CRM)
-- Saascada
-- Hubspot
-- Full Circle
-- GoDiligent
-- World Check1
-- Companies House UK
+- **Banking Core & Mobile:** Temenos T24 (Payments & Cards), Metro Bank Mobile App (Android/iOS), Saascada
+- **Lending & CRM:** Allica Deposits & Lending, CMS (Asset Finance Application), FMS (Deposit & Lending CRM), Hubspot
+- **Onboarding & Risk:** Customer Onboarding (Internal/External), Bridge / CashFlow / BackOffice, GoDiligent, World Check1, Companies House UK, Full Circle
 
 ---
 
