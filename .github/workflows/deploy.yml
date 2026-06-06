@@ -37,8 +37,6 @@ jobs:
           flutter pub get
           flutter build web \
             --release \
-            --obfuscate \
-            --split-debug-info=build/web/debug-info \
             --no-source-maps \
             --dart2js-optimization O4 \
             --base-href "/home/"
@@ -110,3 +108,14 @@ jobs:
           publish_dir: ./dist
           keep_files: true
           commit_message: "deploy(portfolio): build @ ${{ github.sha }} [skip ci]"
+
+      - name: Generate Deployment Summary
+        if: always()
+        run: |
+          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Deployed Apps" >> $GITHUB_STEP_SUMMARY
+          echo "1. **Portfolio** (Flutter)" >> $GITHUB_STEP_SUMMARY
+          echo "2. **Learning Hub** (Vite)" >> $GITHUB_STEP_SUMMARY
+          echo "3. **Learning Apps** (Processed)" >> $GITHUB_STEP_SUMMARY
+          echo "4. **Developer Profile** (Vite)" >> $GITHUB_STEP_SUMMARY
