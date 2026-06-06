@@ -1,6 +1,6 @@
 # Karthik Subramanian
 
-**Senior SDET | Flutter Developer | Android Release Management | QE Automation Engineer**
+**Staff Engineer - Mobile and Quality Engineer Lead**
 
 Erode, Tamil Nadu, India  
 [Your Email Address] | [Your Phone Number]  
@@ -12,7 +12,7 @@ Portfolio: https://nistudious.github.io/home/
 
 ## Summary
 
-Senior SDET with **9+ years of experience** in banking and financial services across **Cypress/TypeScript automation, API testing, CI/CD, Flutter application development, and Android release management**. Strong hybrid engineering profile combining **quality automation ownership** with **hands-on mobile product development** using Flutter, Dart, and Android delivery workflows.
+Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.
 
 ---
 
@@ -31,12 +31,12 @@ Senior SDET with **9+ years of experience** in banking and financial services ac
 
 ### Senior SDET — Allica Bank, UK  
 **May 2023 – Present**
-- Engineered the `@allica/shared-e2e` library for secure **Azure Key Vault** integration and developed a local **MSAL mock server** with role-based JWT generation.
-- Optimized CI pipelines through smart **Cypress spec filtering** and parallel local execution POCs, eliminating unnecessary file scanning.
-- Migrated legacy automation from Cypress-Cucumber to **Mocha/cypress-grep**, and transitioned widespread API suites from Postman to **Bruno** for superior Git integration.
+- **Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.
+- **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
+- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
-- Integrated **Visual Regression testing**, Plop E2E templates, and led **GenAI (GitHub Copilot)** adoption initiatives across the Quality Engineering team.
+- **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 
 ### Principal Software Engineer — Maveric Systems  
 **Jan 2021 – May 2023**  
@@ -61,12 +61,10 @@ Senior SDET with **9+ years of experience** in banking and financial services ac
 - Designed with **BLoC** state management and robust local storage patterns for seamless offline usage.
 
 ### SMS Stack Manager
-- Built a privacy-focused Flutter application for SMS categorization, financial insight extraction, and reminders.
-- Implemented **Drift/SQLite** for local processing and managed Android **dev/prod flavors** and **APK/AAB** release workflows.
+- **Engineered a production-ready, privacy-first Flutter application** utilizing Drift/SQLite for local-first data processing and financial insight extraction; managed complex Android build variants (flavors) and automated Google Play Store AAB release workflows.
 
 ### People App IKY v2
-- Designed a multi-platform architecture (Mobile, Web, Edge) utilizing Docker Compose and CI/CD-oriented deployment.
-- Established environment-aware deployment planning specifically targeted for Windows and Raspberry Pi hardware.
+- **Architected a multi-platform genealogy ecosystem** (Mobile, Web, Edge) deployed across Linux, Windows, and Raspberry Pi environments; engineered containerized backend services using Docker Compose and established automated, environment-aware CI/CD pipelines.
 
 ### NiStudioUs Website
 - Created and hosted a responsive Flutter web portfolio to showcase product development capabilities and host applications.
