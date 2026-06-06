@@ -40,9 +40,6 @@ export default defineConfig({
         assetFileNames: 'assets/[hash].[ext]',
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor-react'
-            }
             return 'vendor'
           }
         },

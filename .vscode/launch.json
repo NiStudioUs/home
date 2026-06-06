@@ -2,9 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "nistudious_website (Chrome)",
+            "name": "Portfolio App (Chrome)",
             "request": "launch",
             "type": "dart",
+            "cwd": "${workspaceFolder}/apps/portfolio",
             "program": "lib/main.dart",
             "args": [
                 "-d",
@@ -13,9 +14,10 @@
             "preLaunchTask": "Run Data Migration"
         },
         {
-            "name": "nistudious_website (Edge)",
+            "name": "Portfolio App (Edge)",
             "request": "launch",
             "type": "dart",
+            "cwd": "${workspaceFolder}/apps/portfolio",
             "program": "lib/main.dart",
             "args": [
                 "-d",
@@ -24,19 +26,50 @@
             "preLaunchTask": "Run Data Migration"
         },
         {
-            "name": "nistudious_website (Server)",
+            "name": "Developer Profile (Chrome)",
+            "type": "node",
             "request": "launch",
-            "type": "dart",
-            "program": "lib/main.dart",
-            "args": [
-                "-d",
-                "web-server",
-                "--web-hostname",
-                "localhost",
-                "--web-port",
-                "5000"
+            "cwd": "${workspaceFolder}/apps/profile",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
             ],
-            "preLaunchTask": "Run Data Migration"
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Local:\\s+(https?://localhost:\\d+)",
+                "uriFormat": "%s",
+                "action": "debugWithChrome",
+                "webRoot": "${workspaceFolder}/apps/profile"
+            }
+        },
+        {
+            "name": "Learning Hub (Chrome)",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/apps/learning",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Local:\\s+(https?://localhost:\\d+)",
+                "uriFormat": "%s",
+                "action": "debugWithChrome",
+                "webRoot": "${workspaceFolder}/apps/learning"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Unified Launch (All Apps Chrome)",
+            "configurations": [
+                "Portfolio App (Chrome)",
+                "Developer Profile (Chrome)",
+                "Learning Hub (Chrome)"
+            ]
         }
     ]
 }
