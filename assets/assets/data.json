@@ -1653,7 +1653,7 @@
     },
     {
       "id": "chapter-3",
-      "title": "Chapter 3: Book_A_Taxi",
+      "title": "Chapter 3: URide",
       "description": "A premium Uber-like taxi booking application featuring interactive map integration with Leaflet, real-time form validation, and modern glassmorphism UI.",
       "tags": [
         "React",
