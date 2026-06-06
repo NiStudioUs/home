@@ -37,6 +37,8 @@ jobs:
           flutter pub get
           flutter build web \
             --release \
+            --obfuscate \
+            --split-debug-info=build/web/debug-info \
             --no-source-maps \
             --dart2js-optimization O4 \
             --base-href "/home/"

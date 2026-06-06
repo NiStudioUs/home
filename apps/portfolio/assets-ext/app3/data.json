@@ -1,5 +1,5 @@
 {
-    "id": "iky_family_tree",
+    "id": "iky",
     "name": "IKY — Family Tree & Genealogy",
     "shortDescription": "A private family tree app with kinship engine and real-time genealogy.",
     "fullDescription": "IKY (I Know You) is a full-stack family relationship management platform built for privacy and depth. It allows families to collaboratively build, manage and explore their genealogy through a rich interactive graph — complete with a Kongu Tamil kinship engine that computes culturally-aware relationship labels up to 6 generations. Explore the live demo with pre-populated, obfuscated sample families.",
@@ -7,7 +7,7 @@
     "status": "IN DEV",
     "statusColor": "amber",
     "descriptionImages": [],
-    "demoUrl": "/home/iky/",
+    "demoUrl": "/home/app/iky/demo/",
     "features": [
         {
             "title": "Interactive Family Tree",
@@ -114,7 +114,7 @@
     "links": [
         {
             "type": "Live Demo",
-            "url": "/home/iky/"
+            "url": "/home/app/iky/demo/"
         }
     ],
     "privacyPolicy": {

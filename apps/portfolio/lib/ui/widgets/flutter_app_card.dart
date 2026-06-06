@@ -35,13 +35,12 @@ class FlutterAppCard extends StatelessWidget {
                   fit: StackFit.expand,
                   children: [
                     app.iconUrl.isNotEmpty
-                        ? Image(
-                            image: getImageProvider(app.iconUrl),
-                            fit: BoxFit.cover,
-                            color: Theme.of(
-                              context,
-                            ).colorScheme.surfaceContainerHighest,
-                            colorBlendMode: BlendMode.softLight,
+                        ? Transform.scale(
+                            scale: 1.3, // Scale up to push transparent corners out of view
+                            child: Image(
+                              image: getImageProvider(app.iconUrl),
+                              fit: BoxFit.cover,
+                            ),
                           )
                         : const Center(
                             child: Icon(Icons.rocket_launch, size: 48),

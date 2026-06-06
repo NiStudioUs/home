@@ -391,12 +391,18 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
                     children: app.links.map((link) {
                       final isPlayStore =
                           link.type.toLowerCase() == 'play store';
+                      final isDemo =
+                          link.type.toLowerCase() == 'live demo';
                       final icon = isPlayStore
                           ? const FaIcon(FontAwesomeIcons.googlePlay)
-                          : const Icon(Icons.download);
+                          : isDemo
+                              ? const Icon(Icons.play_circle_outline_rounded)
+                              : const Icon(Icons.download);
                       final label = isPlayStore
                           ? 'Get on Google Play'
-                          : link.type;
+                          : isDemo
+                              ? 'Try Live Demo'
+                              : link.type;
 
                       return FilledButton.icon(
                         onPressed: () => _launchUrl(link.url),

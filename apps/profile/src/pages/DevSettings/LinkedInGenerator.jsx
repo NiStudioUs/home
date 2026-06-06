@@ -250,9 +250,17 @@ Let's connect if you're interested in scalable architecture or modern engineerin
           <h3>🏆 Featured Experience Bullets</h3>
           <p className="text-secondary" style={{marginBottom: '0.5rem', fontSize: '0.9rem'}}>Use these powerful highlights in your Job History descriptions:</p>
           <ul>
-            {topBullets.map((bullet, i) => (
-              <li key={i} dangerouslySetInnerHTML={{__html: bullet.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}} />
-            ))}
+            {topBullets.map((bullet, i) => {
+              const text = bullet || '';
+              const parts = text.split(/\*\*(.*?)\*\*/g);
+              return (
+                <li key={i}>
+                  {parts.map((part, index) => 
+                    index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

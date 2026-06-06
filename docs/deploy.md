@@ -89,3 +89,4 @@ To onboard a new app (e.g., Notes, SMS Stack) using the same pattern:
 | `cd apps/portfolio && ./scripts/migrate.sh` | Reads all `assets-ext/appN/` folders → updates `assets/data.json` |
 | `npm run sync-data` | Syncs `apps/learning/src/data.json` → `learningProjects` in portfolio data |
 | `npm run dev:servers` | Starts all dev servers (Flutter + React) with hot reload |
+| `flutter build web --release --no-source-maps --base-href "/home/"` | Build Flutter web without obfuscation for local testing |

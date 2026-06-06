@@ -64,25 +64,48 @@ class _DesktopNavBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Brand / Logo
-          TextButton.icon(
-            onPressed: () {
+          // Brand / Logo — pill chip design
+          GestureDetector(
+            onTap: () {
               if (EasterEgg.handle('name')) {
                 launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
               } else {
                 context.go('/');
               }
             },
-            icon: const Icon(Icons.home),
-            label: Text(
-              dataModel.developer.name,
-              style: Theme.of(
-                context,
-              ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            style: TextButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.onSurface,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+                    width: 1,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.home_rounded,
+                      size: 22,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      dataModel.developer.name,
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).colorScheme.onSurface,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
 
@@ -221,22 +244,42 @@ class _MobileNavBar extends StatelessWidget {
     final themeService = Provider.of<ThemeService>(context);
 
     return AppBar(
-      title: TextButton.icon(
-        onPressed: () {
+      title: GestureDetector(
+        onTap: () {
           if (EasterEgg.handle('name')) {
             launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
           } else {
             context.go('/');
           }
         },
-        icon: const Icon(Icons.home),
-        label: Text(
-          dataModel.developer.name,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        style: TextButton.styleFrom(
-          foregroundColor: Theme.of(context).colorScheme.onSurface,
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+              width: 1,
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.home_rounded,
+                size: 20,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                dataModel.developer.name,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.3,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       actions: [
