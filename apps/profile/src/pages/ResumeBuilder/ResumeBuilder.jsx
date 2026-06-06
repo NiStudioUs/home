@@ -63,7 +63,15 @@ export default function ResumeBuilder() {
   };
 
   const handlePrint = () => {
-    window.print();
+    if (isEditMode) {
+      setIsEditMode(false);
+      // Wait for state to update and React to re-render the UI view
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    } else {
+      window.print();
+    }
   };
 
   const getDisplayContent = () => {

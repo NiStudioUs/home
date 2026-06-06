@@ -33,7 +33,7 @@
     {
       "name": "CI/CD / DevOps / Tooling",
       "skills": [
-        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
+        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions / Workflows", "CODEOWNERS", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
       ]
     },
     {

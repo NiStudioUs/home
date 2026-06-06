@@ -45,7 +45,8 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Azure DevOps & Pipelines
 - Azure Key Vault
 - Jenkins
-- Git / GitHub Actions
+- Git / GitHub Actions / Workflows
+- CODEOWNERS
 - Docker / Docker Compose
 - Maven / Gradle
 - Postman / JMeter
@@ -61,19 +62,9 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Microservices test support
 
 ### Applications & Systems Supported
-- Temenos T24 (Payments & Cards)
-- Metro Bank Mobile App (Android/iOS)
-- Allica Deposits & Lending
-- Customer Onboarding (Internal/External)
-- Bridge / CashFlow / BackOffice
-- CMS (Asset Finance Application)
-- FMS (Deposit & Lending CRM)
-- Saascada
-- Hubspot
-- Full Circle
-- GoDiligent
-- World Check1
-- Companies House UK
+- **Banking Core & Mobile:** Temenos T24 (Payments & Cards), Metro Bank Mobile App (Android/iOS), Saascada
+- **Lending & CRM:** Allica Deposits & Lending, CMS (Asset Finance Application), FMS (Deposit & Lending CRM), Hubspot
+- **Onboarding & Risk:** Customer Onboarding (Internal/External), Bridge / CashFlow / BackOffice, GoDiligent, World Check1, Companies House UK, Full Circle
 
 ### Domain Expertise
 - Retail Banking
@@ -134,8 +125,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 **Repo:** `vskarthik9896/Flutter_notesApp`  
 **Tech:** Flutter, Dart, mobile app development, notes/productivity workflows
 
-- Developed a complete local-first notes application demonstrating hands-on Dart and mobile UI engineering.
-- Designed with **BLoC** state management and robust local storage patterns for seamless offline usage.
+- **Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.
 
 ### SMS Stack Manager
 **Tech:** Flutter, Dart, BLoC, Drift, SQLite, Firebase Remote Config, Google Sign-In, local_auth, secure storage
@@ -150,8 +140,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 ### NiStudioUs Website
 **Tech:** Flutter Web, Dart, static hosting, web asset management
 
-- Created and hosted a responsive Flutter web portfolio to showcase product development capabilities and host applications.
-- Managed web asset bundling, static hosting configuration, and UI/UX design.
+- **Architected and deployed a responsive web portfolio ecosystem** using Vite, React, and Flutter Web, managing automated CI/CD static hosting and dynamic routing architectures.
 
 ---
 

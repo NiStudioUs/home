@@ -20,7 +20,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 **Automation / QE:** Web Automation (Selenium, Cypress), API Automation (REST Assured, Karate, Bruno), Mobile (Appium), Test Frameworks (BDD Cucumber, TestNG, JUnit), TypeScript  
 **Mobile:** Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), BLoC  
-**Release / DevOps:** Google Play Store Publishing, App Bundling (APK/AAB), Android Flavors, ADB validation, Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git/GitHub Actions, Docker  
+**Release / DevOps:** Google Play Store Publishing, App Bundling (APK/AAB), Android Flavors, ADB validation, Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git/GitHub Actions & Workflows, CODEOWNERS, Docker  
 **Data / Platform:** SQLite, Drift, Room, Coroutines, Liquibase, MSSQL Test Containers  
 **Systems Supported:** Temenos T24, Metro Bank Mobile, Allica Deposits/Lending, CMS, FMS, Saascada, Hubspot, Full Circle, GoDiligent, World Check1, Companies House UK  
 **Domain:** Banking, Lending, Deposits, Customer Onboarding, Mobile Channels, CDD / CRA / Risk Assessment
@@ -57,8 +57,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 ## Mobile & Web Development Projects
 
 ### Flutter Notes App
-- Developed a complete local-first notes application demonstrating hands-on Dart and mobile UI engineering.
-- Designed with **BLoC** state management and robust local storage patterns for seamless offline usage.
+- **Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.
 
 ### SMS Stack Manager
 - **Engineered a production-ready, privacy-first Flutter application** utilizing Drift/SQLite for local-first data processing and financial insight extraction; managed complex Android build variants (flavors) and automated Google Play Store AAB release workflows.
@@ -67,8 +66,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - **Architected a multi-platform genealogy ecosystem** (Mobile, Web, Edge) deployed across Linux, Windows, and Raspberry Pi environments; engineered containerized backend services using Docker Compose and established automated, environment-aware CI/CD pipelines.
 
 ### NiStudioUs Website
-- Created and hosted a responsive Flutter web portfolio to showcase product development capabilities and host applications.
-- Managed web asset bundling, static hosting configuration, and UI/UX design.
+- **Architected and deployed a responsive web portfolio ecosystem** using Vite, React, and Flutter Web, managing automated CI/CD static hosting and dynamic routing architectures.
 
 ---
 

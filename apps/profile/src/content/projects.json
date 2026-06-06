@@ -12,17 +12,7 @@
     "description": "A new Flutter Notes taking project implemented with local database, shared prefs and bloc",
     "resumeBullets": [
       {
-        "text": "Developed a complete local-first notes application demonstrating hands-on Dart and mobile UI engineering.",
-        "resumeTypes": [
-          "sdet-qe",
-          "hybrid",
-          "1page",
-          "2page-ats",
-          "flutter"
-        ]
-      },
-      {
-        "text": "Designed with **BLoC** state management and robust local storage patterns for seamless offline usage.",
+        "text": "**Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -2018,19 +2008,12 @@
     "resumeName": "NiStudioUs Website",
     "resumeBullets": [
       {
-        "text": "Created and hosted a responsive Flutter web portfolio to showcase product development capabilities and host applications.",
+        "text": "**Architected and deployed a responsive web portfolio ecosystem** using Vite, React, and Flutter Web, managing automated CI/CD static hosting and dynamic routing architectures.",
         "resumeTypes": [
           "flutter",
           "hybrid",
-          "2page-ats"
-        ]
-      },
-      {
-        "text": "Managed web asset bundling, static hosting configuration, and UI/UX design.",
-        "resumeTypes": [
-          "flutter",
-          "hybrid",
-          "2page-ats"
+          "2page-ats",
+          "1page"
         ]
       }
     ]
