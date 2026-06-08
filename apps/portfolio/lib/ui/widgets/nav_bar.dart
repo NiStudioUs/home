@@ -51,16 +51,15 @@ class _DesktopNavBar extends StatelessWidget {
     }
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+        color: Theme.of(context).scaffoldBackgroundColor,
+        border: Border(
+          bottom: BorderSide(
+            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+            width: 1,
           ),
-        ],
+        ),
       ),
       child: Row(
         children: [
@@ -212,6 +211,7 @@ class _DesktopNavBar extends StatelessWidget {
           IconButton(
             icon: Icon(
               themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+              color: themeService.isDarkMode ? Colors.amber : Theme.of(context).colorScheme.primary,
             ),
             onPressed: () {
               if (EasterEgg.handle('theme')) {
@@ -244,6 +244,15 @@ class _MobileNavBar extends StatelessWidget {
     final themeService = Provider.of<ThemeService>(context);
 
     return AppBar(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      elevation: 0,
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(1.0),
+        child: Container(
+          color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+          height: 1.0,
+        ),
+      ),
       title: GestureDetector(
         onTap: () {
           if (EasterEgg.handle('name')) {
@@ -290,6 +299,7 @@ class _MobileNavBar extends StatelessWidget {
         IconButton(
           icon: Icon(
             themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+            color: themeService.isDarkMode ? Colors.amber : Theme.of(context).colorScheme.primary,
           ),
           onPressed: () {
             if (EasterEgg.handle('theme')) {

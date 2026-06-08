@@ -41,12 +41,28 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  background-color: transparent; /* Background is handled by ::before for fixed parallax */
+}
+
+/* Fixed background layer for smooth cross-platform parallax (Apple-style) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.06), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.04), transparent 35%);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
 }
 
 a {

@@ -108,9 +108,9 @@ export default function ResumeBuilder() {
             ))}
           </div>
 
-          <div className="contact-injection" style={{ marginTop: '2rem', padding: '1rem', background: 'var(--bg-card)', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-            <h4 style={{ margin: '0 0 1rem 0', fontSize: '1rem', color: 'var(--text-primary)' }}>Print Settings</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+          <div className="contact-injection card bento-card" style={{ marginTop: '2rem', padding: '1.5rem' }}>
+            <h4 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', color: 'var(--text-primary)' }}>Print Settings</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.3rem' }}>Email Override</label>
                 <input type="email" value={userEmail} onChange={e => setUserEmail(e.target.value)} placeholder="Injects into [Your Email Address]" style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--bg-default)', color: 'var(--text-primary)' }} />

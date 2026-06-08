@@ -44,8 +44,10 @@ class _HomePageState extends State<HomePage> {
             // Hero Section
             Container(
               width: double.infinity,
+              margin: const EdgeInsets.all(20),
               padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
                 image: developer.bannerUrl.isNotEmpty
                     ? DecorationImage(
                         image: getImageProvider(developer.bannerUrl),
@@ -57,9 +59,7 @@ class _HomePageState extends State<HomePage> {
                       )
                     : null,
                 color: developer.bannerUrl.isEmpty
-                    ? Theme.of(
-                        context,
-                      ).colorScheme.primaryContainer.withValues(alpha: 0.3)
+                    ? Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3)
                     : null,
               ),
               child: Stack(

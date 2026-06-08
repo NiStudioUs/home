@@ -9,20 +9,23 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const handleNavClick = () => {
+    setIsOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container container">
-        <NavLink to="/" className="navbar-brand" onClick={closeMenu}>
+        <NavLink to="/" className="navbar-brand" onClick={handleNavClick}>
           Karthik Subramanian
         </NavLink>
         
         <div className={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
-          <NavLink to="/timeline" className="navbar-item" onClick={closeMenu}><Briefcase size={18} /> Experience</NavLink>
-          <NavLink to="/story" className="navbar-item" onClick={closeMenu}><BookOpen size={18} /> Story</NavLink>
-          <NavLink to="/projects" className="navbar-item" onClick={closeMenu}><Code size={18} /> Projects</NavLink>
-          <NavLink to="/stack" className="navbar-item" onClick={closeMenu}><Layers size={18} /> Tech Stack</NavLink>
+          <NavLink to="/timeline" className="navbar-item" onClick={handleNavClick}><Briefcase size={18} /> Experience</NavLink>
+          <NavLink to="/story" className="navbar-item" onClick={handleNavClick}><BookOpen size={18} /> Story</NavLink>
+          <NavLink to="/projects" className="navbar-item" onClick={handleNavClick}><Code size={18} /> Projects</NavLink>
+          <NavLink to="/stack" className="navbar-item" onClick={handleNavClick}><Layers size={18} /> Tech Stack</NavLink>
 
           
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
