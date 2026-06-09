@@ -1,0 +1,22 @@
+{
+  "name": "chapter-1",
+  "version": "1.0.0",
+  "description": "**KS Foodie** is a premium, responsive front-end web application designed to simulate a modern food ordering experience. It combines a rich \"Zomato-Red\" aesthetic with smooth interactions, glassmorphism effects, and a seamless \"Infinite Scroll\" food discovery engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "show-report": "playwright show-report reports/html",
+    "show-allure-report": "allure serve ./reports/allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2",
+    "allure-commandline": "^2.42.1",
+    "allure-playwright": "^3.9.0",
+    "typescript": "^6.0.3"
+  }
+}
