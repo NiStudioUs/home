@@ -13,6 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -34,8 +36,8 @@
             <p style="font-size: 1.1rem; color: #666;">Estimated Delivery: <span
                     style="font-weight: 700; color: #333;">30 mins</span></p>
 
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVqZm55bDVqZm55bDVqZm55bDVqZm55bDVqZm55bDVqZm55bDVqZm55bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDl8XG6uO0yW2dJbZl/giphy.gif"
-                alt="Scooter" style="width: 150px; margin: 2rem 0;">
+            <!-- Map Container -->
+            <div id="map"></div>
 
             <!-- Stepper -->
             <div class="tracking-stepper step-1" id="stepper">
@@ -73,6 +75,8 @@
     </main>
 
     <!-- Scripts -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="../js/tracking.js"></script>
 </body>
 

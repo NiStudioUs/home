@@ -92,3 +92,13 @@ window.getUserInitials = function (name) {
     // First char of first name + First char of last name
     return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
 };
+
+// --- Quick Login Helpers ---
+window.prefillLogin = function(username, password) {
+    const userField = document.getElementById('username');
+    const passField = document.getElementById('password');
+    if (userField && passField) {
+        userField.value = username;
+        passField.value = password;
+    }
+};

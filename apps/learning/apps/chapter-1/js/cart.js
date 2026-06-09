@@ -4,8 +4,15 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    checkAuth();
+    const session = checkAuth();
     loadCart();
+
+    // Set Initials
+    if (session && session.username) {
+        const initials = window.getUserInitials(session.displayName || session.username);
+        const avatar = document.getElementById('userAvatar');
+        if (avatar) avatar.textContent = initials;
+    }
 
     document.getElementById('checkoutBtn').addEventListener('click', checkout);
 });

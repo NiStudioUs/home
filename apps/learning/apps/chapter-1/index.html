@@ -40,8 +40,11 @@
                     <button type="submit" class="btn-primary btn-width-full">Log In</button>
 
                     <div class="form-footer">
-                        <p>Demo: <strong>demo / demo</strong></p>
-                        <p style="margin-top: 4px;">Admin: <strong>admin / admin</strong></p>
+                        <p style="margin-bottom: 0.5rem;">Quick Login:</p>
+                        <div style="display: flex; gap: 10px; justify-content: center;">
+                            <button type="button" class="btn-demo" onclick="prefillLogin('demo', 'demo')">Demo User</button>
+                            <button type="button" class="btn-demo" onclick="prefillLogin('admin', 'admin')">Admin User</button>
+                        </div>
                     </div>
                 </form>
             </div>

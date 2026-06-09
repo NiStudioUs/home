@@ -295,4 +295,10 @@ function updateCartUI() {
     if (cartCountEl) {
         cartCountEl.innerText = count;
     }
+    
+    // Also update navbar cart if present
+    const navCartCountEl = document.getElementById('navCartCount');
+    if (navCartCountEl) {
+        navCartCountEl.innerText = count;
+    }
 }
