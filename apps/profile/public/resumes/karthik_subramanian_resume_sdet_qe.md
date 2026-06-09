@@ -18,7 +18,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 - Azure DevOps & Pipelines
 - Azure Key Vault
-- Web Automation (Selenium, Cypress)
+- Web Automation (Selenium, Cypress, Playwright)
 - API Automation (REST Assured, Karate, Bruno)
 - Mobile Automation (Appium)
 - Test Frameworks (BDD Cucumber, TestNG, JUnit)
@@ -48,6 +48,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
+- **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
 
 ### Principal Software Engineer — Maveric Systems  
 **Jan 2021 – May 2023**

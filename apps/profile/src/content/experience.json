@@ -11,7 +11,8 @@
       "Set technical standards with modular REST Assured test structures (JsonMaskingValidator and JsonUtils).",
       "Transitioned widespread API suites from Postman to Bruno for superior Git integration.",
       "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Blacklisting, and On-Behalf-Of functionality.",
-      "Led GenAI (GitHub Copilot) adoption initiatives across the Quality Engineering team for accelerated documentation and test standards."
+      "Led GenAI (GitHub Copilot) adoption initiatives across the Quality Engineering team for accelerated documentation and test standards.",
+      "Established Playwright automation for the team on a designated repository, including the configuration of default reporting structures."
     ],
     "resumeBullets": [
       {

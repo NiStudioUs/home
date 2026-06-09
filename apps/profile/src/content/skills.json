@@ -15,7 +15,7 @@
     {
       "name": "SDET / QE / Automation",
       "skills": [
-        "Web Automation (Selenium, Cypress)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium)", "Test Frameworks (BDD Cucumber, TestNG, JUnit, Mocha)", "TypeScript", "Test Data Management & Mocking (MSW)"
+        "Web Automation (Selenium, Cypress, Playwright)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium)", "Test Frameworks (BDD Cucumber, TestNG, JUnit, Mocha)", "TypeScript", "Test Data Management & Mocking (MSW)"
       ]
     },
     {
