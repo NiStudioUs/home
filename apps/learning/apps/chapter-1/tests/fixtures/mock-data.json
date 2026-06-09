@@ -1,0 +1,14 @@
+[
+  {
+    "scenario": "Demo user ordering Burgers",
+    "username": "demo",
+    "password": "demo",
+    "items": ["Burger"]
+  },
+  {
+    "scenario": "Admin user ordering Pizza and Pasta",
+    "username": "admin",
+    "password": "admin",
+    "items": ["Pizza", "Pasta"]
+  }
+]

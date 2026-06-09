@@ -221,12 +221,13 @@ class _HomePageState extends State<HomePage> {
                     LayoutBuilder(
                       builder: (context, constraints) {
                         int crossAxisCount = 1;
-                        if (constraints.maxWidth > 1200)
+                        if (constraints.maxWidth > 1200) {
                           crossAxisCount = 4;
-                        else if (constraints.maxWidth > 800)
+                        } else if (constraints.maxWidth > 800) {
                           crossAxisCount = 3;
-                        else if (constraints.maxWidth > 600)
+                        } else if (constraints.maxWidth > 600) {
                           crossAxisCount = 2;
+                        }
 
                         return GridView.builder(
                           shrinkWrap: true,

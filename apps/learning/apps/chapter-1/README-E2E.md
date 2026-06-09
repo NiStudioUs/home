@@ -1,0 +1,57 @@
+# KS Foodie E2E Automation Framework
+
+This directory contains the Playwright automation framework for the KS Foodie application. It is built using TypeScript and follows industry-standard patterns like the Page Object Model (POM) and custom fixtures.
+
+## Architecture & Structure
+
+```text
+tests/
+├── fixtures/            # Custom fixtures and test data JSONs
+├── pages/               # Page Object Models encapsulating locators and actions
+├── specs/               # Test suites categorized by architectural pattern
+│   ├── standalone/      # Independent tests (state resets after each)
+│   ├── journeys/        # E2E workflows where state persists across steps
+│   └── data-driven/     # Tests iterating over data sets
+└── utils/               # Helpers, including a custom Reporter wrapper
+```
+
+## Key Features
+
+1. **Monorepo Design:** App code lives in `src/`, tests live in `tests/`. Both share the same root `package.json`.
+2. **Custom Reporter Utility:** All logging, steps, and attachments are routed through `tests/utils/reporter.ts`. This abstracts the specific reporting library (like Allure) away from the test logic.
+3. **Multi-Reporting:** Configured to generate both Playwright's native HTML report and advanced Allure reports.
+4. **Custom Test Fixtures:** The `test` object is extended in `fixtures/test-base.ts` to automatically instantiate Page Objects, preventing repetitive setup in your spec files.
+
+## Running Tests
+
+### Base Configuration
+By default, tests run sequentially (`fullyParallel: false`) against Chromium. The `baseURL` is set to `http://localhost:5173/apps/learning/apps/chapter-1/src/`. You may need to serve the `src/` folder locally before running tests.
+
+### Commands
+
+**Run all tests in headed mode:**
+```bash
+npx playwright test --headed
+```
+
+**Run a specific test file:**
+```bash
+npx playwright test tests/specs/journeys/order-flow.spec.ts
+```
+
+**View Playwright HTML Report:**
+```bash
+npm run show-report
+```
+
+**Generate and View Allure Report:**
+```bash
+npm run show-allure-report
+```
+
+*Note: You can also still use `npx playwright show-report reports/html` or `npx allure serve ./reports/allure-results` directly.*
+
+## Adding New Tests
+1. **Locators & Actions:** Add them to the relevant class in `tests/pages/`. Create a new class if necessary and add it to the fixture in `tests/fixtures/test-base.ts`.
+2. **Reporting:** Wrap significant actions inside `await Reporter.step('Description', async () => { ... })`.
+3. **Spec:** Import `test` from `tests/fixtures/test-base.ts` (not `@playwright/test`) to gain access to the pre-instantiated POMs.

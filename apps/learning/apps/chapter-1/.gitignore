@@ -1,2 +1,12 @@
 docs/
 .vscode/
+
+# Playwright Reports & Artifacts
+reports/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# Node
+node_modules/

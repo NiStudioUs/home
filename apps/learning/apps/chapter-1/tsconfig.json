@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["esnext", "dom"],
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["node", "@playwright/test"]
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
