@@ -9,7 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Initialize Dashboard
     initDashboard();
+
+    // 3. Initialize Geolocation
+    initGeolocation();
 });
+
+// Global UI functions
+window.showErrorToast = function(msg) {
+    const toast = document.getElementById('errorToast');
+    if (toast) {
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 5000);
+    }
+};
+
+function initGeolocation() {
+    const locationEl = document.getElementById('userLocation');
+    if (!locationEl) return;
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                locationEl.textContent = `Delivering to coordinates: ${position.coords.latitude.toFixed(4)}, ${position.coords.longitude.toFixed(4)}`;
+            },
+            (error) => {
+                locationEl.textContent = 'Location access denied or unavailable.';
+            }
+        );
+    } else {
+        locationEl.textContent = 'Geolocation not supported by this browser.';
+    }
+}
 
 // State
 let isLoading = false;

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Playground | KS Foodie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .playground-section { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .hover-target, .dblclick-target { width: 200px; padding: 20px; text-align: center; border: 2px dashed #007bff; cursor: pointer; transition: 0.3s; }
+        .hover-target:hover { background: #007bff; color: white; }
+        .scroll-container { height: 150px; width: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+        .scroll-content { height: 600px; background: linear-gradient(to bottom, #f9f9f9, #ddd); display: flex; flex-direction: column; justify-content: space-between; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="dashboard.html" class="nav-logo">KS Foodie.</a>
+            <div class="nav-user">
+                <a href="dashboard.html" style="text-decoration: none;">Back to Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 20px;">
+        <h1>UI Elements Playground</h1>
+        <p>A sandbox for testing complex Playwright interactions.</p>
+
+        <section class="playground-section" id="section-inputs">
+            <h3>1. Typing & Inputs</h3>
+            <label for="text-input">Type something:</label>
+            <input type="text" id="text-input" placeholder="Enter text here..." class="search-input" style="width: 300px; display: block; margin-top: 10px;">
+            <p>Typed value: <span id="text-output" style="font-weight: bold; color: blue;"></span></p>
+        </section>
+
+        <section class="playground-section" id="section-clicks">
+            <h3>2. Mouse Actions (Hover, Double Click)</h3>
+            <div style="display: flex; gap: 20px;">
+                <div id="hover-box" class="hover-target">Hover over me!</div>
+                <div id="dblclick-box" class="dblclick-target">Double-click me!</div>
+            </div>
+            <p id="mouse-output" style="margin-top: 15px; font-weight: bold; color: green;"></p>
+        </section>
+
+        <section class="playground-section" id="section-checks">
+            <h3>3. Checkboxes & Radios</h3>
+            <div>
+                <input type="checkbox" id="terms-checkbox">
+                <label for="terms-checkbox">I accept the terms and conditions</label>
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="radio" id="radio-card" name="payment" value="card">
+                <label for="radio-card">Credit Card</label>
+                <input type="radio" id="radio-cash" name="payment" value="cash" style="margin-left: 15px;">
+                <label for="radio-cash">Cash on Delivery</label>
+            </div>
+        </section>
+
+        <section class="playground-section" id="section-select">
+            <h3>4. Select Dropdown</h3>
+            <select id="country-select" style="padding: 10px; border-radius: 5px;">
+                <option value="">-- Choose a Country --</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="in">India</option>
+                <option value="fr">France</option>
+            </select>
+            <p>Selected: <span id="select-output" style="font-weight: bold;">None</span></p>
+        </section>
+
+        <section class="playground-section" id="section-scroll">
+            <h3>5. Scrolling</h3>
+            <div class="scroll-container" id="scroll-box">
+                <div class="scroll-content">
+                    <p>Top of the container</p>
+                    <button id="scroll-btn" class="btn-primary">Click Me (Bottom)</button>
+                </div>
+            </div>
+            <p id="scroll-output" style="color: purple; font-weight: bold; margin-top: 10px;"></p>
+        </section>
+
+    </main>
+
+    <script src="../js/playground.js"></script>
+</body>
+</html>

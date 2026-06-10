@@ -33,7 +33,8 @@
                 </a>
                 
                 <!-- User Info -->
-                <span id="welcomeMsg" style="font-weight: 500;">Hello, User</span>
+                <span id="welcomeMsg" style="font-weight: 500; margin-right: 15px;">Hello, User</span>
+                <a href="playground.html" style="text-decoration: none; font-weight: 600; color: var(--primary-color); margin-right: 15px;">Playground</a>
                 <a href="profile.html" style="text-decoration: none;">
                     <div class="user-avatar" id="userAvatar"></div>
                 </a>
@@ -42,6 +43,12 @@
             </div>
         </div>
     </nav>
+
+    <!-- Global UI Elements -->
+    <div id="errorToast" class="error-toast" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #ff4d4f; color: white; padding: 10px 20px; border-radius: 4px; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></div>
+    <div id="userLocation" class="location-banner" style="background: #f0fdf4; color: #166534; padding: 8px; text-align: center; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #bbf7d0;">
+        Fetching location...
+    </div>
 
     <!-- Main Content -->
     <main class="container">
