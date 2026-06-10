@@ -43,9 +43,18 @@ async function fetchRandomMeals(count = 9) {
     for (let i = 0; i < apiCount; i++) {
         promises.push(
             fetch(`${API_BASE_URL}/random.php`)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error(`API Error: ${res.status}`);
+                    return res.json();
+                })
                 .then(data => data.meals[0])
-                .catch(err => console.error("Error fetching meal:", err))
+                .catch(err => {
+                    console.error("Error fetching meal:", err);
+                    if (window.showErrorToast) {
+                        window.showErrorToast("Internal Server Error: Failed to load meals");
+                    }
+                    return null;
+                })
         );
     }
 
