@@ -1,12 +1,10 @@
 # Karthik Subramanian
 
-**Staff Engineer - Mobile and Quality Engineer Lead**
+### Staff Engineer - Mobile and Quality Engineer Lead
+<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
 
-Erode, Tamil Nadu, India  
-[Your Email Address] | [Your Phone Number]  
-LinkedIn: www.linkedin.com/in/karthik-s-b3552995  
-Play Store: https://play.google.com/store/apps/developer?id=Ni+Studios  
-Portfolio: https://nistudious.github.io/home/  
+{{SOCIAL_LINKS}}
 
 ---
 
@@ -16,24 +14,26 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Core Skills
+## Key Skills
 
-| Category | Skills |
+| | |
 | --- | --- |
-| **Android Release Management** | Google Play Store Publishing, App Bundling (APK/AAB), Android App Flavors, ADB Validation & Testing, Gradle |
-| **CI/CD & DevOps** | Git / GitHub Actions / Workflows, CODEOWNERS, Docker |
-| **Data / Backend** | SQLite, Drift, Room, Coroutines |
-| **Mobile Development** | Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), BLoC Architecture |
+| **Automation** | API Automation (REST Assured, Karate, Bruno), Desktop Automation (Winium), Mobile Automation (Appium), Test Data Management & Mocking (MSW), Web Automation (Selenium, Cypress, Playwright) |
+| **CI/CD** | Azure DevOps & Pipelines, Docker, Git / GitHub Actions / Workflows, Jenkins |
+| **Development** | Flutter Cross Platform Apps (Android, Windows, Web, Linux), GenAI assisted React applications using vite as bundler |
+| **Frameworks** | Development Frameworks: BLoC, Riverpod, Flutter BLoC, Flutter Riverpod, <br>Test Frameworks: BDD Cucumber, TestNG, JUnit, Vite (Front-end) |
+| **Release** | AAB Builds, APK Builds with Flavours such as Dev, Prod, Google PlayStore Publishing to Internal Tests > Closed Testing > Beta testing > Prod Release |
+| **Systems Supported** | Asset Finance, Business Rewards & Operations, Customer Onboarding, Deposits & Lending Ecosystems, FMS (CRM), Mobile Application Testing, SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1), Temenos T24 (Core Banking) |
+| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, LaunchDarkly, Maven / Gradle, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
 
 ---
 
-## Selected Mobile & Web Development Projects
+## Development Projects
 
 ### Raspberry Pi Home Lab
 - **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
 
 ### Flutter Notes App
-**Repo:** `vskarthik9896/Flutter_notesApp`
 - **Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.
 
 ### SMS Stack Manager
@@ -47,7 +47,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Professional Experience
+## Experience
 
 ### Senior SDET — Allica Bank, UK  
 **May 2023 – Present**

@@ -1,10 +1,10 @@
 # Karthik Subramanian
 
-**Staff Engineer - Mobile and Quality Engineer Lead**
+### Staff Engineer - Mobile and Quality Engineer Lead
+<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
 
-Erode, Tamil Nadu, India  
-[Your Email Address] | [Your Phone Number]  
-LinkedIn: www.linkedin.com/in/karthik-s-b3552995
+{{SOCIAL_LINKS}}
 
 ---
 
@@ -14,21 +14,16 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Core Skills
+## Key Skills
 
-| Category | Skills |
+| | |
 | --- | --- |
-| **Automation** | Web Automation (Selenium, Cypress, Playwright), API Automation (REST Assured, Karate, Bruno), Mobile Automation (Appium) |
-| **CI/CD & DevOps** | Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git / GitHub Actions / Workflows, CODEOWNERS, Docker |
-| **Test Frameworks** | BDD Cucumber, TestNG, JUnit |
-| **Tools & Tech** | TypeScript, Test Data Management & Mocking (MSW), Regression Suite Maintenance, Liquibase |
-
-### Applications & Systems Supported
-| Category | Systems |
-| --- | --- |
-| **Banking Core & Mobile** | Temenos T24 (Payments & Cards), Metro Bank Mobile App (Android/iOS), Saascada |
-| **Lending & CRM** | Allica Deposits & Lending, CMS (Asset Finance Application), FMS (Deposit & Lending CRM), Hubspot |
-| **Onboarding & Risk** | Customer Onboarding (Internal/External), Bridge / CashFlow / BackOffice, GoDiligent, World Check1, Companies House UK, Full Circle |
+| **Automation** | API Automation (REST Assured, Karate, Bruno), Desktop Automation (Winium), Mobile Automation (Appium), Test Data Management & Mocking (MSW), Web Automation (Selenium, Cypress, Playwright) |
+| **CI/CD** | Azure DevOps & Pipelines, Docker, Git / GitHub Actions / Workflows, Jenkins |
+| **Domain** | CDD / CRA / Risk Assessment, Customer Onboarding, Deposits, Digital Mobile Channels, Document workflow and role-based access validation, Lending, Retail Banking, Retail Operations, SME Banking |
+| **Frameworks** | Development Frameworks: BLoC, Riverpod, Flutter BLoC, Flutter Riverpod, <br>Test Frameworks: BDD Cucumber, TestNG, JUnit, Vite (Front-end) |
+| **Systems Supported** | Asset Finance, Business Rewards & Operations, Customer Onboarding, Deposits & Lending Ecosystems, FMS (CRM), Mobile Application Testing, SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1), Temenos T24 (Core Banking) |
+| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, LaunchDarkly, Maven / Gradle, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
 
 ---
 
