@@ -18,24 +18,19 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Core Skills
 
-- Flutter Development (Mobile, Web)
-- Dart
-- Android Development (Kotlin)
-- BLoC Architecture
-- Google Play Store Publishing
-- App Bundling (APK/AAB)
-- Android App Flavors
-- ADB Validation & Testing
-- Gradle
-- SQLite / Drift / Room
-- Coroutines
-- Git / GitHub Actions / Workflows
-- CODEOWNERS
-- Docker
+| Category | Skills |
+| --- | --- |
+| **Android Release Management** | Google Play Store Publishing, App Bundling (APK/AAB), Android App Flavors, ADB Validation & Testing, Gradle |
+| **CI/CD & DevOps** | Git / GitHub Actions / Workflows, CODEOWNERS, Docker |
+| **Data / Backend** | SQLite, Drift, Room, Coroutines |
+| **Mobile Development** | Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), BLoC Architecture |
 
 ---
 
 ## Selected Mobile & Web Development Projects
+
+### Raspberry Pi Home Lab
+- **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
 
 ### Flutter Notes App
 **Repo:** `vskarthik9896/Flutter_notesApp`
@@ -60,6 +55,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
+- Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 
@@ -68,6 +64,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
 - Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
 - Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
+- **Mentored junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
 
 ### Senior Test Engineer — Maveric Systems  
 **Sep 2018 – Dec 2020**
