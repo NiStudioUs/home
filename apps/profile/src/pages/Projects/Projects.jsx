@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
-import projectsData from '../../content/projects.json';
+import React, { useState, useEffect } from 'react';
 import ProjectDialog from '../../components/ProjectDialog';
 import './Projects.css';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [projectsData, setProjectsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    import('../../content/projects.json').then(module => {
+      setProjectsData(module.default || module);
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <div className="projects-page container">
       <h1 className="page-title">Project Showcase</h1>
       <p className="projects-intro text-center">
-        Extracted directly from local project repositories (package.json / pubspec.yaml).
+        Production applications built and shipped through the Google Play Store and deployed to the web.
       </p>
 
       <div className="projects-grid">
-        {projectsData.map((project) => (
+        {isLoading ? (
+          <p className="text-center" style={{ gridColumn: '1 / -1', color: 'var(--text-secondary)' }}>Loading projects...</p>
+        ) : projectsData.map((project) => (
           <div key={project.id} className="card project-card" onClick={() => setSelectedProject(project)}>
             <div className="project-header">
               <h2 className="project-title">{project.name}</h2>

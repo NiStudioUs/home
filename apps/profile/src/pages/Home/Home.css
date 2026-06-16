@@ -4,9 +4,44 @@
 }
 
 .hero {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto 4rem;
-  text-align: center;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image-container {
+  flex-shrink: 0;
+}
+
+.hero-avatar, .hero-avatar-fallback {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+}
+
+.hero-avatar {
+  object-fit: cover;
+}
+
+.hero-avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .hero-title {
@@ -14,7 +49,22 @@
   font-weight: 500;
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: #1a4b8c;
+  font-family: var(--font-mono);
+}
+
+.terminal-prompt {
+  color: var(--accent-color);
+  opacity: 0.8;
+}
+
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero-subtitle {
@@ -32,14 +82,14 @@
 .hero-actions {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 2rem;
 }
 
 .social-links {
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -55,6 +105,32 @@
   font-size: 1.5rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #1a4b8c;
+}
+
+/* Stats Section */
+.home-stats-section {
+  margin-bottom: 4rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .highlights-grid {
@@ -75,11 +151,26 @@
 }
 
 @media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .hero-actions, .social-links {
+    justify-content: center;
+  }
+  .hero-avatar, .hero-avatar-fallback {
+    width: 80px;
+    height: 80px;
+  }
   .hero-title {
     font-size: 2.5rem;
   }
   .hero-subtitle {
     font-size: 1.25rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

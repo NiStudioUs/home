@@ -2,79 +2,43 @@ import React, { useEffect, useState, useRef } from 'react';
 import experienceData from '../../content/experience.json';
 import './Timeline.css';
 
+import { useScrollProgress } from '../../hooks/useScrollProgress';
+
+function calculateDuration(startDate, endDate) {
+  const start = new Date(startDate);
+  const endStr = endDate.toLowerCase() === 'present' ? new Date().toISOString() : endDate;
+  const end = new Date(endStr);
+  
+  const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  const years = Math.floor(diffInMonths / 12);
+  const months = diffInMonths % 12;
+
+  if (years === 0) return `${months} mos`;
+  if (months === 0) return `${years} yrs`;
+  return `${years} yrs ${months} mo`;
+}
+
 export default function Timeline() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [reachedIndices, setReachedIndices] = useState([]);
-  const [lineStyles, setLineStyles] = useState({ top: 0, height: 0 });
-  const containerRef = useRef(null);
+  const { scrollProgress, reachedIndices, lineStyles, containerRef } = useScrollProgress('.timeline-item');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      
-      const cards = document.querySelectorAll('.timeline-item');
-      if (cards.length === 0) return;
-      
-      // Calculate positions of the first and last cards
-      const firstCard = cards[0].getBoundingClientRect();
-      const lastCard = cards[cards.length - 1].getBoundingClientRect();
-      
-      const firstCardCenterY = firstCard.top + scrollY + (firstCard.height / 2);
-      const lastCardCenterY = lastCard.top + scrollY + (lastCard.height / 2);
-      
-      const containerTop = containerRef.current.getBoundingClientRect().top + scrollY;
-      const topOffset = firstCardCenterY - containerTop;
-      const totalLineHeight = lastCardCenterY - firstCardCenterY;
-      
-      setLineStyles({ top: topOffset, height: totalLineHeight });
-
-      // The tip of the progress line is at the center of the viewport
-      const lineTipY = scrollY + (windowHeight / 2);
-      
-      let progress = 0;
-      if (lineTipY >= firstCardCenterY) {
-        progress = ((lineTipY - firstCardCenterY) / totalLineHeight) * 100;
-      }
-      
-      // If we've scrolled to the absolute bottom of the page, ensure the line reaches 100%
-      const maxScroll = document.documentElement.scrollHeight - windowHeight;
-      if (scrollY >= maxScroll - 5) {
-        progress = 100;
-      }
-      
-      setScrollProgress(Math.max(0, Math.min(progress, 100)));
-      
-      // Determine reached cards based on whether the line tip has passed their center
-      const newReached = [];
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenterY = rect.top + scrollY + (rect.height / 2);
-        if (lineTipY >= cardCenterY || (scrollY >= maxScroll - 5)) {
-          newReached.push(index);
-        }
-      });
-      setReachedIndices(newReached);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    handleScroll(); // Initialize on mount
-    
-    // Add slight delay for layout stabilization
-    setTimeout(handleScroll, 100);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
+  // Calculate summary stats
+  const totalMonths = experienceData.reduce((acc, exp) => {
+    const start = new Date(exp.startDate);
+    const endStr = exp.endDate.toLowerCase() === 'present' ? new Date().toISOString() : exp.endDate;
+    const end = new Date(endStr);
+    return acc + ((end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
+  }, 0);
+  const totalYears = Math.floor(totalMonths / 12);
+  const uniqueCompanies = new Set(experienceData.map(e => e.company)).size;
 
   return (
     <div className="timeline-page container">
       <h1 className="page-title">Experience</h1>
       
+      <p className="text-center" style={{ marginBottom: '3rem', color: 'var(--text-secondary)' }}>
+        {totalYears}+ years experience across {uniqueCompanies} companies
+      </p>
+
       <div className="timeline" ref={containerRef}>
         <div className="timeline-line-bg" style={{ top: `${lineStyles.top}px`, height: `${lineStyles.height}px` }}></div>
         <div className="timeline-line-progress" style={{ top: `${lineStyles.top}px`, height: `${(scrollProgress / 100) * lineStyles.height}px` }}></div>
@@ -91,8 +55,11 @@ export default function Timeline() {
                     <h3 className="timeline-role">{exp.title}</h3>
                     <h4 className="timeline-company">{exp.company} {exp.client && `| Client: ${exp.client}`}</h4>
                   </div>
-                  <div className="timeline-date">
+                  <div className="timeline-date" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <span className="badge">{exp.startDate} - {exp.endDate}</span>
+                    <span className="timeline-duration" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
+                      {calculateDuration(exp.startDate, exp.endDate)}
+                    </span>
                   </div>
                 </div>
                 <ul className="timeline-bullets">
@@ -100,6 +67,13 @@ export default function Timeline() {
                     <li key={i}>{bullet}</li>
                   ))}
                 </ul>
+                {exp.tags && exp.tags.length > 0 && (
+                  <div className="timeline-tags" style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    {exp.tags.map((tag, i) => (
+                      <span key={i} className="badge" style={{ backgroundColor: 'var(--bg-primary)' }}>{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           );

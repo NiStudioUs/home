@@ -1,6 +1,12 @@
 {
   "categories": [
     {
+      "name": "SDET / QE / Automation",
+      "skills": [
+        "Web Automation (Selenium, Cypress, Playwright)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium, Winium)", "Test Frameworks (BDD Cucumber, Mocha Cypress Tests, Playwright Test, TestNG, Kotlin BDD REST Assured, JUnit, JMeter Groovy)", "TypeScript", "Test Data Management & Mocking (MSW)"
+      ]
+    },
+    {
       "name": "Domain Expertise",
       "skills": [
         "Retail Banking", "SME Banking", "Lending", "Deposits", "Customer Onboarding", "Retail Operations", "Digital Mobile Channels", "CDD / CRA / Risk Assessment", "Document workflow and role-based access validation"
@@ -13,15 +19,15 @@
       ]
     },
     {
-      "name": "SDET / QE / Automation",
+      "name": "Development Frameworks",
       "skills": [
-        "Web Automation (Selenium, Cypress, Playwright)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium)", "Test Frameworks (BDD Cucumber, TestNG, JUnit, Mocha)", "TypeScript", "Test Data Management & Mocking (MSW)"
+        "Flutter BLoC", "Flutter Riverpod", "Vite (Front-end)"
       ]
     },
     {
       "name": "Mobile Development",
       "skills": [
-        "Flutter Development (Mobile, Web)", "Dart", "Android Development (Kotlin)", "Cross-platform Application Development", "Offline-first App Design", "BLoC Architecture"
+        "Flutter Development (Mobile, Web)", "Dart", "Android Development (Kotlin)", "Cross-platform Application Development", "Offline-first App Design"
       ]
     },
     {
@@ -33,13 +39,19 @@
     {
       "name": "CI/CD / DevOps / Tooling",
       "skills": [
-        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions / Workflows", "CODEOWNERS", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
+        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions / Workflows", "CODEOWNERS", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "IntelliJ IDE / Eclipse IDE", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
       ]
     },
     {
       "name": "Data / Backend / Platform",
       "skills": [
         "SQLite", "Drift", "Room", "Coroutines", "MSSQL Test Containers", "Liquibase", "Microservices test support"
+      ]
+    },
+    {
+      "name": "Languages",
+      "skills": [
+        "Java", "Kotlin", "Dart", "TypeScript"
       ]
     }
   ]

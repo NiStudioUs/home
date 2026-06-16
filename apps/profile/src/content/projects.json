@@ -1,5 +1,54 @@
 [
   {
+    "id": "homelab",
+    "name": "Raspberry Pi Home Lab",
+    "path": "",
+    "status": "Active",
+    "tags": [
+      "Docker",
+      "Self-Hosted",
+      "Networking",
+      "Raspberry Pi 5"
+    ],
+    "description": "Self-hosted client-server architecture running on Raspberry Pi 5. Features Nginx reverse proxy, Docker, Immich for privacy-focused photo management, Pi-Hole for network-wide ad blocking and local DNS routing, and Jellyfin for media content management.",
+    "resumeBullets": [
+      {
+        "text": "**Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ],
+    "version": "1.0.0",
+    "packages": [],
+    "techStack": [
+      "Docker",
+      "Docker Compose",
+      "Nginx",
+      "Raspberry Pi 5",
+      "Immich",
+      "Pi-Hole",
+      "Jellyfin",
+      "Linux"
+    ],
+    "resumeName": "Self-Hosted Home Lab Ecosystem",
+    "storeUrl": null,
+    "fullDescription": "A self-taught initiative to architect and deploy a private, self-hosted client-server infrastructure on a Raspberry Pi 5. The ecosystem utilizes Docker containers managed behind an Nginx reverse proxy to securely host and route traffic to various services. Key deployments include Immich for Google Photos-like privacy-focused image management, Pi-Hole for network-wide ad blocking and local DNS resolution, and Jellyfin for organizing and streaming personal media content.",
+    "features": [
+      "Nginx Reverse Proxy",
+      "Docker Containerization",
+      "Network-wide Ad Blocking (Pi-Hole)",
+      "Privacy-focused Photo Management (Immich)",
+      "Media Server (Jellyfin)"
+    ],
+    "githubUrl": null,
+    "liveUrl": null
+  },
+  {
     "id": "scribble",
     "name": "Scribble: Notes, Diary & Tasks",
     "path": "/home/karthik/Development/projects/app/Flutter_notesApp",
@@ -39,7 +88,6 @@
           "test",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/authentication_repository/pubspec.yaml",
         "relativePath": "packages/authentication_repository/pubspec.yaml"
       },
       {
@@ -62,7 +110,6 @@
           "test",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/cloud_storage_api/pubspec.yaml",
         "relativePath": "packages/cloud_storage_api/pubspec.yaml"
       },
       {
@@ -85,7 +132,6 @@
           "sqflite_common_ffi",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/local_storage_api/pubspec.yaml",
         "relativePath": "packages/local_storage_api/pubspec.yaml"
       },
       {
@@ -104,7 +150,6 @@
           "test",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/notes_api/pubspec.yaml",
         "relativePath": "packages/notes_api/pubspec.yaml"
       },
       {
@@ -119,7 +164,6 @@
           "test",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/notes_repository/pubspec.yaml",
         "relativePath": "packages/notes_repository/pubspec.yaml"
       },
       {
@@ -137,7 +181,6 @@
           "test",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/settings_storage_api/pubspec.yaml",
         "relativePath": "packages/settings_storage_api/pubspec.yaml"
       },
       {
@@ -162,7 +205,6 @@
           "mocktail",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/packages/user_repository/pubspec.yaml",
         "relativePath": "packages/user_repository/pubspec.yaml"
       },
       {
@@ -222,7 +264,6 @@
           "sqflite_common_ffi",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/pubspec.yaml",
         "relativePath": "pubspec.yaml"
       },
       {
@@ -236,7 +277,6 @@
           "flame_lint",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/audioplayers_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/audioplayers_windows/pubspec.yaml"
       },
       {
@@ -252,7 +292,6 @@
           "test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/pubspec.yaml"
       },
       {
@@ -276,7 +315,6 @@
           "plugin_platform_interface",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus/pubspec.yaml"
       },
       {
@@ -291,7 +329,6 @@
           "flutter_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/example/pubspec.yaml"
       },
       {
@@ -307,7 +344,6 @@
           "flutter_lints",
           "meta"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/dynamic_color/pubspec.yaml"
       },
       {
@@ -321,7 +357,6 @@
           "flutter_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_picker/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_picker/example/pubspec.yaml"
       },
       {
@@ -343,7 +378,6 @@
           "flutter_lints",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_picker/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_picker/pubspec.yaml"
       },
       {
@@ -357,7 +391,6 @@
           "flutter",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/example/pubspec.yaml"
       },
       {
@@ -372,7 +405,6 @@
           "flutter_test",
           "pigeon"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/file_selector_windows/pubspec.yaml"
       },
       {
@@ -391,7 +423,6 @@
           "flutter_lints",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml"
       },
       {
@@ -408,7 +439,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/example/pubspec.yaml"
       },
       {
@@ -426,7 +456,6 @@
           "flutter_test",
           "lint"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
       },
       {
@@ -439,7 +468,6 @@
           "flutter_web_plugins",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/flutter_timezone/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_timezone/pubspec.yaml"
       },
       {
@@ -455,7 +483,6 @@
           "video_player",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/example/pubspec.yaml"
       },
       {
@@ -472,7 +499,6 @@
           "flutter_test",
           "mockito"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/image_picker_windows/pubspec.yaml"
       },
       {
@@ -486,7 +512,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml"
       },
       {
@@ -500,7 +525,6 @@
           "flutter_test",
           "pigeon"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml"
       },
       {
@@ -513,7 +537,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
       },
       {
@@ -528,7 +551,6 @@
           "path_provider_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
       },
       {
@@ -542,7 +564,6 @@
           "permission_handler_windows",
           "url_launcher"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml"
       },
       {
@@ -556,7 +577,6 @@
           "flutter_test",
           "plugin_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml"
       },
       {
@@ -569,7 +589,6 @@
           "record_platform_interface",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/record_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/record_windows/pubspec.yaml"
       },
       {
@@ -586,7 +605,6 @@
           "integration_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/share_plus/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/share_plus/example/pubspec.yaml"
       },
       {
@@ -612,7 +630,6 @@
           "flutter_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/share_plus/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/share_plus/pubspec.yaml"
       },
       {
@@ -626,7 +643,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
       },
       {
@@ -643,7 +659,6 @@
           "shared_preferences_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
       },
       {
@@ -657,7 +672,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml"
       },
       {
@@ -672,7 +686,6 @@
           "pigeon",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/Flutter_notesApp/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml"
       }
     ],
@@ -789,7 +802,17 @@
       "shared_preferences_platform_interface",
       "shared_preferences_windows"
     ],
-    "resumeName": "Flutter Notes App"
+    "resumeName": "Flutter Notes App",
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.ni.studio.scribble_notes",
+    "fullDescription": "Scribble is a privacy-focused notes application. Keep your thoughts, daily diary, and tasks in one secure place. Features local persistence, BLoC architecture for reliable state management, and seamless offline-first experience.",
+    "features": [
+      "Local Database (SQLite)",
+      "Offline-first design",
+      "Task Reminders",
+      "Secure Storage"
+    ],
+    "githubUrl": "https://github.com/nistudious/scribble",
+    "liveUrl": null
   },
   {
     "id": "sms-stack",
@@ -827,7 +850,6 @@
           "gtk",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/app_links_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/app_links_linux/pubspec.yaml"
       },
       {
@@ -847,7 +869,6 @@
           "flutter_lints",
           "mockito"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_linux/pubspec.yaml"
       },
       {
@@ -859,7 +880,6 @@
           "flutter",
           "flutter_secure_storage_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml"
       },
       {
@@ -873,7 +893,6 @@
           "yaru",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/gtk/example/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/gtk/example/pubspec.yaml"
       },
       {
@@ -890,7 +909,6 @@
           "flutter_test",
           "mockito"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/gtk/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/gtk/pubspec.yaml"
       },
       {
@@ -909,7 +927,6 @@
           "integration_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
       },
       {
@@ -932,7 +949,6 @@
           "logging",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
       },
       {
@@ -945,7 +961,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml"
       },
       {
@@ -961,7 +976,6 @@
           "xdg_directories",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml"
       },
       {
@@ -975,7 +989,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml"
       },
       {
@@ -992,7 +1005,6 @@
           "shared_preferences_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml"
       },
       {
@@ -1006,7 +1018,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/pubspec.yaml"
       },
       {
@@ -1021,7 +1032,6 @@
           "pigeon",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/pubspec.yaml",
         "relativePath": "linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/pubspec.yaml"
       },
       {
@@ -1079,7 +1089,6 @@
           "change_app_package_name",
           "mockito"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/pubspec.yaml",
         "relativePath": "pubspec.yaml"
       },
       {
@@ -1095,7 +1104,6 @@
           "msix",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/app_links/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/app_links/example/pubspec.yaml"
       },
       {
@@ -1110,7 +1118,6 @@
           "app_links_web",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/app_links/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/app_links/pubspec.yaml"
       },
       {
@@ -1121,7 +1128,6 @@
           "firebase_core",
           "flutter"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_core/example/pubspec.yaml"
       },
       {
@@ -1138,7 +1144,6 @@
           "mockito",
           "plugin_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_core/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_core/pubspec.yaml"
       },
       {
@@ -1150,7 +1155,6 @@
           "firebase_remote_config",
           "flutter"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/example/pubspec.yaml"
       },
       {
@@ -1168,7 +1172,6 @@
           "mockito",
           "plugin_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/firebase_remote_config/pubspec.yaml"
       },
       {
@@ -1187,7 +1190,6 @@
           "flutter_lints",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_windows/pubspec.yaml"
       },
       {
@@ -1207,7 +1209,6 @@
           "path_provider_windows",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
       },
       {
@@ -1226,7 +1227,6 @@
           "integration_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
       },
       {
@@ -1249,7 +1249,6 @@
           "logging",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
       },
       {
@@ -1263,7 +1262,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/example/pubspec.yaml"
       },
       {
@@ -1277,7 +1275,6 @@
           "flutter_test",
           "pigeon"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/local_auth_windows/pubspec.yaml"
       },
       {
@@ -1290,7 +1287,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
       },
       {
@@ -1305,7 +1301,6 @@
           "path_provider_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
       },
       {
@@ -1319,7 +1314,6 @@
           "permission_handler_windows",
           "url_launcher"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/example/pubspec.yaml"
       },
       {
@@ -1333,7 +1327,6 @@
           "flutter_test",
           "plugin_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/permission_handler_windows/pubspec.yaml"
       },
       {
@@ -1347,7 +1340,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
       },
       {
@@ -1364,7 +1356,6 @@
           "shared_preferences_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
       },
       {
@@ -1378,7 +1369,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/pubspec.yaml"
       },
       {
@@ -1393,7 +1383,6 @@
           "pigeon",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/sms_stack_manager/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml",
         "relativePath": "windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/pubspec.yaml"
       }
     ],
@@ -1496,7 +1485,17 @@
       "shared_preferences_windows",
       "url_launcher_windows"
     ],
-    "resumeName": "SMS Stack Manager"
+    "resumeName": "SMS Stack Manager",
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.ni.studio.sms_stack_manager",
+    "fullDescription": "SMS Stack Manager helps categorize SMS, set reminders, and extract financial insights automatically. Built with privacy in mind, all processing happens locally using Drift/SQLite. Features a dual-flavor Android release pipeline.",
+    "features": [
+      "Financial Insight Extraction",
+      "Offline Processing",
+      "Remote Config",
+      "Biometric Auth"
+    ],
+    "githubUrl": "https://github.com/nistudious/sms-stack",
+    "liveUrl": null
   },
   {
     "id": "iky",
@@ -1509,7 +1508,7 @@
       "Client-Server",
       "Fullstack"
     ],
-    "description": "",
+    "description": "A multi-platform genealogy app with NestJS API, Flutter mobile client, PostgreSQL, MongoDB, Redis, MinIO, Docker Compose, Traefik.",
     "version": "1.0.0",
     "packages": [
       {
@@ -1567,7 +1566,6 @@
           "tsconfig-paths",
           "typescript"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/api/package.json",
         "relativePath": "src/api/package.json"
       },
       {
@@ -1579,7 +1577,6 @@
           "flutter",
           "flutter_secure_storage_platform_interface"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux/pubspec.yaml"
       },
       {
@@ -1598,7 +1595,6 @@
           "integration_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
       },
       {
@@ -1621,7 +1617,6 @@
           "logging",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
       },
       {
@@ -1634,7 +1629,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/pubspec.yaml"
       },
       {
@@ -1650,7 +1644,6 @@
           "xdg_directories",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/pubspec.yaml"
       },
       {
@@ -1664,7 +1657,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/pubspec.yaml"
       },
       {
@@ -1681,7 +1673,6 @@
           "shared_preferences_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml",
         "relativePath": "src/app/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/pubspec.yaml"
       },
       {
@@ -1712,7 +1703,6 @@
           "riverpod_generator",
           "flutter_launcher_icons"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/pubspec.yaml",
         "relativePath": "src/app/pubspec.yaml"
       },
       {
@@ -1732,7 +1722,6 @@
           "path_provider_windows",
           "very_good_analysis"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_windows/pubspec.yaml"
       },
       {
@@ -1751,7 +1740,6 @@
           "integration_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/example/pubspec.yaml"
       },
       {
@@ -1774,7 +1762,6 @@
           "logging",
           "test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/jni/pubspec.yaml"
       },
       {
@@ -1787,7 +1774,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/pubspec.yaml"
       },
       {
@@ -1802,7 +1788,6 @@
           "path_provider_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/pubspec.yaml"
       },
       {
@@ -1816,7 +1801,6 @@
           "flutter_test",
           "integration_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/pubspec.yaml"
       },
       {
@@ -1833,7 +1817,6 @@
           "shared_preferences_platform_interface",
           "flutter_test"
         ],
-        "file": "/home/karthik/Development/projects/app/people-app-iky-v2/src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml",
         "relativePath": "src/app/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/pubspec.yaml"
       }
     ],
@@ -1946,7 +1929,16 @@
           "1page"
         ]
       }
-    ]
+    ],
+    "fullDescription": "People App IKY v2 is a comprehensive multi-platform product architecture. Features a robust backend with PostgreSQL, MongoDB, Redis, and MinIO, deployed via Docker Compose with Traefik routing.",
+    "features": [
+      "Client-Server Architecture",
+      "Docker Orchestration",
+      "PostgreSQL / MongoDB",
+      "CI/CD Pipelines"
+    ],
+    "githubUrl": "https://github.com/nistudious/iky",
+    "liveUrl": null
   },
   {
     "id": "dev-home",
@@ -1977,7 +1969,6 @@
           "flutter_test",
           "flutter_lints"
         ],
-        "file": "/home/karthik/Development/projects/website/home/pubspec.yaml",
         "relativePath": "pubspec.yaml"
       },
       {
@@ -1988,7 +1979,6 @@
         "dependencies": [
           "puppeteer"
         ],
-        "file": "/home/karthik/Development/projects/website/home/scripts/playstore_screenshots/package.json",
         "relativePath": "scripts/playstore_screenshots/package.json"
       }
     ],
@@ -2016,7 +2006,16 @@
           "1page"
         ]
       }
-    ]
+    ],
+    "webUrl": "https://nistudious.github.io/home/",
+    "fullDescription": "A hosted Flutter Web experience acting as a central hub for product showcases and applications.",
+    "features": [
+      "Flutter Web",
+      "Static Hosting",
+      "Responsive Design"
+    ],
+    "githubUrl": "https://github.com/nistudious/dev-home",
+    "liveUrl": null
   },
   {
     "id": "learning-gen-ai",
@@ -2027,7 +2026,7 @@
       "React Native",
       "Gen-AI"
     ],
-    "description": "",
+    "description": "A React + MUI monorepo exploring AI-assisted UI patterns across 4 learning chapters (chapter-2 through chapter-4) using Vite, TypeScript, Framer Motion, Recharts, and Leaflet.",
     "version": "0.0.0",
     "packages": [
       {
@@ -2049,7 +2048,6 @@
           "typescript",
           "vite"
         ],
-        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-2/package.json",
         "relativePath": "apps/chapter-2/package.json"
       },
       {
@@ -2075,7 +2073,6 @@
           "typescript",
           "vite"
         ],
-        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-3/package.json",
         "relativePath": "apps/chapter-3/package.json"
       },
       {
@@ -2101,7 +2098,6 @@
           "typescript",
           "vite"
         ],
-        "file": "/home/karthik/Development/projects/website/learning/apps/chapter-4/package.json",
         "relativePath": "apps/chapter-4/package.json"
       },
       {
@@ -2120,7 +2116,6 @@
           "@vitejs/plugin-react",
           "vite"
         ],
-        "file": "/home/karthik/Development/projects/website/learning/package.json",
         "relativePath": "package.json"
       }
     ],
@@ -2144,6 +2139,15 @@
       "@types/uuid",
       "recharts",
       "uuid"
-    ]
+    ],
+    "webUrl": "https://nistudious.github.io/home/",
+    "fullDescription": "An experimental platform for exploring AI-assisted frontend development and React Native patterns.",
+    "features": [
+      "React Native",
+      "AI Integration",
+      "Web Deployment"
+    ],
+    "githubUrl": "https://github.com/nistudious/learning-gen-ai",
+    "liveUrl": null
   }
 ]

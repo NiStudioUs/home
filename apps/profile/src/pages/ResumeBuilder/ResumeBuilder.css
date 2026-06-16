@@ -22,6 +22,19 @@
   flex-direction: column;
   position: sticky;
   top: calc(var(--header-height) + 2rem);
+  max-height: calc(100vh - var(--header-height) - 4rem);
+  overflow-y: auto;
+}
+
+.contact-injection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.print-settings-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
 .resume-sidebar h3 {
@@ -100,24 +113,65 @@
 .resume-preview-content h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  color: #1a4b8c;
+}
+
+.resume-preview-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.resume-preview-content th {
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: #f0f4f8;
+  color: #1a4b8c;
+  text-align: left;
+  font-weight: 600;
+}
+
+.resume-preview-content tr:nth-child(even) {
+  background-color: #f8fbff;
+}
+
+.resume-preview-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resume-preview-content tr:last-child td {
+  border-bottom: none;
+}
+
+.resume-preview-content td:first-child {
+  color: #1a4b8c;
+  font-weight: 600;
+  width: 25%;
+  vertical-align: top;
 }
 
 .resume-preview-content h2 {
   font-size: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1a4b8c;
+  padding-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #1a4b8c;
 }
 
 .resume-preview-content h3 {
   font-size: 1.25rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  color: #1a4b8c;
+}
+
+.resume-preview-content hr {
+  display: none;
 }
 
 .resume-preview-content p {
@@ -133,6 +187,44 @@
 .resume-preview-content li {
   margin-bottom: 0.5rem;
   color: var(--text-secondary);
+}
+
+/* Photo Cropping Modal */
+.crop-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.crop-modal-content {
+  background: var(--bg-default);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90vw;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+/* Appended Profile Photo */
+.resume-profile-photo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 /* Markdown textarea */

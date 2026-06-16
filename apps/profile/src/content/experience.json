@@ -35,6 +35,15 @@
           "flutter"
         ]
       }
+    ],
+    "tags": [
+      "Azure Key Vault",
+      "MSAL",
+      "Cypress",
+      "REST Assured",
+      "Bruno",
+      "GitHub Copilot",
+      "Playwright"
     ]
   },
   {
@@ -48,6 +57,12 @@
       "Implemented LaunchDarkly feature flags and ensured testing kept pace with product goals.",
       "Built stable, reusable test frameworks including local MSAL mock and secure Key Vault integration.",
       "Reduced Cypress technical debt by reorganising test structures and improving fixtures to minimise flaky tests."
+    ],
+    "tags": [
+      "LaunchDarkly",
+      "MSAL",
+      "Azure Key Vault",
+      "Cypress"
     ]
   },
   {
@@ -60,6 +75,7 @@
       "Ensured successful release of features and integrations for Bridge and COB-internal systems such as Hubspot integration, address-manager, new business rewards journey and Link duplicate profiles.",
       "Assisted the Working Capital team in their first production release with test planning and execution.",
       "Played a critical role in the major release of Safeguarding and Pension profiles, executing end-to-end testing including product creation workflows.",
+      "Conducted JMeter performance testing for Allica Onboarding Microservices and ensured Security & Compliance with GDPR for onboarding applications.",
       "Started work on an API platform to standardize and increase test coverage across repositories."
     ],
     "resumeBullets": [
@@ -74,6 +90,15 @@
       },
       {
         "text": "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      },
+      {
+        "text": "Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.",
         "resumeTypes": [
           "sdet-qe",
           "hybrid",
@@ -99,6 +124,14 @@
           "2page-ats"
         ]
       }
+    ],
+    "tags": [
+      "Cypress",
+      "Mocha",
+      "Bruno",
+      "API Mocking",
+      "Visual Regression",
+      "GitHub Copilot"
     ]
   },
   {
@@ -113,6 +146,12 @@
       "Enhanced Cypress to mock APIs dynamically without using fixture files, improving response simulation.",
       "Contributed to the migration squad that decoupled Allica from the Mulesoft anchor, integrating with Spring Boot APIs.",
       "Developed parallel execution POC for local machines."
+    ],
+    "tags": [
+      "Cypress",
+      "API Mocking",
+      "Spring Boot",
+      "Parallel Execution"
     ]
   },
   {
@@ -125,6 +164,12 @@
       "Led the architectural migration of legacy test suites from Cypress-Cucumber to Mocha/cypress-grep for increased flexibility and execution reliability.",
       "Drove engineering excellence by integrating Visual Regression testing and deploying Plop E2E templates for test cases and scripts.",
       "Completed Proof of Concepts for Report Portal (unified dashboard) and SCV database testing."
+    ],
+    "tags": [
+      "Cypress",
+      "Mocha",
+      "Visual Regression",
+      "Report Portal"
     ]
   },
   {
@@ -140,7 +185,8 @@
       "Wrote numerous Automation test scripts for Lending and Deposits.",
       "POC and implemented Docker-Test Containers framework to test microservices with Cucumber, Docker MSSQL Test-Container, and Liquibase for DB Management.",
       "Technical Lead for Automation Test Development framework for Asset Finance project, including COB Automation and Multi-Asset Automation with Desktop Application.",
-      "Test Requirement analysis for Automation Tests, run plans for Automation Execution, and imparted solutions for Automation issues by creating common methods."
+      "Test Requirement analysis for Automation Tests, run plans for Automation Execution, and imparted solutions for Automation issues by creating common methods.",
+      "Mentored junior engineers and integrated automated test suites into CI/CD pipelines, enabling continuous testing and faster release cadences."
     ],
     "resumeBullets": [
       {
@@ -172,7 +218,24 @@
           "2page-ats",
           "flutter"
         ]
+      },
+      {
+        "text": "**Mentored junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
       }
+    ],
+    "tags": [
+      "Selenium",
+      "Cucumber BDD",
+      "Docker",
+      "MSSQL",
+      "Liquibase"
     ]
   },
   {
@@ -188,7 +251,8 @@
       "Created a framework for Data Creation to hasten release testing and was responsible for Framework Enhancement and common interfaces creation.",
       "Understood requirements to cover end-to-end journeys with minimal test cases, ensuring code stability, maintenance, and knowledge sharing.",
       "Responsible for Compatibility testing with Sauce Labs, release Regression testing, and interacting with teams for reviewing prepared test cases.",
-      "Test Requirement analysis and run plan for Automation Execution."
+      "Test Requirement analysis and run plan for Automation Execution.",
+      "Collaborated closely with product owners and developers to ensure defect-free releases for core banking modules."
     ],
     "resumeBullets": [
       {
@@ -218,7 +282,23 @@
           "1page",
           "2page-ats"
         ]
+      },
+      {
+        "text": "**Collaborated closely with product owners and developers** to ensure defect-free releases for core banking modules.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
       }
+    ],
+    "tags": [
+      "Android",
+      "iOS",
+      "T24",
+      "Sauce Labs",
+      "API Testing"
     ]
   }
 ]

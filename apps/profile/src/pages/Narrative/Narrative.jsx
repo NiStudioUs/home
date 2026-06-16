@@ -3,74 +3,10 @@ import './Narrative.css';
 
 import milestones from '../../content/narrative.json';
 
+import { useScrollProgress } from '../../hooks/useScrollProgress';
+
 export default function Narrative() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [reachedIndices, setReachedIndices] = useState([]);
-  const [lineStyles, setLineStyles] = useState({ top: 0, height: 0 });
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const windowHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      
-      const cards = document.querySelectorAll('.story-row');
-      if (cards.length === 0) return;
-      
-      // Calculate positions of the first and last cards
-      const firstCard = cards[0].getBoundingClientRect();
-      const lastCard = cards[cards.length - 1].getBoundingClientRect();
-      
-      const firstCardCenterY = firstCard.top + scrollY + (firstCard.height / 2);
-      const lastCardCenterY = lastCard.top + scrollY + (lastCard.height / 2);
-      
-      const containerTop = containerRef.current.getBoundingClientRect().top + scrollY;
-      const topOffset = firstCardCenterY - containerTop;
-      const totalLineHeight = lastCardCenterY - firstCardCenterY;
-      
-      setLineStyles({ top: topOffset, height: totalLineHeight });
-
-      // The tip of the progress line is at the center of the viewport
-      const lineTipY = scrollY + (windowHeight / 2);
-      
-      let progress = 0;
-      if (lineTipY >= firstCardCenterY) {
-        progress = ((lineTipY - firstCardCenterY) / totalLineHeight) * 100;
-      }
-      
-      // If we've scrolled to the absolute bottom of the page, ensure the line reaches 100%
-      const maxScroll = document.documentElement.scrollHeight - windowHeight;
-      if (scrollY >= maxScroll - 5) {
-        progress = 100;
-      }
-      
-      setScrollProgress(Math.max(0, Math.min(progress, 100)));
-      
-      // Determine reached cards based on whether the line tip has passed their center
-      const newReached = [];
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenterY = rect.top + scrollY + (rect.height / 2);
-        if (lineTipY >= cardCenterY || (scrollY >= maxScroll - 5)) {
-          newReached.push(index);
-        }
-      });
-      setReachedIndices(newReached);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    handleScroll(); // Initialize on mount
-    
-    // Add slight delay for layout stabilization (images/fonts loading)
-    setTimeout(handleScroll, 100);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
+  const { scrollProgress, reachedIndices, lineStyles, containerRef } = useScrollProgress('.story-row');
 
   return (
     <div className="narrative-page">

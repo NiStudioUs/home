@@ -9,6 +9,7 @@ import Projects from './pages/Projects/Projects';
 import ResumeBuilder from './pages/ResumeBuilder/ResumeBuilder';
 import Narrative from './pages/Narrative/Narrative';
 import LinkedInGenerator from './pages/DevSettings/LinkedInGenerator';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<ResumeBuilder />} />
               <Route path="/dev" element={<LinkedInGenerator />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
         </div>

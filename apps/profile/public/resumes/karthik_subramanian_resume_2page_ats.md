@@ -19,63 +19,15 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Core Skills
 
-### Mobile Development
-- Flutter Development (Mobile, Web)
-- Dart
-- Android Development (Kotlin)
-- Cross-platform Application Development
-- Offline-first App Design
-- BLoC Architecture
-
-### Android Release Management
-- Google Play Store Publishing
-- App Bundling (APK/AAB)
-- Android App Flavors
-- ADB Validation & Testing
-
-### SDET / QE / Automation
-- Web Automation (Selenium, Cypress, Playwright)
-- API Automation (REST Assured, Karate, Bruno)
-- Mobile Automation (Appium)
-- Test Frameworks (BDD Cucumber, TestNG, JUnit)
-- TypeScript
-- Test Data Management & Mocking (MSW)
-
-### CI/CD / DevOps / Tooling
-- Azure DevOps & Pipelines
-- Azure Key Vault
-- Jenkins
-- Git / GitHub Actions / Workflows
-- CODEOWNERS
-- Docker / Docker Compose
-- Maven / Gradle
-- Postman / JMeter
-- Sauce Labs
-
-### Data / Backend / Platform
-- SQLite
-- Drift
-- Room
-- Coroutines
-- MSSQL Test Containers
-- Liquibase
-- Microservices test support
-
-### Applications & Systems Supported
-- **Banking Core & Mobile:** Temenos T24 (Payments & Cards), Metro Bank Mobile App (Android/iOS), Saascada
-- **Lending & CRM:** Allica Deposits & Lending, CMS (Asset Finance Application), FMS (Deposit & Lending CRM), Hubspot
-- **Onboarding & Risk:** Customer Onboarding (Internal/External), Bridge / CashFlow / BackOffice, GoDiligent, World Check1, Companies House UK, Full Circle
-
-### Domain Expertise
-- Retail Banking
-- SME Banking
-- Lending
-- Deposits
-- Customer Onboarding
-- Retail Operations
-- Digital Mobile Channels
-- CDD / CRA / Risk Assessment
-- Document workflow and role-based access validation
+| Category | Skills |
+| --- | --- |
+| **Android Release Management** | Google Play Store Publishing, App Bundling (APK/AAB), Android App Flavors, ADB Validation & Testing |
+| **Applications & Systems Supported** | Banking Core & Mobile (Temenos T24, Metro Bank, Saascada), Lending & CRM (Allica, CMS, FMS, Hubspot), Onboarding & Risk (Bridge, GoDiligent, World Check1, Companies House UK, Full Circle) |
+| **CI/CD / DevOps / Tooling** | Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git / GitHub Actions / Workflows, CODEOWNERS, Docker / Docker Compose, Maven / Gradle, Postman / JMeter, Sauce Labs |
+| **Data / Backend / Platform** | SQLite, Drift, Room, Coroutines, MSSQL Test Containers, Liquibase, Microservices test support |
+| **Domain Expertise** | Retail Banking, SME Banking, Lending, Deposits, Customer Onboarding, Retail Operations, Digital Mobile Channels, CDD / CRA / Risk Assessment, Document workflow |
+| **Mobile Development** | Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), Cross-platform Application Development, Offline-first App Design, BLoC Architecture |
+| **SDET / QE / Automation** | Web Automation (Selenium, Cypress, Playwright), API Automation (REST Assured, Karate, Bruno), Mobile Automation (Appium), Test Frameworks (BDD Cucumber, TestNG, JUnit), TypeScript, Test Data Management & Mocking (MSW) |
 
 ---
 
@@ -89,6 +41,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
+- Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 - **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
@@ -121,6 +74,9 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 ---
 
 ## Selected Mobile & Web Development Projects
+
+### Raspberry Pi Home Lab
+- **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
 
 ### Flutter Notes App
 **Repo:** `vskarthik9896/Flutter_notesApp`  

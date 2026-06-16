@@ -18,12 +18,15 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Key Skills
 
-**Automation / QE:** Web Automation (Selenium, Cypress, Playwright), API Automation (REST Assured, Karate, Bruno), Mobile (Appium), Test Frameworks (BDD Cucumber, TestNG, JUnit), TypeScript  
-**Mobile:** Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), BLoC  
-**Release / DevOps:** Google Play Store Publishing, App Bundling (APK/AAB), Android Flavors, ADB validation, Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git/GitHub Actions & Workflows, CODEOWNERS, Docker  
-**Data / Platform:** SQLite, Drift, Room, Coroutines, Liquibase, MSSQL Test Containers  
-**Systems Supported:** Temenos T24, Metro Bank Mobile, Allica Deposits/Lending, CMS, FMS, Saascada, Hubspot, Full Circle, GoDiligent, World Check1, Companies House UK  
-**Domain:** Banking, Lending, Deposits, Customer Onboarding, Mobile Channels, CDD / CRA / Risk Assessment
+| Category | Technologies & Tools |
+| :--- | :--- |
+| **Languages** | Java, Kotlin, Dart, TypeScript |
+| **Automation / QE** | Selenium, Cypress, Playwright, REST Assured, Karate, Bruno, Appium, Winium, BDD Cucumber, TestNG, JUnit |
+| **Mobile** | Flutter Development (Mobile, Web), Android Development, BLoC |
+| **Release / DevOps** | App Bundling (APK/AAB), Android Flavors, Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git/GitHub Actions, CODEOWNERS, Docker, Maven/Gradle |
+| **Data / Platform** | SQLite, Drift, Room, Coroutines, Liquibase, MSSQL Test Containers |
+| **IDE / Tools** | IntelliJ IDE, Eclipse IDE, Postman, JMeter, Sauce Labs |
+| **Domain** | Banking, Lending, Deposits, Customer Onboarding, Mobile Channels, CDD / CRA / Risk Assessment |
 
 ---
 
@@ -35,6 +38,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
+- Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 - **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
@@ -45,6 +49,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
 - Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
 - Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
+- **Mentored junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
 
 ### Senior Test Engineer — Maveric Systems  
 **Sep 2018 – Dec 2020**  
@@ -52,10 +57,14 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.
 - Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.
 - Created Data Creation frameworks to hasten release testing, and managed Sauce Labs compatibility and regression testing.
+- **Collaborated closely with product owners and developers** to ensure defect-free releases for core banking modules.
 
 ---
 
 ## Mobile & Web Development Projects
+
+### Raspberry Pi Home Lab
+- **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
 
 ### Flutter Notes App
 - **Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "homelab",
+    "name": "Raspberry Pi Home Lab",
+    "description": "Self-hosted client-server architecture running on Raspberry Pi 5. Features Nginx reverse proxy, Docker, Immich for privacy-focused photo management, Pi-Hole for network-wide ad blocking and local DNS routing, and Jellyfin for media content management.",
+    "status": "Active",
+    "version": "1.0.0",
+    "tags": [
+      "Docker",
+      "Self-Hosted",
+      "Networking",
+      "Raspberry Pi 5"
+    ],
+    "githubUrl": null,
+    "liveUrl": null
+  },
+  {
+    "id": "scribble",
+    "name": "Scribble: Notes, Diary & Tasks",
+    "description": "A new Flutter Notes taking project implemented with local database, shared prefs and bloc",
+    "status": "Live",
+    "version": "2.2026.7+25",
+    "tags": [
+      "Flutter",
+      "Mobile App",
+      "Published"
+    ],
+    "githubUrl": "https://github.com/nistudious/scribble",
+    "liveUrl": null
+  },
+  {
+    "id": "sms-stack",
+    "name": "SMS Stack",
+    "description": "A privacy-focused utility for SMS categorization and financial insight extraction.",
+    "status": "Internal Beta",
+    "version": "1.2026.1-pre.7+9",
+    "tags": [
+      "Flutter",
+      "Utility",
+      "Beta"
+    ],
+    "githubUrl": "https://github.com/nistudious/sms-stack",
+    "liveUrl": null
+  },
+  {
+    "id": "iky",
+    "name": "IKY",
+    "description": "A multi-platform genealogy app with NestJS API, Flutter mobile client, PostgreSQL, MongoDB, Redis, MinIO, Docker Compose, Traefik.",
+    "status": "Active Development",
+    "version": "1.0.0",
+    "tags": [
+      "Flutter",
+      "Node.js",
+      "Client-Server",
+      "Fullstack"
+    ],
+    "githubUrl": "https://github.com/nistudious/iky",
+    "liveUrl": null
+  },
+  {
+    "id": "dev-home",
+    "name": "Developer Home",
+    "description": "A new Flutter project.",
+    "status": "Internal Beta",
+    "version": "1.0.0+1",
+    "tags": [
+      "Flutter Web",
+      "Portfolio"
+    ],
+    "githubUrl": "https://github.com/nistudious/dev-home",
+    "liveUrl": null
+  },
+  {
+    "id": "learning-gen-ai",
+    "name": "Learning gen-AI",
+    "description": "A React + MUI monorepo exploring AI-assisted UI patterns across 4 learning chapters (chapter-2 through chapter-4) using Vite, TypeScript, Framer Motion, Recharts, and Leaflet.",
+    "status": "Live",
+    "version": "0.0.0",
+    "tags": [
+      "React Native",
+      "Gen-AI"
+    ],
+    "githubUrl": "https://github.com/nistudious/learning-gen-ai",
+    "liveUrl": null
+  }
+]

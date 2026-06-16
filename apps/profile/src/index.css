@@ -127,7 +127,7 @@ p {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 0; /* Sharp edges */
+  border-radius: 12px; /* Option A: Round buttons to match bento */
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -162,7 +162,7 @@ p {
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.75rem;
-  border-radius: 0;
+  border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 400;
   background-color: transparent;
@@ -170,4 +170,134 @@ p {
   border: 1px solid var(--border-color);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Show thumb only on hover of scrollable elements */
+*:hover::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* Theme Form Inputs */
+.theme-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.theme-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+[data-theme='dark'] .theme-input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.theme-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* File input styling */
+.theme-input[type="file"] {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border: none;
+}
+
+.theme-input[type="file"]::file-selector-button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.theme-input[type="file"]::file-selector-button:hover {
+  background-color: var(--border-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.checkbox-input {
+  appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.checkbox-input:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 0.8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
 }

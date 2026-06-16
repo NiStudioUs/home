@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Copy, Check, RefreshCw } from 'lucide-react';
+import NotFound from '../NotFound/NotFound';
 import profileData from '../../content/profile.json';
 import skillsData from '../../content/skills.json';
 import projectsData from '../../content/projects.json';
@@ -21,6 +22,11 @@ export default function LinkedInGenerator() {
   const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
 
+  // Route Protection: Prevent access in production
+  if (!import.meta.env.DEV) {
+    return <NotFound />;
+  }
+
   const [roles, setRoles] = useState({
     'SDET QE': true,
     'Flutter Developer': true,
@@ -33,16 +39,22 @@ export default function LinkedInGenerator() {
     setRoles(prev => ({ ...prev, [role]: !prev[role] }));
   };
 
-  // Helper to filter skills based on selected roles
+  // Helper to filter skills based on selected roles with robust fuzzy matching
   const getFilteredCategories = () => {
     const allowedCategoryNames = new Set();
     Object.entries(roles).forEach(([role, isSelected]) => {
       if (isSelected && ROLE_MAPPINGS[role]) {
-        ROLE_MAPPINGS[role].forEach(c => allowedCategoryNames.add(c));
+        ROLE_MAPPINGS[role].forEach(c => allowedCategoryNames.add(c.toLowerCase()));
       }
     });
 
-    return skillsData.categories.filter(c => allowedCategoryNames.has(c.name));
+    return skillsData.categories.filter(c => {
+      const catName = c.name.toLowerCase();
+      for (let allowed of allowedCategoryNames) {
+        if (catName.includes(allowed) || allowed.includes(catName)) return true;
+      }
+      return false;
+    });
   };
 
   const getFilteredSkillsList = (categoryName) => {

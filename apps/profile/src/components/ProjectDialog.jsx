@@ -1,39 +1,11 @@
 import React from 'react';
-import { X, ExternalLink } from 'lucide-react';
+import { X, ExternalLink, Code, Globe } from 'lucide-react';
 import { CONTACT } from '../config/constants';
 
 export default function ProjectDialog({ project, onClose }) {
   if (!project) return null;
 
-  // Static content mapping based on project ID for extended details
-  const extendedDetails = {
-    'scribble': {
-      storeUrl: 'https://play.google.com/store/apps/details?id=com.ni.studio.scribble_notes',
-      fullDescription: `Scribble is a privacy-focused notes application. Keep your thoughts, daily diary, and tasks in one secure place. Features local persistence, BLoC architecture for reliable state management, and seamless offline-first experience.`,
-      features: ['Local Database (SQLite)', 'Offline-first design', 'Task Reminders', 'Secure Storage']
-    },
-    'sms-stack': {
-      storeUrl: 'https://play.google.com/store/apps/details?id=com.ni.studio.sms_stack_manager',
-      fullDescription: `SMS Stack Manager helps categorize SMS, set reminders, and extract financial insights automatically. Built with privacy in mind, all processing happens locally using Drift/SQLite. Features a dual-flavor Android release pipeline.`,
-      features: ['Financial Insight Extraction', 'Offline Processing', 'Remote Config', 'Biometric Auth']
-    },
-    'iky': {
-      fullDescription: `People App IKY v2 is a comprehensive multi-platform product architecture. Features a robust backend with PostgreSQL, MongoDB, Redis, and MinIO, deployed via Docker Compose with Traefik routing.`,
-      features: ['Client-Server Architecture', 'Docker Orchestration', 'PostgreSQL / MongoDB', 'CI/CD Pipelines']
-    },
-    'dev-home': {
-      webUrl: 'https://nistudious.github.io/home/',
-      fullDescription: `A hosted Flutter Web experience acting as a central hub for product showcases and applications.`,
-      features: ['Flutter Web', 'Static Hosting', 'Responsive Design']
-    },
-    'learning-gen-ai': {
-      webUrl: 'https://nistudious.github.io/home/',
-      fullDescription: `An experimental platform for exploring AI-assisted frontend development and React Native patterns.`,
-      features: ['React Native', 'AI Integration', 'Web Deployment']
-    }
-  };
-
-  const details = extendedDetails[project.id] || {};
+  const details = project || {};
 
   return (
     <div className="dialog-overlay" onClick={onClose}>
@@ -70,6 +42,16 @@ export default function ProjectDialog({ project, onClose }) {
             {details.webUrl && (
               <a href={details.webUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Launch Website <ExternalLink size={16} />
+              </a>
+            )}
+            {details.githubUrl && (
+              <a href={details.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Source Code <Code size={16} />
+              </a>
+            )}
+            {details.liveUrl && (
+              <a href={details.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Live Demo <Globe size={16} />
               </a>
             )}
           </div>

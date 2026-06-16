@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserCircle, Smartphone, Globe, MonitorPlay, ArrowRight } from 'lucide-react';
 import profileData from '../../content/profile.json';
-import projectsData from '../../content/projects.json';
+import projectsData from '../../content/projects_summary.json';
 import skillsData from '../../content/skills.json';
 import experienceData from '../../content/experience.json';
 
@@ -23,53 +23,78 @@ export default function Home() {
   return (
     <div className="home container">
       <header className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">{profileData.name}</h1>
-          <h2 className="hero-subtitle">{profileData.title}</h2>
-          <p className="hero-description">{profileData.summary}</p>
-          
-          <div className="hero-actions">
-            <Link to="/timeline" className="btn btn-primary">View Experience</Link>
-            <Link to="/projects" className="btn btn-outline">Explore Projects</Link>
+        <div className="hero-layout">
+          <div className="hero-image-container">
+            <div className="hero-avatar-fallback" style={{ display: 'flex' }}>KS</div>
           </div>
-          
-          <div className="social-links">
-            {profileData.socials.map((social, idx) => {
-              const getIcon = (platform) => {
-                switch (platform) {
-                  case 'LinkedIn': return <UserCircle size={18} />;
-                  case 'Play Store': return <Smartphone size={18} />;
-                  case 'Portfolio': return <Globe size={18} />;
-                  case 'Learning Demo': return <MonitorPlay size={18} />;
-                  default: return null;
-                }
-              };
-              
-              return (
-                <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer" className="social-link">
-                  {getIcon(social.platform)}
-                  <span>{social.platform}</span>
-                </a>
-              );
-            })}
+          <div className="hero-content">
+            <h1 className="hero-title">
+              <span className="terminal-prompt">&gt;</span> {profileData.name}<span className="terminal-cursor">_</span>
+            </h1>
+            <h2 className="hero-subtitle">{profileData.title}</h2>
+            <p className="hero-description">{profileData.summary}</p>
+            
+            <div className="hero-actions">
+              <Link to="/timeline" className="btn btn-primary">View Experience</Link>
+              <Link to="/projects" className="btn btn-outline">Explore Projects</Link>
+            </div>
+            
+            <div className="social-links">
+              {profileData.socials.map((social, idx) => {
+                const IconComponent = {
+                  UserCircle, Smartphone, Globe, MonitorPlay
+                }[social.icon];
+                
+                return (
+                  <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer" className="social-link">
+                    {IconComponent && <IconComponent size={18} />}
+                    <span>{social.platform}</span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
       </header>
+
+      {/* Stats Section */}
+      <section className="home-stats-section">
+        <div className="stats-grid">
+          <div className="card stat-card bento-card">
+            <h3 className="stat-value">9+</h3>
+            <p className="stat-label">Years Experience</p>
+          </div>
+          <div className="card stat-card bento-card">
+            <h3 className="stat-value">{new Set(experienceData.map(e => e.company)).size}</h3>
+            <p className="stat-label">Companies</p>
+          </div>
+          <div className="card stat-card bento-card">
+            <h3 className="stat-value">{projectsData.length}</h3>
+            <p className="stat-label">Apps Built</p>
+          </div>
+          <div className="card stat-card bento-card">
+            <h3 className="stat-value">{projectsData.filter(p => p.status.includes('Live')).length}</h3>
+            <p className="stat-label">Apps Live</p>
+          </div>
+        </div>
+      </section>
 
       {/* Core Tech Stack Section */}
       <section className="home-section">
         <div className="section-header">
           <h3 className="section-title">Core Tech Stack</h3>
         </div>
-        <div className="stack-grid">
-          <div className="card stack-card">
-            <h2 className="stack-category-title">{topSkillsCategory.name}</h2>
-            <div className="stack-items">
-              {topSkillsCategory.skills.map((skill, i) => (
-                <span key={i} className="badge stack-badge">{skill}</span>
+        <div className="skills-table-container card">
+          <table className="skills-table" style={{ margin: 0 }}>
+            <tbody>
+              {skillsData.categories.slice(0, 4).map((category, idx) => (
+                <tr key={idx}>
+                  <td className="skill-category-name" style={{ width: '200px' }}>{category.name}</td>
+                  <td className="skill-category-items">{category.skills.join(', ')}</td>
+                </tr>
               ))}
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
         <div className="view-more-container">
           <Link to="/stack" className="view-more-btn">

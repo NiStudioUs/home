@@ -27,7 +27,7 @@ export default function Navbar() {
           <NavLink to="/projects" className="navbar-item" onClick={handleNavClick}><Code size={18} /> Projects</NavLink>
           <NavLink to="/stack" className="navbar-item" onClick={handleNavClick}><Layers size={18} /> Tech Stack</NavLink>
 
-          
+          {/* Note: The /resume and /dev routes are intentionally hidden from the public Navbar */}          
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>

@@ -2,13 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: './',
   plugins: [react()],
 
   build: {
-    // No source maps in production — makes reverse-engineering significantly harder
-    sourcemap: false,
+    // Conditional sourcemap
+    sourcemap: mode === 'development' ? 'inline' : false,
 
     // Use Terser for maximum minification + obfuscation
     minify: 'terser',
@@ -17,8 +17,8 @@ export default defineConfig({
         // Remove all console.* calls and debugger statements
         drop_console: true,
         drop_debugger: true,
-        // Aggressive compression passes
-        passes: 3,
+        // Reduced compression passes for faster builds
+        passes: 1,
         // Remove dead code aggressively
         dead_code: true,
         // Inline short functions
@@ -27,8 +27,6 @@ export default defineConfig({
         unused: true,
       },
       mangle: {
-        // Shorten local variable names — makes reading decompiled code harder
-        toplevel: true,
         // Mangle property names (aggressive — increases obfuscation significantly)
         properties: {
           // Only mangle props that start with _ (private convention)
@@ -61,5 +59,5 @@ export default defineConfig({
       },
     },
   },
-})
+}))
 

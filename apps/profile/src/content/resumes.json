@@ -3,7 +3,7 @@
     "id": "2page-ats",
     "name": "ATS 2-Page Resume",
     "description": "Standard 2-page ATS optimized resume covering comprehensive SDET and mobile experience.",
-    "file": "/resumes/karthik_subramanian_resume_2page_ats.md",
+    "file": "./resumes/karthik_subramanian_resume_2page_ats.md",
     "sections": [
       "summary",
       "skills",
@@ -14,6 +14,7 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
+      "Development Frameworks",
       "Mobile Development",
       "Android Release Management",
       "SDET / QE / Automation",
@@ -31,7 +32,7 @@
     "id": "1page",
     "name": "1-Page Executive Summary",
     "description": "A brief 1-page summary focusing on high-level achievements and recent roles.",
-    "file": "/resumes/karthik_subramanian_resume_1page.md",
+    "file": "./resumes/karthik_subramanian_resume_1page.md",
     "sections": [
       "summary",
       "skills",
@@ -41,6 +42,7 @@
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
       "SDET / QE / Automation",
+      "Development Frameworks",
       "Mobile Development",
       "Android Release Management",
       "CI/CD / DevOps / Tooling",
@@ -59,7 +61,7 @@
     "id": "flutter",
     "name": "Flutter Developer",
     "description": "Tailored towards mobile application development roles.",
-    "file": "/resumes/karthik_subramanian_resume_flutter.md",
+    "file": "./resumes/karthik_subramanian_resume_flutter.md",
     "sections": [
       "summary",
       "skills",
@@ -70,6 +72,7 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
+      "Development Frameworks",
       "Mobile Development",
       "Android Release Management",
       "Data / Backend / Platform",
@@ -83,7 +86,7 @@
     "id": "sdet-qe",
     "name": "Senior SDET / QE",
     "description": "Tailored towards test automation and quality engineering roles.",
-    "file": "/resumes/karthik_subramanian_resume_sdet_qe.md",
+    "file": "./resumes/karthik_subramanian_resume_sdet_qe.md",
     "sections": [
       "summary",
       "skills",
@@ -94,6 +97,7 @@
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
       "SDET / QE / Automation",
+      "Development Frameworks",
       "CI/CD / DevOps / Tooling",
       "Applications & Systems Supported",
       "Domain Expertise"
@@ -107,7 +111,7 @@
     "id": "hybrid",
     "name": "Hybrid Engineer (SDET + Mobile)",
     "description": "Focuses evenly on both mobile development and SDET capabilities.",
-    "file": "/resumes/karthik_subramanian_resume_hybrid.md",
+    "file": "./resumes/karthik_subramanian_resume_hybrid.md",
     "sections": [
       "summary",
       "skills",
@@ -118,6 +122,7 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
+      "Development Frameworks",
       "Mobile Development",
       "Android Release Management",
       "SDET / QE / Automation",
@@ -132,5 +137,20 @@
       "experience": "Experience",
       "projects": "Mobile & Web Development Projects"
     }
+  },
+  {
+    "id": "ats-targeted",
+    "name": "ATS Targeted (paste JD)",
+    "description": "Flat keyword block optimized for ATS parsing. Fill in role title and JD keywords before printing.",
+    "file": "./resumes/karthik_subramanian_resume_ats_targeted.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "education"
+    ],
+    "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
+    "skillTypes": [],
+    "profileTitle": "[Target Role Title]"
   }
 ]

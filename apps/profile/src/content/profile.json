@@ -8,17 +8,20 @@
     {
       "platform": "LinkedIn",
       "url": "https://www.linkedin.com/in/karthik-s-b3552995",
-      "display": "linkedin.com/in/karthik-s-b3552995"
+      "display": "linkedin.com/in/karthik-s-b3552995",
+      "icon": "UserCircle"
     },
     {
       "platform": "Play Store",
       "url": "https://play.google.com/store/apps/developer?id=Ni+Studios",
-      "display": "Ni Studios"
+      "display": "Ni Studios",
+      "icon": "Smartphone"
     },
     {
       "platform": "Portfolio",
       "url": "https://nistudious.github.io/home/",
-      "display": "nistudious.github.io/home/"
+      "display": "nistudious.github.io/home/",
+      "icon": "Globe"
     }
   ],
   "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
