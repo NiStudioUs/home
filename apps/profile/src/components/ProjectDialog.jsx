@@ -44,14 +44,14 @@ export default function ProjectDialog({ project, onClose }) {
                 Launch Website <ExternalLink size={16} />
               </a>
             )}
-            {details.githubUrl && (
-              <a href={details.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Source Code <Code size={16} />
+            {(details.demoUrl || details.liveUrl) && (
+              <a href={details.demoUrl || details.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Live Demo <Globe size={16} />
               </a>
             )}
-            {details.liveUrl && (
-              <a href={details.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Live Demo <Globe size={16} />
+            {details.appId && (
+              <a href={`/#/app/${details.appId}`} target="_parent" className="btn btn-outline" style={{ marginLeft: 'auto' }}>
+                App Page <ExternalLink size={16} />
               </a>
             )}
           </div>

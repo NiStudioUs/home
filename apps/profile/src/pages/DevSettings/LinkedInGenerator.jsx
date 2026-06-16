@@ -22,10 +22,6 @@ export default function LinkedInGenerator() {
   const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
 
-  // Route Protection: Prevent access in production
-  if (!import.meta.env.DEV) {
-    return <NotFound />;
-  }
 
   const [roles, setRoles] = useState({
     'SDET QE': true,

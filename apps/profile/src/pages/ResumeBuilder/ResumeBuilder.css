@@ -123,6 +123,10 @@
   border: 1px solid var(--border-color);
 }
 
+.resume-preview-content thead {
+  display: none;
+}
+
 .resume-preview-content th {
   padding: 0.75rem 1rem;
   border-bottom: 2px solid var(--border-color);
@@ -152,12 +156,31 @@
   vertical-align: top;
 }
 
+/* Reset for the custom HTML contact table */
+.resume-preview-content table.profile-contact-table,
+.resume-preview-content table.profile-contact-table td,
+.resume-preview-content table.profile-contact-table tr {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.resume-preview-content table.profile-contact-table {
+  width: auto !important;
+  margin-right: auto;
+}
+
+.resume-preview-content table.profile-contact-table td:first-child {
+  color: inherit !important;
+  font-weight: normal !important;
+  padding-right: 2rem !important;
+}
+
 .resume-preview-content h2 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #1a4b8c;
-  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(26, 75, 140, 0.25);
+  padding-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #1a4b8c;

@@ -24,7 +24,7 @@ export function generateResumeMarkdown(resumeConfig) {
 
   const h = resumeConfig.headers || {};
   const hSummary = h.summary || 'Professional Summary';
-  const hSkills = h.skills || 'Core Skills';
+  const hSkills = h.skills || 'Key Skills';
   const hExperience = h.experience || 'Professional Experience';
   const hProjects = h.projects || 'Selected Mobile & Web Development Projects';
   const hHighlights = h.highlights || 'Professional Highlights';

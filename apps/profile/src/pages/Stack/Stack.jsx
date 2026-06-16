@@ -30,7 +30,7 @@ export default function Stack() {
             </h2>
             <ul className="stack-items-list">
               {category.skills.map((skill, i) => (
-                <li key={i}>{skill}</li>
+                <li key={i}>{skill.replace(/<br>/g, '')}</li>
               ))}
             </ul>
           </div>

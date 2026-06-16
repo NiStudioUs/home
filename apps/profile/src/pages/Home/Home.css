@@ -172,6 +172,33 @@
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Core Tech Stack Mobile Cards */
+  .skills-table, .skills-table tbody, .skills-table tr, .skills-table td {
+    display: block;
+    width: 100% !important;
+  }
+  
+  .skills-table tr {
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-default);
+  }
+  
+  .skills-table td.skill-category-name {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .skills-table td.skill-category-items {
+    padding: 0.5rem 0 0 0;
+    line-height: 1.5;
+  }
 }
 
 .home-section {

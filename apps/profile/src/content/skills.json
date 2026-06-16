@@ -1,57 +1,98 @@
 {
   "categories": [
     {
-      "name": "SDET / QE / Automation",
+      "name": "Automation",
       "skills": [
-        "Web Automation (Selenium, Cypress, Playwright)", "API Automation (REST Assured, Karate, Bruno)", "Mobile Automation (Appium, Winium)", "Test Frameworks (BDD Cucumber, Mocha Cypress Tests, Playwright Test, TestNG, Kotlin BDD REST Assured, JUnit, JMeter Groovy)", "TypeScript", "Test Data Management & Mocking (MSW)"
+        "API Automation (REST Assured, Karate, Bruno)",
+        "Desktop Automation (Winium)",
+        "Mobile Automation (Appium)",
+        "Test Data Management & Mocking (MSW)",
+        "Web Automation (Selenium, Cypress, Playwright)"
       ]
     },
     {
-      "name": "Domain Expertise",
+      "name": "CI/CD",
       "skills": [
-        "Retail Banking", "SME Banking", "Lending", "Deposits", "Customer Onboarding", "Retail Operations", "Digital Mobile Channels", "CDD / CRA / Risk Assessment", "Document workflow and role-based access validation"
+        "Azure DevOps & Pipelines",
+        "Docker",
+        "Git / GitHub Actions / Workflows",
+        "Jenkins"
       ]
     },
     {
-      "name": "Applications & Systems Supported",
+      "name": "Development",
       "skills": [
-        "Temenos T24 (Payments & Cards)", "Metro Bank Mobile App (Android/iOS)", "Allica Deposits & Lending", "Customer Onboarding (Internal/External)", "Bridge (Business Rewards, Working Capital, Pension Profiles, Address-Manager) / CashFlow / BackOffice", "CMS (Asset Finance Application)", "FMS (Deposit & Lending CRM)", "Saascada", "Hubspot", "Full Circle", "GoDiligent", "World Check1", "Companies House UK"
+        "Flutter Cross Platform Apps (Android, Windows, Web, Linux)",
+        "GenAI assisted React applications using vite as bundler"
       ]
     },
     {
-      "name": "Development Frameworks",
+      "name": "Domain",
       "skills": [
-        "Flutter BLoC", "Flutter Riverpod", "Vite (Front-end)"
+        "CDD / CRA / Risk Assessment",
+        "Customer Onboarding",
+        "Deposits",
+        "Digital Mobile Channels",
+        "Document workflow and role-based access validation",
+        "Lending",
+        "Retail Banking",
+        "Retail Operations",
+        "SME Banking"
       ]
     },
     {
-      "name": "Mobile Development",
+      "name": "Frameworks",
       "skills": [
-        "Flutter Development (Mobile, Web)", "Dart", "Android Development (Kotlin)", "Cross-platform Application Development", "Offline-first App Design"
-      ]
-    },
-    {
-      "name": "Android Release Management",
-      "skills": [
-        "Google Play Store Publishing", "App Bundling (APK/AAB)", "Android App Flavors", "ADB Validation & Testing"
-      ]
-    },
-    {
-      "name": "CI/CD / DevOps / Tooling",
-      "skills": [
-        "Azure DevOps & Pipelines", "Azure Key Vault", "Jenkins", "Git / GitHub Actions / Workflows", "CODEOWNERS", "Docker / Docker Compose", "Maven / Gradle", "Postman / JMeter", "Sauce Labs", "IntelliJ IDE / Eclipse IDE", "LaunchDarkly", "Heap", "Report Portal", "Zephyr Squad", "GitHub Copilot (GenAI)"
-      ]
-    },
-    {
-      "name": "Data / Backend / Platform",
-      "skills": [
-        "SQLite", "Drift", "Room", "Coroutines", "MSSQL Test Containers", "Liquibase", "Microservices test support"
+        "Development Frameworks: BLoC, Riverpod",
+        "Flutter BLoC",
+        "Flutter Riverpod",
+        "<br>Test Frameworks: BDD Cucumber, TestNG, JUnit",
+        "Vite (Front-end)"
       ]
     },
     {
       "name": "Languages",
       "skills": [
-        "Java", "Kotlin", "Dart", "TypeScript"
+        "Dart",
+        "Java",
+        "Kotlin",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Release",
+      "skills": [
+        "AAB Builds, APK Builds with Flavours such as Dev, Prod",
+        "Google PlayStore Publishing to Internal Tests > Closed Testing > Beta testing > Prod Release"
+      ]
+    },
+    {
+      "name": "Systems Supported",
+      "skills": [
+        "Asset Finance",
+        "Business Rewards & Operations",
+        "Customer Onboarding",
+        "Deposits & Lending Ecosystems",
+        "FMS (CRM)",
+        "Mobile Application Testing",
+        "SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1)",
+        "Temenos T24 (Core Banking)"
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        "Azure Key Vault",
+        "CODEOWNERS",
+        "Front End Heap Analytics",
+        "GitHub Copilot (GenAI)",
+        "IntelliJ IDE / Eclipse IDE",
+        "LaunchDarkly",
+        "Maven / Gradle",
+        "Postman / JMeter",
+        "Report Portal",
+        "Sauce Labs",
+        "Zephyr Squad"
       ]
     }
   ]

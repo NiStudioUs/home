@@ -12,7 +12,7 @@ Azure DevOps, Azure Key Vault, Jenkins, GitHub Actions, Docker, Maven, Gradle,
 MSSQL, SQLite, Drift, Liquibase, Microservices, CI/CD, SDET, QE Automation,
 Test Lead, Staff Engineer, Fintech, Retail Banking, SME Banking
 
-## Core Skills
+## Key Skills
 
 Flutter, Dart, Kotlin, Selenium, Playwright, Java, TypeScript, CI/CD, Azure DevOps, Microservices
 

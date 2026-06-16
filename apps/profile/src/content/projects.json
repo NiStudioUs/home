@@ -50,6 +50,7 @@
   },
   {
     "id": "scribble",
+    "appId": "scribble-notes",
     "name": "Scribble: Notes, Diary & Tasks",
     "path": "/home/karthik/Development/projects/app/Flutter_notesApp",
     "status": "Live",
@@ -816,6 +817,7 @@
   },
   {
     "id": "sms-stack",
+    "appId": "sms-stack",
     "name": "SMS Stack",
     "path": "/home/karthik/Development/projects/app/sms_stack_manager",
     "status": "Internal Beta",
@@ -1499,6 +1501,8 @@
   },
   {
     "id": "iky",
+    "appId": "people-iky-v2",
+    "demoUrl": "/home/app/iky/demo/",
     "name": "IKY",
     "path": "/home/karthik/Development/projects/app/people-app-iky-v2",
     "status": "Active Development",
@@ -1942,6 +1946,7 @@
   },
   {
     "id": "dev-home",
+    "appId": "dev-home",
     "name": "Developer Home",
     "path": "/home/karthik/Development/projects/website/home",
     "status": "Internal Beta",
@@ -2019,6 +2024,7 @@
   },
   {
     "id": "learning-gen-ai",
+    "appId": "learning-hub",
     "name": "Learning gen-AI",
     "path": "/home/karthik/Development/projects/website/learning",
     "status": "Live",

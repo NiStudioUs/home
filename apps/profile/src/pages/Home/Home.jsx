@@ -90,7 +90,7 @@ export default function Home() {
               {skillsData.categories.slice(0, 4).map((category, idx) => (
                 <tr key={idx}>
                   <td className="skill-category-name" style={{ width: '200px' }}>{category.name}</td>
-                  <td className="skill-category-items">{category.skills.join(', ')}</td>
+                  <td className="skill-category-items">{category.skills.join(', ').replace(/<br>/g, '')}</td>
                 </tr>
               ))}
             </tbody>

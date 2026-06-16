@@ -14,14 +14,14 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
-      "Development Frameworks",
-      "Mobile Development",
-      "Android Release Management",
-      "SDET / QE / Automation",
-      "CI/CD / DevOps / Tooling",
-      "Data / Backend / Platform",
-      "Applications & Systems Supported",
-      "Domain Expertise"
+      "Automation",
+      "CI/CD",
+      "Development",
+      "Domain",
+      "Frameworks",
+      "Release",
+      "Systems Supported",
+      "Tools"
     ],
     "profileTitle": "Staff Engineer - Mobile and Quality Engineer Lead",
     "headers": {
@@ -41,20 +41,20 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
-      "SDET / QE / Automation",
-      "Development Frameworks",
-      "Mobile Development",
-      "Android Release Management",
-      "CI/CD / DevOps / Tooling",
-      "Data / Backend / Platform",
-      "Applications & Systems Supported"
+      "Automation",
+      "CI/CD",
+      "Development",
+      "Frameworks",
+      "Release",
+      "Systems Supported",
+      "Tools"
     ],
     "profileTitle": "Staff Engineer - Mobile and Quality Engineer Lead",
     "headers": {
       "summary": "Summary",
       "skills": "Key Skills",
       "experience": "Experience",
-      "projects": "Mobile & Web Development Projects"
+      "projects": "Development Projects"
     }
   },
   {
@@ -72,13 +72,13 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
-      "Development Frameworks",
-      "Mobile Development",
-      "Android Release Management",
-      "Data / Backend / Platform",
-      "CI/CD / DevOps / Tooling",
-      "SDET / QE / Automation",
-      "Applications & Systems Supported"
+      "Automation",
+      "CI/CD",
+      "Development",
+      "Frameworks",
+      "Release",
+      "Systems Supported",
+      "Tools"
     ],
     "profileTitle": "Staff Engineer - Mobile and Quality Engineer Lead"
   },
@@ -96,11 +96,12 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
-      "SDET / QE / Automation",
-      "Development Frameworks",
-      "CI/CD / DevOps / Tooling",
-      "Applications & Systems Supported",
-      "Domain Expertise"
+      "Automation",
+      "CI/CD",
+      "Domain",
+      "Frameworks",
+      "Systems Supported",
+      "Tools"
     ],
     "profileTitle": "Staff Engineer - Mobile and Quality Engineer Lead",
     "headers": {
@@ -122,20 +123,20 @@
     ],
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [
-      "Development Frameworks",
-      "Mobile Development",
-      "Android Release Management",
-      "SDET / QE / Automation",
-      "CI/CD / DevOps / Tooling",
-      "Data / Backend / Platform",
-      "Applications & Systems Supported",
-      "Domain Expertise"
+      "Automation",
+      "CI/CD",
+      "Development",
+      "Domain",
+      "Frameworks",
+      "Release",
+      "Systems Supported",
+      "Tools"
     ],
     "profileTitle": "Staff Engineer - Mobile and Quality Engineer Lead",
     "headers": {
       "skills": "Skills",
       "experience": "Experience",
-      "projects": "Mobile & Web Development Projects"
+      "projects": "Development Projects"
     }
   },
   {

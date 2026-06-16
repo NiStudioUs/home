@@ -1,13 +1,10 @@
 # Karthik Subramanian
 
-**Staff Engineer - Mobile and Quality Engineer Lead**
+### Staff Engineer - Mobile and Quality Engineer Lead
+<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
 
-Erode, Tamil Nadu, India  
-Email: [Your Email Address]  
-Phone: [Your Phone Number]  
-LinkedIn: www.linkedin.com/in/karthik-s-b3552995  
-Play Store: https://play.google.com/store/apps/developer?id=Ni+Studios  
-Portfolio: https://nistudious.github.io/home/  
+{{SOCIAL_LINKS}}
 
 ---
 
@@ -17,26 +14,26 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Core Skills
+## Key Skills
 
-| Category | Skills |
+| | |
 | --- | --- |
-| **Android Release Management** | Google Play Store Publishing, App Bundling (APK/AAB), Android App Flavors, ADB Validation & Testing |
-| **Applications & Systems Supported** | Banking Core & Mobile (Temenos T24, Metro Bank, Saascada), Lending & CRM (Allica, CMS, FMS, Hubspot), Onboarding & Risk (Bridge, GoDiligent, World Check1, Companies House UK, Full Circle) |
-| **CI/CD / DevOps / Tooling** | Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git / GitHub Actions / Workflows, CODEOWNERS, Docker / Docker Compose, Maven / Gradle, Postman / JMeter, Sauce Labs |
-| **Data / Backend / Platform** | SQLite, Drift, Room, Coroutines, MSSQL Test Containers, Liquibase, Microservices test support |
-| **Domain Expertise** | Retail Banking, SME Banking, Lending, Deposits, Customer Onboarding, Retail Operations, Digital Mobile Channels, CDD / CRA / Risk Assessment, Document workflow |
-| **Mobile Development** | Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), Cross-platform Application Development, Offline-first App Design, BLoC Architecture |
-| **SDET / QE / Automation** | Web Automation (Selenium, Cypress, Playwright), API Automation (REST Assured, Karate, Bruno), Mobile Automation (Appium), Test Frameworks (BDD Cucumber, TestNG, JUnit), TypeScript, Test Data Management & Mocking (MSW) |
+| **Automation** | API Automation (REST Assured, Karate, Bruno), Desktop Automation (Winium), Mobile Automation (Appium), Test Data Management & Mocking (MSW), Web Automation (Selenium, Cypress, Playwright) |
+| **CI/CD** | Azure DevOps & Pipelines, Docker, Git / GitHub Actions / Workflows, Jenkins |
+| **Development** | Flutter Cross Platform Apps (Android, Windows, Web, Linux), GenAI assisted React applications using vite as bundler |
+| **Domain** | CDD / CRA / Risk Assessment, Customer Onboarding, Deposits, Digital Mobile Channels, Document workflow and role-based access validation, Lending, Retail Banking, Retail Operations, SME Banking |
+| **Frameworks** | Development Frameworks: BLoC, Riverpod, Flutter BLoC, Flutter Riverpod, <br>Test Frameworks: BDD Cucumber, TestNG, JUnit, Vite (Front-end) |
+| **Release** | AAB Builds, APK Builds with Flavours such as Dev, Prod, Google PlayStore Publishing to Internal Tests > Closed Testing > Beta testing > Prod Release |
+| **Systems Supported** | Asset Finance, Business Rewards & Operations, Customer Onboarding, Deposits & Lending Ecosystems, FMS (CRM), Mobile Application Testing, SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1), Temenos T24 (Core Banking) |
+| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, LaunchDarkly, Maven / Gradle, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
 
 ---
 
-## Professional Experience
+## Experience
 
 ### Senior SDET  
 **Allica Bank, UK**  
 **May 2023 – Present**
-
 - **Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
@@ -47,10 +44,8 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
 
 ### Principal Software Engineer  
-**Maveric Systems**  
-**January 2021 – May 2023**  
-**Client: Allica Bank Ltd, UK**
-
+**Maveric Systems | Client: Allica Bank Ltd, UK**  
+**January 2021 – May 2023**
 - Led and contributed to automation engineering for lending and deposits within Allica Bank’s SME banking ecosystem.
 - Created a framework with **Selenium Page-Factory, Cucumber BDD** and modular class methods to invoke Page-Objects from feature files to minimize maintenance.
 - Wrote numerous Automation test scripts for Lending and Deposits.
@@ -59,10 +54,8 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Imparted solutions for Automation issues, Test Requirement analysis, and Run plans for Automation Execution.
 
 ### Senior Test Engineer  
-**Maveric Systems**  
-**September 2018 – December 2020**  
-**Client: Metro Bank Ltd, UK**
-
+**Maveric Systems | Client: Metro Bank Ltd, UK**  
+**September 2018 – December 2020**
 - Delivered automation across web, mobile, desktop, and API channels for retail and commercial banking workflows.
 - Worked on modules including **Digital Mobile Application (Android & iOS)**, T24 Banking Services, Cards, Transfers, Payments (SWIFT, SEPA, Faster Payment), and Retail Operations.
 - Delivered projects including **P&C Automation (Web)**, T24 UI Upgrade Automation (Web), Mobile BAU Automation (Web, Mobile & API), and Mobile SCA Automation (API).
@@ -73,13 +66,12 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Selected Mobile & Web Development Projects
+## Development Projects
 
 ### Raspberry Pi Home Lab
 - **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
 
 ### Flutter Notes App
-**Repo:** `vskarthik9896/Flutter_notesApp`  
 **Tech:** Flutter, Dart, mobile app development, notes/productivity workflows
 
 - **Engineered a production-ready, local-first Flutter notes application** featuring BLoC state management, biometric authentication, and robust offline-first SQLite synchronization.
@@ -103,19 +95,18 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Professional Highlights
 
-- 9+ years of experience since **August 2017**
+- 9+ years of experience in **QE/SDET automation**
 - Strong hybrid profile across **mobile development + SDET/QE automation**
 - Built and published Flutter-based Android applications through **Google Play Store**
 - Strong banking domain exposure across **customer onboarding, lending, deposits, mobile channels, and risk workflows**
-- Recent work-profile evidence includes **144 commits** and **44 PRs** across **9 repositories**
 
 ---
 
 ## Awards & Accomplishments
 
-- Best Performer Award — Client Recognition (2021)
-- Extra-Miler Award — Maveric Systems (2022)
-- Hackathon Winner — Team Recognition (Allica Hackathon 2021)
+- Best Performer Award — Client Recognition
+- Extra-Miler Award — Maveric Systems
+- Hackathon Winner — Team Recognition (Allica Hackathon)
 - Appreciated for T24 UI automation and cost-saving purge-card-data framework contribution
 - Appreciated for Asset Finance automation including COB and multi-asset automation
 - Recognized for integration test framework development using test containers and dynamic web automation approaches

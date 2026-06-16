@@ -1,12 +1,10 @@
 # Karthik Subramanian
 
-**Staff Engineer - Mobile and Quality Engineer Lead**
+### Staff Engineer - Mobile and Quality Engineer Lead
+<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
 
-Erode, Tamil Nadu, India  
-[Your Email Address] | [Your Phone Number]  
-LinkedIn: www.linkedin.com/in/karthik-s-b3552995  
-Play Store: https://play.google.com/store/apps/developer?id=Ni+Studios  
-Portfolio: https://nistudious.github.io/home/
+{{SOCIAL_LINKS}}
 
 ---
 
@@ -18,14 +16,16 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Skills
 
-| Category | Skills |
+| | |
 | --- | --- |
-| **Automation** | Web Automation (Selenium, Cypress, Playwright), API Automation (REST Assured, Karate, Bruno), Mobile (Appium), Test Frameworks (BDD Cucumber, TestNG, JUnit), TypeScript |
-| **CI/CD** | Azure DevOps & Pipelines, Azure Key Vault, Jenkins, Git/GitHub Actions & Workflows, CODEOWNERS, Docker |
-| **Domain** | Banking, Lending, Deposits, Customer Onboarding, CDD / CRA, CRM |
-| **Mobile** | Flutter Development (Mobile, Web), Dart, Android Development (Kotlin), BLoC, SQLite, Drift |
-| **Release** | Google Play Store Publishing, App Bundling (APK/AAB), Flavors, ADB validation, Gradle |
-| **Systems Supported** | Temenos T24, Metro Bank Mobile, Allica Deposits/Lending, CMS, FMS, Saascada, Hubspot, Full Circle, GoDiligent, World Check1, Companies House UK |
+| **Automation** | API Automation (REST Assured, Karate, Bruno), Desktop Automation (Winium), Mobile Automation (Appium), Test Data Management & Mocking (MSW), Web Automation (Selenium, Cypress, Playwright) |
+| **CI/CD** | Azure DevOps & Pipelines, Docker, Git / GitHub Actions / Workflows, Jenkins |
+| **Development** | Flutter Cross Platform Apps (Android, Windows, Web, Linux), GenAI assisted React applications using vite as bundler |
+| **Domain** | CDD / CRA / Risk Assessment, Customer Onboarding, Deposits, Digital Mobile Channels, Document workflow and role-based access validation, Lending, Retail Banking, Retail Operations, SME Banking |
+| **Frameworks** | Development Frameworks: BLoC, Riverpod, Flutter BLoC, Flutter Riverpod, <br>Test Frameworks: BDD Cucumber, TestNG, JUnit, Vite (Front-end) |
+| **Release** | AAB Builds, APK Builds with Flavours such as Dev, Prod, Google PlayStore Publishing to Internal Tests > Closed Testing > Beta testing > Prod Release |
+| **Systems Supported** | Asset Finance, Business Rewards & Operations, Customer Onboarding, Deposits & Lending Ecosystems, FMS (CRM), Mobile Application Testing, SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1), Temenos T24 (Core Banking) |
+| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, LaunchDarkly, Maven / Gradle, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
 
 ---
 
@@ -56,7 +56,7 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
-## Mobile & Web Development Projects
+## Development Projects
 
 ### Raspberry Pi Home Lab
 - **Architected a self-hosted client-server ecosystem on a Raspberry Pi 5** using Docker and an **Nginx reverse proxy**, deploying privacy-focused applications including Immich (photo management), Pi-Hole (network-wide ad blocking and local DNS routing), and Jellyfin (media content management).
