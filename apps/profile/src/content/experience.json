@@ -7,12 +7,14 @@
     "endDate": "December 2025",
     "bullets": [
       "Architected and engineered the enterprise-level @allica/shared-e2e platform library, securing Azure Key Vault integration and designing a local MSAL mock server to streamline role-based JWT generation across teams.",
+      "Architect and evolve the organisation's Playwright (JavaScript) automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.",
       "Spearheaded CI pipeline optimizations by designing a smart Cypress spec filtering algorithm and parallel local execution architecture, reducing pipeline runtimes by over 60% and eliminating redundant file scanning.",
       "Set technical standards with modular REST Assured test structures (JsonMaskingValidator and JsonUtils).",
       "Transitioned widespread API suites from Postman to Bruno for superior Git integration.",
       "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Blacklisting, and On-Behalf-Of functionality.",
       "Led GenAI (GitHub Copilot) adoption initiatives across the Quality Engineering team for accelerated documentation and test standards.",
-      "Established Playwright automation for the team on a designated repository, including the configuration of default reporting structures."
+      "Established Playwright automation for the team on a designated repository, including the configuration of default reporting structures.",
+      "Authored YAML CI/CD pipeline configurations in Azure DevOps for backend microservices, enabling continuous deployment at scale across engineering teams."
     ],
     "resumeBullets": [
       {
@@ -26,6 +28,15 @@
         ]
       },
       {
+        "text": "**Architect and evolve** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
+        ]
+      },
+      {
         "text": "**Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.",
         "resumeTypes": [
           "sdet-qe",
@@ -33,6 +44,15 @@
           "1page",
           "2page-ats",
           "flutter"
+        ]
+      },
+      {
+        "text": "**Authored YAML CI/CD pipeline configurations** in **Azure DevOps** for backend microservices, enabling continuous deployment at scale across engineering teams.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats"
         ]
       }
     ],
