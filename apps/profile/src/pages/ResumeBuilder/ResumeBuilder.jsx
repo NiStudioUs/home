@@ -169,7 +169,7 @@ export default function ResumeBuilder() {
           if (splitPoint === -1) return roleBlock;
           const headerPart = roleBlock.substring(0, splitPoint + 1);
           
-          if (roleBlock.includes('Present') || roleBlock.includes('May 2023')) {
+          if (roleBlock.includes('Present') || (roleBlock.includes('May 2023') && !roleBlock.includes('2021'))) {
              return headerPart + "*Architected and engineered enterprise-grade E2E test automation platforms using Mocha, Cypress, and Playwright. Spearheaded CI/CD pipeline optimizations that reduced test execution times by 60%, drove organizational GenAI adoption to boost engineering productivity, and delivered exhaustive automation for critical CDD and onboarding microservices.*\n";
           }
           if (roleBlock.includes('2021') && roleBlock.includes('2023')) {
