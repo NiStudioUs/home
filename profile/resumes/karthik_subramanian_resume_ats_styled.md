@@ -1,0 +1,67 @@
+# Karthik Subramanian
+
+### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
+<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
+
+{{SOCIAL_LINKS}}
+
+---
+
+## Professional Summary
+
+Versatile Automation Lead and QE Platform Architect with 9+ years of experience engineering high-performance automation platforms and testing enterprise banking systems. Proven track record of driving developer velocity, architecting secure CI/CD release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with scalable automation frameworks and end-to-end quality engineering.
+
+---
+
+## Key Skills
+
+**Core Skills:** Cypress, Playwright, Selenium, REST Assured, Karate, Bruno, Appium, Azure DevOps, GitHub Actions, Docker, BDD, Cucumber, TestNG, JUnit, TypeScript, Flutter, Dart, BLoC, CI/CD, Fintech, Banking, CDD, KYC, GenAI, GitHub Copilot, MSAL, JWT.
+
+---
+
+## Experience
+
+### Senior SDET — Allica Bank, UK  
+**May 2023 – Present**
+- **Architected** the enterprise-level `@allica/shared-e2e` platform library adopted across 4 engineering squads, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation.
+- **Architect and evolve** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.
+- **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
+- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
+- Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
+- Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
+- Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
+- **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
+- **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
+- **Authored YAML CI/CD pipeline configurations** in **Azure DevOps** for backend microservices, enabling continuous deployment at scale across engineering teams.
+
+### Principal Software Engineer — Maveric Systems  
+**Jan 2021 – May 2023**
+- Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
+- Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
+- Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
+- **Mentored 5+ junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
+
+### Senior Test Engineer — Maveric Systems  
+**Sep 2018 – Dec 2020**
+- Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.
+- Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.
+- Created Data Creation frameworks to hasten release testing, and managed Sauce Labs compatibility and regression testing across 20+ device configurations.
+- **Collaborated closely with product owners and developers** to ensure defect-free releases for core banking modules.
+
+---
+
+## Professional Highlights
+
+- Extensive experience with Continuous Integration Tools Jenkins and Azure DevOps – creating repos, Self-Hosted Agents, YAML pipelines with Scheduler, Staging or Multi-Job Configuration, Publishing Artifacts, Email Reporting
+- Self-Learned Flutter (dart) and BLoC pattern to develop and publish Android application in Google Play Store
+- Strong domain ownership in banking/onboarding systems
+- Experience across internal and external customer onboarding, CRM/bridge, deposits, lending and risk systems
+- Strong CI/CD awareness and framework optimization mindset
+
+---
+
+## Education
+
+**Executive PG Program in Financial Services and IT Assurance** — LIBA, Chennai  
+**B.E. Computer Science and Engineering** — Velalar College of Engineering and Technology, Erode
