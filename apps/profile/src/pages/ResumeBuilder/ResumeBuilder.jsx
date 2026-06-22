@@ -162,26 +162,28 @@ export default function ResumeBuilder() {
 
     if (briefMode) {
       // 1. Universal Experience Summarization
-      const expSectionRegex = /(## Experience\s*\r?\n)([\s\S]*?)(?=\r?\n## |\r?\n---|$)/;
-      content = content.replace(expSectionRegex, (match, header, body) => {
-        let newBody = body.replace(/(### [\s\S]*?)(?=\r?\n### |\r?\n---|$)/g, (roleBlock) => {
-          const splitPoint = roleBlock.indexOf('\n- ');
-          if (splitPoint === -1) return roleBlock;
-          const headerPart = roleBlock.substring(0, splitPoint + 1);
-          
-          if (roleBlock.includes('Present') || (roleBlock.includes('May 2023') && !roleBlock.includes('2021'))) {
-             return headerPart + "*Architected and engineered enterprise-grade E2E test automation platforms using Mocha, Cypress, and Playwright. Spearheaded CI/CD pipeline optimizations that reduced test execution times by 60%, drove organizational GenAI adoption to boost engineering productivity, and delivered exhaustive automation for critical CDD and onboarding microservices.*\n";
-          }
-          if (roleBlock.includes('2021') && roleBlock.includes('2023')) {
-             return headerPart + "*Architected and delivered end-to-end test automation frameworks across lending and deposits domains using Selenium, Cucumber BDD, and Docker Test Containers. Directed QA execution for Asset Finance projects while mentoring teams and optimizing automation infrastructure.*\n";
-          }
-          if (roleBlock.includes('2018') && roleBlock.includes('2020')) {
-             return headerPart + "*Engineered comprehensive automation across Mobile (Android/iOS), Web, and API channels for retail banking modules including T24, payments, and commercial operations. Accelerated release cycles by establishing robust test data creation frameworks and executing rigorous compatibility testing via Sauce Labs.*\n";
-          }
-          return roleBlock;
+      if (selectedResume?.id !== 'ats-styled') {
+        const expSectionRegex = /(## Experience\s*\r?\n)([\s\S]*?)(?=\r?\n## |\r?\n---|$)/;
+        content = content.replace(expSectionRegex, (match, header, body) => {
+          let newBody = body.replace(/(### [\s\S]*?)(?=\r?\n### |\r?\n---|$)/g, (roleBlock) => {
+            const splitPoint = roleBlock.indexOf('\n- ');
+            if (splitPoint === -1) return roleBlock;
+            const headerPart = roleBlock.substring(0, splitPoint + 1);
+            
+            if (roleBlock.includes('Present') || (roleBlock.includes('May 2023') && !roleBlock.includes('2021'))) {
+               return headerPart + "*Architected and engineered enterprise-grade E2E test automation platforms using Mocha, Cypress, and Playwright. Spearheaded CI/CD pipeline optimizations that reduced test execution times by 60%, drove organizational GenAI adoption to boost engineering productivity, and delivered exhaustive automation for critical CDD and onboarding microservices.*\n";
+            }
+            if (roleBlock.includes('2021') && roleBlock.includes('2023')) {
+               return headerPart + "*Architected and delivered end-to-end test automation frameworks across lending and deposits domains using Selenium, Cucumber BDD, and Docker Test Containers. Directed QA execution for Asset Finance projects while mentoring teams and optimizing automation infrastructure.*\n";
+            }
+            if (roleBlock.includes('2018') && roleBlock.includes('2020')) {
+               return headerPart + "*Engineered comprehensive automation across Mobile (Android/iOS), Web, and API channels for retail banking modules including T24, payments, and commercial operations. Accelerated release cycles by establishing robust test data creation frameworks and executing rigorous compatibility testing via Sauce Labs.*\n";
+            }
+            return roleBlock;
+          });
+          return header + newBody;
         });
-        return header + newBody;
-      });
+      }
 
       // 2. Development Projects Summarization (1-2 lines each)
       const projectsMatch = /(## Development Projects\s*\r?\n)([\s\S]*?)(?=\r?\n---)/;
@@ -198,6 +200,10 @@ export default function ResumeBuilder() {
       // 4. Awards & Accomplishments Summarization
       const awardsMatch = /(## Awards & Accomplishments\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
       content = content.replace(awardsMatch, "$1*Recognized with multiple industry awards including \"Best Performer,\" \"Extra-Miler,\" and \"Hackathon Winner\" for exceptional contributions to T24 UI automation, Asset Finance frameworks, and innovative integration test methodologies.*\n\n");
+
+      // 5. Professional Summary Summarization
+      const summaryMatch = /(## (?:Professional )?Summary\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
+      content = content.replace(summaryMatch, "$1Versatile Automation Lead and QE Architect with 9+ years of experience engineering high-performance automation platforms for enterprise banking. Proven track record of architecting scalable CI/CD pipelines, driving developer velocity, and leading organizational GenAI adoption.\n\n");
     }
 
     // Preserve empty new lines by injecting non-breaking spaces
@@ -343,6 +349,24 @@ export default function ResumeBuilder() {
               .resume-preview-content th {
                 font-weight: ${headingWeight} !important;
               }
+              ${selectedResume?.id === 'ats-styled' ? `
+              .resume-preview-content h1,
+              .resume-preview-content h2,
+              .resume-preview-content h3,
+              .resume-preview-content h4,
+              .resume-preview-content h5,
+              .resume-preview-content .resume-socials a,
+              .resume-preview-content .resume-socials span {
+                color: #000000 !important;
+              }
+              .resume-preview-content hr {
+                border-color: #bbbbbb !important;
+                margin: 1.2rem 0 !important;
+              }
+              .resume-preview-content {
+                color: #000000 !important;
+              }
+              ` : ''}
             `}
           </style>
           <div className="resume-actions">

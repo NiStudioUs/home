@@ -153,5 +153,24 @@
     "summary": "Versatile Software Engineer and QE Platform Leader with 9+ years of experience engineering high-performance automation platforms, banking systems, and cross-platform Flutter applications. Proven track record of driving developer velocity, architecting secure CI/CD and release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with production-ready full-stack and mobile development.",
     "skillTypes": [],
     "profileTitle": "[Target Role Title]"
+  },
+  {
+    "id": "ats-styled",
+    "name": "ATS Styled (Review Optimized)",
+    "description": "ATS-friendly plain text resume optimized for parsers based on expert feedback. Avoids tables and includes explicit keywords and metrics.",
+    "file": "./resumes/karthik_subramanian_resume_ats_styled.md",
+    "sections": [
+      "summary",
+      "skills",
+      "experience",
+      "highlights",
+      "education"
+    ],
+    "summary": "Versatile Automation Lead and QE Platform Architect with 9+ years of experience engineering high-performance automation platforms and testing enterprise banking systems. Proven track record of driving developer velocity, architecting secure CI/CD release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with scalable automation frameworks and end-to-end quality engineering.",
+    "skillTypes": [],
+    "profileTitle": "Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years",
+    "headers": {
+      "experience": "Experience"
+    }
   }
 ]
