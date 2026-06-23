@@ -185,25 +185,27 @@ export default function ResumeBuilder() {
         });
       }
 
-      // 2. Development Projects Summarization (1-2 lines each)
-      const projectsMatch = /(## Development Projects\s*\r?\n)([\s\S]*?)(?=\r?\n---)/;
-      content = content.replace(projectsMatch, (match, p1, p2) => {
-        let cleanProjects = p2.replace(/\*\*Tech:\*\*.*?\r?\n+/g, '');
-        cleanProjects = cleanProjects.replace(/^- /gm, '');
-        return p1 + cleanProjects;
-      });
+      if (selectedResume?.id !== 'ats-styled') {
+        // 2. Development Projects Summarization (1-2 lines each)
+        const projectsMatch = /(## Development Projects\s*\r?\n)([\s\S]*?)(?=\r?\n---)/;
+        content = content.replace(projectsMatch, (match, p1, p2) => {
+          let cleanProjects = p2.replace(/\*\*Tech:\*\*.*?\r?\n+/g, '');
+          cleanProjects = cleanProjects.replace(/^- /gm, '');
+          return p1 + cleanProjects;
+        });
 
-      // 3. Professional Highlights Summarization
-      const highlightsMatch = /(## Professional Highlights\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-      content = content.replace(highlightsMatch, "$1*9+ years of hybrid QE/SDET and mobile development experience, featuring extensive banking domain expertise (lending, deposits, mobile channels) and a proven track record of deploying robust, cross-platform Android applications to the Google Play Store.*\n\n");
+        // 3. Professional Highlights Summarization
+        const highlightsMatch = /(## Professional Highlights\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
+        content = content.replace(highlightsMatch, "$1*9+ years of hybrid QE/SDET and mobile development experience, featuring extensive banking domain expertise (lending, deposits, mobile channels) and a proven track record of deploying robust, cross-platform Android applications to the Google Play Store.*\n\n");
 
-      // 4. Awards & Accomplishments Summarization
-      const awardsMatch = /(## Awards & Accomplishments\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-      content = content.replace(awardsMatch, "$1*Recognized with multiple industry awards including \"Best Performer,\" \"Extra-Miler,\" and \"Hackathon Winner\" for exceptional contributions to T24 UI automation, Asset Finance frameworks, and innovative integration test methodologies.*\n\n");
+        // 4. Awards & Accomplishments Summarization
+        const awardsMatch = /(## Awards & Accomplishments\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
+        content = content.replace(awardsMatch, "$1*Recognized with multiple industry awards including \"Best Performer,\" \"Extra-Miler,\" and \"Hackathon Winner\" for exceptional contributions to T24 UI automation, Asset Finance frameworks, and innovative integration test methodologies.*\n\n");
 
-      // 5. Professional Summary Summarization
-      const summaryMatch = /(## (?:Professional )?Summary\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-      content = content.replace(summaryMatch, "$1Versatile Automation Lead and QE Architect with 9+ years of experience engineering high-performance automation platforms for enterprise banking. Proven track record of architecting scalable CI/CD pipelines, driving developer velocity, and leading organizational GenAI adoption.\n\n");
+        // 5. Professional Summary Summarization
+        const summaryMatch = /(## (?:Professional )?Summary\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
+        content = content.replace(summaryMatch, "$1Versatile Automation Lead and QE Architect with 9+ years of experience engineering high-performance automation platforms for enterprise banking. Proven track record of architecting scalable CI/CD pipelines, driving developer velocity, and leading organizational GenAI adoption.\n\n");
+      }
     }
 
     // Preserve empty new lines by injecting non-breaking spaces
@@ -333,6 +335,22 @@ export default function ResumeBuilder() {
                 body {
                   margin: ${printHeaders ? '0' : '1cm'} !important;
                 }
+                h1, h2, h3, h4, h5 {
+                  page-break-after: avoid;
+                  break-after: avoid;
+                }
+                p, li, div {
+                  page-break-inside: avoid;
+                  break-inside: avoid;
+                }
+                p + ul {
+                  page-break-before: avoid;
+                  break-before: avoid;
+                  margin-top: 0 !important;
+                }
+                .resume-preview-content h2 {
+                  margin-top: 1rem !important;
+                }
               }
               .resume-preview-content h1 {
                 font-size: ${headerSize}rem !important;
@@ -350,21 +368,32 @@ export default function ResumeBuilder() {
                 font-weight: ${headingWeight} !important;
               }
               ${selectedResume?.id === 'ats-styled' ? `
-              .resume-preview-content h1,
-              .resume-preview-content h2,
-              .resume-preview-content h3,
-              .resume-preview-content h4,
-              .resume-preview-content h5,
-              .resume-preview-content .resume-socials a,
-              .resume-preview-content .resume-socials span {
+              .resume-preview-content,
+              .resume-preview-content * {
                 color: #000000 !important;
-              }
-              .resume-preview-content hr {
-                border-color: #bbbbbb !important;
-                margin: 1.2rem 0 !important;
               }
               .resume-preview-content {
-                color: #000000 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.35 !important;
+              }
+              .resume-preview-content hr {
+                border-color: #aaaaaa !important;
+                margin: 0.6rem 0 !important;
+              }
+              .resume-preview-content h2 {
+                margin-top: 1rem !important;
+                margin-bottom: 0.4rem !important;
+              }
+              .resume-preview-content h3 {
+                margin-top: 0.8rem !important;
+                margin-bottom: 0.1rem !important;
+              }
+              .resume-preview-content p {
+                margin-bottom: 0.3rem !important;
+              }
+              .resume-preview-content ul {
+                margin-top: 0.1rem !important;
+                margin-bottom: 0.8rem !important;
               }
               ` : ''}
             `}
