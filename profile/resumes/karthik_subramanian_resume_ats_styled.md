@@ -2,48 +2,80 @@
 
 ### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
 <div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
-<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
-
-{{SOCIAL_LINKS}}
+<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.3rem;">Erode, Tamil Nadu, India</div>
+<div style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 1rem;">
+linkedin.com/in/karthik-s-b3552995<br/>
+nistudious.github.io/home<br/>
+play.google.com/store/apps/developer?id=Ni+Studios
+</div>
 
 ---
 
 ## Professional Summary
 
-Versatile Automation Lead and QE Platform Architect with 9+ years of experience engineering high-performance automation platforms and testing enterprise banking systems. Proven track record of driving developer velocity, architecting secure CI/CD release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with scalable automation frameworks and end-to-end quality engineering.
+Senior SDET and QE Platform Architect with 9+ years building enterprise-grade automation platforms for UK fintech and banking systems. At Allica Bank (UK), architected the shared-e2e platform library adopted across 4 squads, reduced CI pipeline runtimes by 60%, and drove GenAI (GitHub Copilot) adoption delivering a 40% QE productivity gain. Deep domain expertise across CDD, KYC, Lending, Deposits, and Core Banking (T24). Seeking Lead SDET / QE Platform Engineering roles in fintech, GCCs, or product companies.
 
 ---
 
 ## Key Skills
 
-**Core Skills:** Cypress, Playwright, Selenium, REST Assured, Karate, Bruno, Appium, Azure DevOps, GitHub Actions, Docker, BDD, Cucumber, TestNG, JUnit, TypeScript, Flutter, Dart, BLoC, CI/CD, Fintech, Banking, CDD, KYC, GenAI, GitHub Copilot, MSAL, JWT.
+**Automation:** Cypress, Playwright, Selenium (Java), Appium, REST Assured, Karate, Bruno  
+**Languages:** TypeScript, Java, Dart  
+**Frameworks:** BDD Cucumber, TestNG, JUnit, BLoC, Riverpod  
+**CI/CD & DevOps:** Azure DevOps, GitHub Actions, Docker, Jenkins  
+**Mobile:** Flutter, Android (Kotlin), Google Play Store Release, AAB/APK Flavors  
+**Domain:** Fintech, Banking, CDD, KYC, GDPR, Lending, Deposits, T24  
+**Tools & AI:** GitHub Copilot, Azure Key Vault, MSAL, JWT, JMeter, Sauce Labs, LaunchDarkly
+
+---
+
+## Professional Highlights
+
+- Architected @allica/shared-e2e platform library — reduced CI runtimes by 60% across 4 squads
+- Led GenAI (GitHub Copilot) adoption org-wide — 40% QE productivity improvement
+- Delivered end-to-end automation for 6+ compliance-critical banking flows: CDD, CRA, KYC, GDPR
+
+---
+
+## Awards & Accomplishments
+
+- **Hackathon Winner (Allica)** — For innovative integration test methodologies.
+- **Best Performer & Extra-Miler (Maveric Systems)** — For exceptional contributions to T24 UI automation and Asset Finance frameworks.
+
+---
+
+## Education
+
+**Executive PG Program in Financial Services and IT Assurance** — LIBA, Chennai (2017–2019)  
+**B.E. Computer Science and Engineering** — Velalar College of Engineering and Technology, Erode (2013–2017)
 
 ---
 
 ## Experience
 
-### Senior SDET — Allica Bank, UK  
-**May 2023 – Present**
+### Senior SDET — Allica Bank, UK *(Remote from India)*
+**May 2023 – Present (3 yrs)**
 - **Architected** the enterprise-level `@allica/shared-e2e` platform library adopted across 4 engineering squads, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation.
-- **Architect and evolve** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.
+- **Architected and evolved** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
 - Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
-- Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
+- **Pioneered** advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 - **Established Playwright automation** for the team on a designated repository, including the configuration of default reporting structures.
 - **Authored YAML CI/CD pipeline configurations** in **Azure DevOps** for backend microservices, enabling continuous deployment at scale across engineering teams.
 
 ### Principal Software Engineer — Maveric Systems  
-**Jan 2021 – May 2023**
+**Client: Allica Bank Ltd, UK | Jan 2021 – May 2023 (2.5 yrs)**
 - Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
 - Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
 - Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
 - **Mentored 5+ junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
 
 ### Senior Test Engineer — Maveric Systems  
-**Sep 2018 – Dec 2020**
+**Client: Metro Bank Ltd, UK | Aug 2017 – Dec 2020 (3.5 yrs)**
+- Joined as a Trainee; promoted to Senior Test Engineer based on performance while simultaneously pursuing Executive PG at LIBA Chennai (part-time).
 - Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.
 - Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.
 - Created Data Creation frameworks to hasten release testing, and managed Sauce Labs compatibility and regression testing across 20+ device configurations.
@@ -51,17 +83,10 @@ Versatile Automation Lead and QE Platform Architect with 9+ years of experience 
 
 ---
 
-## Professional Highlights
+## Development Projects
 
-- Extensive experience with Continuous Integration Tools Jenkins and Azure DevOps – creating repos, Self-Hosted Agents, YAML pipelines with Scheduler, Staging or Multi-Job Configuration, Publishing Artifacts, Email Reporting
-- Self-Learned Flutter (dart) and BLoC pattern to develop and publish Android application in Google Play Store
-- Strong domain ownership in banking/onboarding systems
-- Experience across internal and external customer onboarding, CRM/bridge, deposits, lending and risk systems
-- Strong CI/CD awareness and framework optimization mindset
-
----
-
-## Education
-
-**Executive PG Program in Financial Services and IT Assurance** — LIBA, Chennai  
-**B.E. Computer Science and Engineering** — Velalar College of Engineering and Technology, Erode
+- **NiStudioUs Website** — Responsive portfolio built with Vite, React & Flutter Web; automated CI/CD static hosting via GitHub Actions (nistudious.github.io/home)
+- **Flutter Notes App** — Production-ready local-first app with BLoC state management, biometric authentication, offline SQLite sync; published on Google Play Store
+- **SMS Stack Manager** — Privacy-first Flutter app using Drift/SQLite for local financial insight extraction from SMS; automated Google Play Store AAB release with Android build flavors (Dev/Prod)
+- **People App IKY v2** — Multi-platform genealogy app (Mobile, Web, Edge) deployed on Linux, Windows & Raspberry Pi; containerised backend with Docker Compose, PostgreSQL, Redis; automated CI/CD pipelines via GitHub Actions
+- **Raspberry Pi Home Lab** — Self-hosted Docker ecosystem on RPi5 with Nginx reverse proxy; deployed Immich, Pi-Hole (DNS), Jellyfin — demonstrates real DevOps and infra thinking
