@@ -200,7 +200,7 @@ export default function ResumeBuilder() {
 
         // 4. Awards & Accomplishments Summarization
         const awardsMatch = /(## Awards & Accomplishments\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-        content = content.replace(awardsMatch, "$1*Recognized with multiple industry awards including \"Best Performer,\" \"Extra-Miler,\" and \"Hackathon Winner\" for exceptional contributions to T24 UI automation, Asset Finance frameworks, and innovative integration test methodologies.*\n\n");
+        content = content.replace(awardsMatch, "$1*Recognized with multiple industry awards including \"Evident Value\" Contributor, \"Extra-Miler,\" and \"Hackathon Winner\" for exceptional cross-squad contributions, T24 UI automation, and innovative integration test methodologies.*\n\n");
 
         // 5. Professional Summary Summarization
         const summaryMatch = /(## (?:Professional )?Summary\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;

@@ -5,6 +5,7 @@ import profileData from '../../content/profile.json';
 import projectsData from '../../content/projects_summary.json';
 import skillsData from '../../content/skills.json';
 import experienceData from '../../content/experience.json';
+import awardsData from '../../content/awards.json';
 
 import ProjectDialog from '../../components/ProjectDialog';
 
@@ -179,6 +180,29 @@ export default function Home() {
           <Link to="/timeline" className="view-more-btn">
             Read Full History <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      {/* Awards & Accomplishments Section */}
+      <section className="home-section">
+        <div className="section-header">
+          <h3 className="section-title">Awards & Accomplishments</h3>
+        </div>
+        <div className="projects-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}>
+          {awardsData.map((award, idx) => (
+            <div key={idx} className="card project-card" style={{ cursor: 'default' }}>
+              <div className="project-header" style={{ marginBottom: '0.5rem' }}>
+                <h3 className="project-title" style={{ fontSize: '1.1rem' }}>{award.title}</h3>
+                {award.date && <span className="status-badge" style={{ backgroundColor: 'var(--surface-color)', color: 'var(--text-secondary)' }}>{award.date}</span>}
+              </div>
+              <p className="project-description" style={{ marginBottom: '0.8rem', color: 'var(--text-primary)' }}>
+                {award.description}
+              </p>
+              <div className="project-tags">
+                <span className="badge">{award.organization}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

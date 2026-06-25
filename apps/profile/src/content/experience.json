@@ -14,7 +14,8 @@
       "Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Blacklisting, and On-Behalf-Of functionality.",
       "Led GenAI (GitHub Copilot) adoption initiatives across the Quality Engineering team for accelerated documentation and test standards.",
       "Established Playwright automation for the team on a designated repository, including the configuration of default reporting structures.",
-      "Authored YAML CI/CD pipeline configurations in Azure DevOps for backend microservices, enabling continuous deployment at scale across engineering teams."
+      "Authored YAML CI/CD pipeline configurations in Azure DevOps for backend microservices, enabling continuous deployment at scale across engineering teams.",
+      "Recognised as cross-squad QE contributor by peers; supported away teams with regression packs and onboarding guidance across multiple squad COB integrations."
     ],
     "resumeBullets": [
       {
@@ -53,6 +54,16 @@
           "hybrid",
           "1page",
           "2page-ats"
+        ]
+      },
+      {
+        "text": "**Recognised as cross-squad QE contributor by peers**; supported away teams with regression packs and onboarding guidance across multiple squad COB integrations.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
         ]
       }
     ],
