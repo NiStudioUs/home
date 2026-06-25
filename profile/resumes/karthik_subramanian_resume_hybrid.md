@@ -75,6 +75,23 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ---
 
+## Awards & Accomplishments
+
+- **"Evident Value" Contributor** — Product Owner, Allica Bank (2025)
+  Recognised as a cross-squad contributor demonstrating "evident value" with transferrable skills across away teams.
+- **Outstanding Contribution Recognition** — Maveric Systems (Apr 2022)
+  Recognised as "the go-to person for any automation task or issue" for ensuring continuity across deliveries during critical periods.
+- **Extra-Miler Award** — Maveric Systems (Mar 2022)
+  Tribe-7 Award presented by VP Rajesh Vasudevan for going beyond the call of duty to deliver across multiple projects.
+- **Hackathon Winner** — Allica Bank (2021)
+  For innovative integration test methodologies.
+- **Manager Recognition** — Maveric Systems (Dec 2018)
+  Received written appreciation from the delivery manager for diligence and dedication that "inspired the rest of the team."
+- **Best Performer** — Maveric Systems (2018)
+  For exceptional contributions to T24 UI automation and Loans (AA) frameworks.
+
+---
+
 ## Education
 
 **Executive PG Program in Financial Services and IT Assurance** — LIBA, Chennai  
