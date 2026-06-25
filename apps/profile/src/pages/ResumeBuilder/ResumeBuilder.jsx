@@ -204,7 +204,7 @@ export default function ResumeBuilder() {
 
         // 5. Professional Summary Summarization
         const summaryMatch = /(## (?:Professional )?Summary\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-        content = content.replace(summaryMatch, "$1Versatile Automation Lead and QE Architect with 9+ years of experience engineering high-performance automation platforms for enterprise banking. Proven track record of architecting scalable CI/CD pipelines, driving developer velocity, and leading organizational GenAI adoption.\n\n");
+        content = content.replace(summaryMatch, "$1Senior SDET and QE Platform Architect with 9+ years building enterprise-grade automation platforms for UK fintech and banking systems. At Allica Bank (UK), architected the shared-e2e platform library adopted across 4 squads, reduced CI pipeline runtimes by 60%, and drove GenAI (GitHub Copilot) adoption delivering a 40% QE productivity gain. Deep domain expertise across CDD, KYC, Lending, Deposits, and Core Banking (T24). Seeking Lead SDET / QE Platform Engineering roles in fintech, GCCs, or product companies.\n\n");
       }
     }
 

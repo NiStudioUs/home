@@ -10,7 +10,7 @@
 
 ## Professional Summary
 
-Versatile Automation Lead and QE Platform Architect with 9+ years of experience engineering high-performance automation platforms and testing enterprise banking systems. Proven track record of driving developer velocity, architecting secure CI/CD release pipelines, and leading GenAI tooling adoption across engineering teams. Unique expertise combining deep fintech domain knowledge with scalable automation frameworks and end-to-end quality engineering.
+Senior SDET and QE Platform Architect with 9+ years building enterprise-grade automation platforms for UK fintech and banking systems. At Allica Bank (UK), architected the shared-e2e platform library adopted across 4 squads, reduced CI pipeline runtimes by 60%, and drove GenAI (GitHub Copilot) adoption delivering a 40% QE productivity gain. Deep domain expertise across CDD, KYC, Lending, Deposits, and Core Banking (T24). Seeking Lead SDET / QE Platform Engineering roles in fintech, GCCs, or product companies.
 
 ---
 
