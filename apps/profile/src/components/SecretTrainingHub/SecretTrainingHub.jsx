@@ -4,7 +4,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { 
   BookOpen, CheckCircle2, ArrowLeft, Terminal, 
-  HelpCircle, Layers, Code, Hash, BookmarkCheck 
+  HelpCircle, Layers, Code, Hash, BookmarkCheck,
+  ChevronDown, ChevronRight, FileText, FolderOpen
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { trainingChatsList, certaAiTrainingData } from '../../content/certaAiTrainingData';
@@ -15,9 +16,19 @@ export default function SecretTrainingHub() {
   const [activeChatId, setActiveChatId] = useState('certa_ai');
   const [selectedChapterIdx, setSelectedChapterIdx] = useState(0);
   const [isQuickJumpOpen, setIsQuickJumpOpen] = useState(false);
+  const [activeLang, setActiveLang] = useState('java');
+  const [expandedModules, setExpandedModules] = useState({ 'certa_ai': true });
+
+  const toggleModule = (id) => {
+    setExpandedModules(prev => ({ ...prev, [id]: !prev[id] }));
+  };
 
   const activeHubData = certaAiTrainingData;
   const currentChapter = activeHubData.chapters[selectedChapterIdx] || activeHubData.chapters[0];
+
+  const rawSolution = currentChapter.codingChallenge?.solutionCode;
+  const hasMultiLang = rawSolution && typeof rawSolution === 'object';
+  const solutionContent = hasMultiLang ? (rawSolution[activeLang] || rawSolution.java) : rawSolution;
 
   const handleScrollToIndex = (id) => {
     const el = document.getElementById(id);
@@ -66,25 +77,53 @@ export default function SecretTrainingHub() {
       </button>
 
       <div className="training-layout-grid">
-        {/* Left Sidebar: Entries */}
+        {/* Left Sidebar: Hierarchical Modules & Chapters */}
         <aside className="training-left-sidebar">
-          <div className="sidebar-title-label">Training Hub Entries</div>
-          {trainingChatsList.map((entry) => (
-            <div
-              key={entry.id}
-              className={`chat-entry-card ${activeChatId === entry.id ? 'active' : ''}`}
-              onClick={() => {
-                setActiveChatId(entry.id);
-                setSelectedChapterIdx(0);
-              }}
-            >
-              <div className="entry-card-header">
-                <h3 className="entry-card-title">{entry.title}</h3>
-                <span className="entry-card-tag">#{entry.tag}</span>
+          <div className="sidebar-title-label">Training Modules &amp; Chapters</div>
+          {trainingChatsList.map((entry) => {
+            const isExpanded = expandedModules[entry.id] !== false;
+            const isSelected = activeChatId === entry.id;
+            return (
+              <div
+                key={entry.id}
+                className={`chat-entry-card ${isSelected ? 'active' : ''}`}
+                style={{ marginBottom: '1rem', cursor: 'pointer' }}
+              >
+                <div
+                  onClick={() => {
+                    setActiveChatId(entry.id);
+                    toggleModule(entry.id);
+                  }}
+                >
+                  <div className="entry-card-header">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      {isExpanded ? <ChevronDown size={18} color="var(--primary-color, #2563eb)" /> : <ChevronRight size={18} />}
+                      <FolderOpen size={16} color="var(--primary-color, #2563eb)" />
+                      <h3 className="entry-card-title">{entry.title}</h3>
+                    </div>
+                    <span className="entry-card-tag">#{entry.tag}</span>
+                  </div>
+                  <p className="entry-card-desc" style={{ marginTop: '0.4rem' }}>{entry.summary}</p>
+                </div>
+
+                {/* Hierarchical Chapters inside LHS parent card */}
+                {isExpanded && isSelected && activeHubData.chapters && (
+                  <div className="lhs-chapter-tree" onClick={(e) => e.stopPropagation()}>
+                    {activeHubData.chapters.map((chap, idx) => (
+                      <button
+                        key={chap.chapterId}
+                        className={`lhs-chapter-item ${selectedChapterIdx === idx ? 'active' : ''}`}
+                        onClick={() => setSelectedChapterIdx(idx)}
+                      >
+                        <FileText size={15} color={selectedChapterIdx === idx ? 'var(--primary-color, #2563eb)' : '#64748b'} />
+                        <span>{chap.title.split(' (')[0]}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-              <p className="entry-card-desc">{entry.summary}</p>
-            </div>
-          ))}
+            );
+          })}
         </aside>
 
         {/* Right Content Area: Multi-Chapter Scroll View */}
@@ -99,22 +138,6 @@ export default function SecretTrainingHub() {
             </div>
             <p className="content-summary-text">{activeHubData.summary}</p>
           </header>
-
-          {/* Chapter Switcher Tabs Bar */}
-          {activeHubData.chapters && activeHubData.chapters.length > 1 && (
-            <div className="chapter-tabs-bar">
-              {activeHubData.chapters.map((chap, idx) => (
-                <button
-                  key={chap.chapterId}
-                  className={`chapter-tab-btn ${selectedChapterIdx === idx ? 'active' : ''}`}
-                  onClick={() => setSelectedChapterIdx(idx)}
-                >
-                  <BookmarkCheck size={18} />
-                  {chap.title.split(' (')[0]}
-                </button>
-              ))}
-            </div>
-          )}
 
           {/* Active Chapter Header Summary */}
           <div style={{ marginBottom: '1.5rem' }}>
@@ -247,13 +270,37 @@ export default function SecretTrainingHub() {
               </ul>
             </div>
 
-            {/* Solution Code in LeetCode Polished Dark Block */}
-            <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: '2rem 0 0.75rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Code size={18} color="var(--primary-color, #2563eb)" />
-              LeetCode Production-Ready Java Solution:
-            </h4>
+            {/* Solution Code in LeetCode Polished Dark Block with Tab Switcher */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '2rem 0 0.75rem 0', flexWrap: 'wrap', gap: '1rem' }}>
+              <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Code size={18} color="var(--primary-color, #2563eb)" />
+                LeetCode Production-Ready Solution{hasMultiLang ? ` (${activeLang.toUpperCase()})` : ' (JAVA)'}:
+              </h4>
+              {hasMultiLang && (
+                <div className="code-lang-tabs">
+                  <button 
+                    className={`code-lang-tab ${activeLang === 'java' ? 'active' : ''}`}
+                    onClick={() => setActiveLang('java')}
+                  >
+                    Java
+                  </button>
+                  <button 
+                    className={`code-lang-tab ${activeLang === 'typescript' ? 'active' : ''}`}
+                    onClick={() => setActiveLang('typescript')}
+                  >
+                    TypeScript
+                  </button>
+                  <button 
+                    className={`code-lang-tab ${activeLang === 'python' ? 'active' : ''}`}
+                    onClick={() => setActiveLang('python')}
+                  >
+                    Python
+                  </button>
+                </div>
+              )}
+            </div>
             <pre className="leetcode-code-block">
-              <code>{currentChapter.codingChallenge.solutionCode}</code>
+              <code>{solutionContent}</code>
             </pre>
 
             {/* Explanation & Complexity Walkthrough */}

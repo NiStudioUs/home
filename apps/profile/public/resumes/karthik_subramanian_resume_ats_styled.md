@@ -1,13 +1,9 @@
 # Karthik Subramanian
 
 ### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
-<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
-<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.3rem;">Erode, Tamil Nadu, India</div>
-<div style="font-size: 0.9rem; color: var(--text-primary); margin-top: 0.2rem; margin-bottom: 0.6rem; line-height: 1.35;">
-<a href="https://www.linkedin.com/in/karthik-s-b3552995" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/karthik-s-b3552995</a><br/>
-<a href="https://nistudious.github.io/home/" target="_blank" rel="noopener noreferrer">https://nistudious.github.io/home/</a><br/>
-<a href="https://play.google.com/store/apps/developer?id=Ni+Studios" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps/developer?id=Ni+Studios</a>
-</div>
+📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
+📍 Location: Erode, Tamil Nadu, India  
+🔗 LinkedIn: linkedin.com/in/karthik-s-b3552995 | 🌐 Portfolio: nistudious.github.io/home | 📱 Play Store: play.google.com/store/apps/developer?id=Ni+Studios
 
 ---
 
@@ -63,8 +59,8 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 
 ## Experience
 
-### Senior SDET — Allica Bank, UK *(Remote from India)*
-**May 2023 – Present (3 yrs)**
+### Allica Bank, UK (May 2023 – Present | Remote from India)
+**Senior SDET**
 - **Architected** the enterprise-level `@allica/shared-e2e` platform library adopted across 4 engineering squads, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation.
 - **Architected and evolved** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
@@ -77,15 +73,15 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 - **Authored YAML CI/CD pipeline configurations** in **Azure DevOps** for backend microservices, enabling continuous deployment at scale across engineering teams.
 - **Recognised as cross-squad QE contributor by peers**; supported away teams with regression packs and onboarding guidance across multiple squad COB integrations.
 
-### Principal Software Engineer — Maveric Systems  
-**Client: Allica Bank Ltd, UK | Jan 2021 – May 2023 (2.5 yrs)**
+### Maveric Systems (Jan 2021 – May 2023 | Client: Allica Bank Ltd, UK)
+**Principal Software Engineer**
 - Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
 - Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
 - Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
 - **Mentored 5+ junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
 
-### Senior Test Engineer — Maveric Systems  
-**Client: Metro Bank Ltd, UK | Aug 2017 – Dec 2020 (3.5 yrs)**
+### Maveric Systems (Aug 2017 – Dec 2020 | Client: Metro Bank Ltd, UK)
+**Senior Test Engineer**
 - Joined as a Trainee; promoted to Senior Test Engineer based on performance while simultaneously pursuing Executive PG at LIBA Chennai (part-time).
 - Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.
 - Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.

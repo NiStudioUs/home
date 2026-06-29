@@ -1,10 +1,9 @@
 # Karthik Subramanian
 
 ### Staff Engineer - Mobile and Quality Engineer Lead
-<div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
-<div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Erode, Tamil Nadu, India</div>
-
-{{SOCIAL_LINKS}}
+📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
+📍 Location: Erode, Tamil Nadu, India  
+🔗 LinkedIn: linkedin.com/in/karthik-s-b3552995 | 🌐 Portfolio: nistudious.github.io/home | 📱 Play Store: play.google.com/store/apps/developer?id=Ni+Studios
 
 ---
 
@@ -49,8 +48,8 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ## Experience
 
-### Senior SDET — Allica Bank, UK  
-**May 2023 – Present**
+### Allica Bank, UK (May 2023 – Present | Remote from India)
+**Senior SDET**
 - **Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
 - **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
@@ -59,15 +58,15 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 - Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 
-### Principal Software Engineer — Maveric Systems  
-**Jan 2021 – May 2023**
+### Maveric Systems (Jan 2021 – May 2023 | Client: Allica Bank Ltd, UK)
+**Principal Software Engineer**
 - Led automation test development framework for **Asset Finance** project including COB/Multi-Asset Automation.
 - Created frameworks using **Selenium Page-Factory, Cucumber BDD**, and invoked Page-Objects from feature files.
 - Implemented POCs and frameworks using **Docker Test Containers**, **MSSQL**, and **Liquibase** for microservices.
 - **Mentored junior engineers** and integrated automated test suites into **CI/CD pipelines**, enabling continuous testing and faster release cadences.
 
-### Senior Test Engineer — Maveric Systems  
-**Sep 2018 – Dec 2020**
+### Maveric Systems (Sep 2018 – Dec 2020 | Client: Metro Bank Ltd, UK)
+**Senior Test Engineer**
 - Worked across **Digital Mobile App (Android/iOS)**, T24 Banking Services, Cards, Transfers, Payments, and Retail Operations.
 - Delivered **P&C Automation**, T24 UI Upgrade, Mobile BAU, and Mobile SCA Automation projects.
 

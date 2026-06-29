@@ -1,18 +1,18 @@
 export const trainingChatsList = [
   {
     id: 'certa_ai',
-    title: 'Certa.ai SDET & Automation Prep',
-    tag: 'certa_ai',
-    summary: 'Multi-chapter assessment prep featuring combined Q&As, LeetCode-formatted algorithms (Two Sum, Array Rotation, Sliding Window, Top K Elements), and attached deep dives.',
+    title: 'Advanced SDET & Engineering Masterclass',
+    tag: 'engineering_masterclass',
+    summary: 'Exhaustive engineering training hub organized into expandable chapters covering systems architecture, algorithmic problem solving, and multi-language code solutions.',
     date: '2026-06-29'
   }
 ];
 
 export const certaAiTrainingData = {
   id: 'certa_ai',
-  title: 'Certa.ai SDET & Automation Interview Prep',
-  tag: 'certa_ai',
-  summary: 'Comprehensive Certa.ai assessment training structured into sequential Chapters with unified Q&A cards, attached deep-dives, and LeetCode-formatted algorithms.',
+  title: 'Advanced SDET & Engineering Masterclass',
+  tag: 'engineering_masterclass',
+  summary: 'Exhaustive engineering training hub structured into expandable Chapters with unified Q&A cards, attached deep-dives, and multi-language LeetCode solutions.',
   chapters: [
     {
       chapterId: 'chapter-1',
@@ -282,7 +282,8 @@ class Solution {
           'Use explicit return statements to illustrate early loop termination.',
           'Analyze exact Time and Space complexity.'
         ],
-        solutionCode: `import java.util.HashMap;
+        solutionCode: {
+          java: `import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
@@ -306,6 +307,40 @@ class Solution {
         return -1;
     }
 }`,
+          typescript: `export class Solution {
+    public firstUniqChar(str: string): number {
+        const freqMap: Record<string, number> = {};
+
+        // Pass 1: Aggregate character counts
+        for (const char of str) {
+            freqMap[char] = (freqMap[char] || 0) + 1;
+        }
+
+        // Pass 2: Sequential lookup for count === 1
+        for (let i = 0; i < str.length; i++) {
+            if (freqMap[str[i]] === 1) {
+                return i; // Early loop termination upon match
+            }
+        }
+
+        return -1;
+    }
+}`,
+          python: `class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        freq_map = {}
+        
+        # Pass 1: Build frequency mapping
+        for char in s:
+            freq_map[char] = freq_map.get(char, 0) + 1
+            
+        # Pass 2: Early return short-circuit lookup
+        for i, char in enumerate(s):
+            if freq_map[char] == 1:
+                return i
+                
+        return -1`
+        },
         explanation: `#### 🧠 Architectural Breakdown & Indentation Etiquette
 1. **Two-Pass Sequential Strategy:**
    * Instead of nested scanning O(n²), we separate character frequency aggregation from ordering lookup.
@@ -695,6 +730,203 @@ In technical interviews, solving Top K Frequent Elements with a PriorityQueue ($
 | **Sorting Frequencies** | O(n log n) | O(n) | Baseline approach. |
 | **Min-Heap (PriorityQueue)** | O(n log k) | O(n + k) | Excellent for continuous streaming data. |
 | **Bucket Sort** | **O(n)** | **O(n)** | ⭐ **Interview Favorite:** Absolute linear time execution. |`
+      }
+    },
+    {
+      chapterId: 'chapter-5',
+      title: 'Chapter 5: Assessment Set 5 (Sorting Algorithms Mastery: QuickSort & MergeSort)',
+      summary: 'Covers comparison-based sorting bounds, stability trade-offs, Lomuto vs Hoare partitioning schemes, and multi-language divide-and-conquer recursion.',
+      indexTopics: [
+        { id: 'set5-q1-stability', title: 'Q1. Sorting Stability & Engineering Use Cases' },
+        { id: 'set5-q2-quicksort', title: 'Q2. QuickSort Partitioning: Lomuto vs Hoare' },
+        { id: 'set5-coding-challenge', title: 'Coding Challenge 5: Sort an Array (LeetCode 912)' },
+        { id: 'set5-complexity-table', title: 'Deep Dive: Big-O Sorting Complexity Table' }
+      ],
+      qaList: [
+        {
+          id: 'set5-q1-stability',
+          questionNumber: 'Q1',
+          question: 'Why is **sorting algorithm stability** critical when organizing database queries or multi-field records (e.g. sorting first by timestamp, then by priority tier)?',
+          options: [
+            'A. Stable sorts consume zero memory during recursion',
+            'B. Stable sorting guarantees that records with identical sorting keys preserve their relative pre-sorted order',
+            'C. Unstable sorts cannot handle floating point numbers',
+            'D. Stable sorts prevent stack overflows in recursive algorithms'
+          ],
+          correctAnswer: 'B. Stable sorting guarantees that records with identical sorting keys preserve their relative pre-sorted order',
+          explanation: 'A sorting algorithm is **stable** if elements with equal keys remain in the exact same relative order as they appeared in the input array. For multi-tier sorting (e.g. sorting by time, then re-sorting by priority), an unstable sort like QuickSort would scramble the existing chronological sub-ordering, whereas a stable sort like MergeSort or TimSort preserves it perfectly.',
+          attachedDeepDive: {
+            title: 'TimSort vs MergeSort vs QuickSort in Production Ecosystems',
+            content: `In real-world production frameworks, different sorting algorithms are chosen based on memory and stability constraints:
+* **Java Objects (\`Arrays.sort(Object[])\`):** Uses **TimSort** (a hybrid of MergeSort and InsertionSort) because object sorting requires stability.
+* **Java Primitives (\`Arrays.sort(int[])\`):** Uses **Dual-Pivot QuickSort** because primitives do not have identity, so stability is unnecessary and QuickSort saves $O(n)$ auxiliary memory.
+* **Python (\`list.sort()\` / \`sorted()\`) & V8 JavaScript:** Use **TimSort** for robust stability across arbitrary objects.`
+          }
+        },
+        {
+          id: 'set5-q2-quicksort',
+          questionNumber: 'Q2',
+          question: 'When implementing **QuickSort**, why does the **Hoare partitioning scheme** generally outperform the **Lomuto partitioning scheme** in practice?',
+          options: [
+            'A. Hoare partitioning executes in O(1) time complexity',
+            'B. Hoare uses two pointers converging from both ends, performing on average three times fewer swaps than Lomuto and handling duplicate elements gracefully',
+            'C. Lomuto requires O(n) auxiliary heap allocations',
+            'D. Hoare partitioning completely eliminates recursive stack frames'
+          ],
+          correctAnswer: 'B. Hoare uses two pointers converging from both ends, performing on average three times fewer swaps than Lomuto and handling duplicate elements gracefully',
+          explanation: 'Lomuto partitioning maintains a single pointer traversing left-to-right and swapping every element smaller than the pivot, leading to excessive swaps ($O(N^2)$ worst case on arrays with identical elements). Hoare partitioning uses two pointers starting at both ends moving inwards until they find inverted elements to swap, drastically reducing swap operations.'
+        }
+      ],
+      codingChallenge: {
+        id: 'set5-coding-challenge',
+        title: 'Coding Challenge 5: Sort an Array (LeetCode 912)',
+        problemStatement: 'Given an array of integers `nums`, sort the array in ascending order using an $O(n \\log n)$ time complexity algorithm without utilizing any built-in sorting functions.',
+        examples: [
+          { input: 'nums = [5, 2, 3, 1]', output: '[1, 2, 3, 5]', rationale: 'Divide-and-conquer recursion splits the array into singletons and merges them in sorted order.' },
+          { input: 'nums = [5, 1, 1, 2, 0, 0]', output: '[0, 0, 1, 1, 2, 5]', rationale: 'Handles duplicate values while maintaining $O(n \\log n)$ execution bounds.' }
+        ],
+        requirements: [
+          'Switch tabs above to explore complete solutions in Java, TypeScript, and Python.',
+          'Implement stable Merge Sort utilizing helper arrays and short-circuit pointer copy logic.',
+          'Maintain production-ready method encapsulation and early return validation.'
+        ],
+        solutionCode: {
+          java: `import java.util.*;
+
+class Solution {
+    public int[] sortArray(int[] nums) {
+        if (nums == null || nums.length <= 1) return nums;
+        mergeSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    private void mergeSort(int[] nums, int left, int right) {
+        if (left >= right) return; // Short-circuit base case
+        
+        int mid = left + (right - left) / 2;
+        mergeSort(nums, left, mid);
+        mergeSort(nums, mid + 1, right);
+        merge(nums, left, mid, right);
+    }
+
+    private void merge(int[] nums, int left, int mid, int right) {
+        // Optimization: short-circuit if already sorted across partition boundary
+        if (nums[mid] <= nums[mid + 1]) return;
+
+        int[] temp = new int[right - left + 1];
+        int i = left, j = mid + 1, k = 0;
+
+        while (i <= mid && j <= right) {
+            if (nums[i] <= nums[j]) {
+                temp[k++] = nums[i++];
+            } else {
+                temp[k++] = nums[j++];
+            }
+        }
+
+        // Copy remaining elements
+        while (i <= mid) temp[k++] = nums[i++];
+        while (j <= right) temp[k++] = nums[j++];
+
+        System.arraycopy(temp, 0, nums, left, temp.length);
+    }
+}`,
+          typescript: `export class Solution {
+    public sortArray(nums: number[]): number[] {
+        if (!nums || nums.length <= 1) return nums;
+        this.quickSort(nums, 0, nums.length - 1);
+        return nums;
+    }
+
+    private quickSort(nums: number[], low: number, high: number): void {
+        if (low >= high) return; // Early short-circuit termination
+
+        // Randomized pivot selection to guarantee O(n log n) expected time
+        const pivotIdx = low + Math.floor(Math.random() * (high - low + 1));
+        this.swap(nums, pivotIdx, high);
+
+        const partitionIdx = this.partition(nums, low, high);
+        this.quickSort(nums, low, partitionIdx - 1);
+        this.quickSort(nums, partitionIdx + 1, high);
+    }
+
+    private partition(nums: number[], low: number, high: number): number {
+        const pivot = nums[high];
+        let i = low;
+
+        for (let j = low; j < high; j++) {
+            if (nums[j] < pivot) {
+                this.swap(nums, i, j);
+                i++;
+            }
+        }
+        this.swap(nums, i, high);
+        return i;
+    }
+
+    private swap(nums: number[], i: number, j: number): void {
+        const temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}`,
+          python: `from typing import List
+
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        if not nums or len(nums) <= 1:
+            return nums
+            
+        def merge_sort(left: int, right: int) -> None:
+            if left >= right:
+                return # Short-circuit base case
+                
+            mid = left + (right - left) // 2
+            merge_sort(left, mid)
+            merge_sort(mid + 1, right)
+            
+            # Optimization: Skip merge if partitions are already ordered
+            if nums[mid] <= nums[mid + 1]:
+                return
+                
+            temp = []
+            i, j = left, mid + 1
+            while i <= mid and j <= right:
+                if nums[i] <= nums[j]:
+                    temp.append(nums[i])
+                    i += 1
+                else:
+                    temp.append(nums[j])
+                    j += 1
+                    
+            while i <= mid:
+                temp.append(nums[i])
+                i += 1
+            while j <= right:
+                temp.append(nums[j])
+                j += 1
+                
+            nums[left:right + 1] = temp
+
+        merge_sort(0, len(nums) - 1)
+        return nums`
+        },
+        explanation: `#### 🧠 Architectural Breakdown: Divide-and-Conquer Strategies
+Sorting algorithm selection is a core competency tested during systems design and algorithmic coding rounds. 
+
+<div id="set5-complexity-table"></div>
+
+#### 📊 Exhaustive Big-O Complexity & Stability Comparison
+| Algorithm | Best Time | Average Time | Worst Time | Auxiliary Space | Stable? | Key Architectural Advantage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Merge Sort** | $O(n \\log n)$ | $O(n \\log n)$ | $O(n \\log n)$ | $O(n)$ | Yes ⭐ | Predictable execution bounds; gold standard for linked lists & external sorting. |
+| **Quick Sort** | $O(n \\log n)$ | $O(n \\log n)$ | $O(n^2)$ | $O(\\log n)$ | No | Excellent cache locality; fastest in practice with randomized pivot selection. |
+| **Tim Sort** | $O(n)$ | $O(n \\log n)$ | $O(n \\log n)$ | $O(n)$ | Yes ⭐ | Highly optimized for real-world arrays containing pre-sorted runs. |
+| **Heap Sort** | $O(n \\log n)$ | $O(n \\log n)$ | $O(n \\log n)$ | $O(1)$ ⭐ | No | Strictly $O(1)$ space complexity; immune to QuickSort $O(n^2)$ worst-case attacks. |
+
+#### ⚙️ Engineering Pro-Tips for Interviews
+* **When asked to sort in-place:** Immediately pivot to **QuickSort** or **HeapSort**. Mention that while MergeSort requires $O(n)$ memory allocations, QuickSort operates directly on the array pointers.
+* **When stability is required:** Explicitly call out **MergeSort**. Demonstrate how using \`<=\` instead of \`<\` during the merging phase guarantees stability.`
       }
     }
   ]
