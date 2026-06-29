@@ -8,19 +8,19 @@
     {
       "platform": "LinkedIn",
       "url": "https://www.linkedin.com/in/karthik-s-b3552995",
-      "display": "linkedin.com/in/karthik-s-b3552995",
+      "display": "https://www.linkedin.com/in/karthik-s-b3552995",
       "icon": "UserCircle"
     },
     {
       "platform": "Play Store",
       "url": "https://play.google.com/store/apps/developer?id=Ni+Studios",
-      "display": "Ni Studios",
+      "display": "https://play.google.com/store/apps/developer?id=Ni+Studios",
       "icon": "Smartphone"
     },
     {
       "platform": "Portfolio",
       "url": "https://nistudious.github.io/home/",
-      "display": "nistudious.github.io/home/",
+      "display": "https://nistudious.github.io/home/",
       "icon": "Globe"
     }
   ],

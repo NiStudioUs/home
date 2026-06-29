@@ -466,13 +466,13 @@ export default function ResumeBuilder() {
                   <React.Fragment key={index}>
                     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{part}</ReactMarkdown>
                     {index === 0 && arr.length > 1 && (
-                      <div className="resume-socials" style={{ display: 'flex', gap: '2rem', marginTop: '0.8rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+                      <div className="resume-socials" style={{ display: 'flex', gap: '0.5rem 1.25rem', marginTop: '0.4rem', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
                         {profileData.socials.map((social, idx) => {
                           const IconComponent = { UserCircle, Smartphone, Globe, MonitorPlay }[social.icon];
                           return (
-                            <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#2563eb', textDecoration: 'none', fontSize: '0.9rem' }}>
+                            <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#2563eb', textDecoration: 'none', fontSize: '0.85rem' }}>
                               {IconComponent && <IconComponent size={16} />}
-                              <span style={{ fontWeight: 500 }}>{social.platform}</span>
+                              <span style={{ fontWeight: 500 }}>{social.platform}: {social.display || social.url}</span>
                             </a>
                           );
                         })}

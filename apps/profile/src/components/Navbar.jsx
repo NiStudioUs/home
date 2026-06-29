@@ -1,12 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import { Moon, Sun, Menu, X, Briefcase, BookOpen, Code, Layers, FileText } from 'lucide-react';
+import { Moon, Sun, Menu, X, Briefcase, BookOpen, Code, Layers } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = React.useState(false);
+  const navigate = useNavigate();
+  
+  const clickCountRef = React.useRef(0);
+  const clickTimerRef = React.useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const handleNavClick = () => {
@@ -14,10 +18,46 @@ export default function Navbar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleBrandSecretClick = () => {
+    handleNavClick();
+    clickCountRef.current += 1;
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+
+    if (clickCountRef.current >= 3) {
+      clickCountRef.current = 0;
+      navigate('/training');
+    } else {
+      clickTimerRef.current = setTimeout(() => {
+        clickCountRef.current = 0;
+      }, 500);
+    }
+  };
+
+  // Secret keyboard sequence: typing 'certa' or Ctrl+Shift+K
+  React.useEffect(() => {
+    let buffer = '';
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        navigate('/training');
+      }
+      if (e.key.length === 1) {
+        buffer += e.key.toLowerCase();
+        if (buffer.length > 10) buffer = buffer.slice(-10);
+        if (buffer.includes('certa')) {
+          navigate('/training');
+          buffer = '';
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [navigate]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container container">
-        <NavLink to="/" className="navbar-brand" onClick={handleNavClick}>
+        <NavLink to="/" className="navbar-brand" onClick={handleBrandSecretClick} title="Karthik Subramanian">
           Karthik Subramanian
         </NavLink>
         
@@ -40,3 +80,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

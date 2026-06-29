@@ -27,3 +27,7 @@ dist-ssr
 # Other files
 reviews_in_allica.txt
 scratch/
+
+# Allow secret training chat collections
+.chats/
+

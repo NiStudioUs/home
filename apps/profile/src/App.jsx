@@ -9,6 +9,7 @@ import Projects from './pages/Projects/Projects';
 import ResumeBuilder from './pages/ResumeBuilder/ResumeBuilder';
 import Narrative from './pages/Narrative/Narrative';
 import LinkedInGenerator from './pages/DevSettings/LinkedInGenerator';
+import SecretChatsPage from './pages/SecretChats/SecretChatsPage';
 import NotFound from './pages/NotFound/NotFound';
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<ResumeBuilder />} />
               <Route path="/dev" element={<LinkedInGenerator />} />
+              <Route path="/chats" element={<SecretChatsPage />} />
+              <Route path="/training" element={<SecretChatsPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

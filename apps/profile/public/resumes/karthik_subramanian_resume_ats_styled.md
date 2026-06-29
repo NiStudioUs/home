@@ -3,10 +3,10 @@
 ### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
 <div style="font-weight: 500; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-primary);">[Your Phone Number] | [Your Email Address]</div>
 <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.3rem;">Erode, Tamil Nadu, India</div>
-<div style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 1rem;">
-linkedin.com/in/karthik-s-b3552995<br/>
-nistudious.github.io/home<br/>
-play.google.com/store/apps/developer?id=Ni+Studios
+<div style="font-size: 0.9rem; color: var(--text-primary); margin-top: 0.2rem; margin-bottom: 0.6rem; line-height: 1.35;">
+<a href="https://www.linkedin.com/in/karthik-s-b3552995" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/karthik-s-b3552995</a><br/>
+<a href="https://nistudious.github.io/home/" target="_blank" rel="noopener noreferrer">https://nistudious.github.io/home/</a><br/>
+<a href="https://play.google.com/store/apps/developer?id=Ni+Studios" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps/developer?id=Ni+Studios</a>
 </div>
 
 ---
@@ -96,7 +96,7 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 
 ## Development Projects
 
-- **NiStudioUs Website** — Responsive portfolio built with Vite, React & Flutter Web; automated CI/CD static hosting via GitHub Actions (nistudious.github.io/home)
+- **NiStudioUs Website** — Responsive portfolio built with Vite, React & Flutter Web; automated CI/CD static hosting via GitHub Actions ([https://nistudious.github.io/home/](https://nistudious.github.io/home/))
 - **Flutter Notes App** — Production-ready local-first app with BLoC state management, biometric authentication, offline SQLite sync; published on Google Play Store
 - **SMS Stack Manager** — Privacy-first Flutter app using Drift/SQLite for local financial insight extraction from SMS; automated Google Play Store AAB release with Android build flavors (Dev/Prod)
 - **People App IKY v2** — Multi-platform genealogy app (Mobile, Web, Edge) deployed on Linux, Windows & Raspberry Pi; containerised backend with Docker Compose, PostgreSQL, Redis; automated CI/CD pipelines via GitHub Actions
