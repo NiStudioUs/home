@@ -18,18 +18,21 @@ export default function Navbar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBrandSecretClick = () => {
-    handleNavClick();
+  const handleBrandSecretClick = (e) => {
     clickCountRef.current += 1;
     if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
 
     if (clickCountRef.current >= 3) {
+      e.preventDefault();
       clickCountRef.current = 0;
       navigate('/training');
     } else {
+      if (clickCountRef.current === 1) {
+        handleNavClick();
+      }
       clickTimerRef.current = setTimeout(() => {
         clickCountRef.current = 0;
-      }, 500);
+      }, 1000);
     }
   };
 

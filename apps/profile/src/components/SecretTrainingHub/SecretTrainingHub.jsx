@@ -8,25 +8,25 @@ import {
   ChevronDown, ChevronRight, FileText, FolderOpen
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { trainingChatsList, certaAiTrainingData } from '../../content/certaAiTrainingData';
+import { trainingChatsList, sdetTrainingHubData } from '../../content/training';
 import './SecretTrainingHub.css';
 
 export default function SecretTrainingHub() {
   const navigate = useNavigate();
-  const [activeChatId, setActiveChatId] = useState('certa_ai');
+  const [activeChatId, setActiveChatId] = useState('sdet_masterclass');
   const [selectedChapterIdx, setSelectedChapterIdx] = useState(0);
   const [isQuickJumpOpen, setIsQuickJumpOpen] = useState(false);
   const [activeLang, setActiveLang] = useState('java');
-  const [expandedModules, setExpandedModules] = useState({ 'certa_ai': true });
+  const [expandedModules, setExpandedModules] = useState({ 'sdet_masterclass': true });
 
   const toggleModule = (id) => {
     setExpandedModules(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const activeHubData = certaAiTrainingData;
+  const activeHubData = sdetTrainingHubData;
   const currentChapter = activeHubData.chapters[selectedChapterIdx] || activeHubData.chapters[0];
 
-  const rawSolution = currentChapter.codingChallenge?.solutionCode;
+  const rawSolution = currentChapter?.codingChallenge?.solutionCode;
   const hasMultiLang = rawSolution && typeof rawSolution === 'object';
   const solutionContent = hasMultiLang ? (rawSolution[activeLang] || rawSolution.java) : rawSolution;
 
@@ -109,16 +109,40 @@ export default function SecretTrainingHub() {
                 {/* Hierarchical Chapters inside LHS parent card */}
                 {isExpanded && isSelected && activeHubData.chapters && (
                   <div className="lhs-chapter-tree" onClick={(e) => e.stopPropagation()}>
-                    {activeHubData.chapters.map((chap, idx) => (
-                      <button
-                        key={chap.chapterId}
-                        className={`lhs-chapter-item ${selectedChapterIdx === idx ? 'active' : ''}`}
-                        onClick={() => setSelectedChapterIdx(idx)}
-                      >
-                        <FileText size={15} color={selectedChapterIdx === idx ? 'var(--primary-color, #2563eb)' : '#64748b'} />
-                        <span>{chap.title.split(' (')[0]}</span>
-                      </button>
-                    ))}
+                    {activeHubData.chapters.map((chap, idx) => {
+                      const isChapSelected = selectedChapterIdx === idx;
+                      return (
+                        <div key={chap.chapterId} className="lhs-chapter-tile">
+                          <button
+                            className={`lhs-chapter-item ${isChapSelected ? 'active' : ''}`}
+                            onClick={() => setSelectedChapterIdx(idx)}
+                          >
+                            {isChapSelected ? <ChevronDown size={15} color="var(--primary-color, #2563eb)" /> : <ChevronRight size={15} />}
+                            <FileText size={15} color={isChapSelected ? 'var(--primary-color, #2563eb)' : '#64748b'} />
+                            <span>{chap.title.split(' (')[0]}</span>
+                          </button>
+
+                          {/* Clickable Topics to jump directly inside selected chapter */}
+                          {isChapSelected && chap.indexTopics && (
+                            <div className="lhs-subtopics-list">
+                              {chap.indexTopics.map((topic) => (
+                                <button
+                                  key={topic.id}
+                                  className="lhs-subtopic-btn"
+                                  onClick={() => {
+                                    setSelectedChapterIdx(idx);
+                                    setTimeout(() => handleScrollToIndex(topic.id), 50);
+                                  }}
+                                >
+                                  <Hash size={12} color="var(--primary-color, #2563eb)" />
+                                  <span>{topic.title}</span>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -226,90 +250,100 @@ export default function SecretTrainingHub() {
           </div>
 
           {/* Section 2: Coding Challenge */}
-          <h2 className="section-divider-heading" style={{ marginTop: '4rem' }}>
-            <Terminal size={22} color="var(--primary-color, #2563eb)" />
-            {currentChapter.codingChallenge.title}
-          </h2>
+          {currentChapter?.codingChallenge && (
+            <div className="coding-challenge-wrapper">
+              <h2 className="section-divider-heading" style={{ marginTop: '4rem' }}>
+                <Terminal size={22} color="var(--primary-color, #2563eb)" />
+                {currentChapter.codingChallenge.title}
+              </h2>
 
-          <div id={currentChapter.codingChallenge.id} className="coding-challenge-container">
-            <div className="challenge-problem-desc">
-              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-                {currentChapter.codingChallenge.problemStatement}
-              </ReactMarkdown>
-            </div>
-
-            {/* Rationale Table */}
-            <table className="examples-table">
-              <thead>
-                <tr>
-                  <th>Input</th>
-                  <th>Output</th>
-                  <th>Rationale</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentChapter.codingChallenge.examples.map((ex, idx) => (
-                  <tr key={idx}>
-                    <td style={{ fontFamily: 'monospace', fontWeight: 600 }}>{ex.input}</td>
-                    <td style={{ fontFamily: 'monospace', color: '#059669', fontWeight: 700 }}>{ex.output}</td>
-                    <td><pre style={{ margin: 0, background: 'transparent', border: 'none', padding: 0, fontFamily: 'inherit' }}>{ex.rationale}</pre></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* Requirements */}
-            <div style={{ margin: '1.5rem 0' }}>
-              <strong style={{ fontSize: '0.95rem', color: 'var(--text-secondary, #64748b)' }}>
-                Assessment Requirements:
-              </strong>
-              <ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem', lineHeight: '1.6' }}>
-                {currentChapter.codingChallenge.requirements.map((req, i) => (
-                  <li key={i}>{req}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Solution Code in LeetCode Polished Dark Block with Tab Switcher */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '2rem 0 0.75rem 0', flexWrap: 'wrap', gap: '1rem' }}>
-              <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Code size={18} color="var(--primary-color, #2563eb)" />
-                LeetCode Production-Ready Solution{hasMultiLang ? ` (${activeLang.toUpperCase()})` : ' (JAVA)'}:
-              </h4>
-              {hasMultiLang && (
-                <div className="code-lang-tabs">
-                  <button 
-                    className={`code-lang-tab ${activeLang === 'java' ? 'active' : ''}`}
-                    onClick={() => setActiveLang('java')}
-                  >
-                    Java
-                  </button>
-                  <button 
-                    className={`code-lang-tab ${activeLang === 'typescript' ? 'active' : ''}`}
-                    onClick={() => setActiveLang('typescript')}
-                  >
-                    TypeScript
-                  </button>
-                  <button 
-                    className={`code-lang-tab ${activeLang === 'python' ? 'active' : ''}`}
-                    onClick={() => setActiveLang('python')}
-                  >
-                    Python
-                  </button>
+              <div id={currentChapter.codingChallenge.id} className="coding-challenge-container">
+                <div className="challenge-problem-desc">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                    {currentChapter.codingChallenge.problemStatement}
+                  </ReactMarkdown>
                 </div>
-              )}
-            </div>
-            <pre className="leetcode-code-block">
-              <code>{solutionContent}</code>
-            </pre>
 
-            {/* Explanation & Complexity Walkthrough */}
-            <div className="deep-dive-markdown" style={{ marginTop: '1.75rem' }}>
-              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-                {currentChapter.codingChallenge.explanation}
-              </ReactMarkdown>
+                {/* Rationale Table */}
+                {currentChapter.codingChallenge.examples && (
+                  <table className="examples-table">
+                    <thead>
+                      <tr>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Rationale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {currentChapter.codingChallenge.examples.map((ex, idx) => (
+                        <tr key={idx}>
+                          <td style={{ fontFamily: 'monospace', fontWeight: 600 }}>{ex.input}</td>
+                          <td style={{ fontFamily: 'monospace', color: '#059669', fontWeight: 700 }}>{ex.output}</td>
+                          <td><pre style={{ margin: 0, background: 'transparent', border: 'none', padding: 0, fontFamily: 'inherit' }}>{ex.rationale}</pre></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+
+                {/* Requirements */}
+                {currentChapter.codingChallenge.requirements && (
+                  <div style={{ margin: '1.5rem 0' }}>
+                    <strong style={{ fontSize: '0.95rem', color: 'var(--text-secondary, #64748b)' }}>
+                      Assessment Requirements:
+                    </strong>
+                    <ul style={{ marginTop: '0.5rem', paddingLeft: '1.5rem', lineHeight: '1.6' }}>
+                      {currentChapter.codingChallenge.requirements.map((req, i) => (
+                        <li key={i}>{req}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Solution Code in LeetCode Polished Dark Block with Tab Switcher */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '2rem 0 0.75rem 0', flexWrap: 'wrap', gap: '1rem' }}>
+                  <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Code size={18} color="var(--primary-color, #2563eb)" />
+                    LeetCode Production-Ready Solution{hasMultiLang ? ` (${activeLang.toUpperCase()})` : ' (JAVA)'}:
+                  </h4>
+                  {hasMultiLang && (
+                    <div className="code-lang-tabs">
+                      <button 
+                        className={`code-lang-tab ${activeLang === 'java' ? 'active' : ''}`}
+                        onClick={() => setActiveLang('java')}
+                      >
+                        Java
+                      </button>
+                      <button 
+                        className={`code-lang-tab ${activeLang === 'typescript' ? 'active' : ''}`}
+                        onClick={() => setActiveLang('typescript')}
+                      >
+                        TypeScript
+                      </button>
+                      <button 
+                        className={`code-lang-tab ${activeLang === 'python' ? 'active' : ''}`}
+                        onClick={() => setActiveLang('python')}
+                      >
+                        Python
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <pre className="leetcode-code-block">
+                  <code>{solutionContent}</code>
+                </pre>
+
+                {/* Explanation & Complexity Walkthrough */}
+                {currentChapter.codingChallenge.explanation && (
+                  <div className="deep-dive-markdown" style={{ marginTop: '1.75rem' }}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                      {currentChapter.codingChallenge.explanation}
+                    </ReactMarkdown>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </main>
       </div>
     </div>
