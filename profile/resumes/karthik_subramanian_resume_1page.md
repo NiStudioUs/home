@@ -3,7 +3,8 @@
 ### Staff Engineer - Mobile and Quality Engineer Lead
 📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
 📍 Location: Erode, Tamil Nadu, India  
-🔗 LinkedIn: linkedin.com/in/karthik-s-b3552995 | 🌐 Portfolio: nistudious.github.io/home | 📱 Play Store: play.google.com/store/apps/developer?id=Ni+Studios
+🔗 LinkedIn: [https://linkedin.com/in/karthik-s-b3552995](https://linkedin.com/in/karthik-s-b3552995) | 🌐 Portfolio: [https://nistudious.github.io/home](https://nistudious.github.io/home)  
+📱 Play Store: [https://play.google.com/store/apps/developer?id=Ni+Studios](https://play.google.com/store/apps/developer?id=Ni+Studios)
 
 ---
 

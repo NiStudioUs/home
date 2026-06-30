@@ -3,7 +3,8 @@
 ### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
 📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
 📍 Location: Erode, Tamil Nadu, India  
-🔗 LinkedIn: linkedin.com/in/karthik-s-b3552995 | 🌐 Portfolio: nistudious.github.io/home | 📱 Play Store: play.google.com/store/apps/developer?id=Ni+Studios
+🔗 LinkedIn: [https://linkedin.com/in/karthik-s-b3552995](https://linkedin.com/in/karthik-s-b3552995) | 🌐 Portfolio: [https://nistudious.github.io/home](https://nistudious.github.io/home)  
+📱 Play Store: [https://play.google.com/store/apps/developer?id=Ni+Studios](https://play.google.com/store/apps/developer?id=Ni+Studios)
 
 ---
 
@@ -18,6 +19,7 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 **Automation:** Cypress, Playwright, Selenium (Java), Appium, REST Assured, Karate, Bruno  
 **Languages:** TypeScript, Java, Dart  
 **Frameworks:** BDD Cucumber, TestNG, JUnit, BLoC, Riverpod  
+**Methodologies:** Agile, Scrum, Kanban, Shift-Left QE, Continuous Testing, BDD, TDD, Sprint Planning, Three Amigos  
 **CI/CD & DevOps:** Azure DevOps, GitHub Actions, Docker, Jenkins  
 **Mobile:** Flutter, Android (Kotlin), Google Play Store Release, AAB/APK Flavors  
 **Domain:** Fintech, Banking, CDD, KYC, GDPR, Lending, Deposits, T24  
