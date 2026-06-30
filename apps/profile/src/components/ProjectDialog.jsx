@@ -1,11 +1,13 @@
 import React from 'react';
 import { X, ExternalLink, Code, Globe } from 'lucide-react';
 import { CONTACT } from '../config/constants';
+import projectsFullData from '../content/projects.json';
 
 export default function ProjectDialog({ project, onClose }) {
   if (!project) return null;
 
-  const details = project || {};
+  const fullProject = projectsFullData.find(p => p.id === project.id);
+  const details = fullProject || project || {};
 
   return (
     <div className="dialog-overlay" onClick={onClose}>
@@ -14,13 +16,15 @@ export default function ProjectDialog({ project, onClose }) {
           <X size={24} />
         </button>
 
-        <h2 className="project-title" style={{ marginBottom: '0.5rem' }}>{project.name}</h2>
-        <span className={`status-badge status-${project.status.split(' ')[0].toLowerCase().replace('-', '')}`}>
-          {project.status}
+        <h2 className="project-title" style={{ marginBottom: '0.5rem' }}>{details.name || project.name}</h2>
+        <span className={`status-badge status-${(details.status || project.status).split(' ')[0].toLowerCase().replace('-', '')}`}>
+          {details.status || project.status}
         </span>
 
         <div className="dialog-body">
-          <p>{details.fullDescription || project.description}</p>
+          <div style={{ whiteSpace: 'pre-line', marginBottom: '1.5rem', lineHeight: '1.6', color: 'var(--text-primary)' }}>
+            {details.fullDescription || details.description || project.description}
+          </div>
           
           {details.features && (
             <>

@@ -372,6 +372,10 @@ export default function ResumeBuilder() {
               .resume-preview-content * {
                 color: #000000 !important;
               }
+              .resume-preview-content a {
+                color: #2563eb !important;
+                text-decoration: underline !important;
+              }
               .resume-preview-content {
                 font-size: 0.9rem !important;
                 line-height: 1.35 !important;
@@ -464,7 +468,15 @@ export default function ResumeBuilder() {
                 )}
                 {getDisplayContent.split('{{SOCIAL_LINKS}}').map((part, index, arr) => (
                   <React.Fragment key={index}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{part}</ReactMarkdown>
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]} 
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />
+                      }}
+                    >
+                      {part}
+                    </ReactMarkdown>
                     {index === 0 && arr.length > 1 && (
                       <div className="resume-socials" style={{ display: 'flex', gap: '0.5rem 1.25rem', marginTop: '0.4rem', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
                         {profileData.socials.map((social, idx) => {

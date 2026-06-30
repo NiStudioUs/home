@@ -1,5 +1,56 @@
 [
   {
+    "id": "shared-e2e",
+    "name": "@allica/shared-e2e Automation Platform",
+    "path": "",
+    "status": "Enterprise Live",
+    "tags": [
+      "TypeScript",
+      "Cypress",
+      "Playwright",
+      "Azure Key Vault",
+      "MSAL / JWT",
+      "Azure Artifacts"
+    ],
+    "description": "Enterprise E2E test automation npm library distributed via Azure Artifacts across 4 engineering squads. Features automated Azure Key Vault secret retrieval, local MSAL mock server for role-based JWT generation, and standardized authentication.",
+    "resumeBullets": [
+      {
+        "text": "- **Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.",
+        "resumeTypes": [
+          "sdet-qe",
+          "hybrid",
+          "1page",
+          "2page-ats",
+          "flutter"
+        ]
+      }
+    ],
+    "version": "2.4.0",
+    "packages": [],
+    "techStack": [
+      "TypeScript",
+      "Node.js",
+      "Cypress",
+      "Playwright",
+      "Azure Key Vault",
+      "MSAL",
+      "JWT",
+      "Azure DevOps Artifacts"
+    ],
+    "resumeName": "@allica/shared-e2e Enterprise E2E Platform",
+    "storeUrl": null,
+    "fullDescription": "One challenge we faced was that every automation repository needed to implement its own authentication flow, user management, and Azure Key Vault integration for securely retrieving secrets. This created duplicated code, inconsistent implementations, and unnecessary effort whenever a new project was started.\n\nTo solve this, I designed, built, and published a shared E2E npm library that was distributed through Azure Artifacts and consumed across automation repositories. The library provided reusable modules for authentication, user management, and secure secret retrieval from Azure Key Vault. Teams only needed to install the package, configure it for their repository, and immediately start writing business-focused automation instead of rebuilding common infrastructure.\n\nI owned the design, implementation, publishing, versioning, documentation, and ongoing maintenance of the package while working with engineering teams during adoption.\n\nThe impact was a much faster onboarding experience for new automation projects, standardized authentication and secret management across repositories, significantly less duplicate code, and a single place to maintain future enhancements. This allowed teams to focus on delivering business value while improving consistency and maintainability across the engineering organization.",
+    "features": [
+      "Automated Azure Key Vault integration for secure secret retrieval",
+      "Local MSAL mock server for role-based JWT generation without static fixtures",
+      "Centralized authentication & user session management across 4 squads",
+      "Distributed via private Azure DevOps Artifacts npm registry",
+      "Reduced CI/CD pipeline execution times by over 60%"
+    ],
+    "githubUrl": null,
+    "liveUrl": null
+  },
+  {
     "id": "homelab",
     "name": "Raspberry Pi Home Lab",
     "path": "",
