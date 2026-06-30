@@ -60,6 +60,16 @@
       ]
     },
     {
+      "name": "Methodologies",
+      "skills": [
+        "Agile / Scrum / Kanban Ceremonies & Sprint Management",
+        "Behaviour Driven Development (BDD) & Test Driven Development (TDD)",
+        "Shift-Left Quality Engineering & Continuous Testing",
+        "Sprint Planning, Backlog Grooming, Retrospectives & Story Point Estimation",
+        "Three Amigos Workshops & Cross-Functional Team Collaboration"
+      ]
+    },
+    {
       "name": "Release",
       "skills": [
         "AAB Builds, APK Builds with Flavours such as Dev, Prod",

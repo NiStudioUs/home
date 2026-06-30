@@ -21,6 +21,7 @@
       "Tools",
       "Development",
       "Frameworks",
+      "Methodologies",
       "Release"
     ],
     "profileTitle": "Automation Lead, SDET Lead",
@@ -45,6 +46,7 @@
       "CI/CD",
       "Development",
       "Frameworks",
+      "Methodologies",
       "Release",
       "Systems Supported",
       "Tools"
@@ -76,6 +78,7 @@
       "CI/CD",
       "Development",
       "Frameworks",
+      "Methodologies",
       "Release",
       "Systems Supported",
       "Tools"
@@ -101,7 +104,8 @@
       "Domain",
       "Systems Supported",
       "Tools",
-      "Frameworks"
+      "Frameworks",
+      "Methodologies"
     ],
     "profileTitle": "Automation Lead, SDET Lead",
     "headers": {
@@ -128,6 +132,7 @@
       "Development",
       "Domain",
       "Frameworks",
+      "Methodologies",
       "Release",
       "Systems Supported",
       "Tools"

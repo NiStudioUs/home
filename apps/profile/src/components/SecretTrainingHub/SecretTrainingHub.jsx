@@ -243,6 +243,37 @@ export default function SecretTrainingHub() {
                         {qa.attachedDeepDive.content}
                       </ReactMarkdown>
                     </div>
+
+                    {/* Multi-language Code Tabs in Deep-Dive */}
+                    {qa.attachedDeepDive.codeTabs && (
+                      <div style={{ marginTop: '1.25rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '0.5rem' }}>
+                          <div className="code-lang-tabs">
+                            <button 
+                              className={`code-lang-tab ${activeLang === 'java' ? 'active' : ''}`}
+                              onClick={() => setActiveLang('java')}
+                            >
+                              Java
+                            </button>
+                            <button 
+                              className={`code-lang-tab ${activeLang === 'typescript' ? 'active' : ''}`}
+                              onClick={() => setActiveLang('typescript')}
+                            >
+                              TypeScript
+                            </button>
+                            <button 
+                              className={`code-lang-tab ${activeLang === 'python' ? 'active' : ''}`}
+                              onClick={() => setActiveLang('python')}
+                            >
+                              Python
+                            </button>
+                          </div>
+                        </div>
+                        <pre className="leetcode-code-block">
+                          <code>{qa.attachedDeepDive.codeTabs[activeLang] || qa.attachedDeepDive.codeTabs.java}</code>
+                        </pre>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -301,12 +332,8 @@ export default function SecretTrainingHub() {
                 )}
 
                 {/* Solution Code in LeetCode Polished Dark Block with Tab Switcher */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '2rem 0 0.75rem 0', flexWrap: 'wrap', gap: '1rem' }}>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Code size={18} color="var(--primary-color, #2563eb)" />
-                    LeetCode Production-Ready Solution{hasMultiLang ? ` (${activeLang.toUpperCase()})` : ' (JAVA)'}:
-                  </h4>
-                  {hasMultiLang && (
+                <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', margin: '2rem 0 0.5rem 0' }}>
+                  {hasMultiLang ? (
                     <div className="code-lang-tabs">
                       <button 
                         className={`code-lang-tab ${activeLang === 'java' ? 'active' : ''}`}
@@ -327,6 +354,11 @@ export default function SecretTrainingHub() {
                         Python
                       </button>
                     </div>
+                  ) : (
+                    <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <Code size={18} color="var(--primary-color, #2563eb)" />
+                      Solution (Java)
+                    </h4>
                   )}
                 </div>
                 <pre className="leetcode-code-block">
