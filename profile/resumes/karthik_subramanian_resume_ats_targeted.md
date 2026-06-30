@@ -1,6 +1,13 @@
-## Professional Summary
+# Karthik Subramanian
 
-[Target Role Title]
+### [Target Role Title]
+📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
+📍 Location: Erode, Tamil Nadu, India  
+🔗 LinkedIn: linkedin.com/in/karthik-s-b3552995 | 🌐 Portfolio: nistudious.github.io/home | 📱 Play Store: play.google.com/store/apps/developer?id=Ni+Studios
+
+---
+
+## Professional Summary
 
 Senior SDET and QE Platform Architect with 9+ years building enterprise-grade automation platforms for UK fintech and banking systems. At Allica Bank (UK), architected the shared-e2e platform library adopted across 4 squads, reduced CI pipeline runtimes by 60%, and drove GenAI (GitHub Copilot) adoption delivering a 40% QE productivity gain. Deep domain expertise across CDD, KYC, Lending, Deposits, and Core Banking (T24). Seeking Lead SDET / QE Platform Engineering roles in fintech, GCCs, or product companies.
 
@@ -18,9 +25,8 @@ Flutter, Dart, Kotlin, Selenium, Playwright, Java, TypeScript, CI/CD, Azure DevO
 
 ## Experience
 
-### Test Lead / Staff Engineer
-*Ni Studios* | August 2017 – Present
-
+### Ni Studios (August 2017 – Present)
+**Test Lead / Staff Engineer**
 - Managed test automation frameworks.
 - Led the deployment of cross-platform applications.
 
@@ -41,5 +47,5 @@ Flutter, Dart, Kotlin, Selenium, Playwright, Java, TypeScript, CI/CD, Azure DevO
 
 ## Education
 
-### B.E. Computer Science
-*Anna University*
+**Executive PG Program in Financial Services and IT Assurance** — LIBA, Chennai  
+**B.E. Computer Science and Engineering** — Velalar College of Engineering and Technology, Erode
