@@ -20,6 +20,7 @@ export default function ResumeBuilder() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [copiedRaw, setCopiedRaw] = useState(false);
   const [copiedPlain, setCopiedPlain] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
   const [lineSpacing, setLineSpacing] = useState(1.5);
   const [userEmail, setUserEmail] = useState('');
   const [userPhone, setUserPhone] = useState('');
@@ -143,8 +144,14 @@ export default function ResumeBuilder() {
 
   const getDisplayContent = useMemo(() => {
     let content = resumeContent;
-    if (userEmail) content = content.replace(/\[Your Email Address\]/g, userEmail);
-    if (userPhone) content = content.replace(/\[Your Phone Number\]/g, userPhone);
+    if (userEmail) {
+      content = content.replace(/(mailto:)\[Your Email Address\]/g, `$1${userEmail.trim()}`);
+      content = content.replace(/\[Your Email Address\]/g, userEmail);
+    }
+    if (userPhone) {
+      content = content.replace(/(tel:)\[Your Phone Number\]/g, `$1${userPhone.replace(/[\s\-()]/g, '')}`);
+      content = content.replace(/\[Your Phone Number\]/g, userPhone);
+    }
     
     if (selectedResume && selectedResume.skillTypes) {
       const tableRegex = /\|.*\|\n\| [:\- ]+ \| [:\- ]+ \|\n(\| \*\*.*?\*\* \| .*? \|\n)+/g;
@@ -176,7 +183,7 @@ export default function ResumeBuilder() {
             if (roleBlock.includes('2021') && roleBlock.includes('2023')) {
                return headerPart + "*Architected and delivered end-to-end test automation frameworks across lending and deposits domains using Selenium, Cucumber BDD, and Docker Test Containers. Directed QA execution for Asset Finance projects while mentoring teams and optimizing automation infrastructure.*\n";
             }
-            if (roleBlock.includes('2018') && roleBlock.includes('2020')) {
+            if (roleBlock.includes('2017') && roleBlock.includes('2020')) {
                return headerPart + "*Engineered comprehensive automation across Mobile (Android/iOS), Web, and API channels for retail banking modules including T24, payments, and commercial operations. Accelerated release cycles by establishing robust test data creation frameworks and executing rigorous compatibility testing via Sauce Labs.*\n";
             }
             return roleBlock;
@@ -472,7 +479,48 @@ export default function ResumeBuilder() {
                       remarkPlugins={[remarkGfm]} 
                       rehypePlugins={[rehypeRaw]}
                       components={{
-                        a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />
+                        a: ({node, ...props}) => {
+                          const href = props.href;
+                          const isHeaderPill = ['LinkedIn', 'GitHub', 'Play Store', 'Portfolio', 'Location'].includes(props.title);
+                          
+                          const handleClick = (e) => {
+                            if (href) {
+                              let textToCopy = href;
+                              if (href.startsWith('tel:') || href.startsWith('mailto:')) {
+                                e.preventDefault();
+                                textToCopy = href.replace(/^(tel:|mailto:)/, '');
+                                navigator.clipboard.writeText(textToCopy);
+                                setToastMessage(`Copied ${textToCopy} to clipboard!`);
+                                setTimeout(() => setToastMessage(''), 3000);
+                              } else {
+                                navigator.clipboard.writeText(textToCopy);
+                                setToastMessage(`Copied ${props.title || 'link'} to clipboard!`);
+                                setTimeout(() => setToastMessage(''), 3000);
+                              }
+                            }
+                          };
+
+                          if (href && (href.startsWith('tel:') || href.startsWith('mailto:'))) {
+                            return (
+                              <a 
+                                {...props} 
+                                onClick={handleClick}
+                                style={{ cursor: 'pointer', ...props.style }}
+                                title={`Copy ${href.replace(/^(tel:|mailto:)/, '')}`}
+                                className={isHeaderPill ? 'pill-link' : ''}
+                              />
+                            );
+                          }
+                          return (
+                            <a 
+                              {...props} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              onClick={handleClick}
+                              className={isHeaderPill ? 'pill-link' : ''}
+                            />
+                          );
+                        }
                       }}
                     >
                       {part}
@@ -515,6 +563,13 @@ export default function ResumeBuilder() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="toast-notification">
+          <Check size={16} color="var(--primary-color)" /> {toastMessage}
         </div>
       )}
     </div>

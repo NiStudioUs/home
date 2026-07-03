@@ -207,8 +207,8 @@
     "id": "maveric-allica",
     "company": "Maveric Systems",
     "client": "Allica Bank Ltd, UK",
-    "title": "Principal Software Engineer",
-    "startDate": "January 2021",
+    "title": "Principal Software Engineer (Sep '21 - May '23) | Senior Software Engineer (Sep '20 - Aug '21)",
+    "startDate": "September 2020",
     "endDate": "May 2023",
     "bullets": [
       "Led and contributed to automation engineering for lending and deposits within Allica Bank’s SME banking ecosystem.",
@@ -273,9 +273,9 @@
     "id": "maveric-metro",
     "company": "Maveric Systems",
     "client": "Metro Bank Ltd, UK",
-    "title": "Senior Test Engineer",
-    "startDate": "September 2018",
-    "endDate": "December 2020",
+    "title": "Senior Test Engineer (Sep '19 - Aug '20) | LIBA Intern (Sep '17 - Aug '19)",
+    "startDate": "September 2017",
+    "endDate": "August 2020",
     "bullets": [
       "Worked on Digital Mobile Application (Android & iOS), T24 Banking Services, Cards, Transfers, Payments (SWIFT, SEPA, Faster Payment), and Retail Operations (Customer & Account Creation).",
       "Delivered projects including P&C Automation (Web), T24 UI Upgrade Automation (Web), Mobile BAU Automation (Web, Mobile & API), and Mobile SCA Automation (API).",
