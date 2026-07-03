@@ -1,10 +1,8 @@
 # Karthik Subramanian
 
 ### Automation Lead, SDET Lead
-📞 Phone: [Your Phone Number] | ✉ Email: [Your Email Address]  
-📍 Location: Erode, Tamil Nadu, India  
-🔗 LinkedIn: [https://linkedin.com/in/karthik-s-b3552995](https://linkedin.com/in/karthik-s-b3552995) | 🌐 Portfolio: [https://nistudious.github.io/home](https://nistudious.github.io/home)  
-📱 Play Store: [https://play.google.com/store/apps/developer?id=Ni+Studios](https://play.google.com/store/apps/developer?id=Ni+Studios)
+📞 [[Your Phone Number]](tel:[Your Phone Number]) | ✉ [[Your Email Address]](mailto:[Your Email Address])  
+[![Location](/icons/location.svg) Erode, Tamil Nadu, India](https://www.google.com/maps/place/Erode%2C%20Tamil%20Nadu%2C%20India "Location") [![LinkedIn](/icons/linkedin.svg) LinkedIn](https://linkedin.com/in/karthik-s-b3552995 "LinkedIn") [![GitHub](/icons/github.svg) GitHub](https://nistudious.github.io/home "GitHub") [![Play Store](/icons/googleplay.svg) Play Store](https://play.google.com/store/apps/developer?id=Ni+Studios "Play Store")
 
 ---
 
@@ -45,8 +43,9 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 - **Authored YAML CI/CD pipeline configurations** in **Azure DevOps** for backend microservices, enabling continuous deployment at scale across engineering teams.
 - **Recognised as cross-squad QE contributor by peers**; supported away teams with regression packs and onboarding guidance across multiple squad COB integrations.
 
-### Maveric Systems (Jan 2021 – May 2023 | Client: Allica Bank Ltd, UK)
-**Principal Software Engineer**
+### Maveric Systems (Sep 2020 – May 2023 | Client: Allica Bank Ltd, UK)
+**Principal Software Engineer** (Sep 2021 – May 2023)  
+**Senior Software Engineer** (Sep 2020 – Aug 2021)
 - Led and contributed to automation engineering for lending and deposits within Allica Bank’s SME banking ecosystem.
 - Created a framework with **Selenium Page-Factory, Cucumber BDD** and modular class methods to invoke Page-Objects from feature files to minimize maintenance.
 - Wrote numerous Automation test scripts for Lending and Deposits.
@@ -54,8 +53,9 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 - Technical Lead for the Automation Test Development framework for **Asset Finance** project, including POC on COB Automation and Multi-Asset Automation.
 - Imparted solutions for Automation issues, Test Requirement analysis, and Run plans for Automation Execution.
 
-### Maveric Systems (Sep 2018 – Dec 2020 | Client: Metro Bank Ltd, UK)
-**Senior Test Engineer**
+### Maveric Systems (Sep 2017 – Aug 2020 | Client: Metro Bank Ltd, UK)
+**Senior Test Engineer** (Sep 2019 – Aug 2020)  
+**LIBA Intern** (Sep 2017 – Aug 2019)
 - Delivered automation across web, mobile, desktop, and API channels for retail and commercial banking workflows.
 - Worked on modules including **Digital Mobile Application (Android & iOS)**, T24 Banking Services, Cards, Transfers, Payments (SWIFT, SEPA, Faster Payment), and Retail Operations.
 - Delivered projects including **P&C Automation (Web)**, T24 UI Upgrade Automation (Web), Mobile BAU Automation (Web, Mobile & API), and Mobile SCA Automation (API).
