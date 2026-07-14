@@ -2,7 +2,7 @@
 
 ### Senior SDET | Lead QE | Cypress | Playwright | Fintech Banking | CI/CD | GenAI | 9 Years
 📞 [[Your Phone Number]](tel:[Your Phone Number]) | ✉ [[Your Email Address]](mailto:[Your Email Address])  
-[![Location](/icons/location.svg) Erode, Tamil Nadu, India](https://www.google.com/maps/place/Erode%2C%20Tamil%20Nadu%2C%20India "Location") [![LinkedIn](/icons/linkedin.svg) LinkedIn](https://linkedin.com/in/karthik-s-b3552995 "LinkedIn") [![GitHub](/icons/github.svg) GitHub](https://nistudious.github.io/home "GitHub") [![Play Store](/icons/googleplay.svg) Play Store](https://play.google.com/store/apps/developer?id=Ni+Studios "Play Store")
+[![Location](icons/location.svg) Erode, Tamil Nadu, India](https://www.google.com/maps/place/Erode%2C%20Tamil%20Nadu%2C%20India "Location") [![LinkedIn](icons/linkedin.svg) LinkedIn](https://linkedin.com/in/karthik-s-b3552995 "LinkedIn") [![GitHub](icons/github.svg) GitHub](https://nistudious.github.io/home "GitHub") [![Play Store](icons/googleplay.svg) Play Store](https://play.google.com/store/apps/developer?id=Ni+Studios "Play Store")
 
 ---
 
