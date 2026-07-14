@@ -46,8 +46,8 @@ export default function ResumeBuilder() {
         setResumeContent(generatedMd);
         setIsEditMode(false);
       } else {
-        // Fetch hardcoded legacy markdown using relative path
-        fetch(selectedResume.file)
+        // Fetch hardcoded legacy markdown using relative path and cache buster
+        fetch(`${selectedResume.file}?t=${new Date().getTime()}`)
           .then(res => res.text())
           .then(text => {
             setResumeContent(text);
@@ -215,8 +215,8 @@ export default function ResumeBuilder() {
       }
     }
 
-    // Preserve empty new lines by injecting non-breaking spaces
-    content = content.replace(/\n{3,}/g, (match) => '\n\n' + '&nbsp;\n\n'.repeat(match.length - 2));
+    // Preserve standard new lines naturally without &nbsp; injection
+    // content = content.replace(/\n{3,}/g, (match) => '\n\n' + '&nbsp;\n\n'.repeat(match.length - 2));
     
     return content;
   }, [resumeContent, userEmail, userPhone, selectedResume, briefMode]);
@@ -346,7 +346,7 @@ export default function ResumeBuilder() {
                   page-break-after: avoid;
                   break-after: avoid;
                 }
-                p, li, div {
+                p, li {
                   page-break-inside: avoid;
                   break-inside: avoid;
                 }
