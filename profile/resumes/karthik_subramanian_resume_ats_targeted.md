@@ -14,7 +14,7 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 
 Flutter, Dart, BLoC, Android, Kotlin, Selenium, Cypress, Playwright, Appium,
 REST Assured, Karate, TypeScript, Java, BDD, Cucumber, TestNG, JUnit,
-Azure DevOps, Azure Key Vault, Jenkins, GitHub Actions, Docker, Maven, Gradle,
+Azure DevOps, Azure Key Vault, Jenkins, GitHub Actions, Docker (Self-hosted apps, Immich, Jellyfin), Maven, Gradle,
 MSSQL, SQLite, Drift, Liquibase, Microservices, CI/CD, SDET, QE Automation,
 Test Lead, Staff Engineer, Fintech, Retail Banking, SME Banking
 

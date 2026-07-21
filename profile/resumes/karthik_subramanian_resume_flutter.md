@@ -16,13 +16,15 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 | | |
 | --- | --- |
+| **Languages** | TypeScript, JavaScript, Kotlin, Java, Dart |
 | **Automation** | API Automation (REST Assured, Karate, Bruno), Desktop Automation (Winium), Mobile Automation (Appium), Test Data Management & Mocking (MSW), Web Automation (Selenium, Cypress, Playwright) |
-| **CI/CD** | Azure DevOps & Pipelines, Docker, Git / GitHub Actions / Workflows, Jenkins |
+| **CI/CD** | Azure DevOps & Pipelines, Docker (Self-hosted apps, Immich, Jellyfin), Git / GitHub Actions / Workflows, Jenkins |
 | **Development** | Flutter Cross Platform Apps (Android, Windows, Web, Linux), GenAI assisted React applications using vite as bundler |
 | **Frameworks** | Development Frameworks: BLoC, Riverpod, Flutter BLoC, Flutter Riverpod, <br>Test Frameworks: BDD Cucumber, TestNG, JUnit, Vite (Front-end) |
+| **Methodologies** | Agile / Scrum / Kanban, BDD & TDD, Shift-Left Testing, Sprint Planning & Estimation, Cross-Functional Collaboration |
 | **Release** | AAB Builds, APK Builds with Flavours such as Dev, Prod, Google PlayStore Publishing to Internal Tests > Closed Testing > Beta testing > Prod Release |
 | **Systems Supported** | Asset Finance, Business Rewards & Operations, Customer Onboarding, Deposits & Lending Ecosystems, FMS (CRM), Mobile Application Testing, SaaS & KYC Integrations (Hubspot, Full Circle, Saascada, GoDiligent, World Check1), Temenos T24 (Core Banking) |
-| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, LaunchDarkly, Maven / Gradle, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
+| **Tools** | Azure Key Vault, CODEOWNERS, Front End Heap Analytics, GitHub Copilot (GenAI), IntelliJ IDE / Eclipse IDE, JIRA, LaunchDarkly, MSSQL, Maven / Gradle, Mongo DB, Postgre SQL, Postman / JMeter, Report Portal, Sauce Labs, Zephyr Squad |
 
 ---
 
@@ -49,12 +51,12 @@ Versatile Software Engineer and QE Platform Leader with 9+ years of experience e
 
 ### Allica Bank, UK (May 2023 – Present | Remote from India)
 **Senior SDET**
-- **Architected and engineered** the enterprise-level `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.
+- **Architected and engineered** the enterprise-level **TypeScript** `@allica/shared-e2e` platform library, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation across teams.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
-- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
+- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **TypeScript-based Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
 - Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
-- Spearheaded advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
+- Engineered advanced TypeScript-based framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
 - **Drove engineering excellence** by integrating **Visual Regression testing**, deploying Plop E2E templates, and **championing organizational GenAI (GitHub Copilot)** adoption to boost QE team productivity by **40%**.
 
 ### Maveric Systems (Sep 2020 – May 2023 | Client: Allica Bank Ltd, UK)

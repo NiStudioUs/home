@@ -18,7 +18,7 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 **Languages:** TypeScript, Java, Dart  
 **Frameworks:** BDD Cucumber, TestNG, JUnit, BLoC, Riverpod  
 **Methodologies:** Agile, Scrum, Kanban, Shift-Left QE, Continuous Testing, BDD, TDD, Sprint Planning, Three Amigos  
-**CI/CD & DevOps:** Azure DevOps, GitHub Actions, Docker, Jenkins  
+**CI/CD & DevOps:** Azure DevOps, GitHub Actions, Docker (Self-hosted apps, Immich, Jellyfin), Jenkins  
 **Mobile:** Flutter, Android (Kotlin), Google Play Store Release, AAB/APK Flavors  
 **Domain:** Fintech, Banking, CDD, KYC, GDPR, Lending, Deposits, T24  
 **Tools & AI:** GitHub Copilot, Azure Key Vault, MSAL, JWT, JMeter, Sauce Labs, LaunchDarkly
@@ -62,9 +62,9 @@ Senior SDET and QE Platform Architect with 9+ years building enterprise-grade au
 ### Allica Bank, UK (May 2023 – Present | Remote from India)
 **Senior SDET**
 - **Architected** the enterprise-level `@allica/shared-e2e` platform library adopted across 4 engineering squads, securing **Azure Key Vault** integration and designing a local **MSAL mock server** to streamline role-based JWT generation.
-- **Architected and evolved** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable framework.
+- **Architected and evolved** the organisation's **Playwright (JavaScript)** automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable TypeScript framework.
 - **Spearheaded CI pipeline optimizations** by designing a smart **Cypress spec filtering** algorithm and parallel local execution architecture, reducing pipeline runtimes by **over 60%** and eliminating redundant file scanning.
-- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
+- **Led the architectural migration** of legacy test suites from Cypress-Cucumber to **TypeScript-based Mocha/cypress-grep**, improving execution reliability and transitioning enterprise API suites from Postman to **Bruno** for seamless Git version control.
 - Delivered exhaustive automation for complex banking flows including CDD API, CRA Phase 1, Safeguarding, Pension Profiles, and Business Rewards.
 - Conducted **JMeter performance testing** for Allica Onboarding Microservices and ensured **Security & Compliance with GDPR** for onboarding applications.
 - **Pioneered** advanced framework architectures, including **Cypress Data Management with State Events** and dynamic API mocking without static fixtures.
