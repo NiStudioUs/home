@@ -203,7 +203,7 @@ export default function ResumeBuilder() {
 
         // 3. Professional Highlights Summarization
         const highlightsMatch = /(## Professional Highlights\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
-        content = content.replace(highlightsMatch, "$1*9+ years of hybrid QE/SDET and mobile development experience, featuring extensive banking domain expertise (lending, deposits, mobile channels) and a proven track record of deploying robust, cross-platform Android applications to the Google Play Store.*\n\n");
+        content = content.replace(highlightsMatch, "$1*9+ years of hybrid QE/SDET and mobile development experience, featuring extensive banking domain expertise (lending, deposits, mobile channels), a proven track record of deploying cross-platform Android apps, and architecting a self-hosted Docker ecosystem on Raspberry Pi for personal apps and services (Immich, Pi-hole).*\n\n");
 
         // 4. Awards & Accomplishments Summarization
         const awardsMatch = /(## Awards & Accomplishments\s*\r?\n)([\s\S]*?)(?=\r?\n---|\r?\n## |$)/;
@@ -215,8 +215,8 @@ export default function ResumeBuilder() {
       }
     }
 
-    // Preserve standard new lines naturally without &nbsp; injection
-    // content = content.replace(/\n{3,}/g, (match) => '\n\n' + '&nbsp;\n\n'.repeat(match.length - 2));
+    // Preserve standard new lines by injecting non-breaking spaces
+    content = content.replace(/\n{3,}/g, (match) => '\n\n' + '&nbsp;\n\n'.repeat(match.length - 2));
     
     return content;
   }, [resumeContent, userEmail, userPhone, selectedResume, briefMode]);
