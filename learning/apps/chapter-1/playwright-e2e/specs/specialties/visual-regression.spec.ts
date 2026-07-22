@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Speciality: Visual Regression Testing', () => {
 
     test('Visual comparison of the login page', async ({ page }) => {
-        await page.goto('/index.html');
+        await page.goto('index.html');
         
         // Wait for the page to be fully loaded and stable to avoid flaky snapshots
         await page.waitForLoadState('networkidle');

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Speciality: Soft Assertions', () => {
 
     test('Executing multiple soft assertions', async ({ page }) => {
-        await page.goto('/index.html');
+        await page.goto('index.html');
 
         // Normally, if an expect fails, the test stops immediately.
         // With expect.soft(), the test continues running, and compiles all failures at the end.

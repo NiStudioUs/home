@@ -23,7 +23,7 @@ test.describe('Speciality: API Testing', () => {
         // await request.post('/api/users', { data: { name: 'TestUser' } });
         
         // Proceed with standard UI testing
-        await page.goto('/index.html');
+        await page.goto('index.html');
         await expect(page.locator('#username')).toBeVisible();
     });
 });
