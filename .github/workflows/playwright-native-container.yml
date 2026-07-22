@@ -33,7 +33,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test --workers=${{ github.event.inputs.workers }}
       env:
-        BASE_URL: https://nistudious.github.io/home/learning/apps/chapter-1
+        BASE_URL: https://nistudious.github.io/home/learning/apps/chapter-1/src/
 
     - name: Upload Playwright HTML Report
       uses: actions/upload-artifact@v4

@@ -13,7 +13,7 @@ test.describe('Speciality: Visual Regression Testing', () => {
         // 2. On subsequent runs, it takes a new screenshot and compares it pixel-by-pixel against the baseline.
         
         await expect(page).toHaveScreenshot('login-page-baseline.png', {
-            // maxDiffPixelRatio: 0.1, // Optional: allow a small percentage of pixel differences
+            maxDiffPixels: 100, // Allowance for font anti-aliasing variations across runners
             
             // If there's a dynamic element (like a clock or changing ad), you can mask it out:
             mask: [page.locator('.dynamic-clock')]
