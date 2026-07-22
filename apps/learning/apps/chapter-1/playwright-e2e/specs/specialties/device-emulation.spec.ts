@@ -17,7 +17,7 @@ test.describe('Speciality: Device Emulation, Geolocation, and Locale', () => {
     
     test('Emulate Mobile Viewport and Paris Location', async ({ page }) => {
         // Authenticate first so we can access the dashboard
-        await page.goto('/index.html');
+        await page.goto('index.html');
         await page.fill('#username', 'demo');
         await page.fill('#password', 'demo');
         await page.getByRole('button', { name: 'Log In' }).click();

@@ -11,14 +11,14 @@ test.describe('Speciality: Browser Contexts and Tabs', () => {
         const pageB = await userBContext.newPage();
 
         // User A logs in
-        await pageA.goto('/index.html');
+        await pageA.goto('index.html');
         await pageA.fill('#username', 'userA');
         await pageA.fill('#password', 'demo');
         await pageA.getByRole('button', { name: 'Log In' }).click();
 
         // User B tries to go directly to the dashboard
         // Because the contexts are isolated, User B should not share User A's session cookies/storage
-        await pageB.goto('/pages/dashboard.html');
+        await pageB.goto('pages/dashboard.html');
         
         // Assert User B is redirected back to login page
         await expect(pageB).toHaveURL(/.*index\.html/);
@@ -29,13 +29,13 @@ test.describe('Speciality: Browser Contexts and Tabs', () => {
     });
 
     test('Handling new tabs (popups)', async ({ context, page }) => {
-        await page.goto('/index.html');
+        await page.goto('index.html');
         
         // Let's explicitly create a new tab in the same context
         const newTab = await context.newPage();
         
         // Navigate the new tab
-        await newTab.goto('/index.html'); // avoiding dashboard to prevent auth redirect
+        await newTab.goto('index.html'); // avoiding dashboard to prevent auth redirect
         
         // Assert on the new tab
         await expect(newTab).toHaveURL(/.*index\.html/);

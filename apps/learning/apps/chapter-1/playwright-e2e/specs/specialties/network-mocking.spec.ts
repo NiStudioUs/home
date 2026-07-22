@@ -18,7 +18,7 @@ test.describe('Speciality: Network Mocking and Interception', () => {
         });
 
         // Authenticate to access dashboard
-        await page.goto('/index.html');
+        await page.goto('index.html');
         await page.fill('#username', 'demo');
         await page.fill('#password', 'demo');
         await page.getByRole('button', { name: 'Log In' }).click();
@@ -42,7 +42,7 @@ test.describe('Speciality: Network Mocking and Interception', () => {
         });
 
         // Authenticate to access dashboard
-        await page.goto('/index.html');
+        await page.goto('index.html');
         await page.fill('#username', 'demo');
         await page.fill('#password', 'demo');
         await page.getByRole('button', { name: 'Log In' }).click();
@@ -55,7 +55,7 @@ test.describe('Speciality: Network Mocking and Interception', () => {
         // Abort all image requests to speed up tests or test the UI without images
         await page.route('**/*.{png,jpg,jpeg,svg,gif}', route => route.abort());
 
-        await page.goto('/index.html');
+        await page.goto('index.html');
         
         // Assert the page still loads the structural elements
         await expect(page.locator('#username')).toBeVisible();

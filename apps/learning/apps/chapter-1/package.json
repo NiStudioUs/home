@@ -9,7 +9,7 @@
     "show-report": "playwright show-report reports/html",
     "show-allure-report": "allure serve ./reports/allure-results",
     "docker:build": "docker build -t playwright-e2e .",
-    "docker:run": "docker run --rm -v $(pwd)/playwright-report:/playwright-e2e/playwright-report -v $(pwd)/test-results:/playwright-e2e/test-results -v $(pwd)/reports:/playwright-e2e/reports -e BASE_URL=${BASE_URL:-https://nistudious.github.io/home/learning/apps/chapter-1} playwright-e2e"
+    "docker:run": "mkdir -p playwright-report test-results reports && docker run --rm -v $(pwd)/playwright-report:/playwright-e2e/playwright-report:z -v $(pwd)/test-results:/playwright-e2e/test-results:z -v $(pwd)/reports:/playwright-e2e/reports:z -e BASE_URL=${BASE_URL:-https://nistudious.github.io/home/learning/apps/chapter-1/src/} playwright-e2e"
   },
   "keywords": [],
   "author": "",
