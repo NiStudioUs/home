@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  playwright-e2e:
+    build: .
+    environment:
+      - BASE_URL=${BASE_URL:-https://nistudious.github.io/home/learning/apps/chapter-1}
+    volumes:
+      - ./playwright-report:/playwright-e2e/playwright-report
+      - ./test-results:/playwright-e2e/test-results
+      - ./reports:/playwright-e2e/reports

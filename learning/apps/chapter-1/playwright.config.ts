@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests/specs',
+  testDir: './playwright-e2e/specs',
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   outputDir: './reports/test-results',
   /* Run tests in files in parallel */
@@ -23,21 +23,13 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.BASE_URL || 'http://127.0.0.1:5555/',
+    baseURL: process.env.BASE_URL || 'https://nistudious.github.io/home/learning/apps/chapter-1',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
 
-  /* Run your local dev server before starting the tests */
-  webServer: {
-    command: 'python3 -m http.server 5555 --directory src',
-    url: 'http://127.0.0.1:5555/',
-    reuseExistingServer: !process.env.CI,
-    stdout: 'ignore',
-    stderr: 'pipe',
-  },
 
   /* Configure projects for major browsers */
   projects: [
