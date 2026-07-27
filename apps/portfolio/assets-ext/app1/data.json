@@ -5,6 +5,7 @@
     "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
     "iconUrl": "assets/images/app1/icon.png",
     "descriptionImages": [],
+    "demoUrl": "/home/app/scribble-notes/demo/",
     "features": [
         {
             "title": "Digital Diaries",
@@ -213,6 +214,10 @@
         }
     ],
     "links": [
+        {
+            "type": "Live Demo",
+            "url": "/home/app/scribble-notes/demo/"
+        },
         {
             "type": "Play Store",
             "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
