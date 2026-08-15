@@ -27099,6 +27099,13 @@ found in the LICENSE file.
 --------------------------------------------------------------------------------
 skia
 
+Copyright 2026 Apple Inc.
+
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+--------------------------------------------------------------------------------
+skia
+
 Copyright 2026 Google LLC
 
 Use of this source code is governed by a BSD-style license that can be
@@ -27106,7 +27113,7 @@ found in the LICENSE file.
 --------------------------------------------------------------------------------
 skia
 
-Copyright 2026 The Android Open Source Project
+Copyright 2026 Google LLC.
 
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
@@ -28756,12 +28763,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---------------------------------------------------------------------------------
-swiftshader
-
-Copyright 2014-2025 The Khronos Group Inc.
-
-SPDX-License-Identifier: Apache-2.0
 --------------------------------------------------------------------------------
 swiftshader
 
