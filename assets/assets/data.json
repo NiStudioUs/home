@@ -1054,15 +1054,9 @@
               },
               {
                 "title": "Core Functionality & Data Minimization",
-                "subtitle": "Play Policy Alignment",
-                "sections": [
-                  {
-                    "title": "Purpose Limitation",
-                    "content": "SMS and contact access is used solely to provide the app's core functionality: organizing your messages and tracking expenses. The data accessed is the minimum required for these features and is processed on-device. It is never used for advertising, ad targeting, or user profiling, and is never sold, rented, shared, or transferred to any third party.",
-                    "imageRenderer": "default",
-                    "images": []
-                  }
-                ]
+                "content": "**Play Policy Alignment**\n\nSMS and contact access is used solely to provide the app's core functionality: organizing your messages and tracking expenses. The data accessed is the minimum required for these features and is processed on-device. It is never used for advertising, ad targeting, or user profiling, and is never sold, rented, shared, or transferred to any third party.",
+                "imageRenderer": "default",
+                "images": []
               },
               {
                 "title": "System Integrations",
