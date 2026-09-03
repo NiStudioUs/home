@@ -967,7 +967,7 @@
       ],
       "privacyPolicy": {
         "url": "",
-        "lastUpdatedUtc": "2026-01-27T00:00:00Z",
+        "lastUpdatedUtc": "2026-09-03T00:00:00Z",
         "limitUseDisclosure": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to <a href=\"https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes\" target=\"_blank\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
         "features": [
           {
@@ -1042,13 +1042,19 @@
             "sections": [
               {
                 "title": "SMS & Contacts",
-                "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
+                "content": "To function as an SMS Organizer and Expense Manager, we request specific permissions which are **core to the app's functionality**:\n*   **Read SMS (`READ_SMS`)**: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. **We do not upload your SMS data to any server.**\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming transaction alerts in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Write SMS (`WRITE_SMS`)**: Used to mark messages as read and to delete messages you choose to delete, keeping your organized inbox in sync with the system.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
                 "imageRenderer": "default",
                 "images": []
               },
               {
                 "title": "Financial Data Privacy",
                 "content": "**Strict Local Processing Policy**: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.\n\n### Not a Loan App\n**We do not provide, facilitate, or promote personal loans or credit products.** This app is strictly a personal finance manager and expense tracker.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Core Functionality & Data Minimization",
+                "content": "**Play Policy Alignment**\n\nSMS and contact access is used solely to provide the app's core functionality: organizing your messages and tracking expenses. The data accessed is the minimum required for these features and is processed on-device. It is never used for advertising, ad targeting, or user profiling, and is never sold, rented, shared, or transferred to any third party.",
                 "imageRenderer": "default",
                 "images": []
               },
