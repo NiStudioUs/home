@@ -327,6 +327,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
       NotificationListener<ScrollNotification>(
         onNotification: _handleScrollNotification,
         child: ListView(
+          padding: const EdgeInsets.only(top: 80, bottom: 40),
           physics: const BouncingScrollPhysics(),
           children: [
             Container(
@@ -620,6 +621,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             return NotificationListener<ScrollNotification>(
               onNotification: _handleScrollNotification,
               child: ListView(
+                padding: const EdgeInsets.only(top: 80, bottom: 40),
                 physics: const BouncingScrollPhysics(),
                 children: [
                   if (section.title.isNotEmpty &&

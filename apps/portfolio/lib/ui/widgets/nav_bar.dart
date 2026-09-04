@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -36,7 +37,7 @@ class _DesktopNavBar extends StatelessWidget {
     final themeService = Provider.of<ThemeService>(context);
     final currentAppService = Provider.of<CurrentAppService>(
       context,
-    ); // Listen to current app
+    );
     final currentApp = currentAppService.currentApp;
 
     List<AppFeature> featuresToShow = [];
@@ -50,62 +51,37 @@ class _DesktopNavBar extends StatelessWidget {
       }
     }
 
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        border: Border(
-          bottom: BorderSide(
-            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
-            width: 1,
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.6),
+            border: Border(
+              bottom: BorderSide(
+                color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.1),
+                width: 1,
+              ),
+            ),
           ),
-        ),
-      ),
       child: Row(
         children: [
-          // Brand / Logo — pill chip design
-          GestureDetector(
-            onTap: () {
+          // Home Icon (No Pill)
+          IconButton(
+            onPressed: () {
               if (EasterEgg.handle('name')) {
                 launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
               } else {
                 context.go('/');
               }
             },
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.6),
-                  borderRadius: BorderRadius.circular(24),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.home_rounded,
-                      size: 22,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      dataModel.developer.name,
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.onSurface,
-                        letterSpacing: 0.3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            icon: Icon(
+              Icons.home_rounded,
+              size: 28,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
+            tooltip: 'Home',
           ),
 
           // Breadcrumb
@@ -142,77 +118,81 @@ class _DesktopNavBar extends StatelessWidget {
                   ],
                   Text(
                     currentApp.name,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
             ),
           ],
 
+          // Push all menus to the end
           const Spacer(),
 
           // Features/Links Dropdown (Dynamic)
           if (featuresToShow.isNotEmpty) ...[
-            MenuAnchor(
-              builder: (context, controller, child) {
-                return TextButton(
-                  onPressed: () {
-                    if (controller.isOpen) {
-                      controller.close();
-                    } else {
-                      controller.open();
-                    }
-                  },
-                  child: Row(
-                    children: [
-                      Text(
-                        currentAppService.pageType == PageType.app
-                            ? 'Features'
-                            : 'On this page',
-                      ),
-                      const Icon(Icons.arrow_drop_down),
-                    ],
-                  ),
-                );
+            PopupMenuButton<String>(
+              position: PopupMenuPosition.under,
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              tooltip: currentAppService.pageType == PageType.app ? 'Features' : 'On this page',
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Row(
+                  children: [
+                    Text(
+                      currentAppService.pageType == PageType.app
+                          ? 'Features'
+                          : 'On this page',
+                      style: TextStyle(color: Theme.of(context).colorScheme.onSurface, fontWeight: FontWeight.bold),
+                    ),
+                    Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.onSurface),
+                  ],
+                ),
+              ),
+              onSelected: (title) => currentAppService.navigateToFeature(title),
+              itemBuilder: (context) {
+                return featuresToShow.where((f) => f.hide != true).map((feature) {
+                  return PopupMenuItem<String>(
+                    value: feature.title,
+                    child: Text(feature.title),
+                  );
+                }).toList();
               },
-              menuChildren: featuresToShow.where((f) => f.hide != true).map((
-                feature,
-              ) {
-                return MenuItemButton(
-                  onPressed: () =>
-                      currentAppService.navigateToFeature(feature.title),
-                  child: Text(feature.title),
-                );
-              }).toList(),
             ),
-            const SizedBox(width: 20),
+            const SizedBox(width: 16),
           ],
 
           // Apps Dropdown
           if (currentApp == null) ...[
             _AppsDropdown(apps: dataModel.apps),
-            const SizedBox(width: 20),
+            const SizedBox(width: 16),
           ],
-
-
 
           // How To
           TextButton(
             onPressed: () => context.go('/howto'),
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(context).colorScheme.onSurface,
+              textStyle: const TextStyle(fontWeight: FontWeight.bold),
+            ),
             child: const Text('How to'),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 16),
 
           // Legal Dropdown
           _LegalDropdown(apps: dataModel.apps),
-          const SizedBox(width: 20),
+          const SizedBox(width: 16),
 
           // Theme Toggle
           IconButton(
             icon: Icon(
               themeService.isDarkMode ? Icons.light_mode : Icons.dark_mode,
-              color: themeService.isDarkMode ? Colors.amber : Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
+            tooltip: 'Toggle Theme',
             onPressed: () {
               if (EasterEgg.handle('theme')) {
                 launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
@@ -221,18 +201,23 @@ class _DesktopNavBar extends StatelessWidget {
               }
             },
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 8),
 
-          // Profile CTA
-          FilledButton.tonalIcon(
+          // Developer Profile Icon
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            tooltip: 'Developer Profile',
             onPressed: () => launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
-            icon: const Icon(Icons.person, size: 18),
-            label: const Text('Developer Profile'),
           ),
         ],
       ),
-    );
-  }
+    ),
+  ),
+);
+}
 }
 
 class _MobileNavBar extends StatelessWidget {
@@ -328,27 +313,32 @@ class _AppsDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MenuAnchor(
-      builder: (context, controller, child) {
-        return TextButton(
-          onPressed: () {
-            if (controller.isOpen) {
-              controller.close();
-            } else {
-              controller.open();
-            }
-          },
-          child: const Row(
-            children: [Text('Apps'), Icon(Icons.arrow_drop_down)],
-          ),
-        );
+    return PopupMenuButton<String>(
+      position: PopupMenuPosition.under,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      tooltip: 'Apps',
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Row(
+          children: [
+            Text(
+              'Apps',
+              style: TextStyle(color: Theme.of(context).colorScheme.onSurface, fontWeight: FontWeight.bold),
+            ),
+            Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.onSurface),
+          ],
+        ),
+      ),
+      onSelected: (appId) => context.go('/app/$appId'),
+      itemBuilder: (context) {
+        return apps.map((app) {
+          return PopupMenuItem<String>(
+            value: app.id,
+            child: Text(app.name),
+          );
+        }).toList();
       },
-      menuChildren: apps.map((app) {
-        return MenuItemButton(
-          onPressed: () => context.go('/app/${app.id}'),
-          child: Text(app.name),
-        );
-      }).toList(),
     );
   }
 }
@@ -359,36 +349,59 @@ class _LegalDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MenuAnchor(
-      builder: (context, controller, child) {
-        return TextButton(
-          onPressed: () {
-            if (controller.isOpen) {
-              controller.close();
-            } else {
-              controller.open();
-            }
-          },
-          child: const Row(
-            children: [Text('Legal'), Icon(Icons.arrow_drop_down)],
-          ),
-        );
-      },
-      menuChildren: apps.map((app) {
-        return SubmenuButton(
-          menuChildren: [
-            MenuItemButton(
-              onPressed: () => context.go('/app/${app.id}/privacy'),
-              child: const Text('Privacy Policy'),
+    return PopupMenuButton<String>(
+      position: PopupMenuPosition.under,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      tooltip: 'Legal',
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Row(
+          children: [
+            Text(
+              'Legal',
+              style: TextStyle(color: Theme.of(context).colorScheme.onSurface, fontWeight: FontWeight.bold),
             ),
-            MenuItemButton(
-              onPressed: () => context.go('/app/${app.id}/terms'),
-              child: const Text('Terms & Conditions'),
-            ),
+            Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.onSurface),
           ],
-          child: Text(app.name),
-        );
-      }).toList(),
+        ),
+      ),
+      onSelected: (route) => context.go(route),
+      itemBuilder: (context) {
+        final List<PopupMenuEntry<String>> items = [];
+        for (var app in apps) {
+          items.add(
+            PopupMenuItem<String>(
+              enabled: false,
+              child: Text(
+                app.name,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          );
+          items.add(
+            PopupMenuItem<String>(
+              value: '/app/${app.id}/privacy',
+              child: const Padding(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Text('Privacy Policy'),
+              ),
+            ),
+          );
+          items.add(
+            PopupMenuItem<String>(
+              value: '/app/${app.id}/terms',
+              child: const Padding(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Text('Terms & Conditions'),
+              ),
+            ),
+          );
+          items.add(const PopupMenuDivider());
+        }
+        if (items.isNotEmpty) items.removeLast(); // Remove last divider
+        return items;
+      },
     );
   }
 }

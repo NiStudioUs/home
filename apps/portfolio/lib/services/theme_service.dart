@@ -2,19 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:web/web.dart' as web;
 
 class ThemeService extends ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = ThemeMode.dark;
+  Color _seedColor = Colors.blue;
+
+  Color get seedColor => _seedColor;
+
+  void updateSeedColor(Color color) {
+    if (_seedColor != color) {
+      _seedColor = color;
+      notifyListeners();
+    }
+  }
 
   ThemeService() {
     try {
       final savedTheme = web.window.localStorage.getItem('ni_studio_theme');
-      if (savedTheme == 'dark') {
-        _themeMode = ThemeMode.dark;
-      } else {
+      if (savedTheme == 'light') {
         _themeMode = ThemeMode.light;
+      } else {
+        _themeMode = ThemeMode.dark;
       }
     } catch (e) {
       // Fallback if not running on web
-      _themeMode = ThemeMode.light;
+      _themeMode = ThemeMode.dark;
     }
   }
 

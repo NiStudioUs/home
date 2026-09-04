@@ -11,10 +11,18 @@ class MainLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: const AppDrawer(),
-      body: Column(
+      body: Stack(
         children: [
-          const NavBar(),
-          Expanded(child: child),
+          // Body content
+          Positioned.fill(child: child),
+          
+          // Floating Top Navigation Bar
+          const Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: NavBar(),
+          ),
         ],
       ),
     );

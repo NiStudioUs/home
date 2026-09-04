@@ -38,13 +38,13 @@ class MyApp extends StatelessWidget {
       themeMode: themeService.themeMode,
       theme: ThemeData(
         brightness: Brightness.light,
-        colorSchemeSeed: Colors.blue,
+        colorSchemeSeed: themeService.seedColor,
         textTheme: GoogleFonts.interTextTheme(),
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.blue,
+        colorSchemeSeed: themeService.seedColor,
         textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
         useMaterial3: true,
       ),
