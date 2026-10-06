@@ -5,11 +5,14 @@ import 'ui/pages/home_page.dart';
 import 'ui/pages/app_details_page.dart';
 import 'ui/pages/legal_page.dart';
 import 'ui/pages/how_to_page.dart';
+import 'ui/pages/sitemap_page.dart';
+import 'ui/pages/not_found_page.dart';
 import 'ui/widgets/main_layout.dart';
 import 'services/current_app_service.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
+  errorBuilder: (context, state) => const NotFoundPage(),
   routes: [
     ShellRoute(
       builder: (context, state, child) {
@@ -18,12 +21,19 @@ final GoRouter router = GoRouter(
       routes: [
         GoRoute(path: '/', builder: (context, state) => const HomePage()),
         GoRoute(
-          path: '/app/:id',
+          path: '/apps/:id',
           builder: (context, state) {
             final id = state.pathParameters['id']!;
             return AppDetailsPage(appId: id);
           },
           routes: [
+            GoRoute(
+              path: 'how-to',
+              builder: (context, state) {
+                final id = state.pathParameters['id']!;
+                return HowToPage(appId: id);
+              },
+            ),
             GoRoute(
               path: 'privacy',
               builder: (context, state) {
@@ -92,7 +102,10 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
-        GoRoute(path: '/howto', builder: (context, state) => const HowToPage()),
+        GoRoute(
+          path: '/sitemap',
+          builder: (context, state) => const SitemapPage(),
+        ),
       ],
     ),
   ],

@@ -7,7 +7,7 @@ import 'services/theme_service.dart';
 import 'services/data_service.dart';
 import 'services/current_app_service.dart';
 import 'models/data_model.dart';
-
+import 'ui/design_tokens.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -36,18 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Developer Portfolio',
       themeMode: themeService.themeMode,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        colorSchemeSeed: themeService.seedColor,
-        textTheme: GoogleFonts.interTextTheme(),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        colorSchemeSeed: themeService.seedColor,
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
-        useMaterial3: true,
-      ),
+      theme: NiTheme.light(),
+      darkTheme: NiTheme.dark(),
       routerConfig: router,
       debugShowCheckedModeBanner: false,
     );

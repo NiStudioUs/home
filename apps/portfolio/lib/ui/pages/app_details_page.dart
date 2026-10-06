@@ -1,17 +1,18 @@
-import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../widgets/sticky_container.dart';
 import '../../models/data_model.dart';
-import '../../services/current_app_service.dart';
-import '../widgets/image_helper.dart';
+import '../design_tokens.dart';
+import '../widgets/footer.dart';
+import '../../utils/url_helper.dart';
+import '../../utils/scroll_keys.dart';
 
 class AppDetailsPage extends StatefulWidget {
   final String appId;
+
   const AppDetailsPage({super.key, required this.appId});
 
   @override
@@ -19,907 +20,235 @@ class AppDetailsPage extends StatefulWidget {
 }
 
 class _AppDetailsPageState extends State<AppDetailsPage> {
-  final PageController _pageController = PageController();
-  final PageController _screenshotController = PageController();
-  final Map<String, int> _featureMap = {};
-  StreamSubscription<String>? _navSubscription;
-
-  bool _isAnimatingPage = false;
-
-  void _goToPreviousPage() {
-    if (_isAnimatingPage) return;
-    _isAnimatingPage = true;
-    _pageController
-        .previousPage(
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.fastOutSlowIn,
-        )
-        .then((_) {
-          Future.delayed(const Duration(milliseconds: 250), () {
-            if (mounted) _isAnimatingPage = false;
-          });
-        });
-  }
-
-  void _goToNextPage() {
-    if (_isAnimatingPage) return;
-    _isAnimatingPage = true;
-    _pageController
-        .nextPage(
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.fastOutSlowIn,
-        )
-        .then((_) {
-          Future.delayed(const Duration(milliseconds: 250), () {
-            if (mounted) _isAnimatingPage = false;
-          });
-        });
-  }
-
-  // Helper to detect scroll boundary and change page
-  bool _handleScrollNotification(ScrollNotification notification) {
-    if (_isAnimatingPage) return true;
-
-    if (notification is ScrollUpdateNotification &&
-        notification.scrollDelta != null) {
-      final metrics = notification.metrics;
-      if (metrics.pixels <= metrics.minScrollExtent &&
-          notification.scrollDelta! < 0) {
-        _goToPreviousPage();
-        return true;
-      }
-      if (metrics.pixels >= metrics.maxScrollExtent &&
-          notification.scrollDelta! > 0) {
-        _goToNextPage();
-        return true;
-      }
-    } else if (notification is OverscrollNotification) {
-      if (notification.overscroll < 0) {
-        _goToPreviousPage();
-        return true;
-      } else if (notification.overscroll > 0) {
-        _goToNextPage();
-        return true;
-      }
-    }
-    return false;
-  }
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _updateCurrentApp();
-      _navSubscription = Provider.of<CurrentAppService>(context, listen: false)
-          .navigationEvents
-          .listen((featureTitle) {
-            if (featureTitle == 'TOP') {
-              _pageController.animateToPage(
-                0,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            } else if (_featureMap.containsKey(featureTitle)) {
-              _pageController.animateToPage(
-                _featureMap[featureTitle]!,
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            }
-          });
+      _scrollToFragment();
     });
   }
 
-  @override
-  void didUpdateWidget(AppDetailsPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.appId != oldWidget.appId) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _updateCurrentApp();
-      });
-    }
-  }
-
-  void _updateCurrentApp() {
-    final dataModel = Provider.of<DataModel>(context, listen: false);
-    final app = dataModel.apps.firstWhere(
-      (element) => element.id == widget.appId,
-      orElse: () => AppModel(
-        id: 'error',
-        name: 'App Not Found',
-        shortDescription: '',
-        fullDescription: '',
-        iconUrl: '',
-        tags: [],
-        features: [],
-        technicalDetails: [],
-        screenshots: [],
-        links: [],
-        privacyPolicy: AppPolicy(url: '', features: []),
-        termsAndConditions: AppPolicy(url: '', features: []),
-      ),
-    );
-    if (app.id != 'error') {
-      Provider.of<CurrentAppService>(context, listen: false).setApp(app);
-    }
-  }
-
-  @override
-  void dispose() {
-    _navSubscription?.cancel();
-    _pageController.dispose();
-    _screenshotController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    _featureMap.clear(); // Reset map
-    final dataModel = Provider.of<DataModel>(context);
-    final app = dataModel.apps.firstWhere(
-      (element) => element.id == widget.appId,
-      orElse: () => AppModel(
-        id: 'error',
-        name: 'App Not Found',
-        shortDescription: '',
-        fullDescription: '',
-        iconUrl: '',
-        tags: [],
-        features: [],
-        technicalDetails: [],
-        screenshots: [],
-        links: [],
-        privacyPolicy: AppPolicy(url: '', features: []),
-        termsAndConditions: AppPolicy(url: '', features: []),
-        descriptionImages: [],
-      ),
-    );
-
-    if (app.id == 'error') {
-      return const Scaffold(body: Center(child: Text('App Not Found')));
-    }
-
-    // 1. Flatten Data into Pages
-    final List<Widget> pages = [];
-
-    // -- Header Page --
-    pages.add(_buildHeaderPage(context, app));
-
-    // -- About Page (Full Description) --
-    // We treat this as a Section Page so it can handle images (descriptionImages) and layout consistently
-    pages.add(
-      _buildSectionPage(
-        context,
-        FeatureSection(
-          title: 'About',
-          content: app.fullDescription,
-          images: app.descriptionImages,
-          imageRenderer: 'default', // or whatever default you prefer
-        ),
-      ),
-    );
-
-    // -- Features --
-    for (var feature in app.features) {
-      if (feature.hide == true) continue; // Skip hidden features
-
-      // Record start of feature
-      if (!_featureMap.containsKey(feature.title)) {
-        _featureMap[feature.title] = pages.length;
-      }
-
-      if (feature.subtitle.isNotEmpty) {
-        pages.add(
-          _buildContentPage(
-            context,
-            feature.title,
-            feature.subtitle,
-            websiteUrl: feature.websiteUrl,
-          ),
+  void _scrollToFragment() {
+    final fragment = GoRouterState.of(context).uri.fragment;
+    if (fragment.isNotEmpty) {
+      final key = AppScrollKeys.featureKeys['${widget.appId}-$fragment'];
+      if (key != null && key.currentContext != null) {
+        Scrollable.ensureVisible(
+          key.currentContext!,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
         );
       }
-
-      for (var section in feature.sections) {
-        if (section.hide == true) continue; // Skip hidden sections
-        pages.add(_buildSectionPage(context, section));
-      }
     }
-
-    // -- Technical Details --
-    if (app.technicalDetails.isNotEmpty) {
-      pages.add(
-        _buildContentPage(
-          context,
-          'Technical Details',
-          'A deep dive into the technology powering this app.',
-        ),
-      );
-      for (var feature in app.technicalDetails) {
-        if (feature.hide == true) continue;
-        if (feature.subtitle.isNotEmpty) {
-          pages.add(
-            _buildContentPage(context, feature.title, feature.subtitle),
-          );
-        }
-        for (var section in feature.sections) {
-          if (section.hide == true) continue;
-          pages.add(_buildSectionPage(context, section));
-        }
-      }
-    }
-
-    // -- Screenshots --
-    if (app.screenshots.isNotEmpty) {
-      pages.add(_buildScreenshotsPage(context, app));
-    }
-
-    return Title(
-      title: "NSU - ${app.name}",
-      color: Theme.of(context).primaryColor,
-      child: Scaffold(
-        body: Stack(
-          children: [
-            // Fixed Background (Subtle Gradient)
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Theme.of(context).colorScheme.surface,
-                      Theme.of(context).colorScheme.surfaceContainerHighest
-                          .withValues(alpha: 0.3),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
-            // Snap scrolling layout for all devices
-            Focus(
-              autofocus: true,
-              onKeyEvent: (FocusNode node, KeyEvent event) {
-                if (event is KeyDownEvent) {
-                  if (event.logicalKey == LogicalKeyboardKey.arrowDown ||
-                      event.logicalKey == LogicalKeyboardKey.pageDown) {
-                    _goToNextPage();
-                    return KeyEventResult.handled;
-                  } else if (event.logicalKey == LogicalKeyboardKey.arrowUp ||
-                      event.logicalKey == LogicalKeyboardKey.pageUp) {
-                    _goToPreviousPage();
-                    return KeyEventResult.handled;
-                  }
-                }
-                return KeyEventResult.ignored;
-              },
-              child: PageView(
-                controller: _pageController,
-                scrollDirection: Axis.vertical,
-                physics: const PageScrollPhysics(),
-                children: pages,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // --- Page Builders ---
-
-  Widget _buildPageContainer(BuildContext context, Widget child) {
-    return Center(
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-        constraints: const BoxConstraints(
-          maxWidth: 1200,
-        ), // Widen for immersive feel
-        child: child, // Center vertically in viewport
-      ),
-    );
-  }
-
-  Widget _buildHeaderPage(BuildContext context, AppModel app) {
-    return _buildPageContainer(
-      context,
-      NotificationListener<ScrollNotification>(
-        onNotification: _handleScrollNotification,
-        child: ListView(
-          padding: const EdgeInsets.only(top: 80, bottom: 40),
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Container(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 140, // Larger Icon
-                    height: 140,
-                    margin: const EdgeInsets.only(bottom: 32),
-                    decoration: BoxDecoration(
-                      color: Theme.of(
-                        context,
-                      ).colorScheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(28),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 30,
-                          offset: const Offset(0, 15),
-                        ),
-                      ],
-                    ),
-                    child: app.iconUrl.isNotEmpty
-                        ? ClipRRect(
-                            borderRadius: BorderRadius.circular(28),
-                            child: Image(
-                              image: getImageProvider(app.iconUrl),
-                              fit: BoxFit.cover,
-                              color: Theme.of(
-                                context,
-                              ).colorScheme.surfaceContainerHighest,
-                              colorBlendMode: BlendMode.softLight,
-                            ),
-                          )
-                        : const Icon(Icons.apps, size: 70),
-                  ),
-                  Text(
-                    app.name,
-                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                      // Larger Title
-                      fontWeight: FontWeight.bold,
-                      height: 1.1,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 24),
-                  Text(
-                    app.shortDescription,
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 48),
-                  Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    alignment: WrapAlignment.center,
-                    children: app.links.map((link) {
-                      final isPlayStore =
-                          link.type.toLowerCase() == 'play store';
-                      final isDemo =
-                          link.type.toLowerCase() == 'live demo';
-                      final icon = isPlayStore
-                          ? const FaIcon(FontAwesomeIcons.googlePlay)
-                          : isDemo
-                              ? const Icon(Icons.play_circle_outline_rounded)
-                              : const Icon(Icons.download);
-                      final label = isPlayStore
-                          ? 'Get on Google Play'
-                          : isDemo
-                              ? 'Try Live Demo'
-                              : link.type;
-
-                      return FilledButton.icon(
-                        onPressed: () => _launchUrl(link.url),
-                        icon: icon,
-                        label: Text(label),
-                        style: FilledButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 20,
-                          ),
-                          textStyle: const TextStyle(fontSize: 18),
-                          backgroundColor: isPlayStore ? Colors.black : null,
-                          foregroundColor: isPlayStore ? Colors.white : null,
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                  const SizedBox(height: 24),
-                  // Privacy Policy and Terms & Conditions links
-                  Wrap(
-                    spacing: 24,
-                    runSpacing: 12,
-                    alignment: WrapAlignment.center,
-                    children: [
-                      TextButton.icon(
-                        onPressed: () {
-                          context.go('/app/${widget.appId}/privacy');
-                        },
-                        icon: const Icon(Icons.privacy_tip_outlined, size: 18),
-                        label: const Text('Privacy Policy'),
-                        style: TextButton.styleFrom(
-                          foregroundColor: Theme.of(
-                            context,
-                          ).colorScheme.primary,
-                        ),
-                      ),
-                      TextButton.icon(
-                        onPressed: () {
-                          context.go('/app/${widget.appId}/terms');
-                        },
-                        icon: const Icon(Icons.description_outlined, size: 18),
-                        label: const Text('Terms & Conditions'),
-                        style: TextButton.styleFrom(
-                          foregroundColor: Theme.of(
-                            context,
-                          ).colorScheme.primary,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 60),
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    size: 40,
-                    color: Theme.of(
-                      context,
-                    ).colorScheme.onSurface.withValues(alpha: 0.3),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildContentPage(
-    BuildContext context,
-    String title,
-    String content, {
-    String? websiteUrl,
-  }) {
-    return _buildPageContainer(
-      context,
-      NotificationListener<ScrollNotification>(
-        onNotification: _handleScrollNotification,
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Text(
-              title,
-              style: Theme.of(
-                context,
-              ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.start,
-            ),
-            const SizedBox(height: 40),
-            Container(
-              constraints: const BoxConstraints(maxWidth: 800),
-              child: MarkdownBody(
-                data: content,
-                styleSheet: MarkdownStyleSheet(
-                  p: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 20,
-                    height: 1.5,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                onTapLink: (text, href, title) {
-                  if (href != null) {
-                    _launchUrl(href);
-                  }
-                },
-              ),
-            ),
-            if (websiteUrl != null && websiteUrl.isNotEmpty) ...[
-              const SizedBox(height: 32),
-              FilledButton.icon(
-                onPressed: () => _launchUrl(websiteUrl),
-                icon: const Icon(Icons.open_in_new),
-                label: const Text('Visit Website'),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSectionPage(BuildContext context, FeatureSection section) {
-    return _buildPageContainer(
-      context,
-      LayoutBuilder(
-        builder: (context, constraints) {
-          // Responsive breakpoint
-          final isWideScreen = constraints.maxWidth > 900;
-
-          // Build image widget with PageView for multiple images
-          Widget buildImageWidget() {
-            if (section.images.isEmpty) {
-              return const SizedBox.shrink();
-            }
-
-            // For grid renderer, keep existing behavior
-            if (section.imageRenderer == 'grid') {
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const ClampingScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 16 / 9,
-                ),
-                itemCount: section.images.length,
-                itemBuilder: (context, i) => ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: buildImage(section.images[i].url),
-                ),
-              );
-            }
-
-            // For list/default: use our new interactive gallery viewer
-            return ImageGalleryViewer(
-              images: section.images.map((img) => img.url).toList(),
-              height: constraints.maxWidth > 900 ? 500 : 400,
-            );
-          }
-
-          // Responsive layout: side-by-side on wide screens, stacked otherwise
-          if (isWideScreen && section.images.isNotEmpty) {
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (section.title.isNotEmpty &&
-                            section.title != 'Introduction')
-                          Text(
-                            section.title,
-                            style: Theme.of(context).textTheme.displaySmall
-                                ?.copyWith(fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.start,
-                          ),
-                        const SizedBox(height: 24),
-                        MarkdownBody(
-                          data: section.content,
-                          styleSheet: MarkdownStyleSheet(
-                            p: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontSize: isWideScreen ? 22 : 18,
-                              height: 1.6,
-                            ),
-                          ),
-                          onTapLink: (text, href, title) {
-                            if (href != null) {
-                              _launchUrl(href);
-                            }
-                          },
-                        ),
-                        if (section.websiteUrl != null &&
-                            section.websiteUrl!.isNotEmpty) ...[
-                          const SizedBox(height: 32),
-                          FilledButton.icon(
-                            onPressed: () => _launchUrl(section.websiteUrl!),
-                            icon: const Icon(Icons.open_in_new),
-                            label: const Text('Visit Website'),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 80), // More space
-                Expanded(flex: 1, child: Center(child: buildImageWidget())),
-              ],
-            );
-          } else {
-            return NotificationListener<ScrollNotification>(
-              onNotification: _handleScrollNotification,
-              child: ListView(
-                padding: const EdgeInsets.only(top: 80, bottom: 40),
-                physics: const BouncingScrollPhysics(),
-                children: [
-                  if (section.title.isNotEmpty &&
-                      section.title != 'Introduction')
-                    Text(
-                      section.title,
-                      style: Theme.of(context).textTheme.headlineMedium
-                          ?.copyWith(fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.start,
-                    ),
-                  const SizedBox(height: 24),
-                  MarkdownBody(
-                    data: section.content,
-                    styleSheet: MarkdownStyleSheet(
-                      p: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontSize: 18,
-                        height: 1.5,
-                      ),
-                    ),
-                    onTapLink: (text, href, title) {
-                      if (href != null) {
-                        _launchUrl(href);
-                      }
-                    },
-                  ),
-                  if (section.websiteUrl != null &&
-                      section.websiteUrl!.isNotEmpty) ...[
-                    const SizedBox(height: 32),
-                    FilledButton.icon(
-                      onPressed: () => _launchUrl(section.websiteUrl!),
-                      icon: const Icon(Icons.open_in_new),
-                      label: const Text('Visit Website'),
-                    ),
-                  ],
-                  if (section.images.isNotEmpty) ...[
-                    const SizedBox(height: 40),
-                    buildImageWidget(),
-                  ],
-                  const SizedBox(height: 40),
-                ],
-              ),
-            );
-          }
-        },
-      ),
-    );
-  }
-
-  Widget _buildScreenshotsPage(BuildContext context, AppModel app) {
-    return _buildPageContainer(
-      context,
-      NotificationListener<ScrollNotification>(
-        onNotification: _handleScrollNotification,
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Text(
-              'Screenshots',
-              style: Theme.of(
-                context,
-              ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 40),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                return ImageGalleryViewer(
-                  images: app.screenshots.map((s) => s.url).toList(),
-                  height: constraints.maxWidth > 900 ? 600 : 500,
-                  viewportFraction: 0.8,
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-}
-
-class ImageGalleryViewer extends StatefulWidget {
-  final List<String> images;
-  final double height;
-  final double viewportFraction;
-
-  const ImageGalleryViewer({
-    super.key,
-    required this.images,
-    required this.height,
-    this.viewportFraction = 1.0,
-  });
-
-  @override
-  State<ImageGalleryViewer> createState() => _ImageGalleryViewerState();
-}
-
-class _ImageGalleryViewerState extends State<ImageGalleryViewer> {
-  late PageController _pageController;
-  int _currentPage = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(viewportFraction: widget.viewportFraction);
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _scrollController.dispose();
     super.dispose();
-  }
-
-  void _openFullScreenDialog(int initialIndex) {
-    showDialog(
-      context: context,
-      useSafeArea: false,
-      builder: (context) => FullScreenGalleryDialog(
-        images: widget.images,
-        initialIndex: initialIndex,
-      ),
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    if (widget.images.isEmpty) return const SizedBox.shrink();
+    final dataModel = Provider.of<DataModel>(context);
+    final app = dataModel.apps.firstWhere(
+      (a) => a.id == widget.appId,
+      orElse: () => AppModel(
+        id: 'error', name: 'App Not Found', shortDescription: '', fullDescription: '',
+        iconUrl: '', tags: [], features: [], technicalDetails: [], screenshots: [],
+        links: [], privacyPolicy: AppPolicy(url: '', features: []), termsAndConditions: AppPolicy(url: '', features: []),
+      ),
+    );
 
-    final hasMultiple = widget.images.length > 1;
+    final visibleStats = app.technicalDetails.where((f) => f.hide != true).toList();
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(
-          height: widget.height,
-          child: Stack(
+    if (app.id == 'error') {
+      return Scaffold(body: Center(child: Text('App Not Found', style: NiType.heroH1(context))));
+    }
+
+    return NiApp(
+      appId: app.id,
+      child: Scaffold(
+        backgroundColor: NiTokens.of(context).bg,
+        body: SingleChildScrollView(
+          controller: _scrollController,
+          padding: const EdgeInsets.only(top: NiTokens.topbarHeight),
+          child: Column(
             children: [
-              PageView.builder(
-                controller: _pageController,
-                physics: const ClampingScrollPhysics(),
-                itemCount: widget.images.length,
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: widget.viewportFraction < 1.0
-                        ? const EdgeInsets.symmetric(horizontal: 16)
-                        : const EdgeInsets.symmetric(horizontal: 8),
-                    child: Center(
-                      child: _InteractiveImage(
-                        imageUrl: widget.images[index],
-                        onTap: () => _openFullScreenDialog(index),
-                      ),
-                    ),
-                  );
-                },
-              ),
-              // Prev Button Overlay
-              if (hasMultiple)
-                Positioned(
-                  left: 16,
-                  top: 0,
-                  bottom: 0,
-                  child: Center(
-                    child: IconButton.filled(
-                      onPressed: () {
-                        if (_currentPage > 0) {
-                          _pageController.previousPage(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
-                      icon: const Icon(Icons.chevron_left),
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.black54,
-                        foregroundColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              // Next Button Overlay
-              if (hasMultiple)
-                Positioned(
-                  right: 16,
-                  top: 0,
-                  bottom: 0,
-                  child: Center(
-                    child: IconButton.filled(
-                      onPressed: () {
-                        if (_currentPage < widget.images.length - 1) {
-                          _pageController.nextPage(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
-                      icon: const Icon(Icons.chevron_right),
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.black54,
-                        foregroundColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+              _AppHeader(app: app),
+              if (app.screenshots.isNotEmpty) _AppGallery(app: app),
+              if (visibleStats.isNotEmpty) _AppTechStats(stats: visibleStats),
+              _AppFeatures(app: app, scrollController: _scrollController),
+              _BottomCta(app: app),
+              const NiFooter(),
             ],
           ),
         ),
-        if (hasMultiple) ...[
-          const SizedBox(height: 16),
-          // Clickable Page indicators
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              widget.images.length,
-              (index) => GestureDetector(
-                onTap: () {
-                  _pageController.animateToPage(
-                    index,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 6,
-                    vertical: 8,
-                  ),
-                  width: _currentPage == index ? 24 : 8,
-                  height: 8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: _currentPage == index
-                        ? Theme.of(context).colorScheme.primary
-                        : Theme.of(
-                            context,
-                          ).colorScheme.onSurface.withValues(alpha: 0.3),
-                  ),
-                ),
+      ),
+    );
+  }
+}
+
+class _AppHeader extends StatelessWidget {
+  final AppModel app;
+  const _AppHeader({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    final isMobile = NiTokens.isMobile(context);
+    
+    return Stack(
+      children: [
+        // Background Mesh
+        Positioned(
+          top: -200,
+          right: -100,
+          child: ImageFiltered(
+            imageFilter: ImageFilter.blur(sigmaX: 120, sigmaY: 120),
+            child: Container(
+              width: 600,
+              height: 600,
+              decoration: BoxDecoration(
+                color: tokens.accent.withOpacity(tokens.isDark ? 0.4 : 0.15),
+                shape: BoxShape.circle,
               ),
             ),
           ),
-        ],
+        ),
+        // Content
+        Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(NiTokens.gutter, NiTokens.clampW(context, 60, 10, 120), NiTokens.gutter, 80),
+              child: isMobile
+                  ? Column(
+                      children: [
+                        _Icon(app: app),
+                        const SizedBox(height: 32),
+                        _HeaderCopy(app: app),
+                      ],
+                    )
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _Icon(app: app),
+                        const SizedBox(width: 40),
+                        Expanded(child: _HeaderCopy(app: app)),
+                      ],
+                    ),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
 
-class _InteractiveImage extends StatefulWidget {
-  final String imageUrl;
-  final VoidCallback onTap;
-
-  const _InteractiveImage({required this.imageUrl, required this.onTap});
-
-  @override
-  State<_InteractiveImage> createState() => _InteractiveImageState();
-}
-
-class _InteractiveImageState extends State<_InteractiveImage> {
-  bool _isHovering = false;
+class _Icon extends StatelessWidget {
+  final AppModel app;
+  const _Icon({required this.app});
 
   @override
   Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    return Container(
+      width: 140,
+      height: 140,
+      decoration: BoxDecoration(
+        color: tokens.surface2,
+        borderRadius: BorderRadius.circular(NiTokens.iconRadius(140)),
+        boxShadow: tokens.shadow,
+        image: DecorationImage(
+          image: AssetImage(app.iconUrl),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+
+class _HeaderCopy extends StatelessWidget {
+  final AppModel app;
+  const _HeaderCopy({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(app.shortName, style: NiType.appH1(context)),
+        const SizedBox(height: 20),
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 60 * 8.5), // rough 60ch
+          child: Text(app.fullDescription, style: NiType.muted(context, 17.6)), // 1.1rem
+        ),
+        const SizedBox(height: 32),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: [
+            if (app.status == 'Coming soon' || app.links.isEmpty)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                decoration: BoxDecoration(
+                  color: tokens.surface,
+                  borderRadius: NiTokens.pill,
+                  border: Border.all(color: tokens.border, width: 1),
+                ),
+                child: Text('Coming soon', style: NiType.button(context)),
+              )
+            else
+              ...app.links.map((link) => _StoreButton(link: link)),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _StoreButton extends StatefulWidget {
+  final AppLink link;
+  const _StoreButton({required this.link});
+
+  @override
+  State<_StoreButton> createState() => _StoreButtonState();
+}
+
+class _StoreButtonState extends State<_StoreButton> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    final isPrimary = widget.link.type.toLowerCase().contains('store') || widget.link.type.toLowerCase().contains('demo');
+    
     return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
       cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _isHovering = true),
-      onExit: (_) => setState(() => _isHovering = false),
       child: GestureDetector(
-        onTap: widget.onTap,
-        child: AnimatedScale(
-          scale: _isHovering ? 1.03 : 1.0,
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOutCubic,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: _isHovering
-                  ? [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ]
-                  : [],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: buildImage(widget.imageUrl, fit: BoxFit.contain),
+        onTap: () => launchUrl(Uri.parse(UrlHelper.resolve(widget.link.url))),
+        child: AnimatedContainer(
+          duration: NiTokens.hoverFast,
+          transform: Matrix4.translationValues(0, _isHovered ? -2 : 0, 0),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          decoration: BoxDecoration(
+            gradient: isPrimary ? tokens.btnPrimary : null,
+            color: isPrimary ? null : tokens.surface,
+            borderRadius: NiTokens.pill,
+            border: isPrimary ? null : Border.all(color: _isHovered ? tokens.accent : tokens.border, width: 1),
+            boxShadow: isPrimary ? tokens.btnPrimaryShadow : null,
+          ),
+          child: Text(
+            widget.link.type, 
+            style: NiType.button(context).copyWith(
+              color: isPrimary ? tokens.accentInk : tokens.text,
             ),
           ),
         ),
@@ -928,161 +257,397 @@ class _InteractiveImageState extends State<_InteractiveImage> {
   }
 }
 
-class FullScreenGalleryDialog extends StatefulWidget {
-  final List<String> images;
-  final int initialIndex;
-
-  const FullScreenGalleryDialog({
-    super.key,
-    required this.images,
-    required this.initialIndex,
-  });
+class _AppGallery extends StatelessWidget {
+  final AppModel app;
+  const _AppGallery({required this.app});
 
   @override
-  State<FullScreenGalleryDialog> createState() =>
-      _FullScreenGalleryDialogState();
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    
+    return Container(
+      width: double.infinity,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+        child: Row(
+          children: app.screenshots.map((s) => Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: _GalleryShot(url: s.url),
+          )).toList(),
+        ),
+      ),
+    );
+  }
 }
 
-class _FullScreenGalleryDialogState extends State<FullScreenGalleryDialog> {
-  late PageController _pageController;
-  late int _currentPage;
+class _GalleryShot extends StatelessWidget {
+  final String url;
+  const _GalleryShot({required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    return Container(
+      width: 270,
+      height: 570,
+      decoration: BoxDecoration(
+        color: tokens.surface,
+        borderRadius: BorderRadius.circular(NiTokens.rGallery),
+        border: Border.all(color: tokens.surface2, width: 5),
+        boxShadow: tokens.shadow,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(NiTokens.rGallery - 5),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.asset(
+              url.isNotEmpty ? url : 'assets/placeholders/screenshot.png',
+              fit: BoxFit.cover,
+            ),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: RadialGradient(
+                  center: Alignment.center,
+                  radius: 1.0,
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.4)],
+                  stops: const [0.5, 1.0],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AppTechStats extends StatelessWidget {
+  final List<AppFeature> stats;
+  const _AppTechStats({required this.stats});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    final isMobile = NiTokens.isMobile(context);
+
+    return Container(
+      margin: const EdgeInsets.only(top: 80),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: tokens.bgAlt,
+        border: Border.symmetric(horizontal: BorderSide(color: tokens.border)),
+      ),
+      padding: const EdgeInsets.fromLTRB(NiTokens.gutter, 38, NiTokens.gutter, 56),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+          child: isMobile
+            ? Column(
+                children: [
+                  for (int i = 0; i < stats.length; i += 2)
+                    Padding(
+                      padding: EdgeInsets.only(bottom: i + 2 < stats.length ? 24.0 : 0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(child: _StatItem(val: stats[i].title, label: stats[i].subtitle)),
+                          if (i + 1 < stats.length)
+                            Expanded(child: _StatItem(val: stats[i + 1].title, label: stats[i + 1].subtitle))
+                          else
+                            const Spacer(),
+                        ],
+                      ),
+                    ),
+                ],
+              )
+            : Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: stats.map((s) => Expanded(child: _StatItem(val: s.title, label: s.subtitle))).toList(),
+              ),
+        ),
+      ),
+    );
+  }
+}
+
+class _StatItem extends StatelessWidget {
+  final String val;
+  final String label;
+
+  const _StatItem({required this.val, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(val, style: NiType.statNum(context)),
+        const SizedBox(height: 4),
+        Text(label, style: NiType.stat(context)),
+      ],
+    );
+  }
+}
+
+class _AppFeatures extends StatefulWidget {
+  final AppModel app;
+  final ScrollController scrollController;
+  
+  const _AppFeatures({required this.app, required this.scrollController});
+
+  @override
+  State<_AppFeatures> createState() => _AppFeaturesState();
+}
+
+class _AppFeaturesState extends State<_AppFeatures> {
+  int _activeIndex = 0;
+  late List<GlobalKey> _keys;
+  final GlobalKey _rowKey = GlobalKey();
+  double _stickyOffset = 0;
+
+  String _slugify(String text) {
+    return text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-').replaceAll(RegExp(r'^-+|-+$'), '');
+  }
 
   @override
   void initState() {
     super.initState();
-    _currentPage = widget.initialIndex;
-    _pageController = PageController(initialPage: _currentPage);
+    final visibleFeatures = widget.app.features.where((f) => f.hide != true).toList();
+    _keys = List.generate(visibleFeatures.length, (_) => GlobalKey());
+    for(int i = 0; i < visibleFeatures.length; i++) {
+       AppScrollKeys.featureKeys['${widget.app.id}-${_slugify(visibleFeatures[i].title)}'] = _keys[i];
+    }
+    widget.scrollController.addListener(_onScroll);
   }
 
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
+  void _onScroll() {
+    if (!mounted) return;
+    
+    double newOffset = 0;
+    if (_rowKey.currentContext != null) {
+      final box = _rowKey.currentContext!.findRenderObject() as RenderBox;
+      final position = box.localToGlobal(Offset.zero);
+      if (position.dy < 100) {
+        newOffset = 100 - position.dy;
+        // Clamp it so it doesn't bleed past the row height
+        final rowHeight = box.size.height;
+        final tocHeight = 400.0; // approximate
+        if (newOffset > rowHeight - tocHeight) {
+          newOffset = rowHeight - tocHeight;
+          if (newOffset < 0) newOffset = 0;
+        }
+      }
+    }
+
+    setState(() {
+      _stickyOffset = newOffset;
+    });
+    
+    // Scroll Spy
+    for (int i = 0; i < _keys.length; i++) {
+      final key = _keys[i];
+      if (key.currentContext != null) {
+        final box = key.currentContext!.findRenderObject() as RenderBox;
+        final position = box.localToGlobal(Offset.zero);
+        if (position.dy > 0 && position.dy < 300) {
+          if (_activeIndex != i) {
+            setState(() {
+              _activeIndex = i;
+            });
+          }
+        }
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Dialog.fullscreen(
-      backgroundColor: Colors.black.withValues(alpha: 0.95),
-      child: Stack(
-        children: [
-          // Main PageView
-          PageView.builder(
-            controller: _pageController,
-            itemCount: widget.images.length,
-            onPageChanged: (index) {
-              setState(() {
-                _currentPage = index;
-              });
-            },
-            itemBuilder: (context, index) {
-              return InteractiveViewer(
-                // Enables pinch to zoom!
-                minScale: 1.0,
-                maxScale: 4.0,
-                child: Padding(
-                  padding: const EdgeInsets.all(40),
-                  child: buildImage(widget.images[index], fit: BoxFit.contain),
-                ),
-              );
-            },
-          ),
+    final tokens = NiTokens.of(context);
+    final isMobile = NiTokens.isMobile(context);
+    final visibleFeatures = widget.app.features.where((f) => f.hide != true).toList();
 
-          // Close button
-          Positioned(
-            top: 16,
-            right: 16,
-            child: IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: const Icon(Icons.close, color: Colors.white, size: 32),
-            ),
-          ),
+    if (visibleFeatures.isEmpty) return const SizedBox.shrink();
 
-          // Prev Button
-          if (widget.images.length > 1)
-            Positioned(
-              left: 16,
-              top: 0,
-              bottom: 0,
-              child: Center(
-                child: IconButton.filled(
-                  onPressed: () {
-                    if (_currentPage > 0) {
-                      _pageController.previousPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  },
-                  icon: const Icon(Icons.chevron_left, size: 40),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.white24,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16),
+    final tocCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 80), // Added top padding
+        Text('FEATURES', style: NiType.eyebrow(context).copyWith(fontSize: 11.52, letterSpacing: 0.12 * 16)),
+        const SizedBox(height: 24),
+        ...visibleFeatures.asMap().entries.map((entry) {
+          final i = entry.key;
+          final title = entry.value.title;
+          final isActive = i == _activeIndex;
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() => _activeIndex = i);
+                  if (_keys[i].currentContext != null) {
+                    Scrollable.ensureVisible(
+                      _keys[i].currentContext!,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                      alignment: 0.1,
+                    );
+                  }
+                },
+                child: Text(
+                  title,
+                  style: NiType.muted(context, 13.76).copyWith(
+                    color: isActive ? tokens.accent : tokens.muted,
+                    fontWeight: isActive ? FontWeight.w700 : FontWeight.w400,
                   ),
                 ),
               ),
             ),
+          );
+        }),
+      ],
+    );
 
-          // Next Button
-          if (widget.images.length > 1)
-            Positioned(
-              right: 16,
-              top: 0,
-              bottom: 0,
-              child: Center(
-                child: IconButton.filled(
-                  onPressed: () {
-                    if (_currentPage < widget.images.length - 1) {
-                      _pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  },
-                  icon: const Icon(Icons.chevron_right, size: 40),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.white24,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16),
-                  ),
-                ),
-              ),
-            ),
-
-          // Bottom Indicators
-          if (widget.images.length > 1)
-            Positioned(
-              bottom: 30,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  widget.images.length,
-                  (index) => GestureDetector(
-                    onTap: () {
-                      _pageController.animateToPage(
-                        index,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 6),
-                      width: _currentPage == index ? 24 : 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        color: _currentPage == index
-                            ? Colors.white
-                            : Colors.white38,
-                      ),
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+          child: isMobile 
+            ? Column(
+                children: [
+                  tocCol,
+                  const SizedBox(height: 64),
+                  ...visibleFeatures.asMap().entries.map((e) {
+                    return Container(
+                      key: _keys[e.key],
+                      margin: const EdgeInsets.only(bottom: 64),
+                      child: _FeatureDeepDive(feature: e.value, isReversed: e.key % 2 == 0)
+                    );
+                  }),
+                ],
+              )
+            : Row(
+                key: _rowKey,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 300,
+                    child: Transform.translate(
+                      offset: Offset(0, _stickyOffset),
+                      child: tocCol,
                     ),
                   ),
+                  const SizedBox(width: 64),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: visibleFeatures.asMap().entries.map((e) {
+                        return Container(
+                          key: _keys[e.key],
+                          margin: const EdgeInsets.only(bottom: 120),
+                          child: _FeatureDeepDive(feature: e.value, isReversed: e.key % 2 == 0)
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
+        ),
+      ),
+    );
+  }
+}
+
+class _FeatureDeepDive extends StatelessWidget {
+  final AppFeature feature;
+  final bool isReversed;
+
+  const _FeatureDeepDive({required this.feature, required this.isReversed});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    final isMobile = NiTokens.isMobile(context);
+    
+    // We expect the first section to have the content for the deep dive
+    final desc = feature.sections.isNotEmpty ? feature.sections.first.content : feature.subtitle;
+
+    final textCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(feature.title, style: NiType.h3(context)),
+        const SizedBox(height: 16),
+        Text(desc, style: NiType.muted(context)),
+      ],
+    );
+    final firstSectionWithImage = feature.sections.cast<FeatureSection?>().firstWhere((s) => s != null && s.images.isNotEmpty, orElse: () => null);
+    final imageUrl = firstSectionWithImage != null ? firstSectionWithImage.images.first.url : 'assets/placeholders/learning.png';
+
+    final mediaCol = ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: Stack(
+        children: [
+          Image.asset(
+            imageUrl,
+            fit: BoxFit.cover,
+            width: double.infinity,
+          ),
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: RadialGradient(
+                  center: Alignment.center,
+                  radius: 0.9,
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
+                  stops: const [0.6, 1.0],
                 ),
               ),
             ),
+          ),
+        ],
+      ),
+    );
+
+    return Container(
+      margin: const EdgeInsets.only(top: 80),
+      child: isMobile
+        ? Column(
+            children: [
+              mediaCol,
+              const SizedBox(height: 32),
+              textCol,
+            ],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: isReversed
+                ? [Expanded(flex: 10, child: mediaCol), const SizedBox(width: 40), Expanded(flex: 12, child: textCol)]
+                : [Expanded(flex: 12, child: textCol), const SizedBox(width: 40), Expanded(flex: 10, child: mediaCol)],
+          ),
+    );
+  }
+}
+
+class _BottomCta extends StatelessWidget {
+  final AppModel app;
+  const _BottomCta({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 80),
+      child: Column(
+        children: [
+          Text('Ready to try ${app.shortName}?', style: NiType.h2(context), textAlign: TextAlign.center),
+          const SizedBox(height: 32),
+          if (app.links.isNotEmpty)
+            _StoreButton(link: app.links.first)
+          else
+            _StoreButton(link: AppLink(type: 'Coming soon', url: '')),
         ],
       ),
     );

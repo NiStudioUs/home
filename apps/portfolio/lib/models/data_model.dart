@@ -165,6 +165,8 @@ class AppModel {
   final String status;
   final String statusColor;
   final String demoUrl;
+  
+  String get shortName => name;
 
   AppModel({
     required this.id,
