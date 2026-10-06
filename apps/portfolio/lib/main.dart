@@ -26,8 +26,20 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Pre-cache critical images so they appear instantly when the HTML loader fades out
+    precacheImage(const AssetImage('assets/developers/dev-avatar.webp'), context);
+  }
 
   @override
   Widget build(BuildContext context) {

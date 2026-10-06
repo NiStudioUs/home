@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ni_design_system/ni_design_system.dart';
 export 'package:ni_design_system/ni_design_system.dart';
 
@@ -27,7 +26,7 @@ class NiTheme {
         scaffoldBackgroundColor: t.bg,
         colorScheme: ColorScheme.fromSeed(seedColor: t.accent2, brightness: b).copyWith(
           primary: t.accent, secondary: t.accent2, surface: t.surface, onPrimary: t.accentInk, onSurface: t.text, outline: t.border),
-        textTheme: GoogleFonts.interTextTheme(ThemeData(brightness: b).textTheme).apply(bodyColor: t.text, displayColor: t.text),
+        textTheme: ThemeData(brightness: b).textTheme.apply(fontFamily: 'Inter', bodyColor: t.text, displayColor: t.text),
         dividerColor: t.border,
         focusColor: t.accent,
         extensions: [t],
