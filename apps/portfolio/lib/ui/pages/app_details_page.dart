@@ -585,31 +585,48 @@ class _FeatureDeepDive extends StatelessWidget {
       ],
     );
     final firstSectionWithImage = feature.sections.cast<FeatureSection?>().firstWhere((s) => s != null && s.images.isNotEmpty, orElse: () => null);
-    final imageUrl = firstSectionWithImage != null ? firstSectionWithImage.images.first.url : 'assets/placeholders/learning.png';
+    final imageUrl = firstSectionWithImage != null ? firstSectionWithImage.images.first.url : '';
 
     final mediaCol = ClipRRect(
       borderRadius: BorderRadius.circular(24),
-      child: Stack(
-        children: [
-          Image.asset(
-            imageUrl,
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-          Positioned.fill(
-            child: DecoratedBox(
+      child: imageUrl.isNotEmpty
+          ? Stack(
+              children: [
+                Image.asset(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
+                Positioned.fill(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: RadialGradient(
+                        center: Alignment.center,
+                        radius: 0.9,
+                        colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
+                        stops: const [0.6, 1.0],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          : Container(
+              width: double.infinity,
+              height: 300,
               decoration: BoxDecoration(
-                gradient: RadialGradient(
-                  center: Alignment.center,
-                  radius: 0.9,
-                  colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
-                  stops: const [0.6, 1.0],
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Center(
+                child: Text(
+                  'Screenshots coming soon',
+                  style: NiType.muted(context).copyWith(
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
-      ),
     );
 
     return Container(
