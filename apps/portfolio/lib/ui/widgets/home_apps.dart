@@ -336,7 +336,7 @@ class _AppShot extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 9 / 19,
           child: Image.asset(
-            url.isNotEmpty ? url : 'assets/placeholders/screenshot.png',
+            url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),

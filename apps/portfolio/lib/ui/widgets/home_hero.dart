@@ -299,7 +299,7 @@ class _FloatingPhoneState extends State<_FloatingPhone> with SingleTickerProvide
         child: ClipRRect(
           borderRadius: BorderRadius.circular(NiTokens.rPhoneScreen),
           child: Image.asset(
-            widget.url.isNotEmpty ? widget.url : 'assets/placeholders/screenshot.png',
+            widget.url.isNotEmpty ? widget.url : 'assets/placeholders/screenshot.webp',
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),

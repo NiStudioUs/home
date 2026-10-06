@@ -303,7 +303,7 @@ class _GalleryShot extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.asset(
-              url.isNotEmpty ? url : 'assets/placeholders/screenshot.png',
+              url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
               fit: BoxFit.cover,
             ),
             DecoratedBox(

@@ -135,7 +135,7 @@ class _TopbarState extends State<Topbar> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(NiTokens.rBrandImg),
                               child: Image.asset(
-                                'assets/developers/dev-avatar.png', // Will update to actual asset or placeholder logic later
+                                'assets/developers/dev-avatar.webp', // Will update to actual asset or placeholder logic later
                                 width: 30,
                                 height: 30,
                                 errorBuilder: (c, e, s) => Container(

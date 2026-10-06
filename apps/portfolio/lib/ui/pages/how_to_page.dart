@@ -128,7 +128,7 @@ class _TimelineStep extends StatelessWidget {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(13),
-                          child: Image.asset('assets/placeholders/learning.png'), // Uses placeholder
+                          child: Image.asset('assets/placeholders/learning.webp'), // Uses placeholder
                         ),
                       )),
                     ],

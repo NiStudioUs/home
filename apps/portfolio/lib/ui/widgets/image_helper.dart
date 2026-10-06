@@ -66,7 +66,7 @@ Widget buildImage(
 ImageProvider getImageProvider(String url) {
   if (url.isEmpty) {
     return const AssetImage(
-      'assets/images/placeholder.png',
+      'assets/images/placeholder.webp',
     ); // You might need a placeholder or handle this
   }
   if (url.startsWith('http') || url.startsWith('https')) {

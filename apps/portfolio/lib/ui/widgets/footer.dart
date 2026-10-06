@@ -107,7 +107,7 @@ class _BrandColumn extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(NiTokens.rBrandImg),
               child: Image.asset(
-                'assets/developers/dev-avatar.png',
+                'assets/developers/dev-avatar.webp',
                 width: 30,
                 height: 30,
                 errorBuilder: (c, e, s) => Container(
