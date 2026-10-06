@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import '../widgets/home_hero.dart';
-import '../widgets/marquee.dart';
 import '../widgets/home_features.dart';
 import '../widgets/home_apps.dart';
 import '../widgets/home_learning.dart';
@@ -71,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             ),
             
             // Marquee
-            const HomeMarquee(),
+            NiMarquee(items: dataModel.apps.expand((app) => app.features.map((f) => f.title)).toList()),
             
             // Stats
             const StatsRow(),

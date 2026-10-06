@@ -62,7 +62,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
       ),
     );
 
-    final visibleStats = app.technicalDetails.where((f) => f.hide != true).toList();
+    final visibleStats = app.technicalDetails.toList();
 
     if (app.id == 'error') {
       return Scaffold(body: Center(child: Text('App Not Found', style: NiType.heroH1(context))));
@@ -331,6 +331,11 @@ class _AppTechStats extends StatelessWidget {
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
     final isMobile = NiTokens.isMobile(context);
+    final validStats = stats.where((s) => s.title != 'N/A' && s.title != 'NA').toList();
+
+    if (validStats.isEmpty) {
+      return const SizedBox.shrink();
+    }
 
     return Container(
       margin: const EdgeInsets.only(top: 80),
@@ -346,15 +351,15 @@ class _AppTechStats extends StatelessWidget {
           child: isMobile
             ? Column(
                 children: [
-                  for (int i = 0; i < stats.length; i += 2)
+                  for (int i = 0; i < validStats.length; i += 2)
                     Padding(
-                      padding: EdgeInsets.only(bottom: i + 2 < stats.length ? 24.0 : 0),
+                      padding: EdgeInsets.only(bottom: i + 2 < validStats.length ? 24.0 : 0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(child: _StatItem(val: stats[i].title, label: stats[i].subtitle)),
-                          if (i + 1 < stats.length)
-                            Expanded(child: _StatItem(val: stats[i + 1].title, label: stats[i + 1].subtitle))
+                          Expanded(child: _StatItem(val: validStats[i].title, label: validStats[i].subtitle)),
+                          if (i + 1 < validStats.length)
+                            Expanded(child: _StatItem(val: validStats[i + 1].title, label: validStats[i + 1].subtitle))
                           else
                             const Spacer(),
                         ],
@@ -364,7 +369,7 @@ class _AppTechStats extends StatelessWidget {
               )
             : Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: stats.map((s) => Expanded(child: _StatItem(val: s.title, label: s.subtitle))).toList(),
+                children: validStats.map((s) => Expanded(child: _StatItem(val: s.title, label: s.subtitle))).toList(),
               ),
         ),
       ),
@@ -383,9 +388,9 @@ class _StatItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(val, style: NiType.statNum(context)),
-        const SizedBox(height: 4),
-        Text(label, style: NiType.stat(context)),
+        Text(val, style: NiType.subH3(context)),
+        const SizedBox(height: 6),
+        Text(label.toUpperCase(), style: NiType.eyebrow(context)),
       ],
     );
   }

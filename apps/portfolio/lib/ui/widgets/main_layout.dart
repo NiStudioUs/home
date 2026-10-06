@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'topbar.dart';
 import 'footer.dart';
 import 'progress_bar.dart';
 import '../design_tokens.dart';
+import '../../utils/scroll_keys.dart';
+import '../../utils/url_helper.dart';
 
 class MainLayout extends StatefulWidget {
   final Widget child;
@@ -82,15 +86,74 @@ class _MobileNavPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
-    // Simple placeholder for mobile nav panel
     return Container(
       color: tokens.bg,
       padding: const EdgeInsets.all(16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ListTile(title: Text('Close Menu', style: NiType.nav(context))),
+          _MobileNavLink(
+            title: 'Apps',
+            onTap: () {
+              onClose();
+              if (AppScrollKeys.appsKey.currentContext != null) {
+                Scrollable.ensureVisible(AppScrollKeys.appsKey.currentContext!, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+              } else {
+                context.go('/#apps');
+              }
+            },
+          ),
+          _MobileNavLink(
+            title: 'Learning',
+            onTap: () {
+              onClose();
+              if (AppScrollKeys.learningKey.currentContext != null) {
+                Scrollable.ensureVisible(AppScrollKeys.learningKey.currentContext!, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+              } else {
+                context.go('/#learning');
+              }
+            },
+          ),
+          _MobileNavLink(
+            title: 'Profile',
+            onTap: () {
+              onClose();
+              context.go('/profile');
+            },
+          ),
+          _MobileNavLink(
+            title: 'Contact',
+            onTap: () {
+              onClose();
+              if (AppScrollKeys.contactKey.currentContext != null) {
+                Scrollable.ensureVisible(AppScrollKeys.contactKey.currentContext!, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+              } else {
+                context.go('/#contact');
+              }
+            },
+          ),
+          const SizedBox(height: 16),
+          ListTile(
+            title: Text('Close Menu', style: NiType.nav(context).copyWith(color: tokens.accent)),
+            onTap: onClose,
+          ),
         ],
       ),
+    );
+  }
+}
+
+class _MobileNavLink extends StatelessWidget {
+  final String title;
+  final VoidCallback onTap;
+  const _MobileNavLink({required this.title, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+    return ListTile(
+      title: Text(title, style: NiType.nav(context).copyWith(color: tokens.text)),
+      onTap: onTap,
     );
   }
 }

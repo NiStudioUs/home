@@ -22,10 +22,19 @@ Widget buildImage(
       height: height,
       fit: fit,
       alignment: alignment,
+      frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+        if (wasSynchronouslyLoaded) return child;
+        return AnimatedOpacity(
+          opacity: frame == null ? 0 : 1,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+          child: child,
+        );
+      },
       errorBuilder: (context, error, stackTrace) => SizedBox(
         width: width,
         height: height,
-        child: const Icon(Icons.broken_image),
+        child: const Icon(Icons.broken_image, color: Colors.grey),
       ),
     );
   } else {
@@ -36,10 +45,19 @@ Widget buildImage(
       height: height,
       fit: fit,
       alignment: alignment,
+      frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+        if (wasSynchronouslyLoaded) return child;
+        return AnimatedOpacity(
+          opacity: frame == null ? 0 : 1,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+          child: child,
+        );
+      },
       errorBuilder: (context, error, stackTrace) => SizedBox(
         width: width,
         height: height,
-        child: const Icon(Icons.broken_image),
+        child: const Icon(Icons.broken_image, color: Colors.grey),
       ),
     );
   }

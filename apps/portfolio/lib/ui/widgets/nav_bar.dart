@@ -71,7 +71,7 @@ class _DesktopNavBar extends StatelessWidget {
           IconButton(
             onPressed: () {
               if (EasterEgg.handle('name')) {
-                launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+                context.go('/timeline');
               } else {
                 context.go('/');
               }
@@ -195,7 +195,7 @@ class _DesktopNavBar extends StatelessWidget {
             tooltip: 'Toggle Theme',
             onPressed: () {
               if (EasterEgg.handle('theme')) {
-                launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+                context.go('/timeline');
               } else {
                 themeService.toggleTheme();
               }
@@ -210,7 +210,7 @@ class _DesktopNavBar extends StatelessWidget {
               color: Theme.of(context).colorScheme.onSurface,
             ),
             tooltip: 'Developer Profile',
-            onPressed: () => launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
+            onPressed: () => context.go('/profile'),
           ),
         ],
       ),
@@ -241,7 +241,7 @@ class _MobileNavBar extends StatelessWidget {
       title: GestureDetector(
         onTap: () {
           if (EasterEgg.handle('name')) {
-            launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+            context.go('/timeline');
           } else {
             context.go('/');
           }
@@ -279,7 +279,7 @@ class _MobileNavBar extends StatelessWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.person),
-          onPressed: () => launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html'))),
+          onPressed: () => context.go('/profile'),
         ),
         IconButton(
           icon: Icon(
@@ -288,7 +288,7 @@ class _MobileNavBar extends StatelessWidget {
           ),
           onPressed: () {
             if (EasterEgg.handle('theme')) {
-              launchUrl(Uri.parse(UrlHelper.resolve('./profile/index.html#/dev')));
+              context.go('/timeline');
             } else {
               themeService.toggleTheme();
             }

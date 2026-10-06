@@ -2,13 +2,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../utils/scroll_keys.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../design_tokens.dart';
 import '../../services/theme_service.dart';
-import '../../services/data_service.dart';
 import '../../models/data_model.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../utils/easter_egg.dart';
+import '../../utils/url_helper.dart';
 
 class Topbar extends StatefulWidget {
   final VoidCallback onBurgerTap;
@@ -21,6 +21,7 @@ class Topbar extends StatefulWidget {
 
 class _TopbarState extends State<Topbar> {
   String? _openDropdown; // 'Features' or 'Legal' or null
+  final LayerLink _profileLink = LayerLink();
   final LayerLink _featuresLink = LayerLink();
   final LayerLink _legalLink = LayerLink();
   OverlayEntry? _overlayEntry;
@@ -64,9 +65,7 @@ class _TopbarState extends State<Topbar> {
                 followerAnchor: Alignment.topRight,
                 child: Material(
                   color: Colors.transparent,
-                  child: name == 'Features' 
-                      ? _FeaturesDropdownPanel(onClose: _closeDropdown)
-                      : _LegalDropdownPanel(onClose: _closeDropdown),
+                  child: _buildDropdownPanel(name),
                 ),
               ),
             ),
@@ -77,6 +76,19 @@ class _TopbarState extends State<Topbar> {
 
     Overlay.of(context).insert(_overlayEntry!);
     setState(() {});
+  }
+
+  Widget _buildDropdownPanel(String name) {
+    switch (name) {
+      case 'Features':
+        return _FeaturesDropdownPanel(onClose: _closeDropdown);
+      case 'Legal':
+        return _LegalDropdownPanel(onClose: _closeDropdown);
+      case 'Profile':
+        return _ProfileDropdownPanel(onClose: _closeDropdown);
+      default:
+        return const SizedBox();
+    }
   }
 
   @override
@@ -111,6 +123,10 @@ class _TopbarState extends State<Topbar> {
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () {
+                          if (EasterEgg.handle('home')) {
+                            context.go('/timeline');
+                            return;
+                          }
                           _closeDropdown();
                           context.go('/');
                         },
@@ -158,6 +174,15 @@ class _TopbarState extends State<Topbar> {
                         }
                       }),
                       const SizedBox(width: 4),
+                      CompositedTransformTarget(
+                        link: _profileLink,
+                        child: _NavDropdownTrigger(
+                          title: 'Karthik Subramanian', 
+                          isOpen: _openDropdown == 'Profile',
+                          onTap: () => _toggleDropdown('Profile', _profileLink),
+                        ),
+                      ),
+                      const SizedBox(width: 4),
                       _NavLink(title: 'Contact', onTap: () { 
                         _closeDropdown(); 
                         if (AppScrollKeys.contactKey.currentContext != null) {
@@ -171,7 +196,7 @@ class _TopbarState extends State<Topbar> {
                       CompositedTransformTarget(
                         link: _featuresLink,
                         child: _NavDropdownTrigger(
-                          title: 'Features ▾', 
+                          title: 'Features', 
                           isOpen: _openDropdown == 'Features',
                           onTap: () => _toggleDropdown('Features', _featuresLink),
                         ),
@@ -180,7 +205,7 @@ class _TopbarState extends State<Topbar> {
                       CompositedTransformTarget(
                         link: _legalLink,
                         child: _NavDropdownTrigger(
-                          title: 'Legal ▾', 
+                          title: 'Legal', 
                           isOpen: _openDropdown == 'Legal',
                           onTap: () => _toggleDropdown('Legal', _legalLink),
                         ),
@@ -282,11 +307,22 @@ class _NavDropdownTriggerState extends State<_NavDropdownTrigger> {
             color: active ? tokens.surface2 : Colors.transparent,
             borderRadius: NiTokens.pill,
           ),
-          child: Text(
-            widget.title,
-            style: NiType.nav(context).copyWith(
-              color: active ? tokens.accent : tokens.muted,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                widget.title,
+                style: NiType.nav(context).copyWith(
+                  color: active ? tokens.accent : tokens.muted,
+                ),
+              ),
+              const SizedBox(width: 2),
+              Icon(
+                Icons.keyboard_arrow_down,
+                size: 18,
+                color: active ? tokens.accent : tokens.muted,
+              ),
+            ],
           ),
         ),
       ),
@@ -304,7 +340,11 @@ class _ThemeToggleButton extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          themeService.toggleTheme();
+          if (EasterEgg.handle('theme')) {
+             context.go('/timeline');
+          } else {
+             themeService.toggleTheme();
+          }
         },
         child: Container(
           width: 40,
@@ -506,6 +546,47 @@ class _DropdownLinkState extends State<_DropdownLink> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _ProfileDropdownPanel extends StatelessWidget {
+  final VoidCallback onClose;
+  const _ProfileDropdownPanel({required this.onClose});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
+
+    return Container(
+      width: 200,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: tokens.surface,
+        borderRadius: BorderRadius.circular(NiTokens.rMenu),
+        border: Border.all(color: tokens.border),
+        boxShadow: tokens.shadow,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _DropdownLink(
+            text: 'Profile',
+            onTap: () {
+              onClose();
+              context.go('/profile');
+            },
+          ),
+          _DropdownLink(
+            text: 'Timeline',
+            onTap: () {
+              onClose();
+              context.go('/profile/timeline');
+            },
+          ),
+        ],
       ),
     );
   }
