@@ -139,6 +139,21 @@ export default function Home() {
                   <span key={idx} className="badge">{tag}</span>
                 ))}
               </div>
+
+              {(project.demoUrl || project.liveUrl) && (
+                <div style={{ marginTop: '1.5rem' }}>
+                  <a 
+                    href={project.demoUrl || project.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-primary" 
+                    style={{ width: '100%', justifyContent: 'center' }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Live Demo
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>

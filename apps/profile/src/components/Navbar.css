@@ -5,6 +5,9 @@
   right: 0;
   height: var(--header-height);
   background-color: var(--bg-color);
+  background-color: color-mix(in srgb, var(--bg-color) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: 50;
 }
@@ -35,11 +38,14 @@
   gap: 0.5rem;
   color: var(--text-secondary);
   font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.2s;
+  padding: 0.5rem 0.875rem;
+  border-radius: 20px;
 }
 
 .navbar-item:hover, .navbar-item.active {
   color: var(--accent-color);
+  background-color: var(--bg-secondary);
 }
 
 .theme-toggle {
