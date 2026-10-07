@@ -92,15 +92,6 @@ jobs:
             fi
           done
 
-      - name: Build Developer Profile
-        run: |
-          cd apps/profile
-          npm ci
-          npm run build
-          cd ../..
-          mkdir -p dist/profile
-          cp -R apps/profile/dist/* dist/profile/
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -118,4 +109,3 @@ jobs:
           echo "1. **Portfolio** (Flutter)" >> $GITHUB_STEP_SUMMARY
           echo "2. **Learning Hub** (Vite)" >> $GITHUB_STEP_SUMMARY
           echo "3. **Learning Apps** (Processed)" >> $GITHUB_STEP_SUMMARY
-          echo "4. **Developer Profile** (Vite)" >> $GITHUB_STEP_SUMMARY
