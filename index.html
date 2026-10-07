@@ -36,6 +36,55 @@
   <link rel="manifest" href="manifest.json">
   
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+    }
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .loading-logo {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #1a1a24;
+      margin-bottom: 24px;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @media (prefers-color-scheme: dark) {
+      .loading-logo {
+        color: #fbfbfe;
+      }
+    }
+    .loading-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(100, 108, 255, 0.2);
+      border-radius: 50%;
+      border-top-color: #646cff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
     .static-footer {
       position: fixed;
       bottom: 0;
@@ -50,7 +99,7 @@
       z-index: 9999;
     }
     .static-footer a {
-      color: #1976d2;
+      color: #646cff;
       text-decoration: none;
       margin: 0 12px;
     }
@@ -59,16 +108,22 @@
     }
     @media (prefers-color-scheme: dark) {
       .static-footer {
-        background: rgba(30, 30, 30, 0.95);
-        border-top: 1px solid #424242;
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
       }
       .static-footer a {
-        color: #64b5f6;
+        color: #8c92ff;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Loading Screen (Visible immediately) -->
+  <div id="loading-screen" class="loading-container">
+    <div class="loading-logo">Ni Studio Us</div>
+    <div class="loading-spinner"></div>
+  </div>
+
   <!-- Static privacy policy links for crawlers -->
   <div id="static-footer" class="static-footer">
     <a href="#/app/sms-stack/privacy">SMS Stack Manager Privacy Policy</a> | 
@@ -78,11 +133,15 @@
   </div>
   
   <script>
-    // Hide static footer when Flutter renders
-    function hideStaticFooter() {
+    // Hide static footer and loading screen when Flutter renders
+    function hideStaticContent() {
       var footer = document.getElementById('static-footer');
-      if (footer) {
-        footer.style.display = 'none';
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 400);
       }
     }
     
@@ -91,16 +150,16 @@
       if (document.querySelector('flt-glass-pane') || 
           document.querySelector('flutter-view') ||
           document.querySelector('canvas')) {
-        hideStaticFooter();
+        hideStaticContent();
         clearInterval(checkInterval);
       }
     }, 100);
     
-    // Fallback: hide after 3 seconds regardless
+    // Fallback: hide after 10 seconds regardless
     setTimeout(function() {
-      hideStaticFooter();
+      hideStaticContent();
       clearInterval(checkInterval);
-    }, 3000);
+    }, 10000);
   </script>
   
   <script src="flutter_bootstrap.js" async></script>
