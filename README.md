@@ -8,6 +8,8 @@ This repository is a unified monorepo containing the main Flutter-based portfoli
 2.  **Learning Hub (`apps/learning`)**: A React/Vite-based application showcasing various learning projects. It runs independently but is integrated into the final build.
 3.  **Developer Profile (`apps/profile`)**: A React/Vite-based application detailing the developer's resume and timeline.
 
+The Flutter UI components and design tokens come from [`ni_design_system`](https://github.com/vskarthik9896/ni_design_system), a private git dependency pinned by tag in `apps/portfolio/pubspec.yaml`. The deploy workflow reads it with the `NI_DS_DEPLOY_KEY` secret, a read-only deploy key on that repo.
+
 ## Local Development Setup
 
 To make local development seamless, a root `package.json` has been provided with helper scripts so you do not need to manually change directories.
