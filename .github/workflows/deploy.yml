@@ -28,6 +28,11 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Load read-only key for ni_design_system
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.NI_DS_DEPLOY_KEY }}
+
       - name: Sync Learning Data to Portfolio
         run: node scripts/sync_data.js
 
