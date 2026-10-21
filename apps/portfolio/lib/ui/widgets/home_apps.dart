@@ -209,10 +209,14 @@ class _AppCopyColumn extends StatelessWidget {
             _Button(text: 'View app →', isPrimary: true, onTap: () => context.go('/apps/${app.id}/')),
             if (app.demoUrl.isNotEmpty)
               _Button(text: 'Live Demo', onTap: () async {
-                final uri = Uri.parse(app.demoUrl);
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri);
-                }
+                // demoUrl is a site-relative path (e.g. "/home/app/<id>/demo/"),
+                // not an absolute URL — canLaunchUrl's web implementation only
+                // allows http/https schemes and treats a schemeless relative
+                // path as unsupported, so it must never gate this call (it
+                // silently no-ops the button otherwise). launchUrl itself
+                // handles a relative path fine: the browser resolves it
+                // against the current origin.
+                await launchUrl(Uri.parse(app.demoUrl));
               }),
             _Button(text: 'Privacy', onTap: () => context.go('/apps/${app.id}/privacy')),
             _Button(text: 'Terms', onTap: () => context.go('/apps/${app.id}/terms')),
