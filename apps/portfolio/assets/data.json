@@ -1654,7 +1654,7 @@
               "content": "A dedicated full-screen alarm screen that shows over the lock screen, with large Snooze and Stop controls. Set repeat days, a custom label, and your own ringtone per alarm.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-1-dashboard-light.webp"
+                "assets/images/alarm-clock/playstore_screen-2-alarm-ring.webp"
               ]
             }
           ]
@@ -1724,7 +1724,9 @@
               "title": "Widgets that match your wallpaper",
               "content": "Three home-screen widgets — an action shortcut, quick timers, and a routine launcher — each configurable for light/dark/auto mode, opacity, and a color source that can follow your device's Material You wallpaper palette (Android 12+) or your in-app accent color.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-7-widget-config.webp"
+              ]
             }
           ]
         },
@@ -1751,7 +1753,9 @@
               "title": "One-time unlock, always visible",
               "content": "Unlimited alarms, unlimited profiles, unlimited reminders, and the work-geofence routine feature. Premium status is always shown — as a reminder when unlocked, or as a feature checklist when it isn't — never hidden.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.webp"
+              ]
             }
           ]
         }
@@ -1805,6 +1809,10 @@
         {
           "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-dark.webp",
           "caption": "Looks great in dark mode"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-2-alarm-ring.webp",
+          "caption": "Bright, unmissable alarm screen"
         },
         {
           "url": "assets/images/alarm-clock/playstore_screen-3-stopwatch.webp",
