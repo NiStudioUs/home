@@ -1,0 +1,35 @@
+{
+    "name": "Alarm Clock",
+    "short_name": "Alarm Clock",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#FFF8F4",
+    "theme_color": "#F97003",
+    "description": "Alarms, reminders, timers and a stopwatch in one calm clock app.",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
