@@ -2,9 +2,9 @@
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,C,F,E,G,D={
 aXL(){return new D.rU(null)},
 rU:function rU(d){this.a=d},
-alH:function alH(d,e){this.a=d
-this.b=e},
 alG:function alG(d,e){this.a=d
+this.b=e},
+alF:function alF(d,e){this.a=d
 this.b=e}},B,H
 J=c[1]
 A=c[0]
@@ -19,10 +19,10 @@ D.rU.prototype={
 G(d){var x,w,v=null,u=y.a,t=y.m,s=t.a(A.C(d).c.h(0,A.V(u)))
 s.toString
 x=y.h
-w=A.P(new A.K(B.Jc,new D.alH(d,s),x),x.i("a3.E"))
-return A.hx(v,s.a,new A.ft(C.bQ,v,v,new A.bW(C.an,new A.au(G.hc,E.al8(E.af9(v,A.aF(A.a([A.a2("Story",v,v,A.aG(d,A.ca(d,27.2,3,38.4),C.t,v,1.12,-0.02),v),C.S,A.a2("The journey so far.",v,v,A.ba(d,A.ca(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.V(u))).r,1.65,C.j),v)],y.u),C.p,C.k,C.l),w)),v),v),v))}}
+w=A.P(new A.K(B.Jc,new D.alG(d,s),x),x.i("a3.E"))
+return A.hx(v,s.a,new A.ft(C.bQ,v,v,new A.bW(C.an,new A.au(G.hc,E.al7(E.af8(v,A.aF(A.a([A.a2("Story",v,v,A.aG(d,A.ca(d,27.2,3,38.4),C.t,v,1.12,-0.02),v),C.S,A.a2("The journey so far.",v,v,A.ba(d,A.ca(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.V(u))).r,1.65,C.j),v)],y.u),C.p,C.k,C.l),w)),v),v),v))}}
 var z=a.updateTypes(["en(ao<j,@>)"])
-D.alH.prototype={
+D.alG.prototype={
 $1(d){var x,w,v,u,t,s,r,q,p,o=null,n="tags",m=d.h(0,"project"),l=m==null?d.h(0,"title"):m
 if(l==null)l=""
 x=d.h(0,"year")
@@ -45,16 +45,16 @@ s=r.a(A.C(m).c.h(0,A.V(s)))
 s=A.x(s.r,s.f,0.82)
 s.toString
 s=A.a([t,H.iy,v,C.S,A.a2(p,o,o,A.ba(m,16,s,1.65,C.j),o)],q)
-if(d.ab(n)&&y.i.b(d.h(0,n))){m=J.dg(y.i.a(d.h(0,n)),new D.alG(u,m),y.j)
+if(d.ab(n)&&y.i.b(d.h(0,n))){m=J.dg(y.i.a(d.h(0,n)),new D.alF(u,m),y.j)
 m=A.P(m,m.$ti.i("a3.E"))
 C.b.I(s,A.a([C.S,A.hC(C.z,m,C.bj,8,8)],q))}return new E.en(l,x,F.lU(A.aF(s,C.p,C.k,C.l),o,o))},
 $S:z+0}
-D.alG.prototype={
+D.alF.prototype={
 $1(d){var x=null,w=this.a,v=A.bI(4),u=A.cP(w.e,1),t=this.b
 return A.aR(x,A.a2(J.e2(d),x,x,A.aG(t,11.84,C.t,y.m.a(A.C(t).c.h(0,A.V(y.a))).w,1,0.14),x),C.n,x,x,new A.ay(w.a,x,u,v,x,x,x,C.v),x,x,x,x,C.dA,x,x,x)},
 $S:671};(function inheritance(){var x=a.inherit,w=a.inheritMany
 x(D.rU,A.a1)
-w(A.f6,[D.alH,D.alG])})()
+w(A.f6,[D.alG,D.alF])})()
 A.l5(b.typeUniverse,JSON.parse('{"rU":{"a1":[],"e":[]}}'))
 var y={v:A.a_("at<j,@>"),j:A.a_("cT"),x:A.a_("p<j>"),u:A.a_("p<e>"),i:A.a_("L<@>"),h:A.a_("K<ao<j,@>,en>"),a:A.a_("cX"),m:A.a_("cX?")};(function constants(){var x=a.makeConstList
 B.cA={year:0,company:1,project:2,description:3,tags:4}
@@ -75,4 +75,4 @@ B.N4=new A.at(B.cA,["January 2026","Experimentation","Gen AI Projects","Curious 
 B.JO=x(["BLoC","Drift","Local Processing"],y.x)
 B.N_=new A.at(B.cA,["2026","Mobile Product","SMS Stack","For my latest mobile product, I wanted to tackle heavy on-device data processing. I engineered a robust Flutter app utilizing Drift/SQLite, pushing the boundaries of what a modern mobile processor can handle locally without compromising user privacy or battery life.",B.JO],y.v)
 B.Jc=x([B.N1,B.N0,B.N2,B.MZ,B.N3,B.MY,B.N4,B.N_],A.a_("p<ao<j,@>>"))})()};
-(a=>{a["3Y9EKPB5UZR+z+m3Iwk2SmLC3ac="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["tZMcWLNX/P+Rkp1RxaeCTXWQDoA="]=a.current})($__dart_deferred_initializers__);

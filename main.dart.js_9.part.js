@@ -1,10 +1,18 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
-$__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,A
+$__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,D={
+aBj(d){var x=0,w=B.T(y.e),v
+var $async$aBj=B.U(function(e,f){if(e===1)return B.Q(f,w)
+for(;;)switch(x){case 0:v=$.aGI().VH(d.k(0))
+x=1
+break
+case 1:return B.R(v,w)}})
+return B.S($async$aBj,w)}},A
 B=c[0]
 C=c[2]
+D=a.updateHolder(c[10],D)
 A=c[17]
 var z=a.updateTypes([])
-var y={f:B.a_("at<j,@>"),h:B.a_("p<j>")};(function constants(){var x=a.makeConstList
+var y={f:B.a_("at<j,@>"),h:B.a_("p<j>"),e:B.a_("B")};(function constants(){var x=a.makeConstList
 A.d7={id:0,name:1,status:2,description:3,version:4,packageCount:5,demoUrl:6,liveUrl:7,tags:8}
 A.JU=x(["TypeScript","Cypress","Playwright","Azure Key Vault","MSAL / JWT","Azure Artifacts"],y.h)
 A.Na=new B.at(A.d7,["shared-e2e","@allica/shared-e2e Automation Platform","Enterprise Live","Enterprise E2E test automation npm library distributed via Azure Artifacts across 4 engineering squads. Features automated Azure Key Vault secret retrieval, local MSAL mock server for role-based JWT generation, and standardized authentication.","2.4.0",0,"","None",A.JU],y.f)
@@ -33,4 +41,4 @@ A.DV=new B.z(1,0.1803921568627451,0.49019607843137253,0.19607843137254902,C.e)
 A.Dz=new B.z(1,0.10588235294117647,0.3686274509803922,0.12549019607843137,C.e)
 A.Nt=new B.dG([50,A.Es,100,A.DF,200,A.El,300,A.EB,400,A.E6,500,A.Eu,600,A.Ez,700,A.Dl,800,A.DV,900,A.Dz],B.a_("dG<m,z>"))
 A.cy=new B.BT(A.Nt,1,0.2980392156862745,0.6862745098039216,0.3137254901960784,C.e)})()};
-(a=>{a["h/7ZEl9cT1hn8CLKsyhohgK/rMc="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["rYifBgmjD/spmzLfUPX2V8FRZMQ="]=a.current})($__dart_deferred_initializers__);
