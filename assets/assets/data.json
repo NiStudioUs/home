@@ -1639,7 +1639,9 @@
       "name": "Alarm Clock",
       "shortDescription": "Alarms, timers, reminders & routines — with widgets and voice shortcuts.",
       "fullDescription": "Alarm Clock brings every time-based tool into one fast, local-first app: reliable alarms with a bright full-screen ring screen, timers, a stopwatch, reminders, and location-aware work routines. Home-screen widgets stay in sync with your device's wallpaper colors (Material You), and a voice shortcut bar lets you create alarms, timers and reminders just by talking. No account, no cloud sync, no ads — everything lives on your device.",
-      "iconUrl": "assets/images/alarm-clock/icon.png",
+      "iconUrl": "assets/images/alarm-clock/icon.webp",
+      "status": "IN DEV",
+      "statusColor": "amber",
       "demoUrl": "/home/app/alarm-clock/demo/",
       "descriptionImages": [],
       "features": [
@@ -1651,7 +1653,9 @@
               "title": "Bright, unmissable ring screen",
               "content": "A dedicated full-screen alarm screen that shows over the lock screen, with large Snooze and Stop controls. Set repeat days, a custom label, and your own ringtone per alarm.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-1-dashboard-light.webp"
+              ]
             }
           ]
         },
@@ -1664,7 +1668,7 @@
               "content": "Quick-start timer presets, a running-timer list, and a lap-tracking stopwatch — all reachable from the same dashboard as your alarms.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-3-stopwatch.png"
+                "assets/images/alarm-clock/playstore_screen-3-stopwatch.webp"
               ]
             }
           ]
@@ -1678,7 +1682,7 @@
               "content": "One-off or recurring reminders with due dates, shown alongside your alarms and timers on the same dashboard.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-4-reminders.png"
+                "assets/images/alarm-clock/playstore_screen-4-reminders.webp"
               ]
             }
           ]
@@ -1692,8 +1696,8 @@
               "content": "Set up a routine that triggers automatically when you arrive at or leave a place you choose — for example, a \"Work\" routine. Pick the location on a map with an adjustable radius; a human-readable place name is resolved for you automatically.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-5-routines-list.png",
-                "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.png"
+                "assets/images/alarm-clock/playstore_screen-5-routines-list.webp",
+                "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.webp"
               ]
             }
           ]
@@ -1707,7 +1711,7 @@
               "content": "A voice shortcut bar understands natural phrases like \"set an alarm for 7am\" or \"remind me to call mom in 20 minutes.\" A dedicated practice page lets you try every supported phrase with live transcript and waveform feedback, so you always know it's listening.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-6-voice-practice.png"
+                "assets/images/alarm-clock/playstore_screen-6-voice-practice.webp"
               ]
             }
           ]
@@ -1733,8 +1737,8 @@
               "content": "Switch between light and dark themes, or opt in to Material You dynamic color sourced from your device's wallpaper (off by default — your choice).",
               "imageRenderer": "default",
               "images": [
-                "assets/images/alarm-clock/playstore_screen-8-settings-general.png",
-                "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.png"
+                "assets/images/alarm-clock/playstore_screen-8-settings-general.webp",
+                "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.webp"
               ]
             }
           ]
@@ -1795,39 +1799,39 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-light.png",
+          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-light.webp",
           "caption": "Everything in one place"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-dark.png",
+          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-dark.webp",
           "caption": "Looks great in dark mode"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-3-stopwatch.png",
+          "url": "assets/images/alarm-clock/playstore_screen-3-stopwatch.webp",
           "caption": "Lap-tracking stopwatch"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-4-reminders.png",
+          "url": "assets/images/alarm-clock/playstore_screen-4-reminders.webp",
           "caption": "Reminders that stick"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-5-routines-list.png",
+          "url": "assets/images/alarm-clock/playstore_screen-5-routines-list.webp",
           "caption": "Routines"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.png",
+          "url": "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.webp",
           "caption": "Location-based routines"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-6-voice-practice.png",
+          "url": "assets/images/alarm-clock/playstore_screen-6-voice-practice.webp",
           "caption": "Practice voice commands"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general.png",
+          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general.webp",
           "caption": "Personalize your theme"
         },
         {
-          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.png",
+          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.webp",
           "caption": "Dark theme settings"
         }
       ],
