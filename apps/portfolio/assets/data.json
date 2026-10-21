@@ -1633,6 +1633,558 @@
         "Genealogy",
         "Riverpod"
       ]
+    },
+    {
+      "id": "alarm-clock",
+      "name": "Alarm Clock",
+      "shortDescription": "Alarms, timers, reminders & routines — with widgets and voice shortcuts.",
+      "fullDescription": "Alarm Clock brings every time-based tool into one fast, local-first app: reliable alarms with a bright full-screen ring screen, timers, a stopwatch, reminders, and location-aware work routines. Home-screen widgets stay in sync with your device's wallpaper colors (Material You), and a voice shortcut bar lets you create alarms, timers and reminders just by talking. No account, no cloud sync, no ads — everything lives on your device.",
+      "iconUrl": "assets/images/alarm-clock/icon.png",
+      "demoUrl": "/home/app/alarm-clock/demo/",
+      "descriptionImages": [],
+      "features": [
+        {
+          "title": "Alarms",
+          "subtitle": "Never miss a wake-up",
+          "sections": [
+            {
+              "title": "Bright, unmissable ring screen",
+              "content": "A dedicated full-screen alarm screen that shows over the lock screen, with large Snooze and Stop controls. Set repeat days, a custom label, and your own ringtone per alarm.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Timers & Stopwatch",
+          "subtitle": "Quick to start, easy to track",
+          "sections": [
+            {
+              "title": "Built-in timers and stopwatch",
+              "content": "Quick-start timer presets, a running-timer list, and a lap-tracking stopwatch — all reachable from the same dashboard as your alarms.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-3-stopwatch.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Reminders",
+          "subtitle": "Things you don't want to forget",
+          "sections": [
+            {
+              "title": "Reminders that stick",
+              "content": "One-off or recurring reminders with due dates, shown alongside your alarms and timers on the same dashboard.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-4-reminders.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Routines & Work Geofence",
+          "subtitle": "Automation based on where you are",
+          "sections": [
+            {
+              "title": "Location-based routines",
+              "content": "Set up a routine that triggers automatically when you arrive at or leave a place you choose — for example, a \"Work\" routine. Pick the location on a map with an adjustable radius; a human-readable place name is resolved for you automatically.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-5-routines-list.png",
+                "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Voice Commands",
+          "subtitle": "Just say it",
+          "sections": [
+            {
+              "title": "Talk to set alarms, timers and reminders",
+              "content": "A voice shortcut bar understands natural phrases like \"set an alarm for 7am\" or \"remind me to call mom in 20 minutes.\" A dedicated practice page lets you try every supported phrase with live transcript and waveform feedback, so you always know it's listening.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-6-voice-practice.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Home-Screen Widgets",
+          "subtitle": "Material You theming",
+          "sections": [
+            {
+              "title": "Widgets that match your wallpaper",
+              "content": "Three home-screen widgets — an action shortcut, quick timers, and a routine launcher — each configurable for light/dark/auto mode, opacity, and a color source that can follow your device's Material You wallpaper palette (Android 12+) or your in-app accent color.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Theming",
+          "subtitle": "Light, dark, and dynamic color",
+          "sections": [
+            {
+              "title": "Personalize the app",
+              "content": "Switch between light and dark themes, or opt in to Material You dynamic color sourced from your device's wallpaper (off by default — your choice).",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/alarm-clock/playstore_screen-8-settings-general.png",
+                "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.png"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Premium",
+          "subtitle": "Unlock the full toolkit",
+          "sections": [
+            {
+              "title": "One-time unlock, always visible",
+              "content": "Unlimited alarms, unlimited profiles, unlimited reminders, and the work-geofence routine feature. Premium status is always shown — as a reminder when unlocked, or as a feature checklist when it isn't — never hidden.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Built with Flutter",
+          "subtitle": "Modern Tech Stack",
+          "sections": [
+            {
+              "title": "Core Technology",
+              "content": "Alarm Clock is built using **Flutter**, with a native Kotlin layer for alarm scheduling, the full-screen ring activity, and home-screen widgets (AppWidgetProvider/RemoteViews).",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Robust Architecture",
+          "subtitle": "Scalable & Maintainable",
+          "sections": [
+            {
+              "title": "Design Patterns",
+              "content": "State management is handled by **Bloc/Cubit**, with a clear separation between UI, services, and the native platform channel layer. All data is persisted locally via **sqflite** — no backend server.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Material You Widget Theming",
+          "subtitle": "Native Android color system",
+          "sections": [
+            {
+              "title": "Live wallpaper-following widgets",
+              "content": "On Android 12+, widget colors are resolved from `@android:color/system_accent1_*`/`system_neutral*` resources, so the launcher re-tints widgets automatically when the wallpaper changes — no app code runs for that update.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-light.png",
+          "caption": "Everything in one place"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-1-dashboard-dark.png",
+          "caption": "Looks great in dark mode"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-3-stopwatch.png",
+          "caption": "Lap-tracking stopwatch"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-4-reminders.png",
+          "caption": "Reminders that stick"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-5-routines-list.png",
+          "caption": "Routines"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-5-routines-geofence-map.png",
+          "caption": "Location-based routines"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-6-voice-practice.png",
+          "caption": "Practice voice commands"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general.png",
+          "caption": "Personalize your theme"
+        },
+        {
+          "url": "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.png",
+          "caption": "Dark theme settings"
+        }
+      ],
+      "links": [
+        {
+          "type": "Live Demo",
+          "url": "/home/app/alarm-clock/demo/"
+        },
+        {
+          "type": "Play Store",
+          "url": ""
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2026-10-21T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the terms used in this policy",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "Words with an initial capital letter have the meaning defined in this\nsection, regardless of whether they appear in singular or plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of this Privacy Policy:\n\n- **Application** means the software program Alarm Clock, provided by the\n  Company, downloaded by You on any electronic device.\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Device** means any device that can access the Service, such as a\n  cellphone or tablet.\n- **Personal Data** is any information that relates to an identified or\n  identifiable individual.\n- **Service** refers to the Application.\n- **Third-Party Service** means a service operated by someone other than the\n  Company that the Application calls out to (see §4).\n- **You** means the individual using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Summary — what this app does and does not do",
+            "subtitle": "No account, no cloud, no ads",
+            "sections": [
+              {
+                "title": "Summary — what this app does and does not do",
+                "content": "Alarm Clock is built to work entirely on Your device:\n\n- **No account, no sign-in.** The app never asks You to create an account or\n  sign in with Google, Apple, email, or any other identity provider.\n- **No cloud backup or sync.** All alarms, timers, reminders, routines, and\n  settings are stored only in a local database on Your device\n  (`android:allowBackup=\"false\"` — Android's own automatic cloud backup of\n  app data is explicitly disabled). Nothing is uploaded to servers We\n  operate, because We do not operate any servers that store Your data.\n- **No analytics, advertising, or crash-reporting SDKs.** The app does not\n  embed Firebase, Google Analytics, any ad network, or any third-party\n  analytics/crash SDK. We do not track Your usage of the app.\n- **One limited, anonymous network call** (reverse geocoding — see §4) and\n  **Google Play Billing** (for Premium purchases — see §5) are the only two\n  ways the app talks to anything outside Your device.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data We Collect",
+            "subtitle": "What's collected, and the permissions behind it",
+            "sections": [
+              {
+                "title": "Data You provide directly",
+                "content": "Everything You type into the app — alarm labels, reminder text, routine\nnames, the location You pick for a work routine — is Personal Data You\ncreate, and it stays in the app's local database on Your Device. We (Ni\nStudio Us) never receive a copy of it.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Data collected automatically",
+                "content": "We do not operate any analytics or telemetry pipeline, so We do not\nautomatically collect usage data, device identifiers, or diagnostic logs\nabout how You use the app. The app does keep a local, on-device log file for\nYour own troubleshooting (crash/error details), which never leaves Your\nDevice and which only You can access (e.g. by sharing it with Us yourself, by\nemail, if You choose to report a bug).",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Permissions the app requests, and why",
+                "content": "The Application requests the following Device permissions. Each is used only\nfor the stated purpose, and each can be reviewed or revoked at any time in\nYour Device's App Settings:\n\n| Permission | Purpose |\n|---|---|\n| **Exact Alarms** (`SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`) | To ring alarms, timers, and reminders at the exact time You set. |\n| **Notifications** (`POST_NOTIFICATIONS`) | To show alarm, timer, and reminder notifications. |\n| **Full-Screen Intent** (`USE_FULL_SCREEN_INTENT`) | To show the full-screen ring/snooze/stop screen when an alarm fires, including over the lock screen. |\n| **Wake Lock / Foreground Service (+ Media Playback)** | To keep the ringtone playing reliably while an alarm or timer is going off, even if the screen turns off. |\n| **Ignore Battery Optimizations** | Requested optionally, so Android's battery-saving features don't delay or silently skip a scheduled alarm. |\n| **Boot Completed** (`RECEIVE_BOOT_COMPLETED`) | To reschedule Your alarms after the Device restarts (Android clears all pending alarms on reboot). |\n| **Vibrate** | For alarm/timer vibration. |\n| **Microphone** (`RECORD_AUDIO`) | Only when You actively use the voice-command feature (the NLP mic button, or the voice-command practice/help page). Speech is recognized using Your Device's own on-device/system speech-recognition service; We do not record, store, or transmit Your voice audio to any server We operate. |\n| **Location** (fine, coarse, background) | Only used for the optional, Premium \"work routine\" (geofence) feature, so a routine can trigger when You arrive at or leave a place You chose (e.g. \"Work\"). Location is read on-device to evaluate the geofence and is stored only in Your local routines database. It is **never** collected if You do not set up a location-based routine, and background location is only requested when a routine actually needs to run while the app isn't open. |\n| **Internet** | Used only for the two purposes described in §4 and §5 below — never for tracking or advertising. |",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Third-Party Service: Location Name Lookup (OpenStreetMap Nominatim)",
+            "subtitle": "The one external lookup this app makes",
+            "sections": [
+              {
+                "title": "Third-Party Service: Location Name Lookup (OpenStreetMap Nominatim)",
+                "content": "When You pick a location for a work routine, the app shows You a\nhuman-readable place name (e.g. \"Koramangala, Bengaluru\") instead of raw\ncoordinates. To do this, it sends the latitude/longitude You selected to\n**OpenStreetMap's Nominatim API** (`nominatim.openstreetmap.org`), a\nthird-party, independently-operated service not owned by Us.\n\n- Only the coordinates are sent — no name, email, account identifier, or\n  other Personal Data accompanies the request.\n- This happens only when You are actively setting up or editing a\n  location-based routine; it is not a background or periodic call.\n- If the request fails (e.g. You are offline), the app simply shows the raw\n  coordinates instead — this lookup is best-effort and never blocks the\n  feature from working.\n- This exchange is governed by\n  [OpenStreetMap's own privacy policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy),\n  not this one. We do not control, and are not responsible for, how\n  OpenStreetMap/Nominatim itself handles that request on its servers.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "In-App Purchases (Premium)",
+            "subtitle": "How Premium purchases are handled",
+            "sections": [
+              {
+                "title": "In-App Purchases (Premium)",
+                "content": "Alarm Clock offers an optional, paid \"Premium\" tier (e.g. unlimited alarms,\nunlimited profiles, the work-geofence feature, unlimited reminders),\npurchased through **Google Play Billing**.\n\n- All payment details (card numbers, UPI, etc.) are handled entirely by\n  Google Play — We never see, collect, or store Your payment information.\n- To confirm a purchase is genuine, the app verifies the purchase receipt\n  Google Play gives it **locally, on Your Device**, using a cryptographic\n  signature check. This verification does not send Your purchase data to any\n  server We operate.\n- Your relationship with Google regarding billing is governed by\n  [Google Play's own Terms of Service and Privacy Policy](https://policies.google.com/privacy).",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Sharing of Data",
+            "subtitle": "Who else sees your data",
+            "sections": [
+              {
+                "title": "Sharing of Data",
+                "content": "We do not sell Your data. We do not share Your Personal Data with\nadvertisers, data brokers, or any other third party. The only two parties\nthe app ever communicates with are the two named above (OpenStreetMap\nNominatim, and Google Play Billing), each strictly for the purpose described,\nand never with any Personal Data beyond what each specific feature requires.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data Retention and Your Right to Delete",
+            "subtitle": "Your data, your device, your control",
+            "sections": [
+              {
+                "title": "Data Retention and Your Right to Delete",
+                "content": "Because almost everything is stored only on Your Device:\n\n- **Uninstalling the app** permanently deletes Your local alarms, timers,\n  reminders, routines, settings, and logs — there is nothing left on any\n  server for Us to delete, because We never held a copy.\n- You can also delete individual items (an alarm, a reminder, a routine) at\n  any time from within the app itself.\n- If You ever contact Us directly (e.g. by email, for support), any Personal\n  Data You share that way (such as Your email address) is retained only as\n  long as needed to resolve Your request, and You may ask Us to delete it at\n  any time by contacting Us at the address in §10.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Security",
+            "subtitle": "What's protected, and what isn't on us",
+            "sections": [
+              {
+                "title": "What We do",
+                "content": "We use reasonable, industry-standard practices appropriate to a fully\non-device application: Your data is stored in Your Device's app-private\nstorage (not accessible to other apps without root/jailbreak access), and the\napp does not transmit Your alarms, reminders, or routines anywhere.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "What We cannot guarantee, and are not responsible for",
+                "content": "**No method of storage or transmission is 100% secure, and security of Your\nDevice itself is Your responsibility, not Ours.** In particular:\n\n- We are not responsible for the security of Your Device, Your Device's\n  operating system, Your Google account, or any other software installed on\n  Your Device. If Your Device is lost, stolen, rooted/jailbroken, infected\n  with malware, or otherwise compromised by a third party, any local data\n  stored by this app may be exposed — that risk sits with You and Your\n  Device, not with Us.\n- We are not responsible for the security practices of third-party services\n  this app relies on but does not control, including Google Play (billing,\n  distribution) and OpenStreetMap/Nominatim (location name lookup). Any\n  security incident on those services' infrastructure is governed by their\n  own policies, not this one.\n- To the maximum extent permitted by law, We disclaim all liability for any\n  loss, damage, or unauthorized access arising from circumstances outside Our\n  direct control, including Device-level compromise, third-party service\n  outages or breaches, and Your own handling of Your Device or Google\n  account.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Children's Privacy",
+            "subtitle": "This Service is not directed at children under 13",
+            "sections": [
+              {
+                "title": "Children's Privacy",
+                "content": "Our Service does not knowingly collect Personal Data from anyone under the\nage of 13. Since the app requires no account and no Personal Data to\nfunction, We have no practical way to knowingly collect such data in the\nfirst place. If You believe a child has provided Us Personal Data directly\n(e.g. via a support email), contact Us and We will delete it.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Changes to this Privacy Policy",
+            "subtitle": "How updates are communicated",
+            "sections": [
+              {
+                "title": "Changes to this Privacy Policy",
+                "content": "We may update this Privacy Policy from time to time. Material changes will\nbe reflected by an updated \"Last updated\" date at the top of this document.\nContinued use of the Service after a change becomes effective constitutes\nacceptance of the revised policy.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Questions about this policy",
+            "sections": [
+              {
+                "title": "Contact Us",
+                "content": "Questions about this Privacy Policy can be sent to:\n**ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2026-10-21T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Key terms used throughout",
+            "sections": [
+              {
+                "title": "Interpretation and Definitions",
+                "content": "- **Application** means the Alarm Clock software program provided by the\n  Company.\n- **Application Store** means the Google Play Store (or any other\n  distribution platform through which You obtained the Application).\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Country** refers to: Tamil Nadu, India.\n- **Service** refers to the Application.\n- **You** means the individual using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Acknowledgment",
+            "subtitle": "Using the app means accepting these Terms",
+            "sections": [
+              {
+                "title": "Acknowledgment",
+                "content": "By downloading, installing, or using the Service, You agree to be bound by\nthese Terms. If You disagree with any part of these Terms, You must not use\nthe Service.\n\nYour use of the Service is also conditioned on Your acceptance of Our\n[Privacy Policy](privacy-policy.md), which describes how the Service handles\ninformation. Please read it before using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Important: Alarm, Timer, and Reminder Reliability",
+            "subtitle": "What we can and can't guarantee",
+            "sections": [
+              {
+                "title": "Important: Alarm, Timer, and Reminder Reliability",
+                "content": "Alarm Clock is designed to ring reliably, and requests the Device permissions\ndescribed in Our Privacy Policy (exact alarms, full-screen intent, battery\noptimization exemption, boot-completed rescheduling, etc.) specifically to\nmaximize that reliability. However:\n\n- **We cannot and do not guarantee that an alarm, timer, or reminder will\n  always ring, or will ring exactly on time.** Mobile operating systems\n  (including Android) can delay, throttle, or suppress scheduled alarms and\n  background work due to battery-saving features, device-specific\n  manufacturer customizations, \"Do Not Disturb\" or silent/vibrate-only modes,\n  low storage, the Device being powered off, force-stopped by You or another\n  app, or a wide range of other OS- or hardware-level conditions outside Our\n  control.\n- **Do not rely on this Service, or any alarm app, as the sole safeguard for\n  time-critical, safety-critical, or medical events** (for example, waking up\n  for a flight, taking time-sensitive medication, or any situation where a\n  missed alarm could cause serious harm or loss). Use additional safeguards\n  (a second alarm clock, a trusted person, etc.) for anything where the\n  consequence of a missed alert would be severe.\n- To the maximum extent permitted by applicable law, the Company disclaims\n  all liability for any loss, damage, missed appointment, missed medication,\n  missed flight, or any other consequence resulting, directly or indirectly,\n  from an alarm, timer, reminder, or routine notification that did not fire,\n  fired late, or fired incorrectly.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "License and Acceptable Use",
+            "subtitle": "What you can and can't do with the app",
+            "sections": [
+              {
+                "title": "License and Acceptable Use",
+                "content": "Subject to Your compliance with these Terms, the Company grants You a\nlimited, non-exclusive, non-transferable, revocable license to use the\nApplication on a Device You own or control, for Your personal,\nnon-commercial use. You agree not to:\n\n- Reverse-engineer, decompile, or attempt to extract the source code of the\n  Application, except to the extent such restriction is prohibited by\n  applicable law.\n- Modify, re-sign, redistribute, or resell the Application or any part of it.\n- Use the Application in any way that violates applicable local, national, or\n  international law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Premium Subscription / Purchases",
+            "subtitle": "Billing is handled entirely by Google Play",
+            "sections": [
+              {
+                "title": "Premium Subscription / Purchases",
+                "content": "The Application offers an optional, paid \"Premium\" tier via Google Play\nBilling (e.g. unlimited alarms, unlimited profiles, the work-geofence\nfeature, unlimited reminders).\n\n- All purchases are processed by Google Play. Billing, refunds, cancellations\n  and payment disputes are handled under\n  [Google Play's own Terms of Service](https://play.google.com/intl/en-us/about/play-terms/),\n  not directly by Us.\n- Premium entitlement is tied to the Google account/Device purchase record as\n  recognized by Google Play Billing. If Google revokes, refunds, or\n  invalidates a purchase, Your Premium features may be disabled accordingly.\n- Prices, where shown, are set and displayed by Google Play in Your local\n  currency and are subject to Google Play's own pricing and tax rules.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Intellectual Property",
+            "subtitle": "Ownership of the app and its code",
+            "sections": [
+              {
+                "title": "Intellectual Property",
+                "content": "The Application, including its original source code, design, and branding\n(excluding open-source components it depends on, each governed by their own\nlicenses), is and remains the exclusive property of the Company.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Third-Party Services",
+            "subtitle": "Services this app relies on, but doesn't control",
+            "sections": [
+              {
+                "title": "Third-Party Services",
+                "content": "The Application uses OpenStreetMap's Nominatim API for an optional\nlocation-name lookup feature, as described in Our Privacy Policy. This is a\nthird-party service not owned or controlled by the Company. We have no\ncontrol over, and assume no responsibility for, the availability, accuracy,\ncontent, or practices of that or any other third-party service the\nApplication may link to or rely on. You use such third-party services at Your\nown risk, and are advised to review their own terms and privacy policies.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Disclaimers & Limitation of Liability",
+            "subtitle": "Security and liability, spelled out",
+            "sections": [
+              {
+                "title": "\"AS IS\" and \"AS AVAILABLE\"",
+                "content": "The Service is provided \"AS IS\" and \"AS AVAILABLE,\" with all faults, and\nwithout warranty of any kind, whether express, implied, or statutory,\nincluding but not limited to implied warranties of merchantability, fitness\nfor a particular purpose, and non-infringement. The Company does not warrant\nthat the Service will be uninterrupted, error-free, or free of harmful\ncomponents, or that it will meet Your requirements.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Security disclaimer",
+                "content": "As set out in Our Privacy Policy, no method of electronic storage or\ntransmission is 100% secure, and the Company is not responsible for the\nsecurity of Your Device, Your operating system, Your Google account, or any\nthird-party service the Application relies on. Security incidents arising\nfrom circumstances outside the Company's direct control (Device compromise,\nloss or theft of Your Device, third-party service breaches, etc.) are\nexpressly outside the Company's responsibility.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Limitation of liability",
+                "content": "To the maximum extent permitted by applicable law, in no event shall the\nCompany or its suppliers be liable for any special, incidental, indirect, or\nconsequential damages whatsoever (including, without limitation, damages for\nloss of data, business interruption, personal injury, or any missed alarm,\ntimer, reminder, or routine event as described in §3), arising out of or in\nany way related to Your use of or inability to use the Service, even if the\nCompany has been advised of the possibility of such damages. The Company's\ntotal liability for any claim arising from these Terms or Your use of the\nService shall not exceed the amount You actually paid the Company through the\nService in the 12 months preceding the claim, or 100 USD, whichever is\ngreater — or, if You have not paid anything through the Service, shall be\nlimited to a full refund of any amount paid (which, for the free tier, is\nzero).\n\nSome jurisdictions do not allow the exclusion or limitation of certain\nwarranties or liabilities; in such jurisdictions, the above limitations apply\nonly to the extent permitted by law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Termination",
+            "subtitle": "When access can end",
+            "sections": [
+              {
+                "title": "Termination",
+                "content": "We may suspend or terminate Your access to the Service at any time, without\nprior notice, if You breach these Terms. Upon termination, Your right to use\nthe Service ceases immediately; this does not affect data already stored\nlocally on Your Device, which remains Yours to delete by uninstalling the\nApplication.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Governing Law",
+            "subtitle": "Tamil Nadu, India",
+            "sections": [
+              {
+                "title": "Governing Law",
+                "content": "These Terms are governed by the laws of Tamil Nadu, India, excluding its\nconflict-of-law rules, without prejudice to any mandatory consumer-protection\nprovisions of the law of the country in which You reside.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Dispute Resolution",
+            "subtitle": "Talk to us first",
+            "sections": [
+              {
+                "title": "Dispute Resolution",
+                "content": "If You have a dispute about the Service, You agree to first contact Us\ninformally (see §13) so We can attempt to resolve it directly before any\nformal proceeding.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Changes to These Terms",
+            "subtitle": "How updates take effect",
+            "sections": [
+              {
+                "title": "Changes to These Terms",
+                "content": "We may modify these Terms at any time. For material changes, We will make\nreasonable efforts to give at least 30 days' notice before the new Terms take\neffect (e.g. via an in-app notice or an updated \"Last updated\" date). Continued\nuse of the Service after changes take effect constitutes acceptance of the\nrevised Terms.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Questions about these Terms",
+            "sections": [
+              {
+                "title": "Contact Us",
+                "content": "Questions about these Terms can be sent to:\n**ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Bloc",
+        "sqflite",
+        "Material You",
+        "Android Widgets"
+      ]
     }
   ],
   "learningProjects": [

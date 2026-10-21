@@ -78,6 +78,7 @@ flutter:
     - assets/images/app1/
     - assets/images/app2/
     - assets/images/app3/
+    - assets/images/alarm-clock/
     - assets/images/learning/
     - assets/developers/
     - assets/placeholders/
