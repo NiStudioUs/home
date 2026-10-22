@@ -89,10 +89,19 @@ class HomePageSkeleton extends StatelessWidget {
                                           top: 80,
                                           child: Transform.rotate(
                                             angle: -0.1,
-                                            child: NiImageSkeleton(
-                                              width: 210,
-                                              height: 440,
-                                              borderRadius: BorderRadius.circular(NiTokens.rPhone),
+                                            child: Container(
+                                              width: 230,
+                                              height: 485,
+                                              padding: const EdgeInsets.all(7),
+                                              decoration: BoxDecoration(
+                                                color: tokens.surface2,
+                                                borderRadius: BorderRadius.circular(NiTokens.rPhone),
+                                                border: Border.all(color: tokens.border, width: 1),
+                                                boxShadow: tokens.shadow,
+                                              ),
+                                              child: NiImageSkeleton(
+                                                borderRadius: BorderRadius.circular(NiTokens.rPhoneScreen),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -101,10 +110,19 @@ class HomePageSkeleton extends StatelessWidget {
                                           top: 5,
                                           child: Transform.rotate(
                                             angle: 0.05,
-                                            child: NiImageSkeleton(
-                                              width: 210,
-                                              height: 440,
-                                              borderRadius: BorderRadius.circular(NiTokens.rPhone),
+                                            child: Container(
+                                              width: 230,
+                                              height: 485,
+                                              padding: const EdgeInsets.all(7),
+                                              decoration: BoxDecoration(
+                                                color: tokens.surface2,
+                                                borderRadius: BorderRadius.circular(NiTokens.rPhone),
+                                                border: Border.all(color: tokens.border, width: 1),
+                                                boxShadow: tokens.shadow,
+                                              ),
+                                              child: NiImageSkeleton(
+                                                borderRadius: BorderRadius.circular(NiTokens.rPhoneScreen),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -299,7 +317,7 @@ class HomePageSkeleton extends StatelessWidget {
 
   Widget _buildPillSkeleton() {
     return const NiImageSkeleton(
-      width: 170,
+      width: 195,
       height: 32,
       borderRadius: BorderRadius.all(Radius.circular(999)),
     );
@@ -330,9 +348,9 @@ class HomePageSkeleton extends StatelessWidget {
   Widget _buildButtonRowSkeleton() {
     return Row(
       children: const [
-        NiImageSkeleton(width: 140, height: 44, borderRadius: BorderRadius.all(Radius.circular(999))),
-        SizedBox(width: 12),
-        NiImageSkeleton(width: 140, height: 44, borderRadius: BorderRadius.all(Radius.circular(999))),
+        NiImageSkeleton(width: 145, height: 44, borderRadius: BorderRadius.all(Radius.circular(999))),
+        SizedBox(width: 10),
+        NiImageSkeleton(width: 145, height: 44, borderRadius: BorderRadius.all(Radius.circular(999))),
       ],
     );
   }
