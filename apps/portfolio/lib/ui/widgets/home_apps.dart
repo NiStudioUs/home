@@ -286,32 +286,21 @@ class _AppShotsColumn extends StatelessWidget {
     
     return Container(
       constraints: BoxConstraints(maxHeight: isMobile ? 380 : 440),
-      child: ShaderMask(
-        shaderCallback: (Rect bounds) {
-          return const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.black, Colors.black, Colors.transparent],
-            stops: [0.0, 0.8, 1.0],
-          ).createShader(bounds);
-        },
-        blendMode: BlendMode.dstIn,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(6, 4, 6, 0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (shots.isNotEmpty) Expanded(child: _AppShot(url: shots[0].url, marginTop: 0)),
-              if (shots.length > 1) ...[
-                const SizedBox(width: 14),
-                Expanded(child: _AppShot(url: shots[1].url, marginTop: 34)),
-              ],
-              if (shots.length > 2) ...[
-                const SizedBox(width: 14),
-                Expanded(child: _AppShot(url: shots[2].url, marginTop: 10)),
-              ],
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(6, 4, 6, 0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (shots.isNotEmpty) Expanded(child: _AppShot(url: shots[0].url, marginTop: 0)),
+            if (shots.length > 1) ...[
+              const SizedBox(width: 14),
+              Expanded(child: _AppShot(url: shots[1].url, marginTop: 34)),
             ],
-          ),
+            if (shots.length > 2) ...[
+              const SizedBox(width: 14),
+              Expanded(child: _AppShot(url: shots[2].url, marginTop: 10)),
+            ],
+          ],
         ),
       ),
     );

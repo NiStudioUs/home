@@ -299,24 +299,9 @@ class _GalleryShot extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(NiTokens.rGallery - 5),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.asset(
-              url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
-              fit: BoxFit.cover,
-            ),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: RadialGradient(
-                  center: Alignment.center,
-                  radius: 1.0,
-                  colors: [Colors.transparent, Colors.black.withOpacity(0.4)],
-                  stops: const [0.5, 1.0],
-                ),
-              ),
-            ),
-          ],
+        child: Image.asset(
+          url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
+          fit: BoxFit.cover,
         ),
       ),
     );
@@ -595,26 +580,10 @@ class _FeatureDeepDive extends StatelessWidget {
     final mediaCol = ClipRRect(
       borderRadius: BorderRadius.circular(24),
       child: imageUrl.isNotEmpty
-          ? Stack(
-              children: [
-                Image.asset(
-                  imageUrl,
-                  fit: BoxFit.cover,
-                  width: double.infinity,
-                ),
-                Positioned.fill(
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: RadialGradient(
-                        center: Alignment.center,
-                        radius: 0.9,
-                        colors: [Colors.transparent, Colors.black.withOpacity(0.5)],
-                        stops: const [0.6, 1.0],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+          ? Image.asset(
+              imageUrl,
+              fit: BoxFit.cover,
+              width: double.infinity,
             )
           : Container(
               width: double.infinity,
