@@ -1237,7 +1237,7 @@
       "name": "IKY — Family Tree & Genealogy",
       "shortDescription": "A private family tree app with kinship engine and real-time genealogy.",
       "fullDescription": "IKY (I Know You) is a full-stack family relationship management platform built for privacy and depth. It allows families to collaboratively build, manage and explore their genealogy through a rich interactive graph — complete with a Kongu Tamil kinship engine that computes culturally-aware relationship labels up to 6 generations. Explore the live demo with pre-populated, obfuscated sample families.",
-      "iconUrl": "assets/images/app3/icon.png",
+      "iconUrl": "assets/images/app3/icon.webp",
       "status": "IN DEV",
       "statusColor": "amber",
       "descriptionImages": [],
@@ -1251,7 +1251,12 @@
               "title": "Explore relationships visually",
               "content": "A fully interactive canvas that renders your family as a real-time graph. Pan, zoom, and center on any member. Switch between Default Tree, Family Groups, and Genealogy views to explore the same data from different perspectives.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-family-tree.webp",
+                  "caption": "Interactive Family Tree Canvas"
+                }
+              ]
             }
           ]
         },
@@ -1261,9 +1266,14 @@
           "sections": [
             {
               "title": "Know exactly who everyone is",
-              "content": "A custom Kongu Tamil kinship resolution engine traverses the graph up to 6 generations and computes the precise cultural relationship label for any pair of people — Mama, Akka, Appuchi, and beyond. Works bidirectionally for any selected member.",
+              "content": "A custom Kongu Tamil kinship resolution engine traverses the graph up to 6 generations and computes the precise cultural relationship label for any pair of people — Mama, Akka, Appuchi, and beyond. Works bidirectionally for any selected member with computed lineage paths.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-member-profile.webp",
+                  "caption": "Computed Kinship Path & Relationship Labels"
+                }
+              ]
             }
           ]
         },
@@ -1275,7 +1285,12 @@
               "title": "Trace lineage across generations",
               "content": "The Genealogy canvas renders an ancestor-descendant hierarchy tree, displaying parent-child connections across multiple generations. Placeholders are used for known-but-unregistered ancestors, maintaining structural integrity of the tree.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-genealogy.webp",
+                  "caption": "Multi-generational Ancestry Hierarchy"
+                }
+              ]
             }
           ]
         },
@@ -1287,7 +1302,46 @@
               "title": "Groups within your family",
               "content": "Family members are automatically organized into household groups by nuclear family unit. Each group is color-coded and can be independently collapsed or expanded on the canvas for clarity in large families.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-groups.webp",
+                  "caption": "Household & Family Unit Clustering"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Connect",
+          "subtitle": "Collaborative family network invitations",
+          "sections": [
+            {
+              "title": "Bridge households seamlessly",
+              "content": "Send and receive secure family connection requests across households. Review pending invites from relatives, accept to link family trees collaboratively, and manage active connections with full consent and privacy controls.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-connect.webp",
+                  "caption": "Family Connection Requests & Linking"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Events & Milestones",
+          "subtitle": "Stay connected through family milestones",
+          "sections": [
+            {
+              "title": "Birthdays, anniversaries, and remembrances",
+              "content": "Automatically aggregated family timeline tracking upcoming birthdays, wedding anniversaries, and remembrance days across 30 days, 3 months, or the entire year so you never miss an important milestone.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events.webp",
+                  "caption": "Upcoming Family Milestones & Remembrances"
+                }
+              ]
             }
           ]
         },
@@ -1299,7 +1353,12 @@
               "title": "Review inferred relationships",
               "content": "When the kinship engine infers new relationships from existing data, family admins receive pending alerts to review and approve or reject them. This ensures the family graph stays accurate and consensual.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-alerts.webp",
+                  "caption": "Pending Action Alerts & Reviews"
+                }
+              ]
             }
           ]
         },
@@ -1309,9 +1368,14 @@
           "sections": [
             {
               "title": "No data. No account. Just explore.",
-              "content": "The public demo is powered by a fully offline in-memory mock backend. All names and dates have been obfuscated with fictional Tamil personas. Your actions during the demo session are ephemeral — nothing is sent to any server.",
+              "content": "The public demo is powered by a fully offline in-memory mock backend. All names and dates have been obfuscated with fictional personas. Your actions during the demo session are ephemeral — nothing is sent to any server.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-login.webp",
+                  "caption": "Instant Demo Access with Obfuscated Personas"
+                }
+              ]
             }
           ]
         }
@@ -1344,7 +1408,44 @@
           ]
         }
       ],
-      "screenshots": [],
+      "screenshots": [
+        {
+          "url": "assets/images/app3/screen-family-tree.webp",
+          "caption": "Interactive Family Tree"
+        },
+        {
+          "url": "assets/images/app3/screen-kinship.webp",
+          "caption": "Kinship & Relationships"
+        },
+        {
+          "url": "assets/images/app3/screen-events.webp",
+          "caption": "Events & Milestones"
+        },
+        {
+          "url": "assets/images/app3/screen-connect.webp",
+          "caption": "Family Connect"
+        },
+        {
+          "url": "assets/images/app3/screen-groups.webp",
+          "caption": "Family Groups"
+        },
+        {
+          "url": "assets/images/app3/screen-genealogy.webp",
+          "caption": "Genealogy Lineage"
+        },
+        {
+          "url": "assets/images/app3/screen-member-profile.webp",
+          "caption": "Relationship Path & Kinship"
+        },
+        {
+          "url": "assets/images/app3/screen-alerts.webp",
+          "caption": "Pending Alerts"
+        },
+        {
+          "url": "assets/images/app3/screen-login.webp",
+          "caption": "Secure Access"
+        }
+      ],
       "links": [
         {
           "type": "Live Demo",
