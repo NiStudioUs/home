@@ -15,16 +15,19 @@ import 'ui/pages/sitemap_page.dart';
 import 'ui/pages/not_found_page.dart';
 import 'ui/widgets/main_layout.dart';
 import 'ui/widgets/profile_layout.dart';
+import 'ui/widgets/home_page_skeleton.dart';
 import 'services/current_app_service.dart';
 
 class DeferredLoader extends StatelessWidget {
   final Future<void> loadLibrary;
   final WidgetBuilder builder;
+  final Widget? placeholder;
 
   const DeferredLoader({
     super.key,
     required this.loadLibrary,
     required this.builder,
+    this.placeholder,
   });
 
   @override
@@ -35,11 +38,12 @@ class DeferredLoader extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return builder(context);
         }
-        return const Scaffold(
-          body: Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+        return placeholder ??
+            const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
       },
     );
   }
@@ -59,6 +63,7 @@ final GoRouter router = GoRouter(
           path: '/',
           builder: (context, state) => DeferredLoader(
             loadLibrary: home.loadLibrary(),
+            placeholder: const HomePageSkeleton(),
             builder: (_) => home.HomePage(),
           ),
         ),
