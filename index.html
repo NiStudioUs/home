@@ -33,6 +33,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
   <title>nistudious_website</title>
   <link rel="manifest" href="manifest.json">
   
@@ -134,33 +139,42 @@
   </div>
   
   <script>
-    // Hide static footer and loading screen when Flutter renders
+    // Hide static footer and loading screen when Flutter actually paints
     function hideStaticContent() {
       var footer = document.getElementById('static-footer');
       var loader = document.getElementById('loading-screen');
       if (footer) footer.style.display = 'none';
       if (loader) {
-        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.transition = 'opacity 0.3s ease-out';
         loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 400);
+        setTimeout(() => loader.style.display = 'none', 300);
       }
     }
     
-    // Check for Flutter's canvas element
+    // Check for rendered content: wait until Flutter view has width/height or canvas is attached
     var checkInterval = setInterval(function() {
-      if (document.querySelector('flt-glass-pane') || 
-          document.querySelector('flutter-view') ||
-          document.querySelector('canvas')) {
-        hideStaticContent();
+      var fltView = document.querySelector('flutter-view') || document.querySelector('flt-glass-pane');
+      var canvas = document.querySelector('canvas');
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        // Wait one animation frame so the initial paint is visible on screen before fading
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+        clearInterval(checkInterval);
+      } else if (fltView) {
+        // Fallback for html renderer or custom elements
+        setTimeout(function() {
+          hideStaticContent();
+        }, 150);
         clearInterval(checkInterval);
       }
-    }, 100);
+    }, 50);
     
-    // Fallback: hide after 10 seconds regardless
+    // Safety fallback: hide after 8 seconds
     setTimeout(function() {
       hideStaticContent();
       clearInterval(checkInterval);
-    }, 10000);
+    }, 8000);
   </script>
   
   <script src="flutter_bootstrap.js" async></script>
