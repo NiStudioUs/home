@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../utils/scroll_keys.dart';
-import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import '../widgets/home_hero.dart';
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     final dataModel = Provider.of<DataModel>(context);
     
     // For padding and sizing
-    final double heroPadding = NiTokens.clampW(context, 6, 1.0, 14);
+    final double heroPadding = NiTokens.clampW(context, 0, 0.5, 8);
     final double sectionPadding = NiTokens.clampW(context, 56, 8, 104);
 
     return Scaffold(
