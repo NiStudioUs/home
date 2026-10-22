@@ -84,43 +84,116 @@
         background-color: #0b0b0e;
       }
     }
-    .loading-container {
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+      z-index: 9998;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    .loading-logo {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      color: #1a1a24;
-      margin-bottom: 24px;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
     @media (prefers-color-scheme: dark) {
-      .loading-logo {
-        color: #fbfbfe;
+      .skeleton-screen {
+        background-color: #0b0b0e;
       }
     }
-    .loading-spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid rgba(100, 108, 255, 0.2);
-      border-radius: 50%;
-      border-top-color: #646cff;
-      animation: spin 1s ease-in-out infinite;
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .sk-bone {
+      background: linear-gradient(90deg, #ececf4 25%, #f7f7fa 50%, #ececf4 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+    @media (prefers-color-scheme: dark) {
+      .sk-bone {
+        background: linear-gradient(90deg, #161620 25%, #252535 50%, #161620 75%);
+        background-size: 200% 100%;
+      }
     }
+
+    /* Topbar Skeleton */
+    .sk-topbar {
+      height: 64px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    @media (prefers-color-scheme: dark) {
+      .sk-topbar {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .sk-nav-links { display: none; }
+    }
+
+    /* Hero Skeleton Container */
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 14px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 36px;
+    }
+    .sk-hero-left {
+      flex: 1.35;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 0.65;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 24px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton */
+    .sk-phone {
+      width: 210px;
+      height: 430px;
+      border-radius: 28px;
+      border: 4px solid #ececf4;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      .sk-phone {
+        border-color: #1a1a26;
+        box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+      }
+    }
+
     .static-footer {
       position: fixed;
       bottom: 0;
@@ -179,10 +252,48 @@
   </style>
 </head>
 <body>
-  <!-- Loading Screen (Visible immediately) -->
-  <div id="loading-screen" class="loading-container">
-    <div class="loading-logo">Ni Studio Us</div>
-    <div class="loading-spinner"></div>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe -->
+    <div class="sk-topbar">
+      <div class="sk-brand">
+        <div class="sk-bone" style="width: 32px; height: 32px; border-radius: 9px;"></div>
+        <div class="sk-bone" style="width: 90px; height: 18px;"></div>
+      </div>
+      <div class="sk-nav-links">
+        <div class="sk-bone" style="width: 44px; height: 14px;"></div>
+        <div class="sk-bone" style="width: 58px; height: 14px;"></div>
+        <div class="sk-bone" style="width: 120px; height: 14px;"></div>
+        <div class="sk-bone" style="width: 50px; height: 14px;"></div>
+        <div class="sk-bone" style="width: 28px; height: 28px; border-radius: 50%;"></div>
+      </div>
+    </div>
+
+    <!-- Hero Wireframe -->
+    <div class="sk-hero">
+      <div class="sk-hero-left">
+        <!-- Live Pill -->
+        <div class="sk-bone" style="width: 180px; height: 30px; border-radius: 999px; margin-bottom: 22px;"></div>
+        <!-- H1 Headline -->
+        <div class="sk-bone" style="width: 82%; height: 52px; margin-bottom: 12px;"></div>
+        <div class="sk-bone" style="width: 60%; height: 52px; margin-bottom: 24px;"></div>
+        <!-- Subtitle Lead -->
+        <div class="sk-bone" style="width: 90%; height: 18px; margin-bottom: 8px;"></div>
+        <div class="sk-bone" style="width: 75%; height: 18px; margin-bottom: 28px;"></div>
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 12px; margin-bottom: 36px;">
+          <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+        </div>
+        <!-- Spotlight Card -->
+        <div class="sk-bone" style="width: 100%; max-width: 440px; height: 74px; border-radius: 18px;"></div>
+      </div>
+
+      <!-- Right Phone Wireframe -->
+      <div class="sk-hero-right">
+        <div class="sk-bone sk-phone"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Static privacy policy links for crawlers & mobile friendly display -->
