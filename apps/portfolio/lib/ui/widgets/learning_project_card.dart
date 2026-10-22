@@ -68,8 +68,8 @@ class _LearningProjectCardState extends State<LearningProjectCard> {
                     child: widget.project.imageUrl != null && widget.project.imageUrl!.isNotEmpty
                         ? Transform.scale(
                             scale: UIConstants.cardImageScale,
-                            child: Image(
-                              image: getImageProvider(widget.project.imageUrl!),
+                            child: buildImage(
+                              widget.project.imageUrl!,
                               fit: BoxFit.cover,
                             ),
                           )

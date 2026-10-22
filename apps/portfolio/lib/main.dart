@@ -10,6 +10,7 @@ import 'models/data_model.dart';
 import 'ui/design_tokens.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  GoogleFonts.config.allowRuntimeFetching = true;
 
   final dataService = DataService();
   final data = await dataService.loadData();

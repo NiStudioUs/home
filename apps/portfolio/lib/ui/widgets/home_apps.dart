@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
+import 'image_helper.dart';
 
 class HomeApps extends StatelessWidget {
   const HomeApps({super.key});
@@ -316,6 +317,7 @@ class _AppShot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
+    final innerRadius = BorderRadius.circular(NiTokens.rShot - 5);
     
     return Container(
       margin: EdgeInsets.only(top: marginTop),
@@ -325,13 +327,14 @@ class _AppShot extends StatelessWidget {
         boxShadow: tokens.shadow,
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(NiTokens.rShot - 5), // Adjusting inner radius
+        borderRadius: innerRadius,
         child: AspectRatio(
           aspectRatio: 9 / 19,
-          child: Image.asset(
+          child: buildImage(
             url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
+            borderRadius: innerRadius,
           ),
         ),
       ),

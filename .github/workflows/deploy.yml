@@ -46,6 +46,12 @@ jobs:
             --dart2js-optimization O4 \
             --base-href "/home/"
           
+          # Inject cache-control headers into build output for GitHub Pages
+          echo "/*" > build/web/_headers
+          echo "  Cache-Control: public, max-age=31536000, immutable" >> build/web/_headers
+          echo "/index.html" >> build/web/_headers
+          echo "  Cache-Control: no-cache, no-store, must-revalidate" >> build/web/_headers
+          
       - name: Prepare Unified Dist Directory
         run: |
           mkdir -p dist

@@ -2312,7 +2312,7 @@
         "Glassmorphism"
       ],
       "path": "learning/apps/chapter-1/index.html",
-      "imageUrl": "assets/images/learning/chapter_1.png"
+      "imageUrl": "assets/images/learning/chapter_1.webp"
     },
     {
       "id": "chapter-2",
@@ -2325,7 +2325,7 @@
         "RBAC"
       ],
       "path": "learning/apps/chapter-2/index.html",
-      "imageUrl": "assets/images/learning/chapter_2.png"
+      "imageUrl": "assets/images/learning/chapter_2.webp"
     },
     {
       "id": "chapter-3",
@@ -2338,7 +2338,7 @@
         "Glassmorphism"
       ],
       "path": "learning/apps/chapter-3/index.html",
-      "imageUrl": "assets/images/learning/chapter_3.png"
+      "imageUrl": "assets/images/learning/chapter_3.webp"
     },
     {
       "id": "chapter-4",
@@ -2351,7 +2351,7 @@
         "Glassmorphism"
       ],
       "path": "learning/apps/chapter-4/index.html",
-      "imageUrl": "assets/images/learning/chapter_4.png"
+      "imageUrl": "assets/images/learning/chapter_4.webp"
     }
   ]
 }

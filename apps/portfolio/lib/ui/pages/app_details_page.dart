@@ -7,6 +7,7 @@ import '../widgets/sticky_container.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import '../widgets/footer.dart';
+import '../widgets/image_helper.dart';
 import '../../utils/url_helper.dart';
 import '../../utils/scroll_keys.dart';
 
@@ -267,14 +268,24 @@ class _AppGallery extends StatelessWidget {
     
     return Container(
       width: double.infinity,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
-        child: Row(
-          children: app.screenshots.map((s) => Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: _GalleryShot(url: s.url),
-          )).toList(),
+      child: ScrollConfiguration(
+        behavior: const MaterialScrollBehavior().copyWith(
+          dragDevices: {
+            PointerDeviceKind.touch,
+            PointerDeviceKind.mouse,
+            PointerDeviceKind.trackpad,
+            PointerDeviceKind.stylus,
+          },
+        ),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+          child: Row(
+            children: app.screenshots.map((s) => Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: _GalleryShot(url: s.url),
+            )).toList(),
+          ),
         ),
       ),
     );
@@ -288,6 +299,8 @@ class _GalleryShot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
+    final innerRadius = BorderRadius.circular(NiTokens.rGallery - 5);
+
     return Container(
       width: 270,
       height: 570,
@@ -297,12 +310,12 @@ class _GalleryShot extends StatelessWidget {
         border: Border.all(color: tokens.surface2, width: 5),
         boxShadow: tokens.shadow,
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(NiTokens.rGallery - 5),
-        child: Image.asset(
-          url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
-          fit: BoxFit.cover,
-        ),
+      child: buildImage(
+        url.isNotEmpty ? url : 'assets/placeholders/screenshot.webp',
+        width: 270,
+        height: 570,
+        fit: BoxFit.cover,
+        borderRadius: innerRadius,
       ),
     );
   }
@@ -580,10 +593,11 @@ class _FeatureDeepDive extends StatelessWidget {
     final mediaCol = ClipRRect(
       borderRadius: BorderRadius.circular(24),
       child: imageUrl.isNotEmpty
-          ? Image.asset(
+          ? buildImage(
               imageUrl,
               fit: BoxFit.cover,
               width: double.infinity,
+              borderRadius: BorderRadius.circular(24),
             )
           : Container(
               width: double.infinity,
