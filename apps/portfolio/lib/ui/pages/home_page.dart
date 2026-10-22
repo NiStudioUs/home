@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
     final dataModel = Provider.of<DataModel>(context);
     
     // For padding and sizing
-    final double heroPadding = NiTokens.clampW(context, 20, 2.5, 36);
+    final double heroPadding = NiTokens.clampW(context, 6, 1.0, 14);
     final double sectionPadding = NiTokens.clampW(context, 56, 8, 104);
 
     return Scaffold(
