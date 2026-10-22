@@ -127,20 +127,42 @@
       left: 0;
       right: 0;
       background: rgba(255, 255, 255, 0.95);
-      padding: 8px;
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
       text-align: center;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 12px;
+      line-height: 1.4;
       border-top: 1px solid #e0e0e0;
       z-index: 9999;
+      box-sizing: border-box;
     }
     .static-footer a {
       color: #646cff;
       text-decoration: none;
-      margin: 0 12px;
+      white-space: nowrap;
+      padding: 2px 4px;
     }
     .static-footer a:hover {
       text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
     }
     @media (prefers-color-scheme: dark) {
       .static-footer {
@@ -149,6 +171,9 @@
       }
       .static-footer a {
         color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
       }
     }
   </style>
@@ -160,11 +185,14 @@
     <div class="loading-spinner"></div>
   </div>
 
-  <!-- Static privacy policy links for crawlers -->
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
   <div id="static-footer" class="static-footer">
-    <a href="#/app/sms-stack/privacy">SMS Stack Manager Privacy Policy</a> | 
-    <a href="#/app/sms-stack/terms">SMS Stack Manager Terms</a> | 
-    <a href="#/app/scribble_notes/privacy">Scribble Notes Privacy Policy</a> | 
+    <a href="#/app/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="#/app/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="#/app/scribble_notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
     <a href="#/app/scribble_notes/terms">Scribble Notes Terms</a>
   </div>
   
