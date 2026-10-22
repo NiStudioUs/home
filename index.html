@@ -91,7 +91,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #fbfbfe;
+      background-color: #f8f7fc;
       z-index: 9998;
       overflow: hidden;
       display: flex;
@@ -104,20 +104,31 @@
       100% { background-position: 200% 0; }
     }
     .sk-bone {
-      background: linear-gradient(90deg, #ececf4 25%, #f7f7fa 50%, #ececf4 75%);
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
       background-size: 200% 100%;
       animation: shimmer 1.5s infinite;
       border-radius: 6px;
     }
 
-    /* Topbar Skeleton */
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
     .sk-topbar {
       height: 64px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 24px;
+      padding: 0 16px;
       max-width: 1160px;
       width: 100%;
       margin: 0 auto;
@@ -128,16 +139,66 @@
       align-items: center;
       gap: 12px;
     }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
     .sk-nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 4px;
     }
-    @media (max-width: 768px) {
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
       .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
     }
 
-    /* Hero Skeleton Container */
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
     .sk-hero {
       max-width: 1160px;
       width: 100%;
@@ -145,50 +206,59 @@
       padding: 0 16px;
       box-sizing: border-box;
       display: flex;
-      gap: 36px;
+      gap: 24px;
     }
     .sk-hero-left {
-      flex: 1.35;
+      flex: 135;
       display: flex;
       flex-direction: column;
     }
     .sk-hero-right {
-      flex: 0.65;
+      flex: 65;
+      height: 540px;
       display: flex;
       justify-content: center;
       position: relative;
     }
     @media (max-width: 900px) {
-      .sk-hero { flex-direction: column; gap: 24px; }
+      .sk-hero { flex-direction: column; gap: 32px; }
       .sk-hero-right { display: none; }
     }
 
-    /* Floating phone mockup skeleton */
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
     .sk-phone {
-      width: 210px;
-      height: 430px;
+      width: 230px;
+      height: 485px;
       border-radius: 28px;
-      border: 4px solid #ececf4;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
       position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
     }
     .sk-phone-1 {
       left: 0;
-      top: 60px;
-      transform: rotate(-5deg);
+      top: 80px;
+      transform: rotate(-5.7deg);
     }
     .sk-phone-2 {
-      left: 95px;
-      top: 10px;
-      transform: rotate(3deg);
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
     }
     .sk-spotlight {
       width: 100%;
-      max-width: 480px;
-      padding: 14px 18px;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
       box-sizing: border-box;
-      border-radius: 18px;
-      border: 1px solid #ececf4;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
       background: #ffffff;
       display: flex;
       align-items: center;
@@ -196,14 +266,15 @@
     }
     .sk-marquee {
       height: 46px;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 48px;
       width: 100%;
+      flex-shrink: 0;
     }
 
     .static-footer {
@@ -266,59 +337,76 @@
 <body>
   <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
   <div id="loading-screen" class="skeleton-screen">
-    <!-- Topbar Wireframe -->
-    <div class="sk-topbar">
-      <div class="sk-brand">
-        <!-- Home icon -->
-        <div class="sk-bone" style="width: 28px; height: 28px; border-radius: 6px;"></div>
-      </div>
-      <div class="sk-nav-links">
-        <div class="sk-bone" style="width: 48px; height: 16px;"></div>
-        <div class="sk-bone" style="width: 60px; height: 16px;"></div>
-        <div class="sk-bone" style="width: 50px; height: 16px;"></div>
-        <div class="sk-bone" style="width: 28px; height: 28px; border-radius: 50%;"></div>
-        <div class="sk-bone" style="width: 28px; height: 28px; border-radius: 50%;"></div>
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Hero Wireframe -->
-    <div class="sk-hero">
-      <div class="sk-hero-left">
-        <!-- Live Pill -->
-        <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 24px;"></div>
-        <!-- H1 Headline -->
-        <div class="sk-bone" style="width: 320px; max-width: 85%; height: 48px; margin-bottom: 12px; border-radius: 8px;"></div>
-        <div class="sk-bone" style="width: 260px; max-width: 70%; height: 48px; margin-bottom: 24px; border-radius: 8px;"></div>
-        <!-- Subtitle Lead -->
-        <div class="sk-bone" style="width: 480px; max-width: 95%; height: 16px; margin-bottom: 8px; border-radius: 4px;"></div>
-        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; margin-bottom: 28px; border-radius: 4px;"></div>
-        <!-- Action Buttons -->
-        <div style="display: flex; gap: 12px; margin-bottom: 34px;">
-          <div class="sk-bone" style="width: 140px; height: 44px; border-radius: 999px;"></div>
-          <div class="sk-bone" style="width: 140px; height: 44px; border-radius: 999px;"></div>
-        </div>
-        <!-- Spotlight Card -->
-        <div class="sk-spotlight">
-          <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
-          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
-            <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
-            <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
-            <div class="sk-bone" style="width: 200px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
           </div>
-          <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
         </div>
       </div>
 
-      <!-- Right Phone Wireframe -->
-      <div class="sk-hero-right">
-        <div class="sk-bone sk-phone sk-phone-1"></div>
-        <div class="sk-bone sk-phone sk-phone-2"></div>
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
       </div>
-    </div>
-
-    <!-- Marquee Wireframe -->
-    <div class="sk-marquee">
-      <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
     </div>
   </div>
 

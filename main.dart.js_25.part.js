@@ -18,7 +18,7 @@ C.rV.prototype={
 F(d){var x,w,v=null,u=y.a,t=y.m,s=t.a(A.C(d).c.h(0,A.V(u)))
 s.toString
 x=y.o
-w=A.P(new A.K(y.E.a(E.p8),new C.alC(d,s),x),x.i("a3.E"))
+w=A.P(new A.K(y.E.a(E.pc),new C.alC(d,s),x),x.i("a3.E"))
 return A.h4(v,s.a,new A.fv(B.c3,v,v,new A.bO(B.aa,new A.aq(G.hj,D.alf(D.aff(v,A.av(A.a([A.a2("Stack",v,v,A.aI(d,A.c0(d,27.2,3,38.4),B.r,v,1.12,-0.02),v),B.R,A.a2("Tools I use.",v,v,A.ba(d,A.c0(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.V(u))).r,1.65,B.l),v)],y.u),B.p,B.j,B.k),w)),v),v),v))}}
 var z=a.updateTypes(["eo(ao<j,@>)"])
 C.alC.prototype={
@@ -28,11 +28,11 @@ u=A.P(s,s.$ti.i("a3.E"))
 return new D.eo(w,""+t+" skills",F.lW(A.av(A.a([r,B.R,A.hD(B.z,u,B.aZ,8,8)],y.u),B.p,B.j,B.k),x,x))},
 $S:z+0}
 C.alB.prototype={
-$1(d){var x=null,w=this.a,v=A.by(20),u=A.cD(w.e,1)
-return A.aG(x,A.a2(A.f7(d,"<br>"," "),x,x,A.ba(this.b,16,x,1.65,B.l),x),B.m,x,x,new A.ax(w.c,x,u,v,x,x,x,B.t),x,x,x,x,B.oa,x,x,x)},
+$1(d){var x=null,w=this.a,v=A.br(20),u=A.cu(w.e,1)
+return A.aB(x,A.a2(A.f7(d,"<br>"," "),x,x,A.ba(this.b,16,x,1.65,B.l),x),B.m,x,x,new A.aw(w.c,x,u,v,x,x,x,B.t),x,x,x,x,B.od,x,x,x)},
 $S:51};(function inheritance(){var x=a.inherit,w=a.inheritMany
 x(C.rV,A.a1)
 w(A.fb,[C.alC,C.alB])})()
 A.l8(b.typeUniverse,JSON.parse('{"rV":{"a1":[],"e":[]}}'))
 var y={j:A.a0("cK"),u:A.a0("p<e>"),E:A.a0("L<ao<j,@>>"),B:A.a0("L<j>"),o:A.a0("K<ao<j,o>,eo>"),a:A.a0("cZ"),m:A.a0("cZ?")}};
-(a=>{a["JeCXii7bELTqeUWdKtN9JTiyeEc="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["oNGnB3dRCHw4ff6SL03v0EI+JGY="]=a.current})($__dart_deferred_initializers__);
