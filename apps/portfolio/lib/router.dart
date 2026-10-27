@@ -11,6 +11,7 @@ import 'ui/pages/home_page.dart' deferred as home;
 import 'ui/pages/app_details_page.dart';
 import 'ui/pages/legal_page.dart';
 import 'ui/pages/how_to_page.dart';
+import 'ui/pages/howto_hub_page.dart';
 import 'ui/pages/sitemap_page.dart';
 import 'ui/pages/not_found_page.dart';
 import 'ui/widgets/main_layout.dart';
@@ -148,6 +149,10 @@ final GoRouter router = GoRouter(
               },
             ),
           ],
+        ),
+        GoRoute(
+          path: '/howto',
+          builder: (context, state) => const HowtoHubPage(),
         ),
         GoRoute(
           path: '/sitemap',

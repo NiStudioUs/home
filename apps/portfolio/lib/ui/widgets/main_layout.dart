@@ -104,6 +104,13 @@ class _MobileNavPanel extends StatelessWidget {
             },
           ),
           _MobileNavLink(
+            title: 'How-to',
+            onTap: () {
+              onClose();
+              context.go('/howto');
+            },
+          ),
+          _MobileNavLink(
             title: 'Learning',
             onTap: () {
               onClose();
