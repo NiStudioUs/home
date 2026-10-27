@@ -165,7 +165,12 @@ class _TopbarState extends State<Topbar> {
                         }
                       }),
                       const SizedBox(width: 4),
-                      _NavLink(title: 'Learning', onTap: () { 
+                      _NavLink(title: 'How-to', onTap: () {
+                        _closeDropdown();
+                        context.go('/howto');
+                      }),
+                      const SizedBox(width: 4),
+                      _NavLink(title: 'Learning', onTap: () {
                         _closeDropdown(); 
                         if (AppScrollKeys.learningKey.currentContext != null) {
                           Scrollable.ensureVisible(AppScrollKeys.learningKey.currentContext!, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);

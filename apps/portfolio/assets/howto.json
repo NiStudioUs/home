@@ -1,0 +1,148 @@
+{
+  "apps": [
+    {
+      "id": "iky",
+      "title": "IKY",
+      "features": [
+        {
+          "id": "events",
+          "title": "Events",
+          "intro": "IKY lets you host your own events — a wedding anniversary, a reunion, a housewarming — and invite people straight from your family tree. Invitees get notified in-app and by email, can RSVP, and a host can grant a trusted invitee extra visibility into the event's private details.",
+          "topics": [
+            {
+              "id": "find-the-hosted-tab",
+              "title": "Find the Hosted tab",
+              "steps": [
+                "Event hosting lives inside the existing **Events** screen, alongside the **Dates** tab (birthdays, anniversaries, and remembrance days pulled automatically from your family tree). A new **Hosted** tab sits next to it.",
+                "Open **Events** from the bottom navigation, then tap **Hosted**.",
+                "Inside the Hosted tab there's a second-level switch: **Hosting** and **Invited**.",
+                "**Hosting** lists events you created — this is where you manage them.",
+                "**Invited** lists events other people have invited you to.",
+                "Each event in the list shows its date, title, and location (or its event type, if no location was set)."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-hosting-list.webp",
+                  "caption": "Hosting list"
+                }
+              ],
+              "references": [
+                "create-an-event"
+              ]
+            },
+            {
+              "id": "create-an-event",
+              "title": "Create an event",
+              "steps": [
+                "While on the **Hosting** view, tap the **+** floating action button to open the **Create Event** form.",
+                "Fill in **Title** (required).",
+                "Optionally pick an **Event type** from a list (Marriage, House Warming, Family Reunion, Temple Visit, and more).",
+                "Set a **Start date** (required) and, for multi-day events, an optional **End date**.",
+                "Optionally add a **Location** and a short **Description**.",
+                "Tap **Create Event**. You'll see a confirmation (\"Event created\") and land back on the Hosting list with your new event at the top."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-create.webp",
+                  "caption": "Create event form"
+                }
+              ],
+              "references": [
+                "find-the-hosted-tab",
+                "invite-people"
+              ]
+            },
+            {
+              "id": "invite-people",
+              "title": "Invite people",
+              "steps": [
+                "Open an event you host from the Hosting list to reach its detail screen.",
+                "As the host, you'll see an **Invitees** section with an **Invite people** button.",
+                "Tap **Invite people** to open the invite screen, which uses the same member picker used elsewhere in the app to select people from your family tree.",
+                "Tap each person you want to invite — the button at the bottom updates to show how many you've selected (**Invite (N)**).",
+                "Tap **Invite (N)** to send the invites. Each invited person gets an in-app notification and an email, and the event now appears under their **Invited** view."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-invite-picker.webp",
+                  "caption": "Invite picker"
+                }
+              ],
+              "references": [
+                "manage-invitees-and-rsvps",
+                "notifications-and-email"
+              ]
+            },
+            {
+              "id": "manage-invitees-and-rsvps",
+              "title": "Manage invitees and RSVPs",
+              "steps": [
+                "Back on the event detail screen, the **Invitees** section lists everyone you've invited.",
+                "Each row shows the invitee (by email or person), their RSVP status — **Invited**, **Accepted**, or **Declined** — and a **Can manage** switch."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-detail-host.webp",
+                  "caption": "Event detail, host view"
+                }
+              ],
+              "references": [
+                "can-manage-permission",
+                "what-an-invitee-sees"
+              ]
+            },
+            {
+              "id": "can-manage-permission",
+              "title": "What \"Can manage\" does",
+              "steps": [
+                "By default, invitees only see the event's public details (title, type, dates, location, description).",
+                "If you add private host details to an event (for example, gate codes or a dress code only confirmed guests should see), those stay hidden from invitees — unless you flip their **Can manage** switch on.",
+                "An invitee with `can_manage` turned on can see those host-only details, the same way the host can.",
+                "Toggle **Can manage** on any invitee row at any time; it takes effect immediately."
+              ],
+              "images": [],
+              "references": [
+                "manage-invitees-and-rsvps"
+              ]
+            },
+            {
+              "id": "what-an-invitee-sees",
+              "title": "What an invitee sees",
+              "steps": [
+                "When someone you invited opens the event (from their **Invited** view, their notification, or the email), they see the same event header — title, type, dates, location, description — plus their own response controls.",
+                "If they haven't responded yet, two buttons: **Decline** and **Accept**.",
+                "Once they've responded, their status is shown (\"Your response: Accepted\" or \"Your response: Declined\") with a link to switch their answer (\"Accept instead\" / \"Decline instead\").",
+                "The host sees the updated RSVP badge (**Invited** → **Accepted**/**Declined**) the next time they open the event or pull to refresh — responding doesn't push a live update to the host's screen while it's open."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-invitee-rsvp.webp",
+                  "caption": "Invitee RSVP view"
+                }
+              ],
+              "references": [
+                "manage-invitees-and-rsvps",
+                "notifications-and-email"
+              ]
+            },
+            {
+              "id": "notifications-and-email",
+              "title": "Notifications and email",
+              "steps": [
+                "Every invite and RSVP change keeps both sides in the loop automatically.",
+                "**Inviting someone** sends them an in-app notification and an email with the event details.",
+                "**Responding to an invite** (Accept/Decline) does not notify the host — it updates the invitee's own status immediately, and the host sees the new RSVP badge the next time they open the event or pull to refresh.",
+                "No extra setup is needed on either side — notifications and email are sent automatically as part of the invite/RSVP actions above."
+              ],
+              "images": [],
+              "references": [
+                "invite-people",
+                "what-an-invitee-sees"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

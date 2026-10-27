@@ -5,8 +5,10 @@ import 'package:provider/provider.dart';
 import 'router.dart';
 import 'services/theme_service.dart';
 import 'services/data_service.dart';
+import 'services/howto_service.dart';
 import 'services/current_app_service.dart';
 import 'models/data_model.dart';
+import 'models/howto_model.dart';
 import 'ui/design_tokens.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +17,16 @@ void main() async {
   final dataService = DataService();
   final data = await dataService.loadData();
 
+  final howtoService = HowtoService();
+  final howtoIndex = await howtoService.loadHowtoIndex();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeService()),
         ChangeNotifierProvider(create: (_) => CurrentAppService()),
         Provider<DataModel>.value(value: data),
+        Provider<HowtoIndexModel>.value(value: howtoIndex),
       ],
       child: const MyApp(),
     ),
