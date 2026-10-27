@@ -309,7 +309,7 @@
               },
               {
                 "title": "Transfer of Your Personal Data",
-                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to \u2014 and maintained on \u2014 computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
+                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -553,7 +553,7 @@
       "id": "sms-stack",
       "name": "SMS Stack",
       "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
-      "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights\u2014without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
+      "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
       "iconUrl": "assets/images/app2/icon.png",
       "descriptionImages": [
         {
@@ -572,13 +572,13 @@
           "sections": [
             {
               "title": "Introduction",
-              "content": "The SMS Parser Engine is the core component that gives SMS Stack its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context\u2014whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
+              "content": "The SMS Parser Engine is the core component that gives SMS Stack its intelligence. It runs entirely on your device, reading incoming messages and applying a sophisticated set of rules to understand their context—whether it's a bank transaction, a bill reminder, or just a chat from a friend.",
               "imageRenderer": "default",
               "images": []
             },
             {
               "title": "How It Works",
-              "content": "The engine uses a \"Waterfall\" approach to parsing:\n1.  **Normalization**: First, sender IDs are cleaned (e.g., `+91-HDFCBK` becomes `HDFCBK`).\n2.  **Global Matching**: It checks against universal patterns like OTPs (`\\d{4-8}`) or Account Numbers.\n3.  **Regional Rules**: It applies country-specific logic (currently optimized for `IN` - India) to interpret currency symbols (`\u20b9`, `INR`), date formats, and transaction keywords (`credited`, `debited`).\n4.  **Extraction**: If a match is found, it extracts:\n    *   **Amount**: The transaction value.\n    *   **Type**: Credit (Income), Debit (Expense), or Bill.\n    *   **Entity**: The Bank or Merchant name (resolved via alias lists).",
+              "content": "The engine uses a \"Waterfall\" approach to parsing:\n1.  **Normalization**: First, sender IDs are cleaned (e.g., `+91-HDFCBK` becomes `HDFCBK`).\n2.  **Global Matching**: It checks against universal patterns like OTPs (`\\d{4-8}`) or Account Numbers.\n3.  **Regional Rules**: It applies country-specific logic (currently optimized for `IN` - India) to interpret currency symbols (`₹`, `INR`), date formats, and transaction keywords (`credited`, `debited`).\n4.  **Extraction**: If a match is found, it extracts:\n    *   **Amount**: The transaction value.\n    *   **Type**: Credit (Income), Debit (Expense), or Bill.\n    *   **Entity**: The Bank or Merchant name (resolved via alias lists).",
               "imageRenderer": "default",
               "images": []
             },
@@ -628,7 +628,7 @@
           "sections": [
             {
               "title": "Introduction",
-              "content": "The Smart Inbox is your primary interface for viewing messages. Unlike a standard SMS app, it doesn't just list everything chronologically\u2014it organizes them.",
+              "content": "The Smart Inbox is your primary interface for viewing messages. Unlike a standard SMS app, it doesn't just list everything chronologically—it organizes them.",
               "imageRenderer": "default",
               "images": []
             },
@@ -873,7 +873,7 @@
           "sections": [
             {
               "title": "Schema Structure",
-              "content": "The parsing logic is defined in `assets/rules/sms_rules.json`. It follows a hierarchical \"Waterfall\" structure:\n*   **Global Rules**: Universal patterns like OTPs or Account Numbers.\n*   **Regional Rules (IN)**: Country-specific logic for currency (`\u20b9`), date formats, and keywords.\n*   **Extraction Strategy**: Priority order: Bill > Debit/Credit > Balance > OTP.",
+              "content": "The parsing logic is defined in `assets/rules/sms_rules.json`. It follows a hierarchical \"Waterfall\" structure:\n*   **Global Rules**: Universal patterns like OTPs or Account Numbers.\n*   **Regional Rules (IN)**: Country-specific logic for currency (`₹`), date formats, and keywords.\n*   **Extraction Strategy**: Priority order: Bill > Debit/Credit > Balance > OTP.",
               "imageRenderer": "default",
               "images": []
             }
@@ -1234,9 +1234,9 @@
     },
     {
       "id": "iky",
-      "name": "IKY \u2014 Family Tree & Genealogy",
+      "name": "IKY — Family Tree & Genealogy",
       "shortDescription": "A private family tree app with kinship engine and real-time genealogy.",
-      "fullDescription": "IKY (I Know You) is a full-stack family relationship management platform built for privacy and depth. It allows families to collaboratively build, manage and explore their genealogy through a rich interactive graph \u2014 complete with a Kongu Tamil kinship engine that computes culturally-aware relationship labels up to 6 generations. Explore the live demo with pre-populated, obfuscated sample families.",
+      "fullDescription": "IKY (I Know You) is a full-stack family relationship management platform built for privacy and depth. It allows families to collaboratively build, manage and explore their genealogy through a rich interactive graph — complete with a Kongu Tamil kinship engine that computes culturally-aware relationship labels up to 6 generations. Explore the live demo with pre-populated, obfuscated sample families.",
       "iconUrl": "assets/images/app3/icon.webp",
       "status": "IN DEV",
       "statusColor": "amber",
@@ -1266,7 +1266,7 @@
           "sections": [
             {
               "title": "Know exactly who everyone is",
-              "content": "A custom Kongu Tamil kinship resolution engine traverses the graph up to 6 generations and computes the precise cultural relationship label for any pair of people \u2014 Mama, Akka, Appuchi, and beyond. Works bidirectionally for any selected member with computed lineage paths.",
+              "content": "A custom Kongu Tamil kinship resolution engine traverses the graph up to 6 generations and computes the precise cultural relationship label for any pair of people — Mama, Akka, Appuchi, and beyond. Works bidirectionally for any selected member with computed lineage paths.",
               "imageRenderer": "default",
               "images": [
                 {
@@ -1368,12 +1368,45 @@
           "sections": [
             {
               "title": "No data. No account. Just explore.",
-              "content": "The public demo is powered by a fully offline in-memory mock backend. All names and dates have been obfuscated with fictional personas. Your actions during the demo session are ephemeral \u2014 nothing is sent to any server.",
+              "content": "The public demo is powered by a fully offline in-memory mock backend. All names and dates have been obfuscated with fictional personas. Your actions during the demo session are ephemeral — nothing is sent to any server.",
               "imageRenderer": "default",
               "images": [
                 {
                   "url": "assets/images/app3/screen-login.webp",
                   "caption": "Instant Demo Access with Obfuscated Personas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Event Hosting & Invites",
+          "subtitle": "Host events and invite people from your family tree",
+          "sections": [
+            {
+              "title": "Host an event and invite your family",
+              "content": "Create an event with a title, type, dates, location and description, then invite people straight from your family tree. Invitees get an in-app notification and an email, and can Accept or Decline. Hosts can grant a trusted invitee \"Can manage\" access to see host-only details.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-hosting-list.webp",
+                  "caption": "Host an Event"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-create.webp",
+                  "caption": "Create an Event"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-invite-picker.webp",
+                  "caption": "Invite People from Your Family Tree"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-detail-host.webp",
+                  "caption": "Manage Invitees & RSVPs"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-invitee-rsvp.webp",
+                  "caption": "Accept or Decline an Invite"
                 }
               ]
             }
@@ -1444,6 +1477,26 @@
         {
           "url": "assets/images/app3/screen-login.webp",
           "caption": "Secure Access"
+        },
+        {
+          "url": "assets/images/app3/screen-events-hosting-list.webp",
+          "caption": "Host an Event"
+        },
+        {
+          "url": "assets/images/app3/screen-events-create.webp",
+          "caption": "Create an Event"
+        },
+        {
+          "url": "assets/images/app3/screen-events-invite-picker.webp",
+          "caption": "Invite People from Your Family Tree"
+        },
+        {
+          "url": "assets/images/app3/screen-events-detail-host.webp",
+          "caption": "Manage Invitees & RSVPs"
+        },
+        {
+          "url": "assets/images/app3/screen-events-invitee-rsvp.webp",
+          "caption": "Accept or Decline an Invite"
         }
       ],
       "links": [
@@ -1522,7 +1575,7 @@
               },
               {
                 "title": "Transfer of Your Personal Data",
-                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to \u2014 and maintained on \u2014 computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
+                "content": "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.\n\nYour consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.\n\nThe Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -1738,8 +1791,8 @@
     {
       "id": "alarm-clock",
       "name": "Alarm Clock",
-      "shortDescription": "Alarms, timers, reminders & routines \u2014 with widgets and voice shortcuts.",
-      "fullDescription": "Alarm Clock brings every time-based tool into one fast, local-first app: reliable alarms with a bright full-screen ring screen, timers, a stopwatch, reminders, and location-aware work routines. Home-screen widgets stay in sync with your device's wallpaper colors (Material You), and a voice shortcut bar lets you create alarms, timers and reminders just by talking. No account, no cloud sync, no ads \u2014 everything lives on your device.",
+      "shortDescription": "Alarms, timers, reminders & routines — with widgets and voice shortcuts.",
+      "fullDescription": "Alarm Clock brings every time-based tool into one fast, local-first app: reliable alarms with a bright full-screen ring screen, timers, a stopwatch, reminders, and location-aware work routines. Home-screen widgets stay in sync with your device's wallpaper colors (Material You), and a voice shortcut bar lets you create alarms, timers and reminders just by talking. No account, no cloud sync, no ads — everything lives on your device.",
       "iconUrl": "assets/images/alarm-clock/icon.webp",
       "status": "IN DEV",
       "statusColor": "amber",
@@ -1766,7 +1819,7 @@
           "sections": [
             {
               "title": "Built-in timers and stopwatch",
-              "content": "Quick-start timer presets, a running-timer list, and a lap-tracking stopwatch \u2014 all reachable from the same dashboard as your alarms.",
+              "content": "Quick-start timer presets, a running-timer list, and a lap-tracking stopwatch — all reachable from the same dashboard as your alarms.",
               "imageRenderer": "default",
               "images": [
                 "assets/images/alarm-clock/playstore_screen-3-stopwatch.webp"
@@ -1794,7 +1847,7 @@
           "sections": [
             {
               "title": "Location-based routines",
-              "content": "Set up a routine that triggers automatically when you arrive at or leave a place you choose \u2014 for example, a \"Work\" routine. Pick the location on a map with an adjustable radius; a human-readable place name is resolved for you automatically.",
+              "content": "Set up a routine that triggers automatically when you arrive at or leave a place you choose — for example, a \"Work\" routine. Pick the location on a map with an adjustable radius; a human-readable place name is resolved for you automatically.",
               "imageRenderer": "default",
               "images": [
                 "assets/images/alarm-clock/playstore_screen-5-routines-list.webp",
@@ -1823,7 +1876,7 @@
           "sections": [
             {
               "title": "Widgets that match your wallpaper",
-              "content": "Three home-screen widgets \u2014 an action shortcut, quick timers, and a routine launcher \u2014 each configurable for light/dark/auto mode, opacity, and a color source that can follow your device's Material You wallpaper palette (Android 12+) or your in-app accent color.",
+              "content": "Three home-screen widgets — an action shortcut, quick timers, and a routine launcher — each configurable for light/dark/auto mode, opacity, and a color source that can follow your device's Material You wallpaper palette (Android 12+) or your in-app accent color.",
               "imageRenderer": "default",
               "images": [
                 "assets/images/alarm-clock/playstore_screen-7-widget-config.webp"
@@ -1837,7 +1890,7 @@
           "sections": [
             {
               "title": "Personalize the app",
-              "content": "Switch between light and dark themes, or opt in to Material You dynamic color sourced from your device's wallpaper (off by default \u2014 your choice).",
+              "content": "Switch between light and dark themes, or opt in to Material You dynamic color sourced from your device's wallpaper (off by default — your choice).",
               "imageRenderer": "default",
               "images": [
                 "assets/images/alarm-clock/playstore_screen-8-settings-general.webp",
@@ -1852,7 +1905,7 @@
           "sections": [
             {
               "title": "One-time unlock, always visible",
-              "content": "Unlimited alarms, unlimited profiles, unlimited reminders, and the work-geofence routine feature. Premium status is always shown \u2014 as a reminder when unlocked, or as a feature checklist when it isn't \u2014 never hidden.",
+              "content": "Unlimited alarms, unlimited profiles, unlimited reminders, and the work-geofence routine feature. Premium status is always shown — as a reminder when unlocked, or as a feature checklist when it isn't — never hidden.",
               "imageRenderer": "default",
               "images": [
                 "assets/images/alarm-clock/playstore_screen-8-settings-general-dark.webp"
@@ -1882,7 +1935,7 @@
           "sections": [
             {
               "title": "Design Patterns",
-              "content": "State management is handled by **Bloc/Cubit**, with a clear separation between UI, services, and the native platform channel layer. All data is persisted locally via **sqflite** \u2014 no backend server.",
+              "content": "State management is handled by **Bloc/Cubit**, with a clear separation between UI, services, and the native platform channel layer. All data is persisted locally via **sqflite** — no backend server.",
               "imageRenderer": "default",
               "images": []
             }
@@ -1895,7 +1948,7 @@
           "sections": [
             {
               "title": "Live wallpaper-following widgets",
-              "content": "On Android 12+, widget colors are resolved from `@android:color/system_accent1_*`/`system_neutral*` resources, so the launcher re-tints widgets automatically when the wallpaper changes \u2014 no app code runs for that update.",
+              "content": "On Android 12+, widget colors are resolved from `@android:color/system_accent1_*`/`system_neutral*` resources, so the launcher re-tints widgets automatically when the wallpaper changes — no app code runs for that update.",
               "imageRenderer": "default",
               "images": []
             }
@@ -1970,19 +2023,19 @@
               },
               {
                 "title": "Definitions",
-                "content": "For the purposes of this Privacy Policy:\n\n- **Application** means the software program Alarm Clock, provided by the\n  Company, downloaded by You on any electronic device.\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Device** means any device that can access the Service, such as a\n  cellphone or tablet.\n- **Personal Data** is any information that relates to an identified or\n  identifiable individual.\n- **Service** refers to the Application.\n- **Third-Party Service** means a service operated by someone other than the\n  Company that the Application calls out to (see \u00a74).\n- **You** means the individual using the Service.",
+                "content": "For the purposes of this Privacy Policy:\n\n- **Application** means the software program Alarm Clock, provided by the\n  Company, downloaded by You on any electronic device.\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Device** means any device that can access the Service, such as a\n  cellphone or tablet.\n- **Personal Data** is any information that relates to an identified or\n  identifiable individual.\n- **Service** refers to the Application.\n- **Third-Party Service** means a service operated by someone other than the\n  Company that the Application calls out to (see §4).\n- **You** means the individual using the Service.",
                 "imageRenderer": "default",
                 "images": []
               }
             ]
           },
           {
-            "title": "Summary \u2014 what this app does and does not do",
+            "title": "Summary — what this app does and does not do",
             "subtitle": "No account, no cloud, no ads",
             "sections": [
               {
-                "title": "Summary \u2014 what this app does and does not do",
-                "content": "Alarm Clock is built to work entirely on Your device:\n\n- **No account, no sign-in.** The app never asks You to create an account or\n  sign in with Google, Apple, email, or any other identity provider.\n- **No cloud backup or sync.** All alarms, timers, reminders, routines, and\n  settings are stored only in a local database on Your device\n  (`android:allowBackup=\"false\"` \u2014 Android's own automatic cloud backup of\n  app data is explicitly disabled). Nothing is uploaded to servers We\n  operate, because We do not operate any servers that store Your data.\n- **No analytics, advertising, or crash-reporting SDKs.** The app does not\n  embed Firebase, Google Analytics, any ad network, or any third-party\n  analytics/crash SDK. We do not track Your usage of the app.\n- **One limited, anonymous network call** (reverse geocoding \u2014 see \u00a74) and\n  **Google Play Billing** (for Premium purchases \u2014 see \u00a75) are the only two\n  ways the app talks to anything outside Your device.",
+                "title": "Summary — what this app does and does not do",
+                "content": "Alarm Clock is built to work entirely on Your device:\n\n- **No account, no sign-in.** The app never asks You to create an account or\n  sign in with Google, Apple, email, or any other identity provider.\n- **No cloud backup or sync.** All alarms, timers, reminders, routines, and\n  settings are stored only in a local database on Your device\n  (`android:allowBackup=\"false\"` — Android's own automatic cloud backup of\n  app data is explicitly disabled). Nothing is uploaded to servers We\n  operate, because We do not operate any servers that store Your data.\n- **No analytics, advertising, or crash-reporting SDKs.** The app does not\n  embed Firebase, Google Analytics, any ad network, or any third-party\n  analytics/crash SDK. We do not track Your usage of the app.\n- **One limited, anonymous network call** (reverse geocoding — see §4) and\n  **Google Play Billing** (for Premium purchases — see §5) are the only two\n  ways the app talks to anything outside Your device.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -1994,7 +2047,7 @@
             "sections": [
               {
                 "title": "Data You provide directly",
-                "content": "Everything You type into the app \u2014 alarm labels, reminder text, routine\nnames, the location You pick for a work routine \u2014 is Personal Data You\ncreate, and it stays in the app's local database on Your Device. We (Ni\nStudio Us) never receive a copy of it.",
+                "content": "Everything You type into the app — alarm labels, reminder text, routine\nnames, the location You pick for a work routine — is Personal Data You\ncreate, and it stays in the app's local database on Your Device. We (Ni\nStudio Us) never receive a copy of it.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -2006,7 +2059,7 @@
               },
               {
                 "title": "Permissions the app requests, and why",
-                "content": "The Application requests the following Device permissions. Each is used only\nfor the stated purpose, and each can be reviewed or revoked at any time in\nYour Device's App Settings:\n\n| Permission | Purpose |\n|---|---|\n| **Exact Alarms** (`SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`) | To ring alarms, timers, and reminders at the exact time You set. |\n| **Notifications** (`POST_NOTIFICATIONS`) | To show alarm, timer, and reminder notifications. |\n| **Full-Screen Intent** (`USE_FULL_SCREEN_INTENT`) | To show the full-screen ring/snooze/stop screen when an alarm fires, including over the lock screen. |\n| **Wake Lock / Foreground Service (+ Media Playback)** | To keep the ringtone playing reliably while an alarm or timer is going off, even if the screen turns off. |\n| **Ignore Battery Optimizations** | Requested optionally, so Android's battery-saving features don't delay or silently skip a scheduled alarm. |\n| **Boot Completed** (`RECEIVE_BOOT_COMPLETED`) | To reschedule Your alarms after the Device restarts (Android clears all pending alarms on reboot). |\n| **Vibrate** | For alarm/timer vibration. |\n| **Microphone** (`RECORD_AUDIO`) | Only when You actively use the voice-command feature (the NLP mic button, or the voice-command practice/help page). Speech is recognized using Your Device's own on-device/system speech-recognition service; We do not record, store, or transmit Your voice audio to any server We operate. |\n| **Location** (fine, coarse, background) | Only used for the optional, Premium \"work routine\" (geofence) feature, so a routine can trigger when You arrive at or leave a place You chose (e.g. \"Work\"). Location is read on-device to evaluate the geofence and is stored only in Your local routines database. It is **never** collected if You do not set up a location-based routine, and background location is only requested when a routine actually needs to run while the app isn't open. |\n| **Internet** | Used only for the two purposes described in \u00a74 and \u00a75 below \u2014 never for tracking or advertising. |",
+                "content": "The Application requests the following Device permissions. Each is used only\nfor the stated purpose, and each can be reviewed or revoked at any time in\nYour Device's App Settings:\n\n| Permission | Purpose |\n|---|---|\n| **Exact Alarms** (`SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`) | To ring alarms, timers, and reminders at the exact time You set. |\n| **Notifications** (`POST_NOTIFICATIONS`) | To show alarm, timer, and reminder notifications. |\n| **Full-Screen Intent** (`USE_FULL_SCREEN_INTENT`) | To show the full-screen ring/snooze/stop screen when an alarm fires, including over the lock screen. |\n| **Wake Lock / Foreground Service (+ Media Playback)** | To keep the ringtone playing reliably while an alarm or timer is going off, even if the screen turns off. |\n| **Ignore Battery Optimizations** | Requested optionally, so Android's battery-saving features don't delay or silently skip a scheduled alarm. |\n| **Boot Completed** (`RECEIVE_BOOT_COMPLETED`) | To reschedule Your alarms after the Device restarts (Android clears all pending alarms on reboot). |\n| **Vibrate** | For alarm/timer vibration. |\n| **Microphone** (`RECORD_AUDIO`) | Only when You actively use the voice-command feature (the NLP mic button, or the voice-command practice/help page). Speech is recognized using Your Device's own on-device/system speech-recognition service; We do not record, store, or transmit Your voice audio to any server We operate. |\n| **Location** (fine, coarse, background) | Only used for the optional, Premium \"work routine\" (geofence) feature, so a routine can trigger when You arrive at or leave a place You chose (e.g. \"Work\"). Location is read on-device to evaluate the geofence and is stored only in Your local routines database. It is **never** collected if You do not set up a location-based routine, and background location is only requested when a routine actually needs to run while the app isn't open. |\n| **Internet** | Used only for the two purposes described in §4 and §5 below — never for tracking or advertising. |",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2018,7 +2071,7 @@
             "sections": [
               {
                 "title": "Third-Party Service: Location Name Lookup (OpenStreetMap Nominatim)",
-                "content": "When You pick a location for a work routine, the app shows You a\nhuman-readable place name (e.g. \"Koramangala, Bengaluru\") instead of raw\ncoordinates. To do this, it sends the latitude/longitude You selected to\n**OpenStreetMap's Nominatim API** (`nominatim.openstreetmap.org`), a\nthird-party, independently-operated service not owned by Us.\n\n- Only the coordinates are sent \u2014 no name, email, account identifier, or\n  other Personal Data accompanies the request.\n- This happens only when You are actively setting up or editing a\n  location-based routine; it is not a background or periodic call.\n- If the request fails (e.g. You are offline), the app simply shows the raw\n  coordinates instead \u2014 this lookup is best-effort and never blocks the\n  feature from working.\n- This exchange is governed by\n  [OpenStreetMap's own privacy policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy),\n  not this one. We do not control, and are not responsible for, how\n  OpenStreetMap/Nominatim itself handles that request on its servers.",
+                "content": "When You pick a location for a work routine, the app shows You a\nhuman-readable place name (e.g. \"Koramangala, Bengaluru\") instead of raw\ncoordinates. To do this, it sends the latitude/longitude You selected to\n**OpenStreetMap's Nominatim API** (`nominatim.openstreetmap.org`), a\nthird-party, independently-operated service not owned by Us.\n\n- Only the coordinates are sent — no name, email, account identifier, or\n  other Personal Data accompanies the request.\n- This happens only when You are actively setting up or editing a\n  location-based routine; it is not a background or periodic call.\n- If the request fails (e.g. You are offline), the app simply shows the raw\n  coordinates instead — this lookup is best-effort and never blocks the\n  feature from working.\n- This exchange is governed by\n  [OpenStreetMap's own privacy policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy),\n  not this one. We do not control, and are not responsible for, how\n  OpenStreetMap/Nominatim itself handles that request on its servers.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2030,7 +2083,7 @@
             "sections": [
               {
                 "title": "In-App Purchases (Premium)",
-                "content": "Alarm Clock offers an optional, paid \"Premium\" tier (e.g. unlimited alarms,\nunlimited profiles, the work-geofence feature, unlimited reminders),\npurchased through **Google Play Billing**.\n\n- All payment details (card numbers, UPI, etc.) are handled entirely by\n  Google Play \u2014 We never see, collect, or store Your payment information.\n- To confirm a purchase is genuine, the app verifies the purchase receipt\n  Google Play gives it **locally, on Your Device**, using a cryptographic\n  signature check. This verification does not send Your purchase data to any\n  server We operate.\n- Your relationship with Google regarding billing is governed by\n  [Google Play's own Terms of Service and Privacy Policy](https://policies.google.com/privacy).",
+                "content": "Alarm Clock offers an optional, paid \"Premium\" tier (e.g. unlimited alarms,\nunlimited profiles, the work-geofence feature, unlimited reminders),\npurchased through **Google Play Billing**.\n\n- All payment details (card numbers, UPI, etc.) are handled entirely by\n  Google Play — We never see, collect, or store Your payment information.\n- To confirm a purchase is genuine, the app verifies the purchase receipt\n  Google Play gives it **locally, on Your Device**, using a cryptographic\n  signature check. This verification does not send Your purchase data to any\n  server We operate.\n- Your relationship with Google regarding billing is governed by\n  [Google Play's own Terms of Service and Privacy Policy](https://policies.google.com/privacy).",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2054,7 +2107,7 @@
             "sections": [
               {
                 "title": "Data Retention and Your Right to Delete",
-                "content": "Because almost everything is stored only on Your Device:\n\n- **Uninstalling the app** permanently deletes Your local alarms, timers,\n  reminders, routines, settings, and logs \u2014 there is nothing left on any\n  server for Us to delete, because We never held a copy.\n- You can also delete individual items (an alarm, a reminder, a routine) at\n  any time from within the app itself.\n- If You ever contact Us directly (e.g. by email, for support), any Personal\n  Data You share that way (such as Your email address) is retained only as\n  long as needed to resolve Your request, and You may ask Us to delete it at\n  any time by contacting Us at the address in \u00a710.",
+                "content": "Because almost everything is stored only on Your Device:\n\n- **Uninstalling the app** permanently deletes Your local alarms, timers,\n  reminders, routines, settings, and logs — there is nothing left on any\n  server for Us to delete, because We never held a copy.\n- You can also delete individual items (an alarm, a reminder, a routine) at\n  any time from within the app itself.\n- If You ever contact Us directly (e.g. by email, for support), any Personal\n  Data You share that way (such as Your email address) is retained only as\n  long as needed to resolve Your request, and You may ask Us to delete it at\n  any time by contacting Us at the address in §10.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2072,7 +2125,7 @@
               },
               {
                 "title": "What We cannot guarantee, and are not responsible for",
-                "content": "**No method of storage or transmission is 100% secure, and security of Your\nDevice itself is Your responsibility, not Ours.** In particular:\n\n- We are not responsible for the security of Your Device, Your Device's\n  operating system, Your Google account, or any other software installed on\n  Your Device. If Your Device is lost, stolen, rooted/jailbroken, infected\n  with malware, or otherwise compromised by a third party, any local data\n  stored by this app may be exposed \u2014 that risk sits with You and Your\n  Device, not with Us.\n- We are not responsible for the security practices of third-party services\n  this app relies on but does not control, including Google Play (billing,\n  distribution) and OpenStreetMap/Nominatim (location name lookup). Any\n  security incident on those services' infrastructure is governed by their\n  own policies, not this one.\n- To the maximum extent permitted by law, We disclaim all liability for any\n  loss, damage, or unauthorized access arising from circumstances outside Our\n  direct control, including Device-level compromise, third-party service\n  outages or breaches, and Your own handling of Your Device or Google\n  account.",
+                "content": "**No method of storage or transmission is 100% secure, and security of Your\nDevice itself is Your responsibility, not Ours.** In particular:\n\n- We are not responsible for the security of Your Device, Your Device's\n  operating system, Your Google account, or any other software installed on\n  Your Device. If Your Device is lost, stolen, rooted/jailbroken, infected\n  with malware, or otherwise compromised by a third party, any local data\n  stored by this app may be exposed — that risk sits with You and Your\n  Device, not with Us.\n- We are not responsible for the security practices of third-party services\n  this app relies on but does not control, including Google Play (billing,\n  distribution) and OpenStreetMap/Nominatim (location name lookup). Any\n  security incident on those services' infrastructure is governed by their\n  own policies, not this one.\n- To the maximum extent permitted by law, We disclaim all liability for any\n  loss, damage, or unauthorized access arising from circumstances outside Our\n  direct control, including Device-level compromise, third-party service\n  outages or breaches, and Your own handling of Your Device or Google\n  account.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2222,7 +2275,7 @@
               },
               {
                 "title": "Limitation of liability",
-                "content": "To the maximum extent permitted by applicable law, in no event shall the\nCompany or its suppliers be liable for any special, incidental, indirect, or\nconsequential damages whatsoever (including, without limitation, damages for\nloss of data, business interruption, personal injury, or any missed alarm,\ntimer, reminder, or routine event as described in \u00a73), arising out of or in\nany way related to Your use of or inability to use the Service, even if the\nCompany has been advised of the possibility of such damages. The Company's\ntotal liability for any claim arising from these Terms or Your use of the\nService shall not exceed the amount You actually paid the Company through the\nService in the 12 months preceding the claim, or 100 USD, whichever is\ngreater \u2014 or, if You have not paid anything through the Service, shall be\nlimited to a full refund of any amount paid (which, for the free tier, is\nzero).\n\nSome jurisdictions do not allow the exclusion or limitation of certain\nwarranties or liabilities; in such jurisdictions, the above limitations apply\nonly to the extent permitted by law.",
+                "content": "To the maximum extent permitted by applicable law, in no event shall the\nCompany or its suppliers be liable for any special, incidental, indirect, or\nconsequential damages whatsoever (including, without limitation, damages for\nloss of data, business interruption, personal injury, or any missed alarm,\ntimer, reminder, or routine event as described in §3), arising out of or in\nany way related to Your use of or inability to use the Service, even if the\nCompany has been advised of the possibility of such damages. The Company's\ntotal liability for any claim arising from these Terms or Your use of the\nService shall not exceed the amount You actually paid the Company through the\nService in the 12 months preceding the claim, or 100 USD, whichever is\ngreater — or, if You have not paid anything through the Service, shall be\nlimited to a full refund of any amount paid (which, for the free tier, is\nzero).\n\nSome jurisdictions do not allow the exclusion or limitation of certain\nwarranties or liabilities; in such jurisdictions, the above limitations apply\nonly to the extent permitted by law.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2258,7 +2311,7 @@
             "sections": [
               {
                 "title": "Dispute Resolution",
-                "content": "If You have a dispute about the Service, You agree to first contact Us\ninformally (see \u00a713) so We can attempt to resolve it directly before any\nformal proceeding.",
+                "content": "If You have a dispute about the Service, You agree to first contact Us\ninformally (see §13) so We can attempt to resolve it directly before any\nformal proceeding.",
                 "imageRenderer": "default",
                 "images": []
               }
