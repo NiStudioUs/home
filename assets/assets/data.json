@@ -1378,6 +1378,39 @@
               ]
             }
           ]
+        },
+        {
+          "title": "Event Hosting & Invites",
+          "subtitle": "Host events and invite people from your family tree",
+          "sections": [
+            {
+              "title": "Host an event and invite your family",
+              "content": "Create an event with a title, type, dates, location and description, then invite people straight from your family tree. Invitees get an in-app notification and an email, and can Accept or Decline. Hosts can grant a trusted invitee \"Can manage\" access to see host-only details.",
+              "imageRenderer": "default",
+              "images": [
+                {
+                  "url": "assets/images/app3/screen-events-hosting-list.webp",
+                  "caption": "Host an Event"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-create.webp",
+                  "caption": "Create an Event"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-invite-picker.webp",
+                  "caption": "Invite People from Your Family Tree"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-detail-host.webp",
+                  "caption": "Manage Invitees & RSVPs"
+                },
+                {
+                  "url": "assets/images/app3/screen-events-invitee-rsvp.webp",
+                  "caption": "Accept or Decline an Invite"
+                }
+              ]
+            }
+          ]
         }
       ],
       "technicalDetails": [
@@ -1444,6 +1477,26 @@
         {
           "url": "assets/images/app3/screen-login.webp",
           "caption": "Secure Access"
+        },
+        {
+          "url": "assets/images/app3/screen-events-hosting-list.webp",
+          "caption": "Host an Event"
+        },
+        {
+          "url": "assets/images/app3/screen-events-create.webp",
+          "caption": "Create an Event"
+        },
+        {
+          "url": "assets/images/app3/screen-events-invite-picker.webp",
+          "caption": "Invite People from Your Family Tree"
+        },
+        {
+          "url": "assets/images/app3/screen-events-detail-host.webp",
+          "caption": "Manage Invitees & RSVPs"
+        },
+        {
+          "url": "assets/images/app3/screen-events-invitee-rsvp.webp",
+          "caption": "Accept or Decline an Invite"
         }
       ],
       "links": [
