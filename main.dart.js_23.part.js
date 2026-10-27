@@ -1,78 +1,88 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
-$__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,C,F,E,G,D={
-aXY(){return new D.rX(null)},
-rX:function rX(d){this.a=d},
-alO:function alO(d,e){this.a=d
+$__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,B,F,E,G,C={
+aXv(){return new C.ry(null)},
+ry:function ry(d){this.a=d},
+ah6:function ah6(){},
+ah7:function ah7(d,e){this.a=d
 this.b=e},
-alN:function alN(d,e){this.a=d
-this.b=e}},B,H
+ah4:function ah4(d,e){this.a=d
+this.b=e},
+ah5:function ah5(d){this.a=d}},H,I,D
 J=c[1]
 A=c[0]
-C=c[2]
-F=c[13]
+B=c[2]
+F=c[11]
 E=c[12]
 G=c[20]
-D=a.updateHolder(c[6],D)
-B=c[21]
-H=c[15]
-D.rX.prototype={
-F(d){var x,w,v=null,u=y.a,t=y.m,s=t.a(A.C(d).c.h(0,A.V(u)))
-s.toString
-x=y.h
-w=A.P(new A.K(B.JR,new D.alO(d,s),x),x.i("a3.E"))
-return A.h4(v,s.a,new A.fv(C.c3,v,v,new A.bO(C.aa,new A.aq(G.hj,E.alf(E.aff(v,A.av(A.a([A.a2("Story",v,v,A.aI(d,A.c0(d,27.2,3,38.4),C.r,v,1.12,-0.02),v),C.R,A.a2("The journey so far.",v,v,A.ba(d,A.c0(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.V(u))).r,1.65,C.l),v)],y.u),C.p,C.j,C.k),w)),v),v),v))}}
-var z=a.updateTypes(["eo(ao<j,@>)"])
-D.alO.prototype={
-$1(d){var x,w,v,u,t,s,r,q,p,o=null,n="tags",m=d.h(0,"project"),l=m==null?d.h(0,"title"):m
-if(l==null)l=""
-x=d.h(0,"year")
-if(x==null)x=""
-w=d.h(0,"company")
-if(w==null)w=""
-m=this.a
-v=A.a2(l,o,o,A.aI(m,20,C.r,o,1.12,-0.02),o)
-u=this.b
-t=A.br(20)
-s=y.a
-r=y.m
-q=y.u
-t=A.bw(A.a([v,A.aB(o,A.a2(x,o,o,A.aI(m,11.84,C.r,r.a(A.C(m).c.h(0,A.V(s))).w,1,0.14),o),C.m,o,o,new A.aw(u.c,o,o,t,o,o,o,C.t),o,o,o,o,C.dH,o,o,o)],q),C.y,o,C.db,C.k,o)
-v=A.a2(w,o,o,A.ba(m,16,r.a(A.C(m).c.h(0,A.V(s))).r,1.65,C.l),o)
-p=d.h(0,"description")
-if(p==null)p=d.h(0,"content")
-if(p==null)p=""
-s=r.a(A.C(m).c.h(0,A.V(s)))
-s=A.y(s.r,s.f,0.82)
-s.toString
-s=A.a([t,H.iN,v,C.R,A.a2(p,o,o,A.ba(m,16,s,1.65,C.l),o)],q)
-if(d.ac(n)&&y.i.b(d.h(0,n))){m=J.di(y.i.a(d.h(0,n)),new D.alN(u,m),y.j)
-m=A.P(m,m.$ti.i("a3.E"))
-C.b.I(s,A.a([C.R,A.hD(C.z,m,C.aZ,8,8)],q))}return new E.eo(l,x,F.lW(A.av(s,C.p,C.j,C.k),o,o))},
+C=a.updateHolder(c[7],C)
+H=c[13]
+I=c[10]
+D=c[16]
+C.ry.prototype={
+C(d){var x,w,v,u=null,t=y.a,s=y.m,r=s.a(A.C(d).c.h(0,A.Q(t)))
+r.toString
+x=A.h2(D.l3,!0,y.y)
+B.b.dQ(x,new C.ah6())
+w=A.W(x).i("G<1,eo>")
+v=A.N(new A.G(x,new C.ah7(d,r),w),w.i("a3.E"))
+return A.fI(u,r.a,new A.fw(B.c5,u,u,new A.bN(B.aa,new A.ak(G.hl,E.alF(E.afF(u,A.au(A.a([A.a2("Projects",u,u,A.aC(d,A.bT(d,27.2,3,38.4),B.r,u,1.12,-0.02),u),B.N,A.a2("A-Z Showcase.",u,u,A.b_(d,A.bT(d,16.8,1.6,19.52),s.a(A.C(d).c.h(0,A.Q(t))).r,1.65,B.l),u)],y.u),B.o,B.i,B.j),v)),u),u),u))}}
+var z=a.updateTypes(["eo(ap<i,@>)"])
+C.ah6.prototype={
+$2(d,e){return B.c.bh(A.aY(d.h(0,"name")).toLowerCase(),A.aY(e.h(0,"name")).toLowerCase())},
+$S:688}
+C.ah7.prototype={
+$1(d){var x,w,v,u,t,s,r,q,p,o,n,m=this,l="name",k="status",j=null
+d.h(0,l)
+x=d.h(0,l)
+w=d.h(0,k)
+v=m.a
+u=A.bQ(A.a2(d.h(0,l),1,B.aJ,A.aC(v,20,B.r,j,1.12,-0.02),j),1)
+t=J.n5(J.a2u(d.h(0,k)),"live")?A.aT(51,D.cE.G()>>>16&255,D.cE.G()>>>8&255,D.cE.G()&255):m.b.c
+s=A.bm(12)
+r=d.h(0,k)
+q=y.a
+p=y.m
+o=A.aC(v,11.84,B.r,p.a(A.C(v).c.h(0,A.Q(q))).w,1,0.14)
+n=y.u
+s=A.bt(A.a([u,A.ay(j,A.a2(r,j,j,o.bK(J.n5(J.a2u(d.h(0,k)),"live")?D.cE:m.b.f),j),B.m,j,j,new A.aw(t,j,j,s,j,j,j,B.t),j,j,j,j,B.dJ,j,j,j)],n),B.y,j,B.dc,B.j,j)
+t=A.a2(d.h(0,"description"),3,B.aJ,A.b_(v,16,j,1.65,B.l),j)
+q=A.bt(A.a([A.a2("Version:",j,j,A.aC(v,11.84,B.r,p.a(A.C(v).c.h(0,A.Q(q))).w,1,0.14),j),B.bR,A.a2(d.h(0,"version"),j,j,A.b_(v,16,p.a(A.C(v).c.h(0,A.Q(q))).r,1.65,B.l),j)],n),B.y,j,B.i,B.j,j)
+p=J.u6(y.B.a(d.h(0,"tags")),3)
+o=p.$ti.i("G<a3.E,cB>")
+v=A.N(new A.G(p,new C.ah4(m.b,v),o),o.i("a3.E"))
+v=A.a([s,B.iN,t,B.N,q,B.N,A.hd(B.w,v,B.b_,4,4)],n)
+u=d.h(0,"demoUrl")
+if(!(J.dQ(u==null?"":u)&&!J.d(d.h(0,"demoUrl"),"None"))){u=d.h(0,"liveUrl")
+u=J.dQ(u==null?"":u)&&!J.d(d.h(0,"liveUrl"),"None")}else u=!0
+if(u)B.b.I(v,A.a([B.N,new F.iW("Live Demo",!0,new C.ah5(d),!0,j)],n))
+return new E.eo(x,w,H.lZ(A.au(v,B.o,B.i,B.j),j,j))},
 $S:z+0}
-D.alN.prototype={
-$1(d){var x=null,w=this.a,v=A.br(4),u=A.cu(w.e,1),t=this.b
-return A.aB(x,A.a2(J.e3(d),x,x,A.aI(t,11.84,C.r,y.m.a(A.C(t).c.h(0,A.V(y.a))).w,1,0.14),x),C.m,x,x,new A.aw(w.a,x,u,v,x,x,x,C.t),x,x,x,x,C.dH,x,x,x)},
-$S:674};(function inheritance(){var x=a.inherit,w=a.inheritMany
-x(D.rX,A.a1)
-w(A.fb,[D.alO,D.alN])})()
-A.l8(b.typeUniverse,JSON.parse('{"rX":{"a1":[],"e":[]}}'))
-var y={v:A.a0("au<j,@>"),j:A.a0("cK"),x:A.a0("p<j>"),u:A.a0("p<e>"),i:A.a0("L<@>"),h:A.a0("K<ao<j,@>,eo>"),a:A.a0("cZ"),m:A.a0("cZ?")};(function constants(){var x=a.makeConstList
-B.cF={year:0,company:1,project:2,description:3,tags:4}
-B.LC=x(["Retail Banking","Automation Web & API"],y.x)
-B.NE=new A.au(B.cF,["2017","First Steps","Retail Banking","I started out on the ground floor of enterprise retail banking, diving deep into the messy reality of legacy systems. I quickly learned that reliable software isn't just about writing code\u2014it's about rigorous validation and understanding the complex business rules behind every transaction.",B.LC],y.v)
-B.K2=x(["Mobile Automation","API Testing","Commercial Banking"],y.x)
-B.ND=new A.au(B.cF,["2018 - 2020","Maveric Systems (Metro Bank UK)","Digital Channels Automation","As digital transformation accelerated in the UK, I took charge of test automation across mobile and API channels. Navigating the strict regulatory requirements of commercial banking taught me how to balance developer velocity with zero-compromise security.",B.K2],y.v)
-B.JM=x(["Lending","Deposits","Docker"],y.x)
-B.NF=new A.au(B.cF,["2021","Allica Bank UK","SME Banking Ecosystem","Scaling SME banking operations required a rethink of our infrastructure. I introduced Docker and microservice-oriented architectures to our testing pipelines, completely decoupling our dependencies and massively reducing release bottlenecks.",B.JM],y.v)
-B.Li=x(["Flutter","Dart","Offline-first"],y.x)
-B.NB=new A.au(B.cF,["2022","Indie Hacker","Flutter Notes App","Frustrated by data-mining productivity apps, I decided to build my own offline-first Flutter application. Solving complex local-first data synchronization challenges without relying on cloud services was a turning point in my approach to privacy-centric mobile engineering.",B.Li],y.v)
-B.Jy=x(["TypeScript","Cypress","Risk Assessment"],y.x)
-B.NG=new A.au(B.cF,["2023 - Present","Allica Bank UK","Advanced SDET & Platform Quality","Today, I oversee the end-to-end quality of Allica Bank's platforms. By driving large-scale architectural migrations to modern Cypress and Playwright frameworks, I've enabled our engineering teams to ship faster, with absolute confidence in our risk and compliance systems.",B.Jy],y.v)
-B.JN=x(["Docker Compose","Node.js","System Architecture"],y.x)
-B.NA=new A.au(B.cF,["June 2025","Architecture Design","People App IKY v2","Recognizing a gap in family history tools, I architected a multi-platform genealogy ecosystem from scratch. Designing the containerized Node.js backend and orchestrating the entire CI/CD lifecycle sharpened my full-stack platform engineering skills.",B.JN],y.v)
-B.JQ=x(["React Native","Generative AI"],y.x)
-B.NH=new A.au(B.cF,["January 2026","Experimentation","Gen AI Projects","Curious about the practical limits of Generative AI, I built an experimental platform to stress-test AI-assisted UI generation. It was a fascinating deep dive into modern React patterns, uncovering both the magic and the immediate limitations of current LLM capabilities.",B.JQ],y.v)
-B.Kq=x(["BLoC","Drift","Local Processing"],y.x)
-B.NC=new A.au(B.cF,["2026","Mobile Product","SMS Stack","For my latest mobile product, I wanted to tackle heavy on-device data processing. I engineered a robust Flutter app utilizing Drift/SQLite, pushing the boundaries of what a modern mobile processor can handle locally without compromising user privacy or battery life.",B.Kq],y.v)
-B.JR=x([B.NE,B.ND,B.NF,B.NB,B.NG,B.NA,B.NH,B.NC],A.a0("p<ao<j,@>>"))})()};
-(a=>{a["a9uTkSGQBDzlQa4FMNtl0A1G2/c="]=a.current})($__dart_deferred_initializers__);
+C.ah4.prototype={
+$1(d){var x=null,w=A.bm(4),v=this.b
+return A.ay(x,A.a2(d,x,x,A.aC(v,11.84,B.r,y.m.a(A.C(v).c.h(0,A.Q(y.a))).w,1,0.14),x),B.m,x,x,new A.aw(this.a.c,x,x,w,x,x,x,B.t),x,x,x,x,B.dJ,x,x,x)},
+$S:51}
+C.ah5.prototype={
+$0(){var x=0,w=A.U(y.v),v=this,u,t,s,r
+var $async$$0=A.V(function(d,e){if(d===1)return A.R(e,w)
+for(;;)switch(x){case 0:t=v.a
+s=t.h(0,"demoUrl")
+r=J.dQ(s==null?"":s)&&!J.d(t.h(0,"demoUrl"),"None")?t.h(0,"demoUrl"):t.h(0,"liveUrl")
+x=r!=null&&J.dQ(r)?2:3
+break
+case 2:u=A.cD(r,0,null)
+x=6
+return A.P(I.aCe(u),$async$$0)
+case 6:x=e?4:5
+break
+case 4:x=7
+return A.P(A.k5(u),$async$$0)
+case 7:case 5:case 3:return A.S(null,w)}})
+return A.T($async$$0,w)},
+$S:25};(function inheritance(){var x=a.inherit,w=a.inheritMany
+x(C.ry,A.a0)
+x(C.ah6,A.nf)
+w(A.fd,[C.ah7,C.ah4])
+x(C.ah5,A.js)})()
+A.lc(b.typeUniverse,JSON.parse('{"ry":{"a0":[],"e":[]}}'))
+var y={u:A.a1("p<e>"),B:A.a1("L<i>"),y:A.a1("ap<i,@>"),a:A.a1("d_"),m:A.a1("d_?"),v:A.a1("~")}};
+(a=>{a["JrKtOXao7kd66le9u1tydyj5blk="]=a.current})($__dart_deferred_initializers__);
