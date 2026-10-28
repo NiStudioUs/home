@@ -1,6 +1,6 @@
 /// Models for the cross-app how-to index (assets/howto.json), synced into this
 /// repo from each app's own content (e.g. people-app-iky-v2's
-/// scripts/publish_events_howto_to_website.py). This is a shared index keyed
+/// scripts/publish_iky_howto_to_website.py). This is a shared index keyed
 /// by app id — other apps may add their own entries over time.
 class HowtoIndexModel {
   final List<HowtoAppModel> apps;
