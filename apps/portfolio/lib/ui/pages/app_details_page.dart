@@ -8,6 +8,8 @@ import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import '../widgets/footer.dart';
 import '../widgets/image_helper.dart';
+import '../widgets/card_marquee.dart';
+import '../widgets/milestone_card.dart';
 import '../../utils/url_helper.dart';
 import '../../utils/scroll_keys.dart';
 
@@ -80,6 +82,7 @@ class _AppDetailsPageState extends State<AppDetailsPage> {
             children: [
               _AppHeader(app: app),
               if (app.screenshots.isNotEmpty) _AppGallery(app: app),
+              if (app.milestones.isNotEmpty) _AppMilestones(app: app),
               if (visibleStats.isNotEmpty) _AppTechStats(stats: visibleStats),
               _AppFeatures(app: app, scrollController: _scrollController),
               _BottomCta(app: app),
@@ -316,6 +319,45 @@ class _GalleryShot extends StatelessWidget {
         height: 570,
         fit: BoxFit.cover,
         borderRadius: innerRadius,
+      ),
+    );
+  }
+}
+
+class _AppMilestones extends StatelessWidget {
+  final AppModel app;
+  const _AppMilestones({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    final milestones = List<MilestoneModel>.from(app.milestones)
+      ..sort((a, b) => b.parsedDate.compareTo(a.parsedDate));
+
+    if (milestones.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 40),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+                child: Text('MILESTONES', style: NiType.eyebrow(context)),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          CardMarquee(
+            cards: milestones
+                .map((m) => MilestoneCard(milestone: m, app: app))
+                .toList(),
+          ),
+        ],
       ),
     );
   }
