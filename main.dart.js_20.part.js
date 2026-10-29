@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,B,E,F,C={
-aZn(){return new C.oG(null)},
+aZp(){return new C.oG(null)},
 oG:function oG(d){this.a=d},
 a_M:function a_M(){this.d=!1
 this.c=this.a=null},
@@ -34,7 +34,7 @@ v=A.N(new A.G(x,new C.azD(d,n),w),w.i("a3.E"))
 w=y.u
 u=A.au(A.a([A.a2("Timeline",q,q,A.aC(d,A.bT(d,27.2,3,38.4),B.r,q,1.12,-0.02),q),B.N,A.a2("Experience and Career History.",q,q,A.b_(d,A.bT(d,16.8,1.6,19.52),o.a(A.C(d).c.h(0,A.Q(p))).r,1.65,B.l),q)],w),B.o,B.i,B.j)
 t=A.bm(20)
-s=A.cf(n.e,1)
+s=A.cg(n.e,1)
 p=A.a2("Sort Order",q,q,A.aC(d,11.84,B.r,o.a(A.C(d).c.h(0,A.Q(p))).w,1,0.14),q)
 o=r.d
 return A.fI(q,n.a,new A.fw(B.c5,q,q,new A.bN(B.aa,new A.ak(G.hl,D.alF(D.afF(A.ay(q,A.au(A.a([p,B.N,A.bt(A.a([new F.iW("Desc",!o,new C.azE(r),!1,q),B.eb,new F.iW("Asc",o,new C.azF(r),!1,q)],w),B.y,q,B.i,B.j,q)],w),B.o,B.i,B.j),B.m,q,q,new A.aw(n.d,q,s,t,q,q,q,B.t),q,q,q,q,B.kg,q,q,1/0),u,v)),q),q),q))}}
@@ -69,9 +69,9 @@ $1(d){var x=null,w=this.a,v=y.m.a(A.C(w).c.h(0,A.Q(y.a)))
 v=A.y(v.r,v.f,0.82)
 v.toString
 return new A.ak(B.Gf,A.bt(A.a([E.AW,A.bQ(A.a2(d,x,x,A.b_(w,16,v,1.65,B.l),x),1)],y.u),B.o,x,B.i,B.j,x),x)},
-$S:69}
+$S:81}
 C.azC.prototype={
-$1(d){var x=null,w=this.a,v=A.bm(4),u=A.cf(w.e,1),t=this.b
+$1(d){var x=null,w=this.a,v=A.bm(4),u=A.cg(w.e,1),t=this.b
 return A.ay(x,A.a2(d,x,x,A.aC(t,11.84,B.r,y.m.a(A.C(t).c.h(0,A.Q(y.a))).w,1,0.14),x),B.m,x,x,new A.aw(w.a,x,u,v,x,x,x,B.t),x,x,x,x,B.cZ,x,x,x)},
 $S:51}
 C.azE.prototype={
@@ -90,8 +90,8 @@ $0(){return this.a.d=!0},
 $S:0};(function inheritance(){var x=a.inherit,w=a.inheritMany
 x(C.oG,A.a_)
 x(C.a_M,A.a4)
-w(A.fd,[C.azD,C.azB,C.azC])
+w(A.fe,[C.azD,C.azB,C.azC])
 w(A.js,[C.azE,C.azA,C.azF,C.azz])})()
 A.lc(b.typeUniverse,JSON.parse('{"oG":{"a_":[],"e":[]},"a_M":{"a4":["oG"]}}'))
-var y={j:A.a1("cB"),u:A.a1("p<e>"),B:A.a1("L<i>"),y:A.a1("ap<i,@>"),a:A.a1("d_"),l:A.a1("e"),m:A.a1("d_?")}};
-(a=>{a["5+3GACuoBl5VmoMUOFTN7OEPu9w="]=a.current})($__dart_deferred_initializers__);
+var y={j:A.a1("cB"),u:A.a1("p<e>"),B:A.a1("M<i>"),y:A.a1("ap<i,@>"),a:A.a1("d_"),l:A.a1("e"),m:A.a1("d_?")}};
+(a=>{a["bM0SiNzu+x+AEgCtYMpKRzB8jpg="]=a.current})($__dart_deferred_initializers__);

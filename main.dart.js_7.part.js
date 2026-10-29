@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,B,H,K,I,F,G,C={
-aXr(){return new C.rx(null)},
+aXt(){return new C.rx(null)},
 rx:function rx(d){this.a=d},
 agR:function agR(d){this.a=d},
 agS:function agS(d){this.a=d},
@@ -40,9 +40,9 @@ C(d){var x,w,v,u,t,s,r,q,p=null,o="count",n=y.Y,m=y.O,l=m.a(A.C(d).c.h(0,A.Q(n))
 l.toString
 x=y.S
 w=y.P
-v=A.ea(E.l3,0,A.hT(3,o,x),w).dq(0)
-u=A.ea(H.l0,0,A.hT(2,o,x),w).dq(0)
-w=A.cf(l.e,1)
+v=A.ea(E.l3,0,A.hU(3,o,x),w).dq(0)
+u=A.ea(H.l0,0,A.hU(2,o,x),w).dq(0)
+w=A.cg(l.e,1)
 w=A.ay(B.D,A.a2("KS",p,p,A.aC(d,A.bT(d,38.4,5.4,68.8),B.a7,p,1.12,-0.02),p),B.m,p,p,new A.aw(l.c,p,w,p,p,p,p,B.bI),p,100,p,p,p,p,p,100)
 t=A.a2("> Karthik Subramanian_",p,p,A.aC(d,A.bT(d,38.4,5.4,68.8),B.a7,p,1.12,-0.02),p)
 s=A.a2("Staff Engineer - Mobile and Quality Engineer Lead",p,p,A.b_(d,A.bT(d,16.8,1.6,19.52),m.a(A.C(d).c.h(0,A.Q(n))).r,1.65,B.l),p)
@@ -54,13 +54,13 @@ n=A.bt(A.a([w,B.iM,A.bQ(A.au(A.a([t,B.c4,s,B.N,A.a2("Versatile Software Engineer
 s=A.bt(A.a([new C.tQ("9+","Years Experience",p),B.cn,new C.tQ(""+new A.G(H.l0,new C.agT(),y.M).fK(0).a,"Companies",p),B.cn,new C.tQ("7","Apps Built",p),B.cn,new C.tQ(""+new A.b8(E.l3,new C.agU(),y.r).gE(0),"Apps Live",p)],m),B.y,p,B.i,B.j,p)
 t=A.a2("Core Tech Stack",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p)
 w=A.a([],m)
-x=A.ea(K.pe,0,A.hT(4,o,x),y.N)
+x=A.ea(K.pe,0,A.hU(4,o,x),y.N)
 r=x.$ti.i("G<a3.E,e>")
 x=A.N(new A.G(x,new C.agV(d),r),r.i("a3.E"))
 r=x.length
 q=0
 for(;q<x.length;x.length===r||(0,A.w)(x),++q)w.push(x[q])
-n=A.a([n,B.cL,s,B.cL,t,B.b6,F.lZ(A.au(w,B.o,B.i,B.j),p,p),B.N,new A.fw(B.cP,p,p,A.EQ(D.Za,new C.agW(d),p),p),B.cL,A.a2("Featured Projects",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p),B.b6,G.aET(D.TE,new C.agX(v),v.length,B.i3,!0),B.N,new A.fw(B.cP,p,p,A.EQ(D.Zc,new C.agY(d),p),p),B.cL,A.a2("Recent Experience",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p),B.b6],m)
+n=A.a([n,B.cL,s,B.cL,t,B.b6,F.lZ(A.au(w,B.o,B.i,B.j),p,p),B.N,new A.fw(B.cP,p,p,A.EQ(D.Za,new C.agW(d),p),p),B.cL,A.a2("Featured Projects",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p),B.b6,G.aEV(D.TE,new C.agX(v),v.length,B.i3,!0),B.N,new A.fw(B.cP,p,p,A.EQ(D.Zc,new C.agY(d),p),p),B.cL,A.a2("Recent Experience",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p),B.b6],m)
 m=A.W(u).i("G<1,ak>")
 m=A.N(new A.G(u,new C.agZ(d,l),m),m.i("a3.E"))
 B.b.I(n,m)
@@ -69,8 +69,8 @@ n.push(new A.fw(B.cP,p,p,A.EQ(D.Zd,new C.ah_(d),p),p))
 n.push(B.cL)
 n.push(A.a2("Awards & Accomplishments",p,p,A.aC(d,A.bT(d,27.2,3,38.4),B.r,p,1.12,-0.02),p))
 n.push(B.b6)
-n.push(G.aET(D.TD,new C.ah0(l),6,B.i3,!0))
-return A.fI(p,l.a,A.jQ(A.cc(new A.bN(B.aa,new A.ak(B.aQ,A.au(n,B.o,B.i,B.j),p),p),p,p),p,D.Gm,p,B.a8))}}
+n.push(G.aEV(D.TD,new C.ah0(l),6,B.i3,!0))
+return A.fI(p,l.a,A.jQ(A.cd(new A.bN(B.aa,new A.ak(B.aQ,A.au(n,B.o,B.i,B.j),p),p),p,p),p,D.Gm,p,B.a8))}}
 C.tQ.prototype={
 C(d){var x=null
 return A.bQ(F.lZ(A.au(A.a([A.a2(this.c,x,x,A.aC(d,A.bT(d,38.4,5.4,68.8),B.a7,x,1.12,-0.02),x),B.c4,A.a2(this.d,x,x,A.b_(d,16,y.O.a(A.C(d).c.h(0,A.Q(y.Y))).r,1.65,B.l),x)],y.p),B.y,B.i,B.j),x,x),1)}}
@@ -96,7 +96,7 @@ if(!(J.dQ(n==null?"":n)&&!J.d(x.h(0,"demoUrl"),"None"))){n=x.h(0,"liveUrl")
 n=J.dQ(n==null?"":n)&&!J.d(x.h(0,"liveUrl"),"None")}else n=!0
 if(n)B.b.I(o,A.a([B.N,new I.iW("Live Demo",!0,new C.awS(this),!0,q)],r))
 return F.lZ(A.au(o,B.o,B.i,B.j),q,q)}}
-var z=a.updateTypes(["yh(M,m)","rc(M,m)"])
+var z=a.updateTypes(["yh(L,m)","rc(L,m)"])
 C.agR.prototype={
 $0(){return A.bW(this.a).bC("/profile/timeline",null)},
 $S:0}
@@ -105,15 +105,15 @@ $0(){return A.bW(this.a).bC("/profile/projects",null)},
 $S:0}
 C.agT.prototype={
 $1(d){return d.h(0,"company")},
-$S:684}
+$S:685}
 C.agU.prototype={
 $1(d){return J.n5(d.h(0,"status"),"Live")},
-$S:685}
-C.agV.prototype={
-$1(d){var x=null,w=J.aO(d),v=this.a,u=A.eZ(A.a2(w.h(d,"name"),x,x,A.b_(v,16,x,1.65,B.l).Hj(B.a7),x),x,200)
-w=J.aDZ(y.a.a(w.h(d,"skills")),", ")
-return new A.ak(B.o9,A.bt(A.a([u,A.bQ(A.a2(A.f9(w,"<br>",""),x,x,A.b_(v,16,y.O.a(A.C(v).c.h(0,A.Q(y.Y))).r,1.65,B.l),x),1)],y.p),B.o,x,B.i,B.j,x),x)},
 $S:686}
+C.agV.prototype={
+$1(d){var x=null,w=J.aO(d),v=this.a,u=A.f_(A.a2(w.h(d,"name"),x,x,A.b_(v,16,x,1.65,B.l).Hj(B.a7),x),x,200)
+w=J.aE0(y.a.a(w.h(d,"skills")),", ")
+return new A.ak(B.o9,A.bt(A.a([u,A.bQ(A.a2(A.fa(w,"<br>",""),x,x,A.b_(v,16,y.O.a(A.C(v).c.h(0,A.Q(y.Y))).r,1.65,B.l),x),1)],y.p),B.o,x,B.i,B.j,x),x)},
+$S:687}
 C.agW.prototype={
 $0(){return A.bW(this.a).bC("/profile/stack",null)},
 $S:0}
@@ -130,13 +130,13 @@ t=A.bm(20)
 p=A.a([A.bt(A.a([s,A.ay(x,A.a2(A.l(d.h(0,"startDate"))+" - "+A.l(d.h(0,"endDate")),x,x,A.aC(v,11.84,B.r,q.a(A.C(v).c.h(0,A.Q(r))).w,1,0.14),x),B.m,x,x,new A.aw(this.b.c,x,x,t,x,x,x,B.t),x,x,x,x,B.cZ,x,x,x)],p),B.y,x,B.dc,B.j,x),B.N],p)
 B.b.I(p,J.cE(w,new C.agQ(v),y.l))
 return new A.ak(B.hk,F.lZ(A.au(p,B.o,B.i,B.j),x,x),x)},
-$S:687}
+$S:688}
 C.agQ.prototype={
 $1(d){var x=null,w=this.a,v=y.O.a(A.C(w).c.h(0,A.Q(y.Y)))
 v=A.y(v.r,v.f,0.82)
 v.toString
 return new A.ak(B.o6,A.bt(A.a([H.AW,A.bQ(A.a2(d,x,x,A.b_(w,16,v,1.65,B.l),x),1)],y.p),B.o,x,B.i,B.j,x),x)},
-$S:69}
+$S:81}
 C.ah_.prototype={
 $0(){return A.bW(this.a).bC("/profile/timeline",null)},
 $S:0}
@@ -173,14 +173,14 @@ case 4:x=7
 return A.P(A.k5(u),$async$$0)
 case 7:case 5:case 3:return A.S(null,w)}})
 return A.T($async$$0,w)},
-$S:25};(function inheritance(){var x=a.inheritMany
+$S:24};(function inheritance(){var x=a.inheritMany
 x(A.a0,[C.rx,C.tQ,C.yh])
 x(A.js,[C.agR,C.agS,C.agW,C.agY,C.ah_,C.awS])
-x(A.fd,[C.agT,C.agU,C.agV,C.agZ,C.agQ,C.awR])
+x(A.fe,[C.agT,C.agU,C.agV,C.agZ,C.agQ,C.awR])
 x(A.nf,[C.agX,C.ah0])})()
 A.lc(b.typeUniverse,JSON.parse('{"yh":{"a0":[],"e":[]},"rx":{"a0":[],"e":[]},"tQ":{"a0":[],"e":[]}}'))
 var y=(function rtii(){var x=A.a1
-return{w:x("av<i,i>"),p:x("p<e>"),a:x("L<i>"),N:x("ap<i,o>"),P:x("ap<i,@>"),M:x("G<ap<i,@>,@>"),Y:x("d_"),r:x("b8<ap<i,@>>"),l:x("e"),S:x("m"),O:x("d_?"),H:x("~")}})();(function constants(){var x=a.makeConstList
+return{w:x("av<i,i>"),p:x("p<e>"),a:x("M<i>"),N:x("ap<i,o>"),P:x("ap<i,@>"),M:x("G<ap<i,@>,@>"),Y:x("d_"),r:x("b8<ap<i,@>>"),l:x("e"),S:x("m"),O:x("d_?"),H:x("~")}})();(function constants(){var x=a.makeConstList
 D.Gm=new A.aa(0,40,0,80)
 D.dZ={title:0,date:1,description:2,organization:3}
 D.Nt=new A.av(D.dZ,['"Evident Value" Contributor',"2025",'Recognised as a cross-squad contributor demonstrating "evident value" with transferrable skills across away teams.',"Product Owner, Allica Bank"],y.w)
@@ -195,4 +195,4 @@ D.TE=new G.Ei(3,16,16,0.8)
 D.Za=new A.fL("View Full Stack \u2192",null,null,null,null,null,null,null)
 D.Zc=new A.fL("View All Projects \u2192",null,null,null,null,null,null,null)
 D.Zd=new A.fL("Read Full History \u2192",null,null,null,null,null,null,null)})()};
-(a=>{a["GxW+w2PqMsrpo9l26UZMvjKGtfA="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["7dlRvgU7dcdkK6M2A7SngdmEC9c="]=a.current})($__dart_deferred_initializers__);

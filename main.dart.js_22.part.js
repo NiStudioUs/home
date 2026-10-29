@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,C,E,F,D={
-aYN(){return new D.t3(null)},
+aYP(){return new D.t3(null)},
 t3:function t3(d){this.a=d},
 amd:function amd(d,e){this.a=d
 this.b=e},
@@ -50,13 +50,13 @@ m=A.N(m,m.$ti.i("a3.E"))
 C.b.I(s,A.a([C.N,A.hd(C.w,m,C.b_,8,8)],q))}return new E.eo(l,x,G.lZ(A.au(s,C.o,C.i,C.j),o,o))},
 $S:z+0}
 D.amc.prototype={
-$1(d){var x=null,w=this.a,v=A.bm(4),u=A.cf(w.e,1),t=this.b
+$1(d){var x=null,w=this.a,v=A.bm(4),u=A.cg(w.e,1),t=this.b
 return A.ay(x,A.a2(J.dG(d),x,x,A.aC(t,11.84,C.r,y.m.a(A.C(t).c.h(0,A.Q(y.a))).w,1,0.14),x),C.m,x,x,new A.aw(w.a,x,u,v,x,x,x,C.t),x,x,x,x,C.cZ,x,x,x)},
-$S:689};(function inheritance(){var x=a.inherit,w=a.inheritMany
+$S:690};(function inheritance(){var x=a.inherit,w=a.inheritMany
 x(D.t3,A.a0)
-w(A.fd,[D.amd,D.amc])})()
+w(A.fe,[D.amd,D.amc])})()
 A.lc(b.typeUniverse,JSON.parse('{"t3":{"a0":[],"e":[]}}'))
-var y={v:A.a1("av<i,@>"),j:A.a1("cB"),x:A.a1("p<i>"),u:A.a1("p<e>"),i:A.a1("L<@>"),h:A.a1("G<ap<i,@>,eo>"),a:A.a1("d_"),m:A.a1("d_?")};(function constants(){var x=a.makeConstList
+var y={v:A.a1("av<i,@>"),j:A.a1("cB"),x:A.a1("p<i>"),u:A.a1("p<e>"),i:A.a1("M<@>"),h:A.a1("G<ap<i,@>,eo>"),a:A.a1("d_"),m:A.a1("d_?")};(function constants(){var x=a.makeConstList
 B.cG={year:0,company:1,project:2,description:3,tags:4}
 B.LL=x(["Retail Banking","Automation Web & API"],y.x)
 B.NN=new A.av(B.cG,["2017","First Steps","Retail Banking","I started out on the ground floor of enterprise retail banking, diving deep into the messy reality of legacy systems. I quickly learned that reliable software isn't just about writing code\u2014it's about rigorous validation and understanding the complex business rules behind every transaction.",B.LL],y.v)
@@ -75,4 +75,4 @@ B.NQ=new A.av(B.cG,["January 2026","Experimentation","Gen AI Projects","Curious 
 B.Ky=x(["BLoC","Drift","Local Processing"],y.x)
 B.NL=new A.av(B.cG,["2026","Mobile Product","SMS Stack","For my latest mobile product, I wanted to tackle heavy on-device data processing. I engineered a robust Flutter app utilizing Drift/SQLite, pushing the boundaries of what a modern mobile processor can handle locally without compromising user privacy or battery life.",B.Ky],y.v)
 B.JZ=x([B.NN,B.NM,B.NO,B.NK,B.NP,B.NJ,B.NQ,B.NL],A.a1("p<ap<i,@>>"))})()};
-(a=>{a["p2iq3m6840fDkcQnCViRhEAcabA="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["A0OmGLMI8nCUCnL5WZXop/4ltIs="]=a.current})($__dart_deferred_initializers__);
