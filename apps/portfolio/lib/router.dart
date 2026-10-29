@@ -150,6 +150,17 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
+        // Legacy/mistyped Play Store listing links — keep these working
+        // without needing a Play Console re-submission. Remove once the
+        // Play Store listing is updated to the canonical /apps/:id URLs.
+        GoRoute(
+          path: '/app/sms_stack_manager/privacy',
+          redirect: (context, state) => '/apps/sms-stack/privacy',
+        ),
+        GoRoute(
+          path: '/app/sms_stack_manager/terms',
+          redirect: (context, state) => '/apps/sms-stack/terms',
+        ),
         GoRoute(
           path: '/howto',
           builder: (context, state) => const HowtoHubPage(),
