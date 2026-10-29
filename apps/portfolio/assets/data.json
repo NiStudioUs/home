@@ -1794,8 +1794,15 @@
       "shortDescription": "Alarms, timers, reminders & routines — with widgets and voice shortcuts.",
       "fullDescription": "Alarm Clock brings every time-based tool into one fast, local-first app: reliable alarms with a bright full-screen ring screen, timers, a stopwatch, reminders, and location-aware work routines. Home-screen widgets stay in sync with your device's wallpaper colors (Material You), and a voice shortcut bar lets you create alarms, timers and reminders just by talking. No account, no cloud sync, no ads — everything lives on your device.",
       "iconUrl": "assets/images/alarm-clock/icon.webp",
-      "status": "IN DEV",
-      "statusColor": "amber",
+      "status": "Internal testing",
+      "statusColor": "blue",
+      "milestones": [
+        {
+          "date": "2026-10-29 18:19",
+          "title": "Published to Internal Testing",
+          "description": "Alarm Clock is now available on Google Play's Internal Testing track, ahead of a wider public release."
+        }
+      ],
       "demoUrl": "/home/app/alarm-clock/demo/",
       "descriptionImages": [],
       "features": [

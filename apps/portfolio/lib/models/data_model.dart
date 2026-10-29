@@ -165,6 +165,7 @@ class AppModel {
   final String status;
   final String statusColor;
   final String demoUrl;
+  final List<MilestoneModel> milestones;
   
   String get shortName => name;
 
@@ -185,6 +186,7 @@ class AppModel {
     this.status = '',
     this.statusColor = '',
     this.demoUrl = '',
+    this.milestones = const [],
   });
 
   factory AppModel.fromJson(Map<String, dynamic> json) {
@@ -213,6 +215,9 @@ class AppModel {
       status: json['status'] as String? ?? '',
       statusColor: json['statusColor'] as String? ?? '',
       demoUrl: json['demoUrl'] as String? ?? '',
+      milestones: (json['milestones'] as List? ?? [])
+          .map((e) => MilestoneModel.fromJson(e))
+          .toList(),
     );
   }
 }
@@ -304,7 +309,7 @@ class FeatureImage {
   final String url;
   final String caption;
 
-  FeatureImage({required this.url, this.caption = ''});
+  const FeatureImage({required this.url, this.caption = ''});
 
   factory FeatureImage.fromJson(dynamic json) {
     if (json is String) {
@@ -315,7 +320,59 @@ class FeatureImage {
         caption: json['caption'] as String? ?? '',
       );
     }
-    return FeatureImage(url: '');
+    return const FeatureImage(url: '');
+  }
+}
+
+class MilestoneModel {
+  final String date; // ISO 'YYYY-MM-DD'
+  final String title;
+  final String description;
+  final FeatureImage screenshot; // FeatureImage(url:'') = no screenshot
+
+  MilestoneModel({
+    required this.date,
+    required this.title,
+    required this.description,
+    this.screenshot = const FeatureImage(url: ''),
+  });
+
+  factory MilestoneModel.fromJson(Map<String, dynamic> json) {
+    return MilestoneModel(
+      date: json['date'] as String? ?? '',
+      title: json['title'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      screenshot: json['screenshot'] != null
+          ? FeatureImage.fromJson(json['screenshot'])
+          : const FeatureImage(url: ''),
+    );
+  }
+
+  DateTime get parsedDate => DateTime.tryParse(date) ?? DateTime(1970);
+
+  String get formattedDate {
+    if (date.isEmpty) return '';
+    final dt = DateTime.tryParse(date);
+    if (dt == null) return date;
+
+    const months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+    final month = months[dt.month - 1];
+    final day = dt.day;
+    final year = dt.year;
+
+    final hasTime = date.contains(':');
+    if (!hasTime) {
+      return '$month $day, $year';
+    }
+
+    final hour = dt.hour == 0 ? 12 : (dt.hour > 12 ? dt.hour - 12 : dt.hour);
+    final minute = dt.minute.toString().padLeft(2, '0');
+    final ampm = dt.hour >= 12 ? 'PM' : 'AM';
+
+    return '$month $day, $year • $hour:$minute $ampm';
   }
 }
 

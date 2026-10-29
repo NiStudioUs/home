@@ -7,6 +7,7 @@ import '../design_tokens.dart';
 import '../widgets/home_hero.dart';
 import '../widgets/home_features.dart';
 import '../widgets/home_apps.dart';
+import '../widgets/home_milestones.dart';
 import '../widgets/home_learning.dart';
 import '../widgets/contact_card.dart';
 import '../widgets/stats_row.dart';
@@ -92,6 +93,14 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: sectionPadding),
               child: const HomeApps(),
+            ),
+            
+            // Milestones
+            Container(
+              key: AppScrollKeys.milestonesKey,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: sectionPadding),
+              child: const HomeMilestones(),
             ),
             
             // Learning Lab (Alt Section)
