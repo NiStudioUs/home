@@ -1,4 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../services/current_app_service.dart';
 import '../design_tokens.dart';
 import 'footer.dart';
 import 'sticky_container.dart';
@@ -8,6 +11,7 @@ class DocLayout extends StatefulWidget {
   final String? subtitle;
   final List<String> tocItems;
   final List<Widget> sections;
+  final List<GlobalKey>? headingKeys;
   final Widget? bottomContent;
 
   const DocLayout({
@@ -16,6 +20,7 @@ class DocLayout extends StatefulWidget {
     this.subtitle,
     required this.tocItems,
     required this.sections,
+    this.headingKeys,
     this.bottomContent,
   });
 
@@ -28,12 +33,51 @@ class _DocLayoutState extends State<DocLayout> {
   final ScrollController _scrollController = ScrollController();
   late List<GlobalKey> _keys;
   double _scrollY = 0;
+  StreamSubscription<String>? _navSub;
+
+  List<GlobalKey> get _effectiveKeys => widget.headingKeys ?? _keys;
 
   @override
   void initState() {
     super.initState();
     _keys = List.generate(widget.sections.length, (_) => GlobalKey());
     _scrollController.addListener(_onScroll);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      try {
+        final currentAppService = Provider.of<CurrentAppService>(context, listen: false);
+        _navSub = currentAppService.navigationEvents.listen((title) {
+          final index = widget.tocItems.indexOf(title);
+          if (index != -1) {
+            _scrollTo(index);
+          }
+        });
+      } catch (_) {}
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant DocLayout oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.sections.length != oldWidget.sections.length) {
+      _keys = List.generate(widget.sections.length, (_) => GlobalKey());
+    }
+  }
+
+  void _scrollTo(int index) {
+    final keys = _effectiveKeys;
+    if (index < 0 || index >= keys.length) return;
+    setState(() => _activeIndex = index);
+    final key = keys[index];
+    if (key.currentContext != null) {
+      Scrollable.ensureVisible(
+        key.currentContext!,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeInOut,
+        alignment: 0.5,
+      );
+    }
   }
 
   void _onScroll() {
@@ -41,26 +85,38 @@ class _DocLayoutState extends State<DocLayout> {
     setState(() {
       _scrollY = _scrollController.offset;
     });
-    
-    // Scroll Spy
-    for (int i = 0; i < _keys.length; i++) {
-      final key = _keys[i];
+
+    final viewportHeight = MediaQuery.of(context).size.height;
+    final centerTarget = viewportHeight / 2;
+    int closestIndex = _activeIndex;
+    double minDistance = double.infinity;
+
+    final keys = _effectiveKeys;
+    for (int i = 0; i < keys.length; i++) {
+      final key = keys[i];
       if (key.currentContext != null) {
-        final box = key.currentContext!.findRenderObject() as RenderBox;
-        final position = box.localToGlobal(Offset.zero);
-        if (position.dy > 0 && position.dy < 300) {
-          if (_activeIndex != i) {
-            setState(() {
-              _activeIndex = i;
-            });
+        final box = key.currentContext!.findRenderObject() as RenderBox?;
+        if (box != null && box.hasSize) {
+          final position = box.localToGlobal(Offset.zero);
+          final distance = (position.dy - centerTarget).abs();
+          if (position.dy <= centerTarget + 120 && distance < minDistance) {
+            minDistance = distance;
+            closestIndex = i;
           }
         }
       }
+    }
+
+    if (_activeIndex != closestIndex) {
+      setState(() {
+        _activeIndex = closestIndex;
+      });
     }
   }
 
   @override
   void dispose() {
+    _navSub?.cancel();
     _scrollController.dispose();
     super.dispose();
   }
@@ -79,22 +135,13 @@ class _DocLayoutState extends State<DocLayout> {
           final i = entry.key;
           final title = entry.value;
           final isActive = i == _activeIndex;
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() => _activeIndex = i);
-                  if (_keys[i].currentContext != null) {
-                    Scrollable.ensureVisible(
-                      _keys[i].currentContext!,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                      alignment: 0.1,
-                    );
-                  }
-                },
+          return MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => _scrollTo(i),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
                 child: Text(
                   title,
                   style: NiType.muted(context, 13.76).copyWith(

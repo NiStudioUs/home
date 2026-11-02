@@ -1,9 +1,10 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../widgets/sticky_container.dart';
+import '../../services/current_app_service.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import '../widgets/footer.dart';
@@ -267,9 +268,7 @@ class _AppGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = NiTokens.of(context);
-    
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: ScrollConfiguration(
         behavior: const MaterialScrollBehavior().copyWith(
@@ -451,6 +450,7 @@ class _AppFeaturesState extends State<_AppFeatures> {
   late List<GlobalKey> _keys;
   final GlobalKey _rowKey = GlobalKey();
   double _stickyOffset = 0;
+  StreamSubscription<String>? _navSub;
 
   String _slugify(String text) {
     return text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-').replaceAll(RegExp(r'^-+|-+$'), '');
@@ -465,6 +465,33 @@ class _AppFeaturesState extends State<_AppFeatures> {
        AppScrollKeys.featureKeys['${widget.app.id}-${_slugify(visibleFeatures[i].title)}'] = _keys[i];
     }
     widget.scrollController.addListener(_onScroll);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      try {
+        final currentAppService = Provider.of<CurrentAppService>(context, listen: false);
+        _navSub = currentAppService.navigationEvents.listen((title) {
+          final visible = widget.app.features.where((f) => f.hide != true).toList();
+          final index = visible.indexWhere((f) => f.title == title);
+          if (index != -1 && index < _keys.length && _keys[index].currentContext != null) {
+            setState(() => _activeIndex = index);
+            Scrollable.ensureVisible(
+              _keys[index].currentContext!,
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeInOut,
+              alignment: 0.5,
+            );
+          }
+        });
+      } catch (_) {}
+    });
+  }
+
+  @override
+  void dispose() {
+    _navSub?.cancel();
+    widget.scrollController.removeListener(_onScroll);
+    super.dispose();
   }
 
   void _onScroll() {
@@ -491,19 +518,30 @@ class _AppFeaturesState extends State<_AppFeatures> {
     });
     
     // Scroll Spy
+    final viewportHeight = MediaQuery.of(context).size.height;
+    final centerTarget = viewportHeight / 2;
+    int closestIndex = _activeIndex;
+    double minDistance = double.infinity;
+
     for (int i = 0; i < _keys.length; i++) {
       final key = _keys[i];
       if (key.currentContext != null) {
-        final box = key.currentContext!.findRenderObject() as RenderBox;
-        final position = box.localToGlobal(Offset.zero);
-        if (position.dy > 0 && position.dy < 300) {
-          if (_activeIndex != i) {
-            setState(() {
-              _activeIndex = i;
-            });
+        final box = key.currentContext!.findRenderObject() as RenderBox?;
+        if (box != null && box.hasSize) {
+          final position = box.localToGlobal(Offset.zero);
+          final distance = (position.dy - centerTarget).abs();
+          if (position.dy <= centerTarget + 150 && distance < minDistance) {
+            minDistance = distance;
+            closestIndex = i;
           }
         }
       }
+    }
+
+    if (_activeIndex != closestIndex) {
+      setState(() {
+        _activeIndex = closestIndex;
+      });
     }
   }
 
@@ -525,22 +563,23 @@ class _AppFeaturesState extends State<_AppFeatures> {
           final i = entry.key;
           final title = entry.value.title;
           final isActive = i == _activeIndex;
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() => _activeIndex = i);
-                  if (_keys[i].currentContext != null) {
-                    Scrollable.ensureVisible(
-                      _keys[i].currentContext!,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                      alignment: 0.1,
-                    );
-                  }
-                },
+          return MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                setState(() => _activeIndex = i);
+                if (_keys[i].currentContext != null) {
+                  Scrollable.ensureVisible(
+                    _keys[i].currentContext!,
+                    duration: const Duration(milliseconds: 350),
+                    curve: Curves.easeInOut,
+                    alignment: 0.5,
+                  );
+                }
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
                 child: Text(
                   title,
                   style: NiType.muted(context, 13.76).copyWith(
@@ -614,7 +653,6 @@ class _FeatureDeepDive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = NiTokens.of(context);
     final isMobile = NiTokens.isMobile(context);
     
     // We expect the first section to have the content for the deep dive

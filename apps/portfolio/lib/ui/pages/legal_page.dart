@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
@@ -51,8 +50,6 @@ class _LegalPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = NiTokens.of(context);
-    
     String? lastUpdated;
     if (pageType == PageType.privacy) {
       lastUpdated = app.privacyPolicy.lastUpdatedUtc;
@@ -60,7 +57,7 @@ class _LegalPageContent extends StatelessWidget {
       lastUpdated = app.termsAndConditions.lastUpdatedUtc;
     }
     
-    String subtitle = 'For ${app.name}';
+    String subtitle = 'For ${app.name} · Published by NiStudioUs';
     if (lastUpdated != null && lastUpdated.isNotEmpty) {
       try {
         final d = DateTime.parse(lastUpdated);
@@ -72,12 +69,17 @@ class _LegalPageContent extends StatelessWidget {
     }
 
     final tocItems = features.map((f) => f.title).toList();
+    final headingKeys = List.generate(features.length, (_) => GlobalKey());
 
     return DocLayout(
       title: title,
       subtitle: subtitle,
       tocItems: tocItems,
-      sections: features.map((f) => _LegalSection(feature: f)).toList(),
+      headingKeys: headingKeys,
+      sections: features.asMap().entries.map((e) => _LegalSection(
+        feature: e.value,
+        headingKey: headingKeys[e.key],
+      )).toList(),
       bottomContent: const ContactCard(isSmall: true),
     );
   }
@@ -85,8 +87,9 @@ class _LegalPageContent extends StatelessWidget {
 
 class _LegalSection extends StatelessWidget {
   final AppFeature feature;
+  final Key? headingKey;
 
-  const _LegalSection({required this.feature});
+  const _LegalSection({required this.feature, this.headingKey});
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +100,10 @@ class _LegalSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(feature.title, style: NiType.h2(context)),
+          Container(
+            key: headingKey,
+            child: Text(feature.title, style: NiType.h2(context)),
+          ),
           const SizedBox(height: 24),
           ...feature.sections.map((sec) => Padding(
             padding: const EdgeInsets.only(bottom: 32),
