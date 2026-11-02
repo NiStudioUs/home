@@ -763,13 +763,13 @@
             },
             {
               "title": "How to Setup",
-              "content": "1.  Go to **Settings** -> **Data Control**.\n2.  Tap **\"Backup & Restore\"**.\n3.  Sign in with Google.\n4.  Set an Encryption Password.\n5.  Tap **\"Sync Now\"**.",
+              "content": "1.  Go to **Settings** -> **Cloud Backup**.\n2.  Sign in with your Google Account.\n3.  Set a secure Encryption Password.\n4.  Tap **\"Sync Now\"**.",
               "imageRenderer": "default",
               "images": []
             },
             {
               "title": "Managing Your Data",
-              "content": "You retain full control over your cloud data. To delete it permanently:\n1.  Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2.  Click **Manage Apps** on the left.\n3.  Find **SMS Stack**.\n4.  Click **Options** -> **Delete hidden app data**.",
+              "content": "You retain full control over your cloud data. To delete it permanently:\n\n**Option 1: In the App (Instant)**\n1. Open SMS Stack and navigate to **Settings** -> **Cloud Backup**.\n2. Scroll down to the **Danger Zone**.\n3. Tap **Delete Backup** and confirm. This permanently removes your encrypted backup snapshot from your Google Drive `appDataFolder` and clears local backup markers.\n\n**Option 2: From Google Drive on the Web**\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings).\n2. Click **Manage Apps** on the left menu.\n3. Find **SMS Stack**.\n4. Click **Options** -> **Delete hidden app data**.",
               "imageRenderer": "default",
               "images": []
             }
@@ -967,9 +967,21 @@
       ],
       "privacyPolicy": {
         "url": "",
-        "lastUpdatedUtc": "2026-09-03T00:00:00Z",
+        "lastUpdatedUtc": "2026-11-02T00:00:00Z",
         "limitUseDisclosure": "SMS Stack's use and transfer to any other app of information received from Google APIs will adhere to <a href=\"https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes\" target=\"_blank\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
         "features": [
+          {
+            "title": "Application & Developer Identification",
+            "subtitle": "Google Play Identity Disclosure",
+            "sections": [
+              {
+                "title": "Identity & Scope",
+                "content": "This Privacy Policy applies to the mobile application **SMS Stack** (Package Name: `com.ni.studio.sms_stack_manager`), published on the Google Play Store.\n\n* **Application Name**: SMS Stack\n* **Package Name**: com.ni.studio.sms_stack_manager\n* **Developer / Publisher**: Ni Studios Us (also operating as NiStudioUs)\n* **Developer Profile**: [Ni Studios Us on Google Play](https://play.google.com/store/apps/developer?id=Ni+Studios)\n* **Contact Email**: ni.studio.us@outlook.com\n* **Website**: [https://nistudious.github.io/home/](https://nistudious.github.io/home/)\n* **Country**: India\n\nThis policy explains how Ni Studios Us collects, uses, stores, and protects user data when you use the SMS Stack application.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
           {
             "title": "Limited Use Policy",
             "subtitle": "Google Restricted Scopes",
@@ -1060,7 +1072,7 @@
               },
               {
                 "title": "System Integrations",
-                "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for new messages.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise notifications for Bill Due Dates.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the App Lock feature to secure your data.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to restart our processing service (listeners) after you restart your phone.",
+                "content": "*   **Notifications (`POST_NOTIFICATIONS`)**: Required to post alerts for incoming messages and transaction events.\n*   **Alarms (`SCHEDULE_EXACT_ALARM`)**: Required to schedule precise reminders for upcoming Bill Due Dates.\n*   **Foreground Service & Data Sync (`FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC`)**: Runs the dedicated `SyncForegroundService` while encrypting, compressing, and uploading or downloading your cloud backup snapshot. This guarantees that backup and restore operations complete safely without being killed by the Android system if you switch apps or lock your screen.\n*   **Battery Optimization Exemption (`REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`)**: Used optionally to prevent aggressive OEM background app killers from silencing scheduled bill reminders and interrupting automated backups.\n*   **Biometric (`USE_BIOMETRIC`)**: Used for the optional App Lock feature to authenticate you and safeguard sensitive financial views.\n*   **Vibration (`VIBRATE`)**: Used for tactile feedback on high-priority alerts and notifications.\n*   **Boot Completed (`RECEIVE_BOOT_COMPLETED`)**: Required to re-register scheduled bill reminder alarms and SMS broadcast listeners after your phone restarts.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -1096,7 +1108,7 @@
             "sections": [
               {
                 "title": "Google Drive Sync",
-                "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your Google Drive.\n**We cannot decrypt or read your data.**\n\n**To Delete Cloud Data**:\n1. Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> **Manage Apps**.\n2. Find **SMS Stack** -> **Options** -> **Delete hidden app data**.",
+                "content": "If you enable Cloud Backup:\n1.  Your data is serialized to JSON and GZIP compressed.\n2.  Data is **End-to-End Encrypted** (AES-256-GCM) locally before upload using a key derived from your custom password.\n3.  The encrypted file is uploaded to a hidden `appDataFolder` in your personal Google Drive storage.\n**We cannot decrypt or read your data.**\n\n### How to Delete Your Cloud Data\nYou can permanently delete your cloud backup data at any time via two simple methods:\n\n*   **Directly in the App**: Open **Settings** -> **Cloud Backup** -> scroll to the **Danger Zone** -> tap **Delete Backup**. This immediately and permanently deletes the encrypted backup file (`sms_stack_backup.enc` and historical rotation slots) from your Google Drive `appDataFolder` and clears local backup state.\n*   **Via Google Drive on the Web**: Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -> click **Manage Apps** -> locate **SMS Stack** -> click **Options** -> choose **Delete hidden app data**.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -1114,7 +1126,7 @@
             "sections": [
               {
                 "title": "User Control",
-                "content": "*   **Access**: You have full access to view all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data. You can delete cloud backups via your Google Drive settings.\n*   **Breach Notification**: In the unlikely event of a local data breach (e.g., OS compromise), we will notify you via app notification if technically feasible.",
+                "content": "*   **Access**: You have full access to view, search, export, and manage all processed data within the app.\n*   **Erasure**: Uninstalling the app instantly and permanently deletes all local data and SQLite databases. You can permanently delete your cloud backups at any time directly in the app at **Settings > Cloud Backup > Delete Backup**, or via Google Drive settings (**Manage Apps > Delete hidden app data**).\n*   **Breach Notification**: In the unlikely event of a security incident, we will notify you promptly via in-app alerts if technically feasible.",
                 "imageRenderer": "default",
                 "images": []
               },
@@ -1138,7 +1150,7 @@
             "sections": [
               {
                 "title": "Grievance Officer",
-                "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studio Us\n*   **Email**: [ni.studio.us@outlook.com]\n*   **Address**: [Chennimalai, Erode, Tamil Nadu, India]",
+                "content": "In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:\n\n*   **Name**: Ni Studios Us (also operating as NiStudioUs)\n*   **Email**: ni.studio.us@outlook.com\n*   **Website**: [https://nistudious.github.io/home/](https://nistudious.github.io/home/)\n*   **Country**: India",
                 "imageRenderer": "default",
                 "images": []
               }
