@@ -64,17 +64,19 @@ class _HowToPageContent extends StatelessWidget {
     final title = 'How to use ${app.name}';
     final tocItems = app.features.map((f) => f.title).toList();
     final tokens = NiTokens.of(context);
+    final headingKeys = List.generate(app.features.length, (_) => GlobalKey());
 
     return DocLayout(
       title: title,
       tocItems: tocItems,
-      sections: app.features.map((f) => Container(
+      headingKeys: headingKeys,
+      sections: app.features.asMap().entries.map((e) => Container(
         decoration: BoxDecoration(
           border: Border(
             left: BorderSide(color: tokens.surface2, width: 2), // The timeline track
           ),
         ),
-        child: _TimelineStep(feature: f),
+        child: _TimelineStep(feature: e.value, headingKey: headingKeys[e.key]),
       )).toList(),
       bottomContent: const Padding(
         padding: EdgeInsets.only(top: 64),
@@ -86,8 +88,9 @@ class _HowToPageContent extends StatelessWidget {
 
 class _TimelineStep extends StatelessWidget {
   final AppFeature feature;
+  final Key? headingKey;
 
-  const _TimelineStep({required this.feature});
+  const _TimelineStep({required this.feature, this.headingKey});
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +119,10 @@ class _TimelineStep extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(feature.title, style: NiType.timelineH2(context)),
+              Container(
+                key: headingKey,
+                child: Text(feature.title, style: NiType.timelineH2(context)),
+              ),
               const SizedBox(height: 16),
               ...feature.sections.map((sec) => Padding(
                 padding: const EdgeInsets.only(bottom: 24),
@@ -230,7 +236,7 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
         ctx,
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeInOut,
-        alignment: 0.1,
+        alignment: 0.5,
       );
     }
   }
@@ -239,6 +245,7 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
   Widget build(BuildContext context) {
     final title = 'How to use ${widget.app.name}';
     final tocItems = _flatTopics.map((e) => e.topic.title).toList();
+    final headingKeys = _flatTopics.map((e) => _topicKeys[e.topic.id]!).toList();
     // Only show a feature-title heading above the first topic of each group
     // when there's more than one feature — today there's just "Events".
     final showFeatureHeadings = widget.howtoApp.features.length > 1;
@@ -262,6 +269,7 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
     return DocLayout(
       title: title,
       tocItems: tocItems,
+      headingKeys: headingKeys,
       sections: sections,
       bottomContent: const Padding(
         padding: EdgeInsets.only(top: 64),
