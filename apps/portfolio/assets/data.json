@@ -2513,6 +2513,18 @@
       ],
       "screenshots": [
         {
+          "url": "assets/images/edgewise/anim-lock-effects-wipe.webp",
+          "caption": "Live: heart matrix, then vertical and horizontal line wipes"
+        },
+        {
+          "url": "assets/images/edgewise/anim-matrix-scribble.webp",
+          "caption": "Live: a scribble, drawn and locked"
+        },
+        {
+          "url": "assets/images/edgewise/anim-matrix-note.webp",
+          "caption": "Live: \"I love you\", drawn in dots"
+        },
+        {
           "url": "assets/images/edgewise/playstore_screen-1-gestures.webp",
           "caption": "One handle, four gestures"
         },
@@ -2533,10 +2545,6 @@
           "caption": "Animated wipe transitions"
         },
         {
-          "url": "assets/images/edgewise/anim-lock-effects-wipe.webp",
-          "caption": "Live: vertical and horizontal line wipes"
-        },
-        {
           "url": "assets/images/edgewise/playstore_screen-4-matrix-emoji.webp",
           "caption": "Dot-matrix emoji lock effect"
         },
@@ -2549,16 +2557,8 @@
           "caption": "Draw your own scribble"
         },
         {
-          "url": "assets/images/edgewise/anim-matrix-scribble.webp",
-          "caption": "Live: a scribble, drawn and locked"
-        },
-        {
           "url": "assets/images/edgewise/playstore_screen-6-matrix-position.webp",
           "caption": "A dot-matrix note, drawn like a sign-off"
-        },
-        {
-          "url": "assets/images/edgewise/anim-matrix-note.webp",
-          "caption": "Live: \"I love you\", drawn in dots"
         },
         {
           "url": "assets/images/edgewise/playstore_screen-7-widgets.webp",
