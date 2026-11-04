@@ -222,9 +222,14 @@
                 "Open Android **Settings → Accessibility → Edgewise**.",
                 "Turn the service toggle off and confirm Android's own dialog.",
                 "This immediately and fully revokes the permission at the OS level — Edgewise has no way to keep the gesture handle running once Android has revoked it.",
-                "A short video walkthrough of this exact flow is also available, for anyone who wants to see the whole withdrawal end-to-end before deciding to grant access in the first place."
+                "A short clip of this exact flow, shown below, walks through the whole withdrawal end-to-end for anyone who wants to see it before deciding to grant access in the first place."
               ],
-              "images": [],
+              "images": [
+                {
+                  "url": "assets/images/edgewise/anim-withdraw-consent.webp",
+                  "caption": "Withdrawing consent, start to finish"
+                }
+              ],
               "references": [
                 "withdraw-from-app"
               ]
