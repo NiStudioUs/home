@@ -555,6 +555,8 @@
       "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
       "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
       "iconUrl": "assets/images/app2/icon.png",
+      "status": "Live on Play Store",
+      "statusColor": "green",
       "descriptionImages": [
         {
           "url": "assets/images/app2/playstore_screen-1-app-launch-1.png",
