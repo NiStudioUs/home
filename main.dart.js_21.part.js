@@ -1,10 +1,10 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,C,E,F,D={
-aZZ(){return new D.tc(null)},
-tc:function tc(d){this.a=d},
-an5:function an5(d,e){this.a=d
+b_2(){return new D.td(null)},
+td:function td(d){this.a=d},
+an8:function an8(d,e){this.a=d
 this.b=e},
-an4:function an4(d,e){this.a=d
+an7:function an7(d,e){this.a=d
 this.b=e}},B,G
 J=c[1]
 A=c[0]
@@ -14,14 +14,14 @@ F=c[19]
 D=a.updateHolder(c[6],D)
 B=c[20]
 G=c[13]
-D.tc.prototype={
+D.td.prototype={
 C(d){var x,w,v=null,u=y.a,t=y.m,s=t.a(A.C(d).c.h(0,A.Q(u)))
 s.toString
 x=y.h
-w=A.N(new A.G(B.Ko,new D.an5(d,s),x),x.i("a3.E"))
-return A.fO(v,s.a,new A.fg(C.bx,v,v,new A.bL(C.a6,new A.af(F.hm,E.amx(E.agu(v,A.al(A.a([A.a0("Story",v,v,A.az(d,A.bR(d,27.2,3,38.4),C.r,v,1.12,-0.02),v),C.O,A.a0("The journey so far.",v,v,A.b_(d,A.bR(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.Q(u))).r,1.65,C.l),v)],y.u),C.o,C.f,C.h),w)),v),v),v))}}
+w=A.N(new A.G(B.Ko,new D.an8(d,s),x),x.i("a3.E"))
+return A.fO(v,s.a,new A.fg(C.bx,v,v,new A.bL(C.a6,new A.af(F.hm,E.amA(E.agw(v,A.al(A.a([A.a0("Story",v,v,A.az(d,A.bR(d,27.2,3,38.4),C.r,v,1.12,-0.02),v),C.O,A.a0("The journey so far.",v,v,A.b0(d,A.bR(d,16.8,1.6,19.52),t.a(A.C(d).c.h(0,A.Q(u))).r,1.65,C.l),v)],y.u),C.o,C.f,C.h),w)),v),v),v))}}
 var z=a.updateTypes(["et(aq<i,@>)"])
-D.an5.prototype={
+D.an8.prototype={
 $1(d){var x,w,v,u,t,s,r,q,p,o=null,n="tags",m=d.h(0,"project"),l=m==null?d.h(0,"title"):m
 if(l==null)l=""
 x=d.h(0,"year")
@@ -36,25 +36,25 @@ s=y.a
 r=y.m
 q=y.u
 t=A.bm(A.a([v,A.ax(o,A.a0(x,o,o,A.az(m,11.84,C.r,r.a(A.C(m).c.h(0,A.Q(s))).w,1,0.14),o),C.m,o,o,new A.at(u.c,o,o,t,o,o,o,C.t),o,o,o,o,C.d_,o,o,o)],q),C.w,o,C.dd,C.h,o)
-v=A.a0(w,o,o,A.b_(m,16,r.a(A.C(m).c.h(0,A.Q(s))).r,1.65,C.l),o)
+v=A.a0(w,o,o,A.b0(m,16,r.a(A.C(m).c.h(0,A.Q(s))).r,1.65,C.l),o)
 p=d.h(0,"description")
 if(p==null)p=d.h(0,"content")
 if(p==null)p=""
 s=r.a(A.C(m).c.h(0,A.Q(s)))
 s=A.y(s.r,s.f,0.82)
 s.toString
-s=A.a([t,C.fw,v,C.O,A.a0(p,o,o,A.b_(m,16,s,1.65,C.l),o)],q)
-if(d.ac(n)&&y.i.b(d.h(0,n))){m=J.cC(y.i.a(d.h(0,n)),new D.an4(u,m),y.j)
+s=A.a([t,C.fw,v,C.O,A.a0(p,o,o,A.b0(m,16,s,1.65,C.l),o)],q)
+if(d.ac(n)&&y.i.b(d.h(0,n))){m=J.cD(y.i.a(d.h(0,n)),new D.an7(u,m),y.j)
 m=A.N(m,m.$ti.i("a3.E"))
 C.b.I(s,A.a([C.O,A.hf(C.x,m,C.b0,8,8)],q))}return new E.et(l,x,G.m8(A.al(s,C.o,C.f,C.h),o,o))},
 $S:z+0}
-D.an4.prototype={
+D.an7.prototype={
 $1(d){var x=null,w=this.a,v=A.bg(4),u=A.cb(w.e,1),t=this.b
 return A.ax(x,A.a0(J.dF(d),x,x,A.az(t,11.84,C.r,y.m.a(A.C(t).c.h(0,A.Q(y.a))).w,1,0.14),x),C.m,x,x,new A.at(w.a,x,u,v,x,x,x,C.t),x,x,x,x,C.d_,x,x,x)},
-$S:702};(function inheritance(){var x=a.inherit,w=a.inheritMany
-x(D.tc,A.a2)
-w(A.fj,[D.an5,D.an4])})()
-A.lo(b.typeUniverse,JSON.parse('{"tc":{"a2":[],"e":[]}}'))
+$S:704};(function inheritance(){var x=a.inherit,w=a.inheritMany
+x(D.td,A.a2)
+w(A.fj,[D.an8,D.an7])})()
+A.lo(b.typeUniverse,JSON.parse('{"td":{"a2":[],"e":[]}}'))
 var y={v:A.a1("aw<i,@>"),j:A.a1("cW"),x:A.a1("o<i>"),u:A.a1("o<e>"),i:A.a1("M<@>"),h:A.a1("G<aq<i,@>,et>"),a:A.a1("d_"),m:A.a1("d_?")};(function constants(){var x=a.makeConstList
 B.cG={year:0,company:1,project:2,description:3,tags:4}
 B.Ma=x(["Retail Banking","Automation Web & API"],y.x)
@@ -74,4 +74,4 @@ B.Of=new A.aw(B.cG,["January 2026","Experimentation","Gen AI Projects","Curious 
 B.KY=x(["BLoC","Drift","Local Processing"],y.x)
 B.Oa=new A.aw(B.cG,["2026","Mobile Product","SMS Stack","For my latest mobile product, I wanted to tackle heavy on-device data processing. I engineered a robust Flutter app utilizing Drift/SQLite, pushing the boundaries of what a modern mobile processor can handle locally without compromising user privacy or battery life.",B.KY],y.v)
 B.Ko=x([B.Oc,B.Ob,B.Od,B.O9,B.Oe,B.O8,B.Of,B.Oa],A.a1("o<aq<i,@>>"))})()};
-(a=>{a["HlX1RCixSO6FlaVQ7ZR5Hsjzx/8="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["topSkUM0zFGoRuHzaVXyAD9ojCs="]=a.current})($__dart_deferred_initializers__);

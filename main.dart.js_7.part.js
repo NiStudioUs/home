@@ -1,18 +1,18 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,D={
-aDk(d){var x=0,w=B.V(y.e),v
-var $async$aDk=B.W(function(e,f){if(e===1)return B.S(f,w)
-for(;;)switch(x){case 0:v=$.aIQ().W7(d.k(0))
+aDn(d){var x=0,w=B.V(y.e),v
+var $async$aDn=B.W(function(e,f){if(e===1)return B.S(f,w)
+for(;;)switch(x){case 0:v=$.aIU().W9(d.k(0))
 x=1
 break
 case 1:return B.T(v,w)}})
-return B.U($async$aDk,w)}},A
+return B.U($async$aDn,w)}},A
 B=c[0]
 C=c[2]
 D=a.updateHolder(c[10],D)
 A=c[15]
 var z=a.updateTypes([])
-var y={f:B.a1("aw<i,@>"),h:B.a1("o<i>"),e:B.a1("B")};(function constants(){var x=a.makeConstList
+var y={f:B.a1("aw<i,@>"),h:B.a1("o<i>"),e:B.a1("A")};(function constants(){var x=a.makeConstList
 A.df={id:0,name:1,status:2,description:3,version:4,packageCount:5,demoUrl:6,liveUrl:7,tags:8}
 A.L3=x(["TypeScript","Cypress","Playwright","Azure Key Vault","MSAL / JWT","Azure Artifacts"],y.h)
 A.Ol=new B.aw(A.df,["shared-e2e","@allica/shared-e2e Automation Platform","Enterprise Live","Enterprise E2E test automation npm library distributed via Azure Artifacts across 4 engineering squads. Features automated Azure Key Vault secret retrieval, local MSAL mock server for role-based JWT generation, and standardized authentication.","2.4.0",0,"","None",A.L3],y.f)
@@ -29,16 +29,16 @@ A.Oi=new B.aw(A.df,["dev-home","Developer Home","Internal Beta","A new Flutter p
 A.IS=x(["React Native","Gen-AI"],y.h)
 A.On=new B.aw(A.df,["learning-gen-ai","Learning gen-AI","Live","A React + MUI monorepo exploring AI-assisted UI patterns across 4 learning chapters (chapter-2 through chapter-4) using Vite, TypeScript, Framer Motion, Recharts, and Leaflet.","0.0.0",0,"","None",A.IS],y.f)
 A.l9=x([A.Ol,A.Oh,A.Ok,A.Oj,A.Om,A.Oi,A.On],B.a1("o<aq<i,@>>"))
-A.Fr=new B.x(1,0.9098039215686274,0.9607843137254902,0.9137254901960784,C.e)
-A.EF=new B.x(1,0.7843137254901961,0.9019607843137255,0.788235294117647,C.e)
-A.Fk=new B.x(1,0.6470588235294118,0.8392156862745098,0.6549019607843137,C.e)
-A.Fx=new B.x(1,0.5058823529411764,0.7803921568627451,0.5176470588235295,C.e)
-A.F4=new B.x(1,0.4,0.7333333333333333,0.41568627450980394,C.e)
-A.Ft=new B.x(1,0.2980392156862745,0.6862745098039216,0.3137254901960784,C.e)
-A.Fw=new B.x(1,0.2627450980392157,0.6274509803921569,0.2784313725490196,C.e)
-A.Ej=new B.x(1,0.2196078431372549,0.5568627450980392,0.23529411764705882,C.e)
-A.EU=new B.x(1,0.1803921568627451,0.49019607843137253,0.19607843137254902,C.e)
-A.Ey=new B.x(1,0.10588235294117647,0.3686274509803922,0.12549019607843137,C.e)
-A.OE=new B.dB([50,A.Fr,100,A.EF,200,A.Fk,300,A.Fx,400,A.F4,500,A.Ft,600,A.Fw,700,A.Ej,800,A.EU,900,A.Ey],B.a1("dB<l,x>"))
-A.cE=new B.vR(A.OE,1,0.2980392156862745,0.6862745098039216,0.3137254901960784,C.e)})()};
-(a=>{a["4wnTMMB+ldy4MvxDlQSvFhKC1Us="]=a.current})($__dart_deferred_initializers__);
+A.Fq=new B.x(1,0.9098039215686274,0.9607843137254902,0.9137254901960784,C.e)
+A.EE=new B.x(1,0.7843137254901961,0.9019607843137255,0.788235294117647,C.e)
+A.Fj=new B.x(1,0.6470588235294118,0.8392156862745098,0.6549019607843137,C.e)
+A.Fw=new B.x(1,0.5058823529411764,0.7803921568627451,0.5176470588235295,C.e)
+A.F3=new B.x(1,0.4,0.7333333333333333,0.41568627450980394,C.e)
+A.Fs=new B.x(1,0.2980392156862745,0.6862745098039216,0.3137254901960784,C.e)
+A.Fv=new B.x(1,0.2627450980392157,0.6274509803921569,0.2784313725490196,C.e)
+A.Ei=new B.x(1,0.2196078431372549,0.5568627450980392,0.23529411764705882,C.e)
+A.ET=new B.x(1,0.1803921568627451,0.49019607843137253,0.19607843137254902,C.e)
+A.Ex=new B.x(1,0.10588235294117647,0.3686274509803922,0.12549019607843137,C.e)
+A.OE=new B.dB([50,A.Fq,100,A.EE,200,A.Fj,300,A.Fw,400,A.F3,500,A.Fs,600,A.Fv,700,A.Ei,800,A.ET,900,A.Ex],B.a1("dB<l,x>"))
+A.cE=new B.vS(A.OE,1,0.2980392156862745,0.6862745098039216,0.3137254901960784,C.e)})()};
+(a=>{a["+6zIAied5X0dFrpmswv0uJVxb7M="]=a.current})($__dart_deferred_initializers__);
