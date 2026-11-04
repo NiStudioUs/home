@@ -25,14 +25,27 @@ class HowToPage extends StatelessWidget {
     final app = dataModel.apps.firstWhere(
       (a) => a.id == appId,
       orElse: () => AppModel(
-        id: 'error', name: 'App Not Found', shortDescription: '', fullDescription: '',
-        iconUrl: '', tags: [], features: [], technicalDetails: [], screenshots: [],
-        links: [], privacyPolicy: AppPolicy(url: '', features: []), termsAndConditions: AppPolicy(url: '', features: []),
+        id: 'error',
+        name: 'App Not Found',
+        shortDescription: '',
+        fullDescription: '',
+        iconUrl: '',
+        tags: [],
+        features: [],
+        technicalDetails: [],
+        screenshots: [],
+        links: [],
+        privacyPolicy: AppPolicy(url: '', features: []),
+        termsAndConditions: AppPolicy(url: '', features: []),
       ),
     );
 
     if (app.id == 'error') {
-      return Scaffold(body: Center(child: Text('App Not Found', style: NiType.heroH1(context))));
+      return Scaffold(
+        body: Center(
+          child: Text('App Not Found', style: NiType.heroH1(context)),
+        ),
+      );
     }
 
     final howtoApp = howtoIndex.apps.firstWhere(
@@ -79,14 +92,26 @@ class _HowToPageContent extends StatelessWidget {
       title: title,
       tocItems: tocItems,
       headingKeys: headingKeys,
-      sections: app.features.asMap().entries.map((e) => Container(
-        decoration: BoxDecoration(
-          border: Border(
-            left: BorderSide(color: tokens.surface2, width: 2), // The timeline track
-          ),
-        ),
-        child: _TimelineStep(feature: e.value, headingKey: headingKeys[e.key]),
-      )).toList(),
+      sections: app.features
+          .asMap()
+          .entries
+          .map(
+            (e) => Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  left: BorderSide(
+                    color: tokens.surface2,
+                    width: 2,
+                  ), // The timeline track
+                ),
+              ),
+              child: _TimelineStep(
+                feature: e.value,
+                headingKey: headingKeys[e.key],
+              ),
+            ),
+          )
+          .toList(),
       bottomContent: const Padding(
         padding: EdgeInsets.only(top: 64),
         child: ContactCard(isSmall: true),
@@ -133,42 +158,51 @@ class _TimelineStep extends StatelessWidget {
                 child: Text(feature.title, style: NiType.timelineH2(context)),
               ),
               const SizedBox(height: 16),
-              ...feature.sections.map((sec) => Padding(
-                padding: const EdgeInsets.only(bottom: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (sec.title.isNotEmpty) ...[
-                      Text(sec.title, style: NiType.h3(context)),
-                      const SizedBox(height: 16),
-                    ],
-                    MarkdownBody(
-                      data: sec.content,
-                      styleSheet: MarkdownStyleSheet(
-                        p: NiType.doc(context).copyWith(height: 1.6),
-                        pPadding: const EdgeInsets.only(bottom: 16),
+              ...feature.sections.map(
+                (sec) => Padding(
+                  padding: const EdgeInsets.only(bottom: 24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (sec.title.isNotEmpty) ...[
+                        Text(sec.title, style: NiType.h3(context)),
+                        const SizedBox(height: 16),
+                      ],
+                      MarkdownBody(
+                        data: sec.content,
+                        styleSheet: MarkdownStyleSheet(
+                          p: NiType.doc(context).copyWith(height: 1.6),
+                          pPadding: const EdgeInsets.only(bottom: 16),
+                        ),
+                        onTapLink: (text, href, title) {
+                          if (href != null) launchUrl(Uri.parse(href));
+                        },
                       ),
-                      onTapLink: (text, href, title) {
-                        if (href != null) launchUrl(Uri.parse(href));
-                      },
-                    ),
-                    if (sec.images.isNotEmpty) ...[
-                      const SizedBox(height: 16),
-                      ...sec.images.map((img) => Container(
-                        margin: const EdgeInsets.only(bottom: 16),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: tokens.surface2, width: 1),
+                      if (sec.images.isNotEmpty) ...[
+                        const SizedBox(height: 16),
+                        ...sec.images.map(
+                          (img) => Container(
+                            margin: const EdgeInsets.only(bottom: 16),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              border: Border.all(
+                                color: tokens.surface2,
+                                width: 1,
+                              ),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(13),
+                              child: Image.asset(
+                                'assets/placeholders/learning.webp',
+                              ), // Uses placeholder
+                            ),
+                          ),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset('assets/placeholders/learning.webp'), // Uses placeholder
-                        ),
-                      )),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
-              )),
+              ),
             ],
           ),
         ),
@@ -212,8 +246,22 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
     _buildTopicIndex();
     final target = widget.initialTopicId;
     if (target != null && _topicKeys.containsKey(target)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) _scrollToTopic(target);
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        // Jump (no animation) rather than animate: an animated
+        // Scrollable.ensureVisible restarts its own animation on every call,
+        // so firing it repeatedly while images below are still loading (and
+        // growing the layout) means each call mostly cancels the last
+        // instead of converging — an instant jump always lands exactly
+        // where the current layout says the topic is, so repeating it after
+        // short delays correctly settles once images have actually loaded.
+        if (!mounted) return;
+        _scrollToTopic(target, animate: false);
+        await Future.delayed(const Duration(milliseconds: 300));
+        if (!mounted) return;
+        _scrollToTopic(target, animate: false);
+        await Future.delayed(const Duration(milliseconds: 500));
+        if (!mounted) return;
+        _scrollToTopic(target, animate: false);
       });
     }
   }
@@ -229,16 +277,15 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
   void _buildTopicIndex() {
     final flat = <_TopicEntry>[];
     for (final feature in widget.howtoApp.features) {
-      final sortedTopics = [...feature.topics]
-        ..sort((a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()));
+      final sortedTopics = [
+        ...feature.topics,
+      ]..sort((a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()));
       for (final topic in sortedTopics) {
         flat.add(_TopicEntry(feature: feature, topic: topic));
       }
     }
     _flatTopics = flat;
-    _topicKeys = {
-      for (final entry in flat) entry.topic.id: GlobalKey(),
-    };
+    _topicKeys = {for (final entry in flat) entry.topic.id: GlobalKey()};
   }
 
   String? _titleForTopicId(String id) {
@@ -248,13 +295,13 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
     return null;
   }
 
-  void _scrollToTopic(String id) {
+  void _scrollToTopic(String id, {bool animate = true}) {
     final key = _topicKeys[id];
     final ctx = key?.currentContext;
     if (ctx != null) {
       Scrollable.ensureVisible(
         ctx,
-        duration: const Duration(milliseconds: 350),
+        duration: animate ? const Duration(milliseconds: 350) : Duration.zero,
         curve: Curves.easeInOut,
         alignment: 0.5,
       );
@@ -265,7 +312,9 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
   Widget build(BuildContext context) {
     final title = 'How to use ${widget.app.name}';
     final tocItems = _flatTopics.map((e) => e.topic.title).toList();
-    final headingKeys = _flatTopics.map((e) => _topicKeys[e.topic.id]!).toList();
+    final headingKeys = _flatTopics
+        .map((e) => _topicKeys[e.topic.id]!)
+        .toList();
     // Only show a feature-title heading above the first topic of each group
     // when there's more than one feature — today there's just "Events".
     final showFeatureHeadings = widget.howtoApp.features.length > 1;
@@ -273,16 +322,19 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
     String? prevFeatureId;
     final sections = <Widget>[];
     for (final entry in _flatTopics) {
-      final isNewGroup = showFeatureHeadings && entry.feature.id != prevFeatureId;
-      sections.add(_TopicSection(
-        key: ValueKey(entry.topic.id),
-        feature: entry.feature,
-        topic: entry.topic,
-        showFeatureHeading: isNewGroup,
-        topicKey: _topicKeys[entry.topic.id]!,
-        titleForTopicId: _titleForTopicId,
-        onReferenceTap: _scrollToTopic,
-      ));
+      final isNewGroup =
+          showFeatureHeadings && entry.feature.id != prevFeatureId;
+      sections.add(
+        _TopicSection(
+          key: ValueKey(entry.topic.id),
+          feature: entry.feature,
+          topic: entry.topic,
+          showFeatureHeading: isNewGroup,
+          topicKey: _topicKeys[entry.topic.id]!,
+          titleForTopicId: _titleForTopicId,
+          onReferenceTap: _scrollToTopic,
+        ),
+      );
       prevFeatureId = entry.feature.id;
     }
 
@@ -338,55 +390,59 @@ class _TopicSection extends StatelessWidget {
           ],
           Text(topic.title, style: NiType.h3(context)),
           const SizedBox(height: 16),
-          ...topic.steps.map((step) => Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 9, right: 12),
-                  child: Container(
-                    width: 6,
-                    height: 6,
-                    decoration: BoxDecoration(
-                      color: tokens.muted,
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: MarkdownBody(
-                    data: step,
-                    styleSheet: MarkdownStyleSheet(
-                      p: NiType.doc(context).copyWith(height: 1.6),
-                      pPadding: EdgeInsets.zero,
-                      code: NiType.doc(context).copyWith(
-                        fontFamily: 'monospace',
-                        fontSize: 13,
-                        backgroundColor: tokens.surface2,
+          ...topic.steps.map(
+            (step) => Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 9, right: 12),
+                    child: Container(
+                      width: 6,
+                      height: 6,
+                      decoration: BoxDecoration(
+                        color: tokens.muted,
+                        shape: BoxShape.circle,
                       ),
                     ),
-                    onTapLink: (text, href, title) {
-                      if (href != null) launchUrl(Uri.parse(href));
-                    },
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: MarkdownBody(
+                      data: step,
+                      styleSheet: MarkdownStyleSheet(
+                        p: NiType.doc(context).copyWith(height: 1.6),
+                        pPadding: EdgeInsets.zero,
+                        code: NiType.doc(context).copyWith(
+                          fontFamily: 'monospace',
+                          fontSize: 13,
+                          backgroundColor: tokens.surface2,
+                        ),
+                      ),
+                      onTapLink: (text, href, title) {
+                        if (href != null) launchUrl(Uri.parse(href));
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
-          )),
+          ),
           if (topic.images.isNotEmpty) ...[
             const SizedBox(height: 8),
-            ...topic.images.map((img) => Container(
-              margin: const EdgeInsets.only(bottom: 16, top: 8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: tokens.surface2, width: 1),
+            ...topic.images.map(
+              (img) => Container(
+                margin: const EdgeInsets.only(bottom: 16, top: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: tokens.surface2, width: 1),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(13),
+                  child: Image.asset(img.url),
+                ),
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(13),
-                child: Image.asset(img.url),
-              ),
-            )),
+            ),
           ],
           if (validReferences.isNotEmpty) ...[
             const SizedBox(height: 8),
@@ -396,10 +452,12 @@ class _TopicSection extends StatelessWidget {
               runSpacing: 8,
               children: [
                 Text('See also:', style: NiType.muted(context, 13.76)),
-                ...validReferences.map((e) => _SeeAlsoChip(
-                  label: e.value!,
-                  onTap: () => onReferenceTap(e.key),
-                )),
+                ...validReferences.map(
+                  (e) => _SeeAlsoChip(
+                    label: e.value!,
+                    onTap: () => onReferenceTap(e.key),
+                  ),
+                ),
               ],
             ),
           ],
@@ -441,9 +499,9 @@ class _SeeAlsoChipState extends State<_SeeAlsoChip> {
           ),
           child: Text(
             widget.label,
-            style: NiType.chip(context).copyWith(
-              color: _isHovered ? tokens.accent : tokens.muted,
-            ),
+            style: NiType.chip(
+              context,
+            ).copyWith(color: _isHovered ? tokens.accent : tokens.muted),
           ),
         ),
       ),
