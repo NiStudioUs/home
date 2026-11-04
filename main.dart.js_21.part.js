@@ -1,6 +1,6 @@
 ((a,b)=>{a[b]=a[b]||{}})(self,"$__dart_deferred_initializers__")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var J,A,C,E,F,D={
-aZY(){return new D.tc(null)},
+aZZ(){return new D.tc(null)},
 tc:function tc(d){this.a=d},
 an5:function an5(d,e){this.a=d
 this.b=e},
@@ -74,4 +74,4 @@ B.Of=new A.aw(B.cG,["January 2026","Experimentation","Gen AI Projects","Curious 
 B.KY=x(["BLoC","Drift","Local Processing"],y.x)
 B.Oa=new A.aw(B.cG,["2026","Mobile Product","SMS Stack","For my latest mobile product, I wanted to tackle heavy on-device data processing. I engineered a robust Flutter app utilizing Drift/SQLite, pushing the boundaries of what a modern mobile processor can handle locally without compromising user privacy or battery life.",B.KY],y.v)
 B.Ko=x([B.Oc,B.Ob,B.Od,B.O9,B.Oe,B.O8,B.Of,B.Oa],A.a1("o<aq<i,@>>"))})()};
-(a=>{a["eU4hvOpDcswVBSxLlHVwCe8mIIE="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["HlX1RCixSO6FlaVQ7ZR5Hsjzx/8="]=a.current})($__dart_deferred_initializers__);

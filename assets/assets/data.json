@@ -2414,7 +2414,7 @@
               "content": "Choose left or right edge, vertical position, length, and indicator style (hairline, soft gradient, tab, or fully invisible — still gesture-active). Set idle behavior (visible, dimmed, or hidden) and a color source that can follow your wallpaper (Material You), your in-app theme, or a custom color.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/edgewise/playstore_screen-2-edge-placement.webp"
+                "assets/images/edgewise/anim-edge-fine-adjustments.webp"
               ]
             }
           ]
@@ -2425,10 +2425,10 @@
           "sections": [
             {
               "title": "Wipe transitions",
-              "content": "Instant, Radial, Vertical lines, and Horizontal lines — pick an origin (touch point, center, or a custom spot) and a speed. An animated preview shows exactly what each one looks like before you apply it.",
+              "content": "Instant, Radial, Vertical lines, and Horizontal lines — pick an origin (touch point, center, or a custom spot) and a speed. The clip here starts on the dot-matrix heart, then cycles the Vertical lines and Horizontal lines wipes, so you can see exactly what each one looks like before you apply it.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/edgewise/playstore_screen-3-lock-effects.webp"
+                "assets/images/edgewise/anim-lock-effects-wipe.webp"
               ]
             },
             {
@@ -2627,7 +2627,7 @@
               },
               {
                 "title": "The one permission the app asks for, and why",
-                "content": "The Application requests exactly one special Device permission, and no\nothers — no notifications, no storage, no location, no microphone, no\ncamera, no contacts, no network:\n\n| Permission | Purpose |\n|---|---|\n| **Accessibility Service** (enabled by You in Android Settings → Accessibility, not a standard install-time permission) | To display Edgewise's own small gesture handle on Your chosen screen edge, and to perform the action You assign when You interact with it (lock the screen, open an app, open notifications, or open quick settings). |\n\nThe Accessibility Service is scoped strictly to Edgewise's own gesture\nhandle: it does not read screen content, typed text, notifications, or any\ntouch events outside that handle, and Edgewise is explicitly **not** a\ndisability-accessibility tool — it only uses this Android API because it is\nthe mechanism Android provides for an app to draw a persistent on-screen\ncontrol and perform system actions like locking the screen. You can review\nthis disclosure again at any time from the app's Accessibility Access setup\nscreen, and You can revoke it at any time — either from Edgewise's own\n\"Withdraw consent & pause\" control, or directly in Android Settings →\nAccessibility.\n\nTo let You assign \"open app\" as a gesture action, the app also reads the\nlist of launchable apps installed on Your Device via Android's standard\n`PackageManager` APIs. This uses Android's normal launcher-activity query\n(not the sensitive `QUERY_ALL_PACKAGES` permission), runs entirely on-device,\nand that list is never transmitted anywhere.",
+                "content": "The Application requests exactly one special Device permission, and no\nothers — no notifications, no storage, no location, no microphone, no\ncamera, no contacts, no network:\n\n| Permission | Purpose |\n|---|---|\n| **Accessibility Service** (enabled by You in Android Settings → Accessibility, not a standard install-time permission) | To display Edgewise's own small gesture handle on Your chosen screen edge, and to perform the action You assign when You interact with it (lock the screen, open an app, open notifications, or open quick settings). |\n\nThe Accessibility Service is scoped strictly to Edgewise's own gesture\nhandle: it does not read screen content, typed text, notifications, or any\ntouch events outside that handle, and Edgewise is explicitly **not** a\ndisability-accessibility tool — it only uses this Android API because it is\nthe mechanism Android provides for an app to draw a persistent on-screen\ncontrol and perform system actions like locking the screen. You can review\nthis disclosure again at any time from the app's Accessibility Access setup\nscreen, and You can revoke it at any time — either from Edgewise's own\n\"Withdraw consent & pause\" control, or directly in Android Settings →\nAccessibility. The exact steps for both are at\n**https://nistudious.github.io/home/apps/edgewise/how-to?topic=withdraw-from-app**\n(see §4a).\n\nTo let You assign \"open app\" as a gesture action, the app also reads the\nlist of launchable apps installed on Your Device via Android's standard\n`PackageManager` APIs. This uses Android's normal launcher-activity query\n(not the sensitive `QUERY_ALL_PACKAGES` permission), runs entirely on-device,\nand that list is never transmitted anywhere.",
                 "imageRenderer": "default",
                 "images": []
               }
@@ -2651,7 +2651,7 @@
             "sections": [
               {
                 "title": "4a. Edgewise on the Web",
-                "content": "This Privacy Policy, the Terms and Conditions, and step-by-step how-to pages\n(including how to withdraw consent) are published at\n**https://nistudious.github.io/home/apps/edgewise**. Visiting that page is\nsubject to the hosting provider's (GitHub Pages) own standard web server\nlogging, which is outside Our control and not something this app causes —\nthe in-app links described above only open Your browser to that address.",
+                "content": "This Privacy Policy and the Terms and Conditions are published at\n**https://nistudious.github.io/home/apps/edgewise**. The exact, step-by-step\nhow-to page for withdrawing consent — covering both withdrawing it from\ninside Edgewise and from Android Settings directly — is published at\n**https://nistudious.github.io/home/apps/edgewise/how-to?topic=withdraw-from-app**,\nand opens scrolled straight to those steps rather than to the app's general\nlisting page. Visiting either page is subject to the hosting provider's\n(GitHub Pages) own standard web server logging, which is outside Our control\nand not something this app causes — the in-app links described above only\nopen Your browser to that address.",
                 "imageRenderer": "default",
                 "images": []
               }
