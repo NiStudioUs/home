@@ -2370,6 +2370,531 @@
         "Material You",
         "Android Widgets"
       ]
+    },
+    {
+      "id": "edgewise",
+      "name": "Edgewise",
+      "shortDescription": "A customizable edge gesture handle for instant screen-lock, app launch, and system panels — with dot-matrix lock effects.",
+      "fullDescription": "Edgewise adds one small, fully customizable gesture handle to the edge of your screen. Double tap, long press, or swipe it to lock your screen, launch an app, open notifications, or open quick settings — no need to reach for a power button or navigate menus. Tune exactly where it sits, how it looks, and how it behaves when idle. Pair it with a lock effect: a quick wipe transition, or a dot-matrix emoji, hand-drawn scribble, or typed message that draws itself in — like a tiny sign-off — before the screen locks. Everything runs entirely on-device: no account, no cloud, no analytics, and no network permission at all.",
+      "iconUrl": "assets/images/edgewise/icon.webp",
+      "status": "In development",
+      "statusColor": "orange",
+      "milestones": [
+        {
+          "date": "2026-11-04 00:00",
+          "title": "Core gesture handle, edge customization, and dot-matrix lock effects built",
+          "description": "Edge gesture handle with 4 gestures × 4 actions, full appearance customization, 9 lock effects including dot-matrix Emoji/Scribble/Note content effects, home-screen widgets, and Material You theming — not yet published to Google Play."
+        }
+      ],
+      "demoUrl": "",
+      "descriptionImages": [],
+      "features": [
+        {
+          "title": "Edge Gesture Handle",
+          "subtitle": "One handle, four gestures, four actions",
+          "sections": [
+            {
+              "title": "Double tap, long press, or swipe",
+              "content": "Assign lock screen, open app, open notifications, open quick settings, or nothing at all to double-tap, long-press, swipe up, and swipe down — independently. A practice pad lets you try each gesture safely without triggering the real action.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-1-gestures.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fully Customizable Edge",
+          "subtitle": "Placed and styled exactly how you want",
+          "sections": [
+            {
+              "title": "Side, position, length, and style",
+              "content": "Choose left or right edge, vertical position, length, and indicator style (hairline, soft gradient, tab, or fully invisible — still gesture-active). Set idle behavior (visible, dimmed, or hidden) and a color source that can follow your wallpaper (Material You), your in-app theme, or a custom color.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-2-edge-placement.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Lock Effects",
+          "subtitle": "A brief flourish before the screen locks",
+          "sections": [
+            {
+              "title": "Wipe transitions",
+              "content": "Instant, Radial, Vertical lines, and Horizontal lines — pick an origin (touch point, center, or a custom spot) and a speed. An animated preview shows exactly what each one looks like before you apply it.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-3-lock-effects.webp"
+              ]
+            },
+            {
+              "title": "Dot-matrix Dots, Stars, Emoji, Scribble, and Note",
+              "content": "A dedicated Matrix setup page renders a dot or star wipe pattern, a single emoji, a drawing you make, or a short message you type — as a dot-matrix glyph, like a small LED sign — at a position you place with a trackpad-style picker. Note messages pack themselves smartly across lines based on what you type. Choose whether content pops in as the finished result or draws itself in live over a few seconds before the screen locks.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-4-matrix-emoji.webp",
+                "assets/images/edgewise/playstore_screen-5-matrix-scribble.webp",
+                "assets/images/edgewise/playstore_screen-6-matrix-position.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Home-Screen Widgets",
+          "subtitle": "One tap from your home screen",
+          "sections": [
+            {
+              "title": "2×2 and 1×1 widgets",
+              "content": "Place a labeled 2×2 widget or an icon-only 1×1 widget, each configurable to lock the screen or run any other assigned action directly from your home screen.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-7-widgets.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Theming",
+          "subtitle": "Light, dark, and dynamic color",
+          "sections": [
+            {
+              "title": "Material You, your way",
+              "content": "System, light, or dark theme mode, with an optional Material You seed color sourced from your wallpaper or picked by hand.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/playstore_screen-8-settings.webp"
+              ]
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Built with Flutter and Kotlin",
+          "subtitle": "Modern Tech Stack",
+          "sections": [
+            {
+              "title": "Core Technology",
+              "content": "Edgewise is built using **Flutter** for the UI, with a native **Kotlin** Accessibility Service layer for the gesture handle, lock-effect rendering, and home-screen widgets (AppWidgetProvider/RemoteViews).",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "Dot-Matrix Rendering",
+          "subtitle": "Custom Canvas painter",
+          "sections": [
+            {
+              "title": "Rasterize, then sample",
+              "content": "Emoji/text/scribble content is rasterized once to a small offscreen bitmap, then sampled into a dot grid every animation frame — the same approach on both the native lock effect and its in-app Flutter preview (which samples a real `dart:ui.Image`, not an approximation).",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "No Network Access",
+          "subtitle": "Fully on-device",
+          "sections": [
+            {
+              "title": "No Internet permission in the manifest",
+              "content": "Edgewise requests no network permission at all — all settings persist via local SharedPreferences, with no analytics, ads, or backend of any kind.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/edgewise/playstore_screen-1-gestures.webp",
+          "caption": "One handle, four gestures"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-2-edge-placement.webp",
+          "caption": "Placed exactly how you want"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-3-lock-effects.webp",
+          "caption": "Animated wipe transitions"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-4-matrix-emoji.webp",
+          "caption": "Dot-matrix emoji lock effect"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-5-matrix-scribble.webp",
+          "caption": "Draw your own scribble"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-6-matrix-position.webp",
+          "caption": "A dot-matrix note, drawn like a sign-off"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-7-widgets.webp",
+          "caption": "Home-screen widgets"
+        },
+        {
+          "url": "assets/images/edgewise/playstore_screen-8-settings.webp",
+          "caption": "Material You theming"
+        }
+      ],
+      "links": [
+        {
+          "type": "Play Store",
+          "url": ""
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "2026-11-04T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Understanding the terms used in this policy",
+            "sections": [
+              {
+                "title": "Interpretation",
+                "content": "Words with an initial capital letter have the meaning defined in this\nsection, regardless of whether they appear in singular or plural.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Definitions",
+                "content": "For the purposes of this Privacy Policy:\n\n- **Application** means the software program Edgewise, provided by the\n  Company, downloaded by You on any electronic device.\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Device** means any device that can access the Service, such as a\n  cellphone or tablet.\n- **Personal Data** is any information that relates to an identified or\n  identifiable individual.\n- **Service** refers to the Application.\n- **You** means the individual using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Summary — what this app does and does not do",
+            "subtitle": "No account, no cloud, no ads, no network access at all",
+            "sections": [
+              {
+                "title": "Summary — what this app does and does not do",
+                "content": "Edgewise is built to work entirely on Your device:\n\n- **No account, no sign-in.** The app never asks You to create an account or\n  sign in with Google, Apple, email, or any other identity provider.\n- **No cloud backup or sync.** All gesture bindings, edge appearance, lock\n  effect configuration (including any emoji, text, or drawing you set up for\n  a lock effect), and settings are stored only in local storage on Your\n  Device. Nothing is uploaded to servers We operate, because We do not\n  operate any servers that store Your data.\n- **No analytics, advertising, or crash-reporting SDKs.** The app does not\n  embed Firebase, Google Analytics, any ad network, or any third-party\n  analytics/crash SDK. We do not track Your usage of the app.\n- **No network access at all.** Unlike many apps, Edgewise does not request\n  the Internet permission from Android. It has no network code, makes no\n  network calls, and cannot reach the internet even if it tried — there is\n  nothing in this app that could transmit Your data anywhere.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data We Collect",
+            "subtitle": "What's collected, and the permission behind it",
+            "sections": [
+              {
+                "title": "Data You provide directly",
+                "content": "Your gesture-to-action bindings, Your edge-indicator appearance choices, and\nanything You set up for a lock effect — including a chosen emoji, typed\ntext/message, or a drawing You make for the \"Scribble\" effect — are Personal\nData You create, and it stays in the app's local storage on Your Device. We\n(Ni Studio Us) never receive a copy of it. A drawn \"Scribble\" is stored only\nas a sequence of coordinates (where Your finger moved) — never as an image\nfile, and never shared anywhere outside the app.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Data collected automatically",
+                "content": "We do not operate any analytics or telemetry pipeline, so We do not\nautomatically collect usage data, device identifiers, or diagnostic logs\nabout how You use the app. The app does keep an **opt-in**, local, on-device\ndiagnostic log (up to 256 entries) for Your own troubleshooting. This log\nnever leaves Your Device, is never uploaded, and does not record screen\ncontents, app names, coordinates, or exception messages.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "The one permission the app asks for, and why",
+                "content": "The Application requests exactly one special Device permission, and no\nothers — no notifications, no storage, no location, no microphone, no\ncamera, no contacts, no network:\n\n| Permission | Purpose |\n|---|---|\n| **Accessibility Service** (enabled by You in Android Settings → Accessibility, not a standard install-time permission) | To display Edgewise's own small gesture handle on Your chosen screen edge, and to perform the action You assign when You interact with it (lock the screen, open an app, open notifications, or open quick settings). |\n\nThe Accessibility Service is scoped strictly to Edgewise's own gesture\nhandle: it does not read screen content, typed text, notifications, or any\ntouch events outside that handle, and Edgewise is explicitly **not** a\ndisability-accessibility tool — it only uses this Android API because it is\nthe mechanism Android provides for an app to draw a persistent on-screen\ncontrol and perform system actions like locking the screen. You can review\nthis disclosure again at any time from the app's Accessibility Access setup\nscreen, and You can revoke it at any time — either from Edgewise's own\n\"Withdraw consent & pause\" control, or directly in Android Settings →\nAccessibility.\n\nTo let You assign \"open app\" as a gesture action, the app also reads the\nlist of launchable apps installed on Your Device via Android's standard\n`PackageManager` APIs. This uses Android's normal launcher-activity query\n(not the sensitive `QUERY_ALL_PACKAGES` permission), runs entirely on-device,\nand that list is never transmitted anywhere.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "No Third-Party Services",
+            "subtitle": "There is nothing to disclose here",
+            "sections": [
+              {
+                "title": "No Third-Party Services",
+                "content": "Edgewise does not integrate any third-party analytics tool, ad network,\ncrash reporter, or backend service of any kind, and — as noted in §2 — has no\nnetwork permission at all. There is no third-party data sharing to describe,\nbecause the app has no way to share data with anyone.\n\nThe app does use one third-party library, `url_launcher`, but only to open a\npage (such as this Privacy Policy, or the how-to pages) in Your device's own\nbrowser when You explicitly tap a link in the app — Edgewise itself still\nmakes no network call and sends this library nothing beyond the page address\nYou chose to open; the browser, not Edgewise, does the fetching.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "4a. Edgewise on the Web",
+            "subtitle": "Where this policy and the how-to pages are hosted",
+            "sections": [
+              {
+                "title": "4a. Edgewise on the Web",
+                "content": "This Privacy Policy, the Terms and Conditions, and step-by-step how-to pages\n(including how to withdraw consent) are published at\n**https://nistudious.github.io/home/apps/edgewise**. Visiting that page is\nsubject to the hosting provider's (GitHub Pages) own standard web server\nlogging, which is outside Our control and not something this app causes —\nthe in-app links described above only open Your browser to that address.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "In-App Purchases",
+            "subtitle": "Not applicable yet",
+            "sections": [
+              {
+                "title": "In-App Purchases",
+                "content": "Edgewise does not currently offer any in-app purchases or paid tier. If that\nchanges in a future release, this Privacy Policy will be updated first, with\nits own section describing exactly how billing is handled (in the same way\nas Our other apps, via Google Play Billing, with payment details handled\nentirely by Google and never seen by Us).",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Sharing of Data",
+            "subtitle": "Who else sees your data",
+            "sections": [
+              {
+                "title": "Sharing of Data",
+                "content": "We do not sell Your data. We do not share Your Personal Data with\nadvertisers, data brokers, or any other third party — the app has no\nmechanism to do so, since it makes no network calls at all.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Data Retention and Your Right to Delete",
+            "subtitle": "Your data, your device, your control",
+            "sections": [
+              {
+                "title": "Data Retention and Your Right to Delete",
+                "content": "Because everything is stored only on Your Device:\n\n- **Uninstalling the app** permanently deletes Your local gesture bindings,\n  edge settings, lock-effect configuration (including any scribble, text, or\n  emoji You set up), and diagnostic log — there is nothing left on any server\n  for Us to delete, because We never held a copy.\n- You can also reset individual settings, change or clear a lock effect's\n  content, or withdraw Accessibility consent at any time from within the app\n  itself, without uninstalling.\n- If You ever contact Us directly (e.g. by email, for support), any Personal\n  Data You share that way (such as Your email address) is retained only as\n  long as needed to resolve Your request, and You may ask Us to delete it at\n  any time by contacting Us at the address in §10.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Security",
+            "subtitle": "What's protected, and what isn't on us",
+            "sections": [
+              {
+                "title": "What We do",
+                "content": "We use reasonable, industry-standard practices appropriate to a fully\non-device, offline application: Your data is stored in Your Device's\napp-private storage (not accessible to other apps without root/jailbreak\naccess), Android's automatic cloud backup of app data is disabled for this\napp, and the app transmits nothing anywhere, because it has no network\naccess.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "What We cannot guarantee, and are not responsible for",
+                "content": "**No method of storage is 100% secure, and security of Your Device itself is\nYour responsibility, not Ours.** We are not responsible for the security of\nYour Device, Your Device's operating system, Your Google account, or any\nother software installed on Your Device. If Your Device is lost, stolen,\nrooted/jailbroken, infected with malware, or otherwise compromised by a third\nparty, any local data stored by this app may be exposed — that risk sits\nwith You and Your Device, not with Us. To the maximum extent permitted by\nlaw, We disclaim all liability for any loss, damage, or unauthorized access\narising from circumstances outside Our direct control, including Device-level\ncompromise and Your own handling of Your Device or Google account.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Children's Privacy",
+            "subtitle": "This Service is not directed at children under 13",
+            "sections": [
+              {
+                "title": "Children's Privacy",
+                "content": "Our Service does not knowingly collect Personal Data from anyone under the\nage of 13. Since the app requires no account, no network access, and no\nPersonal Data to function, We have no practical way to knowingly collect such\ndata in the first place. If You believe a child has provided Us Personal Data\ndirectly (e.g. via a support email), contact Us and We will delete it.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Changes to this Privacy Policy",
+            "subtitle": "How updates are communicated",
+            "sections": [
+              {
+                "title": "Changes to this Privacy Policy",
+                "content": "We may update this Privacy Policy from time to time. Material changes will\nbe reflected by an updated \"Last updated\" date at the top of this document.\nContinued use of the Service after a change becomes effective constitutes\nacceptance of the revised policy.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Questions about this policy",
+            "sections": [
+              {
+                "title": "Contact Us",
+                "content": "Questions about this Privacy Policy can be sent to:\n**ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "2026-11-04T00:00:00Z",
+        "features": [
+          {
+            "title": "Interpretation and Definitions",
+            "subtitle": "Key terms used throughout",
+            "sections": [
+              {
+                "title": "Interpretation and Definitions",
+                "content": "- **Application** means the Edgewise software program provided by the\n  Company.\n- **Application Store** means the Google Play Store (or any other\n  distribution platform through which You obtained the Application).\n- **Company** (\"the Company\", \"We\", \"Us\", \"Our\") refers to Ni Studio Us.\n- **Country** refers to: Tamil Nadu, India.\n- **Service** refers to the Application.\n- **You** means the individual using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Acknowledgment",
+            "subtitle": "Using the app means accepting these Terms",
+            "sections": [
+              {
+                "title": "Acknowledgment",
+                "content": "By downloading, installing, or using the Service, You agree to be bound by\nthese Terms. If You disagree with any part of these Terms, You must not use\nthe Service.\n\nYour use of the Service is also conditioned on Your acceptance of Our\n[Privacy Policy](privacy-policy.md), which describes how the Service handles\ninformation. Please read it before using the Service.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Important: Gesture and Lock-Effect Reliability",
+            "subtitle": "What we can and can't guarantee",
+            "sections": [
+              {
+                "title": "Important: Gesture and Lock-Effect Reliability",
+                "content": "Edgewise is designed to show its gesture handle reliably and to perform the\naction You assign (such as locking the screen) when You interact with it.\nHowever:\n\n- **We cannot and do not guarantee that the gesture handle will always be\n  visible, or that a gesture will always be recognized and acted on.**\n  Android's Accessibility Service framework — the mechanism this app relies\n  on to draw the handle and perform actions — can be paused, throttled, or\n  killed by the operating system or by device-manufacturer battery/task\n  management, and some devices restrict or revoke accessibility access more\n  aggressively than stock Android. The handle is also deliberately hidden\n  while Edgewise itself is in the foreground, and is not shown at all unless\n  You have granted and kept Accessibility access enabled.\n- **A configured lock effect is a brief, best-effort visual flourish, not a\n  security feature.** It does not strengthen or weaken Your Device's actual\n  lock-screen security (PIN, pattern, password, biometric), which remains\n  entirely controlled by Android, not by this app.\n- **Do not rely on this Service as Your sole means of locking Your Device**\n  in any situation where a missed or delayed lock could cause harm (for\n  example, handing Your Device to someone else expecting it to lock\n  instantly). Use Android's own lock controls as Your primary safeguard.\n- To the maximum extent permitted by applicable law, the Company disclaims\n  all liability for any loss, damage, or other consequence resulting,\n  directly or indirectly, from the gesture handle or a configured lock effect\n  not appearing, not responding, or behaving unexpectedly.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "License and Acceptable Use",
+            "subtitle": "What you can and can't do with the app",
+            "sections": [
+              {
+                "title": "License and Acceptable Use",
+                "content": "Subject to Your compliance with these Terms, the Company grants You a\nlimited, non-exclusive, non-transferable, revocable license to use the\nApplication on a Device You own or control, for Your personal,\nnon-commercial use. You agree not to:\n\n- Reverse-engineer, decompile, or attempt to extract the source code of the\n  Application, except to the extent such restriction is prohibited by\n  applicable law.\n- Modify, re-sign, redistribute, or resell the Application or any part of it.\n- Use the Application in any way that violates applicable local, national, or\n  international law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "In-App Purchases",
+            "subtitle": "Not applicable yet",
+            "sections": [
+              {
+                "title": "In-App Purchases",
+                "content": "The Application does not currently offer any in-app purchases or paid tier.\nIf that changes in a future release, these Terms will be updated with a\ndedicated billing section before any purchase is offered.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Intellectual Property",
+            "subtitle": "Ownership of the app and its code",
+            "sections": [
+              {
+                "title": "Intellectual Property",
+                "content": "The Application, including its original source code, design, and branding\n(excluding open-source components it depends on, each governed by their own\nlicenses), is and remains the exclusive property of the Company.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Disclaimers & Limitation of Liability",
+            "subtitle": "Security and liability, spelled out",
+            "sections": [
+              {
+                "title": "\"AS IS\" and \"AS AVAILABLE\"",
+                "content": "The Service is provided \"AS IS\" and \"AS AVAILABLE,\" with all faults, and\nwithout warranty of any kind, whether express, implied, or statutory,\nincluding but not limited to implied warranties of merchantability, fitness\nfor a particular purpose, and non-infringement. The Company does not warrant\nthat the Service will be uninterrupted, error-free, or free of harmful\ncomponents, or that it will meet Your requirements.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Security disclaimer",
+                "content": "As set out in Our Privacy Policy, no method of electronic storage is 100%\nsecure, and the Company is not responsible for the security of Your Device,\nYour operating system, or Your Google account. Security incidents arising\nfrom circumstances outside the Company's direct control (Device compromise,\nloss or theft of Your Device, etc.) are expressly outside the Company's\nresponsibility.",
+                "imageRenderer": "default",
+                "images": []
+              },
+              {
+                "title": "Limitation of liability",
+                "content": "To the maximum extent permitted by applicable law, in no event shall the\nCompany or its suppliers be liable for any special, incidental, indirect, or\nconsequential damages whatsoever (including, without limitation, damages for\nloss of data, business interruption, or personal injury), arising out of or\nin any way related to Your use of or inability to use the Service, even if\nthe Company has been advised of the possibility of such damages. The\nCompany's total liability for any claim arising from these Terms or Your use\nof the Service shall not exceed 100 USD, or, since the Service is currently\noffered entirely free of charge, shall be limited to a full refund of any\namount paid (which is currently zero).\n\nSome jurisdictions do not allow the exclusion or limitation of certain\nwarranties or liabilities; in such jurisdictions, the above limitations apply\nonly to the extent permitted by law.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Termination",
+            "subtitle": "When access can end",
+            "sections": [
+              {
+                "title": "Termination",
+                "content": "We may suspend or terminate Your access to the Service at any time, without\nprior notice, if You breach these Terms. Upon termination, Your right to use\nthe Service ceases immediately; this does not affect data already stored\nlocally on Your Device, which remains Yours to delete by uninstalling the\nApplication.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Governing Law",
+            "subtitle": "Tamil Nadu, India",
+            "sections": [
+              {
+                "title": "Governing Law",
+                "content": "These Terms are governed by the laws of Tamil Nadu, India, excluding its\nconflict-of-law rules, without prejudice to any mandatory consumer-protection\nprovisions of the law of the country in which You reside.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Dispute Resolution",
+            "subtitle": "Talk to us first",
+            "sections": [
+              {
+                "title": "Dispute Resolution",
+                "content": "If You have a dispute about the Service, You agree to first contact Us\ninformally (see §12) so We can attempt to resolve it directly before any\nformal proceeding.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Changes to These Terms",
+            "subtitle": "How updates take effect",
+            "sections": [
+              {
+                "title": "Changes to These Terms",
+                "content": "We may modify these Terms at any time. For material changes, We will make\nreasonable efforts to give at least 30 days' notice before the new Terms take\neffect (e.g. via an in-app notice or an updated \"Last updated\" date).\nContinued use of the Service after changes take effect constitutes acceptance\nof the revised Terms.",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          },
+          {
+            "title": "Contact Us",
+            "subtitle": "Questions about these Terms",
+            "sections": [
+              {
+                "title": "Contact Us",
+                "content": "Questions about these Terms can be sent to:\n**ni.studio.us@outlook.com**",
+                "imageRenderer": "default",
+                "images": []
+              }
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Kotlin",
+        "Accessibility Service",
+        "Material You",
+        "Android Widgets"
+      ]
     }
   ],
   "learningProjects": [

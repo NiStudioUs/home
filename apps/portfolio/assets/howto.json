@@ -143,6 +143,95 @@
           ]
         }
       ]
+    },
+    {
+      "id": "edgewise",
+      "title": "Edgewise",
+      "features": [
+        {
+          "id": "accessibility-access",
+          "title": "Accessibility Access: Setup & Consent",
+          "intro": "Edgewise needs Android's Accessibility API to draw its gesture handle and perform the action you assign. Access is never permanent or hidden — here's the one-time setup, and how to review or withdraw consent at any time.",
+          "topics": [
+            {
+              "id": "enable-gestures",
+              "title": "Enable your first gesture",
+              "steps": [
+                "Open Edgewise and stay on the **Gestures** tab. Nothing is enabled yet — tap **Accessibility access**.",
+                "Edgewise shows a prominent, plain-language disclosure of exactly what the Accessibility Service will and won't do before it ever opens Android's own settings. Read it, then continue.",
+                "You're taken to Android's own **Settings → Accessibility** screen. Find Edgewise in the list and turn its toggle on.",
+                "Android shows its own standard accessibility-service warning dialog. Confirm to grant access.",
+                "Back in Edgewise, the gesture toggle now shows as enabled, and you can assign an action (lock the screen, launch an app, open notifications, or open quick settings) to double tap, long press, swipe up, and swipe down independently.",
+                "Setup is complete — your edge handle is live. A **Withdraw consent & pause** control is always available from here if you ever want to turn it back off."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/edgewise/howto-01-gestures-tab.webp",
+                  "caption": "Gestures tab before setup"
+                },
+                {
+                  "url": "assets/images/edgewise/howto-02-consent-dialog.webp",
+                  "caption": "Edgewise's own disclosure, shown before Android Settings opens"
+                },
+                {
+                  "url": "assets/images/edgewise/howto-03-android-settings-toggle.webp",
+                  "caption": "Android Settings → Accessibility — turning Edgewise on"
+                },
+                {
+                  "url": "assets/images/edgewise/howto-04-android-settings-dialog.webp",
+                  "caption": "Android's own confirmation dialog"
+                },
+                {
+                  "url": "assets/images/edgewise/howto-05-gesture-enabled.webp",
+                  "caption": "Gesture access enabled"
+                },
+                {
+                  "url": "assets/images/edgewise/howto-07-setup-complete.webp",
+                  "caption": "Setup complete — double tap now locks the screen"
+                }
+              ],
+              "references": [
+                "withdraw-from-app"
+              ]
+            },
+            {
+              "id": "withdraw-from-app",
+              "title": "Withdraw consent from Edgewise",
+              "steps": [
+                "Open Edgewise and go to the **Settings** tab.",
+                "Tap **Withdraw consent & pause**, next to **Accessibility access** at the top of the screen.",
+                "Confirm. Edgewise immediately stops drawing its gesture handle and stops listening for gestures — the Accessibility Service is paused from the app's side right away.",
+                "To fully revoke the Android-level permission (not just pause it), also turn Edgewise's toggle off in Android **Settings → Accessibility** — Edgewise links you straight there.",
+                "Re-enabling later starts from the same disclosure screen shown in **Enable your first gesture**; nothing is re-enabled silently."
+              ],
+              "images": [
+                {
+                  "url": "assets/images/edgewise/howto-06-withdraw-consent-row.webp",
+                  "caption": "Settings tab — Withdraw consent & pause"
+                }
+              ],
+              "references": [
+                "enable-gestures",
+                "withdraw-from-android"
+              ]
+            },
+            {
+              "id": "withdraw-from-android",
+              "title": "Withdraw consent from Android Settings",
+              "steps": [
+                "Open Android **Settings → Accessibility → Edgewise**.",
+                "Turn the service toggle off and confirm Android's own dialog.",
+                "This immediately and fully revokes the permission at the OS level — Edgewise has no way to keep the gesture handle running once Android has revoked it.",
+                "A short video walkthrough of this exact flow is also available, for anyone who wants to see the whole withdrawal end-to-end before deciding to grant access in the first place."
+              ],
+              "images": [],
+              "references": [
+                "withdraw-from-app"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

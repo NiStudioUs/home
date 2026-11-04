@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderAbstractViewport;
 import 'package:provider/provider.dart';
 import '../../services/current_app_service.dart';
 import '../design_tokens.dart';
@@ -32,8 +33,12 @@ class _DocLayoutState extends State<DocLayout> {
   int _activeIndex = 0;
   final ScrollController _scrollController = ScrollController();
   late List<GlobalKey> _keys;
-  double _scrollY = 0;
+  final ValueNotifier<double> _scrollYNotifier = ValueNotifier(0);
   StreamSubscription<String>? _navSub;
+  // Set for the duration of a tap-triggered animated scroll so `_onScroll`
+  // doesn't fight the destination `_activeIndex` with its own proximity
+  // guess while the animation is still mid-flight.
+  bool _programmaticScroll = false;
 
   List<GlobalKey> get _effectiveKeys => widget.headingKeys ?? _keys;
 
@@ -46,7 +51,10 @@ class _DocLayoutState extends State<DocLayout> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       try {
-        final currentAppService = Provider.of<CurrentAppService>(context, listen: false);
+        final currentAppService = Provider.of<CurrentAppService>(
+          context,
+          listen: false,
+        );
         _navSub = currentAppService.navigationEvents.listen((title) {
           final index = widget.tocItems.indexOf(title);
           if (index != -1) {
@@ -65,26 +73,50 @@ class _DocLayoutState extends State<DocLayout> {
     }
   }
 
-  void _scrollTo(int index) {
+  Future<void> _scrollTo(int index) async {
     final keys = _effectiveKeys;
     if (index < 0 || index >= keys.length) return;
+    final ctx = keys[index].currentContext;
+    if (ctx == null) return;
+    final renderObject = ctx.findRenderObject();
+    if (renderObject == null) return;
+
     setState(() => _activeIndex = index);
-    final key = keys[index];
-    if (key.currentContext != null) {
-      Scrollable.ensureVisible(
-        key.currentContext!,
+
+    final position = _scrollController.position;
+    // Interrupt any in-flight ballistic/driven scroll so the gesture arena
+    // isn't still resolving a previous animation when this tap landed —
+    // otherwise a tap that arrives while the list is still settling from
+    // the last animated scroll can be swallowed as "stop scrolling"
+    // instead of reaching this handler again.
+    position.jumpTo(position.pixels);
+
+    final viewport = RenderAbstractViewport.of(renderObject);
+    final target = viewport
+        .getOffsetToReveal(renderObject, 0.5)
+        .offset
+        .clamp(position.minScrollExtent, position.maxScrollExtent);
+
+    _programmaticScroll = true;
+    try {
+      await _scrollController.animateTo(
+        target,
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeInOut,
-        alignment: 0.5,
       );
+    } finally {
+      _programmaticScroll = false;
     }
   }
 
   void _onScroll() {
     if (!mounted) return;
-    setState(() {
-      _scrollY = _scrollController.offset;
-    });
+    _scrollYNotifier.value = _scrollController.offset;
+
+    // While a tap-triggered scroll is still animating toward its target,
+    // don't let the proximity guess below fight over `_activeIndex` — it
+    // only causes flicker and extra full-subtree rebuilds mid-animation.
+    if (_programmaticScroll) return;
 
     final viewportHeight = MediaQuery.of(context).size.height;
     final centerTarget = viewportHeight / 2;
@@ -118,6 +150,7 @@ class _DocLayoutState extends State<DocLayout> {
   void dispose() {
     _navSub?.cancel();
     _scrollController.dispose();
+    _scrollYNotifier.dispose();
     super.dispose();
   }
 
@@ -129,7 +162,12 @@ class _DocLayoutState extends State<DocLayout> {
     final tocCol = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('ON THIS PAGE', style: NiType.eyebrow(context).copyWith(fontSize: 11.52, letterSpacing: 0.12 * 16)),
+        Text(
+          'ON THIS PAGE',
+          style: NiType.eyebrow(
+            context,
+          ).copyWith(fontSize: 11.52, letterSpacing: 0.12 * 16),
+        ),
         const SizedBox(height: 24),
         ...widget.tocItems.asMap().entries.map((entry) {
           final i = entry.key;
@@ -162,22 +200,32 @@ class _DocLayoutState extends State<DocLayout> {
         controller: _scrollController,
         slivers: [
           // Top padding for topbar
-          const SliverToBoxAdapter(child: SizedBox(height: NiTokens.topbarHeight)),
-          
+          const SliverToBoxAdapter(
+            child: SizedBox(height: NiTokens.topbarHeight),
+          ),
+
           // Header
           SliverToBoxAdapter(
             child: Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(NiTokens.gutter, 80, NiTokens.gutter, 60),
+                  padding: const EdgeInsets.fromLTRB(
+                    NiTokens.gutter,
+                    80,
+                    NiTokens.gutter,
+                    60,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(widget.title, style: NiType.legalH1(context)),
                       if (widget.subtitle != null) ...[
                         const SizedBox(height: 16),
-                        Text(widget.subtitle!, style: NiType.muted(context, 17.6)),
+                        Text(
+                          widget.subtitle!,
+                          style: NiType.muted(context, 17.6),
+                        ),
                       ],
                     ],
                   ),
@@ -191,9 +239,13 @@ class _DocLayoutState extends State<DocLayout> {
             SliverToBoxAdapter(
               child: Center(
                 child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+                  constraints: const BoxConstraints(
+                    maxWidth: NiTokens.maxWidth,
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: NiTokens.gutter,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -213,17 +265,26 @@ class _DocLayoutState extends State<DocLayout> {
             SliverToBoxAdapter(
               child: Center(
                 child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: NiTokens.maxWidth),
+                  constraints: const BoxConstraints(
+                    maxWidth: NiTokens.maxWidth,
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: NiTokens.gutter),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: NiTokens.gutter,
+                    ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           width: 300,
-                          child: StickyContainer(
-                            scrollY: _scrollY,
-                            headerHeight: 200,
+                          child: ValueListenableBuilder<double>(
+                            valueListenable: _scrollYNotifier,
+                            builder: (context, scrollY, child) =>
+                                StickyContainer(
+                                  scrollY: scrollY,
+                                  headerHeight: 200,
+                                  child: child!,
+                                ),
                             child: tocCol,
                           ),
                         ),
@@ -233,9 +294,13 @@ class _DocLayoutState extends State<DocLayout> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               ...widget.sections.asMap().entries.map((e) {
-                                return Container(key: _keys[e.key], child: e.value);
+                                return Container(
+                                  key: _keys[e.key],
+                                  child: e.value,
+                                );
                               }),
-                              if (widget.bottomContent != null) widget.bottomContent!,
+                              if (widget.bottomContent != null)
+                                widget.bottomContent!,
                             ],
                           ),
                         ),
@@ -253,5 +318,3 @@ class _DocLayoutState extends State<DocLayout> {
     );
   }
 }
-
-
