@@ -79,7 +79,8 @@ final GoRouter router = GoRouter(
               path: 'how-to',
               builder: (context, state) {
                 final id = state.pathParameters['id']!;
-                return HowToPage(appId: id);
+                final topic = state.uri.queryParameters['topic'];
+                return HowToPage(appId: id, initialTopicId: topic);
               },
             ),
             GoRoute(

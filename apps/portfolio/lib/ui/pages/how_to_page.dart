@@ -11,7 +11,12 @@ import '../widgets/contact_card.dart';
 class HowToPage extends StatelessWidget {
   final String appId;
 
-  const HowToPage({super.key, required this.appId});
+  /// A topic id from the query string (`?topic=<id>`), e.g. linked
+  /// directly from a Privacy Policy's "how to withdraw consent" link —
+  /// scrolled to once the page and its topic index are ready.
+  final String? initialTopicId;
+
+  const HowToPage({super.key, required this.appId, this.initialTopicId});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +49,11 @@ class HowToPage extends StatelessWidget {
     return NiApp(
       appId: app.id,
       child: useTopicLayout
-          ? _HowToTopicPageContent(app: app, howtoApp: howtoApp)
+          ? _HowToTopicPageContent(
+              app: app,
+              howtoApp: howtoApp,
+              initialTopicId: initialTopicId,
+            )
           : _HowToPageContent(app: app),
     );
   }
@@ -181,8 +190,13 @@ class _TopicEntry {
 class _HowToTopicPageContent extends StatefulWidget {
   final AppModel app;
   final HowtoAppModel howtoApp;
+  final String? initialTopicId;
 
-  const _HowToTopicPageContent({required this.app, required this.howtoApp});
+  const _HowToTopicPageContent({
+    required this.app,
+    required this.howtoApp,
+    this.initialTopicId,
+  });
 
   @override
   State<_HowToTopicPageContent> createState() => _HowToTopicPageContentState();
@@ -196,6 +210,12 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
   void initState() {
     super.initState();
     _buildTopicIndex();
+    final target = widget.initialTopicId;
+    if (target != null && _topicKeys.containsKey(target)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _scrollToTopic(target);
+      });
+    }
   }
 
   @override
