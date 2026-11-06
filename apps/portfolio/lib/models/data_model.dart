@@ -167,7 +167,24 @@ class AppModel {
   final String demoUrl;
   final List<MilestoneModel> milestones;
   
-  String get shortName => name;
+  String get shortName {
+    switch (id) {
+      case 'iky':
+        return 'IKY';
+      case 'scribble-notes':
+        return 'Scribble Notes';
+      case 'sms-stack':
+        return 'SMS Stack';
+      case 'alarm-clock':
+        return 'Alarm Clock';
+      case 'edgewise':
+        return 'Edgewise';
+      default:
+        return name.contains('—')
+            ? name.split('—').first.trim()
+            : (name.contains(':') ? name.split(':').first.trim() : name);
+    }
+  }
 
   AppModel({
     required this.id,

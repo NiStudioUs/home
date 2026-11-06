@@ -341,29 +341,37 @@ class _ThemeToggleButton extends StatelessWidget {
     final tokens = NiTokens.of(context);
     final themeService = Provider.of<ThemeService>(context, listen: false);
 
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () {
-          if (EasterEgg.handle('theme')) {
-             context.go('/timeline');
-          } else {
-             themeService.toggleTheme();
-          }
-        },
-        child: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: tokens.surface,
-            shape: BoxShape.circle,
-            border: Border.all(color: tokens.border, width: 1), // Hover accent handled later or with Stateful widget
-          ),
-          child: Center(
-            child: Icon(
-              tokens.isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
-              size: 19,
-              color: tokens.text,
+    final modeLabel = tokens.isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    return Tooltip(
+      message: modeLabel,
+      child: Semantics(
+        button: true,
+        label: modeLabel,
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              if (EasterEgg.handle('theme')) {
+                 context.go('/timeline');
+              } else {
+                 themeService.toggleTheme();
+              }
+            },
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: tokens.surface,
+                shape: BoxShape.circle,
+                border: Border.all(color: tokens.border, width: 1), // Hover accent handled later or with Stateful widget
+              ),
+              child: Center(
+                child: Icon(
+                  tokens.isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+                  size: 19,
+                  color: tokens.text,
+                ),
+              ),
             ),
           ),
         ),

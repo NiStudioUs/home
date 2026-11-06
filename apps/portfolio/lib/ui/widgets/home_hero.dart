@@ -111,7 +111,7 @@ class _LeftColumn extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 52 * 11.0), // rough max 52ch
           child: Text(
-            'Ni Studio Us builds private, offline-first mobile apps — notes, finance, and family history — with clean architecture and no ads.',
+            'Ni Studio Us builds private, offline-first mobile apps — notes, finance, family history, smart alarms, and edge gestures — with clean architecture and no ads.',
             style: NiType.heroLead(context),
           ),
         ),

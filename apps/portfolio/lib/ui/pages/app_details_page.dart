@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show RenderAbstractViewport;
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -202,7 +203,7 @@ class _HeaderCopy extends StatelessWidget {
           spacing: 12,
           runSpacing: 12,
           children: [
-            if (app.status == 'Coming soon' || app.links.isEmpty)
+            if (app.status == 'Coming soon' || app.links.isEmpty || !app.links.any((l) => l.url.isNotEmpty))
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 decoration: BoxDecoration(
@@ -213,7 +214,7 @@ class _HeaderCopy extends StatelessWidget {
                 child: Text('Coming soon', style: NiType.button(context)),
               )
             else
-              ...app.links.map((link) => _StoreButton(link: link)),
+              ...app.links.where((l) => l.url.isNotEmpty).map((link) => _StoreButton(link: link)),
           ],
         ),
       ],
@@ -644,7 +645,12 @@ class _AppFeaturesState extends State<_AppFeatures> {
                     return Container(
                       key: _keys[e.key],
                       margin: const EdgeInsets.only(bottom: 64),
-                      child: _FeatureDeepDive(feature: e.value, isReversed: e.key % 2 == 0)
+                      child: _FeatureDeepDive(
+                        app: widget.app,
+                        feature: e.value,
+                        isReversed: e.key % 2 == 0,
+                        index: e.key,
+                      ),
                     );
                   }),
                 ],
@@ -668,7 +674,12 @@ class _AppFeaturesState extends State<_AppFeatures> {
                         return Container(
                           key: _keys[e.key],
                           margin: const EdgeInsets.only(bottom: 120),
-                          child: _FeatureDeepDive(feature: e.value, isReversed: e.key % 2 == 0)
+                          child: _FeatureDeepDive(
+                            app: widget.app,
+                            feature: e.value,
+                            isReversed: e.key % 2 == 0,
+                            index: e.key,
+                          ),
                         );
                       }).toList(),
                     ),
@@ -682,13 +693,21 @@ class _AppFeaturesState extends State<_AppFeatures> {
 }
 
 class _FeatureDeepDive extends StatelessWidget {
+  final AppModel app;
   final AppFeature feature;
   final bool isReversed;
+  final int index;
 
-  const _FeatureDeepDive({required this.feature, required this.isReversed});
+  const _FeatureDeepDive({
+    required this.app,
+    required this.feature,
+    required this.isReversed,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final tokens = NiTokens.of(context);
     final isMobile = NiTokens.isMobile(context);
     
     // We expect the first section to have the content for the deep dive
@@ -700,11 +719,36 @@ class _FeatureDeepDive extends StatelessWidget {
       children: [
         Text(feature.title, style: NiType.h3(context)),
         const SizedBox(height: 16),
-        Text(desc, style: NiType.muted(context)),
+        MarkdownBody(
+          data: desc,
+          styleSheet: MarkdownStyleSheet(
+            p: NiType.muted(context).copyWith(height: 1.6),
+            pPadding: const EdgeInsets.only(bottom: 12),
+            listBullet: NiType.muted(context),
+            strong: NiType.muted(context).copyWith(
+              fontWeight: FontWeight.bold,
+              color: tokens.text,
+            ),
+            code: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 13,
+              backgroundColor: tokens.surface2,
+              color: tokens.accent,
+            ),
+          ),
+          onTapLink: (text, href, title) {
+            if (href != null) launchUrl(Uri.parse(href));
+          },
+        ),
       ],
     );
     final firstSectionWithImage = feature.sections.cast<FeatureSection?>().firstWhere((s) => s != null && s.images.isNotEmpty, orElse: () => null);
-    final imageUrl = firstSectionWithImage != null ? firstSectionWithImage.images.first.url : '';
+    String imageUrl = firstSectionWithImage != null ? firstSectionWithImage.images.first.url : '';
+    if (imageUrl.isEmpty && app.descriptionImages.isNotEmpty) {
+      imageUrl = app.descriptionImages[index % app.descriptionImages.length].url;
+    } else if (imageUrl.isEmpty && app.screenshots.isNotEmpty) {
+      imageUrl = app.screenshots[index % app.screenshots.length].url;
+    }
 
     final mediaCol = ClipRRect(
       borderRadius: BorderRadius.circular(24),

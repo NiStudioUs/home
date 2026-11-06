@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
     final themeService = Provider.of<ThemeService>(context);
 
     return MaterialApp.router(
-      title: 'Developer Portfolio',
+      title: 'Ni Studio Us',
       themeMode: themeService.themeMode,
       theme: NiTheme.light(),
       darkTheme: NiTheme.dark(),

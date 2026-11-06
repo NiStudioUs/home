@@ -71,6 +71,7 @@ Widget buildImage(
   BoxFit? fit,
   Alignment alignment = Alignment.center,
   BorderRadius? borderRadius,
+  String? semanticLabel,
 }) {
   if (url.isEmpty) {
     return SizedBox(
@@ -80,6 +81,7 @@ Widget buildImage(
     );
   }
 
+  final label = semanticLabel ?? url.split('/').last.replaceAll(RegExp(r'\.(webp|png|jpg|jpeg)$'), '').replaceAll(RegExp(r'[-_]'), ' ');
   final bool isNetwork = url.startsWith('http') || url.startsWith('https');
   final Widget imageWidget = isNetwork
       ? Image.network(
@@ -88,6 +90,7 @@ Widget buildImage(
           height: height,
           fit: fit,
           alignment: alignment,
+          semanticLabel: label,
           frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
             if (wasSynchronouslyLoaded || frame != null) return child;
             return NiImageSkeleton(width: width, height: height, borderRadius: borderRadius);
@@ -104,6 +107,7 @@ Widget buildImage(
           height: height,
           fit: fit,
           alignment: alignment,
+          semanticLabel: label,
           frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
             if (wasSynchronouslyLoaded || frame != null) return child;
             return NiImageSkeleton(width: width, height: height, borderRadius: borderRadius);

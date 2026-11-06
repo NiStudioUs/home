@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
-import '../widgets/topbar.dart';
 import '../widgets/footer.dart';
 
 class SitemapPage extends StatelessWidget {
@@ -40,9 +39,12 @@ class SitemapPage extends StatelessWidget {
                           )).toList(),
                         )
                       else
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: dataModel.apps.map((app) => Expanded(
+                        Wrap(
+                          spacing: 40,
+                          runSpacing: 40,
+                          crossAxisAlignment: WrapCrossAlignment.start,
+                          children: dataModel.apps.map((app) => SizedBox(
+                            width: 190,
                             child: _AppColumn(app: app),
                           )).toList(),
                         ),
@@ -65,7 +67,6 @@ class _AppColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = NiTokens.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

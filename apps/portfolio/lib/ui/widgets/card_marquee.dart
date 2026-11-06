@@ -173,8 +173,8 @@ class CardMarqueeState extends State<CardMarquee> with SingleTickerProviderState
                                 child: Row(
                                   children: [
                                     _MarqueeCardTrack(key: _measureKey, cards: widget.cards),
-                                    _MarqueeCardTrack(cards: widget.cards),
-                                    _MarqueeCardTrack(cards: widget.cards),
+                                    ExcludeSemantics(child: _MarqueeCardTrack(cards: widget.cards)),
+                                    ExcludeSemantics(child: _MarqueeCardTrack(cards: widget.cards)),
                                   ],
                                 ),
                               ),

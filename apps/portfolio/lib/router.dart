@@ -52,7 +52,11 @@ class DeferredLoader extends StatelessWidget {
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
-  errorBuilder: (context, state) => const NotFoundPage(),
+  errorBuilder: (context, state) => Title(
+    title: '404 Page Not Found | Ni Studio Us',
+    color: Theme.of(context).primaryColor,
+    child: const NotFoundPage(),
+  ),
   routes: [
     // Main Website Routes
     ShellRoute(
@@ -62,17 +66,43 @@ final GoRouter router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => DeferredLoader(
-            loadLibrary: home.loadLibrary(),
-            placeholder: const HomePageSkeleton(),
-            builder: (_) => home.HomePage(),
+          builder: (context, state) => Title(
+            title: 'Ni Studio Us — Private, Offline-First Mobile Apps & Portfolio',
+            color: Theme.of(context).primaryColor,
+            child: DeferredLoader(
+              loadLibrary: home.loadLibrary(),
+              placeholder: const HomePageSkeleton(),
+              builder: (_) => home.HomePage(),
+            ),
           ),
         ),
         GoRoute(
           path: '/apps/:id',
           builder: (context, state) {
             final id = state.pathParameters['id']!;
-            return AppDetailsPage(appId: id);
+            final dataModel = Provider.of<DataModel>(context, listen: false);
+            final app = dataModel.apps.firstWhere(
+              (element) => element.id == id,
+              orElse: () => AppModel(
+                id: id,
+                name: id,
+                shortDescription: '',
+                fullDescription: '',
+                iconUrl: '',
+                tags: [],
+                features: [],
+                technicalDetails: [],
+                screenshots: [],
+                links: [],
+                privacyPolicy: AppPolicy(url: '', features: []),
+                termsAndConditions: AppPolicy(url: '', features: []),
+              ),
+            );
+            return Title(
+              title: '${app.name} | Ni Studio Us',
+              color: Theme.of(context).primaryColor,
+              child: AppDetailsPage(appId: id),
+            );
           },
           routes: [
             GoRoute(
@@ -80,7 +110,29 @@ final GoRouter router = GoRouter(
               builder: (context, state) {
                 final id = state.pathParameters['id']!;
                 final topic = state.uri.queryParameters['topic'];
-                return HowToPage(appId: id, initialTopicId: topic);
+                final dataModel = Provider.of<DataModel>(context, listen: false);
+                final app = dataModel.apps.firstWhere(
+                  (element) => element.id == id,
+                  orElse: () => AppModel(
+                    id: id,
+                    name: id,
+                    shortDescription: '',
+                    fullDescription: '',
+                    iconUrl: '',
+                    tags: [],
+                    features: [],
+                    technicalDetails: [],
+                    screenshots: [],
+                    links: [],
+                    privacyPolicy: AppPolicy(url: '', features: []),
+                    termsAndConditions: AppPolicy(url: '', features: []),
+                  ),
+                );
+                return Title(
+                  title: 'How to use ${app.shortName} | Ni Studio Us',
+                  color: Theme.of(context).primaryColor,
+                  child: HowToPage(appId: id, initialTopicId: topic),
+                );
               },
             ),
             GoRoute(
@@ -108,11 +160,15 @@ final GoRouter router = GoRouter(
                     termsAndConditions: AppPolicy(url: '', features: []),
                   ),
                 );
-                return LegalPage(
-                  title: 'Privacy Policy',
-                  features: app.privacyPolicy.features,
-                  app: app,
-                  pageType: PageType.privacy,
+                return Title(
+                  title: '${app.name} – Privacy Policy | Ni Studio Us',
+                  color: Theme.of(context).primaryColor,
+                  child: LegalPage(
+                    title: 'Privacy Policy',
+                    features: app.privacyPolicy.features,
+                    app: app,
+                    pageType: PageType.privacy,
+                  ),
                 );
               },
             ),
@@ -141,11 +197,15 @@ final GoRouter router = GoRouter(
                     termsAndConditions: AppPolicy(url: '', features: []),
                   ),
                 );
-                return LegalPage(
-                  title: 'Terms & Conditions',
-                  features: app.termsAndConditions.features,
-                  app: app,
-                  pageType: PageType.terms,
+                return Title(
+                  title: '${app.name} – Terms & Conditions | Ni Studio Us',
+                  color: Theme.of(context).primaryColor,
+                  child: LegalPage(
+                    title: 'Terms & Conditions',
+                    features: app.termsAndConditions.features,
+                    app: app,
+                    pageType: PageType.terms,
+                  ),
                 );
               },
             ),
@@ -164,11 +224,19 @@ final GoRouter router = GoRouter(
         ),
         GoRoute(
           path: '/howto',
-          builder: (context, state) => const HowtoHubPage(),
+          builder: (context, state) => Title(
+            title: 'Guides & How-To Hub | Ni Studio Us',
+            color: Theme.of(context).primaryColor,
+            child: const HowtoHubPage(),
+          ),
         ),
         GoRoute(
           path: '/sitemap',
-          builder: (context, state) => const SitemapPage(),
+          builder: (context, state) => Title(
+            title: 'Sitemap | Ni Studio Us',
+            color: Theme.of(context).primaryColor,
+            child: const SitemapPage(),
+          ),
         ),
       ],
     ),

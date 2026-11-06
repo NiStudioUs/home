@@ -30,7 +30,7 @@ class ProfileData {
       'startDate': 'July 2025',
       'endDate': 'December 2025',
       'bullets': [
-        'Architected and engineered the enterprise-level TypeScript @allica/shared-e2e platform library, securing Azure Key Vault integration and designing a local MSAL mock server to streamline role-based JWT generation across teams.',
+        'Architected and engineered the enterprise-level TypeScript @enterprise/shared-e2e platform library, securing Azure Key Vault integration and designing a local MSAL mock server to streamline role-based JWT generation across teams.',
         'Architect and evolve the organisation\'s Playwright (TypeScript) automation suite for lending broker applications and customer onboarding, replacing legacy tooling with a scalable TypeScript framework.',
         'Spearheaded CI pipeline optimizations by designing a smart Cypress spec filtering algorithm and parallel local execution architecture, reducing pipeline runtimes by over 60% and eliminating redundant file scanning.',
         'Set technical standards with modular REST Assured test structures (JsonMaskingValidator and JsonUtils).',
@@ -206,7 +206,7 @@ class ProfileData {
   static const List<Map<String, dynamic>> projects = [
     {
       'id': 'shared-e2e',
-      'name': '''@allica/shared-e2e Automation Platform''',
+      'name': '''@enterprise/shared-e2e Automation Platform''',
       'status': 'Enterprise Live',
       'description': '''Enterprise E2E test automation npm library distributed via Azure Artifacts across 4 engineering squads. Features automated Azure Key Vault secret retrieval, local MSAL mock server for role-based JWT generation, and standardized authentication.''',
       'version': '2.4.0',

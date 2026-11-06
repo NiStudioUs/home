@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarm Clock – Privacy Policy | Ni Studio Us</title>
+  <meta name="description" content="Official Privacy Policy for Alarm Clock published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="keywords" content="Flutter, Android, Mobile Apps, Offline-First, Private Apps, Ni Studio Us, Karthik Subramanian, IKY, Scribble Notes, SMS Stack, Edgewise, Alarm Clock">
+  <meta name="author" content="Ni Studio Us">
+  <link rel="canonical" href="https://nistudious.github.io/home/apps/alarm-clock/privacy">
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nistudious.github.io/home/apps/alarm-clock/privacy">
+  <meta property="og:title" content="Alarm Clock – Privacy Policy | Ni Studio Us">
+  <meta property="og:description" content="Official Privacy Policy for Alarm Clock published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta property="og:image" content="https://nistudious.github.io/home/icons/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nistudious.github.io/home/apps/alarm-clock/privacy">
+  <meta name="twitter:title" content="Alarm Clock – Privacy Policy | Ni Studio Us">
+  <meta name="twitter:description" content="Official Privacy Policy for Alarm Clock published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="twitter:image" content="https://nistudious.github.io/home/icons/og-image.png">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="IFmn3wMBC252N0lkARAt4M6GzBLJOn_1EZZ80SCdVo4" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ni Studio Us">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- GitHub Pages SPA Route Restore Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+    }
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f7fc;
+      z-index: 9998;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .sk-bone {
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
+    .sk-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
+    }
+
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 24px;
+    }
+    .sk-hero-left {
+      flex: 135;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 65;
+      height: 540px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 32px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
+    .sk-phone {
+      width: 230px;
+      height: 485px;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
+      position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+    }
+    .sk-phone-1 {
+      left: 0;
+      top: 80px;
+      transform: rotate(-5.7deg);
+    }
+    .sk-phone-2 {
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
+    }
+    .sk-spotlight {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
+      box-sizing: border-box;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sk-marquee {
+      height: 46px;
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+    .static-footer a {
+      color: #646cff;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 2px 4px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
+      }
+      .static-footer a {
+        color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          </div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
+  <div id="static-footer" class="static-footer">
+    <a href="apps/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/terms">Scribble Notes Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/iky/privacy">IKY Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/alarm-clock/privacy">Alarm Clock Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/edgewise/privacy">Edgewise Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="sitemap">Sitemap</a>
+  </div>
+  
+  <script>
+    // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
+    function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
+      var footer = document.getElementById('static-footer');
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
+        clearInterval(checkInterval);
+      }
+    }, 50);
+    
+    // Safety fallback: hide after 10 seconds if no event fired
+    setTimeout(function() {
+      hideStaticContent();
+      clearInterval(checkInterval);
+    }, 10000);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+
+    <noscript>
+      <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e1e24;">
+        
+      <h1>Privacy Policy: Alarm Clock</h1>
+      <p><strong>Published by:</strong> Ni Studio Us</p>
+      
+      <h2>Interpretation and Definitions</h2>
+      
+        <h3>Interpretation</h3>
+        <p>Words with an initial capital letter have the meaning defined in this</p>
+<p>section, regardless of whether they appear in singular or plural.</p>
+      
+        <h3>Definitions</h3>
+        <p>For the purposes of this Privacy Policy:</p>
+<ul>
+<li><strong>Application</strong> means the software program Alarm Clock, provided by the</li>
+</ul>
+<p>  Company, downloaded by You on any electronic device.</p>
+<ul>
+<li><strong>Company</strong> (&quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot;, &quot;Our&quot;) refers to Ni Studio Us.</li>
+<li><strong>Device</strong> means any device that can access the Service, such as a</li>
+</ul>
+<p>  cellphone or tablet.</p>
+<ul>
+<li><strong>Personal Data</strong> is any information that relates to an identified or</li>
+</ul>
+<p>  identifiable individual.</p>
+<ul>
+<li><strong>Service</strong> refers to the Application.</li>
+<li><strong>Third-Party Service</strong> means a service operated by someone other than the</li>
+</ul>
+<p>  Company that the Application calls out to (see §4).</p>
+<ul>
+<li><strong>You</strong> means the individual using the Service.</li>
+</ul>
+      
+    
+      <h2>Summary — what this app does and does not do</h2>
+      
+        <h3>Summary — what this app does and does not do</h3>
+        <p>Alarm Clock is built to work entirely on Your device:</p>
+<ul>
+<li><strong>No account, no sign-in.</strong> The app never asks You to create an account or</li>
+</ul>
+<p>  sign in with Google, Apple, email, or any other identity provider.</p>
+<ul>
+<li><strong>No cloud backup or sync.</strong> All alarms, timers, reminders, routines, and</li>
+</ul>
+<p>  settings are stored only in a local database on Your device</p>
+<p>  (<code>android:allowBackup=&quot;false&quot;</code> — Android&#039;s own automatic cloud backup of</p>
+<p>  app data is explicitly disabled). Nothing is uploaded to servers We</p>
+<p>  operate, because We do not operate any servers that store Your data.</p>
+<ul>
+<li><strong>No analytics, advertising, or crash-reporting SDKs.</strong> The app does not</li>
+</ul>
+<p>  embed Firebase, Google Analytics, any ad network, or any third-party</p>
+<p>  analytics/crash SDK. We do not track Your usage of the app.</p>
+<ul>
+<li><strong>One limited, anonymous network call</strong> (reverse geocoding — see §4) and</li>
+</ul>
+<p>  <strong>Google Play Billing</strong> (for Premium purchases — see §5) are the only two</p>
+<p>  ways the app talks to anything outside Your device.</p>
+      
+    
+      <h2>Data We Collect</h2>
+      
+        <h3>Data You provide directly</h3>
+        <p>Everything You type into the app — alarm labels, reminder text, routine</p>
+<p>names, the location You pick for a work routine — is Personal Data You</p>
+<p>create, and it stays in the app&#039;s local database on Your Device. We (Ni</p>
+<p>Studio Us) never receive a copy of it.</p>
+      
+        <h3>Data collected automatically</h3>
+        <p>We do not operate any analytics or telemetry pipeline, so We do not</p>
+<p>automatically collect usage data, device identifiers, or diagnostic logs</p>
+<p>about how You use the app. The app does keep a local, on-device log file for</p>
+<p>Your own troubleshooting (crash/error details), which never leaves Your</p>
+<p>Device and which only You can access (e.g. by sharing it with Us yourself, by</p>
+<p>email, if You choose to report a bug).</p>
+      
+        <h3>Permissions the app requests, and why</h3>
+        <p>The Application requests the following Device permissions. Each is used only</p>
+<p>for the stated purpose, and each can be reviewed or revoked at any time in</p>
+<p>Your Device&#039;s App Settings:</p>
+<p>| Permission | Purpose |</p>
+<p>|---|---|</p>
+<p>| <strong>Exact Alarms</strong> (<code>SCHEDULE_EXACT_ALARM</code>, <code>USE_EXACT_ALARM</code>) | To ring alarms, timers, and reminders at the exact time You set. |</p>
+<p>| <strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>) | To show alarm, timer, and reminder notifications. |</p>
+<p>| <strong>Full-Screen Intent</strong> (<code>USE_FULL_SCREEN_INTENT</code>) | To show the full-screen ring/snooze/stop screen when an alarm fires, including over the lock screen. |</p>
+<p>| <strong>Wake Lock / Foreground Service (+ Media Playback)</strong> | To keep the ringtone playing reliably while an alarm or timer is going off, even if the screen turns off. |</p>
+<p>| <strong>Ignore Battery Optimizations</strong> | Requested optionally, so Android&#039;s battery-saving features don&#039;t delay or silently skip a scheduled alarm. |</p>
+<p>| <strong>Boot Completed</strong> (<code>RECEIVE_BOOT_COMPLETED</code>) | To reschedule Your alarms after the Device restarts (Android clears all pending alarms on reboot). |</p>
+<p>| <strong>Vibrate</strong> | For alarm/timer vibration. |</p>
+<p>| <strong>Microphone</strong> (<code>RECORD_AUDIO</code>) | Only when You actively use the voice-command feature (the NLP mic button, or the voice-command practice/help page). Speech is recognized using Your Device&#039;s own on-device/system speech-recognition service; We do not record, store, or transmit Your voice audio to any server We operate. |</p>
+<p>| <strong>Location</strong> (fine, coarse, background) | Only used for the optional, Premium &quot;work routine&quot; (geofence) feature, so a routine can trigger when You arrive at or leave a place You chose (e.g. &quot;Work&quot;). Location is read on-device to evaluate the geofence and is stored only in Your local routines database. It is <strong>never</strong> collected if You do not set up a location-based routine, and background location is only requested when a routine actually needs to run while the app isn&#039;t open. |</p>
+<p>| <strong>Internet</strong> | Used only for the two purposes described in §4 and §5 below — never for tracking or advertising. |</p>
+      
+    
+      <h2>Third-Party Service: Location Name Lookup (OpenStreetMap Nominatim)</h2>
+      
+        <h3>Third-Party Service: Location Name Lookup (OpenStreetMap Nominatim)</h3>
+        <p>When You pick a location for a work routine, the app shows You a</p>
+<p>human-readable place name (e.g. &quot;Koramangala, Bengaluru&quot;) instead of raw</p>
+<p>coordinates. To do this, it sends the latitude/longitude You selected to</p>
+<p><strong>OpenStreetMap&#039;s Nominatim API</strong> (<code>nominatim.openstreetmap.org</code>), a</p>
+<p>third-party, independently-operated service not owned by Us.</p>
+<ul>
+<li>Only the coordinates are sent — no name, email, account identifier, or</li>
+</ul>
+<p>  other Personal Data accompanies the request.</p>
+<ul>
+<li>This happens only when You are actively setting up or editing a</li>
+</ul>
+<p>  location-based routine; it is not a background or periodic call.</p>
+<ul>
+<li>If the request fails (e.g. You are offline), the app simply shows the raw</li>
+</ul>
+<p>  coordinates instead — this lookup is best-effort and never blocks the</p>
+<p>  feature from working.</p>
+<ul>
+<li>This exchange is governed by</li>
+</ul>
+<p>  [OpenStreetMap&#039;s own privacy policy](https://wiki.osmfoundation.org/wiki/Privacy_Policy),</p>
+<p>  not this one. We do not control, and are not responsible for, how</p>
+<p>  OpenStreetMap/Nominatim itself handles that request on its servers.</p>
+      
+    
+      <h2>In-App Purchases (Premium)</h2>
+      
+        <h3>In-App Purchases (Premium)</h3>
+        <p>Alarm Clock offers an optional, paid &quot;Premium&quot; tier (e.g. unlimited alarms,</p>
+<p>unlimited profiles, the work-geofence feature, unlimited reminders),</p>
+<p>purchased through <strong>Google Play Billing</strong>.</p>
+<ul>
+<li>All payment details (card numbers, UPI, etc.) are handled entirely by</li>
+</ul>
+<p>  Google Play — We never see, collect, or store Your payment information.</p>
+<ul>
+<li>To confirm a purchase is genuine, the app verifies the purchase receipt</li>
+</ul>
+<p>  Google Play gives it <strong>locally, on Your Device</strong>, using a cryptographic</p>
+<p>  signature check. This verification does not send Your purchase data to any</p>
+<p>  server We operate.</p>
+<ul>
+<li>Your relationship with Google regarding billing is governed by</li>
+</ul>
+<p>  [Google Play&#039;s own Terms of Service and Privacy Policy](https://policies.google.com/privacy).</p>
+      
+    
+      <h2>Sharing of Data</h2>
+      
+        <h3>Sharing of Data</h3>
+        <p>We do not sell Your data. We do not share Your Personal Data with</p>
+<p>advertisers, data brokers, or any other third party. The only two parties</p>
+<p>the app ever communicates with are the two named above (OpenStreetMap</p>
+<p>Nominatim, and Google Play Billing), each strictly for the purpose described,</p>
+<p>and never with any Personal Data beyond what each specific feature requires.</p>
+      
+    
+      <h2>Data Retention and Your Right to Delete</h2>
+      
+        <h3>Data Retention and Your Right to Delete</h3>
+        <p>Because almost everything is stored only on Your Device:</p>
+<ul>
+<li><strong>Uninstalling the app</strong> permanently deletes Your local alarms, timers,</li>
+</ul>
+<p>  reminders, routines, settings, and logs — there is nothing left on any</p>
+<p>  server for Us to delete, because We never held a copy.</p>
+<ul>
+<li>You can also delete individual items (an alarm, a reminder, a routine) at</li>
+</ul>
+<p>  any time from within the app itself.</p>
+<ul>
+<li>If You ever contact Us directly (e.g. by email, for support), any Personal</li>
+</ul>
+<p>  Data You share that way (such as Your email address) is retained only as</p>
+<p>  long as needed to resolve Your request, and You may ask Us to delete it at</p>
+<p>  any time by contacting Us at the address in §10.</p>
+      
+    
+      <h2>Security</h2>
+      
+        <h3>What We do</h3>
+        <p>We use reasonable, industry-standard practices appropriate to a fully</p>
+<p>on-device application: Your data is stored in Your Device&#039;s app-private</p>
+<p>storage (not accessible to other apps without root/jailbreak access), and the</p>
+<p>app does not transmit Your alarms, reminders, or routines anywhere.</p>
+      
+        <h3>What We cannot guarantee, and are not responsible for</h3>
+        <p>**No method of storage or transmission is 100% secure, and security of Your</p>
+<p>Device itself is Your responsibility, not Ours.** In particular:</p>
+<ul>
+<li>We are not responsible for the security of Your Device, Your Device&#039;s</li>
+</ul>
+<p>  operating system, Your Google account, or any other software installed on</p>
+<p>  Your Device. If Your Device is lost, stolen, rooted/jailbroken, infected</p>
+<p>  with malware, or otherwise compromised by a third party, any local data</p>
+<p>  stored by this app may be exposed — that risk sits with You and Your</p>
+<p>  Device, not with Us.</p>
+<ul>
+<li>We are not responsible for the security practices of third-party services</li>
+</ul>
+<p>  this app relies on but does not control, including Google Play (billing,</p>
+<p>  distribution) and OpenStreetMap/Nominatim (location name lookup). Any</p>
+<p>  security incident on those services&#039; infrastructure is governed by their</p>
+<p>  own policies, not this one.</p>
+<ul>
+<li>To the maximum extent permitted by law, We disclaim all liability for any</li>
+</ul>
+<p>  loss, damage, or unauthorized access arising from circumstances outside Our</p>
+<p>  direct control, including Device-level compromise, third-party service</p>
+<p>  outages or breaches, and Your own handling of Your Device or Google</p>
+<p>  account.</p>
+      
+    
+      <h2>Children&#039;s Privacy</h2>
+      
+        <h3>Children&#039;s Privacy</h3>
+        <p>Our Service does not knowingly collect Personal Data from anyone under the</p>
+<p>age of 13. Since the app requires no account and no Personal Data to</p>
+<p>function, We have no practical way to knowingly collect such data in the</p>
+<p>first place. If You believe a child has provided Us Personal Data directly</p>
+<p>(e.g. via a support email), contact Us and We will delete it.</p>
+      
+    
+      <h2>Changes to this Privacy Policy</h2>
+      
+        <h3>Changes to this Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time. Material changes will</p>
+<p>be reflected by an updated &quot;Last updated&quot; date at the top of this document.</p>
+<p>Continued use of the Service after a change becomes effective constitutes</p>
+<p>acceptance of the revised policy.</p>
+      
+    
+      <h2>Contact Us</h2>
+      
+        <h3>Contact Us</h3>
+        <p>Questions about this Privacy Policy can be sent to:</p>
+<p><strong>ni.studio.us@outlook.com</strong></p>
+      
+    
+      <hr />
+      <p><a href="https://nistudious.github.io/home/apps/alarm-clock">Back to Alarm Clock</a> · <a href="https://nistudious.github.io/home/">Home</a></p>
+    
+      </div>
+    </noscript>
+</body>
+</html>

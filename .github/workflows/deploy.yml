@@ -57,6 +57,8 @@ jobs:
           mkdir -p dist
           # Copy Flutter build to root of dist
           cp -R apps/portfolio/build/web/* dist/
+          # Generate static per-route index.html (200 status for crawlers & Play Store checks) and sitemap.xml
+          node scripts/generate_static_routes.js dist
 
       - name: Build Learning Hub
         run: |

@@ -197,11 +197,15 @@ class _LeftBaseLinks extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text('© $year Ni Studio Us · ', style: NiType.stat(context).copyWith(fontSize: 13.6)),
+        Text('© $year Ni Studio Us', style: NiType.stat(context).copyWith(fontSize: 13.6)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text('·', style: NiType.stat(context).copyWith(fontSize: 13.6)),
+        ),
         MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            onTap: () => context.go('/sitemap/'),
+            onTap: () => context.go('/sitemap'),
             child: Text(
               'Sitemap',
               style: NiType.stat(context).copyWith(
