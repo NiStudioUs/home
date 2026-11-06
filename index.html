@@ -83,6 +83,34 @@
       body, html {
         background-color: #0b0b0e;
       }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
     }
     /* Instant HTML Skeleton Loading Screen */
     .skeleton-screen {
@@ -423,41 +451,52 @@
   
   <script>
     // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
     function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
       var footer = document.getElementById('static-footer');
       var loader = document.getElementById('loading-screen');
       if (footer) footer.style.display = 'none';
       if (loader) {
-        loader.style.transition = 'opacity 0.3s ease-out';
+        loader.style.transition = 'opacity 0.4s ease-out';
         loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 300);
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
       }
     }
     
-    // Check for rendered content: wait until Flutter view has width/height or canvas is attached
-    var checkInterval = setInterval(function() {
-      var fltView = document.querySelector('flutter-view') || document.querySelector('flt-glass-pane');
-      var canvas = document.querySelector('canvas');
-      if (canvas && canvas.width > 0 && canvas.height > 0) {
-        // Wait one animation frame so the initial paint is visible on screen before fading
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
         requestAnimationFrame(function() {
           hideStaticContent();
         });
-        clearInterval(checkInterval);
-      } else if (fltView) {
-        // Fallback for html renderer or custom elements
-        setTimeout(function() {
-          hideStaticContent();
-        }, 150);
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
         clearInterval(checkInterval);
       }
     }, 50);
     
-    // Safety fallback: hide after 8 seconds
+    // Safety fallback: hide after 10 seconds if no event fired
     setTimeout(function() {
       hideStaticContent();
       clearInterval(checkInterval);
-    }, 8000);
+    }, 10000);
   </script>
   
   <script src="flutter_bootstrap.js" async></script>
