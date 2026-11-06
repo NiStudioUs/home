@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ni_design_system/ni_design_system.dart';
 import '../../models/data_model.dart';
 import '../../utils/scroll_keys.dart';
+import 'cycling_app_icon.dart';
 
 class HomeHero extends StatelessWidget {
   const HomeHero({super.key});
@@ -161,10 +162,7 @@ class _SpotlightCard extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(14, 20, 14, 14),
         child: Row(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(NiTokens.iconRadius(52, small: true)),
-              child: Image.asset(app.iconUrl, width: 52, height: 52),
-            ),
+            CyclingAppIcon(app: app, size: 52),
             const SizedBox(width: 16),
             Expanded(
               child: Column(

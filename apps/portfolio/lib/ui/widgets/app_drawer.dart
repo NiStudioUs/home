@@ -49,14 +49,6 @@ class AppDrawer extends StatelessWidget {
               );
             }).toList(),
           ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text('How to'),
-            onTap: () {
-              context.go('/howto');
-              Navigator.pop(context);
-            },
-          ),
           ExpansionTile(
             leading: const Icon(Icons.policy),
             title: const Text('Legal'),
@@ -82,6 +74,14 @@ class AppDrawer extends StatelessWidget {
                 ],
               );
             }).toList(),
+          ),
+          ListTile(
+            leading: const Icon(Icons.help),
+            title: const Text('How to'),
+            onTap: () {
+              context.go('/howto');
+              Navigator.pop(context);
+            },
           ),
         ],
       ),

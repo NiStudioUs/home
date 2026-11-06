@@ -7,6 +7,7 @@ import '../../models/howto_model.dart';
 import '../design_tokens.dart';
 import '../widgets/doc_layout.dart';
 import '../widgets/contact_card.dart';
+import '../widgets/cycling_app_icon.dart';
 
 class HowToPage extends StatelessWidget {
   final String appId;
@@ -90,6 +91,7 @@ class _HowToPageContent extends StatelessWidget {
 
     return DocLayout(
       title: title,
+      icon: CyclingAppIcon(app: app, size: 48),
       tocItems: tocItems,
       headingKeys: headingKeys,
       sections: app.features
@@ -340,6 +342,7 @@ class _HowToTopicPageContentState extends State<_HowToTopicPageContent> {
 
     return DocLayout(
       title: title,
+      icon: CyclingAppIcon(app: widget.app, size: 48),
       tocItems: tocItems,
       headingKeys: headingKeys,
       sections: sections,

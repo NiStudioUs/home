@@ -10,6 +10,7 @@ import 'sticky_container.dart';
 class DocLayout extends StatefulWidget {
   final String title;
   final String? subtitle;
+  final Widget? icon;
   final List<String> tocItems;
   final List<Widget> sections;
   final List<GlobalKey>? headingKeys;
@@ -19,6 +20,7 @@ class DocLayout extends StatefulWidget {
     super.key,
     required this.title,
     this.subtitle,
+    this.icon,
     required this.tocItems,
     required this.sections,
     this.headingKeys,
@@ -39,6 +41,7 @@ class _DocLayoutState extends State<DocLayout> {
   // doesn't fight the destination `_activeIndex` with its own proximity
   // guess while the animation is still mid-flight.
   bool _programmaticScroll = false;
+  int _scrollGeneration = 0;
 
   List<GlobalKey> get _effectiveKeys => widget.headingKeys ?? _keys;
 
@@ -81,6 +84,8 @@ class _DocLayoutState extends State<DocLayout> {
     final renderObject = ctx.findRenderObject();
     if (renderObject == null) return;
 
+    final gen = ++_scrollGeneration;
+    _programmaticScroll = true;
     setState(() => _activeIndex = index);
 
     final position = _scrollController.position;
@@ -97,15 +102,18 @@ class _DocLayoutState extends State<DocLayout> {
         .offset
         .clamp(position.minScrollExtent, position.maxScrollExtent);
 
-    _programmaticScroll = true;
     try {
       await _scrollController.animateTo(
         target,
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeInOut,
       );
+    } catch (_) {
+      // Interrupted by another user tap
     } finally {
-      _programmaticScroll = false;
+      if (_scrollGeneration == gen) {
+        _programmaticScroll = false;
+      }
     }
   }
 
@@ -219,7 +227,18 @@ class _DocLayoutState extends State<DocLayout> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.title, style: NiType.legalH1(context)),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          if (widget.icon != null) ...[
+                            widget.icon!,
+                            const SizedBox(width: 20),
+                          ],
+                          Expanded(
+                            child: Text(widget.title, style: NiType.legalH1(context)),
+                          ),
+                        ],
+                      ),
                       if (widget.subtitle != null) ...[
                         const SizedBox(height: 16),
                         Text(

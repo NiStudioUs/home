@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
+import '../../models/data_model.dart';
 import '../../models/howto_model.dart';
 import '../design_tokens.dart';
+import '../widgets/cycling_app_icon.dart';
 import '../widgets/footer.dart';
 
 /// Global index of every app's published how-to guide. Each row just routes
@@ -14,6 +16,7 @@ class HowtoHubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
+    final dataModel = Provider.of<DataModel>(context);
     final howtoIndex = Provider.of<HowtoIndexModel>(context);
     final apps = [...howtoIndex.apps]
       ..sort((a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()));
@@ -45,10 +48,15 @@ class HowtoHubPage extends StatelessWidget {
                           style: NiType.muted(context),
                         )
                       else
-                        ...apps.map((app) => Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          child: _HowtoAppRow(app: app),
-                        )),
+                        ...apps.map((app) {
+                          final appModel = dataModel.apps
+                              .where((a) => a.id == app.id)
+                              .firstOrNull;
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: _HowtoAppRow(app: app, appModel: appModel),
+                          );
+                        }),
                     ],
                   ),
                 ),
@@ -64,7 +72,9 @@ class HowtoHubPage extends StatelessWidget {
 
 class _HowtoAppRow extends StatefulWidget {
   final HowtoAppModel app;
-  const _HowtoAppRow({required this.app});
+  final AppModel? appModel;
+
+  const _HowtoAppRow({required this.app, this.appModel});
 
   @override
   State<_HowtoAppRow> createState() => _HowtoAppRowState();
@@ -92,6 +102,13 @@ class _HowtoAppRowState extends State<_HowtoAppRow> {
           ),
           child: Row(
             children: [
+              if (widget.appModel != null) ...[
+                CyclingAppIcon(
+                  app: widget.appModel!,
+                  size: 40,
+                ),
+                const SizedBox(width: 16),
+              ],
               Expanded(
                 child: Text(widget.app.title, style: NiType.h3(context)),
               ),

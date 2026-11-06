@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:web/web.dart' as web;
 import 'router.dart';
 import 'services/theme_service.dart';
 import 'services/data_service.dart';
@@ -23,11 +23,13 @@ void main() async {
   usePathUrlStrategy();
   GoogleFonts.config.allowRuntimeFetching = true;
 
-  final dataService = DataService();
-  final data = await dataService.loadData();
-
-  final howtoService = HowtoService();
-  final howtoIndex = await howtoService.loadHowtoIndex();
+  // Load critical data files concurrently to reduce startup latency
+  final results = await Future.wait([
+    DataService().loadData(),
+    HowtoService().loadHowtoIndex(),
+  ]);
+  final data = results[0] as DataModel;
+  final howtoIndex = results[1] as HowtoIndexModel;
 
   runApp(
     MultiProvider(
@@ -50,6 +52,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    // Dispatch event to index.html as soon as Flutter has laid out and drawn its first frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        web.window.dispatchEvent(web.Event('flutter-first-frame'));
+      } catch (_) {}
+    });
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

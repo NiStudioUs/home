@@ -171,6 +171,10 @@ class _DesktopNavBar extends StatelessWidget {
             const SizedBox(width: 16),
           ],
 
+          // Legal Dropdown
+          _LegalDropdown(apps: dataModel.apps),
+          const SizedBox(width: 16),
+
           // How To
           TextButton(
             onPressed: () => context.go('/howto'),
@@ -180,10 +184,6 @@ class _DesktopNavBar extends StatelessWidget {
             ),
             child: const Text('How to'),
           ),
-          const SizedBox(width: 16),
-
-          // Legal Dropdown
-          _LegalDropdown(apps: dataModel.apps),
           const SizedBox(width: 16),
 
           // Theme Toggle
