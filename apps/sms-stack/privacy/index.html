@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/home/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Stack – Privacy Policy | Ni Studio Us</title>
+  <meta name="description" content="Official Privacy Policy for SMS Stack published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="keywords" content="Flutter, Android, Mobile Apps, Offline-First, Private Apps, Ni Studio Us, Karthik Subramanian, IKY, Scribble Notes, SMS Stack, Edgewise, Alarm Clock">
+  <meta name="author" content="Ni Studio Us">
+  <link rel="canonical" href="https://nistudious.github.io/home/apps/sms-stack/privacy">
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nistudious.github.io/home/apps/sms-stack/privacy">
+  <meta property="og:title" content="SMS Stack – Privacy Policy | Ni Studio Us">
+  <meta property="og:description" content="Official Privacy Policy for SMS Stack published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta property="og:image" content="https://nistudious.github.io/home/icons/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nistudious.github.io/home/apps/sms-stack/privacy">
+  <meta name="twitter:title" content="SMS Stack – Privacy Policy | Ni Studio Us">
+  <meta name="twitter:description" content="Official Privacy Policy for SMS Stack published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="twitter:image" content="https://nistudious.github.io/home/icons/og-image.png">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="IFmn3wMBC252N0lkARAt4M6GzBLJOn_1EZZ80SCdVo4" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ni Studio Us">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- GitHub Pages SPA Route Restore Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+    }
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f7fc;
+      z-index: 9998;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .sk-bone {
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
+    .sk-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
+    }
+
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 24px;
+    }
+    .sk-hero-left {
+      flex: 135;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 65;
+      height: 540px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 32px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
+    .sk-phone {
+      width: 230px;
+      height: 485px;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
+      position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+    }
+    .sk-phone-1 {
+      left: 0;
+      top: 80px;
+      transform: rotate(-5.7deg);
+    }
+    .sk-phone-2 {
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
+    }
+    .sk-spotlight {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
+      box-sizing: border-box;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sk-marquee {
+      height: 46px;
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+    .static-footer a {
+      color: #646cff;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 2px 4px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
+      }
+      .static-footer a {
+        color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          </div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
+  <div id="static-footer" class="static-footer">
+    <a href="apps/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/terms">Scribble Notes Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/iky/privacy">IKY Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/alarm-clock/privacy">Alarm Clock Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/edgewise/privacy">Edgewise Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="sitemap">Sitemap</a>
+  </div>
+  
+  <script>
+    // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
+    function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
+      var footer = document.getElementById('static-footer');
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
+        clearInterval(checkInterval);
+      }
+    }, 50);
+    
+    // Safety fallback: hide after 10 seconds if no event fired
+    setTimeout(function() {
+      hideStaticContent();
+      clearInterval(checkInterval);
+    }, 10000);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+
+    <noscript>
+      <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e1e24;">
+        
+      <h1>Privacy Policy: SMS Stack</h1>
+      <p><strong>Published by:</strong> Ni Studio Us</p>
+      
+      <h2>Application &amp; Developer Identification</h2>
+      
+        <h3>Identity &amp; Scope</h3>
+        <p>This Privacy Policy applies to the mobile application <strong>SMS Stack</strong> (Package Name: <code>com.ni.studio.sms_stack_manager</code>), published on the Google Play Store.</p>
+<ul>
+<li><strong>Application Name</strong>: SMS Stack</li>
+<li><strong>Package Name</strong>: com.ni.studio.sms_stack_manager</li>
+<li><strong>Developer / Publisher</strong>: Ni Studios Us (also operating as NiStudioUs)</li>
+<li><strong>Developer Profile</strong>: [Ni Studios Us on Google Play](https://play.google.com/store/apps/developer?id=Ni+Studios)</li>
+<li><strong>Contact Email</strong>: ni.studio.us@outlook.com</li>
+<li><strong>Website</strong>: [https://nistudious.github.io/home/](https://nistudious.github.io/home/)</li>
+<li><strong>Country</strong>: India</li>
+</ul>
+<p>This policy explains how Ni Studios Us collects, uses, stores, and protects user data when you use the SMS Stack application.</p>
+      
+    
+      <h2>Limited Use Policy</h2>
+      
+        <h3>Compliance Disclosure</h3>
+        <p>SMS Stack&#039;s use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes), including the Limited Use requirements.</p>
+      
+    
+      <h2>Data Accessed</h2>
+      
+        <h3>SMS Messages (READ_SMS)</h3>
+        <p>Our application accesses your SMS messages to provide its core functionality. It reads the sender ID, message body, and timestamp of incoming and existing messages.</p>
+      
+        <h3>Contact List (READ_CONTACTS)</h3>
+        <p>Our application accesses your contact list (names and photos) strictly to <strong>humanize sender IDs</strong>. For example, identifying if a message is from a saved contact versus a business sender. This data is processed in-memory and is never uploaded.</p>
+      
+        <h3>Google Account Profile (Name &amp; Email)</h3>
+        <p>When you voluntarily sign in for <strong>Cloud Backup</strong>, we access your basic profile information (Name and Email address) provided by Google.</p>
+      
+    
+      <h2>Data Usage</h2>
+      
+        <h3>Local Categorization &amp; Parsing</h3>
+        <p>The SMS data accessed is processed <strong>locally on your device</strong> using a regex engine. We use this data to:</p>
+<ul>
+<li><strong>Categorize</strong> messages into Personal, Finance, and Promo tabs.</li>
+<li><strong>Extract</strong> financial transaction details (amount, merchant, date) to build your finance dashboard.</li>
+<li><strong>Identify</strong> bill reminders to populate the &#039;Upcoming Bills&#039; section.</li>
+</ul>
+      
+        <h3>Display Purposes</h3>
+        <p>Contact names and photos are used strictly to display recognized avatars next to message threads, making your inbox easier to navigate.</p>
+      
+        <h3>Limited Sharing (User-Initiated Backups Only)</h3>
+        <p>We <strong>do not</strong> transfer your data to any third-party server for processing. The only time data leaves your device is when YOU explicitly enable <strong>Google Drive Backup</strong>. In this case, your data is encrypted with AES-256 and uploaded to your personal Google Drive account for safe keeping.</p>
+      
+        <h3>Cloud Backup Authentication</h3>
+        <p>If you sign in for Cloud Backup, we use your <strong>Name and Email Address</strong> solely to display the currently connected account within the app&#039;s settings. This helps you verify which Google Drive account is being used for backups. We do not share this identity with any other third parties.</p>
+      
+    
+      <h2>Data Safety &amp; Permissions</h2>
+      
+        <h3>SMS &amp; Contacts</h3>
+        <p>To function as an SMS Organizer and Expense Manager, we request specific permissions which are <strong>core to the app&#039;s functionality</strong>:</p>
+<ul>
+<li><strong>Read SMS (<code>READ_SMS</code>)</strong>: Used exclusively to categorize messages (Personal, Finance, Promo) and extract transaction details for your local dashboard. <strong>We do not upload your SMS data to any server.</strong></li>
+<li><strong>Receive SMS (<code>RECEIVE_SMS</code>)</strong>: Required to detect and process new incoming transaction alerts in real-time.</li>
+<li><strong>Send SMS (<code>SEND_SMS</code>)</strong>: Required for sending replies directly from the app&#039;s notification or UI.</li>
+<li><strong>Write SMS (<code>WRITE_SMS</code>)</strong>: Used to mark messages as read and to delete messages you choose to delete, keeping your organized inbox in sync with the system.</li>
+<li><strong>Read Contacts (<code>READ_CONTACTS</code>)</strong>: Used to display contact names and photos for better identification. <strong>In-Memory Only</strong>.</li>
+<li><strong>Read Phone State (<code>READ_PHONE_STATE</code>)</strong>: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.</li>
+</ul>
+      
+        <h3>Financial Data Privacy</h3>
+        <p><strong>Strict Local Processing Policy</strong>: All financial parsing happens on-device. We do not sell, trade, or transfer your financial data or SMS content to third parties. Your data never leaves your device unless you explicitly initiate an encrypted cloud backup to your own Google Drive.</p>
+<p>### Not a Loan App</p>
+<p><strong>We do not provide, facilitate, or promote personal loans or credit products.</strong> This app is strictly a personal finance manager and expense tracker.</p>
+      
+        <h3>Core Functionality &amp; Data Minimization</h3>
+        <p><strong>Play Policy Alignment</strong></p>
+<p>SMS and contact access is used solely to provide the app&#039;s core functionality: organizing your messages and tracking expenses. The data accessed is the minimum required for these features and is processed on-device. It is never used for advertising, ad targeting, or user profiling, and is never sold, rented, shared, or transferred to any third party.</p>
+      
+        <h3>System Integrations</h3>
+        <ul>
+<li><strong>Notifications (<code>POST_NOTIFICATIONS</code>)</strong>: Required to post alerts for incoming messages and transaction events.</li>
+<li><strong>Alarms (<code>SCHEDULE_EXACT_ALARM</code>)</strong>: Required to schedule precise reminders for upcoming Bill Due Dates.</li>
+<li><strong>Foreground Service &amp; Data Sync (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_DATA_SYNC</code>)</strong>: Runs the dedicated <code>SyncForegroundService</code> while encrypting, compressing, and uploading or downloading your cloud backup snapshot. This helps keep your user-initiated backup or restore running in the background if you switch apps or lock your screen, though Android may still terminate the process under memory pressure or OEM battery restrictions.</li>
+<li><strong>Battery Optimization Exemption (<code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>)</strong>: Used optionally to prevent aggressive OEM background app killers from silencing scheduled bill reminders and interrupting automated backups.</li>
+<li><strong>Biometric (<code>USE_BIOMETRIC</code>)</strong>: Used for the optional App Lock feature to authenticate you and safeguard sensitive financial views.</li>
+<li><strong>Vibration (<code>VIBRATE</code>)</strong>: Used for tactile feedback on high-priority alerts and notifications.</li>
+<li><strong>Boot Completed (<code>RECEIVE_BOOT_COMPLETED</code>)</strong>: Required to re-register scheduled bill reminder alarms and SMS broadcast listeners after your phone restarts.</li>
+</ul>
+      
+        <h3>Network Usage</h3>
+        <ul>
+<li><strong>Internet (<code>INTERNET</code>)</strong>: The app uses internet access <strong>strictly</strong> for:</li>
+<li>Fetching parser rule updates (Firebase Remote Config).</li>
+<li>Performing encrypted backups (Google Drive API).</li>
+<li><strong>No SMS data is ever sent to our servers.</strong></li>
+</ul>
+      
+    
+      <h2>Data Processing</h2>
+      
+        <h3>Parsing (Regex Engine)</h3>
+        <p>When an SMS is received, it is processed by the on-device <code>SmsParserEngine</code>. This engine uses a set of Regular Expression rules to identify patterns (like &quot;INR 500 debited&quot;). This processing happens <strong>entirely in your phone&#039;s secure memory</strong>.</p>
+      
+        <h3>Storage (SQLite)</h3>
+        <p>All extracted data (Accounts, Transactions, Bills, Logs) is stored in a private <code>SQLite</code> database located in the app&#039;s secure sandbox. Other apps cannot access this data.</p>
+      
+    
+      <h2>Cloud Services</h2>
+      
+        <h3>Google Drive Sync</h3>
+        <p>If you enable Cloud Backup:</p>
+<ul>
+<li>Your data is serialized to JSON and GZIP compressed.</li>
+<li>Data is <strong>End-to-End Encrypted</strong> (AES-256-GCM) locally before upload using a key derived from your custom password.</li>
+<li>The encrypted file is uploaded to a hidden <code>appDataFolder</code> in your personal Google Drive storage.</li>
+</ul>
+<p><strong>We cannot decrypt or read your data.</strong></p>
+<p>### How to Delete Your Cloud Data</p>
+<p>You can permanently delete your cloud backup data at any time via two simple methods:</p>
+<ul>
+<li><strong>Directly in the App</strong>: Open <strong>Settings</strong> -&gt; <strong>Cloud Backup</strong> -&gt; scroll to the <strong>Danger Zone</strong> -&gt; tap <strong>Delete Backup</strong>. This immediately and permanently deletes the encrypted backup file (<code>sms_stack_backup.enc</code> and historical rotation slots) from your Google Drive <code>appDataFolder</code> and clears local backup state.</li>
+<li><strong>Via Google Drive on the Web</strong>: Go to [drive.google.com/drive/settings](https://drive.google.com/drive/settings) -&gt; click <strong>Manage Apps</strong> -&gt; locate <strong>SMS Stack</strong> -&gt; click <strong>Options</strong> -&gt; choose <strong>Delete hidden app data</strong>.</li>
+</ul>
+      
+        <h3>Firebase Config</h3>
+        <p>We use Firebase Remote Config to push updates to the SMS parsing rules. This service may collect basic metadata (Instance ID, IP Address) for service delivery, but it <strong>does not</strong> access your SMS content.</p>
+      
+    
+      <h2>Your Rights</h2>
+      
+        <h3>User Control</h3>
+        <ul>
+<li><strong>Access</strong>: You have full access to view, search, export, and manage all processed data within the app.</li>
+<li><strong>Erasure</strong>: Uninstalling the app instantly and permanently deletes all local data and SQLite databases. You can permanently delete your cloud backups at any time directly in the app at <strong>Settings &gt; Cloud Backup &gt; Delete Backup</strong>, or via Google Drive settings (<strong>Manage Apps &gt; Delete hidden app data</strong>).</li>
+<li><strong>Breach Notification</strong>: In the unlikely event of a security incident, we will notify you promptly via in-app alerts if technically feasible.</li>
+</ul>
+      
+        <h3>Children&#039;s Privacy</h3>
+        <p>Our service is not directed to anyone under the age of 18. We do not knowingly collect personal information from children. If you are a parent and become aware that your child has provided us with Personal Data, please contact us.</p>
+      
+        <h3>Changes to This Policy</h3>
+        <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after they are posted on this page.</p>
+      
+    
+      <h2>Contact Us</h2>
+      
+        <h3>Grievance Officer</h3>
+        <p>In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023 (India), if you have any questions or grievances regarding this Privacy Policy, please contact our Data Protection Officer:</p>
+<ul>
+<li><strong>Name</strong>: Ni Studios Us (also operating as NiStudioUs)</li>
+<li><strong>Email</strong>: ni.studio.us@outlook.com</li>
+<li><strong>Website</strong>: [https://nistudious.github.io/home/](https://nistudious.github.io/home/)</li>
+<li><strong>Country</strong>: India</li>
+</ul>
+      
+    
+      <hr />
+      <p><a href="https://nistudious.github.io/home/apps/sms-stack">Back to SMS Stack</a> · <a href="https://nistudious.github.io/home/">Home</a></p>
+    
+      </div>
+    </noscript>
+</body>
+</html>

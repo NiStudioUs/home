@@ -1,11 +1,11 @@
 {
-    "name": "nistudious_website",
-    "short_name": "nistudious_website",
+    "name": "Ni Studio Us",
+    "short_name": "Ni Studio Us",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0b0b0e",
+    "theme_color": "#0b0b0e",
+    "description": "Private, offline-first mobile apps by Ni Studio Us — notes, finance, and utilities built with clean architecture and no ads.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

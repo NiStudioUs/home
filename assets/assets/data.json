@@ -5,13 +5,27 @@
     "shortName": "Karthik",
     "bio": "",
     "role": "Flutter Developer",
-    "avatarUrl": "assets/developers/dev-avatar.png",
+    "avatarUrl": "assets/developers/dev-avatar.webp",
     "email": "ni.studio.us@outlook.com",
-    "bannerUrl": "assets/developers/play_store_banner.png",
+    "bannerUrl": "assets/developers/play_store_banner.webp",
     "badge": {
-      "url": "assets/developers/dev-avatar.png",
+      "url": "assets/developers/dev-avatar.webp",
       "caption": "Brand Creator"
-    }
+    },
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/karthik-s-b3552995"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/nistudious"
+      },
+      {
+        "platform": "Play Store",
+        "url": "https://play.google.com/store/apps/developer?id=Ni+Studios"
+      }
+    ]
   },
   "apps": [
     {
@@ -19,7 +33,7 @@
       "name": "Scribble: Notes, Diary & Tasks",
       "shortDescription": "Secure, organized note-taking with scribble support.",
       "fullDescription": "Scribble Notes is a feature-rich note-taking application designed for privacy and organization. With features like nested folders, app lock, rich text editing, and a unique frame-based scribble pad, it keeps your ideas secure and structured.",
-      "iconUrl": "assets/images/app1/icon.png",
+      "iconUrl": "assets/images/app1/icon.webp",
       "descriptionImages": [],
       "demoUrl": "/home/app/scribble-notes/demo/",
       "features": [
@@ -32,9 +46,9 @@
               "content": "A dedicated space for your daily journals. Experience a clean list view, an immersive book-like page reader, and a timeline view to naturally scroll through your life's events.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-5-diaries-list.png",
-                "assets/images/app1/playstore_screen-5-diaries-pageview.png",
-                "assets/images/app1/playstore_screen-5-diaries-timeline.png"
+                "assets/images/app1/playstore_screen-5-diaries-list.webp",
+                "assets/images/app1/playstore_screen-5-diaries-pageview.webp",
+                "assets/images/app1/playstore_screen-5-diaries-timeline.webp"
               ]
             }
           ]
@@ -48,7 +62,7 @@
               "content": "Log your daily activities with a visual calendar view to track consistency, monitor progress, and build unbreakable long-term habits securely.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-6-habit-tracker.png"
+                "assets/images/app1/playstore_screen-6-habit-tracker.webp"
               ]
             }
           ]
@@ -62,7 +76,7 @@
               "content": "A streamlined dashboard for all your thoughts. The Home screen brings all your notes and checklists together in a clean list or grid view. Easily verify, pin, archive, or categorize your notes right from the main screen, keeping your most important ideas always within reach. Quickly capture ideas using the new Speed Dial for rapid creation of notes, habits, or diary entries directly from the home screen.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-1-home-speed-dial.png"
+                "assets/images/app1/playstore_screen-1-home-speed-dial.webp"
               ]
             }
           ]
@@ -76,8 +90,8 @@
               "content": "Instantly locate any note, checklist, or folder. The brilliant new Search UI filters results as you type, highlighting matching keywords in titles and descriptions. Smart breadcrumbs show exactly where each note lives, so you never lose track of your ideas.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-1-home-search-ui.png",
-                "assets/images/app1/playstore_screen-1-home-search-results.png"
+                "assets/images/app1/playstore_screen-1-home-search-ui.webp",
+                "assets/images/app1/playstore_screen-1-home-search-results.webp"
               ]
             }
           ]
@@ -91,8 +105,8 @@
               "content": "Organize your life without limits. Create main categories and deep sub-categories to keep your workspace perfectly structured. Whether it's \"Personal > Finance > April\" or \"Work > Projects > Ideas,\" you can nest folders as deep as you need. Combine nested folders with an all-new seamless Tag Management system to categorize your content effortlessly.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-2-folders-new.png",
-                "assets/images/app1/playstore_screen-3-settings-manage-tags.png"
+                "assets/images/app1/playstore_screen-2-folders-new.webp",
+                "assets/images/app1/playstore_screen-3-settings-manage-tags.webp"
               ]
             }
           ]
@@ -106,8 +120,8 @@
               "content": "A personal experience that adapts to you. Choose from various themes, including dynamic Material You support that syncs with your device's wallpaper palette. Switch between distinct \"OLED Dark\" and \"Light\" modes for visual comfort in any environment. Experience the completely redesigned Settings UI and tailor your reading experience with custom font styles.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-3-settings-new-ui.png",
-                "assets/images/app1/playstore_screen-3-settings-font.png"
+                "assets/images/app1/playstore_screen-3-settings-new-ui.webp",
+                "assets/images/app1/playstore_screen-3-settings-font.webp"
               ]
             }
           ]
@@ -121,8 +135,8 @@
               "content": "An editor designed for structure and flexibility. Build your notes using distinct blocks for paragraphs, headers, checklists, and code snippets, and rich Markdown tables. Drag and drop to reorder sections instantly, and enrich your notes with photos, audio recordings, and formatting effortlessly.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-4-edit-markdown-tables.png",
-                "assets/images/app1/playstore_screen-4-edit-menu-format.png"
+                "assets/images/app1/playstore_screen-4-edit-markdown-tables.webp",
+                "assets/images/app1/playstore_screen-4-edit-menu-format.webp"
               ]
             }
           ]
@@ -136,7 +150,7 @@
               "content": "Keep your private thoughts truly private. Set up a secure passcode to lock the app or protect specific sensitive notes. Your data stays local and secure, ensuring only you have access to your personal information.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-1-login.png"
+                "assets/images/app1/playstore_screen-1-login.webp"
               ]
             }
           ]
@@ -150,8 +164,8 @@
               "content": "A digital canvas for your creativity. More than just a drawing tool, it supports frame-by-frame animation sketching and \"playback\" to review your thought process. Create multi-page sketches, correct mistakes with non-destructive erasing, and bring your visual ideas to life.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-reorder-dark.png",
-                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-dark.png"
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-reorder-dark.webp",
+                "assets/images/app1/playstore_screen-4-edit-scribble-pad-frames-playback-dark.webp"
               ]
             }
           ]
@@ -165,7 +179,7 @@
               "content": "We believe in total transparency. We request access only when necessary: **Camera** & **Audio** for media notes, **Storage** for backups, **Network** for cloud syncing, and **Exact Alarms** & **Notifications** for reliable reminders. You stay in control of your data.",
               "imageRenderer": "default",
               "images": [
-                "assets/images/app1/playstore_screen-3-settings.png"
+                "assets/images/app1/playstore_screen-3-settings.webp"
               ]
             }
           ]
@@ -201,31 +215,31 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/app1/playstore_screen-5-diaries-pageview.png",
+          "url": "assets/images/app1/playstore_screen-5-diaries-pageview.webp",
           "caption": "Digital Diaries"
         },
         {
-          "url": "assets/images/app1/playstore_screen-6-habit-tracker.png",
+          "url": "assets/images/app1/playstore_screen-6-habit-tracker.webp",
           "caption": "Habit Tracker"
         },
         {
-          "url": "assets/images/app1/playstore_screen-1-home-speed-dial.png",
+          "url": "assets/images/app1/playstore_screen-1-home-speed-dial.webp",
           "caption": "Dashboard & Speed Dial"
         },
         {
-          "url": "assets/images/app1/playstore_screen-2-folders-new.png",
+          "url": "assets/images/app1/playstore_screen-2-folders-new.webp",
           "caption": "Nested Folders"
         },
         {
-          "url": "assets/images/app1/playstore_screen-4-edit-markdown-tables.png",
+          "url": "assets/images/app1/playstore_screen-4-edit-markdown-tables.webp",
           "caption": "Rich Editor & Tables"
         },
         {
-          "url": "assets/images/app1/playstore_screen-3-settings-new-ui.png",
+          "url": "assets/images/app1/playstore_screen-3-settings-new-ui.webp",
           "caption": "Customization & Fonts"
         },
         {
-          "url": "assets/images/app1/playstore_screen-1-login.png",
+          "url": "assets/images/app1/playstore_screen-1-login.webp",
           "caption": "Secure Login"
         }
       ],
@@ -360,7 +374,7 @@
                 "content": "We believe in total transparency. We request access only when necessary to provide core functionalities of the app. Below is a detailed list of permissions we request and why:\n\n*   **Camera & Audio (RECORD_AUDIO, CAMERA):** To take photos and record voice notes directly within your notes.\n*   **Storage (READ/WRITE_EXTERNAL_STORAGE, READ_MEDIA_*):** For saving backups, accessing media, and general file management.\n*   **Alarms & Notifications (POST_NOTIFICATIONS, USE_EXACT_ALARM, SCHEDULE_EXACT_ALARM):** To ensure timely and exact delivery of your scheduled reminders and habit tracking alerts.\n*   **Network (INTERNET, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE):** To securely connect to your personal Google Drive for cloud syncing.\n*   **Background Processing (WAKE_LOCK, RECEIVE_BOOT_COMPLETED):** To resume cloud syncing and set up reminders after your device restarts.",
                 "imageRenderer": "default",
                 "images": [
-                  "assets/images/app1/playstore_screen-3-settings.png"
+                  "assets/images/app1/playstore_screen-3-settings.webp"
                 ]
               }
             ]
@@ -547,23 +561,25 @@
         "Clean Architecture",
         "Bloc",
         "Hive"
-      ]
+      ],
+      "status": "Live on Play Store",
+      "statusColor": "green"
     },
     {
       "id": "sms-stack",
       "name": "SMS Stack",
       "shortDescription": "Privacy-Focused SMS Finance & Organization Manager",
       "fullDescription": "SMS Stack is a modern Flutter application designed to declutter your inbox and provide intelligent financial insights—without your data ever leaving your device. It automatically categorizes messages into \"Personal\", \"Finance\", and \"Promos\", extracts transaction details to build a financial dashboard, and helps you stay on top of bill payments.\n\nBuilt with a \"Privacy First\" philosophy, all processing happens locally using a custom Regex engine. There are no external API calls for message analysis, ensuring your financial data remains secure on your phone.",
-      "iconUrl": "assets/images/app2/icon.png",
+      "iconUrl": "assets/images/app2/icon.webp",
       "status": "Live on Play Store",
       "statusColor": "green",
       "descriptionImages": [
         {
-          "url": "assets/images/app2/playstore_screen-1-app-launch-1.png",
+          "url": "assets/images/app2/playstore_screen-1-app-launch-1.webp",
           "caption": "App Launch"
         },
         {
-          "url": "assets/images/app2/playstore_screen-1-app-launch-3.png",
+          "url": "assets/images/app2/playstore_screen-1-app-launch-3.webp",
           "caption": "App Launch"
         }
       ],
@@ -590,7 +606,7 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse.png",
+                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse.webp",
                   "caption": "Parser Setup"
                 }
               ]
@@ -613,11 +629,11 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-3-finance-analytics.png",
+                  "url": "assets/images/app2/playstore_screen-3-finance-analytics.webp",
                   "caption": "Finance Analytics"
                 },
                 {
-                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse-anayse-finance.png",
+                  "url": "assets/images/app2/playstore_screen-2-app-setup-parse-anayse-finance.webp",
                   "caption": "Parsing Finance"
                 }
               ]
@@ -640,11 +656,11 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by.png",
+                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by.webp",
                   "caption": "Smart Inbox Search"
                 },
                 {
-                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by-date.png",
+                  "url": "assets/images/app2/playstore_screen-2-inbox-search-by-date.webp",
                   "caption": "Smart Inbox Search by Date"
                 }
               ]
@@ -667,7 +683,7 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-4-upcoming.png",
+                  "url": "assets/images/app2/playstore_screen-4-upcoming.webp",
                   "caption": "Bill Reminders"
                 }
               ]
@@ -690,7 +706,7 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.webp",
                   "caption": "Spam Manager"
                 }
               ]
@@ -719,11 +735,11 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.webp",
                   "caption": "Sender Mapping List"
                 },
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-dialog.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-dialog.webp",
                   "caption": "Updating Senders Mapping Dialog"
                 }
               ]
@@ -752,7 +768,7 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.webp",
                   "caption": "Cloud Backup Settings"
                 }
               ]
@@ -793,7 +809,7 @@
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings-theme.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings-theme.webp",
                   "caption": "Theme Settings"
                 }
               ]
@@ -812,11 +828,11 @@
           "sections": [
             {
               "title": "Available Features",
-              "content": "1.  **Biometric Lock**: Secure the app with your Fingerprint or Face ID. Requires authentication every time you open the app.\n2.  **Smart Bill Reminders**: Receive a phone notification 2 days before a bill is due. (Requires 'Alarm' permission).\n3.  **Visual Analytics (Alpha)**: A deeper dive into your spending with Pie Charts and Bar Graphs (sender-wise breakdown).",
+              "content": "1.  **Biometric Lock**: Secure the app with your Fingerprint or face unlock. Requires authentication every time you open the app.\n2.  **Smart Bill Reminders**: Receive a phone notification 2 days before a bill is due. (Requires 'Alarm' permission).\n3.  **Visual Analytics (Alpha)**: A deeper dive into your spending with Pie Charts and Bar Graphs (sender-wise breakdown).",
               "imageRenderer": "default",
               "images": [
                 {
-                  "url": "assets/images/app2/playstore_screen-5-settings.png",
+                  "url": "assets/images/app2/playstore_screen-5-settings.webp",
                   "caption": "App Settings"
                 }
               ]
@@ -831,7 +847,12 @@
               "title": "SMS & Contacts",
               "content": "To function as an SMS Organizer, we request specific permissions:\n*   **Read SMS (`READ_SMS`)**: Used to categorize messages and extract transaction details. **Local Only**.\n*   **Receive SMS (`RECEIVE_SMS`)**: Required to detect and process new incoming messages in real-time.\n*   **Send SMS (`SEND_SMS`)**: Required for sending replies directly from the app's notification or UI.\n*   **Read Contacts (`READ_CONTACTS`)**: Used to display contact names and photos for better identification. **In-Memory Only**.\n*   **Read Phone State (`READ_PHONE_STATE`)**: Used to detect Multi-SIM information (Slot 1 vs Slot 2) for organizing messages properly.",
               "imageRenderer": "default",
-              "images": []
+              "images": [
+                {
+                  "url": "assets/images/app2/playstore_permission-1-deafult-app.webp",
+                  "caption": "Default SMS App Permission"
+                }
+              ]
             },
             {
               "title": "System Integrations",
@@ -929,35 +950,35 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/app2/playstore_screen-2-app-setup-parse.png",
+          "url": "assets/images/app2/playstore_screen-2-app-setup-parse.webp",
           "caption": "Parser Setup"
         },
         {
-          "url": "assets/images/app2/playstore_screen-3-finance-analytics.png",
+          "url": "assets/images/app2/playstore_screen-3-finance-analytics.webp",
           "caption": "Finance Dashboard"
         },
         {
-          "url": "assets/images/app2/playstore_screen-2-inbox-search-by.png",
+          "url": "assets/images/app2/playstore_screen-2-inbox-search-by.webp",
           "caption": "Smart Inbox"
         },
         {
-          "url": "assets/images/app2/playstore_screen-4-upcoming.png",
+          "url": "assets/images/app2/playstore_screen-4-upcoming.webp",
           "caption": "Upcoming Bills"
         },
         {
-          "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.png",
+          "url": "assets/images/app2/playstore_screen-5-settings-spam-manage.webp",
           "caption": "Spam Manager"
         },
         {
-          "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.png",
+          "url": "assets/images/app2/playstore_screen-5-settings-sender-mapping-list.webp",
           "caption": "Sender Mapping"
         },
         {
-          "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.png",
+          "url": "assets/images/app2/playstore_screen-5-settings-cloud-backup.webp",
           "caption": "Cloud Backup"
         },
         {
-          "url": "assets/images/app2/playstore_screen-5-settings-theme.png",
+          "url": "assets/images/app2/playstore_screen-5-settings-theme.webp",
           "caption": "Theme Settings"
         }
       ],

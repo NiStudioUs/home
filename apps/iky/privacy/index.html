@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/home/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IKY — Family Tree &amp; Genealogy – Privacy Policy | Ni Studio Us</title>
+  <meta name="description" content="Official Privacy Policy for IKY — Family Tree &amp; Genealogy published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="keywords" content="Flutter, Android, Mobile Apps, Offline-First, Private Apps, Ni Studio Us, Karthik Subramanian, IKY, Scribble Notes, SMS Stack, Edgewise, Alarm Clock">
+  <meta name="author" content="Ni Studio Us">
+  <link rel="canonical" href="https://nistudious.github.io/home/apps/iky/privacy">
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nistudious.github.io/home/apps/iky/privacy">
+  <meta property="og:title" content="IKY — Family Tree &amp; Genealogy – Privacy Policy | Ni Studio Us">
+  <meta property="og:description" content="Official Privacy Policy for IKY — Family Tree &amp; Genealogy published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta property="og:image" content="https://nistudious.github.io/home/icons/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nistudious.github.io/home/apps/iky/privacy">
+  <meta name="twitter:title" content="IKY — Family Tree &amp; Genealogy – Privacy Policy | Ni Studio Us">
+  <meta name="twitter:description" content="Official Privacy Policy for IKY — Family Tree &amp; Genealogy published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="twitter:image" content="https://nistudious.github.io/home/icons/og-image.png">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="IFmn3wMBC252N0lkARAt4M6GzBLJOn_1EZZ80SCdVo4" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ni Studio Us">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- GitHub Pages SPA Route Restore Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+    }
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f7fc;
+      z-index: 9998;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .sk-bone {
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
+    .sk-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
+    }
+
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 24px;
+    }
+    .sk-hero-left {
+      flex: 135;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 65;
+      height: 540px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 32px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
+    .sk-phone {
+      width: 230px;
+      height: 485px;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
+      position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+    }
+    .sk-phone-1 {
+      left: 0;
+      top: 80px;
+      transform: rotate(-5.7deg);
+    }
+    .sk-phone-2 {
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
+    }
+    .sk-spotlight {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
+      box-sizing: border-box;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sk-marquee {
+      height: 46px;
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+    .static-footer a {
+      color: #646cff;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 2px 4px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
+      }
+      .static-footer a {
+        color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          </div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
+  <div id="static-footer" class="static-footer">
+    <a href="apps/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/terms">Scribble Notes Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/iky/privacy">IKY Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/alarm-clock/privacy">Alarm Clock Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/edgewise/privacy">Edgewise Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="sitemap">Sitemap</a>
+  </div>
+  
+  <script>
+    // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
+    function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
+      var footer = document.getElementById('static-footer');
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
+        clearInterval(checkInterval);
+      }
+    }, 50);
+    
+    // Safety fallback: hide after 10 seconds if no event fired
+    setTimeout(function() {
+      hideStaticContent();
+      clearInterval(checkInterval);
+    }, 10000);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+
+    <noscript>
+      <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e1e24;">
+        
+      <h1>Privacy Policy: IKY — Family Tree &amp; Genealogy</h1>
+      <p><strong>Published by:</strong> Ni Studio Us</p>
+      
+      <h2>Interpretation and Definitions</h2>
+      
+        <h3>Interpretation</h3>
+        <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+      
+        <h3>Definitions</h3>
+        <p>For the purposes of this Privacy Policy:</p>
+<ul>
+<li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
+<li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+<li><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named IKY People App</li>
+<li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to IKY People App.</li>
+<li><strong>Country</strong> refers to: India</li>
+<li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+<li><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</li>
+<li><strong>Service</strong> refers to the Application.</li>
+<li><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</li>
+<li><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</li>
+<li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+</ul>
+      
+    
+      <h2>Collecting and Using Your Personal Data</h2>
+      
+        <h3>Last Updated</h3>
+        <p>Last updated: January 27, 2026</p>
+      
+        <h3>Data Deletion &amp; Retention</h3>
+        <p>### Usage Data</p>
+<p>We retain collected Usage Data for a limited period for internal analysis to improve Service functionality.</p>
+<p>### Your Right to Delete</p>
+<p>Since IKY People App allows connecting to a self-hosted API, most data resides on your server. You can delete all your local cached data by:</p>
+<ul>
+<li><strong>Logging Out</strong>: This clears all secure session tokens and local database caches.</li>
+<li><strong>Uninstalling the Application</strong>: This immediately and permanently deletes all local application files.</li>
+</ul>
+      
+        <h3>Types of Data Collected</h3>
+        <p>### Personal Data</p>
+<p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
+<ul>
+<li>Email address</li>
+<li>First name and last name</li>
+<li>Usage Data</li>
+<li>Wifi State or Internet State</li>
+<li>Camera, Microphone, or Gallery Access</li>
+</ul>
+<p>### Usage Data</p>
+<p>Usage Data is collected automatically when using the Service.</p>
+<p>Usage Data may include information such as Your Device&#039;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+<p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+<p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+      
+        <h3>Information Collected while Using the Application</h3>
+        <p>While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:</p>
+<ul>
+<li>Pictures and other information from your Device&#039;s camera and photo library</li>
+<li>Audio recordings from your device&#039;s microphone</li>
+<li>Files and documents from your device&#039;s storage for backup and media attachment capabilities</li>
+</ul>
+<p>We use this information exclusively to provide the core features of Our Application (such as attaching media to notes or exporting backups). The information is stored locally on Your device and is only uploaded to Your personal Google Drive if you explicitly enable Cloud Sync. We do not upload your data to our servers.</p>
+<p>You can enable or disable access to this information at any time, through Your Device settings.</p>
+      
+        <h3>Use of Your Personal Data</h3>
+        <p>The Company may use Personal Data for the following purposes:</p>
+<ul>
+<li><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</li>
+<li><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</li>
+<li><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</li>
+<li><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application&#039;s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</li>
+<li><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</li>
+<li><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</li>
+<li><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</li>
+<li><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</li>
+</ul>
+      
+        <h3>Sharing of Data</h3>
+        <p>We never share Your personal information to anyone at any situations:</p>
+<ul>
+<li>With Service Providers</li>
+<li>For business transfers</li>
+<li>With Affiliates</li>
+<li>With business partners</li>
+<li>With other users</li>
+<li>With Your consent</li>
+</ul>
+      
+        <h3>Retention of Your Personal Data</h3>
+        <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+<p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
+      
+        <h3>Transfer of Your Personal Data</h3>
+        <p>Your information, including Personal Data, is processed at the Company&#039;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+<p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
+<p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
+      
+        <h3>Disclosure of Your Personal Data</h3>
+        <p>### Business Transactions</p>
+<p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+<p>### Law enforcement</p>
+<p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+<p>### Other legal requirements</p>
+<p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+<ul>
+<li>Comply with a legal obligation</li>
+<li>Protect and defend the rights or property of the Company</li>
+<li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+<li>Protect the personal safety of Users of the Service or the public</li>
+<li>Protect against legal liability</li>
+</ul>
+      
+        <h3>Security of Your Personal Data</h3>
+        <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+      
+    
+      <h2>Trusted &amp; Transparent Permissions</h2>
+      
+        <h3>Overview</h3>
+        <p>We believe in total transparency. We request access only when necessary to provide core functionalities of the app. Below is a detailed list of permissions we request and why:</p>
+<ul>
+<li><strong>Network (INTERNET):</strong> To securely connect to the IKY API backend to sync family tree data.</li>
+<li><strong>Storage (READ/WRITE_EXTERNAL_STORAGE):</strong> For picking profile pictures and exporting genealogy reports.</li>
+</ul>
+      
+    
+      <h2>Other Provisions</h2>
+      
+        <h3>Children&#039;s Privacy</h3>
+        <p>Our Service does not address anyone under the age of 10. We do not knowingly collect personally identifiable information from anyone under the age of 10. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 10 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&#039;s consent before We collect and use that information.</p>
+      
+        <h3>Links to Other Websites</h3>
+        <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&#039;s site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+      
+        <h3>You&#039;re in Control</h3>
+        <p>Any time you can revoke our app access from your account by visiting to your Google Drive settings page. From settings page navigate to Manage Apps from the left pane and scroll down to see IKY People App &amp; Organizer app&#039;s entry. [Follow the steps to](../features/scribble_notes_manage_access.html) delete data or disconnect from Google Drive.</p>
+      
+        <h3>Privacy Policy Compliance</h3>
+        <p>We comply with:</p>
+<ul>
+<li>GDPR (mandatory since May 25, 2018)</li>
+<li>CCPA (mandatory since Jan 1, 2020)</li>
+<li>CalOPPA (mandatory since Jan 1, 2014)</li>
+<li>COPPA (mandatory for children using the app under 13)</li>
+</ul>
+      
+        <h3>Changes to this Privacy Policy</h3>
+        <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
+<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+      
+    
+      <h2>Contact Us</h2>
+      
+        <h3>Contact Information</h3>
+        <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+<ul>
+<li>By email: <strong>ni.studio.us@outlook.com</strong></li>
+</ul>
+      
+    
+      <hr />
+      <p><a href="https://nistudious.github.io/home/apps/iky">Back to IKY</a> · <a href="https://nistudious.github.io/home/">Home</a></p>
+    
+      </div>
+    </noscript>
+</body>
+</html>

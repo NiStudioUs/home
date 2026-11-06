@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/home/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edgewise – Privacy Policy | Ni Studio Us</title>
+  <meta name="description" content="Official Privacy Policy for Edgewise published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="keywords" content="Flutter, Android, Mobile Apps, Offline-First, Private Apps, Ni Studio Us, Karthik Subramanian, IKY, Scribble Notes, SMS Stack, Edgewise, Alarm Clock">
+  <meta name="author" content="Ni Studio Us">
+  <link rel="canonical" href="https://nistudious.github.io/home/apps/edgewise/privacy">
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nistudious.github.io/home/apps/edgewise/privacy">
+  <meta property="og:title" content="Edgewise – Privacy Policy | Ni Studio Us">
+  <meta property="og:description" content="Official Privacy Policy for Edgewise published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta property="og:image" content="https://nistudious.github.io/home/icons/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nistudious.github.io/home/apps/edgewise/privacy">
+  <meta name="twitter:title" content="Edgewise – Privacy Policy | Ni Studio Us">
+  <meta name="twitter:description" content="Official Privacy Policy for Edgewise published by Ni Studio Us. Offline-first, no tracking, full transparency.">
+  <meta name="twitter:image" content="https://nistudious.github.io/home/icons/og-image.png">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="IFmn3wMBC252N0lkARAt4M6GzBLJOn_1EZZ80SCdVo4" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ni Studio Us">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- GitHub Pages SPA Route Restore Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+    }
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f7fc;
+      z-index: 9998;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .sk-bone {
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
+    .sk-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
+    }
+
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 24px;
+    }
+    .sk-hero-left {
+      flex: 135;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 65;
+      height: 540px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 32px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
+    .sk-phone {
+      width: 230px;
+      height: 485px;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
+      position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+    }
+    .sk-phone-1 {
+      left: 0;
+      top: 80px;
+      transform: rotate(-5.7deg);
+    }
+    .sk-phone-2 {
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
+    }
+    .sk-spotlight {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
+      box-sizing: border-box;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sk-marquee {
+      height: 46px;
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+    .static-footer a {
+      color: #646cff;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 2px 4px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
+      }
+      .static-footer a {
+        color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          </div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
+  <div id="static-footer" class="static-footer">
+    <a href="apps/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/terms">Scribble Notes Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/iky/privacy">IKY Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/alarm-clock/privacy">Alarm Clock Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/edgewise/privacy">Edgewise Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="sitemap">Sitemap</a>
+  </div>
+  
+  <script>
+    // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
+    function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
+      var footer = document.getElementById('static-footer');
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
+        clearInterval(checkInterval);
+      }
+    }, 50);
+    
+    // Safety fallback: hide after 10 seconds if no event fired
+    setTimeout(function() {
+      hideStaticContent();
+      clearInterval(checkInterval);
+    }, 10000);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+
+    <noscript>
+      <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e1e24;">
+        
+      <h1>Privacy Policy: Edgewise</h1>
+      <p><strong>Published by:</strong> Ni Studio Us</p>
+      
+      <h2>Interpretation and Definitions</h2>
+      
+        <h3>Interpretation</h3>
+        <p>Words with an initial capital letter have the meaning defined in this</p>
+<p>section, regardless of whether they appear in singular or plural.</p>
+      
+        <h3>Definitions</h3>
+        <p>For the purposes of this Privacy Policy:</p>
+<ul>
+<li><strong>Application</strong> means the software program Edgewise, provided by the</li>
+</ul>
+<p>  Company, downloaded by You on any electronic device.</p>
+<ul>
+<li><strong>Company</strong> (&quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot;, &quot;Our&quot;) refers to Ni Studio Us.</li>
+<li><strong>Device</strong> means any device that can access the Service, such as a</li>
+</ul>
+<p>  cellphone or tablet.</p>
+<ul>
+<li><strong>Personal Data</strong> is any information that relates to an identified or</li>
+</ul>
+<p>  identifiable individual.</p>
+<ul>
+<li><strong>Service</strong> refers to the Application.</li>
+<li><strong>You</strong> means the individual using the Service.</li>
+</ul>
+      
+    
+      <h2>Summary — what this app does and does not do</h2>
+      
+        <h3>Summary — what this app does and does not do</h3>
+        <p>Edgewise is built to work entirely on Your device:</p>
+<ul>
+<li><strong>No account, no sign-in.</strong> The app never asks You to create an account or</li>
+</ul>
+<p>  sign in with Google, Apple, email, or any other identity provider.</p>
+<ul>
+<li><strong>No cloud backup or sync.</strong> All gesture bindings, edge appearance, lock</li>
+</ul>
+<p>  effect configuration (including any emoji, text, or drawing you set up for</p>
+<p>  a lock effect), and settings are stored only in local storage on Your</p>
+<p>  Device. Nothing is uploaded to servers We operate, because We do not</p>
+<p>  operate any servers that store Your data.</p>
+<ul>
+<li><strong>No analytics, advertising, or crash-reporting SDKs.</strong> The app does not</li>
+</ul>
+<p>  embed Firebase, Google Analytics, any ad network, or any third-party</p>
+<p>  analytics/crash SDK. We do not track Your usage of the app.</p>
+<ul>
+<li><strong>No network access at all.</strong> Unlike many apps, Edgewise does not request</li>
+</ul>
+<p>  the Internet permission from Android. It has no network code, makes no</p>
+<p>  network calls, and cannot reach the internet even if it tried — there is</p>
+<p>  nothing in this app that could transmit Your data anywhere.</p>
+      
+    
+      <h2>Data We Collect</h2>
+      
+        <h3>Data You provide directly</h3>
+        <p>Your gesture-to-action bindings, Your edge-indicator appearance choices, and</p>
+<p>anything You set up for a lock effect — including a chosen emoji, typed</p>
+<p>text/message, or a drawing You make for the &quot;Scribble&quot; effect — are Personal</p>
+<p>Data You create, and it stays in the app&#039;s local storage on Your Device. We</p>
+<p>(Ni Studio Us) never receive a copy of it. A drawn &quot;Scribble&quot; is stored only</p>
+<p>as a sequence of coordinates (where Your finger moved) — never as an image</p>
+<p>file, and never shared anywhere outside the app.</p>
+      
+        <h3>Data collected automatically</h3>
+        <p>We do not operate any analytics or telemetry pipeline, so We do not</p>
+<p>automatically collect usage data, device identifiers, or diagnostic logs</p>
+<p>about how You use the app. The app does keep an <strong>opt-in</strong>, local, on-device</p>
+<p>diagnostic log (up to 256 entries) for Your own troubleshooting. This log</p>
+<p>never leaves Your Device, is never uploaded, and does not record screen</p>
+<p>contents, app names, coordinates, or exception messages.</p>
+      
+        <h3>The one permission the app asks for, and why</h3>
+        <p>The Application requests exactly one special Device permission, and no</p>
+<p>others — no notifications, no storage, no location, no microphone, no</p>
+<p>camera, no contacts, no network:</p>
+<p>| Permission | Purpose |</p>
+<p>|---|---|</p>
+<p>| <strong>Accessibility Service</strong> (enabled by You in Android Settings → Accessibility, not a standard install-time permission) | To display Edgewise&#039;s own small gesture handle on Your chosen screen edge, and to perform the action You assign when You interact with it (lock the screen, open an app, open notifications, or open quick settings). |</p>
+<p>The Accessibility Service is scoped strictly to Edgewise&#039;s own gesture</p>
+<p>handle: it does not read screen content, typed text, notifications, or any</p>
+<p>touch events outside that handle, and Edgewise is explicitly <strong>not</strong> a</p>
+<p>disability-accessibility tool — it only uses this Android API because it is</p>
+<p>the mechanism Android provides for an app to draw a persistent on-screen</p>
+<p>control and perform system actions like locking the screen. You can review</p>
+<p>this disclosure again at any time from the app&#039;s Accessibility Access setup</p>
+<p>screen, and You can revoke it at any time — either from Edgewise&#039;s own</p>
+<p>&quot;Withdraw consent &amp; pause&quot; control, or directly in Android Settings →</p>
+<p>Accessibility. The exact steps for both are at</p>
+<p><strong>https://nistudious.github.io/home/apps/edgewise/how-to?topic=withdraw-from-app</strong></p>
+<p>(see §4a).</p>
+<p>To let You assign &quot;open app&quot; as a gesture action, the app also reads the</p>
+<p>list of launchable apps installed on Your Device via Android&#039;s standard</p>
+<p><code>PackageManager</code> APIs. This uses Android&#039;s normal launcher-activity query</p>
+<p>(not the sensitive <code>QUERY_ALL_PACKAGES</code> permission), runs entirely on-device,</p>
+<p>and that list is never transmitted anywhere.</p>
+      
+    
+      <h2>No Third-Party Services</h2>
+      
+        <h3>No Third-Party Services</h3>
+        <p>Edgewise does not integrate any third-party analytics tool, ad network,</p>
+<p>crash reporter, or backend service of any kind, and — as noted in §2 — has no</p>
+<p>network permission at all. There is no third-party data sharing to describe,</p>
+<p>because the app has no way to share data with anyone.</p>
+<p>The app does use one third-party library, <code>url_launcher</code>, but only to open a</p>
+<p>page (such as this Privacy Policy, or the how-to pages) in Your device&#039;s own</p>
+<p>browser when You explicitly tap a link in the app — Edgewise itself still</p>
+<p>makes no network call and sends this library nothing beyond the page address</p>
+<p>You chose to open; the browser, not Edgewise, does the fetching.</p>
+      
+    
+      <h2>4a. Edgewise on the Web</h2>
+      
+        <h3>4a. Edgewise on the Web</h3>
+        <p>This Privacy Policy and the Terms and Conditions are published at</p>
+<p><strong>https://nistudious.github.io/home/apps/edgewise</strong>. The exact, step-by-step</p>
+<p>how-to page for withdrawing consent — covering both withdrawing it from</p>
+<p>inside Edgewise and from Android Settings directly — is published at</p>
+<p><strong>https://nistudious.github.io/home/apps/edgewise/how-to?topic=withdraw-from-app</strong>,</p>
+<p>and opens scrolled straight to those steps rather than to the app&#039;s general</p>
+<p>listing page. Visiting either page is subject to the hosting provider&#039;s</p>
+<p>(GitHub Pages) own standard web server logging, which is outside Our control</p>
+<p>and not something this app causes — the in-app links described above only</p>
+<p>open Your browser to that address.</p>
+      
+    
+      <h2>In-App Purchases</h2>
+      
+        <h3>In-App Purchases</h3>
+        <p>Edgewise does not currently offer any in-app purchases or paid tier. If that</p>
+<p>changes in a future release, this Privacy Policy will be updated first, with</p>
+<p>its own section describing exactly how billing is handled (in the same way</p>
+<p>as Our other apps, via Google Play Billing, with payment details handled</p>
+<p>entirely by Google and never seen by Us).</p>
+      
+    
+      <h2>Sharing of Data</h2>
+      
+        <h3>Sharing of Data</h3>
+        <p>We do not sell Your data. We do not share Your Personal Data with</p>
+<p>advertisers, data brokers, or any other third party — the app has no</p>
+<p>mechanism to do so, since it makes no network calls at all.</p>
+      
+    
+      <h2>Data Retention and Your Right to Delete</h2>
+      
+        <h3>Data Retention and Your Right to Delete</h3>
+        <p>Because everything is stored only on Your Device:</p>
+<ul>
+<li><strong>Uninstalling the app</strong> permanently deletes Your local gesture bindings,</li>
+</ul>
+<p>  edge settings, lock-effect configuration (including any scribble, text, or</p>
+<p>  emoji You set up), and diagnostic log — there is nothing left on any server</p>
+<p>  for Us to delete, because We never held a copy.</p>
+<ul>
+<li>You can also reset individual settings, change or clear a lock effect&#039;s</li>
+</ul>
+<p>  content, or withdraw Accessibility consent at any time from within the app</p>
+<p>  itself, without uninstalling.</p>
+<ul>
+<li>If You ever contact Us directly (e.g. by email, for support), any Personal</li>
+</ul>
+<p>  Data You share that way (such as Your email address) is retained only as</p>
+<p>  long as needed to resolve Your request, and You may ask Us to delete it at</p>
+<p>  any time by contacting Us at the address in §10.</p>
+      
+    
+      <h2>Security</h2>
+      
+        <h3>What We do</h3>
+        <p>We use reasonable, industry-standard practices appropriate to a fully</p>
+<p>on-device, offline application: Your data is stored in Your Device&#039;s</p>
+<p>app-private storage (not accessible to other apps without root/jailbreak</p>
+<p>access), Android&#039;s automatic cloud backup of app data is disabled for this</p>
+<p>app, and the app transmits nothing anywhere, because it has no network</p>
+<p>access.</p>
+      
+        <h3>What We cannot guarantee, and are not responsible for</h3>
+        <p>**No method of storage is 100% secure, and security of Your Device itself is</p>
+<p>Your responsibility, not Ours.** We are not responsible for the security of</p>
+<p>Your Device, Your Device&#039;s operating system, Your Google account, or any</p>
+<p>other software installed on Your Device. If Your Device is lost, stolen,</p>
+<p>rooted/jailbroken, infected with malware, or otherwise compromised by a third</p>
+<p>party, any local data stored by this app may be exposed — that risk sits</p>
+<p>with You and Your Device, not with Us. To the maximum extent permitted by</p>
+<p>law, We disclaim all liability for any loss, damage, or unauthorized access</p>
+<p>arising from circumstances outside Our direct control, including Device-level</p>
+<p>compromise and Your own handling of Your Device or Google account.</p>
+      
+    
+      <h2>Children&#039;s Privacy</h2>
+      
+        <h3>Children&#039;s Privacy</h3>
+        <p>Our Service does not knowingly collect Personal Data from anyone under the</p>
+<p>age of 13. Since the app requires no account, no network access, and no</p>
+<p>Personal Data to function, We have no practical way to knowingly collect such</p>
+<p>data in the first place. If You believe a child has provided Us Personal Data</p>
+<p>directly (e.g. via a support email), contact Us and We will delete it.</p>
+      
+    
+      <h2>Changes to this Privacy Policy</h2>
+      
+        <h3>Changes to this Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time. Material changes will</p>
+<p>be reflected by an updated &quot;Last updated&quot; date at the top of this document.</p>
+<p>Continued use of the Service after a change becomes effective constitutes</p>
+<p>acceptance of the revised policy.</p>
+      
+    
+      <h2>Contact Us</h2>
+      
+        <h3>Contact Us</h3>
+        <p>Questions about this Privacy Policy can be sent to:</p>
+<p><strong>ni.studio.us@outlook.com</strong></p>
+      
+    
+      <hr />
+      <p><a href="https://nistudious.github.io/home/apps/edgewise">Back to Edgewise</a> · <a href="https://nistudious.github.io/home/">Home</a></p>
+    
+      </div>
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/home/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarm Clock – Terms &amp; Conditions | Ni Studio Us</title>
+  <meta name="description" content="Terms &amp; Conditions for using Alarm Clock published by Ni Studio Us.">
+  <meta name="keywords" content="Flutter, Android, Mobile Apps, Offline-First, Private Apps, Ni Studio Us, Karthik Subramanian, IKY, Scribble Notes, SMS Stack, Edgewise, Alarm Clock">
+  <meta name="author" content="Ni Studio Us">
+  <link rel="canonical" href="https://nistudious.github.io/home/apps/alarm-clock/terms">
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nistudious.github.io/home/apps/alarm-clock/terms">
+  <meta property="og:title" content="Alarm Clock – Terms &amp; Conditions | Ni Studio Us">
+  <meta property="og:description" content="Terms &amp; Conditions for using Alarm Clock published by Ni Studio Us.">
+  <meta property="og:image" content="https://nistudious.github.io/home/icons/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nistudious.github.io/home/apps/alarm-clock/terms">
+  <meta name="twitter:title" content="Alarm Clock – Terms &amp; Conditions | Ni Studio Us">
+  <meta name="twitter:description" content="Terms &amp; Conditions for using Alarm Clock published by Ni Studio Us.">
+  <meta name="twitter:image" content="https://nistudious.github.io/home/icons/og-image.png">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="IFmn3wMBC252N0lkARAt4M6GzBLJOn_1EZZ80SCdVo4" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ni Studio Us">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Google Fonts Preconnect and Stylesheet for zero-latency fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- GitHub Pages SPA Route Restore Script -->
+  <script>
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfe;
+    }
+    @media (prefers-color-scheme: dark) {
+      body, html {
+        background-color: #0b0b0e;
+      }
+      .skeleton-screen {
+        background-color: #0b0b0e !important;
+      }
+      .sk-bone {
+        background: linear-gradient(90deg, #171720 25%, #242432 50%, #171720 75%) !important;
+        background-size: 200% 100% !important;
+      }
+      .sk-topbar-wrapper {
+        background: rgba(11, 11, 14, 0.78) !important;
+        border-bottom: 1px solid #1a1a24 !important;
+      }
+      .sk-brand-text {
+        color: #f0eff8 !important;
+      }
+      .sk-phone {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+        box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.6) !important;
+      }
+      .sk-spotlight {
+        border: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+      .sk-marquee {
+        border-top: 1px solid #1f1f2e !important;
+        border-bottom: 1px solid #1f1f2e !important;
+        background: #13131c !important;
+      }
+    }
+    /* Instant HTML Skeleton Loading Screen */
+    .skeleton-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8f7fc;
+      z-index: 9998;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Shimmer Animation */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .sk-bone {
+      background: linear-gradient(90deg, #e9eaf0 25%, #f7f7fa 50%, #e9eaf0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* Topbar Skeleton - Matches NiTokens.topbarHeight (64px) & maxWidth (1160px) & gutter (16px) */
+    .sk-topbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(248, 247, 252, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e3e0f0;
+      z-index: 10;
+    }
+    .sk-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .sk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sk-brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background-color: #5b4bdb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .sk-brand-text {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 16.32px;
+      font-weight: 600;
+      color: #17152b;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sk-nav-btn {
+      width: 72px;
+      height: 32px;
+      border-radius: 999px;
+    }
+    .sk-theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e3e0f0;
+      margin-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .sk-nav-links { display: none; }
+      .sk-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    @media (min-width: 901px) {
+      .sk-mobile-actions { display: none; }
+    }
+
+    /* Hero Skeleton Container - Placed directly under topbar (top: 64px) with exact padding */
+    .sk-content-scroll {
+      margin-top: 64px;
+      width: 100%;
+      height: calc(100% - 64px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero {
+      max-width: 1160px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      display: flex;
+      gap: 24px;
+    }
+    .sk-hero-left {
+      flex: 135;
+      display: flex;
+      flex-direction: column;
+    }
+    .sk-hero-right {
+      flex: 65;
+      height: 540px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .sk-hero { flex-direction: column; gap: 32px; }
+      .sk-hero-right { display: none; }
+    }
+
+    /* Floating phone mockup skeleton - exact match with NiTokens.rPhone (28px) and 230x485 */
+    .sk-phone {
+      width: 230px;
+      height: 485px;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #f3f1fb;
+      box-shadow: 0 20px 40px -22px rgba(60, 40, 140, 0.35);
+      position: absolute;
+      box-sizing: border-box;
+      padding: 7px;
+    }
+    .sk-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+    }
+    .sk-phone-1 {
+      left: 0;
+      top: 80px;
+      transform: rotate(-5.7deg);
+    }
+    .sk-phone-2 {
+      left: 108px;
+      top: 5px;
+      transform: rotate(2.8deg);
+    }
+    .sk-spotlight {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px 20px 14px 14px;
+      box-sizing: border-box;
+      border-radius: 28px;
+      border: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sk-marquee {
+      height: 46px;
+      border-top: 1px solid #e3e0f0;
+      border-bottom: 1px solid #e3e0f0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .static-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid #e0e0e0;
+      z-index: 9999;
+      box-sizing: border-box;
+    }
+    .static-footer a {
+      color: #646cff;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 2px 4px;
+    }
+    .static-footer a:hover {
+      text-decoration: underline;
+    }
+    .static-footer .footer-sep {
+      color: #a0a0b0;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .static-footer {
+        padding: 8px 12px;
+        gap: 6px 10px;
+        font-size: 11px;
+      }
+      .static-footer .footer-sep {
+        display: none;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .static-footer {
+        background: rgba(11, 11, 14, 0.95);
+        border-top: 1px solid #1a1a24;
+      }
+      .static-footer a {
+        color: #8c92ff;
+      }
+      .static-footer .footer-sep {
+        color: #3b3b4a;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Instant HTML/CSS Shimmering Skeleton Screen (Renders at 0ms) -->
+  <div id="loading-screen" class="skeleton-screen">
+    <!-- Topbar Wireframe - Exactly matches NiTokens.topbarHeight (64px) -->
+    <div class="sk-topbar-wrapper">
+      <div class="sk-topbar">
+        <div class="sk-brand">
+          <div class="sk-brand-logo">N</div>
+          <div class="sk-brand-text">Ni Studio Us</div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="sk-nav-links">
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 140px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-nav-btn"></div>
+          <div class="sk-bone" style="width: 84px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone" style="width: 72px; height: 32px; border-radius: 999px;"></div>
+          <div class="sk-bone sk-theme-btn"></div>
+        </div>
+        <!-- Mobile actions -->
+        <div class="sk-mobile-actions">
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+          <div class="sk-bone sk-theme-btn" style="margin-left: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable content area below Topbar -->
+    <div class="sk-content-scroll">
+      <!-- Hero Wireframe -->
+      <div class="sk-hero">
+        <div class="sk-hero-left">
+          <!-- Live Pill -->
+          <div class="sk-bone" style="width: 195px; height: 32px; border-radius: 999px; margin-bottom: 26px;"></div>
+          <!-- H1 Headline -->
+          <div class="sk-bone" style="width: 320px; max-width: 85%; height: 50px; margin-bottom: 12px; border-radius: 8px;"></div>
+          <div class="sk-bone" style="width: 260px; max-width: 70%; height: 50px; margin-bottom: 30px; border-radius: 8px;"></div>
+          <!-- Subtitle Lead -->
+          <div class="sk-bone" style="width: 480px; max-width: 95%; height: 18px; margin-bottom: 8px; border-radius: 4px;"></div>
+          <div class="sk-bone" style="width: 380px; max-width: 80%; height: 18px; margin-bottom: 26px; border-radius: 4px;"></div>
+          <!-- Action Buttons -->
+          <div style="display: flex; gap: 10px; margin-bottom: 34px;">
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+            <div class="sk-bone" style="width: 145px; height: 44px; border-radius: 999px;"></div>
+          </div>
+          <!-- Spotlight Card -->
+          <div class="sk-spotlight">
+            <div class="sk-bone" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+              <div class="sk-bone" style="width: 80px; height: 11px; border-radius: 3px;"></div>
+              <div class="sk-bone" style="width: 130px; height: 17px; border-radius: 4px;"></div>
+              <div class="sk-bone" style="width: 220px; max-width: 90%; height: 13px; border-radius: 3px;"></div>
+            </div>
+            <div class="sk-bone" style="width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;"></div>
+          </div>
+        </div>
+
+        <!-- Right Phone Wireframe -->
+        <div class="sk-hero-right">
+          <div class="sk-phone sk-phone-1">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+          <div class="sk-phone sk-phone-2">
+            <div class="sk-bone sk-phone-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Wireframe -->
+      <div class="sk-marquee">
+        <div class="sk-bone" style="width: 380px; max-width: 80%; height: 16px; border-radius: 8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static privacy policy links for crawlers & mobile friendly display -->
+  <div id="static-footer" class="static-footer">
+    <a href="apps/sms-stack/privacy">SMS Stack Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/sms-stack/terms">SMS Stack Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/privacy">Scribble Notes Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/scribble-notes/terms">Scribble Notes Terms</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/iky/privacy">IKY Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/alarm-clock/privacy">Alarm Clock Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="apps/edgewise/privacy">Edgewise Privacy</a>
+    <span class="footer-sep">·</span>
+    <a href="sitemap">Sitemap</a>
+  </div>
+  
+  <script>
+    // Hide static footer and loading screen when Flutter actually paints
+    var staticHidden = false;
+    function hideStaticContent() {
+      if (staticHidden) return;
+      staticHidden = true;
+      var footer = document.getElementById('static-footer');
+      var loader = document.getElementById('loading-screen');
+      if (footer) footer.style.display = 'none';
+      if (loader) {
+        loader.style.transition = 'opacity 0.4s ease-out';
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 400);
+      }
+    }
+    
+    // Primary trigger: Flutter fires 'flutter-first-frame' right after first layout & paint
+    window.addEventListener('flutter-first-frame', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          hideStaticContent();
+        });
+      });
+      clearInterval(checkInterval);
+    });
+
+    // Secondary check: verify actual non-empty canvas paint (document or flutter-view shadowRoot)
+    var checkInterval = setInterval(function() {
+      var fltView = document.querySelector('flutter-view');
+      var shadowCanvas = fltView && fltView.shadowRoot ? fltView.shadowRoot.querySelector('canvas') : null;
+      var canvas = document.querySelector('canvas') || shadowCanvas;
+      if (canvas && canvas.width > 0 && canvas.height > 0) {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            hideStaticContent();
+          });
+        });
+        clearInterval(checkInterval);
+      }
+    }, 50);
+    
+    // Safety fallback: hide after 10 seconds if no event fired
+    setTimeout(function() {
+      hideStaticContent();
+      clearInterval(checkInterval);
+    }, 10000);
+  </script>
+  
+  <script src="flutter_bootstrap.js" async></script>
+
+    <noscript>
+      <div style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e1e24;">
+        
+      <h1>Terms & Conditions: Alarm Clock</h1>
+      <p><strong>Published by:</strong> Ni Studio Us</p>
+      
+      <h2>Interpretation and Definitions</h2>
+      
+        <h3>Interpretation and Definitions</h3>
+        <ul>
+<li><strong>Application</strong> means the Alarm Clock software program provided by the</li>
+</ul>
+<p>  Company.</p>
+<ul>
+<li><strong>Application Store</strong> means the Google Play Store (or any other</li>
+</ul>
+<p>  distribution platform through which You obtained the Application).</p>
+<ul>
+<li><strong>Company</strong> (&quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot;, &quot;Our&quot;) refers to Ni Studio Us.</li>
+<li><strong>Country</strong> refers to: Tamil Nadu, India.</li>
+<li><strong>Service</strong> refers to the Application.</li>
+<li><strong>You</strong> means the individual using the Service.</li>
+</ul>
+      
+    
+      <h2>Acknowledgment</h2>
+      
+        <h3>Acknowledgment</h3>
+        <p>By downloading, installing, or using the Service, You agree to be bound by</p>
+<p>these Terms. If You disagree with any part of these Terms, You must not use</p>
+<p>the Service.</p>
+<p>Your use of the Service is also conditioned on Your acceptance of Our</p>
+<p>[Privacy Policy](privacy-policy.md), which describes how the Service handles</p>
+<p>information. Please read it before using the Service.</p>
+      
+    
+      <h2>Important: Alarm, Timer, and Reminder Reliability</h2>
+      
+        <h3>Important: Alarm, Timer, and Reminder Reliability</h3>
+        <p>Alarm Clock is designed to ring reliably, and requests the Device permissions</p>
+<p>described in Our Privacy Policy (exact alarms, full-screen intent, battery</p>
+<p>optimization exemption, boot-completed rescheduling, etc.) specifically to</p>
+<p>maximize that reliability. However:</p>
+<ul>
+<li>**We cannot and do not guarantee that an alarm, timer, or reminder will</li>
+</ul>
+<p>  always ring, or will ring exactly on time.** Mobile operating systems</p>
+<p>  (including Android) can delay, throttle, or suppress scheduled alarms and</p>
+<p>  background work due to battery-saving features, device-specific</p>
+<p>  manufacturer customizations, &quot;Do Not Disturb&quot; or silent/vibrate-only modes,</p>
+<p>  low storage, the Device being powered off, force-stopped by You or another</p>
+<p>  app, or a wide range of other OS- or hardware-level conditions outside Our</p>
+<p>  control.</p>
+<ul>
+<li>**Do not rely on this Service, or any alarm app, as the sole safeguard for</li>
+</ul>
+<p>  time-critical, safety-critical, or medical events** (for example, waking up</p>
+<p>  for a flight, taking time-sensitive medication, or any situation where a</p>
+<p>  missed alarm could cause serious harm or loss). Use additional safeguards</p>
+<p>  (a second alarm clock, a trusted person, etc.) for anything where the</p>
+<p>  consequence of a missed alert would be severe.</p>
+<ul>
+<li>To the maximum extent permitted by applicable law, the Company disclaims</li>
+</ul>
+<p>  all liability for any loss, damage, missed appointment, missed medication,</p>
+<p>  missed flight, or any other consequence resulting, directly or indirectly,</p>
+<p>  from an alarm, timer, reminder, or routine notification that did not fire,</p>
+<p>  fired late, or fired incorrectly.</p>
+      
+    
+      <h2>License and Acceptable Use</h2>
+      
+        <h3>License and Acceptable Use</h3>
+        <p>Subject to Your compliance with these Terms, the Company grants You a</p>
+<p>limited, non-exclusive, non-transferable, revocable license to use the</p>
+<p>Application on a Device You own or control, for Your personal,</p>
+<p>non-commercial use. You agree not to:</p>
+<ul>
+<li>Reverse-engineer, decompile, or attempt to extract the source code of the</li>
+</ul>
+<p>  Application, except to the extent such restriction is prohibited by</p>
+<p>  applicable law.</p>
+<ul>
+<li>Modify, re-sign, redistribute, or resell the Application or any part of it.</li>
+<li>Use the Application in any way that violates applicable local, national, or</li>
+</ul>
+<p>  international law.</p>
+      
+    
+      <h2>Premium Subscription / Purchases</h2>
+      
+        <h3>Premium Subscription / Purchases</h3>
+        <p>The Application offers an optional, paid &quot;Premium&quot; tier via Google Play</p>
+<p>Billing (e.g. unlimited alarms, unlimited profiles, the work-geofence</p>
+<p>feature, unlimited reminders).</p>
+<ul>
+<li>All purchases are processed by Google Play. Billing, refunds, cancellations</li>
+</ul>
+<p>  and payment disputes are handled under</p>
+<p>  [Google Play&#039;s own Terms of Service](https://play.google.com/intl/en-us/about/play-terms/),</p>
+<p>  not directly by Us.</p>
+<ul>
+<li>Premium entitlement is tied to the Google account/Device purchase record as</li>
+</ul>
+<p>  recognized by Google Play Billing. If Google revokes, refunds, or</p>
+<p>  invalidates a purchase, Your Premium features may be disabled accordingly.</p>
+<ul>
+<li>Prices, where shown, are set and displayed by Google Play in Your local</li>
+</ul>
+<p>  currency and are subject to Google Play&#039;s own pricing and tax rules.</p>
+      
+    
+      <h2>Intellectual Property</h2>
+      
+        <h3>Intellectual Property</h3>
+        <p>The Application, including its original source code, design, and branding</p>
+<p>(excluding open-source components it depends on, each governed by their own</p>
+<p>licenses), is and remains the exclusive property of the Company.</p>
+      
+    
+      <h2>Third-Party Services</h2>
+      
+        <h3>Third-Party Services</h3>
+        <p>The Application uses OpenStreetMap&#039;s Nominatim API for an optional</p>
+<p>location-name lookup feature, as described in Our Privacy Policy. This is a</p>
+<p>third-party service not owned or controlled by the Company. We have no</p>
+<p>control over, and assume no responsibility for, the availability, accuracy,</p>
+<p>content, or practices of that or any other third-party service the</p>
+<p>Application may link to or rely on. You use such third-party services at Your</p>
+<p>own risk, and are advised to review their own terms and privacy policies.</p>
+      
+    
+      <h2>Disclaimers &amp; Limitation of Liability</h2>
+      
+        <h3>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot;</h3>
+        <p>The Service is provided &quot;AS IS&quot; and &quot;AS AVAILABLE,&quot; with all faults, and</p>
+<p>without warranty of any kind, whether express, implied, or statutory,</p>
+<p>including but not limited to implied warranties of merchantability, fitness</p>
+<p>for a particular purpose, and non-infringement. The Company does not warrant</p>
+<p>that the Service will be uninterrupted, error-free, or free of harmful</p>
+<p>components, or that it will meet Your requirements.</p>
+      
+        <h3>Security disclaimer</h3>
+        <p>As set out in Our Privacy Policy, no method of electronic storage or</p>
+<p>transmission is 100% secure, and the Company is not responsible for the</p>
+<p>security of Your Device, Your operating system, Your Google account, or any</p>
+<p>third-party service the Application relies on. Security incidents arising</p>
+<p>from circumstances outside the Company&#039;s direct control (Device compromise,</p>
+<p>loss or theft of Your Device, third-party service breaches, etc.) are</p>
+<p>expressly outside the Company&#039;s responsibility.</p>
+      
+        <h3>Limitation of liability</h3>
+        <p>To the maximum extent permitted by applicable law, in no event shall the</p>
+<p>Company or its suppliers be liable for any special, incidental, indirect, or</p>
+<p>consequential damages whatsoever (including, without limitation, damages for</p>
+<p>loss of data, business interruption, personal injury, or any missed alarm,</p>
+<p>timer, reminder, or routine event as described in §3), arising out of or in</p>
+<p>any way related to Your use of or inability to use the Service, even if the</p>
+<p>Company has been advised of the possibility of such damages. The Company&#039;s</p>
+<p>total liability for any claim arising from these Terms or Your use of the</p>
+<p>Service shall not exceed the amount You actually paid the Company through the</p>
+<p>Service in the 12 months preceding the claim, or 100 USD, whichever is</p>
+<p>greater — or, if You have not paid anything through the Service, shall be</p>
+<p>limited to a full refund of any amount paid (which, for the free tier, is</p>
+<p>zero).</p>
+<p>Some jurisdictions do not allow the exclusion or limitation of certain</p>
+<p>warranties or liabilities; in such jurisdictions, the above limitations apply</p>
+<p>only to the extent permitted by law.</p>
+      
+    
+      <h2>Termination</h2>
+      
+        <h3>Termination</h3>
+        <p>We may suspend or terminate Your access to the Service at any time, without</p>
+<p>prior notice, if You breach these Terms. Upon termination, Your right to use</p>
+<p>the Service ceases immediately; this does not affect data already stored</p>
+<p>locally on Your Device, which remains Yours to delete by uninstalling the</p>
+<p>Application.</p>
+      
+    
+      <h2>Governing Law</h2>
+      
+        <h3>Governing Law</h3>
+        <p>These Terms are governed by the laws of Tamil Nadu, India, excluding its</p>
+<p>conflict-of-law rules, without prejudice to any mandatory consumer-protection</p>
+<p>provisions of the law of the country in which You reside.</p>
+      
+    
+      <h2>Dispute Resolution</h2>
+      
+        <h3>Dispute Resolution</h3>
+        <p>If You have a dispute about the Service, You agree to first contact Us</p>
+<p>informally (see §13) so We can attempt to resolve it directly before any</p>
+<p>formal proceeding.</p>
+      
+    
+      <h2>Changes to These Terms</h2>
+      
+        <h3>Changes to These Terms</h3>
+        <p>We may modify these Terms at any time. For material changes, We will make</p>
+<p>reasonable efforts to give at least 30 days&#039; notice before the new Terms take</p>
+<p>effect (e.g. via an in-app notice or an updated &quot;Last updated&quot; date). Continued</p>
+<p>use of the Service after changes take effect constitutes acceptance of the</p>
+<p>revised Terms.</p>
+      
+    
+      <h2>Contact Us</h2>
+      
+        <h3>Contact Us</h3>
+        <p>Questions about these Terms can be sent to:</p>
+<p><strong>ni.studio.us@outlook.com</strong></p>
+      
+    
+      <hr />
+      <p><a href="https://nistudious.github.io/home/apps/alarm-clock">Back to Alarm Clock</a> · <a href="https://nistudious.github.io/home/">Home</a></p>
+    
+      </div>
+    </noscript>
+</body>
+</html>
