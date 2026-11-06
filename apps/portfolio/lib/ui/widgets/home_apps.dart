@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
 import 'image_helper.dart';
+import 'cycling_app_icon.dart';
 
 class HomeApps extends StatelessWidget {
   const HomeApps({super.key});
@@ -148,10 +149,7 @@ class _AppCopyColumn extends StatelessWidget {
         // Title row
         Row(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(NiTokens.iconRadius(56, small: false)),
-              child: Image.asset(app.iconUrl, width: 56, height: 56),
-            ),
+            CyclingAppIcon(app: app, size: 56),
             const SizedBox(width: 16),
             Expanded(
               child: Wrap(
@@ -382,9 +380,10 @@ class _AppIconStage extends StatelessWidget {
                     BoxShadow(color: tokens.accent.withOpacity(0.12), spreadRadius: 8),
                   ],
                 ),
-                child: ClipRRect(
+                child: CyclingAppIcon(
+                  app: app,
+                  size: 132,
                   borderRadius: BorderRadius.circular(NiTokens.rStageIcon),
-                  child: Image.asset(app.iconUrl),
                 ),
               ),
               const SizedBox(height: 18),

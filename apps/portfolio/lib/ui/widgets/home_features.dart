@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../models/data_model.dart';
 import '../design_tokens.dart';
+import 'cycling_app_icon.dart';
 
 class HomeFeatures extends StatelessWidget {
   const HomeFeatures({super.key});
@@ -90,14 +91,7 @@ class _FeatureRow extends StatelessWidget {
 
     final leftSide = Row(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(NiTokens.iconRadius(44, small: true)),
-          child: Image.asset(
-            app.iconUrl,
-            width: 44,
-            height: 44,
-          ),
-        ),
+        CyclingAppIcon(app: app, size: 44),
         const SizedBox(width: 14),
         Expanded(
           child: Column(

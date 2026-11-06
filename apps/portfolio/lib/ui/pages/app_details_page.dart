@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderAbstractViewport;
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,6 +12,7 @@ import '../widgets/footer.dart';
 import '../widgets/image_helper.dart';
 import '../widgets/card_marquee.dart';
 import '../widgets/milestone_card.dart';
+import '../widgets/cycling_app_icon.dart';
 import '../../utils/url_helper.dart';
 import '../../utils/scroll_keys.dart';
 
@@ -160,17 +162,19 @@ class _Icon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = NiTokens.of(context);
+    final radius = BorderRadius.circular(NiTokens.iconRadius(140));
     return Container(
       width: 140,
       height: 140,
       decoration: BoxDecoration(
         color: tokens.surface2,
-        borderRadius: BorderRadius.circular(NiTokens.iconRadius(140)),
+        borderRadius: radius,
         boxShadow: tokens.shadow,
-        image: DecorationImage(
-          image: AssetImage(app.iconUrl),
-          fit: BoxFit.cover,
-        ),
+      ),
+      child: CyclingAppIcon(
+        app: app,
+        size: 140,
+        borderRadius: radius,
       ),
     );
   }
@@ -451,6 +455,8 @@ class _AppFeaturesState extends State<_AppFeatures> {
   final GlobalKey _rowKey = GlobalKey();
   double _stickyOffset = 0;
   StreamSubscription<String>? _navSub;
+  bool _programmaticScroll = false;
+  int _scrollGeneration = 0;
 
   String _slugify(String text) {
     return text.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-').replaceAll(RegExp(r'^-+|-+$'), '');
@@ -473,14 +479,8 @@ class _AppFeaturesState extends State<_AppFeatures> {
         _navSub = currentAppService.navigationEvents.listen((title) {
           final visible = widget.app.features.where((f) => f.hide != true).toList();
           final index = visible.indexWhere((f) => f.title == title);
-          if (index != -1 && index < _keys.length && _keys[index].currentContext != null) {
-            setState(() => _activeIndex = index);
-            Scrollable.ensureVisible(
-              _keys[index].currentContext!,
-              duration: const Duration(milliseconds: 350),
-              curve: Curves.easeInOut,
-              alignment: 0.5,
-            );
+          if (index != -1) {
+            _scrollTo(index);
           }
         });
       } catch (_) {}
@@ -494,28 +494,74 @@ class _AppFeaturesState extends State<_AppFeatures> {
     super.dispose();
   }
 
+  Future<void> _scrollTo(int index) async {
+    if (index < 0 || index >= _keys.length) return;
+    final ctx = _keys[index].currentContext;
+    if (ctx == null) return;
+    final renderObject = ctx.findRenderObject();
+    if (renderObject == null) return;
+
+    final gen = ++_scrollGeneration;
+    _programmaticScroll = true;
+    setState(() => _activeIndex = index);
+
+    if (widget.scrollController.hasClients) {
+      final position = widget.scrollController.position;
+      // Interrupt any in-flight animation immediately
+      position.jumpTo(position.pixels);
+
+      final viewport = RenderAbstractViewport.of(renderObject);
+      final target = viewport
+          .getOffsetToReveal(renderObject, 0.5)
+          .offset
+          .clamp(position.minScrollExtent, position.maxScrollExtent);
+
+      try {
+        await widget.scrollController.animateTo(
+          target,
+          duration: const Duration(milliseconds: 350),
+          curve: Curves.easeInOut,
+        );
+      } catch (_) {
+        // Interrupted by another user tap
+      } finally {
+        if (_scrollGeneration == gen) {
+          _programmaticScroll = false;
+        }
+      }
+    }
+  }
+
   void _onScroll() {
     if (!mounted) return;
     
     double newOffset = 0;
     if (_rowKey.currentContext != null) {
-      final box = _rowKey.currentContext!.findRenderObject() as RenderBox;
-      final position = box.localToGlobal(Offset.zero);
-      if (position.dy < 100) {
-        newOffset = 100 - position.dy;
-        // Clamp it so it doesn't bleed past the row height
-        final rowHeight = box.size.height;
-        final tocHeight = 400.0; // approximate
-        if (newOffset > rowHeight - tocHeight) {
-          newOffset = rowHeight - tocHeight;
-          if (newOffset < 0) newOffset = 0;
+      final box = _rowKey.currentContext!.findRenderObject() as RenderBox?;
+      if (box != null && box.hasSize) {
+        final position = box.localToGlobal(Offset.zero);
+        if (position.dy < 100) {
+          newOffset = 100 - position.dy;
+          // Clamp it so it doesn't bleed past the row height
+          final rowHeight = box.size.height;
+          const tocHeight = 400.0; // approximate
+          if (newOffset > rowHeight - tocHeight) {
+            newOffset = rowHeight - tocHeight;
+            if (newOffset < 0) newOffset = 0;
+          }
         }
       }
     }
 
-    setState(() {
-      _stickyOffset = newOffset;
-    });
+    if (_stickyOffset != newOffset) {
+      setState(() {
+        _stickyOffset = newOffset;
+      });
+    }
+
+    // While a tap-triggered scroll is animating toward its destination,
+    // do not let the proximity scroll-spy fight the active index!
+    if (_programmaticScroll) return;
     
     // Scroll Spy
     final viewportHeight = MediaQuery.of(context).size.height;
@@ -567,17 +613,7 @@ class _AppFeaturesState extends State<_AppFeatures> {
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
-              onTap: () {
-                setState(() => _activeIndex = i);
-                if (_keys[i].currentContext != null) {
-                  Scrollable.ensureVisible(
-                    _keys[i].currentContext!,
-                    duration: const Duration(milliseconds: 350),
-                    curve: Curves.easeInOut,
-                    alignment: 0.5,
-                  );
-                }
-              },
+              onTap: () => _scrollTo(i),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 child: Text(
