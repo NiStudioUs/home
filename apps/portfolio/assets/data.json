@@ -2441,6 +2441,20 @@
           ]
         },
         {
+          "title": "Smart Edge Visibility",
+          "subtitle": "Everywhere, home screen only, or chosen apps",
+          "sections": [
+            {
+              "title": "Choose where gestures stay active",
+              "content": "Control exactly where your gesture edge appears on your device. Keep it active everywhere across all apps and games, restrict it exclusively to your home screen launcher, or pick specific apps where you want it enabled. Edgewise automatically detaches its overlay inside excluded apps, preventing accidental swipes while gaming, browsing, or typing.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise/edge-visibility-modes.webp"
+              ]
+            }
+          ]
+        },
+        {
           "title": "Lock Effects",
           "subtitle": "A brief flourish before the screen locks",
           "sections": [
