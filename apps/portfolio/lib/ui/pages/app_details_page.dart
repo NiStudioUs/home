@@ -198,6 +198,39 @@ class _HeaderCopy extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 60 * 8.5), // rough 60ch
           child: Text(app.fullDescription, style: NiType.muted(context, 17.6)), // 1.1rem
         ),
+        if (app.firstReleaseFormatted != null) ...[
+          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              color: tokens.surface2,
+              borderRadius: BorderRadius.circular(NiTokens.rCard),
+              border: Border.all(color: tokens.border, width: 1),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF22C55E),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  'First released on Google Play: ${app.firstReleaseFormatted}',
+                  style: TextStyle(
+                    color: tokens.text,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
         const SizedBox(height: 32),
         Wrap(
           spacing: 12,

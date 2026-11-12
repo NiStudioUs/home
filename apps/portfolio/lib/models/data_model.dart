@@ -186,6 +186,34 @@ class AppModel {
     }
   }
 
+  DateTime? get liveDate {
+    for (final m in milestones) {
+      final t = m.title.toLowerCase();
+      if (t.contains('live') || t.contains('published on google play') || t.contains('live on play store')) {
+        return m.parsedDate;
+      }
+    }
+    return null;
+  }
+
+  bool get isLive {
+    return status.toLowerCase().contains('live') || liveDate != null;
+  }
+
+  DateTime? get firstReleaseDate {
+    return liveDate;
+  }
+
+  String? get firstReleaseFormatted {
+    final d = firstReleaseDate;
+    if (d == null || d.year <= 1970) return null;
+    const months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+    return '${months[d.month - 1]} ${d.day}, ${d.year}';
+  }
+
   AppModel({
     required this.id,
     required this.name,
@@ -345,12 +373,14 @@ class MilestoneModel {
   final String date; // ISO 'YYYY-MM-DD'
   final String title;
   final String description;
+  final String iconUrl;
   final FeatureImage screenshot; // FeatureImage(url:'') = no screenshot
 
   MilestoneModel({
     required this.date,
     required this.title,
     required this.description,
+    this.iconUrl = '',
     this.screenshot = const FeatureImage(url: ''),
   });
 
@@ -359,13 +389,24 @@ class MilestoneModel {
       date: json['date'] as String? ?? '',
       title: json['title'] as String? ?? '',
       description: json['description'] as String? ?? '',
+      iconUrl: json['iconUrl'] as String? ?? '',
       screenshot: json['screenshot'] != null
           ? FeatureImage.fromJson(json['screenshot'])
           : const FeatureImage(url: ''),
     );
   }
 
-  DateTime get parsedDate => DateTime.tryParse(date) ?? DateTime(1970);
+  DateTime get parsedDate {
+    if (date.isEmpty) return DateTime(1970);
+    return DateTime.tryParse(date) ??
+        DateTime.tryParse(date.replaceFirst(' ', 'T')) ??
+        DateTime(1970);
+  }
+
+  bool get isLive {
+    final t = title.toLowerCase();
+    return t.contains('live') || (t.contains('play store') && t.contains('published'));
+  }
 
   String get formattedDate {
     if (date.isEmpty) return '';
