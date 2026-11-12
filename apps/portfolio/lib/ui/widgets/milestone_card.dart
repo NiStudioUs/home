@@ -136,9 +136,11 @@ class MilestoneCardState extends State<MilestoneCard> {
     // Smart adaptive width sizing
     final double targetWidth;
     if (isMobile) {
-      targetWidth = (screenWidth - 32).clamp(240.0, 320.0);
+      targetWidth = (screenWidth - 32).clamp(240.0, widget.milestone.isLive ? 380.0 : 320.0);
     } else {
-      if (hasScreenshot) {
+      if (widget.milestone.isLive) {
+        targetWidth = 380.0;
+      } else if (hasScreenshot) {
         targetWidth = 320.0;
       } else if (widget.milestone.description.length > 90) {
         targetWidth = 300.0;
@@ -192,7 +194,7 @@ class MilestoneCardState extends State<MilestoneCard> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(NiTokens.iconRadius(28, small: true)),
                           child: Image.asset(
-                            widget.app.iconUrl,
+                            widget.milestone.iconUrl.isNotEmpty ? widget.milestone.iconUrl : widget.app.iconUrl,
                             width: 28,
                             height: 28,
                             errorBuilder: (_, _, _) => const Icon(Icons.apps, size: 28, color: Colors.white),
@@ -253,13 +255,18 @@ class MilestoneCardState extends State<MilestoneCard> {
         : widget.milestone.date;
 
     return Container(
-      width: 260,
+      width: 280,
       height: 96,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: tokens.surface,
         borderRadius: BorderRadius.circular(NiTokens.r),
-        border: Border.all(color: tokens.border, width: 1),
+        border: Border.all(
+          color: widget.milestone.isLive
+              ? const Color(0xFF22C55E).withValues(alpha: 0.35)
+              : tokens.border,
+          width: 1,
+        ),
         boxShadow: tokens.shadow,
       ),
       child: Row(
@@ -267,7 +274,7 @@ class MilestoneCardState extends State<MilestoneCard> {
           ClipRRect(
             borderRadius: BorderRadius.circular(NiTokens.iconRadius(40, small: true)),
             child: Image.asset(
-              widget.app.iconUrl,
+              widget.milestone.iconUrl.isNotEmpty ? widget.milestone.iconUrl : widget.app.iconUrl,
               width: 40,
               height: 40,
               errorBuilder: (_, _, _) => const Icon(Icons.apps, size: 40),
@@ -281,7 +288,7 @@ class MilestoneCardState extends State<MilestoneCard> {
               children: [
                 Text(
                   widget.milestone.title,
-                  maxLines: 2,
+                  maxLines: widget.milestone.isLive ? 1 : 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: tokens.text,
@@ -291,12 +298,27 @@ class MilestoneCardState extends State<MilestoneCard> {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  dateDisplay,
-                  style: TextStyle(
-                    color: tokens.muted,
-                    fontSize: 11,
-                  ),
+                Row(
+                  children: [
+                    if (widget.milestone.isLive) ...[
+                      Container(
+                        width: 6,
+                        height: 6,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFF22C55E),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                    ],
+                    Text(
+                      dateDisplay,
+                      style: TextStyle(
+                        color: tokens.muted,
+                        fontSize: 11,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

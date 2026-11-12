@@ -176,6 +176,30 @@ class _AppCopyColumn extends StatelessWidget {
                       ),
                       child: Text(app.status, style: NiType.badge(context, tokens.badgeFg)),
                     ),
+                  if (app.firstReleaseFormatted != null)
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: tokens.surface2,
+                        borderRadius: NiTokens.pill,
+                        border: Border.all(color: tokens.border, width: 1),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.calendar_today_outlined, size: 11, color: tokens.muted),
+                          const SizedBox(width: 5),
+                          Text(
+                            'Released ${app.firstReleaseFormatted}',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: tokens.muted,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                 ],
               ),
             ),
