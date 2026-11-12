@@ -573,6 +573,13 @@
       "iconUrl": "assets/images/app2/icon.webp",
       "status": "Live on Play Store",
       "statusColor": "green",
+      "milestones": [
+        {
+          "date": "2026-01-26 15:17",
+          "title": "SMS Stack v1.0.0 • Live on Google Play Store",
+          "description": "SMS Stack v1.0.0 is officially live on Google Play with on-device smart SMS parsing, privacy-first regex engines, and financial dashboard tracking."
+        }
+      ],
       "descriptionImages": [
         {
           "url": "assets/images/app2/playstore_screen-1-app-launch-1.webp",
@@ -1834,8 +1841,8 @@
       "milestones": [
         {
           "date": "2026-10-29 18:19",
-          "title": "Published to Internal Testing",
-          "description": "Alarm Clock is now available on Google Play's Internal Testing track, ahead of a wider public release."
+          "title": "Alarm Clock v0.1.0 • Published to Internal Testing",
+          "description": "Alarm Clock v0.1.0 is now available on Google Play's Internal Testing track, ahead of a wider public release."
         }
       ],
       "demoUrl": "/home/app/alarm-clock/demo/",
@@ -2400,13 +2407,40 @@
       "shortDescription": "A customizable edge gesture handle for instant screen-lock, app launch, and system panels — with dot-matrix lock effects.",
       "fullDescription": "Edgewise adds one small, fully customizable gesture handle to the edge of your screen. Double tap, long press, or swipe it to lock your screen, launch an app, open notifications, or open quick settings — no need to reach for a power button or navigate menus. Tune exactly where it sits, how it looks, and how it behaves when idle. Pair it with a lock effect: a quick wipe transition, or a dot-matrix emoji, hand-drawn scribble, or typed message that draws itself in — like a tiny sign-off — before the screen locks. Everything runs entirely on-device: no account, no cloud, no analytics, and no network permission at all.",
       "iconUrl": "assets/images/edgewise/icon.webp",
-      "status": "In development",
-      "statusColor": "orange",
+      "status": "Live on Play Store",
+      "statusColor": "green",
       "milestones": [
         {
+          "date": "2026-11-11 15:12",
+          "title": "Edgewise v0.1.1 • Closed Testing (Alpha)",
+          "description": "Edgewise v0.1.1 (version code 2) released to Closed testing - Alpha across 178 countries and regions for selected testers with 50% slimmer edge handle, tab indicator, and 2-second idle hide.",
+          "iconUrl": "assets/images/edgewise/icon_theme_ochre.png",
+          "screenshot": {
+            "url": "assets/images/edgewise/milestone-release-v0.1.1.png",
+            "caption": "Play Console: Edgewise 2 (0.1.1) Released to Closed testing - Alpha"
+          }
+        },
+        {
+          "date": "2026-11-07 19:38",
+          "title": "Edgewise v0.1.0 • Live on Google Play Store",
+          "description": "Edgewise v0.1.0 is officially approved and live in the store on Google Play.",
+          "iconUrl": "assets/images/edgewise/icon_theme_sage.png",
+          "screenshot": {
+            "url": "assets/images/edgewise/milestone-release-v0.1.0.png",
+            "caption": "Play Console: Your update to Edgewise (v0.1.0) is live in the store"
+          }
+        },
+        {
+          "date": "2026-11-07 18:57",
+          "title": "Edgewise v0.1.0 • Published to Internal Testing",
+          "description": "Edgewise v0.1.0 published to Google Play Internal Testing track ahead of public release.",
+          "iconUrl": "assets/images/edgewise/icon_theme_ochre.png"
+        },
+        {
           "date": "2026-11-04 00:00",
-          "title": "Core gesture handle, edge customization, and dot-matrix lock effects built",
-          "description": "Edge gesture handle with 4 gestures × 4 actions, full appearance customization, 9 lock effects including dot-matrix Emoji/Scribble/Note content effects, home-screen widgets, and Material You theming — not yet published to Google Play."
+          "title": "Edgewise v0.1.0-dev • Core Architecture & Matrix Engine",
+          "description": "Edgewise v0.1.0-dev core gesture handle with 4 gestures × 4 actions, 9 dot-matrix lock effects, widgets, and Material You theming.",
+          "iconUrl": "assets/images/edgewise/icon_theme_ochre.png"
         }
       ],
       "demoUrl": "",
@@ -2436,20 +2470,6 @@
               "imageRenderer": "default",
               "images": [
                 "assets/images/edgewise/anim-edge-fine-adjustments.webp"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Smart Edge Visibility",
-          "subtitle": "Everywhere, home screen only, or chosen apps",
-          "sections": [
-            {
-              "title": "Choose where gestures stay active",
-              "content": "Control exactly where your gesture edge appears on your device. Keep it active everywhere across all apps and games, restrict it exclusively to your home screen launcher, or pick specific apps where you want it enabled. Edgewise automatically detaches its overlay inside excluded apps, preventing accidental swipes while gaming, browsing, or typing.",
-              "imageRenderer": "default",
-              "images": [
-                "assets/images/edgewise/edge-visibility-modes.webp"
               ]
             }
           ]
@@ -2607,7 +2627,7 @@
       "links": [
         {
           "type": "Play Store",
-          "url": ""
+          "url": "https://play.google.com/store/apps/details?id=com.ni.studio.edgewise"
         }
       ],
       "privacyPolicy": {
