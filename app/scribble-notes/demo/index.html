@@ -33,6 +33,80 @@
     <!-- Google Sign-In OAuth client ID for web (GIS SDK used by google_sign_in v6+) -->
     <meta name="google-signin-client_id" content="264532754957-6oshpqgq9rtdl8q6qlt8okaavgfigj3a.apps.googleusercontent.com">
 
+    <!-- Suppress sensitive OAuth, GIS and credential logs in browser console -->
+    <script>
+      (function() {
+        var sensitivePatterns = [
+          /\[GSI_LOGGER\]/i,
+          /Processing FedCM credential/i,
+          /credential_response/i,
+          /\b(access_token|id_token|refresh_token|client_secret)\b/i
+        ];
+
+        function isSensitive(item) {
+          if (!item) return false;
+          var str = '';
+          if (typeof item === 'string') {
+            str = item;
+          } else if (typeof item === 'object') {
+            try { str = JSON.stringify(item); } catch (_) { return false; }
+          }
+          for (var i = 0; i < sensitivePatterns.length; i++) {
+            if (sensitivePatterns[i].test(str)) return true;
+          }
+          return false;
+        }
+
+        function shouldFilter(args) {
+          for (var i = 0; i < args.length; i++) {
+            if (isSensitive(args[i])) return true;
+          }
+          return false;
+        }
+
+        var origLog = console.log;
+        var origInfo = console.info;
+        var origDebug = console.debug;
+        var origWarn = console.warn;
+
+        console.log = function() {
+          if (shouldFilter(arguments)) return;
+          origLog.apply(console, arguments);
+        };
+        console.info = function() {
+          if (shouldFilter(arguments)) return;
+          origInfo.apply(console, arguments);
+        };
+        console.debug = function() {
+          if (shouldFilter(arguments)) return;
+          origDebug.apply(console, arguments);
+        };
+        console.warn = function() {
+          if (shouldFilter(arguments)) return;
+          origWarn.apply(console, arguments);
+        };
+
+        function enforceGsiNone() {
+          try {
+            if (window.google && window.google.accounts && window.google.accounts.id) {
+              var id = window.google.accounts.id;
+              if (id.setLogLevel && !id._patched) {
+                var origSet = id.setLogLevel;
+                id.setLogLevel = function() {
+                  return origSet.call(id, 'none');
+                };
+                id._patched = true;
+                origSet.call(id, 'none');
+              }
+            }
+          } catch (_) {}
+        }
+
+        var gsiInterval = setInterval(enforceGsiNone, 50);
+        setTimeout(function() { clearInterval(gsiInterval); }, 15000);
+      })();
+    </script>
+
     <title>Scribble Notes</title>
     <link href="manifest.json?v=962b1ead3753" rel="manifest">
 
