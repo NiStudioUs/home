@@ -2974,6 +2974,180 @@
         "Material You",
         "Android Widgets"
       ]
+    },
+    {
+      "id": "edgewise-launcher",
+      "name": "Edgewise Launcher",
+      "shortDescription": "A castle-themed Android & Android TV launcher — depth-effect wallpapers, a bookshelf app drawer, and full D-pad navigation.",
+      "fullDescription": "Edgewise Launcher replaces your Home screen and app drawer on both phone and Android TV with a cohesive, castle-themed experience. Pick from curated scenes or your own photo, and turn on a depth effect that cuts the wallpaper's foreground out in front of the clock for a parallax look — adjustable by hand for any wallpaper. The App Drawer renders as a leather-bound bookshelf on TV, with full D-pad navigation throughout: Home, the drawer, and Launcher Config all respond to a remote the same way they respond to touch. On TV, the remote's dedicated shortcut button can be remapped to any installed app instead of the stock launcher it ships pointed at.",
+      "iconUrl": "assets/images/edgewise-launcher/icon.webp",
+      "status": "In development",
+      "statusColor": "amber",
+      "milestones": [],
+      "demoUrl": "",
+      "descriptionImages": [],
+      "features": [
+        {
+          "title": "Depth-Effect Wallpapers",
+          "subtitle": "Parallax for any scene or photo",
+          "sections": [
+            {
+              "title": "Adjustable foreground cutout",
+              "content": "Built-in scenes ship with a hand-authored foreground cutout; a custom photo gets one generated on-device. Either way, an \"Adjust position\" screen lets you nudge and zoom the cutout by hand — pinch and drag on phone, D-pad on TV — to line it up exactly.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise-launcher/playstore_screen-6-mobile-wallpaper-depth-adjust.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Android TV Support",
+          "subtitle": "A real 10-foot experience, not a stretched phone UI",
+          "sections": [
+            {
+              "title": "Castle Home for the big screen",
+              "content": "A dedicated landscape layout with a dock, live system stats, and a bookshelf-style App Drawer — leather-bound spines with D-pad-driven reorder mode, in place of a plain grid.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Launcher Config",
+          "subtitle": "The same settings, built for touch or remote",
+          "sections": [
+            {
+              "title": "One list, full pages, Back to return",
+              "content": "Settings are grouped by topic — Wallpaper, Clock, Dock, App Drawer, Remote, Display — each opening full-screen. The same navigation works identically with touch or a D-pad remote, including the TV's live preview alongside it.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise-launcher/playstore_screen-1-mobile-settings-index.webp"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Remote Button Remapping",
+          "subtitle": "Make the shortcut key yours",
+          "sections": [
+            {
+              "title": "Point it at any installed app",
+              "content": "TV remotes often ship a dedicated shortcut button hard-wired to a single OEM app. Edgewise intercepts it and lets you point it at any app you have installed instead, with a guided \"press any button\" flow to learn your remote's exact key.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "title": "Onboarding",
+          "subtitle": "Guided first-run setup",
+          "sections": [
+            {
+              "title": "Pick your look before you land on Home",
+              "content": "A short first-run flow for a name, wallpaper scene, and (on TV) dock icon style — Continue stays disabled until you've actually made a choice, so the first Home screen you see is the one you picked.",
+              "imageRenderer": "default",
+              "images": [
+                "assets/images/edgewise-launcher/playstore_screen-3-mobile-home-quickapps.webp"
+              ]
+            }
+          ]
+        }
+      ],
+      "technicalDetails": [
+        {
+          "hide": true,
+          "title": "Built with Flutter",
+          "subtitle": "Shared codebase, two form factors",
+          "sections": [
+            {
+              "title": "Core Technology",
+              "content": "Edgewise Launcher is built with **Flutter**, with a native Kotlin platform-channel layer handling app enumeration, icon/banner caching, wallpaper depth-cutout generation (ML Kit Subject Segmentation), and remote-key interception on TV.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        },
+        {
+          "hide": true,
+          "title": "D-pad-First Focus Design",
+          "subtitle": "Same screens, two input models",
+          "sections": [
+            {
+              "title": "No separate TV codebase",
+              "content": "Rather than a parallel TV UI, shared settings pages are reused for touch and remote alike: explicit `FocusNode` management and Flutter's directional focus traversal make the same widget tree navigable with a D-pad, confirmed on real Android TV hardware rather than just an emulator.",
+              "imageRenderer": "default",
+              "images": []
+            }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-1-mobile-settings-index.webp",
+          "caption": "Customisation, grouped by topic"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-2-mobile-app-drawer.webp",
+          "caption": "App Drawer, search and grid"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-3-mobile-home-quickapps.webp",
+          "caption": "Home, with the quick-apps sheet"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-4-mobile-wallpaper-scenes.webp",
+          "caption": "Wallpaper scenes, with depth toggle"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-5-mobile-wallpaper-colors.webp",
+          "caption": "Flat-colour wallpapers"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-6-mobile-wallpaper-depth-adjust.webp",
+          "caption": "Depth effect, adjustable by hand"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-7-mobile-wallpaper-custom-photo.webp",
+          "caption": "Framing a custom wallpaper photo"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-8-mobile-hidden-apps-lock.webp",
+          "caption": "Hidden apps, unlock prompt"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-9-mobile-hidden-apps-setup.webp",
+          "caption": "Hidden apps, choose an unlock method"
+        },
+        {
+          "url": "assets/images/edgewise-launcher/playstore_screen-10-mobile-hidden-apps-pin.webp",
+          "caption": "Hidden apps, create a PIN"
+        }
+      ],
+      "links": [
+        {
+          "type": "Play Store",
+          "url": ""
+        }
+      ],
+      "privacyPolicy": {
+        "url": "",
+        "lastUpdatedUtc": "",
+        "features": []
+      },
+      "termsAndConditions": {
+        "url": "",
+        "lastUpdatedUtc": "",
+        "features": []
+      },
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Android TV",
+        "Kotlin",
+        "ML Kit",
+        "Launcher"
+      ]
     }
   ],
   "learningProjects": [
